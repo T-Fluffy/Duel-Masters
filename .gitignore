@@ -22,3 +22,13 @@ mono_crash.*.json
 
 # Editor-local configuration
 .vscode/
+
+# Card asset archives (extracted set images + cards-index.json are kept, zips are not)
+assets/**/*.zip
+
+# NestJS backend
+backends/nestjs/node_modules/
+backends/nestjs/dist/
+
+# Spring Boot backend
+backends/spring-boot/target/

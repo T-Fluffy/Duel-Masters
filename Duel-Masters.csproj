@@ -24,9 +24,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <!-- Docs, the domain lib, and tests are NOT part of the Godot assembly. -->
+    <!-- Docs, the domain lib, tests, and backends are NOT part of the Godot assembly. -->
     <Compile Remove="docs/**" />
     <Compile Remove="src/rules/**" />
     <Compile Remove="tests/**" />
+    <Compile Remove="backends/**" />
   </ItemGroup>
 </Project>

@@ -1,0 +1,16 @@
+# Repository-root context: keep only what the .NET server build needs.
+.git/
+.godot/
+.vscode/
+**/bin/
+**/obj/
+assets/
+docs/
+tests/
+tools/
+addons/
+backends/nestjs/
+backends/spring-boot/
+Duel-Masters.csproj
+Duel-Masters.sln
+*.md
