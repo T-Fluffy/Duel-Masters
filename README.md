@@ -1,0 +1,108 @@
+# Duel Masters TCG Engine
+
+A modern, real-time digital recreation of the classic **Duel Masters** trading card
+game, built with:
+
+- **Godot 4.x (C#)** for the client — 2D/2.5D arena with a Master-Duel-inspired
+  presentation (hover feedback, tap animations, shield-break VFX).
+- A **pure C# rules library** (`DuelMasters.Domain`) shared by the client, the
+  tests, the AI, and (later) the authoritative backend — zero engine dependencies.
+- A **protocol-neutral JSON WebSocket contract** so the backend can run on
+  **.NET 9 (SignalR)** today and be swapped to **NestJS (Socket.io)** or
+  **Spring Boot (STOMP)** later without touching the client.
+- A **Python ingestion pipeline** that turns raw card PNG/JPEG images into a
+  structured `cards.json` database.
+
+## Status
+
+The project is scaffolded and the folder/convention baseline is in place:
+
+| Phase | Description | Status |
+| ----- | ----------- | ------ |
+| 0 | Structure, tooling, git, CI-ready baseline | ✅ Done |
+| 1 | Card JSON schema + ingestion pipeline + starter set | ⏳ Next |
+| 2 | Domain rules engine (turn machine, combat, shield triggers) + xUnit tests | ⏳ |
+| 3 | Godot board UI + hotseat sandbox | ⏳ |
+| 4 | Authoritative .NET 9 / SignalR backend + client transport | ⏳ |
+| 5 | AI opponent | ⏳ |
+| 6 | Shaders, VFX, sound polish | ⏳ |
+
+Game rules and architecture are specified in the design documents bundled in the
+repo root (`Duel_Masters_TCG_Engine_GDD.md`, `Duel_Masters_Strategy_and_Codebase.md`,
+plus PDF copies).
+
+## Requirements
+
+- **Godot 4.3 or newer — the .NET edition** (`Godot_v4.x-stable_mono_...`)
+- **.NET SDK 8.0 or newer** (`net8.0` targets; the project rolls forward to run on
+  newer runtimes)
+- **Python 3** (only for card ingestion)
+- Git + [Git LFS](https://git-lfs.com) (art assets are LFS-tracked)
+
+## Getting started
+
+1. Clone the repository.
+2. Open `project.godot` in the **.NET edition** of Godot.
+3. Build the C# solution (`.godot/mono` auto-builds in the editor, or run
+   `dotnet build -c Debug`).
+4. Run the project. The hotseat board prototype is a work in progress; the
+   `Global` autoload and `MainGame` entry point are already wired.
+
+## Building & testing
+
+```bash
+dotnet build -c Debug      # builds client + domain library
+dotnet test                # runs the DuelMasters.Domain rules tests
+```
+
+## Project structure
+
+Layout follows the [Project-Structure](https://github.com/FatEarthStudios) C#
+template conventions (one class per file, namespace per folder, `_camelCase`
+privates, `[Export]`/`[GlobalClass]` exposure).
+
+```text
+duel_masters/
+├─ assets/                   art/ (cards, ui) + cards_raw/ (ingestion source)
+├─ docs/                     rules reference and architecture notes
+├─ src/
+│  ├─ core/                  Global autoload, MainGame entry point
+│  ├─ rules/                 DuelMasters.Domain — pure C# rules library
+│  │   ├─ Model/             cards, players, zones, game state, enums
+│  │   ├─ Engine/            deterministic turn/duel state machine
+│  │   ├─ Commands/          play, summon, cast, attack, block, end turn…
+│  │   ├─ Effects/           keyword + scripted effect registry
+│  │   └─ Net/               protocol-neutral JSON DTOs
+│  ├─ gameplay/              board, card view, player, AI
+│  ├─ ui/                    menus, deck builder, HUD
+│  ├─ resources/             cards.json + card data loaders
+│  ├─ debug/                 FPS/version overlay
+│  └─ shaders/               VFX shaders
+├─ tests/DuelMasters.Domain.Tests/   xUnit tests for the rules engine
+└─ tools/
+   ├─ editor/                ApplyProjectSettings editor script
+   └─ card_ingestion/        ingest_cards.py (PNG/JPG → cards.json)
+```
+
+## Card data pipeline
+
+1. Drop raw card images (PNG/JPEG) into `assets/cards_raw/`.
+2. Run `python tools/card_ingestion/ingest_cards.py`.
+3. The tool produces `src/resources/data/cards.json`, consumed by the domain
+   library and the Godot client.
+
+## Networking
+
+The client talks to the backend over a neutral JSON message schema
+(`action` / `sessionId` / `playerId` / `payload`), so the transport is
+interchangeable. The authoritative .NET 9 SignalR hub is Phase 4.
+
+## Architecture docs
+
+- `Duel_Masters_TCG_Engine_GDD.md` — full game/system design specification
+- `Duel_Masters_Strategy_and_Codebase.md` — strategy/feasibility + reference code
+
+## License
+
+MIT — see `LICENSE`. Art assets must be rights-cleared before committing
+(see `ASSETS_LICENSE.md`).
