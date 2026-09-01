@@ -1,0 +1,24 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+
+# Godot / GDScript / Shader files use tabs.
+[*.{gd,gdshader,tscn,tres,godot,cfg}]
+indent_style = tab
+indent_size = 4
+
+# C# files use spaces and .NET formatting conventions.
+[*.cs]
+indent_style = space
+indent_size = 4
+trim_trailing_whitespace = true
+dotnet_sort_system_directives_first = true
+csharp_style_namespace_declarations = file_scoped:suggestion
+csharp_style_var_when_type_is_apparent = true
+
+# Markdown
+[*.md]
+trim_trailing_whitespace = false

@@ -1,0 +1,15 @@
+<!--
+  DuelMasters.Domain - the pure, engine-independent game rules library.
+  Zero third-party dependencies and zero Godot references by design.
+  Shared by the Godot client, the authoritative backend, the AI, and the tests.
+-->
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>DuelMasters.Domain</RootNamespace>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <RollForward>LatestMajor</RollForward>
+  </PropertyGroup>
+</Project>

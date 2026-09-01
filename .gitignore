@@ -1,0 +1,24 @@
+# Godot 4+ specific ignores
+.godot/
+
+# Godot export files
+export.cfg
+export_credentials.cfg
+export_presets.cfg
+
+# Imported translations (automatically generated from CSV files)
+*.translation
+
+# .NET / C# specific ignores
+.mono/
+bin/
+obj/
+data_*/
+mono_crash.*.json
+*.user
+*.suo
+*.old
+*.old.*
+
+# Editor-local configuration
+.vscode/

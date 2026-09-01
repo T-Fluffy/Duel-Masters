@@ -1,0 +1,32 @@
+<!--
+  Godot.NET.Sdk version:
+  The DK pins the LOWEST engine line that supports all its features (Godot 4.3+
+  uses .NET 8). The Godot editor auto-updates this line to the version you open
+  the project with (it keeps a backup as *.old.N). That is expected and harmless.
+  To target a specific version manually, replace this line and update
+  `config/features` in project.godot to match. See docs/manual.md.
+-->
+<Project Sdk="Godot.NET.Sdk/4.3.0">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <RootNamespace>DuelMasters</RootNamespace>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <!-- Only the bundled .NET 10 runtime is installed on this machine; roll forward so CLI builds/tests run. Godot bundles its own runtime at editor/export time. -->
+    <RollForward>LatestMajor</RollForward>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- The shared domain library lives in its own project and is referenced here. -->
+    <ProjectReference Include="src\rules\DuelMasters.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Docs, the domain lib, and tests are NOT part of the Godot assembly. -->
+    <Compile Remove="docs/**" />
+    <Compile Remove="src/rules/**" />
+    <Compile Remove="tests/**" />
+  </ItemGroup>
+</Project>
