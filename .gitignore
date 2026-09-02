@@ -26,6 +26,9 @@ mono_crash.*.json
 # Card asset archives (extracted set images + cards-index.json are kept, zips are not)
 assets/**/*.zip
 
+# Godot-generated import metadata for card artwork (regenerated locally; not committed)
+assets/art/cards/**/*.jpg.import
+
 # NestJS backend
 backends/nestjs/node_modules/
 backends/nestjs/dist/

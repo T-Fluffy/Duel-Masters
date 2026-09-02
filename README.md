@@ -15,21 +15,20 @@ game, built with:
 
 ## Status
 
-The project is scaffolded and the folder/convention baseline is in place:
-
 | Phase | Description | Status |
 | ----- | ----------- | ------ |
 | 0 | Structure, tooling, git, CI-ready baseline | ✅ Done |
-| 1 | Card JSON schema + ingestion pipeline + starter set | ⏳ Next |
-| 2 | Domain rules engine (turn machine, combat, shield triggers) + xUnit tests | ⏳ |
-| 3 | Godot board UI + hotseat sandbox | ⏳ |
-| 4 | Authoritative .NET 9 / SignalR backend + client transport | ⏳ |
+| 1 | Card JSON schema + ingestion pipeline + starter set | ✅ Done |
+| 1.5 | .NET 10 backend (JWT auth, deck CRUD) + Postgres + Deck Builder | ✅ Done |
+| 2 | Domain rules engine (turn machine, combat, shield triggers) + xUnit tests | ✅ Done |
+| 3 | Godot 2.5D board UI + local hotseat sandbox | ✅ Done |
+| 4 | Authoritative .NET / SignalR backend + client transport | ⏳ |
 | 5 | AI opponent | ⏳ |
 | 6 | Shaders, VFX, sound polish | ⏳ |
 
 Game rules and architecture are specified in the design documents bundled in the
-repo root (`Duel_Masters_TCG_Engine_GDD.md`, `Duel_Masters_Strategy_and_Codebase.md`,
-plus PDF copies).
+repo root (`Duel_Masters_TCG_Engine_GDD.md`, `Duel_Masters_Strategy_and_Codebase.md`).
+
 
 ## Requirements
 
@@ -45,8 +44,10 @@ plus PDF copies).
 2. Open `project.godot` in the **.NET edition** of Godot.
 3. Build the C# solution (`.godot/mono` auto-builds in the editor, or run
    `dotnet build -c Debug`).
-4. Run the project. The hotseat board prototype is a work in progress; the
-   `Global` autoload and `MainGame` entry point are already wired.
+4. Run the project. The project's main scene launches the **hotseat arena**
+   (`src/scenes/arena/`), a local 2-player sandbox that plays straight against the
+   shared `DuelMasters.Domain` rules engine. The `Global` autoload and `MainGame`
+   entry point remain wired for the future menu/flow.
 
 ## Building & testing
 

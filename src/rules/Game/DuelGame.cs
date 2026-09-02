@@ -31,6 +31,12 @@ public sealed class DuelGame
     public GamePhase Phase { get; private set; } = GamePhase.Untap;
     public int TurnNumber { get; private set; } = 1;
 
+    /// <summary>True if the active player has already charged a mana card this turn.</summary>
+    public bool ManaChargedThisTurn => _manaChargedThisTurn;
+
+    /// <summary>True if the active player has already attacked this turn (attack lock).</summary>
+    public bool HasAttackedThisTurn => _hasAttackedThisTurn;
+
     /// <summary>The player whose turn it currently is.</summary>
     public Player ActivePlayer => _activeIndex == 0 ? Player1 : Player2;
 
