@@ -106,14 +106,27 @@ public class DecksController : ControllerBase
 
         deck.Name = req.Name.Trim();
         deck.UpdatedAt = DateTime.UtcNow;
-        _db.DeckCards.RemoveRange(deck.Cards);
-        deck.Cards = linesOk!.Select(l => new DeckCard
-        {
-            Deck = deck,
-            CardId = l.CardId,
-            Count = l.Count,
-        }).ToList();
 
+        // 1) Remove existing children (deletes are reliable on their own).
+        var oldCards = deck.Cards.ToList();
+        if (oldCards.Count > 0)
+        {
+            _db.DeckCards.RemoveRange(oldCards);
+            await _db.SaveChangesAsync();
+        }
+
+        // 2) Insert fresh children directly via the DbSet (mirrors the Create path),
+        // so they are tracked as Added rather than Modified.
+        foreach (var l in linesOk!)
+        {
+            _db.DeckCards.Add(new DeckCard
+            {
+                Id = Guid.NewGuid(),
+                DeckId = deck.Id,
+                CardId = l.CardId,
+                Count = l.Count,
+            });
+        }
         await _db.SaveChangesAsync();
         return Ok(new DeckResponse(deck.Id, deck.Name, deck.Cards.Sum(c => c.Count),
             deck.Cards.Select(c => new DeckCardResponse(c.CardId, c.Count)).ToList()));

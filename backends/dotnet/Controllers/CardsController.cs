@@ -29,7 +29,7 @@ public class CardsController : ControllerBase
     {
         IQueryable<Card> q = _db.Cards;
         if (!string.IsNullOrWhiteSpace(set))
-            q = q.Where(c => c.Id.StartsWith(set.ToLowerInvariant()));
+            q = q.Where(c => c.Id.StartsWith(NormalizeSet(set.ToLowerInvariant())));
         if (!string.IsNullOrWhiteSpace(civilization))
             q = q.Where(c => c.Civilization == civilization);
         if (!string.IsNullOrWhiteSpace(cardType))
@@ -64,4 +64,7 @@ public class CardsController : ControllerBase
         var card = await _db.Cards.AsNoTracking().SingleOrDefaultAsync(c => c.Id == id);
         return card is null ? NotFound(new { error = "Card not found." }) : Ok(card);
     }
+
+    // Card ids use underscores (dm_01_...); let callers use either separator.
+    private static string NormalizeSet(string set) => set.Replace("-", "_");
 }
