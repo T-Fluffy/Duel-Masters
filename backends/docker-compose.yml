@@ -1,0 +1,39 @@
+# Duel Masters Phase 1.5 local stack: PostgreSQL + .NET API.
+services:
+  db:
+    image: postgres:16
+    container_name: duel-masters-db
+    environment:
+      POSTGRES_USER: duel
+      POSTGRES_PASSWORD: duel
+      POSTGRES_DB: duelmasters
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U duel -d duelmasters"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  server:
+    image: duel-masters-dotnet
+    build:
+      context: ..
+      dockerfile: backends/dotnet/Dockerfile
+    container_name: duel-masters-server
+    environment:
+      ASPNETCORE_URLS: http://+:8080
+      ConnectionStrings__Default: "Host=db;Port=5432;Database=duelmasters;Username=duel;Password=duel"
+      Jwt__Key: "dev-only-change-me-in-production-012345678901234567890123"
+      Jwt__Issuer: "duel-masters"
+      Jwt__Audience: "duel-masters-client"
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  pgdata:

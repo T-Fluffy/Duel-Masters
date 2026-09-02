@@ -1,14 +1,13 @@
 # syntax=docker/dockerfile:1
 
-# Duel Masters .NET 9 authoritative server (SignalR).
+# Duel Masters .NET 8 authoritative server (SignalR).
+# The Domain rules library targets net8.0, so the server and container images
+# match for a clean in-container run without roll-forward.
 # The build copies the shared rules library (src/rules/DuelMasters.Domain) from the
 # monorepo, so the build context MUST be the repository root:
 #   docker build -f backends/dotnet/Dockerfile .
-#
-# NOTE: requires the server project at backends/dotnet/DuelMasters.Server.csproj,
-# which lands with the backend implementation phase.
 
-FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /source
 
 # Restore layer — cached until a project file changes.
@@ -22,7 +21,7 @@ COPY backends/dotnet/ backends/dotnet/
 WORKDIR /source/backends/dotnet
 RUN dotnet publish DuelMasters.Server.csproj -c Release -o /app/publish --no-restore
 
-FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS runtime
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
 WORKDIR /app
 COPY --from=build /app/publish .
 EXPOSE 8080

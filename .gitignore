@@ -32,3 +32,6 @@ backends/nestjs/dist/
 
 # Spring Boot backend
 backends/spring-boot/target/
+
+# Python bytecode cache (card ingestion tooling)
+__pycache__/

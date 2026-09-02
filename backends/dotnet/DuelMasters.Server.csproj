@@ -1,0 +1,35 @@
+<!--
+  DuelMasters.Server - the authoritative .NET backend for Duel Masters.
+  Exposes JWT-authenticated REST endpoints for cards, users, and decks over
+  PostgreSQL (EF Core + Npgsql). Shares DuelMasters.Domain for rules constants.
+-->
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <!-- Only the .NET 10 SDK/toolchain is installed locally; roll forward for CLI builds. -->
+    <RollForward>LatestMajor</RollForward>
+    <RootNamespace>DuelMasters.Server</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\rules\DuelMasters.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Ship the Phase 1 card catalog with the server for seeding. -->
+    <Content Include="..\..\src\resources\data\cards.json" Link="cards.json"
+             CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.8">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.8" />
+  </ItemGroup>
+</Project>
