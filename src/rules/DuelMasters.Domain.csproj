@@ -12,4 +12,10 @@
     <LangVersion>latest</LangVersion>
     <RollForward>LatestMajor</RollForward>
   </PropertyGroup>
+
+  <!-- Expose internal rule state (tap, summoning-sickness, zone) so the board
+       scenario tests can arrange deterministic situations directly. -->
+  <ItemGroup>
+    <InternalsVisibleTo Include="DuelMasters.Domain.Tests" />
+  </ItemGroup>
 </Project>
