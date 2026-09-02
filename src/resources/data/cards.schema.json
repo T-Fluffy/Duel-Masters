@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://duel.masters/cards.schema.json",
+  "title": "Duel Masters Card",
+  "description": "A single Duel Masters card produced by the Phase 1 ingestion pipeline.",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+    "name": { "type": ["string", "null"] },
+    "civilization": {
+      "type": ["string", "null"],
+      "enum": ["Light", "Water", "Darkness", "Fire", "Nature", "Zero", null]
+    },
+    "cardType": {
+      "type": "string",
+      "enum": ["Creature", "Spell", "EvolutionCreature"]
+    },
+    "manaCost": { "type": "integer", "minimum": 1 },
+    "manaNumber": { "type": "integer", "default": 1 },
+    "power": { "type": ["integer", "null"] },
+    "race": { "type": ["string", "null"] },
+    "imagePath": { "type": "string" },
+    "keywords": { "type": "array", "items": { "type": "string" } },
+    "scriptEffectId": { "type": "string" }
+  },
+  "required": ["id", "name", "civilization", "cardType", "manaCost", "imagePath"]
+}

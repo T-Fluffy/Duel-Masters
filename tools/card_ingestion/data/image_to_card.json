@@ -1,0 +1,4008 @@
+{
+  "DM-01": {
+    "DM01_001.jpg": {
+      "card_id": "dm_01_090",
+      "name": "Bronze-Arm Tribe",
+      "confidence": 94.1,
+      "raw": "E) Bronze-Arm Tribe"
+    },
+    "DM01_002.jpg": {
+      "card_id": "dm_01_s06",
+      "name": "Zagaan, Knight of Darkness",
+      "confidence": 96.2,
+      "raw": "6 Zagaan, Knight of Darkness 4"
+    },
+    "DM01_003.jpg": {
+      "card_id": "dm_01_024",
+      "name": "Aqua Knight",
+      "confidence": 100.0,
+      "raw": "5 Aqua Knight"
+    },
+    "DM01_004.jpg": {
+      "card_id": "dm_01_068",
+      "name": "Artisan Picora",
+      "confidence": 100.0,
+      "raw": "1 Artisan Picora"
+    },
+    "DM01_005.jpg": {
+      "card_id": "dm_01_010",
+      "name": "Lah, Purification Enforcer",
+      "confidence": 96.0,
+      "raw": "5 Lab, Purification Enforcer"
+    },
+    "DM01_006.jpg": {
+      "card_id": "dm_01_098",
+      "name": "Mighty Shouter",
+      "confidence": 93.3,
+      "raw": "3 Mighty Shouter y"
+    },
+    "DM01_007.jpg": {
+      "card_id": "dm_01_006",
+      "name": "Holy Awe",
+      "confidence": 100.0,
+      "raw": "6 Holy Awe"
+    },
+    "DM01_008.jpg": {
+      "card_id": "dm_01_069",
+      "name": "Bolshack Dragon",
+      "confidence": 93.3,
+      "raw": "6 Bolsback Dragon"
+    },
+    "DM01_009.jpg": {
+      "card_id": "dm_01_105",
+      "name": "Steel Smasher",
+      "confidence": 100.0,
+      "raw": "2 Steel Smasher"
+    },
+    "DM01_010.jpg": {
+      "card_id": "dm_01_013",
+      "name": "Miele, Vizier of Lightning",
+      "confidence": 70.4,
+      "raw": "ER imiele, Vizier of Lightning"
+    },
+    "DM01_011.jpg": {
+      "card_id": "dm_01_051",
+      "name": "Dark Raven, Shadow of Grief",
+      "confidence": 100.0,
+      "raw": "y Dark Raven, Shadow of Grief"
+    },
+    "DM01_012.jpg": {
+      "card_id": "dm_01_s10",
+      "name": "Roaring Great-Horn",
+      "confidence": 84.2,
+      "raw": "lg Roaring Great-Hom"
+    },
+    "DM01_013.jpg": {
+      "card_id": "dm_01_084",
+      "name": "Onslaughter Triceps",
+      "confidence": 92.7,
+      "raw": "EJ Onslaughter Triceps"
+    },
+    "DM01_014.jpg": {
+      "card_id": "dm_01_s08",
+      "name": "Scarlet Skyterror",
+      "confidence": 100.0,
+      "raw": "8 Scarlet Skyterror"
+    },
+    "DM01_015.jpg": {
+      "card_id": "dm_01_091",
+      "name": "Burning Mane",
+      "confidence": 100.0,
+      "raw": "2 Burning Mane"
+    },
+    "DM01_016.jpg": {
+      "card_id": "dm_01_106",
+      "name": "Storm Shell",
+      "confidence": 91.7,
+      "raw": "7 Storm Shell B,"
+    },
+    "DM01_017.jpg": {
+      "card_id": "dm_01_s02",
+      "name": "Urth, Purifying Elemental",
+      "confidence": 100.0,
+      "raw": "6 Urth, Purifying Elemental"
+    },
+    "DM01_018.jpg": {
+      "card_id": "dm_01_104",
+      "name": "Stampeding Longhorn",
+      "confidence": 86.5,
+      "raw": "5 “Stampeding Longbom #"
+    },
+    "DM01_019.jpg": {
+      "card_id": "dm_01_029",
+      "name": "Crystal Memory",
+      "confidence": 100.0,
+      "raw": "4 Crystal Memory"
+    },
+    "DM01_020.jpg": {
+      "card_id": "dm_01_093",
+      "name": "Dimension Gate",
+      "confidence": 90.3,
+      "raw": "34 Dimension Gate"
+    },
+    "DM01_021.jpg": {
+      "card_id": "dm_01_022",
+      "name": "Toel, Vizier of Hope",
+      "confidence": 100.0,
+      "raw": "5 Toel, Vizier of Hope"
+    },
+    "DM01_022.jpg": {
+      "card_id": "dm_01_081",
+      "name": "Magma Gazer",
+      "confidence": 100.0,
+      "raw": "3 Magma Gazer"
+    },
+    "DM01_023.jpg": {
+      "card_id": "dm_01_005",
+      "name": "Gran Gure, Space Guardian",
+      "confidence": 100.0,
+      "raw": "E Gran Gure, Space Guardian"
+    },
+    "DM01_024.jpg": {
+      "card_id": "dm_01_079",
+      "name": "Gatling Skyterror",
+      "confidence": 100.0,
+      "raw": "7 Gatling Skyterror"
+    },
+    "DM01_025.jpg": {
+      "card_id": "dm_01_033",
+      "name": "King Coral",
+      "confidence": 87.0,
+      "raw": "ay King Coral"
+    },
+    "DM01_026.jpg": {
+      "card_id": "dm_01_035",
+      "name": "Marine Flower",
+      "confidence": 100.0,
+      "raw": "1 Marine Flower"
+    },
+    "DM01_027.jpg": {
+      "card_id": "dm_01_s03",
+      "name": "Aqua Sniper",
+      "confidence": 100.0,
+      "raw": "8 Aqua Sniper ’"
+    },
+    "DM01_028.jpg": {
+      "card_id": "dm_01_086",
+      "name": "Stonesaur",
+      "confidence": 85.7,
+      "raw": "5g Stonesaur"
+    },
+    "DM01_029.jpg": {
+      "card_id": "dm_01_096",
+      "name": "Forest Hornet",
+      "confidence": 77.4,
+      "raw": "4 Forest Hormmet a i"
+    },
+    "DM01_030.jpg": {
+      "card_id": "dm_01_039",
+      "name": "Seamine",
+      "confidence": 87.5,
+      "raw": "i] Seamine"
+    },
+    "DM01_031.jpg": {
+      "card_id": "dm_01_049",
+      "name": "Creeping Plague",
+      "confidence": 83.9,
+      "raw": "1%  Geeping Plague"
+    },
+    "DM01_032.jpg": {
+      "card_id": "dm_01_088",
+      "name": "Tornado Flame",
+      "confidence": 92.3,
+      "raw": "5 Tormado Flame"
+    },
+    "DM01_033.jpg": {
+      "card_id": "dm_01_036",
+      "name": "Phantom Fish",
+      "confidence": 91.7,
+      "raw": "3 Phantom Fisb"
+    },
+    "DM01_034.jpg": {
+      "card_id": "dm_01_102",
+      "name": "Poisonous Mushroom",
+      "confidence": 87.2,
+      "raw": "2 Poisonous Musbroom Bi,"
+    },
+    "DM01_035.jpg": {
+      "card_id": "dm_01_048",
+      "name": "Bone Spider",
+      "confidence": 100.0,
+      "raw": "3 Bone Spider ;"
+    },
+    "DM01_036.jpg": {
+      "card_id": "dm_01_070",
+      "name": "Brawler Zyler",
+      "confidence": 100.0,
+      "raw": "2 Brawler Zyler ’"
+    },
+    "DM01_037.jpg": {
+      "card_id": "dm_01_007",
+      "name": "Iere, Vizier of Bullets",
+      "confidence": 95.5,
+      "raw": "3 lere, Vizier of Bullets"
+    },
+    "DM01_038.jpg": {
+      "card_id": "dm_01_023",
+      "name": "Aqua Hulcus",
+      "confidence": 100.0,
+      "raw": "3 Aqua Hulcus"
+    },
+    "DM01_039.jpg": {
+      "card_id": "dm_01_063",
+      "name": "Terror Pit",
+      "confidence": 100.0,
+      "raw": "5 Terror Pit"
+    },
+    "DM01_040.jpg": {
+      "card_id": "dm_01_028",
+      "name": "Candy Drop",
+      "confidence": 100.0,
+      "raw": "3 Candy Drop"
+    },
+    "DM01_041.jpg": {
+      "card_id": "dm_01_071",
+      "name": "Burning Power",
+      "confidence": 88.0,
+      "raw": "1 Buming Power"
+    },
+    "DM01_042.jpg": {
+      "card_id": "dm_01_s01",
+      "name": "Hanusa, Radiance Elemental",
+      "confidence": 100.0,
+      "raw": "override",
+      "match": "override"
+    },
+    "DM01_043.jpg": {
+      "card_id": "dm_01_056",
+      "name": "Gigagiele",
+      "confidence": 100.0,
+      "raw": "5 Gigagiele"
+    },
+    "DM01_044.jpg": {
+      "card_id": "dm_01_057",
+      "name": "Gigargon",
+      "confidence": 100.0,
+      "raw": "8 Gigargon"
+    },
+    "DM01_045.jpg": {
+      "card_id": "dm_01_001",
+      "name": "Chilias, the Oracle",
+      "confidence": 100.0,
+      "raw": "y Chilias, the Oracle"
+    },
+    "DM01_046.jpg": {
+      "card_id": "dm_01_097",
+      "name": "Golden Wing Striker",
+      "confidence": 95.0,
+      "raw": "3 Golden Wing Striker 7"
+    },
+    "DM01_047.jpg": {
+      "card_id": "dm_01_044",
+      "name": "Virtual Tripwire",
+      "confidence": 100.0,
+      "raw": "3 Virtual Tripwire"
+    },
+    "DM01_048.jpg": {
+      "card_id": "dm_01_008",
+      "name": "Iocant, the Oracle",
+      "confidence": 94.1,
+      "raw": "2 locant, the Oracle"
+    },
+    "DM01_049.jpg": {
+      "card_id": "dm_01_075",
+      "name": "Draglide",
+      "confidence": 100.0,
+      "raw": "5 Draglide"
+    },
+    "DM01_050.jpg": {
+      "card_id": "dm_01_052",
+      "name": "Dark Reversal",
+      "confidence": 100.0,
+      "raw": "2 Dark Reversal"
+    },
+    "DM01_051.jpg": {
+      "card_id": "dm_01_038",
+      "name": "Saucer-Head Shark",
+      "confidence": 100.0,
+      "raw": "5 Saucer-Head Shark"
+    },
+    "DM01_052.jpg": {
+      "card_id": "dm_01_072",
+      "name": "Chaos Strike",
+      "confidence": 86.0,
+      "raw": "ig “a\n| Oe CS (s Zz\n, PRs. >\n= a PA\n= Choose one of your opponent's untapped creatures\njin the battle zone. Your creatures can attack it this\ntum as though it were tapped.\nSopa tee He 3410",
+      "match": "text_fallback"
+    },
+    "DM01_053.jpg": {
+      "card_id": "dm_01_018",
+      "name": "Senatine Jade Tree",
+      "confidence": 100.0,
+      "raw": "3 Senatine Jade Tree"
+    },
+    "DM01_054.jpg": {
+      "card_id": "dm_01_042",
+      "name": "Tropico",
+      "confidence": 100.0,
+      "raw": "5 Tropico"
+    },
+    "DM01_055.jpg": {
+      "card_id": "dm_01_089",
+      "name": "Aura Blast",
+      "confidence": 91.0,
+      "raw": "4 flura Blast\nelt\nrS : VES.\nSake j \\ 4\namy ( =\n& A 4 ee\n* Each of your creatures in the battle zone gets J\n“power attacker +2000\" until the end of the turn. ie\n2) (While attacking, a creature that hos \"power attacker ¥\nHES +2000\" gets +2000 power.) a",
+      "match": "text_fallback"
+    },
+    "DM01_056.jpg": {
+      "card_id": "dm_01_016",
+      "name": "Reusol, the Oracle",
+      "confidence": 100.0,
+      "raw": "2 Reusol, the Oracle"
+    },
+    "DM01_057.jpg": {
+      "card_id": "dm_01_027",
+      "name": "Brain Serum",
+      "confidence": 100.0,
+      "raw": "q Brain Serum"
+    },
+    "DM01_058.jpg": {
+      "card_id": "dm_01_015",
+      "name": "Rayla, Truth Enforcer",
+      "confidence": 95.2,
+      "raw": "i) Rayla, Truth Enforcer"
+    },
+    "DM01_059.jpg": {
+      "card_id": "dm_01_109",
+      "name": "Tri-horn Shepherd",
+      "confidence": 86.5,
+      "raw": "5 Tri-born Shepherd ey"
+    },
+    "DM01_060.jpg": {
+      "card_id": "dm_01_100",
+      "name": "Pangaea's Song",
+      "confidence": 90.3,
+      "raw": "Ly Pangaea's Song"
+    },
+    "DM01_061.jpg": {
+      "card_id": "dm_01_073",
+      "name": "Crimson Hammer",
+      "confidence": 82.8,
+      "raw": "y= Gimson Hammer"
+    },
+    "DM01_062.jpg": {
+      "card_id": "dm_01_065",
+      "name": "Wandering Braineater",
+      "confidence": 93.0,
+      "raw": "YF Wandering Braineater-"
+    },
+    "DM01_063.jpg": {
+      "card_id": "dm_01_s07",
+      "name": "Astrocomet Dragon",
+      "confidence": 91.9,
+      "raw": "1B  Astrocomet Dragon"
+    },
+    "DM01_064.jpg": {
+      "card_id": "dm_01_019",
+      "name": "Solar Ray",
+      "confidence": 100.0,
+      "raw": "2 Solar Ray"
+    },
+    "DM01_065.jpg": {
+      "card_id": "dm_01_011",
+      "name": "Laser Wing",
+      "confidence": 100.0,
+      "raw": "5 Laser Wing"
+    },
+    "DM01_066.jpg": {
+      "card_id": "dm_01_026",
+      "name": "Aqua Vehicle",
+      "confidence": 81.5,
+      "raw": "24 ‘Aqua Vebicle"
+    },
+    "DM01_067.jpg": {
+      "card_id": "dm_01_083",
+      "name": "Nomad Hero Gigio",
+      "confidence": 83.3,
+      "raw": "EY Tlomad Hero Gigio"
+    },
+    "DM01_068.jpg": {
+      "card_id": "dm_01_099",
+      "name": "Natural Snare",
+      "confidence": 100.0,
+      "raw": "iy Tlatural Snare\nWee “i\\) fe, wee\nf Tae ae V5\n4 14 CN ef! i fait\nE> @ Shield trigger (When this spell is put into your 7\nSS hand from your shield zone, you may cast it a\nimmediately for no cost.) if\n$= Choose one of your opponent's creatures in the ral\nPs battle zone and put it into his mana zone. ¢",
+      "match": "text_fallback"
+    },
+    "DM01_069.jpg": {
+      "card_id": "dm_01_041",
+      "name": "Teleportation",
+      "confidence": 100.0,
+      "raw": "5 Teleportation"
+    },
+    "DM01_070.jpg": {
+      "card_id": "dm_01_030",
+      "name": "Faerie Child",
+      "confidence": 100.0,
+      "raw": "4 Faerie Child"
+    },
+    "DM01_071.jpg": {
+      "card_id": "dm_01_094",
+      "name": "Dome Shell",
+      "confidence": 90.9,
+      "raw": "4 Dome Shell c"
+    },
+    "DM01_072.jpg": {
+      "card_id": "dm_01_061",
+      "name": "Stinger Worm",
+      "confidence": 92.3,
+      "raw": "3 Stinger Worm a"
+    },
+    "DM01_073.jpg": {
+      "card_id": "dm_01_085",
+      "name": "Rothus, the Traveler",
+      "confidence": 85.0,
+      "raw": "4g Rotbus, the Travele:"
+    },
+    "DM01_074.jpg": {
+      "card_id": "dm_01_067",
+      "name": "Armored Walker Urherion",
+      "confidence": 89.8,
+      "raw": "LF Armored Walker Urberion"
+    },
+    "DM01_075.jpg": {
+      "card_id": "dm_01_054",
+      "name": "Ghost Touch",
+      "confidence": 100.0,
+      "raw": "ig “a\niG gli \\~\n\\ Hie: | SS]\nSf 3 NS\nCy a il \\\nWe\\ Fr | : xf;\noe -— - Ne]\nZh <D Shield trigger (When this spel is put into your )\nhand from your shield zone, you may cost it\nimmediately for no cost.) 4",
+      "match": "text_fallback"
+    },
+    "DM01_076.jpg": {
+      "card_id": "dm_01_080",
+      "name": "Immortal Baron, Vorg",
+      "confidence": 100.0,
+      "raw": "Y Immortal Baron, Vorg @"
+    },
+    "DM01_077.jpg": {
+      "card_id": "dm_01_014",
+      "name": "Moonlight Flash",
+      "confidence": 100.0,
+      "raw": "4 Moonlight Flash"
+    },
+    "DM01_078.jpg": {
+      "card_id": "dm_01_103",
+      "name": "Red-Eye Scorpion",
+      "confidence": 100.0,
+      "raw": "5 Red-Eye Scorpion |"
+    },
+    "DM01_079.jpg": {
+      "card_id": "dm_01_004",
+      "name": "Frei, Vizier of Air",
+      "confidence": 100.0,
+      "raw": "4 Frei, Vizier of Air"
+    },
+    "DM01_080.jpg": {
+      "card_id": "dm_01_107",
+      "name": "Thorny Mandra",
+      "confidence": 81.5,
+      "raw": "Thomy Mandra “J"
+    },
+    "DM01_081.jpg": {
+      "card_id": "dm_01_040",
+      "name": "Spiral Gate",
+      "confidence": 100.0,
+      "raw": "2 Spiral Gate"
+    },
+    "DM01_082.jpg": {
+      "card_id": "dm_01_110",
+      "name": "Ultimate Force",
+      "confidence": 90.3,
+      "raw": "EY Ultimate Force"
+    },
+    "DM01_083.jpg": {
+      "card_id": "dm_01_087",
+      "name": "Super Explosive Volcanodon",
+      "confidence": 90.6,
+      "raw": "4g Super Explosive Volcanod"
+    },
+    "DM01_084.jpg": {
+      "card_id": "dm_01_101",
+      "name": "Poisonous Dahlia",
+      "confidence": 88.2,
+      "raw": "4 Poisonous Dablia 7"
+    },
+    "DM01_085.jpg": {
+      "card_id": "dm_01_009",
+      "name": "La Ura Giga, Sky Guardian",
+      "confidence": 86.3,
+      "raw": "LF 1a Ura Giga, Shy Guardian |"
+    },
+    "DM01_086.jpg": {
+      "card_id": "dm_01_s09",
+      "name": "Deathblade Beetle",
+      "confidence": 100.0,
+      "raw": "Deathblade Beetle"
+    },
+    "DM01_087.jpg": {
+      "card_id": "dm_01_020",
+      "name": "Sonic Wing",
+      "confidence": 100.0,
+      "raw": "3 Sonic Wing"
+    },
+    "DM01_088.jpg": {
+      "card_id": "dm_01_025",
+      "name": "Aqua Soldier",
+      "confidence": 100.0,
+      "raw": "3 Aqua Soldier"
+    },
+    "DM01_089.jpg": {
+      "card_id": "dm_01_055",
+      "name": "Gigaberos",
+      "confidence": 100.0,
+      "raw": "5 Gigaberos :"
+    },
+    "DM01_090.jpg": {
+      "card_id": "dm_01_074",
+      "name": "Deadly Fighter Braid Claw",
+      "confidence": 92.3,
+      "raw": "ly Deadly Fighter Braid Cla"
+    },
+    "DM01_091.jpg": {
+      "card_id": "dm_01_045",
+      "name": "Black Feather, Shadow of Rage",
+      "confidence": 100.0,
+      "raw": "1 Black feather, Shadow of Rage]"
+    },
+    "DM01_092.jpg": {
+      "card_id": "dm_01_108",
+      "name": "Tower Shell",
+      "confidence": 78.6,
+      "raw": "5 gg Tower Shell bs"
+    },
+    "DM01_093.jpg": {
+      "card_id": "dm_01_078",
+      "name": "Fire Sweeper Burning Hellion",
+      "confidence": 85.2,
+      "raw": "UD fire Sweeper Burning He!"
+    },
+    "DM01_094.jpg": {
+      "card_id": "dm_01_031",
+      "name": "Hunter Fish",
+      "confidence": 100.0,
+      "raw": "2 Hunter Fish"
+    },
+    "DM01_095.jpg": {
+      "card_id": "dm_01_043",
+      "name": "Unicorn Fish",
+      "confidence": 87.0,
+      "raw": "4 Unicom Fish"
+    },
+    "DM01_096.jpg": {
+      "card_id": "dm_01_047",
+      "name": "Bone Assassin, the Ripper",
+      "confidence": 100.0,
+      "raw": "a Bone Assassin, the Ripper"
+    },
+    "DM01_097.jpg": {
+      "card_id": "dm_01_s04",
+      "name": "King Depthcon",
+      "confidence": 100.0,
+      "raw": "7 King Depthcon"
+    },
+    "DM01_098.jpg": {
+      "card_id": "dm_01_032",
+      "name": "Illusionary Merfolk",
+      "confidence": 90.0,
+      "raw": "54 Ilusionary Merfolk"
+    },
+    "DM01_099.jpg": {
+      "card_id": "dm_01_012",
+      "name": "Lok, Vizier of Hunting",
+      "confidence": 100.0,
+      "raw": "y Lok, Vizier of Hunting"
+    },
+    "DM01_100.jpg": {
+      "card_id": "dm_01_037",
+      "name": "Revolver Fish",
+      "confidence": 92.3,
+      "raw": "4 Revolver Fisb :"
+    },
+    "DM01_101.jpg": {
+      "card_id": "dm_01_082",
+      "name": "Meteosaur",
+      "confidence": 85.7,
+      "raw": "54 Meteosaur"
+    },
+    "DM01_102.jpg": {
+      "card_id": "dm_01_053",
+      "name": "Death Smoke",
+      "confidence": 66.0,
+      "raw": "s \\\\ ~ A A SS |\nZa = Destroy one of your opponent's untapped creatures. i]",
+      "match": "text_fallback"
+    },
+    "DM01_103.jpg": {
+      "card_id": "dm_01_017",
+      "name": "Ruby Grass",
+      "confidence": 100.0,
+      "raw": "3 Ruby Grass"
+    },
+    "DM01_104.jpg": {
+      "card_id": "dm_01_064",
+      "name": "Vampire Silphy",
+      "confidence": 92.9,
+      "raw": "8 Vampire Silpby :"
+    },
+    "DM01_105.jpg": {
+      "card_id": "dm_01_s05",
+      "name": "Deathliger, Lion of Chaos",
+      "confidence": 92.0,
+      "raw": "7 Deatbliger, Lion of Chaos j"
+    },
+    "DM01_106.jpg": {
+      "card_id": "dm_01_050",
+      "name": "Dark Clown",
+      "confidence": 90.9,
+      "raw": "y Dark Clown P"
+    },
+    "DM01_107.jpg": {
+      "card_id": "dm_01_066",
+      "name": "Writhing Bone Ghoul",
+      "confidence": 94.7,
+      "raw": "2 Writbing Bone Ghoul"
+    },
+    "DM01_108.jpg": {
+      "card_id": "dm_01_092",
+      "name": "Coiling Vines",
+      "confidence": 89.7,
+      "raw": "4 Coiling Vines Bs,"
+    },
+    "DM01_109.jpg": {
+      "card_id": "dm_01_058",
+      "name": "Masked Horror, Shadow of Scorn",
+      "confidence": 94.7,
+      "raw": "5 Masked Horror, Shadow of Scoi"
+    },
+    "DM01_110.jpg": {
+      "card_id": "dm_01_077",
+      "name": "Fatal Attacker Horvath",
+      "confidence": 93.6,
+      "raw": "ER fatal Attacker Horvath |"
+    },
+    "DM01_111.jpg": {
+      "card_id": "dm_01_060",
+      "name": "Skeleton Soldier, the Defiled",
+      "confidence": 94.9,
+      "raw": "EW Skeleton Soldier, the Defiled,"
+    },
+    "DM01_112.jpg": {
+      "card_id": "dm_01_021",
+      "name": "Szubs Kin, Twilight Guardian",
+      "confidence": 94.7,
+      "raw": "EW Szubs Kin, Twilight Guardian"
+    },
+    "DM01_113.jpg": {
+      "card_id": "dm_01_003",
+      "name": "Emerald Grass",
+      "confidence": 100.0,
+      "raw": "2 Emerald Grass"
+    },
+    "DM01_114.jpg": {
+      "card_id": "dm_01_062",
+      "name": "Swamp Worm",
+      "confidence": 90.9,
+      "raw": "L Swamp Worm : 4"
+    },
+    "DM01_115.jpg": {
+      "card_id": "dm_01_034",
+      "name": "King Ripped-Hide",
+      "confidence": 91.4,
+      "raw": "ly King Ripped-Hide"
+    },
+    "DM01_116.jpg": {
+      "card_id": "dm_01_059",
+      "name": "Night Master, Shadow of Decay",
+      "confidence": 69.1,
+      "raw": "6 Thight Master, Shadow of Deg"
+    },
+    "DM01_117.jpg": {
+      "card_id": "dm_01_046",
+      "name": "Bloody Squito",
+      "confidence": 100.0,
+      "raw": "2 Bloody Squito ;"
+    },
+    "DM01_118.jpg": {
+      "card_id": "dm_01_076",
+      "name": "Explosive Fighter Ucarn",
+      "confidence": 91.7,
+      "raw": "EY Explosive Fighter Ucar"
+    },
+    "DM01_119.jpg": {
+      "card_id": "dm_01_002",
+      "name": "Dia Nork, Moonlight Guardian",
+      "confidence": 94.7,
+      "raw": "iB Dia Nork, Moonlight Guardian"
+    },
+    "DM01_120.jpg": {
+      "card_id": "dm_01_095",
+      "name": "Fear Fang",
+      "confidence": 100.0,
+      "raw": "override",
+      "match": "override"
+    }
+  },
+  "DM-02": {
+    "DM02_001.jpg": {
+      "card_id": "dm_02_035",
+      "name": "Bolzard Dragon",
+      "confidence": 90.3,
+      "raw": "Es Bolzard Dragon"
+    },
+    "DM02_002.jpg": {
+      "card_id": "dm_02_040",
+      "name": "Engineer Kipo",
+      "confidence": 89.7,
+      "raw": "24 Engineer Kipo"
+    },
+    "DM02_003.jpg": {
+      "card_id": "dm_02_s05",
+      "name": "Fighter Dual Fang",
+      "confidence": 100.0,
+      "raw": "6 Fighter Dual Fang"
+    },
+    "DM02_004.jpg": {
+      "card_id": "dm_02_006",
+      "name": "Logic Cube",
+      "confidence": 100.0,
+      "raw": "3 Logic Cube"
+    },
+    "DM02_005.jpg": {
+      "card_id": "dm_02_008",
+      "name": "Phal Eega, Dawn Guardian",
+      "confidence": 91.7,
+      "raw": "ER Phal €ega, Dawn Guardian |"
+    },
+    "DM02_006.jpg": {
+      "card_id": "dm_02_010",
+      "name": "Spiral Grass",
+      "confidence": 100.0,
+      "raw": "4 Spiral Grass"
+    },
+    "DM02_007.jpg": {
+      "card_id": "dm_02_011",
+      "name": "Wyn, the Oracle",
+      "confidence": 96.6,
+      "raw": "2 Wypn, the Oracle"
+    },
+    "DM02_008.jpg": {
+      "card_id": "dm_02_s03",
+      "name": "Ultracide Worm",
+      "confidence": 93.3,
+      "raw": "6 Ultracide Worm s"
+    },
+    "DM02_009.jpg": {
+      "card_id": "dm_02_034",
+      "name": "Armored Cannon Balbaro",
+      "confidence": 89.4,
+      "raw": "EJ armored Cannon Balbara"
+    },
+    "DM02_010.jpg": {
+      "card_id": "dm_02_048",
+      "name": "Fortress Shell",
+      "confidence": 90.3,
+      "raw": ") Fortress Shell By"
+    },
+    "DM02_011.jpg": {
+      "card_id": "dm_02_026",
+      "name": "Dark Titan Maginn",
+      "confidence": 100.0,
+      "raw": "6 Dark Titan Maginn"
+    },
+    "DM02_012.jpg": {
+      "card_id": "dm_02_015",
+      "name": "Crystal Lancer",
+      "confidence": 93.3,
+      "raw": "i] Crystal Lancer"
+    },
+    "DM02_013.jpg": {
+      "card_id": "dm_02_002",
+      "name": "Ethel, Star Sea Elemental",
+      "confidence": 94.1,
+      "raw": "iB Ethel, Star Sea Elemental"
+    },
+    "DM02_014.jpg": {
+      "card_id": "dm_02_s02",
+      "name": "Crystal Paladin",
+      "confidence": 100.0,
+      "raw": "4 Crystal Paladin"
+    },
+    "DM02_015.jpg": {
+      "card_id": "dm_02_045",
+      "name": "Barkwhip, the Smasher",
+      "confidence": 87.0,
+      "raw": "YJ Barkwhip, the Smasher By"
+    },
+    "DM02_016.jpg": {
+      "card_id": "dm_02_032",
+      "name": "Marrow Ooze, the Twister",
+      "confidence": 93.9,
+      "raw": "1H Marrow Ooze, the Twister"
+    },
+    "DM02_017.jpg": {
+      "card_id": "dm_02_037",
+      "name": "Burst Shot",
+      "confidence": 100.0,
+      "raw": "6 Burst Shot"
+    },
+    "DM02_018.jpg": {
+      "card_id": "dm_02_016",
+      "name": "Hypersquid Walter",
+      "confidence": 100.0,
+      "raw": "3 Hypersquid Walter"
+    },
+    "DM02_019.jpg": {
+      "card_id": "dm_02_017",
+      "name": "King Nautilus",
+      "confidence": 100.0,
+      "raw": "8 King Nautilus"
+    },
+    "DM02_020.jpg": {
+      "card_id": "dm_02_s01",
+      "name": "Ladia Bale, the Inspirational",
+      "confidence": 94.9,
+      "raw": "LF Ladia Bale, the Inspirational"
+    },
+    "DM02_021.jpg": {
+      "card_id": "dm_02_046",
+      "name": "Elf-X",
+      "confidence": 83.3,
+      "raw": "y elf-x 3"
+    },
+    "DM02_022.jpg": {
+      "card_id": "dm_02_021",
+      "name": "Stained Glass",
+      "confidence": 100.0,
+      "raw": "3 Stained Glass"
+    },
+    "DM02_023.jpg": {
+      "card_id": "dm_02_028",
+      "name": "Gigastand",
+      "confidence": 90.0,
+      "raw": "4 Gigastand p"
+    },
+    "DM02_024.jpg": {
+      "card_id": "dm_02_024",
+      "name": "Chaos Worm",
+      "confidence": 87.0,
+      "raw": "5 Chaos Worm ay"
+    },
+    "DM02_025.jpg": {
+      "card_id": "dm_02_052",
+      "name": "Rumbling Terahorn",
+      "confidence": 88.9,
+      "raw": "5 Rumbling Teraborn #4"
+    },
+    "DM02_026.jpg": {
+      "card_id": "dm_02_030",
+      "name": "Horrid Worm",
+      "confidence": 100.0,
+      "raw": "a Horrid Worm ;"
+    },
+    "DM02_027.jpg": {
+      "card_id": "dm_02_007",
+      "name": "Magris, Vizier of Magnetism",
+      "confidence": 100.0,
+      "raw": "4 Magris, Vizier of Magnetism"
+    },
+    "DM02_028.jpg": {
+      "card_id": "dm_02_020",
+      "name": "Scissor Eye",
+      "confidence": 100.0,
+      "raw": "override",
+      "match": "override"
+    },
+    "DM02_029.jpg": {
+      "card_id": "dm_02_023",
+      "name": "Amber Piercer",
+      "confidence": 100.0,
+      "raw": "y Amber Piercer ;"
+    },
+    "DM02_030.jpg": {
+      "card_id": "dm_02_029",
+      "name": "Gray Balloon, Shadow of Greed",
+      "confidence": 100.0,
+      "raw": "3 Gray Balloon, Shadow of Greed]"
+    },
+    "DM02_031.jpg": {
+      "card_id": "dm_02_055",
+      "name": "Xeno Mantis",
+      "confidence": 88.0,
+      "raw": "7 Xeno Mantis Bs,"
+    },
+    "DM02_032.jpg": {
+      "card_id": "dm_02_039",
+      "name": "Dogarn, the Marauder",
+      "confidence": 90.0,
+      "raw": "ER Dogar, the Marauder"
+    },
+    "DM02_033.jpg": {
+      "card_id": "dm_02_053",
+      "name": "Silver Axe",
+      "confidence": 90.9,
+      "raw": "3 Silver Axe i"
+    },
+    "DM02_034.jpg": {
+      "card_id": "dm_02_003",
+      "name": "Fonch, the Oracle",
+      "confidence": 100.0,
+      "raw": "4 Fonch, the Oracle"
+    },
+    "DM02_035.jpg": {
+      "card_id": "dm_02_022",
+      "name": "Thought Probe",
+      "confidence": 100.0,
+      "raw": "4 Thought Probe"
+    },
+    "DM02_036.jpg": {
+      "card_id": "dm_02_025",
+      "name": "Critical Blade",
+      "confidence": 92.9,
+      "raw": "2 Gritical Blade |"
+    },
+    "DM02_037.jpg": {
+      "card_id": "dm_02_043",
+      "name": "Mini Titan Gett",
+      "confidence": 90.9,
+      "raw": "YJ ‘Mini Titan Gett"
+    },
+    "DM02_038.jpg": {
+      "card_id": "dm_02_049",
+      "name": "Leaping Tornado Horn",
+      "confidence": 80.0,
+      "raw": "EJ Leaping Tomado Horn bs,"
+    },
+    "DM02_039.jpg": {
+      "card_id": "dm_02_001",
+      "name": "Diamond Cutter",
+      "confidence": 90.3,
+      "raw": "EY Diamond Cutter"
+    },
+    "DM02_040.jpg": {
+      "card_id": "dm_02_019",
+      "name": "Recon Operation",
+      "confidence": 100.0,
+      "raw": "2 Recon Operation"
+    },
+    "DM02_041.jpg": {
+      "card_id": "dm_02_012",
+      "name": "Aqua Bouncer",
+      "confidence": 100.0,
+      "raw": "6 Aqua Bouncer"
+    },
+    "DM02_042.jpg": {
+      "card_id": "dm_02_009",
+      "name": "Reso Pacos, Clear Sky Guardian",
+      "confidence": 95.1,
+      "raw": "ER Reso Pacos, Clear Sky Guardian"
+    },
+    "DM02_043.jpg": {
+      "card_id": "dm_02_004",
+      "name": "Laguna, Lightning Enforcer",
+      "confidence": 100.0,
+      "raw": "5 Laguna, Lightning Enforcer"
+    },
+    "DM02_044.jpg": {
+      "card_id": "dm_02_041",
+      "name": "Galsaur",
+      "confidence": 100.0,
+      "raw": "5 Galsaur"
+    },
+    "DM02_045.jpg": {
+      "card_id": "dm_02_050",
+      "name": "Mana Crisis",
+      "confidence": 72.0,
+      "raw": "q Mana Gisis zal"
+    },
+    "DM02_046.jpg": {
+      "card_id": "dm_02_038",
+      "name": "Cavalry General Curatops",
+      "confidence": 100.0,
+      "raw": "3 \"Cavalry General Curatops"
+    },
+    "DM02_047.jpg": {
+      "card_id": "dm_02_044",
+      "name": "Rumble Gate",
+      "confidence": 100.0,
+      "raw": "4 Rumble Gate"
+    },
+    "DM02_048.jpg": {
+      "card_id": "dm_02_042",
+      "name": "Metalwing Skyterror",
+      "confidence": 100.0,
+      "raw": "7 Metalwing Skyterror"
+    },
+    "DM02_049.jpg": {
+      "card_id": "dm_02_054",
+      "name": "Silver Fist",
+      "confidence": 100.0,
+      "raw": "Silver Fist #"
+    },
+    "DM02_050.jpg": {
+      "card_id": "dm_02_036",
+      "name": "Bombersaur",
+      "confidence": 100.0,
+      "raw": "5 Bombersaur"
+    },
+    "DM02_051.jpg": {
+      "card_id": "dm_02_s04",
+      "name": "Armored Blaster Valdios",
+      "confidence": 93.9,
+      "raw": "LB Armored Blaster Valdios"
+    },
+    "DM02_052.jpg": {
+      "card_id": "dm_02_033",
+      "name": "Poison Worm",
+      "confidence": 100.0,
+      "raw": "q Poison Worm :"
+    },
+    "DM02_053.jpg": {
+      "card_id": "dm_02_014",
+      "name": "Corile",
+      "confidence": 80.0,
+      "raw": "SJ Corile"
+    },
+    "DM02_054.jpg": {
+      "card_id": "dm_02_047",
+      "name": "Essence Elf",
+      "confidence": 75.9,
+      "raw": "2g Essence Elf 3 B"
+    },
+    "DM02_055.jpg": {
+      "card_id": "dm_02_013",
+      "name": "Aqua Shooter",
+      "confidence": 100.0,
+      "raw": "4 Aqua Shooter"
+    },
+    "DM02_056.jpg": {
+      "card_id": "dm_02_018",
+      "name": "Plasma Chaser",
+      "confidence": 100.0,
+      "raw": "6 Plasma Chaser"
+    },
+    "DM02_057.jpg": {
+      "card_id": "dm_02_031",
+      "name": "Lost Soul",
+      "confidence": 64.0,
+      "raw": "Mt AW (ee\nYas a\n= Your opponent discards all cards in his hand. J",
+      "match": "text_fallback"
+    },
+    "DM02_058.jpg": {
+      "card_id": "dm_02_027",
+      "name": "General Dark Fiend",
+      "confidence": 91.9,
+      "raw": "5 General Darth Fiend"
+    },
+    "DM02_059.jpg": {
+      "card_id": "dm_02_005",
+      "name": "Larba Geer, the Immaculate",
+      "confidence": 90.6,
+      "raw": "ER Latba Geer, the Immaculate"
+    },
+    "DM02_060.jpg": {
+      "card_id": "dm_02_051",
+      "name": "Rainbow Stone",
+      "confidence": 89.7,
+      "raw": "59. Rainbow Stone"
+    }
+  },
+  "DM-03": {
+    "DM03_001.jpg": {
+      "card_id": "dm_03_028",
+      "name": "Hang Worm, Fetid Larva",
+      "confidence": 88.9,
+      "raw": "5, Hang Wom, fetid Larva p"
+    },
+    "DM03_002.jpg": {
+      "card_id": "dm_03_044",
+      "name": "Volcanic Arrows",
+      "confidence": 100.0,
+      "raw": "2 Volcanic Arrows"
+    },
+    "DM03_003.jpg": {
+      "card_id": "dm_03_038",
+      "name": "Explosive Dude Joe",
+      "confidence": 100.0,
+      "raw": "3 Explosive Dude Joe"
+    },
+    "DM03_004.jpg": {
+      "card_id": "dm_03_021",
+      "name": "Shtra",
+      "confidence": 100.0,
+      "raw": "4 Shtra"
+    },
+    "DM03_005.jpg": {
+      "card_id": "dm_03_029",
+      "name": "Jack Viper, Shadow of Doom",
+      "confidence": 94.3,
+      "raw": "Ey Jack Viper, Shadow of Doom"
+    },
+    "DM03_006.jpg": {
+      "card_id": "dm_03_020",
+      "name": "Psychic Shaper",
+      "confidence": 100.0,
+      "raw": "E Psychic Shaper"
+    },
+    "DM03_007.jpg": {
+      "card_id": "dm_03_027",
+      "name": "Ghastly Drain",
+      "confidence": 89.7,
+      "raw": "Ly Ghastly Drain"
+    },
+    "DM03_008.jpg": {
+      "card_id": "dm_03_046",
+      "name": "Dawn Giant",
+      "confidence": 90.9,
+      "raw": "7 Dawn Giant B,"
+    },
+    "DM03_009.jpg": {
+      "card_id": "dm_03_018",
+      "name": "Legendary Bynor",
+      "confidence": 100.0,
+      "raw": "6 Legendary Bynor"
+    },
+    "DM03_010.jpg": {
+      "card_id": "dm_03_013",
+      "name": "Aqua Deformer",
+      "confidence": 100.0,
+      "raw": "8 Aqua Deformer"
+    },
+    "DM03_011.jpg": {
+      "card_id": "dm_03_017",
+      "name": "King Ponitas",
+      "confidence": 88.9,
+      "raw": "BY King Ponitas"
+    },
+    "DM03_012.jpg": {
+      "card_id": "dm_03_016",
+      "name": "King Neptas",
+      "confidence": 100.0,
+      "raw": "6 King Neptas"
+    },
+    "DM03_013.jpg": {
+      "card_id": "dm_03_s04",
+      "name": "Garkago Dragon",
+      "confidence": 83.9,
+      "raw": "75 Gatkago Dragon"
+    },
+    "DM03_014.jpg": {
+      "card_id": "dm_03_001",
+      "name": "Alek, Solidity Enforcer",
+      "confidence": 75.6,
+      "raw": "7 fllek, Solidity Enforcer"
+    },
+    "DM03_015.jpg": {
+      "card_id": "dm_03_035",
+      "name": "Baby Zoppe",
+      "confidence": 100.0,
+      "raw": "3 Baby Zoppe"
+    },
+    "DM03_016.jpg": {
+      "card_id": "dm_03_015",
+      "name": "Flood Valve",
+      "confidence": 100.0,
+      "raw": "2 Flood Valve"
+    },
+    "DM03_017.jpg": {
+      "card_id": "dm_03_048",
+      "name": "Mana Nexus",
+      "confidence": 90.0,
+      "raw": "4 Mana Texus"
+    },
+    "DM03_018.jpg": {
+      "card_id": "dm_03_s05",
+      "name": "Earthstomp Giant",
+      "confidence": 100.0,
+      "raw": "5 Earthstomp Giant"
+    },
+    "DM03_019.jpg": {
+      "card_id": "dm_03_043",
+      "name": "Ãœberdragon Jabaha",
+      "confidence": 100.0,
+      "raw": "ia NY\nly Uberdragon Jababa\nte, So ‘ tla L at\nawe \\ mae\na Ube oS\nPe, g 4 IW\nas- wa\ne ; @ ; ix\n4 £ =e SE \\\nYe 4X",
+      "match": "text_fallback"
+    },
+    "DM03_020.jpg": {
+      "card_id": "dm_03_051",
+      "name": "Psyshroom",
+      "confidence": 80.0,
+      "raw": "4 Psysbroom B"
+    },
+    "DM03_021.jpg": {
+      "card_id": "dm_03_004",
+      "name": "Lena, Vizier of Brilliance",
+      "confidence": 100.0,
+      "raw": "q Lena, Vizier of Brilliance"
+    },
+    "DM03_022.jpg": {
+      "card_id": "dm_03_s01",
+      "name": "Miar, Comet Elemental",
+      "confidence": 100.0,
+      "raw": "J Miar, Comet Elemental"
+    },
+    "DM03_023.jpg": {
+      "card_id": "dm_03_011",
+      "name": "Ur Pale, Seeker of Sunlight",
+      "confidence": 100.0,
+      "raw": "4 Ur Pale, Seeker of Sunlight |"
+    },
+    "DM03_024.jpg": {
+      "card_id": "dm_03_025",
+      "name": "Eldritch Poison",
+      "confidence": 100.0,
+      "raw": "1 Eldritch Poison"
+    },
+    "DM03_025.jpg": {
+      "card_id": "dm_03_055",
+      "name": "Sword Butterfly",
+      "confidence": 90.9,
+      "raw": "ER = Sword Butterfly"
+    },
+    "DM03_026.jpg": {
+      "card_id": "dm_03_040",
+      "name": "Muramasa, Duke of Blades",
+      "confidence": 100.0,
+      "raw": "6 Muramasa, Duke of Blades"
+    },
+    "DM03_027.jpg": {
+      "card_id": "dm_03_054",
+      "name": "Sniper Mosquito",
+      "confidence": 100.0,
+      "raw": "1 Sniper Mosquito"
+    },
+    "DM03_028.jpg": {
+      "card_id": "dm_03_005",
+      "name": "Logic Sphere",
+      "confidence": 100.0,
+      "raw": "3 Logic Sphere ]"
+    },
+    "DM03_029.jpg": {
+      "card_id": "dm_03_s02",
+      "name": "Chaos Fish",
+      "confidence": 100.0,
+      "raw": "7 Chaos Fish"
+    },
+    "DM03_030.jpg": {
+      "card_id": "dm_03_045",
+      "name": "Aurora of Reversal",
+      "confidence": 92.3,
+      "raw": "EY. Aurora of Reversal"
+    },
+    "DM03_031.jpg": {
+      "card_id": "dm_03_002",
+      "name": "Aless, the Oracle",
+      "confidence": 83.3,
+      "raw": "6G flless, the Oracle"
+    },
+    "DM03_032.jpg": {
+      "card_id": "dm_03_s03",
+      "name": "Giriel, Ghastly Warrior",
+      "confidence": 95.5,
+      "raw": "8 Giriel, Ghastly Wartior ~"
+    },
+    "DM03_033.jpg": {
+      "card_id": "dm_03_010",
+      "name": "Sundrop Armor",
+      "confidence": 100.0,
+      "raw": "4 Sundrop Armor"
+    },
+    "DM03_034.jpg": {
+      "card_id": "dm_03_006",
+      "name": "Ra Vu, Seeker of Lightning",
+      "confidence": 94.3,
+      "raw": "ie Ra Vu, Seeker of Lightning |"
+    },
+    "DM03_035.jpg": {
+      "card_id": "dm_03_003",
+      "name": "Boomerang Comet",
+      "confidence": 100.0,
+      "raw": "6 Boomerang Comet"
+    },
+    "DM03_036.jpg": {
+      "card_id": "dm_03_026",
+      "name": "Gamil, Knight of Hatred",
+      "confidence": 93.6,
+      "raw": "EF Gamil, Knight of Hatred |"
+    },
+    "DM03_037.jpg": {
+      "card_id": "dm_03_034",
+      "name": "Armored Warrior Quelos",
+      "confidence": 93.6,
+      "raw": "EY: Armored Warrior Quelos"
+    },
+    "DM03_038.jpg": {
+      "card_id": "dm_03_009",
+      "name": "Sparkle Flower",
+      "confidence": 100.0,
+      "raw": "4 Sparkle Flower"
+    },
+    "DM03_039.jpg": {
+      "card_id": "dm_03_033",
+      "name": "Wailing Shadow Belbetphlo",
+      "confidence": 90.6,
+      "raw": "EB] Wailing Shadow Belbetpblo"
+    },
+    "DM03_040.jpg": {
+      "card_id": "dm_03_031",
+      "name": "Scratchclaw",
+      "confidence": 91.7,
+      "raw": "Scratchclaw 3"
+    },
+    "DM03_041.jpg": {
+      "card_id": "dm_03_050",
+      "name": "Pouch Shell",
+      "confidence": 91.7,
+      "raw": "4 Pouch Shell a"
+    },
+    "DM03_042.jpg": {
+      "card_id": "dm_03_008",
+      "name": "Sieg Balicula, the Intense",
+      "confidence": 100.0,
+      "raw": "3 Sieg Balicula, the Intense"
+    },
+    "DM03_043.jpg": {
+      "card_id": "dm_03_039",
+      "name": "Flametropus",
+      "confidence": 100.0,
+      "raw": "4 Flametropus"
+    },
+    "DM03_044.jpg": {
+      "card_id": "dm_03_042",
+      "name": "Snip Striker Bullraizer",
+      "confidence": 93.9,
+      "raw": "YJ Snip Striker Bullraizer"
+    },
+    "DM03_045.jpg": {
+      "card_id": "dm_03_041",
+      "name": "Searing Wave",
+      "confidence": 100.0,
+      "raw": "5 Searing Wave"
+    },
+    "DM03_046.jpg": {
+      "card_id": "dm_03_036",
+      "name": "Blaze Cannon",
+      "confidence": 100.0,
+      "raw": "7 Blaze Cannon"
+    },
+    "DM03_047.jpg": {
+      "card_id": "dm_03_014",
+      "name": "Emeral",
+      "confidence": 100.0,
+      "raw": "2 Emeral"
+    },
+    "DM03_048.jpg": {
+      "card_id": "dm_03_024",
+      "name": "Bone Piercer",
+      "confidence": 100.0,
+      "raw": "J Bone Piercer ;"
+    },
+    "DM03_049.jpg": {
+      "card_id": "dm_03_019",
+      "name": "Liquid Scope",
+      "confidence": 100.0,
+      "raw": "4 Liquid Scope"
+    },
+    "DM03_050.jpg": {
+      "card_id": "dm_03_047",
+      "name": "Gigamantis",
+      "confidence": 80.0,
+      "raw": "4g Gigamantis B"
+    },
+    "DM03_051.jpg": {
+      "card_id": "dm_03_037",
+      "name": "Boltail Dragon",
+      "confidence": 90.3,
+      "raw": "15 Boltail Dragon"
+    },
+    "DM03_052.jpg": {
+      "card_id": "dm_03_023",
+      "name": "Baraga, Blade of Gloom",
+      "confidence": 93.3,
+      "raw": "BJ Baraga, Blade of Gloom |"
+    },
+    "DM03_053.jpg": {
+      "card_id": "dm_03_052",
+      "name": "Raging Dash-Horn",
+      "confidence": 94.0,
+      "raw": "ia 4s\nri ysi\\ )\\, le\noe JES AS\nBa © = While all the cards in your mana zone are nature\nBe. cards, this creature gets +3000 power and has 5\n‘ \"Double breaker (This creature breaks 2 shields).” \"\nBec The night the Fiona Woods were finally defeated, the sky",
+      "match": "text_fallback"
+    },
+    "DM03_054.jpg": {
+      "card_id": "dm_03_007",
+      "name": "Raza Vega, Thunder Guardian",
+      "confidence": 91.2,
+      "raw": "10 p Raza Vega, Thunder Guardian"
+    },
+    "DM03_055.jpg": {
+      "card_id": "dm_03_030",
+      "name": "Mudman",
+      "confidence": 100.0,
+      "raw": "override",
+      "match": "override"
+    },
+    "DM03_056.jpg": {
+      "card_id": "dm_03_049",
+      "name": "Masked Pomegranate",
+      "confidence": 92.3,
+      "raw": "a Masked Pomegranate By,"
+    },
+    "DM03_057.jpg": {
+      "card_id": "dm_03_012",
+      "name": "Angler Cluster",
+      "confidence": 100.0,
+      "raw": "3 Angler Cluster"
+    },
+    "DM03_058.jpg": {
+      "card_id": "dm_03_032",
+      "name": "Snake Attack",
+      "confidence": 100.0,
+      "raw": "4 Snake Attack ]"
+    },
+    "DM03_059.jpg": {
+      "card_id": "dm_03_022",
+      "name": "Stinger Ball",
+      "confidence": 100.0,
+      "raw": "3 Stinger Ball"
+    },
+    "DM03_060.jpg": {
+      "card_id": "dm_03_053",
+      "name": "Roar of the Earth",
+      "confidence": 100.0,
+      "raw": "2 Roar of the Earth ="
+    }
+  },
+  "DM-04": {
+    "DM04_001.jpg": {
+      "card_id": "dm_04_042",
+      "name": "Kamikaze, Chainsaw Warrior",
+      "confidence": 89.4,
+      "raw": "2 © Kamikaze, Chainsaw Warm"
+    },
+    "DM04_002.jpg": {
+      "card_id": "dm_04_049",
+      "name": "Cannon Shell",
+      "confidence": 100.0,
+      "raw": "q Cannon Shell ;"
+    },
+    "DM04_003.jpg": {
+      "card_id": "dm_04_011",
+      "name": "Kolon, the Oracle",
+      "confidence": 100.0,
+      "raw": "q Kolon, the Oracle"
+    },
+    "DM04_004.jpg": {
+      "card_id": "dm_04_009",
+      "name": "Full Defensor",
+      "confidence": 100.0,
+      "raw": "2 Full Defensor"
+    },
+    "DM04_005.jpg": {
+      "card_id": "dm_04_046",
+      "name": "Pippie Kuppie",
+      "confidence": 100.0,
+      "raw": "2 Pippie Kuppie"
+    },
+    "DM04_006.jpg": {
+      "card_id": "dm_04_002",
+      "name": "Astral Warper",
+      "confidence": 100.0,
+      "raw": "6 Astral Warper"
+    },
+    "DM04_007.jpg": {
+      "card_id": "dm_04_050",
+      "name": "Dew Mushroom",
+      "confidence": 100.0,
+      "raw": "3 Dew Mushroom"
+    },
+    "DM04_008.jpg": {
+      "card_id": "dm_04_037",
+      "name": "Skeleton Thief, the Revealer",
+      "confidence": 94.7,
+      "raw": "LR Skeleton Thief, the Revealer"
+    },
+    "DM04_009.jpg": {
+      "card_id": "dm_04_021",
+      "name": "Clone Factory",
+      "confidence": 100.0,
+      "raw": "3 Clone Factory"
+    },
+    "DM04_010.jpg": {
+      "card_id": "dm_04_014",
+      "name": "Ouks, Vizier of Restoration",
+      "confidence": 100.0,
+      "raw": "5 Ouks, Vizier of Restoration"
+    },
+    "DM04_011.jpg": {
+      "card_id": "dm_04_005",
+      "name": "Supporting Tulip",
+      "confidence": 94.1,
+      "raw": "5 Supporting Tulip 4"
+    },
+    "DM04_012.jpg": {
+      "card_id": "dm_04_035",
+      "name": "Purple Piercer",
+      "confidence": 100.0,
+      "raw": "3 Purple Piercer"
+    },
+    "DM04_013.jpg": {
+      "card_id": "dm_04_022",
+      "name": "Hunter Cluster",
+      "confidence": 100.0,
+      "raw": "L | Hunter Cluster"
+    },
+    "DM04_014.jpg": {
+      "card_id": "dm_04_045",
+      "name": "Missile Boy",
+      "confidence": 91.7,
+      "raw": "3) Missile Boy"
+    },
+    "DM04_015.jpg": {
+      "card_id": "dm_04_047",
+      "name": "Sword of Malevolent Death",
+      "confidence": 94.3,
+      "raw": "EB Sword of Malevolent Death"
+    },
+    "DM04_016.jpg": {
+      "card_id": "dm_04_010",
+      "name": "Gulan Rias, Speed Guardian",
+      "confidence": 94.3,
+      "raw": "EJ Gulan Rias, Speed Guardian"
+    },
+    "DM04_017.jpg": {
+      "card_id": "dm_04_033",
+      "name": "Mongrel Man",
+      "confidence": 91.7,
+      "raw": "5 Mongrel Man “4"
+    },
+    "DM04_018.jpg": {
+      "card_id": "dm_04_007",
+      "name": "Amber Grass",
+      "confidence": 100.0,
+      "raw": "y Amber Grass"
+    },
+    "DM04_019.jpg": {
+      "card_id": "dm_04_043",
+      "name": "Magmarex",
+      "confidence": 84.2,
+      "raw": "5g Magmarex"
+    },
+    "DM04_020.jpg": {
+      "card_id": "dm_04_006",
+      "name": "Aeris, Flight Elemental",
+      "confidence": 71.1,
+      "raw": "5 fteris, Flight Elemental"
+    },
+    "DM04_021.jpg": {
+      "card_id": "dm_04_013",
+      "name": "Mist Rias, Sonic Guardian",
+      "confidence": 94.1,
+      "raw": "LW Mist Rias, Sonic Guardian"
+    },
+    "DM04_022.jpg": {
+      "card_id": "dm_04_004",
+      "name": "Doboulgyser, Giant Rock Beast",
+      "confidence": 100.0,
+      "raw": "5 Doboulgyser, Giant Rock Beast"
+    },
+    "DM04_023.jpg": {
+      "card_id": "dm_04_030",
+      "name": "Gregoria, Princess of War",
+      "confidence": 92.0,
+      "raw": "i) Gregoria, Princess of Wat]"
+    },
+    "DM04_024.jpg": {
+      "card_id": "dm_04_040",
+      "name": "Blasto, Explosive Soldier",
+      "confidence": 94.1,
+      "raw": "EJ Blasto, Explosive Soldier"
+    },
+    "DM04_025.jpg": {
+      "card_id": "dm_04_029",
+      "name": "Gigabolver",
+      "confidence": 100.0,
+      "raw": "4 Gigabolver"
+    },
+    "DM04_026.jpg": {
+      "card_id": "dm_04_012",
+      "name": "Milieus, the Daystretcher",
+      "confidence": 94.1,
+      "raw": "EY Milieus, the Daystretcher"
+    },
+    "DM04_027.jpg": {
+      "card_id": "dm_04_s02",
+      "name": "King Aquakamui",
+      "confidence": 100.0,
+      "raw": "7 King Aquakamui"
+    },
+    "DM04_028.jpg": {
+      "card_id": "dm_04_001",
+      "name": "Alcadeias, Lord of Spirits",
+      "confidence": 94.3,
+      "raw": "iF Alcadeias, Lord of Spirits"
+    },
+    "DM04_029.jpg": {
+      "card_id": "dm_04_051",
+      "name": "Exploding Cactus",
+      "confidence": 82.4,
+      "raw": "3g &pploding Cactus"
+    },
+    "DM04_030.jpg": {
+      "card_id": "dm_04_025",
+      "name": "Marinomancer",
+      "confidence": 100.0,
+      "raw": "5 Marinomancer"
+    },
+    "DM04_031.jpg": {
+      "card_id": "dm_04_s04",
+      "name": "Galklife Dragon",
+      "confidence": 93.3,
+      "raw": "7 Galblife Dragon"
+    },
+    "DM04_032.jpg": {
+      "card_id": "dm_04_023",
+      "name": "Hydro Hurricane",
+      "confidence": 100.0,
+      "raw": "6 Hydro Hurricane"
+    },
+    "DM04_033.jpg": {
+      "card_id": "dm_04_003",
+      "name": "Trox, General of Destruction",
+      "confidence": 100.0,
+      "raw": "7 Trox, General of Destruction"
+    },
+    "DM04_034.jpg": {
+      "card_id": "dm_04_027",
+      "name": "Chains of Sacrifice",
+      "confidence": 92.7,
+      "raw": "Ey chains of Sacrifice"
+    },
+    "DM04_035.jpg": {
+      "card_id": "dm_04_024",
+      "name": "Keeper of the Sunlit Abyss",
+      "confidence": 94.5,
+      "raw": "BW Keeper of the Sunlit Abyss"
+    },
+    "DM04_036.jpg": {
+      "card_id": "dm_04_048",
+      "name": "Ancient Giant",
+      "confidence": 100.0,
+      "raw": "Ancient Giant ;"
+    },
+    "DM04_037.jpg": {
+      "card_id": "dm_04_019",
+      "name": "Aqua Guard",
+      "confidence": 100.0,
+      "raw": "1 Aqua Guard"
+    },
+    "DM04_038.jpg": {
+      "card_id": "dm_04_038",
+      "name": "Soul Gulp",
+      "confidence": 90.0,
+      "raw": "Nicd g.\nFelval as\nNt Doth re)\nws 0%, 8 1S Fe\nSe ‘p. p hey\n. Ry Wat Wn\nwey\nGi; | . : f .\nNK patente a SAN\napart: us Mig Nicockawa",
+      "match": "text_fallback"
+    },
+    "DM04_039.jpg": {
+      "card_id": "dm_04_028",
+      "name": "Darkpact",
+      "confidence": 84.2,
+      "raw": "25 Darkpact"
+    },
+    "DM04_040.jpg": {
+      "card_id": "dm_04_020",
+      "name": "Aqua Jolter",
+      "confidence": 88.0,
+      "raw": "3g Aqua Jolter"
+    },
+    "DM04_041.jpg": {
+      "card_id": "dm_04_055",
+      "name": "Torcon",
+      "confidence": 80.0,
+      "raw": "2a Torcon"
+    },
+    "DM04_042.jpg": {
+      "card_id": "dm_04_015",
+      "name": "Re Bil, Seeker of Archery",
+      "confidence": 94.1,
+      "raw": "1H Re Bil, Seeker of Archery"
+    },
+    "DM04_043.jpg": {
+      "card_id": "dm_04_052",
+      "name": "Mystic Inscription",
+      "confidence": 94.7,
+      "raw": "i) Mystic Inscription =>"
+    },
+    "DM04_044.jpg": {
+      "card_id": "dm_04_017",
+      "name": "Screaming Sunburst",
+      "confidence": 94.7,
+      "raw": "3, Screaming Sunburst"
+    },
+    "DM04_045.jpg": {
+      "card_id": "dm_04_034",
+      "name": "Photocide, Lord of the Wastes",
+      "confidence": 94.9,
+      "raw": "EY Photocide, Lord of the Wastes:"
+    },
+    "DM04_046.jpg": {
+      "card_id": "dm_04_s05",
+      "name": "Niofa, Horned Protector",
+      "confidence": 72.7,
+      "raw": "J Tiofa, Horned Protector"
+    },
+    "DM04_047.jpg": {
+      "card_id": "dm_04_032",
+      "name": "Locomotiver",
+      "confidence": 91.7,
+      "raw": "4, Locomotiver :"
+    },
+    "DM04_048.jpg": {
+      "card_id": "dm_04_041",
+      "name": "Chaotic Skyterror",
+      "confidence": 100.0,
+      "raw": "5 Chaotic Skyterror"
+    },
+    "DM04_049.jpg": {
+      "card_id": "dm_04_031",
+      "name": "Gregorian Worm",
+      "confidence": 100.0,
+      "raw": "4 Gregorian Worm |"
+    },
+    "DM04_050.jpg": {
+      "card_id": "dm_04_s01",
+      "name": "Rimuel, Cloudbreak Elemental",
+      "confidence": 100.0,
+      "raw": ": % Rimuel, Cloudbreak Elemental"
+    },
+    "DM04_051.jpg": {
+      "card_id": "dm_04_018",
+      "name": "Whisking Whirlwind",
+      "confidence": 94.4,
+      "raw": "1 Whishing Whirlwind"
+    },
+    "DM04_052.jpg": {
+      "card_id": "dm_04_008",
+      "name": "Fu Reil, Seeker of Storms",
+      "confidence": 94.1,
+      "raw": "iY fu Reil, Seeker of Storms"
+    },
+    "DM04_053.jpg": {
+      "card_id": "dm_04_039",
+      "name": "Volcano Smog, Deceptive Shade",
+      "confidence": 100.0,
+      "raw": "J Volcano Smog, Deceptive Shade"
+    },
+    "DM04_054.jpg": {
+      "card_id": "dm_04_036",
+      "name": "Shadow Moon, Cursed Shade",
+      "confidence": 94.1,
+      "raw": "iB Shadow Moon, Cursed Shade"
+    },
+    "DM04_055.jpg": {
+      "card_id": "dm_04_054",
+      "name": "Three-Eyed Dragonfly",
+      "confidence": 88.9,
+      "raw": "Ey Three-Eyed Dragonfly 4"
+    },
+    "DM04_056.jpg": {
+      "card_id": "dm_04_026",
+      "name": "Smile Angler",
+      "confidence": 100.0,
+      "raw": "6 Smile Angler ’"
+    },
+    "DM04_057.jpg": {
+      "card_id": "dm_04_053",
+      "name": "Sword of Benevolent Life",
+      "confidence": 94.1,
+      "raw": "PJ. Sword of Benevolent Life."
+    },
+    "DM04_058.jpg": {
+      "card_id": "dm_04_044",
+      "name": "Mega Detonator",
+      "confidence": 93.3,
+      "raw": "2 Mega Detonator D"
+    },
+    "DM04_059.jpg": {
+      "card_id": "dm_04_016",
+      "name": "Sarius, Vizier of Suppression",
+      "confidence": 94.9,
+      "raw": "rH Sarius, Vizier of Suppression"
+    },
+    "DM04_060.jpg": {
+      "card_id": "dm_04_s03",
+      "name": "Ballom, Master of Death",
+      "confidence": 100.0,
+      "raw": "J Ballom, Master of Death"
+    }
+  },
+  "DM-05": {
+    "DM05_001.jpg": {
+      "card_id": "dm_05_042",
+      "name": "Kip Chippotto",
+      "confidence": 100.0,
+      "raw": "3 Kip Chippotto"
+    },
+    "DM05_002.jpg": {
+      "card_id": "dm_05_026",
+      "name": "Gigakail",
+      "confidence": 88.9,
+      "raw": "5 Gigakail p"
+    },
+    "DM05_003.jpg": {
+      "card_id": "dm_05_s02",
+      "name": "King Tsunami",
+      "confidence": 88.9,
+      "raw": "12 King Tsunami"
+    },
+    "DM05_004.jpg": {
+      "card_id": "dm_05_011",
+      "name": "La Guile, Seeker of Skyfire",
+      "confidence": 88.5,
+      "raw": "6 gr Guile, Seeker of Skyfire"
+    },
+    "DM05_005.jpg": {
+      "card_id": "dm_05_025",
+      "name": "Steel-Turret Cluster",
+      "confidence": 100.0,
+      "raw": "5 Steel-Turret Cluster"
+    },
+    "DM05_006.jpg": {
+      "card_id": "dm_05_045",
+      "name": "Twin-Cannon Skyterror",
+      "confidence": 95.5,
+      "raw": "1% Twin-Cannon Skyterror"
+    },
+    "DM05_007.jpg": {
+      "card_id": "dm_05_013",
+      "name": "Snork La, Shrine Guardian",
+      "confidence": 100.0,
+      "raw": "3 Snork La, Shrine Guardian"
+    },
+    "DM05_008.jpg": {
+      "card_id": "dm_05_041",
+      "name": "Cyclone Panic",
+      "confidence": 100.0,
+      "raw": "3 Cyclone Panic"
+    },
+    "DM05_009.jpg": {
+      "card_id": "dm_05_s01",
+      "name": "Syrius, Firmament Elemental",
+      "confidence": 90.9,
+      "raw": "ll Sytius, Firmament Elemental"
+    },
+    "DM05_010.jpg": {
+      "card_id": "dm_05_028",
+      "name": "Gigazoul",
+      "confidence": 100.0,
+      "raw": "override",
+      "match": "override"
+    },
+    "DM05_011.jpg": {
+      "card_id": "dm_05_015",
+      "name": "Thunder Net",
+      "confidence": 92.0,
+      "raw": "2 Tbunder Tet\nras\ni oy As\nil SY ee .\nVda -\nares\n* For each water creature you have in the battle zone,\nyou may choose one of your opponent's creatures in the\nbattle zone and tap it.\n“When the device is ctvated, one of electricity snares our",
+      "match": "text_fallback"
+    },
+    "DM05_012.jpg": {
+      "card_id": "dm_05_024",
+      "name": "Split-Head Hydroturtle Q",
+      "confidence": 94.1,
+      "raw": "EY Split-Head Hydroturtle Q"
+    },
+    "DM05_013.jpg": {
+      "card_id": "dm_05_006",
+      "name": "Ballus, Dogfight Enforcer Q",
+      "confidence": 94.5,
+      "raw": "EY Ballus, Dogfight Enforcer Q"
+    },
+    "DM05_014.jpg": {
+      "card_id": "dm_05_054",
+      "name": "Scissor Scarab",
+      "confidence": 100.0,
+      "raw": "7 Scissor Scarab :"
+    },
+    "DM05_015.jpg": {
+      "card_id": "dm_05_033",
+      "name": "Slime Veil",
+      "confidence": 76.0,
+      "raw": "ge y te S\n(f ht ee [a re\nBe Sen ee\nBy a a a a |\n<= TS Waltainka\nYj, = During your opponent's next turn, each of his \\\nYa) creatures attacks if able.\n\"Hey, you're really getting the hang of that. Now make him \\\\\\\nY do alittle dance.\" Dark Titan Maginn 4\n) Sie ae ae ( ziti Coos)",
+      "match": "text_fallback"
+    },
+    "DM05_016.jpg": {
+      "card_id": "dm_05_s05",
+      "name": "Avalanche Giant",
+      "confidence": 85.7,
+      "raw": "J” = Avalanche Giant bi:"
+    },
+    "DM05_017.jpg": {
+      "card_id": "dm_05_004",
+      "name": "Bladerush Skyterror Q",
+      "confidence": 86.4,
+      "raw": "1% Bladerush Skyterror 0"
+    },
+    "DM05_018.jpg": {
+      "card_id": "dm_05_020",
+      "name": "Pokolul",
+      "confidence": 100.0,
+      "raw": "y Pokolul"
+    },
+    "DM05_019.jpg": {
+      "card_id": "dm_05_009",
+      "name": "Glory Snow",
+      "confidence": 100.0,
+      "raw": "4 Glory Snow"
+    },
+    "DM05_020.jpg": {
+      "card_id": "dm_05_046",
+      "name": "Ambush Scorpion",
+      "confidence": 100.0,
+      "raw": "5 Ambush Scorpion"
+    },
+    "DM05_021.jpg": {
+      "card_id": "dm_05_044",
+      "name": "Ruthless Skyterror",
+      "confidence": 92.3,
+      "raw": "AB Ruthless Skyterror"
+    },
+    "DM05_022.jpg": {
+      "card_id": "dm_05_s03",
+      "name": "Death Cruzer, the Annihilator",
+      "confidence": 93.1,
+      "raw": "1% Death Cruzer, the Annibilator |"
+    },
+    "DM05_023.jpg": {
+      "card_id": "dm_05_055",
+      "name": "Smash Horn Q",
+      "confidence": 88.9,
+      "raw": "3 Smash Horn Q BS"
+    },
+    "DM05_024.jpg": {
+      "card_id": "dm_05_012",
+      "name": "Le Quist, the Oracle",
+      "confidence": 100.0,
+      "raw": "2 Le Quist, the Oracle"
+    },
+    "DM05_025.jpg": {
+      "card_id": "dm_05_007",
+      "name": "Calgo, Vizier of Rainclouds",
+      "confidence": 100.0,
+      "raw": "3 Calgo, Vizier of Rainclouds"
+    },
+    "DM05_026.jpg": {
+      "card_id": "dm_05_017",
+      "name": "Divine Riptide",
+      "confidence": 100.0,
+      "raw": ") Divine Riptide"
+    },
+    "DM05_027.jpg": {
+      "card_id": "dm_05_053",
+      "name": "Nocturnal Giant",
+      "confidence": 85.7,
+      "raw": "YJ Nocturnal Giant B"
+    },
+    "DM05_028.jpg": {
+      "card_id": "dm_05_005",
+      "name": "Obsidian Scarab",
+      "confidence": 100.0,
+      "raw": "6 Obsidian Scarab"
+    },
+    "DM05_029.jpg": {
+      "card_id": "dm_05_052",
+      "name": "Moon Horn",
+      "confidence": 70.0,
+      "raw": "6 Moon Hom Bi"
+    },
+    "DM05_030.jpg": {
+      "card_id": "dm_05_014",
+      "name": "Syforce, Aurora Elemental",
+      "confidence": 100.0,
+      "raw": "7 Syforce, Aurora Elemental"
+    },
+    "DM05_031.jpg": {
+      "card_id": "dm_05_040",
+      "name": "Cataclysmic Eruption",
+      "confidence": 100.0,
+      "raw": "8 Cataclysmic Eruption"
+    },
+    "DM05_032.jpg": {
+      "card_id": "dm_05_037",
+      "name": "Bolgash Dragon",
+      "confidence": 100.0,
+      "raw": "8 Bolgash Dragon"
+    },
+    "DM05_033.jpg": {
+      "card_id": "dm_05_034",
+      "name": "Vashuna, Sword Dancer",
+      "confidence": 85.7,
+      "raw": "EY Vasbuna, Sword Dance"
+    },
+    "DM05_034.jpg": {
+      "card_id": "dm_05_027",
+      "name": "Gigaling Q",
+      "confidence": 100.0,
+      "raw": "5 Gigaling Q"
+    },
+    "DM05_035.jpg": {
+      "card_id": "dm_05_022",
+      "name": "Solidskin Fish",
+      "confidence": 100.0,
+      "raw": "3 Solidskin Fish"
+    },
+    "DM05_036.jpg": {
+      "card_id": "dm_05_031",
+      "name": "Scheming Hands",
+      "confidence": 78.0,
+      "raw": "Rvall?, > Gh),\n2 a UIST A NTCVEM\nYj = Look at your opponent's hand and choose a card 1\nfrom it. Your opponent discards that card. 4)",
+      "match": "text_fallback"
+    },
+    "DM05_037.jpg": {
+      "card_id": "dm_05_018",
+      "name": "Lurking Eel",
+      "confidence": 96.0,
+      "raw": "ct o\n| | Re ED) ait\ntH ee ae © NS\nNU Nee\nSIP ie\nne . Cc iS\nBe). // pie eo Pe tot\n/ EN ee Cog A\nG Fire and nature blocker (Whenever an\nopponent's fire or nature creature attacks,",
+      "match": "text_fallback"
+    },
+    "DM05_038.jpg": {
+      "card_id": "dm_05_050",
+      "name": "Crow Winger",
+      "confidence": 80.0,
+      "raw": "2 Grow Winger Bi,"
+    },
+    "DM05_039.jpg": {
+      "card_id": "dm_05_036",
+      "name": "Blazosaur Q",
+      "confidence": 88.0,
+      "raw": "25 Blazosaur Q"
+    },
+    "DM05_040.jpg": {
+      "card_id": "dm_05_021",
+      "name": "Sea Slug",
+      "confidence": 100.0,
+      "raw": "8 Sea Slug"
+    },
+    "DM05_041.jpg": {
+      "card_id": "dm_05_047",
+      "name": "Balloonshroom Q",
+      "confidence": 90.3,
+      "raw": "4 Balloonsbroom Qf"
+    },
+    "DM05_042.jpg": {
+      "card_id": "dm_05_002",
+      "name": "King Mazelan",
+      "confidence": 100.0,
+      "raw": "8 King Mazelan"
+    },
+    "DM05_043.jpg": {
+      "card_id": "dm_05_019",
+      "name": "Miracle Quest",
+      "confidence": 100.0,
+      "raw": "3 Miracle Quest"
+    },
+    "DM05_044.jpg": {
+      "card_id": "dm_05_043",
+      "name": "Rikabu, the Dismantler",
+      "confidence": 100.0,
+      "raw": "3 Rikabu, the Dismantler"
+    },
+    "DM05_045.jpg": {
+      "card_id": "dm_05_008",
+      "name": "Gallia Zohl, Iron Guardian Q",
+      "confidence": 91.2,
+      "raw": "EY Gallia Zobl, Iron Guardian Q"
+    },
+    "DM05_046.jpg": {
+      "card_id": "dm_05_001",
+      "name": "La Byle, Seeker of the Winds",
+      "confidence": 86.2,
+      "raw": "LR 1.2 Byle, Secker of the Winds"
+    },
+    "DM05_047.jpg": {
+      "card_id": "dm_05_051",
+      "name": "Enchanted Soil",
+      "confidence": 90.3,
+      "raw": "LF Enchanted Soil"
+    },
+    "DM05_048.jpg": {
+      "card_id": "dm_05_035",
+      "name": "Wisp Howler, Shadow of Tears",
+      "confidence": 100.0,
+      "raw": "3 Wisp Howler, Shadow of Tears,"
+    },
+    "DM05_049.jpg": {
+      "card_id": "dm_05_010",
+      "name": "Kulus, Soulshine Enforcer",
+      "confidence": 95.8,
+      "raw": "y Kulus, Soulsbine Enforcer"
+    },
+    "DM05_050.jpg": {
+      "card_id": "dm_05_030",
+      "name": "Jewel Spider",
+      "confidence": 100.0,
+      "raw": "2 Jewel Spider :"
+    },
+    "DM05_051.jpg": {
+      "card_id": "dm_05_039",
+      "name": "Cannoneer Bargon",
+      "confidence": 100.0,
+      "raw": "a © Cannoneer Bargon"
+    },
+    "DM05_052.jpg": {
+      "card_id": "dm_05_038",
+      "name": "Bombat, General of Speed",
+      "confidence": 100.0,
+      "raw": "override",
+      "match": "override"
+    },
+    "DM05_053.jpg": {
+      "card_id": "dm_05_023",
+      "name": "Spikestrike Ichthys Q",
+      "confidence": 90.9,
+      "raw": "i] Spikestrike Ichtbys Q"
+    },
+    "DM05_054.jpg": {
+      "card_id": "dm_05_032",
+      "name": "Skullsweeper Q",
+      "confidence": 89.7,
+      "raw": "4 SkullsweeperQ 7]"
+    },
+    "DM05_055.jpg": {
+      "card_id": "dm_05_049",
+      "name": "Brutal Charge",
+      "confidence": 92.9,
+      "raw": "2) Brutal Charge"
+    },
+    "DM05_056.jpg": {
+      "card_id": "dm_05_016",
+      "name": "Aqua Surfer",
+      "confidence": 100.0,
+      "raw": "6 Aqua Surfer"
+    },
+    "DM05_057.jpg": {
+      "card_id": "dm_05_003",
+      "name": "Sinister General Damudo",
+      "confidence": 93.9,
+      "raw": "iJ Sinister General Damudo |"
+    },
+    "DM05_058.jpg": {
+      "card_id": "dm_05_048",
+      "name": "Bloodwing Mantis",
+      "confidence": 100.0,
+      "raw": "5 Bloodwing Mantis"
+    },
+    "DM05_059.jpg": {
+      "card_id": "dm_05_s04",
+      "name": "Billion-Degree Dragon",
+      "confidence": 93.3,
+      "raw": "IU Billion-Degree Dragon"
+    },
+    "DM05_060.jpg": {
+      "card_id": "dm_05_029",
+      "name": "Horned Mutant",
+      "confidence": 85.7,
+      "raw": "5 Hormed Mutant a"
+    }
+  },
+  "DM-06": {
+    "DM06_001.jpg": {
+      "card_id": "dm_06_043",
+      "name": "Raptor Fish",
+      "confidence": 100.0,
+      "raw": "6 Raptor Fish"
+    },
+    "DM06_002.jpg": {
+      "card_id": "dm_06_080",
+      "name": "Cutthroat Skyterror",
+      "confidence": 87.8,
+      "raw": "ER Cuttbroat Skyterror"
+    },
+    "DM06_003.jpg": {
+      "card_id": "dm_06_073",
+      "name": "Automated Weaponmaster Machai",
+      "confidence": 98.2,
+      "raw": "a Automated Weaponmaster Macha"
+    },
+    "DM06_004.jpg": {
+      "card_id": "dm_06_037",
+      "name": "Madrillon Fish",
+      "confidence": 100.0,
+      "raw": "2 Madrillon Fish"
+    },
+    "DM06_005.jpg": {
+      "card_id": "dm_06_090",
+      "name": "Torchclencher",
+      "confidence": 89.7,
+      "raw": "34 Torchclencher"
+    },
+    "DM06_006.jpg": {
+      "card_id": "dm_06_024",
+      "name": "Protective Force",
+      "confidence": 100.0,
+      "raw": "1 Protective Force"
+    },
+    "DM06_007.jpg": {
+      "card_id": "dm_06_097",
+      "name": "Factory Shell Q",
+      "confidence": 89.7,
+      "raw": "5 Factory ShellQ"
+    },
+    "DM06_008.jpg": {
+      "card_id": "dm_06_067",
+      "name": "Skullcutter, Swarm Leader",
+      "confidence": 95.8,
+      "raw": "4 Shullcutter, Swarm Leader |"
+    },
+    "DM06_009.jpg": {
+      "card_id": "dm_06_076",
+      "name": "Choya, the Unheeding",
+      "confidence": 90.0,
+      "raw": "-J Choya, the Unbeeding »"
+    },
+    "DM06_010.jpg": {
+      "card_id": "dm_06_105",
+      "name": "Mighty Bandit, Ace of Thieves",
+      "confidence": 100.0,
+      "raw": "3 Mighty Bandit, Ace of Thieves#"
+    },
+    "DM06_011.jpg": {
+      "card_id": "dm_06_s03",
+      "name": "Crystal Jouster",
+      "confidence": 100.0,
+      "raw": "7 Crystal Jouster"
+    },
+    "DM06_012.jpg": {
+      "card_id": "dm_06_087",
+      "name": "Rikabu's Screwdriver",
+      "confidence": 93.0,
+      "raw": "YJ Rikabu's Screwdriver"
+    },
+    "DM06_013.jpg": {
+      "card_id": "dm_06_041",
+      "name": "Overload Cluster",
+      "confidence": 100.0,
+      "raw": "5 Overload Cluster"
+    },
+    "DM06_014.jpg": {
+      "card_id": "dm_06_047",
+      "name": "Spiral Gate",
+      "confidence": 100.0,
+      "raw": "2 Spiral Gate"
+    },
+    "DM06_015.jpg": {
+      "card_id": "dm_06_084",
+      "name": "Picora's Wrench",
+      "confidence": 100.0,
+      "raw": "2 Picora's Wrench"
+    },
+    "DM06_016.jpg": {
+      "card_id": "dm_06_005",
+      "name": "Invincible Abyss",
+      "confidence": 91.4,
+      "raw": "18 Invincible Abyss"
+    },
+    "DM06_017.jpg": {
+      "card_id": "dm_06_099",
+      "name": "Feather Horn, the Tracker",
+      "confidence": 92.0,
+      "raw": "LD Feather Hor, the Tracker"
+    },
+    "DM06_018.jpg": {
+      "card_id": "dm_06_034",
+      "name": "Hazard Crawler",
+      "confidence": 100.0,
+      "raw": "5 Hazard Crawler"
+    },
+    "DM06_019.jpg": {
+      "card_id": "dm_06_068",
+      "name": "Tentacle Worm",
+      "confidence": 100.0,
+      "raw": "y Tentacle Worm"
+    },
+    "DM06_020.jpg": {
+      "card_id": "dm_06_029",
+      "name": "Vess, the Oracle",
+      "confidence": 83.3,
+      "raw": "lg Vess, the Oracle Al"
+    },
+    "DM06_021.jpg": {
+      "card_id": "dm_06_035",
+      "name": "King Triumphant",
+      "confidence": 100.0,
+      "raw": "8 King Triumphant"
+    },
+    "DM06_022.jpg": {
+      "card_id": "dm_06_040",
+      "name": "Neon Cluster",
+      "confidence": 100.0,
+      "raw": "override",
+      "match": "override"
+    },
+    "DM06_023.jpg": {
+      "card_id": "dm_06_083",
+      "name": "Phantom Dragon's Flame",
+      "confidence": 93.6,
+      "raw": "ER Phantom Dragon's Flame"
+    },
+    "DM06_024.jpg": {
+      "card_id": "dm_06_s08",
+      "name": "Lava Walker Executo",
+      "confidence": 100.0,
+      "raw": "y Lava Walker €xecuto\n< spRasono1\na By | ks\nIFS SAS a\nFM cvcuuronenenrune es Tenet\n* Evolution—Put on one of your Dragonoids.\n= Each of your fire creatures may tap instead of\nwe attacking to use this creature's © ability.\n% © One of your fire creatures in the battle zone\ngets +3000 power until the end of the turn.",
+      "match": "text_fallback"
+    },
+    "DM06_025.jpg": {
+      "card_id": "dm_06_101",
+      "name": "Garabon, the Glider",
+      "confidence": 92.3,
+      "raw": "YJ Garabon, the Glider #"
+    },
+    "DM06_026.jpg": {
+      "card_id": "dm_06_s10",
+      "name": "Ultra Mantis, Scourge of Fate",
+      "confidence": 80.0,
+      "raw": "6 gies Mantis, Scourge of Fate)"
+    },
+    "DM06_027.jpg": {
+      "card_id": "dm_06_016",
+      "name": "Chen Treg, Vizier of Blades",
+      "confidence": 88.5,
+      "raw": "5 gery Treg, Vizier of Blades"
+    },
+    "DM06_028.jpg": {
+      "card_id": "dm_06_064",
+      "name": "Lupa, Poison-Tipped Doll",
+      "confidence": 87.5,
+      "raw": "PJ Lupa, Poison-Tipped Dal"
+    },
+    "DM06_029.jpg": {
+      "card_id": "dm_06_036",
+      "name": "Kyuroro",
+      "confidence": 100.0,
+      "raw": "6 Kyuroro"
+    },
+    "DM06_030.jpg": {
+      "card_id": "dm_06_s07",
+      "name": "Bolmeteus Steel Dragon",
+      "confidence": 95.7,
+      "raw": "1% Bolmeteus Steel Dragon"
+    },
+    "DM06_031.jpg": {
+      "card_id": "dm_06_066",
+      "name": "Schuka, Duke of Amnesia",
+      "confidence": 100.0,
+      "raw": "6 Schuka, Duke of Amnesia |"
+    },
+    "DM06_032.jpg": {
+      "card_id": "dm_06_063",
+      "name": "Lone Tear, Shadow of Solitude",
+      "confidence": 96.6,
+      "raw": "1 F Lone Tear, Shadow of Solitude,"
+    },
+    "DM06_033.jpg": {
+      "card_id": "dm_06_094",
+      "name": "Charmilia, the Enticer",
+      "confidence": 85.1,
+      "raw": "ay Chamilia, the Enticer _ bs"
+    },
+    "DM06_034.jpg": {
+      "card_id": "dm_06_004",
+      "name": "Invincible Technology",
+      "confidence": 91.3,
+      "raw": "HEF invincible Technology"
+    },
+    "DM06_035.jpg": {
+      "card_id": "dm_06_s06",
+      "name": "Phantasmal Horror Gigazald",
+      "confidence": 94.5,
+      "raw": "EY Phantasmal Horror Gigazald"
+    },
+    "DM06_036.jpg": {
+      "card_id": "dm_06_s02",
+      "name": "Laveil, Seeker of Catastrophe",
+      "confidence": 91.5,
+      "raw": "iB Laveil, Seeker of Catastropbe"
+    },
+    "DM06_037.jpg": {
+      "card_id": "dm_06_s04",
+      "name": "Q-tronic Hypermind",
+      "confidence": 100.0,
+      "raw": "8 Q-Tronic Hypermind"
+    },
+    "DM06_038.jpg": {
+      "card_id": "dm_06_079",
+      "name": "Crisis Boulder",
+      "confidence": 88.9,
+      "raw": "4 Gisis Boulder"
+    },
+    "DM06_039.jpg": {
+      "card_id": "dm_06_081",
+      "name": "Legionnaire Lizard",
+      "confidence": 100.0,
+      "raw": "6 Legionnaire Lizard"
+    },
+    "DM06_040.jpg": {
+      "card_id": "dm_06_027",
+      "name": "Sphere of Wonder",
+      "confidence": 100.0,
+      "raw": "4 Sphere of Wonder"
+    },
+    "DM06_041.jpg": {
+      "card_id": "dm_06_058",
+      "name": "Grave Worm Q",
+      "confidence": 78.3,
+      "raw": "rave Worm Q }"
+    },
+    "DM06_042.jpg": {
+      "card_id": "dm_06_089",
+      "name": "Spastic Missile",
+      "confidence": 100.0,
+      "raw": "3 Spastic Missile"
+    },
+    "DM06_043.jpg": {
+      "card_id": "dm_06_071",
+      "name": "Armored Decimator Valkaizer",
+      "confidence": 91.2,
+      "raw": "EW Armored Decimator Valkaizen"
+    },
+    "DM06_044.jpg": {
+      "card_id": "dm_06_s05",
+      "name": "Daidalos, General of Fury",
+      "confidence": 100.0,
+      "raw": "J Daidalos, General of Fury"
+    },
+    "DM06_045.jpg": {
+      "card_id": "dm_06_028",
+      "name": "Telitol, the Explorer",
+      "confidence": 100.0,
+      "raw": "y Telitol, the Explorer"
+    },
+    "DM06_046.jpg": {
+      "card_id": "dm_06_098",
+      "name": "Faerie Life",
+      "confidence": 88.0,
+      "raw": "21 Faerie Life"
+    },
+    "DM06_047.jpg": {
+      "card_id": "dm_06_085",
+      "name": "Pyrofighter Magnus",
+      "confidence": 92.3,
+      "raw": "EB Pyrofighter Magnus &"
+    },
+    "DM06_048.jpg": {
+      "card_id": "dm_06_038",
+      "name": "Midnight Crawler",
+      "confidence": 100.0,
+      "raw": "8 Midnight Crawler"
+    },
+    "DM06_049.jpg": {
+      "card_id": "dm_06_046",
+      "name": "Sopian",
+      "confidence": 100.0,
+      "raw": "4 Sopian"
+    },
+    "DM06_050.jpg": {
+      "card_id": "dm_06_103",
+      "name": "Innocent Hunter, Blade of All",
+      "confidence": 94.9,
+      "raw": "innocent Hunter, Blade of All Ve"
+    },
+    "DM06_051.jpg": {
+      "card_id": "dm_06_078",
+      "name": "Comet Missile",
+      "confidence": 100.0,
+      "raw": "1 Comet Missile"
+    },
+    "DM06_052.jpg": {
+      "card_id": "dm_06_104",
+      "name": "Living Citadel Vosh",
+      "confidence": 92.7,
+      "raw": "Ey Living Citadel Vosh #"
+    },
+    "DM06_053.jpg": {
+      "card_id": "dm_06_056",
+      "name": "Gigagriff",
+      "confidence": 90.0,
+      "raw": "Gigagriff p"
+    },
+    "DM06_054.jpg": {
+      "card_id": "dm_06_107",
+      "name": "Pangaea's Will",
+      "confidence": 100.0,
+      "raw": "3 Pangaea's Will"
+    },
+    "DM06_055.jpg": {
+      "card_id": "dm_06_082",
+      "name": "Migasa, Adept of Chaos",
+      "confidence": 93.3,
+      "raw": "EJ Migasa, Adept of Chaos ="
+    },
+    "DM06_056.jpg": {
+      "card_id": "dm_06_045",
+      "name": "Shock Hurricane",
+      "confidence": 100.0,
+      "raw": "5 Shock Hurricane"
+    },
+    "DM06_057.jpg": {
+      "card_id": "dm_06_026",
+      "name": "Razorpine Tree",
+      "confidence": 100.0,
+      "raw": "5 Razorpine Tree"
+    },
+    "DM06_058.jpg": {
+      "card_id": "dm_06_044",
+      "name": "Ripple Lotus Q",
+      "confidence": 100.0,
+      "raw": "6 Ripple Lotus Q"
+    },
+    "DM06_059.jpg": {
+      "card_id": "dm_06_033",
+      "name": "Fort Megacluster",
+      "confidence": 100.0,
+      "raw": "5 Fort Megacluster"
+    },
+    "DM06_060.jpg": {
+      "card_id": "dm_06_060",
+      "name": "Grinning Axe, the Monstrosity",
+      "confidence": 100.0,
+      "raw": "3 Grinning Axe, the Monstrosity]"
+    },
+    "DM06_061.jpg": {
+      "card_id": "dm_06_077",
+      "name": "Cocco Lupia",
+      "confidence": 100.0,
+      "raw": "3 Cocco Lupia"
+    },
+    "DM06_062.jpg": {
+      "card_id": "dm_06_109",
+      "name": "Slumber Shell",
+      "confidence": 85.7,
+      "raw": "2 Slumber Sbell b;"
+    },
+    "DM06_063.jpg": {
+      "card_id": "dm_06_108",
+      "name": "Paradise Horn",
+      "confidence": 71.0,
+      "raw": "og Paradise Hom BS"
+    },
+    "DM06_064.jpg": {
+      "card_id": "dm_06_110",
+      "name": "Trench Scarab",
+      "confidence": 100.0,
+      "raw": "3 Trench Scarab"
+    },
+    "DM06_065.jpg": {
+      "card_id": "dm_06_002",
+      "name": "Lu Gila, Silver Rift Guardian",
+      "confidence": 94.9,
+      "raw": "EY Lu Gila, Silver Rift Guardian"
+    },
+    "DM06_066.jpg": {
+      "card_id": "dm_06_051",
+      "name": "Bazooka Mutant",
+      "confidence": 100.0,
+      "raw": "| Bazooka Mutant"
+    },
+    "DM06_067.jpg": {
+      "card_id": "dm_06_096",
+      "name": "Dimension Gate",
+      "confidence": 93.3,
+      "raw": "3) Dimension Gate"
+    },
+    "DM06_068.jpg": {
+      "card_id": "dm_06_062",
+      "name": "Junkatz, Rabid Doll",
+      "confidence": 94.7,
+      "raw": "2 Junkatz, Rabid Doll J"
+    },
+    "DM06_069.jpg": {
+      "card_id": "dm_06_074",
+      "name": "Badlands Lizard",
+      "confidence": 90.9,
+      "raw": "54 Badlands Lizard"
+    },
+    "DM06_070.jpg": {
+      "card_id": "dm_06_093",
+      "name": "Carrier Shell",
+      "confidence": 100.0,
+      "raw": "override",
+      "match": "override"
+    },
+    "DM06_071.jpg": {
+      "card_id": "dm_06_039",
+      "name": "Mystic Dreamscape",
+      "confidence": 100.0,
+      "raw": "4 Mystic Dreamscape"
+    },
+    "DM06_072.jpg": {
+      "card_id": "dm_06_s01",
+      "name": "Craze Valkyrie, the Drastic",
+      "confidence": 94.5,
+      "raw": "eR Craze Valkyrie, the Drastic"
+    },
+    "DM06_073.jpg": {
+      "card_id": "dm_06_030",
+      "name": "Yuluk, the Oracle",
+      "confidence": 93.8,
+      "raw": "1 Vuluk, the Oracle"
+    },
+    "DM06_074.jpg": {
+      "card_id": "dm_06_018",
+      "name": "Dava Torey, Seeker of Clouds",
+      "confidence": 94.7,
+      "raw": "iF Dava Torey, Seeker of Clouds |"
+    },
+    "DM06_075.jpg": {
+      "card_id": "dm_06_015",
+      "name": "Chekicul, Vizier of Endurance",
+      "confidence": 91.5,
+      "raw": "EY Chehicul, Vizier of Endurance"
+    },
+    "DM06_076.jpg": {
+      "card_id": "dm_06_086",
+      "name": "Q-tronic Gargantua",
+      "confidence": 100.0,
+      "raw": "6 Q-tronic Gargantua"
+    },
+    "DM06_077.jpg": {
+      "card_id": "dm_06_065",
+      "name": "Proclamation of Death",
+      "confidence": 93.3,
+      "raw": "gM Proclamation of Death |"
+    },
+    "DM06_078.jpg": {
+      "card_id": "dm_06_010",
+      "name": "Splinterclaw Wasp",
+      "confidence": 100.0,
+      "raw": "7 Splinterclaw Wasp"
+    },
+    "DM06_079.jpg": {
+      "card_id": "dm_06_008",
+      "name": "Valiant Warrior Exorious",
+      "confidence": 94.1,
+      "raw": "iJ Valiant Warrior Exorious"
+    },
+    "DM06_080.jpg": {
+      "card_id": "dm_06_055",
+      "name": "Future Slash",
+      "confidence": 100.0,
+      "raw": "override",
+      "match": "override"
+    },
+    "DM06_081.jpg": {
+      "card_id": "dm_06_032",
+      "name": "Energy Stream",
+      "confidence": 100.0,
+      "raw": "3 Energy Stream"
+    },
+    "DM06_082.jpg": {
+      "card_id": "dm_06_057",
+      "name": "Gnarvash, Merchant of Blood",
+      "confidence": 94.5,
+      "raw": "LF Gnarvash, Merchant of Blood,"
+    },
+    "DM06_083.jpg": {
+      "card_id": "dm_06_006",
+      "name": "Tank Mutant",
+      "confidence": 100.0,
+      "raw": "9 Tank Mutant"
+    },
+    "DM06_084.jpg": {
+      "card_id": "dm_06_048",
+      "name": "Steam Star",
+      "confidence": 100.0,
+      "raw": "2 Steam Star"
+    },
+    "DM06_085.jpg": {
+      "card_id": "dm_06_053",
+      "name": "Death Smoke",
+      "confidence": 100.0,
+      "raw": "y Death Smoke"
+    },
+    "DM06_086.jpg": {
+      "card_id": "dm_06_102",
+      "name": "Illusory Berry",
+      "confidence": 84.8,
+      "raw": "ag Illusory Berry B,"
+    },
+    "DM06_087.jpg": {
+      "card_id": "dm_06_069",
+      "name": "Vile Mulder, Wing of the Void",
+      "confidence": 94.9,
+      "raw": "LB vile Mulder, Wing of the Void)"
+    },
+    "DM06_088.jpg": {
+      "card_id": "dm_06_049",
+      "name": "Thrash Crawler",
+      "confidence": 85.7,
+      "raw": "4 Tbrasb Crawler"
+    },
+    "DM06_089.jpg": {
+      "card_id": "dm_06_011",
+      "name": "Adomis, the Oracle",
+      "confidence": 87.2,
+      "raw": "ER Adomis, the Oracle a"
+    },
+    "DM06_090.jpg": {
+      "card_id": "dm_06_012",
+      "name": "Arc Bine, the Astounding",
+      "confidence": 93.9,
+      "raw": "EB Arc Bine, the Astounding"
+    },
+    "DM06_091.jpg": {
+      "card_id": "dm_06_106",
+      "name": "Mystic Treasure Chest",
+      "confidence": 95.5,
+      "raw": "3 J Mystic Treasure Chest"
+    },
+    "DM06_092.jpg": {
+      "card_id": "dm_06_091",
+      "name": "Bliss Totem, Avatar of Luck",
+      "confidence": 85.7,
+      "raw": "LF Bliss Totem, Avatar of Lu be"
+    },
+    "DM06_093.jpg": {
+      "card_id": "dm_06_025",
+      "name": "Rain of Arrows",
+      "confidence": 100.0,
+      "raw": "2 Rain of Arrows"
+    },
+    "DM06_094.jpg": {
+      "card_id": "dm_06_s09",
+      "name": "Cliffcrush Giant",
+      "confidence": 86.5,
+      "raw": "Ey §=—s Cliffcrush Giant ="
+    },
+    "DM06_095.jpg": {
+      "card_id": "dm_06_031",
+      "name": "Aqua Rider",
+      "confidence": 100.0,
+      "raw": "4 Aqua Rider"
+    },
+    "DM06_096.jpg": {
+      "card_id": "dm_06_014",
+      "name": "Bonds of Justice",
+      "confidence": 100.0,
+      "raw": "4 Bonds of Justice"
+    },
+    "DM06_097.jpg": {
+      "card_id": "dm_06_095",
+      "name": "Clobber Totem",
+      "confidence": 89.7,
+      "raw": "5 Clobber Totem By"
+    },
+    "DM06_098.jpg": {
+      "card_id": "dm_06_042",
+      "name": "Promephius Q",
+      "confidence": 100.0,
+      "raw": "3 Promephius Q"
+    },
+    "DM06_099.jpg": {
+      "card_id": "dm_06_007",
+      "name": "Invincible Cataclysm",
+      "confidence": 90.9,
+      "raw": "HEF: Invincible Cataclysm"
+    },
+    "DM06_100.jpg": {
+      "card_id": "dm_06_052",
+      "name": "Cursed Pincher",
+      "confidence": 100.0,
+      "raw": "4 Cursed Pincher ;"
+    },
+    "DM06_101.jpg": {
+      "card_id": "dm_06_021",
+      "name": "Kanesill, the Explorer",
+      "confidence": 60.0,
+      "raw": "3 Kanesill, the &plorer"
+    },
+    "DM06_102.jpg": {
+      "card_id": "dm_06_070",
+      "name": "Zorvaz, the Bonecrusher",
+      "confidence": 93.6,
+      "raw": "EW Zorvaz, the Bonecrusher"
+    },
+    "DM06_103.jpg": {
+      "card_id": "dm_06_092",
+      "name": "Cantankerous Giant",
+      "confidence": 100.0,
+      "raw": "7 Cantankerous Giant @"
+    },
+    "DM06_104.jpg": {
+      "card_id": "dm_06_022",
+      "name": "Lightning Grass",
+      "confidence": 100.0,
+      "raw": "3 Lightning Grass"
+    },
+    "DM06_105.jpg": {
+      "card_id": "dm_06_013",
+      "name": "Ballas, Vizier of Electrons",
+      "confidence": 94.5,
+      "raw": "YS Ballas, Vizier of Electrons |"
+    },
+    "DM06_106.jpg": {
+      "card_id": "dm_06_009",
+      "name": "Invincible Unity",
+      "confidence": 91.4,
+      "raw": "18 Invincible Unity"
+    },
+    "DM06_107.jpg": {
+      "card_id": "dm_06_088",
+      "name": "Rumblesaur Q",
+      "confidence": 88.9,
+      "raw": "Gg Rumblesaur Q"
+    },
+    "DM06_108.jpg": {
+      "card_id": "dm_06_050",
+      "name": "Zepimeteus",
+      "confidence": 100.0,
+      "raw": "1 Zepimeteus"
+    },
+    "DM06_109.jpg": {
+      "card_id": "dm_06_003",
+      "name": "Aeropica",
+      "confidence": 82.4,
+      "raw": "7 fteropica"
+    },
+    "DM06_110.jpg": {
+      "card_id": "dm_06_061",
+      "name": "Intense Evil",
+      "confidence": 100.0,
+      "raw": "3 Intense Evil"
+    },
+    "DM06_111.jpg": {
+      "card_id": "dm_06_059",
+      "name": "Grim Soul, Shadow of Reversal",
+      "confidence": 94.9,
+      "raw": "EB Grim Soul, Shadow of Reversal"
+    },
+    "DM06_112.jpg": {
+      "card_id": "dm_06_054",
+      "name": "Frost Specter, Shadow of Age",
+      "confidence": 93.1,
+      "raw": "ED Frost Specter, Shadow of Ages"
+    },
+    "DM06_113.jpg": {
+      "card_id": "dm_06_023",
+      "name": "Moontear, Spectral Knight",
+      "confidence": 94.1,
+      "raw": "YJ Moontear, Spectral Knight"
+    },
+    "DM06_114.jpg": {
+      "card_id": "dm_06_020",
+      "name": "Gariel, Elemental of Sunbeams",
+      "confidence": 100.0,
+      "raw": "5 Gariel, Elemental of Sunbeams"
+    },
+    "DM06_115.jpg": {
+      "card_id": "dm_06_072",
+      "name": "Armored Scout Gestuchar",
+      "confidence": 89.8,
+      "raw": "EB Armored Scout Gestuchal"
+    },
+    "DM06_116.jpg": {
+      "card_id": "dm_06_001",
+      "name": "Invincible Aura",
+      "confidence": 90.9,
+      "raw": "13 Invincible Aura"
+    },
+    "DM06_117.jpg": {
+      "card_id": "dm_06_075",
+      "name": "Bazagazeal Dragon",
+      "confidence": 91.9,
+      "raw": "84 Bazagazeal Dragon"
+    },
+    "DM06_118.jpg": {
+      "card_id": "dm_06_100",
+      "name": "Forbidding Totem",
+      "confidence": 100.0,
+      "raw": "J = forbidding Totem"
+    },
+    "DM06_119.jpg": {
+      "card_id": "dm_06_019",
+      "name": "Forbos, Sanctum Guardian Q",
+      "confidence": 94.3,
+      "raw": "iB Forbos, Sanctum Guardian Q"
+    },
+    "DM06_120.jpg": {
+      "card_id": "dm_06_017",
+      "name": "Cosmogold, Spectral Knight",
+      "confidence": 94.3,
+      "raw": "BB Cosmogold, Spectral Knight"
+    }
+  },
+  "DM-07": {
+    "DM07_001.jpg": {
+      "card_id": "dm_07_024",
+      "name": "Titanium Cluster",
+      "confidence": 100.0,
+      "raw": "4 Titanium Cluster"
+    },
+    "DM07_002.jpg": {
+      "card_id": "dm_07_018",
+      "name": "Biancus",
+      "confidence": 100.0,
+      "raw": "6 Biancus"
+    },
+    "DM07_003.jpg": {
+      "card_id": "dm_07_016",
+      "name": "Aqua Agent",
+      "confidence": 90.9,
+      "raw": "i] Aqua Agent"
+    },
+    "DM07_004.jpg": {
+      "card_id": "dm_07_021",
+      "name": "Garatyano",
+      "confidence": 100.0,
+      "raw": "| Garatyano"
+    },
+    "DM07_005.jpg": {
+      "card_id": "dm_07_011",
+      "name": "Miracle Portal",
+      "confidence": 100.0,
+      "raw": "4 Miracle Portal"
+    },
+    "DM07_006.jpg": {
+      "card_id": "dm_07_028",
+      "name": "Gigabuster",
+      "confidence": 100.0,
+      "raw": "Gigabuster"
+    },
+    "DM07_007.jpg": {
+      "card_id": "dm_07_044",
+      "name": "Valkrowzer, Ultra Rock Beast",
+      "confidence": 96.3,
+      "raw": "6 'Valkrowzer, Ultra Rock Beasi"
+    },
+    "DM07_008.jpg": {
+      "card_id": "dm_07_045",
+      "name": "Wild Racer Chief Garan",
+      "confidence": 93.6,
+      "raw": "ER wild Racer Chief Garan"
+    },
+    "DM07_009.jpg": {
+      "card_id": "dm_07_s04",
+      "name": "Sky Crusher, the Agitator",
+      "confidence": 88.0,
+      "raw": "1% Shy Crusher, the Agitaton"
+    },
+    "DM07_010.jpg": {
+      "card_id": "dm_07_035",
+      "name": "Venom Charger",
+      "confidence": 100.0,
+      "raw": "3 Venom Charger"
+    },
+    "DM07_011.jpg": {
+      "card_id": "dm_07_027",
+      "name": "Gezary, Undercover Doll",
+      "confidence": 95.7,
+      "raw": "3 Gezary, Undercover Doll J"
+    },
+    "DM07_012.jpg": {
+      "card_id": "dm_07_049",
+      "name": "Fruit of Eternity",
+      "confidence": 100.0,
+      "raw": "4 Fruit of Eternity"
+    },
+    "DM07_013.jpg": {
+      "card_id": "dm_07_029",
+      "name": "Hopeless Vortex",
+      "confidence": 100.0,
+      "raw": "5 Hopeless Vortex"
+    },
+    "DM07_014.jpg": {
+      "card_id": "dm_07_031",
+      "name": "Propeller Mutant",
+      "confidence": 100.0,
+      "raw": "2 Propeller Mutant"
+    },
+    "DM07_015.jpg": {
+      "card_id": "dm_07_005",
+      "name": "Spinning Totem",
+      "confidence": 100.0,
+      "raw": "5 Spinning Totem %"
+    },
+    "DM07_016.jpg": {
+      "card_id": "dm_07_025",
+      "name": "Trenchdive Shark",
+      "confidence": 100.0,
+      "raw": "7 Trenchdive Shark"
+    },
+    "DM07_017.jpg": {
+      "card_id": "dm_07_053",
+      "name": "Stinger Horn, the Delver",
+      "confidence": 100.0,
+      "raw": "J Stinger Horn, the Delver"
+    },
+    "DM07_018.jpg": {
+      "card_id": "dm_07_009",
+      "name": "Kizar Basiku, the Outrageous",
+      "confidence": 94.7,
+      "raw": "EW Kizar Basiku, the Outrageous"
+    },
+    "DM07_019.jpg": {
+      "card_id": "dm_07_004",
+      "name": "Armored Transport Galiacruse",
+      "confidence": 91.5,
+      "raw": "LJ Armored Transport Galiacrusi"
+    },
+    "DM07_020.jpg": {
+      "card_id": "dm_07_020",
+      "name": "Curious Eye",
+      "confidence": 100.0,
+      "raw": "3 Curious Eye"
+    },
+    "DM07_021.jpg": {
+      "card_id": "dm_07_012",
+      "name": "Pulsar Tree",
+      "confidence": 100.0,
+      "raw": "5 Pulsar Tree"
+    },
+    "DM07_022.jpg": {
+      "card_id": "dm_07_s03",
+      "name": "Crath Lade, Merciless King",
+      "confidence": 94.3,
+      "raw": "LW crath Lade, Merciless King"
+    },
+    "DM07_023.jpg": {
+      "card_id": "dm_07_039",
+      "name": "Energy Charger",
+      "confidence": 100.0,
+      "raw": "3 Energy Charger"
+    },
+    "DM07_024.jpg": {
+      "card_id": "dm_07_032",
+      "name": "Scalpel Spider",
+      "confidence": 100.0,
+      "raw": "3 Scalpel Spider"
+    },
+    "DM07_025.jpg": {
+      "card_id": "dm_07_019",
+      "name": "Cetibols",
+      "confidence": 84.2,
+      "raw": "ay Cetibols"
+    },
+    "DM07_026.jpg": {
+      "card_id": "dm_07_038",
+      "name": "Cratersaur",
+      "confidence": 100.0,
+      "raw": "3 Cratersaur"
+    },
+    "DM07_027.jpg": {
+      "card_id": "dm_07_014",
+      "name": "Rom, Vizier of Tendrils",
+      "confidence": 100.0,
+      "raw": "y Rom, Vizier of Tendrils"
+    },
+    "DM07_028.jpg": {
+      "card_id": "dm_07_017",
+      "name": "Aqua Fencer",
+      "confidence": 100.0,
+      "raw": "7 Aqua Fencer"
+    },
+    "DM07_029.jpg": {
+      "card_id": "dm_07_006",
+      "name": "Bex, the Oracle",
+      "confidence": 100.0,
+      "raw": "a Bex, the Oracle"
+    },
+    "DM07_030.jpg": {
+      "card_id": "dm_07_008",
+      "name": "Justice Jamming",
+      "confidence": 100.0,
+      "raw": "3 Justice Jamming"
+    },
+    "DM07_031.jpg": {
+      "card_id": "dm_07_051",
+      "name": "Mulch Charger",
+      "confidence": 89.7,
+      "raw": "Ey mulch Charger"
+    },
+    "DM07_032.jpg": {
+      "card_id": "dm_07_022",
+      "name": "Riptide Charger",
+      "confidence": 100.0,
+      "raw": "5 Riptide Charger"
+    },
+    "DM07_033.jpg": {
+      "card_id": "dm_07_010",
+      "name": "Lightning Charger",
+      "confidence": 100.0,
+      "raw": "4 Lightning Charger"
+    },
+    "DM07_034.jpg": {
+      "card_id": "dm_07_054",
+      "name": "Tangle Fist, the Weaver",
+      "confidence": 100.0,
+      "raw": "4 “Tangle Fist, the Weaver #"
+    },
+    "DM07_035.jpg": {
+      "card_id": "dm_07_s02",
+      "name": "Cosmic Nebula",
+      "confidence": 100.0,
+      "raw": "5 Cosmic Nebula"
+    },
+    "DM07_036.jpg": {
+      "card_id": "dm_07_041",
+      "name": "Kipo's Contraption",
+      "confidence": 100.0,
+      "raw": "6 Kipo's Contraption"
+    },
+    "DM07_037.jpg": {
+      "card_id": "dm_07_013",
+      "name": "Rodi Gale, Night Guardian",
+      "confidence": 94.1,
+      "raw": "LD Rodi Gale, Night Guardian"
+    },
+    "DM07_038.jpg": {
+      "card_id": "dm_07_003",
+      "name": "Battleship Mutant",
+      "confidence": 100.0,
+      "raw": "override",
+      "match": "override"
+    },
+    "DM07_039.jpg": {
+      "card_id": "dm_07_026",
+      "name": "Dream Pirate, Shadow of Theft",
+      "confidence": 100.0,
+      "raw": "y Dream Pirate, Shadow of Theft,"
+    },
+    "DM07_040.jpg": {
+      "card_id": "dm_07_033",
+      "name": "Three-Faced Ashura Fang",
+      "confidence": 93.9,
+      "raw": "BW Three-Faced Ashura Fang |"
+    },
+    "DM07_041.jpg": {
+      "card_id": "dm_07_047",
+      "name": "Cryptic Totem",
+      "confidence": 81.2,
+      "raw": "5 gg Cryptic Totem ie"
+    },
+    "DM07_042.jpg": {
+      "card_id": "dm_07_052",
+      "name": "Popple, Flowerpetal Dancer",
+      "confidence": 100.0,
+      "raw": "4 Popple, Flowerpetal Dancer"
+    },
+    "DM07_043.jpg": {
+      "card_id": "dm_07_002",
+      "name": "King Benthos",
+      "confidence": 100.0,
+      "raw": "8 King Benthos"
+    },
+    "DM07_044.jpg": {
+      "card_id": "dm_07_055",
+      "name": "World Tree, Root of Life",
+      "confidence": 88.5,
+      "raw": "iJ World Tree, Root of Life yy,"
+    },
+    "DM07_045.jpg": {
+      "card_id": "dm_07_023",
+      "name": "Splash Zebrafish",
+      "confidence": 100.0,
+      "raw": "4 Splash Zebrafish"
+    },
+    "DM07_046.jpg": {
+      "card_id": "dm_07_001",
+      "name": "Gandar, Seeker of Explosions",
+      "confidence": 100.0,
+      "raw": "7 sorter, Seeker of &xplosions\nMECHA THUNDER ‘aid\ni, (IS) OS Re |\ni (os a\nNY EEO) aaa\n(of WO A\nie Ss Piano\n‘e Bia Ny RY\n— rure y z Kathir\nLe a aa",
+      "match": "text_fallback"
+    },
+    "DM07_047.jpg": {
+      "card_id": "dm_07_s01",
+      "name": "Siri, Glory Elemental",
+      "confidence": 100.0,
+      "raw": "6 Siri, Glory Elemental"
+    },
+    "DM07_048.jpg": {
+      "card_id": "dm_07_037",
+      "name": "Astronaut Skyterror",
+      "confidence": 100.0,
+      "raw": "5 Astronaut Skyterror"
+    },
+    "DM07_049.jpg": {
+      "card_id": "dm_07_s05",
+      "name": "Headlong Giant",
+      "confidence": 93.3,
+      "raw": "| Headlong, Giant a"
+    },
+    "DM07_050.jpg": {
+      "card_id": "dm_07_030",
+      "name": "Phantasmal Horror Gigazabal",
+      "confidence": 93.1,
+      "raw": "EY Phantasmal Horror Gigazabalj"
+    },
+    "DM07_051.jpg": {
+      "card_id": "dm_07_034",
+      "name": "Vacuum Gel",
+      "confidence": 100.0,
+      "raw": "an MGs Oe es OLE\n» (Reet = _ seca\n¢ \\ KS Se Aas aN\n& ix yee A: Ce, \\\nee ee = bus Adi Yoram\nJ, Shield trigger (When this spell is put into \\\n4 your hand from your shield zone, you may cast it\nimmediately for no cost.) eagh\n= Destroy one of your opponent's untapped light\nor untapped nature creatures.",
+      "match": "text_fallback"
+    },
+    "DM07_052.jpg": {
+      "card_id": "dm_07_048",
+      "name": "Freezing Icehammer",
+      "confidence": 94.4,
+      "raw": "3 | Freezing Icebammer"
+    },
+    "DM07_053.jpg": {
+      "card_id": "dm_07_036",
+      "name": "Apocalypse Vise",
+      "confidence": 100.0,
+      "raw": "Apocalypse Vise"
+    },
+    "DM07_054.jpg": {
+      "card_id": "dm_07_015",
+      "name": "Rondobil, the Explorer",
+      "confidence": 100.0,
+      "raw": "6 Rondobil, the Explorer"
+    },
+    "DM07_055.jpg": {
+      "card_id": "dm_07_050",
+      "name": "Launch Locust",
+      "confidence": 89.7,
+      "raw": "Ey Launch Locust #"
+    },
+    "DM07_056.jpg": {
+      "card_id": "dm_07_007",
+      "name": "Geoshine, Spectral Knight",
+      "confidence": 94.1,
+      "raw": "EY Geoshine, Spectral Knight"
+    },
+    "DM07_057.jpg": {
+      "card_id": "dm_07_042",
+      "name": "Kooc Pollon",
+      "confidence": 100.0,
+      "raw": "2 Kooc Pollon :"
+    },
+    "DM07_058.jpg": {
+      "card_id": "dm_07_040",
+      "name": "Gazarias Dragon",
+      "confidence": 100.0,
+      "raw": "5 Gazarias Dragon ’"
+    },
+    "DM07_059.jpg": {
+      "card_id": "dm_07_043",
+      "name": "Otherworldly Warrior Naglu",
+      "confidence": 90.9,
+      "raw": "i) Otherworldly Warrior Nagliy"
+    },
+    "DM07_060.jpg": {
+      "card_id": "dm_07_046",
+      "name": "Brood Shell",
+      "confidence": 88.0,
+      "raw": "4 Brood Shell By"
+    }
+  },
+  "DM-08": {
+    "DM08_001.jpg": {
+      "card_id": "dm_08_037",
+      "name": "Furious Onslaught",
+      "confidence": 91.9,
+      "raw": "sR furious Onslaught"
+    },
+    "DM08_002.jpg": {
+      "card_id": "dm_08_026",
+      "name": "Corpse Charger",
+      "confidence": 100.0,
+      "raw": "4 Corpse Charger"
+    },
+    "DM08_003.jpg": {
+      "card_id": "dm_08_013",
+      "name": "Sol Galla, Halo Guardian",
+      "confidence": 100.0,
+      "raw": "J Sol Galla, Halo Guardian"
+    },
+    "DM08_004.jpg": {
+      "card_id": "dm_08_009",
+      "name": "Migalo, Vizier of Spycraft",
+      "confidence": 100.0,
+      "raw": "2 Migalo, Vizier of Spycraft"
+    },
+    "DM08_005.jpg": {
+      "card_id": "dm_08_010",
+      "name": "Misha, Channeler of Suns",
+      "confidence": 100.0,
+      "raw": "5 Misha, Channeler of Suns"
+    },
+    "DM08_006.jpg": {
+      "card_id": "dm_08_s03",
+      "name": "Super Necrodragon Abzo Dolba",
+      "confidence": 100.0,
+      "raw": "override",
+      "match": "override"
+    },
+    "DM08_007.jpg": {
+      "card_id": "dm_08_035",
+      "name": "Tyrant Worm",
+      "confidence": 91.7,
+      "raw": "1 Tyrant Worm 4"
+    },
+    "DM08_008.jpg": {
+      "card_id": "dm_08_050",
+      "name": "Muscle Charger",
+      "confidence": 90.3,
+      "raw": "EJ Muscle Charger"
+    },
+    "DM08_009.jpg": {
+      "card_id": "dm_08_001",
+      "name": "Kuukai, Finder of Karma",
+      "confidence": 93.6,
+      "raw": "EY Kuukai, Finder of Karma"
+    },
+    "DM08_010.jpg": {
+      "card_id": "dm_08_043",
+      "name": "Torpedo Skyterror",
+      "confidence": 100.0,
+      "raw": "5 Torpedo Skyterror"
+    },
+    "DM08_011.jpg": {
+      "card_id": "dm_08_046",
+      "name": "Bakkra Horn, the Silent",
+      "confidence": 90.9,
+      "raw": "| Bakkra Hom, the Silents"
+    },
+    "DM08_012.jpg": {
+      "card_id": "dm_08_044",
+      "name": "Totto Pipicchi",
+      "confidence": 100.0,
+      "raw": "3 Totto Pipicchi"
+    },
+    "DM08_013.jpg": {
+      "card_id": "dm_08_031",
+      "name": "Motorcycle Mutant",
+      "confidence": 91.9,
+      "raw": "By = Motorcycle Mutant"
+    },
+    "DM08_014.jpg": {
+      "card_id": "dm_08_016",
+      "name": "Aqua Grappler",
+      "confidence": 100.0,
+      "raw": "5 Aqua Grappler"
+    },
+    "DM08_015.jpg": {
+      "card_id": "dm_08_053",
+      "name": "Senia, Orchard Avenger",
+      "confidence": 95.5,
+      "raw": "s Senia, Orchard Avenger 7"
+    },
+    "DM08_016.jpg": {
+      "card_id": "dm_08_s05",
+      "name": "Super Terradragon Bailas Gale",
+      "confidence": 95.1,
+      "raw": "EY Super Terradragon Bailas Gale}"
+    },
+    "DM08_017.jpg": {
+      "card_id": "dm_08_020",
+      "name": "Illusion Fish",
+      "confidence": 100.0,
+      "raw": "4 Illusion Fish"
+    },
+    "DM08_018.jpg": {
+      "card_id": "dm_08_025",
+      "name": "Wave Lance",
+      "confidence": 100.0,
+      "raw": "3 Wave Lance"
+    },
+    "DM08_019.jpg": {
+      "card_id": "dm_08_017",
+      "name": "Candy Cluster",
+      "confidence": 100.0,
+      "raw": "3 Candy Cluster '"
+    },
+    "DM08_020.jpg": {
+      "card_id": "dm_08_036",
+      "name": "Bruiser Dragon",
+      "confidence": 100.0,
+      "raw": "5 Bruiser Dragon"
+    },
+    "DM08_021.jpg": {
+      "card_id": "dm_08_023",
+      "name": "Prowling Elephish",
+      "confidence": 84.8,
+      "raw": "4 Prowling €lepbisb"
+    },
+    "DM08_022.jpg": {
+      "card_id": "dm_08_051",
+      "name": "Quixotic Hero Swine Snout",
+      "confidence": 100.0,
+      "raw": "2 Quixotic Hero Swine Snout#"
+    },
+    "DM08_023.jpg": {
+      "card_id": "dm_08_030",
+      "name": "Gigaclaws",
+      "confidence": 100.0,
+      "raw": "override",
+      "match": "override"
+    },
+    "DM08_024.jpg": {
+      "card_id": "dm_08_003",
+      "name": "Megaria, Empress of Dread",
+      "confidence": 100.0,
+      "raw": "5 Megaria, Empress of Dread"
+    },
+    "DM08_025.jpg": {
+      "card_id": "dm_08_018",
+      "name": "Eureka Charger",
+      "confidence": 100.0,
+      "raw": "4 Eureka Charger"
+    },
+    "DM08_026.jpg": {
+      "card_id": "dm_08_039",
+      "name": "Magmadragon Melgars",
+      "confidence": 100.0,
+      "raw": "J Magmadragon Melgars"
+    },
+    "DM08_027.jpg": {
+      "card_id": "dm_08_s04",
+      "name": "Ãœberdragon Bajula",
+      "confidence": 88.9,
+      "raw": "73 Uberdragon Bajula"
+    },
+    "DM08_028.jpg": {
+      "card_id": "dm_08_002",
+      "name": "Aqua Ranger",
+      "confidence": 100.0,
+      "raw": "6 Aqua Ranger"
+    },
+    "DM08_029.jpg": {
+      "card_id": "dm_08_012",
+      "name": "Sasha, Channeler of Suns",
+      "confidence": 93.9,
+      "raw": "LR Sasha, Channeler of Suns"
+    },
+    "DM08_030.jpg": {
+      "card_id": "dm_08_007",
+      "name": "Laser Whip",
+      "confidence": 87.0,
+      "raw": "sy Laser Whip"
+    },
+    "DM08_031.jpg": {
+      "card_id": "dm_08_s01",
+      "name": "Nastasha, Channeler of Suns",
+      "confidence": 90.9,
+      "raw": "FB lastasha, Channeler of Suns"
+    },
+    "DM08_032.jpg": {
+      "card_id": "dm_08_005",
+      "name": "Kachua, Keeper of the Icegate",
+      "confidence": 98.2,
+      "raw": "1 Kachua, Keeper of the Icegates"
+    },
+    "DM08_033.jpg": {
+      "card_id": "dm_08_049",
+      "name": "Dracodance Totem",
+      "confidence": 100.0,
+      "raw": "Dracodance Totem"
+    },
+    "DM08_034.jpg": {
+      "card_id": "dm_08_052",
+      "name": "Root Charger",
+      "confidence": 100.0,
+      "raw": "3 | Root Charger"
+    },
+    "DM08_035.jpg": {
+      "card_id": "dm_08_015",
+      "name": "Thrumiss, Zephyr Guardian",
+      "confidence": 90.2,
+      "raw": "EF Thrumiss, Zepbyr Guardian"
+    },
+    "DM08_036.jpg": {
+      "card_id": "dm_08_022",
+      "name": "Marine Scramble",
+      "confidence": 100.0,
+      "raw": "7 Marine Scramble"
+    },
+    "DM08_037.jpg": {
+      "card_id": "dm_08_032",
+      "name": "Necrodragon Galbazeek",
+      "confidence": 87.0,
+      "raw": "i) Tlecrodragon Galbazeeky |"
+    },
+    "DM08_038.jpg": {
+      "card_id": "dm_08_008",
+      "name": "Lunar Charger",
+      "confidence": 100.0,
+      "raw": "3 Lunar Charger"
+    },
+    "DM08_039.jpg": {
+      "card_id": "dm_08_011",
+      "name": "Nariel, the Oracle",
+      "confidence": 100.0,
+      "raw": "4 Nariel, the Oracle"
+    },
+    "DM08_040.jpg": {
+      "card_id": "dm_08_041",
+      "name": "Rocketdive Skyterror",
+      "confidence": 100.0,
+      "raw": "q Rocketdive Skyterror"
+    },
+    "DM08_041.jpg": {
+      "card_id": "dm_08_042",
+      "name": "Slaphappy Soldier Galback",
+      "confidence": 96.0,
+      "raw": "4 Slaphappy Soldier Galbach"
+    },
+    "DM08_042.jpg": {
+      "card_id": "dm_08_004",
+      "name": "Magmadragon Jagalzor",
+      "confidence": 90.5,
+      "raw": "65 Magmadragon Jagalzo"
+    },
+    "DM08_043.jpg": {
+      "card_id": "dm_08_040",
+      "name": "Missile Soldier Ultimo",
+      "confidence": 93.6,
+      "raw": "EJ Missile Soldier Ultimo"
+    },
+    "DM08_044.jpg": {
+      "card_id": "dm_08_045",
+      "name": "Volcano Charger",
+      "confidence": 100.0,
+      "raw": "4 Volcano Charger"
+    },
+    "DM08_045.jpg": {
+      "card_id": "dm_08_019",
+      "name": "Grape Globbo",
+      "confidence": 100.0,
+      "raw": "2 Grape Globbo"
+    },
+    "DM08_046.jpg": {
+      "card_id": "dm_08_029",
+      "name": "Gachack, Mechanical Doll",
+      "confidence": 89.8,
+      "raw": "ER Gachach, Mechanical Doll,"
+    },
+    "DM08_047.jpg": {
+      "card_id": "dm_08_033",
+      "name": "Necrodragon Giland",
+      "confidence": 92.3,
+      "raw": "4 Nlecrodragon Giland 7"
+    },
+    "DM08_048.jpg": {
+      "card_id": "dm_08_034",
+      "name": "Scream Slicer, Shadow of Fear",
+      "confidence": 94.9,
+      "raw": "LJ Scream Slicer, Shadow of Fear]"
+    },
+    "DM08_049.jpg": {
+      "card_id": "dm_08_038",
+      "name": "Kyrstron, Lair Delver",
+      "confidence": 93.0,
+      "raw": "5g Kyrstron, Lair Delver"
+    },
+    "DM08_050.jpg": {
+      "card_id": "dm_08_024",
+      "name": "Vikorakys",
+      "confidence": 100.0,
+      "raw": "3 Vikorakys"
+    },
+    "DM08_051.jpg": {
+      "card_id": "dm_08_047",
+      "name": "Carbonite Scarab",
+      "confidence": 100.0,
+      "raw": "4 Carbonite Scarab"
+    },
+    "DM08_052.jpg": {
+      "card_id": "dm_08_028",
+      "name": "Dimension Splitter",
+      "confidence": 90.0,
+      "raw": "3, Dimension Splitter 7)"
+    },
+    "DM08_053.jpg": {
+      "card_id": "dm_08_055",
+      "name": "Terradragon Regarion",
+      "confidence": 95.0,
+      "raw": "5 Terradragon Regation"
+    },
+    "DM08_054.jpg": {
+      "card_id": "dm_08_014",
+      "name": "Solar Grass",
+      "confidence": 100.0,
+      "raw": "5 Solar Grass"
+    },
+    "DM08_055.jpg": {
+      "card_id": "dm_08_006",
+      "name": "Dracobarrier",
+      "confidence": 100.0,
+      "raw": "3 Dracobarrier"
+    },
+    "DM08_056.jpg": {
+      "card_id": "dm_08_054",
+      "name": "Terradragon Gamiratar",
+      "confidence": 93.3,
+      "raw": "gy Terradragon Gamiratar_ #"
+    },
+    "DM08_057.jpg": {
+      "card_id": "dm_08_027",
+      "name": "Cranium Clamp",
+      "confidence": 89.7,
+      "raw": "sy Cranium Clamp"
+    },
+    "DM08_058.jpg": {
+      "card_id": "dm_08_048",
+      "name": "Coliseum Shell",
+      "confidence": 100.0,
+      "raw": "4 Coliseum Shell"
+    },
+    "DM08_059.jpg": {
+      "card_id": "dm_08_021",
+      "name": "Lalicious",
+      "confidence": 100.0,
+      "raw": "6 Lalicious"
+    },
+    "DM08_060.jpg": {
+      "card_id": "dm_08_s02",
+      "name": "Emperor Quazla",
+      "confidence": 93.3,
+      "raw": "i] Emperor Quazla :"
+    }
+  },
+  "DM-09": {
+    "DM09_001.jpg": {
+      "card_id": "dm_09_037",
+      "name": "Blizzard of Spears",
+      "confidence": 87.8,
+      "raw": "iF Blizzard of Spears F"
+    },
+    "DM09_002.jpg": {
+      "card_id": "dm_09_042",
+      "name": "Shock Trooper Mykee",
+      "confidence": 92.7,
+      "raw": "eB Shock Trooper Mykee"
+    },
+    "DM09_003.jpg": {
+      "card_id": "dm_09_014",
+      "name": "Tra Rion, Penumbra Guardian",
+      "confidence": 83.0,
+      "raw": "6 Fira Rion, Penumbra Guardian"
+    },
+    "DM09_004.jpg": {
+      "card_id": "dm_09_s05",
+      "name": "Stratosphere Giant",
+      "confidence": 94.7,
+      "raw": "8 Stratosphere Giant #7"
+    },
+    "DM09_005.jpg": {
+      "card_id": "dm_09_022",
+      "name": "Submarine Project",
+      "confidence": 91.9,
+      "raw": "EJ Submarine Project"
+    },
+    "DM09_006.jpg": {
+      "card_id": "dm_09_012",
+      "name": "Mihail, Celestial Elemental",
+      "confidence": 96.2,
+      "raw": "8 Mibail, Celestial Elemental"
+    },
+    "DM09_007.jpg": {
+      "card_id": "dm_09_051",
+      "name": "Storm Wrangler, the Furious",
+      "confidence": 94.5,
+      "raw": "iW Storm Wrangler, the Furious"
+    },
+    "DM09_008.jpg": {
+      "card_id": "dm_09_045",
+      "name": "Steam Rumbler Kain",
+      "confidence": 100.0,
+      "raw": "a © Steam Rumbler Kain"
+    },
+    "DM09_009.jpg": {
+      "card_id": "dm_09_052",
+      "name": "Terradragon Anrist Vhal",
+      "confidence": 91.3,
+      "raw": "J Terradragon Anrist Ubal"
+    },
+    "DM09_010.jpg": {
+      "card_id": "dm_09_044",
+      "name": "Snaptongue Lizard",
+      "confidence": 100.0,
+      "raw": "6 Snaptongue Lizard"
+    },
+    "DM09_011.jpg": {
+      "card_id": "dm_09_017",
+      "name": "Emperor Maroll",
+      "confidence": 100.0,
+      "raw": "3 Emperor Maroll"
+    },
+    "DM09_012.jpg": {
+      "card_id": "dm_09_016",
+      "name": "Abduction Charger",
+      "confidence": 91.9,
+      "raw": "YF abduction Charger"
+    },
+    "DM09_013.jpg": {
+      "card_id": "dm_09_s02",
+      "name": "Aqua Master",
+      "confidence": 100.0,
+      "raw": "& Aqua Master"
+    },
+    "DM09_014.jpg": {
+      "card_id": "dm_09_005",
+      "name": "Vreemah, Freaky Mojo Totem",
+      "confidence": 85.2,
+      "raw": "EY Ureemah, Freaky Mojo Tote y"
+    },
+    "DM09_015.jpg": {
+      "card_id": "dm_09_025",
+      "name": "Zeppelin Crawler",
+      "confidence": 100.0,
+      "raw": "5 Zeppelin Crawler"
+    },
+    "DM09_016.jpg": {
+      "card_id": "dm_09_050",
+      "name": "Solid Horn",
+      "confidence": 90.9,
+      "raw": "6 Solid Horn b,"
+    },
+    "DM09_017.jpg": {
+      "card_id": "dm_09_053",
+      "name": "Vine Charger",
+      "confidence": 92.3,
+      "raw": "4 Vine Charger q"
+    },
+    "DM09_018.jpg": {
+      "card_id": "dm_09_004",
+      "name": "Balesk Baj, the Timeburner",
+      "confidence": 86.8,
+      "raw": "ER Balesh Baj, the Timeburmer"
+    },
+    "DM09_019.jpg": {
+      "card_id": "dm_09_031",
+      "name": "Necrodragon Izorist Vhal",
+      "confidence": 86.3,
+      "raw": "i) Tlecrodragon Izorist Vbal-"
+    },
+    "DM09_020.jpg": {
+      "card_id": "dm_09_040",
+      "name": "Quakesaur",
+      "confidence": 100.0,
+      "raw": "5 Quakesaur"
+    },
+    "DM09_021.jpg": {
+      "card_id": "dm_09_033",
+      "name": "Trixo, Wicked Doll",
+      "confidence": 100.0,
+      "raw": "4 Trixo, Wicked Doll"
+    },
+    "DM09_022.jpg": {
+      "card_id": "dm_09_029",
+      "name": "Grinning Hunger",
+      "confidence": 100.0,
+      "raw": "4 Grinning Hunger"
+    },
+    "DM09_023.jpg": {
+      "card_id": "dm_09_001",
+      "name": "Glena Vuele, the Hypnotic",
+      "confidence": 94.1,
+      "raw": "EW Glena Vuele, the Hypnotic"
+    },
+    "DM09_024.jpg": {
+      "card_id": "dm_09_018",
+      "name": "Hokira",
+      "confidence": 100.0,
+      "raw": "y Hokira"
+    },
+    "DM09_025.jpg": {
+      "card_id": "dm_09_035",
+      "name": "Zombie Carnival",
+      "confidence": 89.7,
+      "raw": "5 Zombie Camival"
+    },
+    "DM09_026.jpg": {
+      "card_id": "dm_09_008",
+      "name": "Cyclolink, Spectral Knight",
+      "confidence": 94.3,
+      "raw": "eB Cyclolink, Spectral Knight"
+    },
+    "DM09_027.jpg": {
+      "card_id": "dm_09_024",
+      "name": "Tentacle Cluster",
+      "confidence": 100.0,
+      "raw": "5 Tentacle Cluster"
+    },
+    "DM09_028.jpg": {
+      "card_id": "dm_09_009",
+      "name": "Jil Warka, Time Guardian",
+      "confidence": 93.9,
+      "raw": "EY Jil Warka, Time Guardian"
+    },
+    "DM09_029.jpg": {
+      "card_id": "dm_09_010",
+      "name": "Kalute, Vizier of Eternity",
+      "confidence": 100.0,
+      "raw": "2 Kalute, Vizier of Eternity"
+    },
+    "DM09_030.jpg": {
+      "card_id": "dm_09_047",
+      "name": "Dance of the Sproutlings",
+      "confidence": 94.1,
+      "raw": "EF Dance of the Sproutlings"
+    },
+    "DM09_031.jpg": {
+      "card_id": "dm_09_013",
+      "name": "Nexus Charger",
+      "confidence": 82.8,
+      "raw": "i) Tlexus Charger"
+    },
+    "DM09_032.jpg": {
+      "card_id": "dm_09_055",
+      "name": "Whispering Totem",
+      "confidence": 91.4,
+      "raw": "5 = Whispering Totem Bs,"
+    },
+    "DM09_033.jpg": {
+      "card_id": "dm_09_034",
+      "name": "Venom Worm",
+      "confidence": 100.0,
+      "raw": "3 Venom Worm :"
+    },
+    "DM09_034.jpg": {
+      "card_id": "dm_09_006",
+      "name": "Betrale, the Explorer",
+      "confidence": 92.3,
+      "raw": "5 Betrale, the &cplorer"
+    },
+    "DM09_035.jpg": {
+      "card_id": "dm_09_032",
+      "name": "Slash Charger",
+      "confidence": 89.7,
+      "raw": "Ey Slash Charger"
+    },
+    "DM09_036.jpg": {
+      "card_id": "dm_09_003",
+      "name": "Azaghast, Tyrant of Shadows",
+      "confidence": 94.5,
+      "raw": "U9 azaghast, Tyrant of Shadows"
+    },
+    "DM09_037.jpg": {
+      "card_id": "dm_09_021",
+      "name": "Scout Cluster",
+      "confidence": 100.0,
+      "raw": "3 Scout Cluster"
+    },
+    "DM09_038.jpg": {
+      "card_id": "dm_09_054",
+      "name": "Whip Scorpion",
+      "confidence": 89.7,
+      "raw": "5 Whip Scorpion bs,"
+    },
+    "DM09_039.jpg": {
+      "card_id": "dm_09_030",
+      "name": "Ice Vapor, Shadow of Anguish",
+      "confidence": 92.6,
+      "raw": "5 fit Vapor, Shadow of Anguish)"
+    },
+    "DM09_040.jpg": {
+      "card_id": "dm_09_049",
+      "name": "Silvermoon Trailblazer",
+      "confidence": 100.0,
+      "raw": "4 Silvermoon Trailblazer"
+    },
+    "DM09_041.jpg": {
+      "card_id": "dm_09_019",
+      "name": "Impossible Tunnel",
+      "confidence": 100.0,
+      "raw": "5 Impossible Tunnel"
+    },
+    "DM09_042.jpg": {
+      "card_id": "dm_09_036",
+      "name": "Aerodactyl Kooza",
+      "confidence": 85.7,
+      "raw": "ER: ferodactyl Kooza"
+    },
+    "DM09_043.jpg": {
+      "card_id": "dm_09_002",
+      "name": "Marching Motherboard",
+      "confidence": 93.0,
+      "raw": "iY Marching Motherboard"
+    },
+    "DM09_044.jpg": {
+      "card_id": "dm_09_048",
+      "name": "Mana Bonanza",
+      "confidence": 88.9,
+      "raw": "BY Mana Bonanza"
+    },
+    "DM09_045.jpg": {
+      "card_id": "dm_09_039",
+      "name": "Gigio's Hammer",
+      "confidence": 100.0,
+      "raw": "3 Gigio's Hammer"
+    },
+    "DM09_046.jpg": {
+      "card_id": "dm_09_020",
+      "name": "Kelp Candle",
+      "confidence": 88.0,
+      "raw": "24 Kelp Candle"
+    },
+    "DM09_047.jpg": {
+      "card_id": "dm_09_007",
+      "name": "Cosmic Wing",
+      "confidence": 100.0,
+      "raw": "3 Cosmic Wing"
+    },
+    "DM09_048.jpg": {
+      "card_id": "dm_09_028",
+      "name": "Gabzagul, Warlord of Pain",
+      "confidence": 96.0,
+      "raw": "i) Gabzagul, Warlord of Pain"
+    },
+    "DM09_049.jpg": {
+      "card_id": "dm_09_011",
+      "name": "Micute, the Oracle",
+      "confidence": 100.0,
+      "raw": "5 Micute, the Oracle"
+    },
+    "DM09_050.jpg": {
+      "card_id": "dm_09_027",
+      "name": "Bat Doctor, Shadow of Undeath",
+      "confidence": 94.9,
+      "raw": "EB Bat Doctor, Shadow of Undeath,"
+    },
+    "DM09_051.jpg": {
+      "card_id": "dm_09_038",
+      "name": "Fists of Forever",
+      "confidence": 100.0,
+      "raw": "1 Fists of Forever"
+    },
+    "DM09_052.jpg": {
+      "card_id": "dm_09_041",
+      "name": "Relentless Blitz",
+      "confidence": 100.0,
+      "raw": "3 Relentless Blitz"
+    },
+    "DM09_053.jpg": {
+      "card_id": "dm_09_023",
+      "name": "Tekorax",
+      "confidence": 100.0,
+      "raw": "5 Tekorax"
+    },
+    "DM09_054.jpg": {
+      "card_id": "dm_09_s03",
+      "name": "Stallob, the Lifequasher",
+      "confidence": 89.8,
+      "raw": "EJ Stallob, the Lifequasber _|"
+    },
+    "DM09_055.jpg": {
+      "card_id": "dm_09_046",
+      "name": "Cavern Raider",
+      "confidence": 89.7,
+      "raw": "3 Cavern Raider Bi,"
+    },
+    "DM09_056.jpg": {
+      "card_id": "dm_09_026",
+      "name": "Acid Reflux, the Fleshboiler",
+      "confidence": 91.2,
+      "raw": "EW Acid Reflux, the Flesbboiler|"
+    },
+    "DM09_057.jpg": {
+      "card_id": "dm_09_s04",
+      "name": "Magmadragon Ogrist Vhal",
+      "confidence": 91.3,
+      "raw": "7 Magmadragon Ogrist Ubal"
+    },
+    "DM09_058.jpg": {
+      "card_id": "dm_09_015",
+      "name": "Unified Resistance",
+      "confidence": 100.0,
+      "raw": "2 Unified Resistance"
+    },
+    "DM09_059.jpg": {
+      "card_id": "dm_09_043",
+      "name": "Simian Warrior Grash",
+      "confidence": 95.0,
+      "raw": "4 Simian Warrior Grasb"
+    },
+    "DM09_060.jpg": {
+      "card_id": "dm_09_s01",
+      "name": "Petrova, Channeler of Suns",
+      "confidence": 94.3,
+      "raw": "LY Petrova, Channeler of Suns"
+    }
+  }
+}
