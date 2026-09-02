@@ -143,6 +143,9 @@ public partial class Arena : Control
         _endTurn.Pressed += OnEndTurn;
         footer.AddChild(_endTurn);
         root.AddChild(footer);
+
+        // Dev window-mode toggle pinned to the bottom-right corner.
+        AddChild(new DuelMasters.UI.Components.WindowModeToggle());
     }
 
     private VBoxContainer BuildZone(string caption, out Label titleLabel)

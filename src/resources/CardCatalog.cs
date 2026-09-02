@@ -39,7 +39,7 @@ public static class CardCatalog
         public string? Civilization { get; set; }
         public string CardType { get; set; } = "Creature";
         public int ManaCost { get; set; }
-        public int Power { get; set; }
+        public int? Power { get; set; }
         public string Race { get; set; } = "";
         public string ImagePath { get; set; } = "";
         public List<string> Keywords { get; set; } = new();
@@ -69,7 +69,7 @@ public static class CardCatalog
             var type = ParseCardType(c.CardType);
             var keywords = ParseKeywords(c.Keywords);
 
-            var card = new Card(c.Id, c.Name!, civ, type, c.ManaCost, c.Power, c.Race ?? "", keywords);
+            var card = new Card(c.Id, c.Name!, civ, type, c.ManaCost, c.Power ?? 0, c.Race ?? "", keywords);
             records.Add(new CardRecord(card, c.ImagePath, c.ScriptEffectId));
         }
 
