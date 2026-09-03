@@ -1,4 +1,4 @@
-using DuelMasters.UI.Components;
+using DuelMasters.UI.Settings;
 using Godot;
 
 namespace DuelMasters.UI.MainMenu;
@@ -65,6 +65,10 @@ public partial class MainMenu : Control
         deckBtn.Pressed += () => GetTree().ChangeSceneToFile(DeckBuilderPath);
         center.AddChild(deckBtn);
 
+        var settingsBtn = new Button { Text = "Settings" };
+        settingsBtn.Pressed += OpenSettings;
+        center.AddChild(settingsBtn);
+
         center.AddChild(new Control { CustomMinimumSize = new Vector2(0, 12) });
 
         var hint = new Label
@@ -81,9 +85,14 @@ public partial class MainMenu : Control
         quitBtn.Pressed += QuitGame;
         center.AddChild(quitBtn);
 
-        // Fullscreen toggle pinned to the bottom-right.
-        var toggle = new WindowModeToggle();
-        root.AddChild(toggle);
+        // Top-right options gear (Settings / Exit). No "Back to Menu" here - we are the menu.
+        root.AddChild(new SceneOptionsMenu { ShowBackToMenu = false });
+    }
+
+    private void OpenSettings()
+    {
+        var panel = new DisplaySettingsPanel();
+        AddChild(panel);
     }
 
     private static void QuitGame()

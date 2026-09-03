@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json;
 using DuelMasters.Core.Autoload;
+using DuelMasters.UI.Settings;
 using Godot;
 using CardCatalogFile = DuelMasters.Resources.CardCatalog;
 
@@ -158,8 +159,8 @@ public partial class DeckBuilder : Control
 		};
 		root.AddChild(_status);
 
-		// Dev window-mode toggle pinned to the bottom-right corner.
-		AddChild(new DuelMasters.UI.Components.WindowModeToggle());
+		// Top-right options gear (Display Settings / Back to Main Menu / Exit Game).
+		AddChild(new SceneOptionsMenu { ShowBackToMenu = true });
 	}
 
 	private Control BuildCardPool()

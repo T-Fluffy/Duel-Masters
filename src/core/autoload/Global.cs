@@ -1,3 +1,4 @@
+using DuelMasters.Core;
 using Godot;
 
 namespace DuelMasters.Core.Autoload;
@@ -26,13 +27,13 @@ public partial class Global : Node
 
     public override void _Ready()
     {
-        // Diagnostic: report the real OS window state at launch so we can tell whether the
-        // game runs embedded (editor game view) or as a standalone resizable window.
-        var window = GetWindow();
-        var wid = window.GetWindowId();
-        GD.Print("[Global] windowId=" + wid +
-                 " size=" + DisplayServer.WindowGetSize(wid) +
-                 " embedded=" + window.IsEmbedded() +
-                 " mode=" + DisplayServer.WindowGetMode());
+        // Restore the player's saved display selection (windowed sizes only) once the
+        // window is fully initialized at launch.
+        CallDeferred(nameof(ApplySavedDisplay));
+    }
+
+    private void ApplySavedDisplay()
+    {
+        DisplaySettings.ApplySaved();
     }
 }

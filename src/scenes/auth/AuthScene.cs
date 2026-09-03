@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text.Json;
 using DuelMasters.Core.Autoload;
-using DuelMasters.UI.Components;
+using DuelMasters.UI.Settings;
 using Godot;
 
 namespace DuelMasters.Scenes.Auth;
@@ -118,8 +118,8 @@ public partial class AuthScene : Control
         _status.AddThemeColorOverride("font_color", new Color(0.85f, 0.92f, 1f));
         center.AddChild(_status);
 
-        // Window-mode toggle pinned to the bottom-right corner.
-        root.AddChild(new WindowModeToggle());
+        // Top-right options gear (Display Settings / Exit Game; no menu yet to go back to).
+        root.AddChild(new SceneOptionsMenu { ShowBackToMenu = false });
     }
 
     private void OnLogin()

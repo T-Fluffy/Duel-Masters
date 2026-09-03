@@ -4,6 +4,7 @@ using System.Linq;
 using DuelMasters.Domain;
 using DuelMasters.Gameplay.CardView;
 using DuelMasters.Resources;
+using DuelMasters.UI.Settings;
 using Godot;
 
 namespace DuelMasters.Scenes.Arena;
@@ -150,8 +151,8 @@ public partial class Arena : Control
         footer.AddChild(menuBtn);
         root.AddChild(footer);
 
-        // Dev window-mode toggle pinned to the bottom-right corner.
-        AddChild(new DuelMasters.UI.Components.WindowModeToggle());
+        // Top-right options gear (Display Settings / Back to Main Menu / Exit Game).
+        AddChild(new SceneOptionsMenu { ShowBackToMenu = true });
     }
 
     private VBoxContainer BuildZone(string caption, out Label titleLabel)
