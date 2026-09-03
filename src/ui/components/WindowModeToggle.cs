@@ -4,12 +4,13 @@ namespace DuelMasters.UI.Components;
 
 /// <summary>
 /// A development helper button pinned to the bottom-right of a screen that toggles
-/// the OS window between windowed and fullscreen mode (both directions).
+/// the OS window between windowed and fullscreen mode in both directions.
 ///
-/// It drives the root <see cref="Window"/> node (instead of raw DisplayServer calls)
-/// and tracks the intended mode locally rather than reading it back from the OS, which
-/// avoids async-mode races that made the label/state disagree. When returning to a
-/// windowed view it restores <see cref="WindowedSize"/> and re-centers on the current screen.
+/// It reads the window's <em>actual</em> mode on every press (no cached flag, so it
+/// can never get out of sync with the OS), and verifies the mode applied - falling
+/// back to the raw DisplayServer call for renderer/platform setups where the node's
+/// Mode property is a silent no-op. Returning to a windowed view restores
+/// <see cref="WindowedSize"/> and re-centers on the current screen.
 /// </summary>
 [GlobalClass]
 public partial class WindowModeToggle : Button
@@ -38,7 +39,7 @@ public partial class WindowModeToggle : Button
         Pressed += OnPressed;
 
         // Reflect the real state on startup, whichever mode the project launched in.
-        _fullscreen = DisplayServer.WindowGetMode() == DisplayServer.WindowMode.Fullscreen;
+        _fullscreen = IsFullscreen();
         SyncLabel();
     }
 
@@ -48,18 +49,17 @@ public partial class WindowModeToggle : Button
         if (window is null)
             return;
 
-        // Toggle to the opposite of the current fullscreen state.
-        _fullscreen = !_fullscreen;
+        // Read the actual mode rather than blindly toggling a cached bool, so a mode
+        // change that didn't take effect can never leave the button permanently stuck.
+        _fullscreen = !IsFullscreen();
 
         if (_fullscreen)
         {
-            window.Mode = Window.ModeEnum.Fullscreen;
+            SetFullscreen(window, true);
         }
         else
         {
-            // Switch to windowed first, THEN size/position (resizing while still
-            // in fullscreen is a no-op and would otherwise leave the wrong size).
-            window.Mode = Window.ModeEnum.Windowed;
+            SetFullscreen(window, false);
             window.Size = WindowedSize;
             CenterOnCurrentScreen(window);
         }
@@ -67,16 +67,41 @@ public partial class WindowModeToggle : Button
         SyncLabel();
     }
 
+    private static void SetFullscreen(Window window, bool fullscreen)
+    {
+        var target = fullscreen ? Window.ModeEnum.Fullscreen : Window.ModeEnum.Windowed;
+
+        // Primary path: the node-level property.
+        window.Mode = target;
+
+        // Verify it actually applied; some setups (e.g. the gl_compatibility renderer)
+        // ignore the node property, so fall back to the display-server call.
+        // This is idempotent, so an extra call on an async mode change is harmless.
+        if (IsFullscreen() != fullscreen)
+        {
+            DisplayServer.WindowSetMode(fullscreen
+                ? DisplayServer.WindowMode.Fullscreen
+                : DisplayServer.WindowMode.Windowed);
+        }
+    }
+
+    private static bool IsFullscreen()
+        => DisplayServer.WindowGetMode() == DisplayServer.WindowMode.Fullscreen;
+
     private static void CenterOnCurrentScreen(Window window)
     {
         var screen = window.CurrentScreen;
+        if (screen < 0 || screen >= DisplayServer.GetScreenCount())
+            screen = DisplayServer.GetPrimaryScreen();
+
         var usable = DisplayServer.ScreenGetUsableRect(screen);
         window.Position = usable.Position + (usable.Size - window.Size) / 2;
     }
 
-    /// <summary>Re-sync the button label to the intended window mode.</summary>
+    /// <summary>Re-sync the button label to the current window mode.</summary>
     public void SyncLabel()
     {
+        _fullscreen = IsFullscreen();
         Text = _fullscreen ? "Windowed" : "Fullscreen";
         TooltipText = _fullscreen
             ? "Switch back to a 1280x720 windowed view"
