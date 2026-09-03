@@ -34,6 +34,7 @@ public partial class DeckBuilder : Control
 	private readonly Dictionary<string, CardCatalogFile.CardRecord> _parseLookup = new();
 
 	private DuelMasters.Gameplay.CardView.CardView _preview = null!;
+	private Control _previewCard = null!;
 
 	private VBoxContainer _poolBox = null!;
 	private VBoxContainer _deckList = null!;
@@ -185,14 +186,15 @@ public partial class DeckBuilder : Control
 
 	private Control BuildPreviewPanel()
 	{
-		var right = new VBoxContainer { CustomMinimumSize = new Vector2(300, 0) };
+		var right = new VBoxContainer { CustomMinimumSize = new Vector2(376, 0) };
 		right.Alignment = BoxContainer.AlignmentMode.Center;
+		right.AddThemeConstantOverride("separation", 6);
 
 		var title = new Label { Text = "Card Preview", HorizontalAlignment = HorizontalAlignment.Center };
 		title.AddThemeFontSizeOverride("font_size", 20);
 		right.AddChild(title);
 
-		_previewHost = new CenterContainer { CustomMinimumSize = new Vector2(300, 414) };
+		_previewHost = new CenterContainer { CustomMinimumSize = new Vector2(360, 470) };
 		right.AddChild(_previewHost);
 
 		_previewName = new Label { Text = "Click a card in the pool", HorizontalAlignment = HorizontalAlignment.Center };
@@ -419,27 +421,60 @@ public partial class DeckBuilder : Control
 	{
 		ClearPreviewCard();
 
-		if (!_parseLookup.TryGetValue(data.Id, out var rec))
-		{
-			_previewName.Text = data.Name;
-			_previewInfo.Text = "";
-			return;
-		}
-
-		_preview = new DuelMasters.Gameplay.CardView.CardView(rec.Card, rec.ImagePath);
-		_preview.MouseFilter = MouseFilterEnum.Ignore;
-		_preview.Scale = new Vector2(1.8f, 1.8f);
-		_preview.SetProcess(false); // static preview: hold the scale, no hover growth
-		_previewHost.AddChild(_preview);
+		_previewName.Text = data.Name;
 
 		var civ = data.Civilization ?? "-";
 		var power = data.CardType == "Spell" ? "-" : data.Power?.ToString() ?? "-";
-		_previewName.Text = data.Name;
 		_previewInfo.Text = $"{civ}  •  {data.ManaCost} mana  •  {data.CardType}\nRace: {data.Race}  •  Power: {power}";
+
+		if (!_parseLookup.TryGetValue(data.Id, out var rec))
+			return;
+
+		// Prefer the full card scan (contains all the card's text) so the player can
+		// read name, costs, effect and power at a glance.
+		var texture = LoadTexture(rec.ImagePath);
+		if (texture is not null)
+		{
+			var img = new TextureRect
+			{
+				Texture = texture,
+				ExpandMode = TextureRect.ExpandModeEnum.IgnoreSize,
+				StretchMode = TextureRect.StretchModeEnum.KeepAspectCentered,
+				CustomMinimumSize = new Vector2(340, 460),
+			};
+			img.SetAnchorsPreset(LayoutPreset.FullRect);
+			_previewCard = img;
+			_previewHost.AddChild(img);
+			return;
+		}
+
+		// Fallback: procedural civilization-colored card if no artwork exists.
+		_previewHost.AddChild(_preview = new DuelMasters.Gameplay.CardView.CardView(rec.Card, null));
+		_preview.MouseFilter = MouseFilterEnum.Ignore;
+		_preview.SetProcess(false);
+	}
+
+	private static Texture2D? LoadTexture(string? path)
+	{
+		if (string.IsNullOrEmpty(path) || !ResourceLoader.Exists(path))
+			return null;
+		try
+		{
+			return ResourceLoader.Load<Texture2D>(path);
+		}
+		catch (Exception)
+		{
+			return null;
+		}
 	}
 
 	private void ClearPreviewCard()
 	{
+		if (_previewCard is not null && _previewCard.IsInsideTree())
+		{
+			_previewCard.QueueFree();
+			_previewCard = null!;
+		}
 		if (_preview is not null && _preview.IsInsideTree())
 		{
 			_preview.QueueFree();
