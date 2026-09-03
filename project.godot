@@ -12,9 +12,9 @@ config_version=5
 
 config/name="Duel-Masters"
 config/version="0.1.0"
+run/main_scene="res://src/scenes/auth/AuthScene.tscn"
 config/features=PackedStringArray("4.7", "C#")
 config/icon="res://icon.svg"
-run/main_scene="res://src/scenes/auth/AuthScene.tscn"
 
 [autoload]
 
