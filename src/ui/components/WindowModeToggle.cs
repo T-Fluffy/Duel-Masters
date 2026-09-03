@@ -12,10 +12,10 @@ namespace DuelMasters.UI.Components;
 /// "Fullscreen" is intended as a 1920x1080 window, not OS exclusive-fullscreen mode.
 ///
 /// When the game runs inside the editor's embedded game view there is no real OS window,
-/// so the display server refuses to resize/move it (logs "Embedded window can't be
-/// resized/moved"). <c>Window.IsEmbedded()</c> is unreliable here, so after attempting a
-/// resize this compares the real size and, if it didn't change, explains that the window
-/// is embedded and must be run as a standalone window to resize.
+/// so the display server refuses to resize/move it. <c>Window.IsEmbedded()</c> is
+/// unreliable here (it can report <c>false</c> for an actually-embedded window), so the
+/// first resize attempt is used to confirm. If the display server refuses, the button is
+/// disabled and labelled clearly instead of leaving a dead, misleading control.
 /// </summary>
 [GlobalClass]
 public partial class WindowModeToggle : Button
@@ -27,6 +27,8 @@ public partial class WindowModeToggle : Button
     public static readonly Vector2I FullscreenSize = new(1920, 1080);
 
     private const float CornerMargin = 16f;
+
+    private bool _embeddedConfirmed;
 
     public WindowModeToggle()
     {
@@ -44,6 +46,18 @@ public partial class WindowModeToggle : Button
         OffsetBottom = -CornerMargin;
         Pressed += OnPressed;
         SyncLabel();
+
+        // Best-effort early disable when IsEmbedded() is reliable; the click path covers
+        // the cases where it wrongly reports false.
+        CallDeferred(nameof(CheckEmbedded));
+    }
+
+    /// <summary>Whether the OS window is considered embedded by Godot's node API.</summary>
+    public void CheckEmbedded()
+    {
+        var window = GetWindow();
+        if (window is not null && window.IsEmbedded())
+            SetEmbeddedState();
     }
 
     private void OnPressed()
@@ -51,6 +65,13 @@ public partial class WindowModeToggle : Button
         var window = GetWindow();
         if (window is null)
             return;
+
+        // Fast-path: if the node reports embedded, disable right away.
+        if (window.IsEmbedded())
+        {
+            SetEmbeddedState();
+            return;
+        }
 
         var wid = window.GetWindowId();
         var before = DisplayServer.WindowGetSize(wid);
@@ -69,16 +90,29 @@ public partial class WindowModeToggle : Button
         {
             // The display server refused the resize. This happens when the game runs in
             // the editor's embedded game view: there is no real OS window to resize.
-            GD.Print($"[WindowModeToggle] Resize refused: {before} -> {target} (still {after}). " +
-                     "The game is running in the editor's EMBEDDED game view, which cannot be resized. " +
-                     "Run the project as a standalone window (terminal: godot --path .) to toggle size.");
-        }
-        else
-        {
-            GD.Print($"[WindowModeToggle] Resized {before} -> {after}.");
+            GD.Print("[WindowModeToggle] Resize refused: " +
+                     $"{before} -> {target} (still {after}). " +
+                     "This is the editor's EMBEDDED game view, which cannot be resized. " +
+                     "Run the project as a standalone window (run_game.bat) to toggle size.");
+            SetEmbeddedState();
+            return;
         }
 
+        GD.Print($"[WindowModeToggle] Resized {before} -> {after}.");
         SyncLabel();
+    }
+
+    /// <summary>
+    /// Truncate this unusable control now that the window is known to be embedded:
+    /// disable it and label it clearly so it no longer looks like an actionable toggle.
+    /// </summary>
+    private void SetEmbeddedState()
+    {
+        _embeddedConfirmed = true;
+        Disabled = true;
+        Text = "Resize unavailable (embedded)";
+        TooltipText = "The game is running in the editor's embedded game view, which cannot " +
+                      "be resized. Run it as a standalone window (run_game.bat) to use this toggle.";
     }
 
     private static bool IsAtSize(Vector2I actual, Vector2I expected)
@@ -101,6 +135,12 @@ public partial class WindowModeToggle : Button
         var window = GetWindow();
         if (window is null)
             return;
+
+        if (_embeddedConfirmed)
+        {
+            SetEmbeddedState();
+            return;
+        }
 
         var isFull = IsAtSize(DisplayServer.WindowGetSize(window.GetWindowId()), FullscreenSize);
         Text = isFull ? "Windowed (1280x720)" : "Fullscreen (1920x1080)";
