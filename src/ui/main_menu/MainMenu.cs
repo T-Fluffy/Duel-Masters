@@ -16,6 +16,7 @@ public partial class MainMenu : Control
 {
     private const string ArenaPath = "res://src/scenes/arena/Arena.tscn";
     private const string DeckBuilderPath = "res://src/scenes/deck_builder/DeckBuilder.tscn";
+    private const string NetworkLobbyPath = "res://src/scenes/network_lobby/NetworkLobby.tscn";
 
     public override void _Ready()
     {
@@ -64,6 +65,10 @@ public partial class MainMenu : Control
         var deckBtn = new Button { Text = "Deck Builder" };
         deckBtn.Pressed += () => GetTree().ChangeSceneToFile(DeckBuilderPath);
         center.AddChild(deckBtn);
+
+        var onlineBtn = new Button { Text = "Online Duel" };
+        onlineBtn.Pressed += () => GetTree().ChangeSceneToFile(NetworkLobbyPath);
+        center.AddChild(onlineBtn);
 
         var settingsBtn = new Button { Text = "Settings" };
         settingsBtn.Pressed += OpenSettings;

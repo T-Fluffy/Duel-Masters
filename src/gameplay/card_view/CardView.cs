@@ -57,6 +57,20 @@ public partial class CardView : Control
 
         if (back)
         {
+            var backTex = LoadArt("res://assets/art/cards/BackCard.webp");
+            if (backTex is not null)
+            {
+                var backImg = new TextureRect
+                {
+                    Texture = backTex,
+                    ExpandMode = TextureRect.ExpandModeEnum.IgnoreSize,
+                    StretchMode = TextureRect.StretchModeEnum.KeepAspectCovered,
+                };
+                backImg.SetAnchorsPreset(LayoutPreset.FullRect);
+                frame.AddChild(backImg);
+                return;
+            }
+
             frame.AddThemeStyleboxOverride("panel", MakeStyle(new Color(0.08f, 0.10f, 0.16f), new Color(0.20f, 0.24f, 0.34f)));
             var mark = new Label
             {

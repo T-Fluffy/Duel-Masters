@@ -2,6 +2,7 @@ using System;
 using System.Text;
 using System.Threading.Tasks;
 using DuelMasters.Server.Data;
+using DuelMasters.Server.Hubs;
 using DuelMasters.Server.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -16,6 +17,8 @@ var builder = WebApplication.CreateBuilder(args);
 var config = builder.Configuration;
 
 builder.Services.AddControllers();
+
+builder.Services.AddSignalR();
 
 // PostgreSQL + EF Core.
 var conn = config.GetConnectionString("Default")
@@ -73,5 +76,6 @@ app.UseCors();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
+app.MapHub<DuelHub>("/duel");
 
 app.Run();

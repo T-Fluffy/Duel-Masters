@@ -24,6 +24,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <!-- Phase 4: SignalR client transport for the networked authoritative duel. -->
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="8.0.30" />
+  </ItemGroup>
+
+  <ItemGroup>
     <!-- Docs, the domain lib, tests, and backends are NOT part of the Godot assembly. -->
     <Compile Remove="docs/**" />
     <Compile Remove="src/rules/**" />
