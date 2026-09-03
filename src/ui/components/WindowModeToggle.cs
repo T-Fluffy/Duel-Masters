@@ -1,31 +1,32 @@
+using System;
 using Godot;
 
 namespace DuelMasters.UI.Components;
 
 /// <summary>
-/// A development helper button pinned to the bottom-right of a screen that toggles
-/// the OS window between windowed and fullscreen mode in both directions.
+/// A development helper button pinned to the bottom-right of a screen that toggles the
+/// OS window between a "windowed" size of <see cref="WindowedSize"/> (1280x720) and a
+/// "fullscreen" size of <see cref="FullscreenSize"/> (1920x1080), always staying in a
+/// normal (non-mode) window and re-centering on the current screen.
 ///
-/// It reads the window's <em>actual</em> mode on every press (no cached flag, so it
-/// can never get out of sync with the OS), and verifies the mode applied - falling
-/// back to the raw DisplayServer call for renderer/platform setups where the node's
-/// Mode property is a silent no-op. Returning to a windowed view restores
-/// <see cref="WindowedSize"/> and re-centers on the current screen.
+/// "Fullscreen" here is intended as a 1920x1080 window, not the OS exclusive-fullscreen
+/// window mode, so the toggle only ever resizes and repositions the window.
 /// </summary>
 [GlobalClass]
 public partial class WindowModeToggle : Button
 {
-    /// <summary>The size used when returning from fullscreen to a windowed view.</summary>
+    /// <summary>The size used for the "windowed" view.</summary>
     public static readonly Vector2I WindowedSize = new(1280, 720);
 
-    private const float CornerMargin = 16f;
+    /// <summary>The size used for the "fullscreen" view.</summary>
+    public static readonly Vector2I FullscreenSize = new(1920, 1080);
 
-    private bool _fullscreen;
+    private const float CornerMargin = 16f;
 
     public WindowModeToggle()
     {
         Text = "";
-        TooltipText = "Toggle between a windowed view and fullscreen (dev)";
+        TooltipText = "Toggle the window between 1280x720 and 1920x1080 (dev)";
         PivotOffset = Vector2.Zero;
     }
 
@@ -38,8 +39,7 @@ public partial class WindowModeToggle : Button
         OffsetBottom = -CornerMargin;
         Pressed += OnPressed;
 
-        // Reflect the real state on startup, whichever mode the project launched in.
-        _fullscreen = IsFullscreen();
+        // Reflect the real state on startup, whichever size the window launches with.
         SyncLabel();
     }
 
@@ -49,44 +49,18 @@ public partial class WindowModeToggle : Button
         if (window is null)
             return;
 
-        // Read the actual mode rather than blindly toggling a cached bool, so a mode
-        // change that didn't take effect can never leave the button permanently stuck.
-        _fullscreen = !IsFullscreen();
+        // Read the actual current size rather than trusting a cached flag, so the
+        // button can never get out of sync with the real window size.
+        var isFull = IsAtSize(window, FullscreenSize);
 
-        if (_fullscreen)
-        {
-            SetFullscreen(window, true);
-        }
-        else
-        {
-            SetFullscreen(window, false);
-            window.Size = WindowedSize;
-            CenterOnCurrentScreen(window);
-        }
+        window.Size = isFull ? WindowedSize : FullscreenSize;
+        CenterOnCurrentScreen(window);
 
         SyncLabel();
     }
 
-    private static void SetFullscreen(Window window, bool fullscreen)
-    {
-        var target = fullscreen ? Window.ModeEnum.Fullscreen : Window.ModeEnum.Windowed;
-
-        // Primary path: the node-level property.
-        window.Mode = target;
-
-        // Verify it actually applied; some setups (e.g. the gl_compatibility renderer)
-        // ignore the node property, so fall back to the display-server call.
-        // This is idempotent, so an extra call on an async mode change is harmless.
-        if (IsFullscreen() != fullscreen)
-        {
-            DisplayServer.WindowSetMode(fullscreen
-                ? DisplayServer.WindowMode.Fullscreen
-                : DisplayServer.WindowMode.Windowed);
-        }
-    }
-
-    private static bool IsFullscreen()
-        => DisplayServer.WindowGetMode() == DisplayServer.WindowMode.Fullscreen;
+    private static bool IsAtSize(Window window, Vector2I size)
+        => Math.Abs(window.Size.X - size.X) <= 2 && Math.Abs(window.Size.Y - size.Y) <= 2;
 
     private static void CenterOnCurrentScreen(Window window)
     {
@@ -98,13 +72,14 @@ public partial class WindowModeToggle : Button
         window.Position = usable.Position + (usable.Size - window.Size) / 2;
     }
 
-    /// <summary>Re-sync the button label to the current window mode.</summary>
+    /// <summary>Re-sync the button label to the current window size.</summary>
     public void SyncLabel()
     {
-        _fullscreen = IsFullscreen();
-        Text = _fullscreen ? "Windowed" : "Fullscreen";
-        TooltipText = _fullscreen
+        var window = GetWindow();
+        var isFull = window is not null && IsAtSize(window, FullscreenSize);
+        Text = isFull ? "Windowed (1280x720)" : "Fullscreen (1920x1080)";
+        TooltipText = isFull
             ? "Switch back to a 1280x720 windowed view"
-            : "Switch the window to fullscreen";
+            : "Switch the window to a 1920x1080 fullscreen view";
     }
 }
