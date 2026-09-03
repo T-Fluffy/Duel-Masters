@@ -10,10 +10,12 @@ namespace DuelMasters.UI.Components;
 /// normal (non-mode) window and re-centering on the current screen.
 ///
 /// "Fullscreen" is intended as a 1920x1080 window, not OS exclusive-fullscreen mode.
-/// Resizing uses the raw DisplayServer calls with the explicit window id (the most
-/// reliable channel), and diagnostics are printed so issues are easy to spot. When run
-/// inside the editor's embedded game view the OS window cannot be resized, so it shows a
-/// hint instead.
+///
+/// When the game runs inside the editor's embedded game view there is no real OS window,
+/// so the display server refuses to resize/move it (logs "Embedded window can't be
+/// resized/moved"). <c>Window.IsEmbedded()</c> is unreliable here, so after attempting a
+/// resize this compares the real size and, if it didn't change, explains that the window
+/// is embedded and must be run as a standalone window to resize.
 /// </summary>
 [GlobalClass]
 public partial class WindowModeToggle : Button
@@ -48,36 +50,33 @@ public partial class WindowModeToggle : Button
     {
         var window = GetWindow();
         if (window is null)
-        {
-            GD.Print("[WindowModeToggle] GetWindow() returned null - cannot resize.");
             return;
-        }
 
         var wid = window.GetWindowId();
-        var embedded = window.IsEmbedded();
         var before = DisplayServer.WindowGetSize(wid);
-        GD.Print($"[WindowModeToggle] Clicked: windowId={wid} embedded={embedded} before={before}");
-
-        // Running inside the editor's embedded game view: the OS window cannot be
-        // resized or moved there, so any resize would fail silently.
-        if (embedded)
-        {
-            SyncLabel();
-            GD.Print("[WindowModeToggle] Cannot resize: game is running in the editor's embedded view. Run as a standalone window (disable the embedded game view) to toggle size.");
-            return;
-        }
-
         var isFull = IsAtSize(before, FullscreenSize);
         var target = isFull ? WindowedSize : FullscreenSize;
 
         DisplayServer.WindowSetSize(target, wid);
         CenterOnCurrentScreen(wid, target);
 
-        // Sync the node so Godot's internal state matches the real window.
+        // Keep Godot's node state in sync with the (attempted) real window size.
         window.Size = target;
 
         var after = DisplayServer.WindowGetSize(wid);
-        GD.Print($"[WindowModeToggle] Applied target={target} after={after}");
+
+        if (!IsAtSize(after, target))
+        {
+            // The display server refused the resize. This happens when the game runs in
+            // the editor's embedded game view: there is no real OS window to resize.
+            GD.Print($"[WindowModeToggle] Resize refused: {before} -> {target} (still {after}). " +
+                     "The game is running in the editor's EMBEDDED game view, which cannot be resized. " +
+                     "Run the project as a standalone window (terminal: godot --path .) to toggle size.");
+        }
+        else
+        {
+            GD.Print($"[WindowModeToggle] Resized {before} -> {after}.");
+        }
 
         SyncLabel();
     }
@@ -96,19 +95,14 @@ public partial class WindowModeToggle : Button
         DisplayServer.WindowSetPosition(pos, windowId);
     }
 
-    /// <summary>Re-sync the button label to the current window size (or the embedded hint).</summary>
+    /// <summary>Re-sync the button label to the current window size.</summary>
     public void SyncLabel()
     {
         var window = GetWindow();
-
-        if (window is not null && window.IsEmbedded())
-        {
-            Text = "Run standalone to resize";
-            TooltipText = "The editor's embedded game view can't be resized. Run the project as a standalone window (disable the embedded view) to toggle 1280x720 / 1920x1080.";
+        if (window is null)
             return;
-        }
 
-        var isFull = window is not null && IsAtSize(DisplayServer.WindowGetSize(window.GetWindowId()), FullscreenSize);
+        var isFull = IsAtSize(DisplayServer.WindowGetSize(window.GetWindowId()), FullscreenSize);
         Text = isFull ? "Windowed (1280x720)" : "Fullscreen (1920x1080)";
         TooltipText = isFull
             ? "Switch back to a 1280x720 windowed view"
