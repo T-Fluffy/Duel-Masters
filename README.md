@@ -53,6 +53,14 @@ repo root (`Duel_Masters_TCG_Engine_GDD.md`, `Duel_Masters_Strategy_and_Codebase
    engine) or the **Deck Builder** (`src/scenes/deck_builder/`). If the backend is
    offline, use **Continue as Guest** to reach the menu anyway and play sans save.
 
+   > **Window sizing in the editor:** the editor's **Game view** remembers its own window
+   > geometry (embedded vs floating, and size) in the git-ignored `.godot/editor/*.cfg`,
+   > separate from `project.godot`. To test the **Display Settings** (⚙ → Display Settings,
+   > or the Settings button in the main menu) reliably, run the game in a **separate window**:
+   > in the Game panel's run-mode menu uncheck **"Embed on next play"** (and keep **"Make
+   > game workspace floating on next play"** checked), then play and resize once. The game
+   > itself defaults to **windowed 1920×1080**.
+
 ## Building & testing
 
 ```bash

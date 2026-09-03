@@ -31,14 +31,19 @@ public partial class DisplaySettingsPanel : Control
         _backdrop.MouseFilter = MouseFilterEnum.Stop;
         AddChild(_backdrop);
 
+        // Center the card with a CenterContainer so it is always fully visible and never
+        // clipped at a corner (the previous center-anchor + Grow=Both pattern overflowed).
+        var center = new CenterContainer();
+        center.SetAnchorsPreset(LayoutPreset.FullRect);
+        center.MouseFilter = MouseFilterEnum.Ignore;
+        AddChild(center);
+
         var card = new PanelContainer();
-        card.SetAnchorsPreset(LayoutPreset.Center);
-        card.GrowHorizontal = GrowDirection.Both;
-        card.GrowVertical = GrowDirection.Both;
-        AddChild(card);
+        card.MouseFilter = MouseFilterEnum.Stop;
+        center.AddChild(card);
 
         var box = new VBoxContainer();
-        box.CustomMinimumSize = new Vector2(460, 0);
+        box.CustomMinimumSize = new Vector2(540, 0);
         box.AddThemeConstantOverride("separation", 16);
         card.AddChild(box);
 
@@ -62,7 +67,7 @@ public partial class DisplaySettingsPanel : Control
         {
             var note = new Label
             {
-                Text = "Resize is disabled in the editor's embedded view.\nRun as a standalone window (run_game.bat) to change screen size.",
+                Text = "Running in the editor's game preview: window size is controlled by the\neditor here. Use the Game panel's separate-window mode (or a build) to change it.",
                 AutowrapMode = TextServer.AutowrapMode.WordSmart,
                 HorizontalAlignment = HorizontalAlignment.Center,
             };
@@ -119,6 +124,25 @@ public partial class DisplaySettingsPanel : Control
     {
         _status.Text = message;
         _status.AddThemeColorOverride("font_color", isError ? new Color(1f, 0.6f, 0.5f) : new Color(0.85f, 0.92f, 1f));
+    }
+
+    public override void _UnhandledInput(InputEvent @event)
+    {
+        if (@event is InputEventKey key && key.Pressed && !key.Echo)
+        {
+            switch (key.Keycode)
+            {
+                case Key.Enter:
+                case Key.KpEnter:
+                    OnApply();
+                    GetViewport().SetInputAsHandled();
+                    break;
+                case Key.Escape:
+                    Close();
+                    GetViewport().SetInputAsHandled();
+                    break;
+            }
+        }
     }
 
     private void Close()
