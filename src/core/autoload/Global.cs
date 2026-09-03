@@ -23,4 +23,16 @@ public partial class Global : Node
         Engine.GetMainLoop() is SceneTree tree
             ? tree.Root.GetNode<Global>("/root/Global") ?? throw new System.InvalidOperationException("Global autoload not found.")
             : throw new System.InvalidOperationException("No active SceneTree.");
+
+    public override void _Ready()
+    {
+        // Diagnostic: report the real OS window state at launch so we can tell whether the
+        // game runs embedded (editor game view) or as a standalone resizable window.
+        var window = GetWindow();
+        var wid = window.GetWindowId();
+        GD.Print("[Global] windowId=" + wid +
+                 " size=" + DisplayServer.WindowGetSize(wid) +
+                 " embedded=" + window.IsEmbedded() +
+                 " mode=" + DisplayServer.WindowGetMode());
+    }
 }
