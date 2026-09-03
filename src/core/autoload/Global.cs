@@ -10,5 +10,17 @@ namespace DuelMasters.Core.Autoload;
 [GlobalClass]
 public partial class Global : Node
 {
-    // FUTURE: App-wide systems and shared state land here.
+    /// <summary>The username of the authenticated player, or empty if not logged in.</summary>
+    public string Username { get; set; } = "";
+
+    /// <summary>The JWT returned by the auth backend, or empty if not logged in.</summary>
+    public string Token { get; set; } = "";
+
+    public bool IsAuthenticated => Token.Length > 0;
+
+    /// <summary>Looks up the Global autoload from anywhere in the scene tree.</summary>
+    public static Global Instance =>
+        Engine.GetMainLoop() is SceneTree tree
+            ? tree.Root.GetNode<Global>("/root/Global") ?? throw new System.InvalidOperationException("Global autoload not found.")
+            : throw new System.InvalidOperationException("No active SceneTree.");
 }

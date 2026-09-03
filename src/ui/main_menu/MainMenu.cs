@@ -4,12 +4,13 @@ using Godot;
 namespace DuelMasters.UI.MainMenu;
 
 /// <summary>
-/// Development launcher menu. Provides simple navigation between the two playable
+/// Main menu launcher. Provides simple navigation between the two playable
 /// scenes (Hotseat Arena and Deck Builder), a windowed/fullscreen toggle, and a
 /// quit button.
 ///
-/// The project's main scene is this menu, so pressing Play (F5) always lands here;
-/// to run an individual scene directly use F6 (Run Current Scene).
+/// This scene is opened by the login gate (AuthScene, the project's main scene)
+/// after the player signs in, or directly via "Continue as Guest". To run a scene
+/// on its own in the editor use F6 (Run Current Scene).
 /// </summary>
 public partial class MainMenu : Control
 {

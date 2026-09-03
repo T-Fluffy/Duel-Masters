@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json;
+using DuelMasters.Core.Autoload;
 using Godot;
+using CardCatalogFile = DuelMasters.Resources.CardCatalog;
 
 namespace DuelMasters.Scenes.DeckBuilder;
 
@@ -14,6 +16,9 @@ namespace DuelMasters.Scenes.DeckBuilder;
 /// Deck persistence talks to the Phase 1.5 .NET backend (JWT auth) over HTTP.
 /// If the server is unreachable, save/load report the failure without crashing,
 /// so the scene stays usable offline for browsing and deck assembly.
+///
+/// The session token is shared via the Global autoload (set from the login scene);
+/// the inline login bar remains as a fallback for changing account.
 /// </summary>
 public partial class DeckBuilder : Control
 {
@@ -22,12 +27,19 @@ public partial class DeckBuilder : Control
 	private const int MaxCopies = 4;
 	private const string CardsJsonPath = "res://src/resources/data/cards.json";
 	private const string ApiBase = "http://127.0.0.1:8080";
+	private const string MainMenuPath = "res://src/ui/main_menu/MainMenu.tscn";
 
 	private readonly List<CardData> _catalog = new();
 	private readonly Dictionary<string, int> _deck = new();
+	private readonly Dictionary<string, CardCatalogFile.CardRecord> _parseLookup = new();
+
+	private DuelMasters.Gameplay.CardView.CardView _preview = null!;
 
 	private VBoxContainer _poolBox = null!;
 	private VBoxContainer _deckList = null!;
+	private Control _previewHost = null!;
+	private Label _previewName = null!;
+	private Label _previewInfo = null!;
 	private Label _summary = null!;
 	private Label _status = null!;
 	private Label _authLabel = null!;
@@ -48,6 +60,7 @@ public partial class DeckBuilder : Control
 		public int ManaCost { get; init; }
 		public string Race { get; init; } = "-";
 		public string CardType { get; init; } = "Creature";
+		public string ImagePath { get; init; } = "";
 		public string Tooltip { get; init; } = "";
 	}
 
@@ -60,6 +73,7 @@ public partial class DeckBuilder : Control
 		public int ManaCost { get; set; }
 		public int? Power { get; set; }
 		public string? Race { get; set; }
+		public string ImagePath { get; set; } = "";
 	}
 
 	public override void _Ready()
@@ -67,6 +81,9 @@ public partial class DeckBuilder : Control
 		_http = new HttpRequest { Timeout = 15 };
 		AddChild(_http);
 		_http.RequestCompleted += OnRequestCompleted;
+
+		// Adopt the session established by the login scene, if any.
+		_token = Global.Instance.Token;
 
 		BuildUi();
 		LoadCatalog();
@@ -92,13 +109,19 @@ public partial class DeckBuilder : Control
 		var header = new HBoxContainer();
 		root.AddChild(header);
 
+		var menuBtn = new Button { Text = "< Main Menu" };
+		menuBtn.Pressed += OnBackToMenu;
+		header.AddChild(menuBtn);
+
+		header.AddChild(new Control { CustomMinimumSize = new Vector2(12, 0) });
+
 		var title = new Label { Text = "Deck Builder" };
 		title.AddThemeFontSizeOverride("font_size", 28);
 		header.AddChild(title);
 
 		header.AddChild(new Control { CustomMinimumSize = new Vector2(24, 0) });
 
-		_userEdit = new LineEdit { PlaceholderText = "username", CustomMinimumSize = new Vector2(160, 0) };
+		_userEdit = new LineEdit { PlaceholderText = "username", CustomMinimumSize = new Vector2(160, 0), Text = Global.Instance.Username };
 		header.AddChild(_userEdit);
 		_passEdit = new LineEdit { PlaceholderText = "password", Secret = true, CustomMinimumSize = new Vector2(160, 0) };
 		header.AddChild(_passEdit);
@@ -112,15 +135,18 @@ public partial class DeckBuilder : Control
 		header.AddChild(registerBtn);
 
 		header.AddChild(new Control { CustomMinimumSize = new Vector2(16, 0) });
-		_authLabel = new Label { Text = "Not logged in", CustomMinimumSize = new Vector2(220, 0) };
+		_authLabel = new Label { Text = _token.Length > 0 ? $"Logged in as {Global.Instance.Username}" : "Not logged in", CustomMinimumSize = new Vector2(220, 0) };
 		header.AddChild(_authLabel);
 
-		// Body: card pool (left) + deck (right).
+		// Body: card pool (left) + card preview (right).
 		var body = new HBoxContainer { CustomMinimumSize = new Vector2(0, 560) };
 		root.AddChild(body);
 
 		body.AddChild(BuildCardPool());
-		body.AddChild(BuildDeckPanel());
+		body.AddChild(BuildPreviewPanel());
+
+		// Deck list, centered below the card pool.
+		root.AddChild(BuildDeckPanel());
 
 		_status = new Label
 		{
@@ -157,32 +183,64 @@ public partial class DeckBuilder : Control
 		return pool;
 	}
 
-	private Control BuildDeckPanel()
+	private Control BuildPreviewPanel()
 	{
-		var right = new VBoxContainer { CustomMinimumSize = new Vector2(420, 0) };
+		var right = new VBoxContainer { CustomMinimumSize = new Vector2(300, 0) };
+		right.Alignment = BoxContainer.AlignmentMode.Center;
 
-		var title = new Label { Text = "Deck" };
+		var title = new Label { Text = "Card Preview", HorizontalAlignment = HorizontalAlignment.Center };
 		title.AddThemeFontSizeOverride("font_size", 20);
 		right.AddChild(title);
 
-		_summary = new Label { Text = "" };
-		right.AddChild(_summary);
+		_previewHost = new CenterContainer { CustomMinimumSize = new Vector2(300, 414) };
+		right.AddChild(_previewHost);
 
-		var scroll = new ScrollContainer { HorizontalScrollMode = ScrollContainer.ScrollMode.Disabled };
-		scroll.SizeFlagsVertical = SizeFlags.ExpandFill;
-		right.AddChild(scroll);
+		_previewName = new Label { Text = "Click a card in the pool", HorizontalAlignment = HorizontalAlignment.Center };
+		_previewName.AddThemeFontSizeOverride("font_size", 16);
+		right.AddChild(_previewName);
 
-		_deckList = new VBoxContainer { SizeFlagsHorizontal = SizeFlags.ExpandFill };
-		scroll.AddChild(_deckList);
+		_previewInfo = new Label { Text = "", HorizontalAlignment = HorizontalAlignment.Center };
+		_previewInfo.AddThemeFontSizeOverride("font_size", 14);
+		_previewInfo.AddThemeColorOverride("font_color", new Color(0.7f, 0.75f, 0.85f));
+		right.AddChild(_previewInfo);
+		return right;
+	}
+
+	private Control BuildDeckPanel()
+	{
+		var band = new VBoxContainer { CustomMinimumSize = new Vector2(0, 300) };
+		band.Alignment = BoxContainer.AlignmentMode.Center;
+
+		var title = new Label { Text = "Your Deck", HorizontalAlignment = HorizontalAlignment.Center };
+		title.AddThemeFontSizeOverride("font_size", 20);
+		band.AddChild(title);
+
+		_summary = new Label { Text = "", HorizontalAlignment = HorizontalAlignment.Center };
+		band.AddChild(_summary);
+
+		var scroll = new ScrollContainer { HorizontalScrollMode = ScrollContainer.ScrollMode.Disabled, CustomMinimumSize = new Vector2(0, 180) };
+		band.AddChild(scroll);
+
+		var listWrap = new MarginContainer();
+		listWrap.SizeFlagsHorizontal = SizeFlags.ShrinkCenter;
+		scroll.AddChild(listWrap);
+
+		_deckList = new VBoxContainer { SizeFlagsHorizontal = SizeFlags.ExpandFill, CustomMinimumSize = new Vector2(700, 0) };
+		listWrap.AddChild(_deckList);
+
+		var buttons = new HBoxContainer();
+		buttons.Alignment = BoxContainer.AlignmentMode.Center;
+		buttons.AddThemeConstantOverride("separation", 12);
+		band.AddChild(buttons);
 
 		var saveBtn = new Button { Text = "Save Deck" };
 		saveBtn.Pressed += OnSaveDeck;
-		right.AddChild(saveBtn);
+		buttons.AddChild(saveBtn);
 
 		var loadBtn = new Button { Text = "Load Decks" };
 		loadBtn.Pressed += OnLoadDecks;
-		right.AddChild(loadBtn);
-		return right;
+		buttons.AddChild(loadBtn);
+		return band;
 	}
 
 	// ------------------------------------------------------------- catalog --
@@ -220,6 +278,12 @@ public partial class DeckBuilder : Control
 			});
 		}
 		_catalog.Sort((a, b) => string.CompareOrdinal(a.Name, b.Name));
+
+		// Build a domain-card + art lookup (via the shared catalog loader) for previews.
+		_parseLookup.Clear();
+		foreach (var rec in CardCatalogFile.Load())
+			_parseLookup[rec.Card.Id] = rec;
+
 		RefreshPool();
 		SetStatus($"Loaded {_catalog.Count} named cards from the catalog.", false);
 	}
@@ -262,6 +326,10 @@ public partial class DeckBuilder : Control
 
 			var count = new Label { Text = have > 0 ? $"x{have}" : "" , CustomMinimumSize = new Vector2(28, 0) };
 			row.AddChild(count);
+
+			var preview = new Button { Text = "Preview" };
+			preview.Pressed += () => ShowPreview(card);
+			row.AddChild(preview);
 
 			_poolBox.AddChild(row);
 			seen++;
@@ -347,6 +415,40 @@ public partial class DeckBuilder : Control
 		_status.Modulate = isError ? new Color(1f, 0.6f, 0.5f) : new Color(0.85f, 0.92f, 1f);
 	}
 
+	private void ShowPreview(CardData data)
+	{
+		ClearPreviewCard();
+
+		if (!_parseLookup.TryGetValue(data.Id, out var rec))
+		{
+			_previewName.Text = data.Name;
+			_previewInfo.Text = "";
+			return;
+		}
+
+		_preview = new DuelMasters.Gameplay.CardView.CardView(rec.Card, rec.ImagePath);
+		_preview.MouseFilter = MouseFilterEnum.Ignore;
+		_preview.Scale = new Vector2(1.8f, 1.8f);
+		_preview.SetProcess(false); // static preview: hold the scale, no hover growth
+		_previewHost.AddChild(_preview);
+
+		var civ = data.Civilization ?? "-";
+		var power = data.CardType == "Spell" ? "-" : data.Power?.ToString() ?? "-";
+		_previewName.Text = data.Name;
+		_previewInfo.Text = $"{civ}  •  {data.ManaCost} mana  •  {data.CardType}\nRace: {data.Race}  •  Power: {power}";
+	}
+
+	private void ClearPreviewCard()
+	{
+		if (_preview is not null && _preview.IsInsideTree())
+		{
+			_preview.QueueFree();
+			_preview = null!;
+		}
+	}
+
+	private void OnBackToMenu() => GetTree().ChangeSceneToFile(MainMenuPath);
+
 	private void OnSaveDeck()
 	{
 		if (_token.Length == 0)
@@ -426,7 +528,10 @@ public partial class DeckBuilder : Control
 				using var doc = JsonDocument.Parse(text);
 				var root = doc.RootElement;
 				_token = root.GetProperty("token").GetString() ?? "";
-				_authLabel.Text = $"Logged in as {root.GetProperty("username").GetString()}";
+				var username = root.GetProperty("username").GetString() ?? "";
+				Global.Instance.Token = _token;
+				Global.Instance.Username = _token.Length > 0 ? username : Global.Instance.Username;
+				_authLabel.Text = _token.Length > 0 ? $"Logged in as {username}" : "Not logged in";
 				SetStatus("Authenticated.", false);
 				return;
 			}

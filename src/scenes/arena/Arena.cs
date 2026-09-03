@@ -142,6 +142,12 @@ public partial class Arena : Control
         _endTurn = new Button { Text = "End Turn" };
         _endTurn.Pressed += OnEndTurn;
         footer.AddChild(_endTurn);
+
+        footer.AddChild(new Control { CustomMinimumSize = new Vector2(0, 0), SizeFlagsHorizontal = SizeFlags.ExpandFill });
+
+        var menuBtn = new Button { Text = "Main Menu" };
+        menuBtn.Pressed += OnBackToMenu;
+        footer.AddChild(menuBtn);
         root.AddChild(footer);
 
         // Dev window-mode toggle pinned to the bottom-right corner.
@@ -190,6 +196,8 @@ public partial class Arena : Control
         ResetInteraction();
         Refresh();
     }
+
+    private void OnBackToMenu() => GetTree().ChangeSceneToFile("res://src/ui/main_menu/MainMenu.tscn");
 
     private static HFlowContainer GetFlow(Control box)
     {

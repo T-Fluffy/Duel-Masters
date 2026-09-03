@@ -44,10 +44,14 @@ repo root (`Duel_Masters_TCG_Engine_GDD.md`, `Duel_Masters_Strategy_and_Codebase
 2. Open `project.godot` in the **.NET edition** of Godot.
 3. Build the C# solution (`.godot/mono` auto-builds in the editor, or run
    `dotnet build -c Debug`).
-4. Run the project. The project's main scene launches the **hotseat arena**
-   (`src/scenes/arena/`), a local 2-player sandbox that plays straight against the
-   shared `DuelMasters.Domain` rules engine. The `Global` autoload and `MainGame`
-   entry point remain wired for the future menu/flow.
+4. Run the project (optionally start the Phase 1.5 backend so login and deck save/load
+   work: `docker compose up` under `backends/`). The project's main scene is the
+   **login/register screen** (`src/scenes/auth/`), which stores the signed-in session
+   on the `Global` autoload and then opens the **main menu** (`src/ui/main_menu/`).
+   From there you can launch the **hotseat arena** (`src/scenes/arena/`, a local
+   2-player sandbox that plays straight against the shared `DuelMasters.Domain` rules
+   engine) or the **Deck Builder** (`src/scenes/deck_builder/`). If the backend is
+   offline, use **Continue as Guest** to reach the menu anyway and play sans save.
 
 ## Building & testing
 

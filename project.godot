@@ -14,7 +14,7 @@ config/name="Duel-Masters"
 config/version="0.1.0"
 config/features=PackedStringArray("4.7", "C#")
 config/icon="res://icon.svg"
-run/main_scene="res://src/ui/main_menu/MainMenu.tscn"
+run/main_scene="res://src/scenes/auth/AuthScene.tscn"
 
 [autoload]
 
