@@ -49,6 +49,16 @@ public partial class WindowModeToggle : Button
         if (window is null)
             return;
 
+        // Running inside the editor's embedded game view: the OS window cannot be
+        // resized or moved there, so any resize would fail silently (or log "Embedded
+        // window can't be moved"). Surface that instead of pretending to switch.
+        if (window.IsEmbedded())
+        {
+            SyncLabel();
+            GD.Print("[WindowModeToggle] Cannot resize window: the game is running in the editor's embedded view. Run the project as a standalone window (disable the embedded view) to toggle 1280x720 / 1920x1080.");
+            return;
+        }
+
         // Read the actual current size rather than trusting a cached flag, so the
         // button can never get out of sync with the real window size.
         var isFull = IsAtSize(window, FullscreenSize);
@@ -72,10 +82,18 @@ public partial class WindowModeToggle : Button
         window.Position = usable.Position + (usable.Size - window.Size) / 2;
     }
 
-    /// <summary>Re-sync the button label to the current window size.</summary>
+    /// <summary>Re-sync the button label to the current window size (or the embedded hint).</summary>
     public void SyncLabel()
     {
         var window = GetWindow();
+
+        if (window is not null && window.IsEmbedded())
+        {
+            Text = "Run standalone to resize";
+            TooltipText = "The editor's embedded game view can't be resized. Run the project as a standalone window (disable the embedded view) to toggle 1280x720 / 1920x1080.";
+            return;
+        }
+
         var isFull = window is not null && IsAtSize(window, FullscreenSize);
         Text = isFull ? "Windowed (1280x720)" : "Fullscreen (1920x1080)";
         TooltipText = isFull
