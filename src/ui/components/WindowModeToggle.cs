@@ -4,11 +4,12 @@ namespace DuelMasters.UI.Components;
 
 /// <summary>
 /// A development helper button pinned to the bottom-right of a screen that toggles
-/// the OS window between windowed and fullscreen mode.
+/// the OS window between windowed and fullscreen mode (both directions).
 ///
-/// On start the label reflects the real current window mode (so it works whether the
-/// project launches windowed or fullscreen). When switching back to windowed the
-/// window is resized to <see cref="WindowedSize"/> and centered on the current screen.
+/// It drives the root <see cref="Window"/> node (instead of raw DisplayServer calls)
+/// and tracks the intended mode locally rather than reading it back from the OS, which
+/// avoids async-mode races that made the label/state disagree. When returning to a
+/// windowed view it restores <see cref="WindowedSize"/> and re-centers on the current screen.
 /// </summary>
 [GlobalClass]
 public partial class WindowModeToggle : Button
@@ -18,12 +19,13 @@ public partial class WindowModeToggle : Button
 
     private const float CornerMargin = 16f;
 
+    private bool _fullscreen;
+
     public WindowModeToggle()
     {
         Text = "";
         TooltipText = "Toggle between a windowed view and fullscreen (dev)";
         PivotOffset = Vector2.Zero;
-        SyncLabel();
     }
 
     public override void _Ready()
@@ -34,38 +36,50 @@ public partial class WindowModeToggle : Button
         OffsetRight = -CornerMargin;
         OffsetBottom = -CornerMargin;
         Pressed += OnPressed;
+
+        // Reflect the real state on startup, whichever mode the project launched in.
+        _fullscreen = DisplayServer.WindowGetMode() == DisplayServer.WindowMode.Fullscreen;
         SyncLabel();
     }
 
     private void OnPressed()
     {
-        var name = DisplayServer.WindowGetMode();
-        if (name == DisplayServer.WindowMode.Windowed ||
-            name == DisplayServer.WindowMode.Minimized ||
-            name == DisplayServer.WindowMode.Maximized)
+        var window = GetWindow();
+        if (window is null)
+            return;
+
+        // Toggle to the opposite of the current fullscreen state.
+        _fullscreen = !_fullscreen;
+
+        if (_fullscreen)
         {
-            DisplayServer.WindowSetMode(DisplayServer.WindowMode.Fullscreen);
+            window.Mode = Window.ModeEnum.Fullscreen;
         }
         else
         {
-            DisplayServer.WindowSetSize(WindowedSize);
-            // Re-center the windowed view on the screen it is currently on.
-            var screen = DisplayServer.WindowGetCurrentScreen();
-            var screenRect = DisplayServer.ScreenGetUsableRect(screen);
-            var pos = screenRect.Position + (screenRect.Size - WindowedSize) / 2;
-            DisplayServer.WindowSetPosition(pos);
-            DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
+            // Switch to windowed first, THEN size/position (resizing while still
+            // in fullscreen is a no-op and would otherwise leave the wrong size).
+            window.Mode = Window.ModeEnum.Windowed;
+            window.Size = WindowedSize;
+            CenterOnCurrentScreen(window);
         }
+
         SyncLabel();
     }
 
-    /// <summary>Re-sync the button label to the actual window mode (call after changing mode externally).</summary>
+    private static void CenterOnCurrentScreen(Window window)
+    {
+        var screen = window.CurrentScreen;
+        var usable = DisplayServer.ScreenGetUsableRect(screen);
+        window.Position = usable.Position + (usable.Size - window.Size) / 2;
+    }
+
+    /// <summary>Re-sync the button label to the intended window mode.</summary>
     public void SyncLabel()
     {
-        var isWindowed = DisplayServer.WindowGetMode() == DisplayServer.WindowMode.Windowed;
-        Text = isWindowed ? "Fullscreen" : "Windowed";
-        TooltipText = isWindowed
-            ? "Switch the window to fullscreen"
-            : "Switch back to a 1280x720 windowed view";
+        Text = _fullscreen ? "Windowed" : "Fullscreen";
+        TooltipText = _fullscreen
+            ? "Switch back to a 1280x720 windowed view"
+            : "Switch the window to fullscreen";
     }
 }
