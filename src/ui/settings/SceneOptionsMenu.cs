@@ -1,4 +1,5 @@
 using System;
+using DuelMasters.Core;
 using Godot;
 
 namespace DuelMasters.UI.Settings;
@@ -55,6 +56,7 @@ public partial class SceneOptionsMenu : Control
         }
 
         _menu = new PanelContainer();
+        _menu.AddThemeStyleboxOverride("panel", UiStyles.Popup());
         AddChild(_menu);
 
         var box = new VBoxContainer();
@@ -62,6 +64,7 @@ public partial class SceneOptionsMenu : Control
         _menu.AddChild(box);
 
         AddEntry(box, "Display Settings", OnDisplaySettings);
+        AddCheckbox(box, "Show AI Cards", GameSettings.RevealAiHand, GameSettings.SetRevealAiHand);
         if (ShowBackToMenu)
             AddEntry(box, "Back to Main Menu", OnBackToMenu);
         AddEntry(box, "Exit Game", OnExitGame);
@@ -77,6 +80,19 @@ public partial class SceneOptionsMenu : Control
         b.Alignment = HorizontalAlignment.Left;
         b.Pressed += () => onClick();
         box.AddChild(b);
+    }
+
+    private static void AddCheckbox(VBoxContainer box, string text, bool initial, Action<bool> onChange)
+    {
+        var c = new CheckBox
+        {
+            Text = text,
+            ButtonPressed = initial,
+            CustomMinimumSize = new Vector2(160, 0),
+            TooltipText = "Development aid: reveal the opponent's hand (face-up) to inspect the AI's plays.",
+        };
+        c.Toggled += value => onChange(value);
+        box.AddChild(c);
     }
 
     private void OnDisplaySettings()

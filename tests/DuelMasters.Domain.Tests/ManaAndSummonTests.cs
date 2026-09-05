@@ -110,4 +110,37 @@ public class ManaAndSummonTests
 
         Assert.Throws<RuleViolationException>(() => h.Game.CastSpell(0));
     }
+
+    [Fact]
+    public void ManuallyTappingMana_ReducesAvailableMana_AndUntapsNextTurn()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        h.PutMana(h.P1, CardFactory.Creature(1, 1000, Civilization.Fire, "FireManaA"));
+        h.PutMana(h.P1, CardFactory.Creature(1, 1000, Civilization.Fire, "FireManaB"));
+        h.PutInHand(h.P1, CardFactory.Creature(2, 3000, Civilization.Fire, "TwoDrop"));
+
+        // Both mana untapped: the 2-cost creature is affordable.
+        Assert.True(h.Game.CanAfford(h.P1, h.P1.Hand[0].Card));
+
+        // The player marks one mana as used (the "tap the mana you spend" gesture).
+        h.P1.ManaZone[0].Tap();
+        Assert.True(h.P1.ManaZone[0].IsTapped);
+        Assert.False(h.Game.CanAfford(h.P1, h.P1.Hand[0].Card)); // only 1 untapped remains
+        Assert.Throws<RuleViolationException>(() => h.Game.SummonCreature(0));
+
+        // Untapping again restores the mana for this turn.
+        h.P1.ManaZone[0].Untap();
+        Assert.True(h.Game.CanAfford(h.P1, h.P1.Hand[0].Card));
+
+        // And the engine untaps all mana automatically at the start of the next turn.
+        h.Game.EndMainPhase();
+        h.Game.EndTurn();
+        h.Game.StartTurn();
+        h.Game.Draw();
+        h.Game.EndMainPhase();
+        h.Game.EndTurn();
+        h.Game.StartTurn();
+        Assert.All(h.P1.ManaZone, m => Assert.False(m.IsTapped));
+    }
 }

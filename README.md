@@ -22,7 +22,7 @@ game, built with:
 | 1.5 | .NET 10 backend (JWT auth, deck CRUD) + Postgres + Deck Builder | ✅ Done |
 | 2 | Domain rules engine (turn machine, combat, shield triggers) + xUnit tests | ✅ Done |
 | 3 | Godot 2.5D board UI + local hotseat sandbox | ✅ Done |
-| 4 | Authoritative .NET / SignalR backend + client transport | ⏳ |
+| 4 | Authoritative .NET / SignalR backend + client transport | ✅ Done |
 | 5 | AI opponent | ⏳ |
 | 6 | Shaders, VFX, sound polish | ⏳ |
 
@@ -44,14 +44,25 @@ repo root (`Duel_Masters_TCG_Engine_GDD.md`, `Duel_Masters_Strategy_and_Codebase
 2. Open `project.godot` in the **.NET edition** of Godot.
 3. Build the C# solution (`.godot/mono` auto-builds in the editor, or run
    `dotnet build -c Debug`).
-4. Run the project (optionally start the Phase 1.5 backend so login and deck save/load
-   work: `docker compose up` under `backends/`). The project's main scene is the
+4. Run the project. Optionally start the backend stack (Postgres + the ASP.NET server,
+   which hosts the Phase 1.5 REST API **and** the Phase 4 SignalR `DuelHub` at
+   `http://127.0.0.1:8080/duel`) from the repo root:
+
+   ```bash
+   docker-compose -f backends/docker-compose.yml up --build -d
+   ```
+
+   (If Docker Desktop isn't running, start it first; the stack waits for Postgres to
+   become healthy before starting the server.) Stop it later with
+   `docker-compose -f backends/docker-compose.yml down`. The project's main scene is the
    **login/register screen** (`src/scenes/auth/`), which stores the signed-in session
    on the `Global` autoload and then opens the **main menu** (`src/ui/main_menu/`).
    From there you can launch the **hotseat arena** (`src/scenes/arena/`, a local
    2-player sandbox that plays straight against the shared `DuelMasters.Domain` rules
-   engine) or the **Deck Builder** (`src/scenes/deck_builder/`). If the backend is
-   offline, use **Continue as Guest** to reach the menu anyway and play sans save.
+   engine), the **Deck Builder** (`src/scenes/deck_builder/`), or **Online Duel**
+   (`src/scenes/network_lobby/` + `src/scenes/network_arena/`), which connects to the
+   SignalR hub to host/join a server-authoritative match. If the backend is offline, use
+   **Continue as Guest** to reach the menu anyway and play sans save.
 
    > **Window sizing in the editor:** the editor's **Game view** remembers its own window
    > geometry (embedded vs floating, and size) in the git-ignored `.godot/editor/*.cfg`,

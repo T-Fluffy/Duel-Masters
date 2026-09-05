@@ -58,7 +58,7 @@ public partial class MainMenu : Control
 
         center.AddChild(new Control { CustomMinimumSize = new Vector2(0, 24) });
 
-        var arenaBtn = new Button { Text = "Hotseat Arena" };
+        var arenaBtn = new Button { Text = "Arena" };
         arenaBtn.Pressed += () => GetTree().ChangeSceneToFile(ArenaPath);
         center.AddChild(arenaBtn);
 

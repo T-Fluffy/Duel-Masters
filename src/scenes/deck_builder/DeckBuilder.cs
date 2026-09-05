@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json;
 using DuelMasters.Core.Autoload;
+using DuelMasters.Resources;
+using DuelMasters.UI;
 using DuelMasters.UI.Settings;
 using Godot;
 using CardCatalogFile = DuelMasters.Resources.CardCatalog;
@@ -53,6 +55,10 @@ public partial class DeckBuilder : Control
 	private string _lastMethod = "";
 	private string _selectedDeckId = "";
 
+	private readonly List<StarterDeck> _starterDecks = new();
+	private OptionButton _starterPicker = null!;
+	private Label _starterDesc = null!;
+
 	private sealed class CardData
 	{
 		public string Id { get; init; } = "";
@@ -89,6 +95,7 @@ public partial class DeckBuilder : Control
 
 		BuildUi();
 		LoadCatalog();
+		LoadStarterDecks();
 		RefreshDeckView();
 	}
 
@@ -218,6 +225,30 @@ public partial class DeckBuilder : Control
 		title.AddThemeFontSizeOverride("font_size", 20);
 		band.AddChild(title);
 
+		var starterRow = new HBoxContainer();
+		starterRow.Alignment = BoxContainer.AlignmentMode.Center;
+		starterRow.AddThemeConstantOverride("separation", 10);
+		band.AddChild(starterRow);
+
+		var starterLabel = new Label { Text = "Starter Decks:" };
+		starterLabel.AddThemeColorOverride("font_color", UiStyles.BodyText);
+		starterRow.AddChild(starterLabel);
+
+		_starterPicker = new OptionButton { CustomMinimumSize = new Vector2(280, 0) };
+		_starterPicker.AddItem("-- no starter --", 0);
+		_starterPicker.ItemSelected += OnStarterSelected;
+		starterRow.AddChild(_starterPicker);
+
+		_starterDesc = new Label
+		{
+			Text = "",
+			HorizontalAlignment = HorizontalAlignment.Center,
+			AutowrapMode = TextServer.AutowrapMode.WordSmart,
+			CustomMinimumSize = new Vector2(480, 0),
+		};
+		_starterDesc.AddThemeColorOverride("font_color", UiStyles.MutedText);
+		band.AddChild(_starterDesc);
+
 		_summary = new Label { Text = "", HorizontalAlignment = HorizontalAlignment.Center };
 		band.AddChild(_summary);
 
@@ -247,6 +278,46 @@ public partial class DeckBuilder : Control
 	}
 
 	// ------------------------------------------------------------- catalog --
+
+	private void LoadStarterDecks()
+	{
+		try
+		{
+			_starterDecks.Clear();
+			_starterDecks.AddRange(StarterDecks.LoadAll());
+
+			// ItemSelected emits the 0-based combo index; item 0 is the "no
+			// starter" placeholder, so deck indices line up after it.
+			for (var i = 0; i < _starterDecks.Count; i++)
+				_starterPicker.AddItem(_starterDecks[i].Name, i + 1);
+			_starterPicker.Disabled = _starterDecks.Count == 0;
+		}
+		catch (Exception ex)
+		{
+			SetStatus($"Could not load starter deck registry: {ex.Message}", true);
+		}
+	}
+
+	private void OnStarterSelected(long index)
+	{
+		var slot = (int)index - 1; // index 0 is the placeholder row.
+		if (slot < 0 || slot >= _starterDecks.Count)
+			return;
+
+		var deck = _starterDecks[slot];
+		_deck.Clear();
+		foreach (var entry in deck.Cards)
+		{
+			var card = _catalog.FirstOrDefault(c =>
+				string.Equals(c.Name, entry.Name, StringComparison.OrdinalIgnoreCase));
+			if (card is not null)
+				_deck[card.Id] = entry.Count;
+		}
+
+		_starterDesc.Text = deck.Tagline;
+		RefreshDeckView();
+		SetStatus($"Loaded starter deck '{deck.Name}' ({CardCount()} cards).", false);
+	}
 
 	private void LoadCatalog()
 	{

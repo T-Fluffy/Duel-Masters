@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene format=3 uid="uid://djkvnawfgsi3w"]
 
-[ext_resource type="Script" path="res://src/scenes/arena/Arena.cs" id="1_arena"]
+[ext_resource type="Script" uid="uid://c2lufj43aijc2" path="res://src/scenes/arena/Arena.cs" id="1_arena"]
 
-[node name="Arena" type="Control"]
+[node name="Arena" type="Control" unique_id=269737995]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

@@ -158,6 +158,18 @@ public sealed class DuelGame
     }
 
     /// <summary>
+    /// True if <see cref="PayManaFor"/> will succeed for this card: enough untapped
+    /// mana AND at least one untapped mana of the card's own civilization.
+    /// </summary>
+    public bool CanPlay(Player player, Card card)
+    {
+        var available = player.ManaZone.Where(m => !m.IsTapped).ToList();
+        if (available.Count < card.ManaCost)
+            return false;
+        return available.Any(m => m.Card.Civilization == card.Civilization);
+    }
+
+    /// <summary>
     /// Summon a creature from the active player's hand into the battle zone, paying
     /// mana. It is summoning-sick (can't attack) unless it has Speed Attacker.
     /// </summary>
