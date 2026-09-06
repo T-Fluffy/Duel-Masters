@@ -281,13 +281,18 @@ public partial class NetworkArena : Control
 
         if (_state.IsGameOver)
         {
-            _status.Text = "Game over.";
+            var winnerName = _state.WinnerId is { Length: > 0 } winSide
+                ? _state.Players.FirstOrDefault(p => p.Side == winSide)?.Name
+                : null;
+            _status.Text = winnerName is { Length: > 0 }
+                ? $"Game over - {winnerName} wins!"
+                : "Game over.";
         }
         else
         {
-            var you = _state.YourTurn ? "" : " — opponent's turn";
+            var whoseTurn = _state.YourTurn ? Me().Name : Opp().Name;
             _status.Text =
-                $"{(_state.YourTurn ? "Your" : "Opponent's")} turn ({_state.Phase}){you}  |  Turn {_state.TurnNumber}";
+                $"{whoseTurn}'s turn ({_state.Phase})  |  Turn {_state.TurnNumber}  |  {Me().Name} vs {Opp().Name}";
         }
 
         _endTurn.Disabled = _state.IsGameOver || !_state.YourTurn || !IsPhase("Main") && !IsPhase("End");

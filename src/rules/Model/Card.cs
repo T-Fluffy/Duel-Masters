@@ -20,7 +20,8 @@ public sealed class Card
         int power = 0,
         string race = "",
         IEnumerable<Keyword> keywords = null!,
-        IEnumerable<CardEffect> effects = null!)
+        IEnumerable<CardEffect> effects = null!,
+        string evolutionOf = "")
     {
         Id = id ?? throw new ArgumentNullException(nameof(id));
         Name = name ?? throw new ArgumentNullException(nameof(name));
@@ -31,6 +32,7 @@ public sealed class Card
         Race = race ?? "";
         Keywords = keywords as IReadOnlySet<Keyword> ?? new HashSet<Keyword>(keywords ?? Array.Empty<Keyword>());
         Effects = effects as IReadOnlyList<CardEffect> ?? (effects ?? Array.Empty<CardEffect>()).ToArray();
+        EvolutionOf = evolutionOf ?? "";
     }
 
     public string Id { get; }
@@ -52,6 +54,17 @@ public sealed class Card
     public CardEffect? EffectOf(EffectId id) => Effects.FirstOrDefault(e => e.Id == id);
 
     public bool IsCreature => CardType == CardType.Creature || CardType == CardType.EvolutionCreature;
+
+    /// <summary>
+    /// The race an Evolution creature must be placed on top of (empty for everything
+    /// else). Evolution creatures cannot be summoned for mana or charged to the mana
+    /// zone - per the official rules they enter the battle zone only by evolving onto
+    /// one of your creatures whose race matches this value.
+    /// </summary>
+    public string EvolutionOf { get; }
+
+    /// <summary>True for an Evolution creature that carries real evolution rules.</summary>
+    public bool IsEvolution => CardType == CardType.EvolutionCreature && !string.IsNullOrWhiteSpace(EvolutionOf);
 
     /// <summary>How many shields one hit from this card breaks (1 normally).</summary>
     public int BreakerCount =>

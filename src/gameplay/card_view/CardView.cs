@@ -12,8 +12,9 @@ namespace DuelMasters.Gameplay.CardView;
 /// back or the card front (artwork only by default, or a full frame for the
 /// "artOnly=false" callers), and scales smoothly toward its hover/selection target
 /// via exponential smoothing in <see cref="_Process"/>. Tapped cards rotate 90°
-/// around their center (anime-style) and are gently dimmed so the layout rect and
-/// the click rect follow exactly what the player sees.
+/// around their center (anime-style "tapped" pose: summoned creatures and spent
+/// mana lie on their side) and are gently dimmed so the rotated card reads at a
+/// glance next to the upright ones.
 ///
 /// Input model: the card root keeps <see cref="Control.MouseFilter"/> = Stop and
 /// EVERY visual child is mouse-transparent (Ignore), so a click always lands on the
@@ -28,9 +29,9 @@ public partial class CardView : Control
     private const float HoverScale = 1.25f;
     private const float SelectedScale = 1.12f;
     private const float ScaleSpeed = 12f;
-    private const float RotateSpeed = 10f;
-    private const float TapAngle = Mathf.Pi / 2f;
-    private static readonly Color TappedDim = new(0.78f, 0.78f, 0.8f);
+    private const float TappedAngle = 90f;
+    private const float TapAnimSeconds = 0.35f;
+    private static readonly Color TappedDim = new(0.7f, 0.7f, 0.78f);
 
     private Vector2 _currentScale = Vector2.One;
     private bool _hovered;
@@ -43,6 +44,8 @@ public partial class CardView : Control
 
     private Panel _frame = null!;
     private Panel? _selectionBox;
+    private Panel? _combatBadge;
+    private Label? _combatBadgeLabel;
 
     /// <summary>The domain card (null means a face-down card back).</summary>
     public Card? Card { get; }
@@ -119,6 +122,8 @@ public partial class CardView : Control
         }
         _frame = null!;
         _selectionBox = null;
+        _combatBadge = null;
+        _combatBadgeLabel = null;
 
         BuildFace();
         MakeFaceTransparent(this);
@@ -378,11 +383,10 @@ public partial class CardView : Control
 
     /// <summary>
     /// Instantly snap the tap pose (no lerp). Tapped cards rotate 90° around their
-    /// center (like the anime: rotated creatures and used mana stay that way until
-    /// this turn's end) and are gently dimmed. The pivot is kept exactly centered
-    /// (see <see cref="SetCardSize"/>) so the rotated card stays over its layout
-    /// rect and the click rect (= rotated visual, Godot transforms input into local
-    /// control space) lines up with what the player sees.
+    /// center (the anime-style "used" state: summoned creatures and spent mana stay
+    /// on their side until this turn's end) and are gently dimmed. The pivot is kept
+    /// exactly centered (see <see cref="SetCardSize"/>) so the click rect lines up
+    /// with what the player sees.
     /// </summary>
     public void SnapTapped(bool tapped)
     {
@@ -397,10 +401,86 @@ public partial class CardView : Control
         RefreshTapPose();
     }
 
+    /// <summary>
+    /// Transition the tap pose from <paramref name="wasTapped"/> to
+    /// <paramref name="tapped"/> with a short rotation + dim tween. Used by the
+    /// arena when a rebuilt card's tap state changed since the last refresh: the
+    /// fresh view is posed at the OLD state, added to the tree, then animated to the
+    /// new one, so the motion is seamless instead of a one-frame snap.
+    /// </summary>
+    public void AnimateFromTapped(bool wasTapped, bool tapped)
+    {
+        Tapped = tapped;
+        if (_frame is null)
+            return;
+        RotationDegrees = wasTapped ? TappedAngle : 0f;
+        _frame.SelfModulate = wasTapped ? TappedDim : Colors.White;
+
+        var tw = CreateTween();
+        tw.SetParallel();
+        tw.TweenProperty(this, "rotation_degrees", tapped ? TappedAngle : 0f, TapAnimSeconds)
+            .SetTrans(Tween.TransitionType.Sine)
+            .SetEase(Tween.EaseType.InOut);
+        tw.TweenProperty(_frame, "self_modulate", tapped ? TappedDim : Colors.White, TapAnimSeconds);
+    }
+
     private void RefreshTapPose()
     {
-        RotationDegrees = Tapped ? 90f : 0f;
-        _frame.SelfModulate = Tapped ? TappedDim : Colors.White;
+        RotationDegrees = Tapped ? TappedAngle : 0f;
+        if (_frame is not null)
+            _frame.SelfModulate = Tapped ? TappedDim : Colors.White;
+    }
+
+    /// <summary>
+    /// Overlays a small coloured status ribbon across the top of the card (e.g. the
+    /// current combat role: ATTACK / TARGET / BLOCK). Pass <paramref name="text"/>
+    /// = null to hide it. Mouse-transparent so it never eats clicks.
+    /// </summary>
+    public void SetCombatBadge(string? text, Color color)
+    {
+        if (string.IsNullOrEmpty(text))
+        {
+            if (_combatBadge is not null)
+                _combatBadge.Visible = false;
+            return;
+        }
+        if (_combatBadge is null)
+        {
+            _combatBadge = new Panel { MouseFilter = MouseFilterEnum.Ignore };
+            _combatBadge.AnchorLeft = 0f;
+            _combatBadge.AnchorRight = 1f;
+            _combatBadge.AnchorTop = 0f;
+            _combatBadge.AnchorBottom = 0f;
+            _combatBadge.OffsetTop = 0f;
+            _combatBadge.OffsetBottom = S(22);
+            _combatBadgeLabel = new Label
+            {
+                HorizontalAlignment = HorizontalAlignment.Center,
+                VerticalAlignment = VerticalAlignment.Center,
+                MouseFilter = MouseFilterEnum.Ignore,
+            };
+            _combatBadgeLabel.SetAnchorsPreset(LayoutPreset.FullRect);
+            _combatBadgeLabel.AddThemeFontSizeOverride("font_size", Sf(9));
+            _combatBadge.AddChild(_combatBadgeLabel);
+            AddChild(_combatBadge);
+        }
+        if (_combatBadgeLabel is not null)
+        {
+            _combatBadgeLabel.Text = text;
+            _combatBadgeLabel.AddThemeColorOverride("font_color", color);
+        }
+        var sb = new StyleBoxFlat
+        {
+            BgColor = new Color(0f, 0f, 0f, 0.72f),
+            BorderColor = color,
+            CornerRadiusTopLeft = 2,
+            CornerRadiusTopRight = 2,
+            CornerRadiusBottomLeft = 2,
+            CornerRadiusBottomRight = 2,
+        };
+        sb.SetBorderWidthAll(1);
+        _combatBadge.AddThemeStyleboxOverride("panel", sb);
+        _combatBadge.Visible = true;
     }
 
     public override void _Process(double delta)

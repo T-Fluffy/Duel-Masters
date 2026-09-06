@@ -157,6 +157,33 @@ public class CatalogDataTests
     }
 
     [Fact]
+    public void EvolutionCards_DeclareAnEvolutionOfRace()
+    {
+        var cards = LoadArray(CardsJsonPath);
+        var evos = cards.EnumerateArray()
+            .Where(c => c.TryGetProperty("cardType", out var t)
+                && string.Equals(t.GetString(), "EvolutionCreature", StringComparison.Ordinal))
+            .ToList();
+
+        Assert.NotEmpty(evos);
+        foreach (var e in evos)
+            Assert.True(e.TryGetProperty("evolutionOf", out var evoEl) && !string.IsNullOrEmpty(evoEl.GetString()),
+                $"Evolution {e.GetProperty("id").GetString()} must declare an 'evolutionOf' race.");
+    }
+
+    [Fact]
+    public void ExplicitEvolutionOf_MatchesItsOwnRaceOrType()
+    {
+        var byName = LoadCards();
+
+        // A real evolution card: opposite-type shapes may stack on either race,
+        // but a plain creature evolution names one race it can sit on.
+        Assert.True(byName.TryGetValue("Larba Geer, the Immaculate", out var larba));
+        Assert.Equal("EvolutionCreature", larba[0].GetProperty("cardType").GetString());
+        Assert.Equal("Guardian", larba[0].GetProperty("evolutionOf").GetString());
+    }
+
+    [Fact]
     public void CuratedStarterCards_CarryTheirIntendedAbilities()
     {
         var byName = LoadCards();
@@ -204,8 +231,11 @@ public class CatalogDataTests
 
         Assert.Contains(EffectsOf("Terror Pit"), e => e.GetProperty("id").GetString() == "Spell_DestroyPowerAtMost");
         Assert.Contains(EffectsOf("Tornado Flame"), e => e.GetProperty("id").GetString() == "Spell_DestroyPowerAtMost"
-                                                          && e.GetProperty("value").GetInt32() == 3000);
+                                                          && e.GetProperty("value").GetInt32() == 4000);
         Assert.Contains(EffectsOf("Spiral Gate"), e => e.GetProperty("id").GetString() == "Spell_ReturnToHand");
-        Assert.Contains(EffectsOf("Holy Awe"), e => e.GetProperty("id").GetString() == "Spell_UntapOwnCreature");
+        // Holy Awe's mass-tap is unrepresentable; the mapping keeps it effect-less
+        // and documents the approximation as a note instead of a wrong pseudo-effect.
+        Assert.Equal("ShieldTrigger", FirstKeyword("Holy Awe", "ShieldTrigger"));
+        Assert.False(EffectsOf("Holy Awe").Any());
     }
 }

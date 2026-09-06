@@ -78,13 +78,25 @@ public sealed class AiController
         }
 
         // 2) Develop the battlefield before attacking (attacks lock summons/casts).
-        if (!game.HasAttackedThisTurn && TryChoosePlay(game, out var playIndex, out var spellOwner, out var spellTarget))
+        if (!game.HasAttackedThisTurn && TryChoosePlay(game, out var playIndex, out var targets, out var evolveBaseIndex))
         {
             var card = Self.Hand[playIndex].Card;
-            if (card.IsCreature)
-                game.SummonCreature(playIndex);
-            else if (spellOwner is not null)
-                game.CastSpell(playIndex, spellOwner, spellTarget);
+            if (card.IsEvolution)
+            {
+                if (targets is { Count: 1 } single)
+                    game.EvolveCreature(playIndex, evolveBaseIndex, single[0].Owner, single[0].Index);
+                else
+                    game.EvolveCreature(playIndex, evolveBaseIndex);
+            }
+            else if (card.IsCreature)
+            {
+                if (targets is { Count: 1 } single)
+                    game.SummonCreature(playIndex, single[0].Owner, single[0].Index);
+                else
+                    game.SummonCreature(playIndex);
+            }
+            else if (targets is { Count: > 0 })
+                game.CastSpell(playIndex, targets);
             else
                 game.CastSpell(playIndex);
             return new AiStep(AiStepKind.ActionTaken, -1);
@@ -162,7 +174,7 @@ public sealed class AiController
             throw new InvalidOperationException("DecideBlock is only meaningful when the AI is the defender.");
 
         var attacker = game.ActivePlayer.BattleZone.ElementAtOrDefault(attackerIndex);
-        if (attacker is null || attacker.IsTapped)
+        if (attacker is null || attacker.IsTapped || !DuelGame.CanBeBlocked(attacker.Card))
             return false;
 
         var blockers = Self.BattleZone
@@ -213,6 +225,8 @@ public sealed class AiController
         for (var i = 0; i < hand.Count; i++)
         {
             var card = hand[i].Card;
+            if (card.IsEvolution)
+                continue; // evolution creatures can never be charged to the mana zone
             var score = 0f;
 
             var copies = hand.Count(h => h.Card.Name == card.Name);
@@ -239,34 +253,102 @@ public sealed class AiController
 
     /// <summary>
     /// Pick the best playable card. Creatures are preferred; spells are only played
-    /// when they carry a real effect (removal, tap, untap, boost, draw) and the mana
-    /// budget survives it. For a targeted spell, <paramref name="spellOwner"/> /
-    /// <paramref name="spellTarget"/> give the chosen legal target (null/-1 otherwise).
+    /// when they carry a real effect (removal, tap, untap, boost, draw, ramp,
+    /// wipe) and the mana budget survives it. Evolution creatures are free and rank
+    /// highly when a matching-race base is on board -
+    /// <paramref name="evolveBaseIndex"/> carries the chosen base ( -1 otherwise).
+    /// For a targeted play, <paramref name="targets"/> carries the chosen legal
+    /// targets (one for a creature's on-play ability, one per spell targeting
+    /// effect - null when the play needs no choice).
     /// </summary>
-    private bool TryChoosePlay(DuelGame game, out int playIndex, out Player? spellOwner, out int spellTarget)
+    private bool TryChoosePlay(DuelGame game, out int playIndex, out IReadOnlyList<SpellTarget>? targets, out int evolveBaseIndex)
     {
         playIndex = -1;
-        spellOwner = null;
-        spellTarget = -1;
+        targets = null;
+        evolveBaseIndex = -1;
+        if (game.HasAttackedThisTurn)
+            return false;
 
         var bestScore = float.NegativeInfinity;
         for (var i = 0; i < Self.Hand.Count; i++)
         {
             var card = Self.Hand[i].Card;
-            if (!card.IsCreature || !game.CanPlay(Self, card))
+            if (card.IsEvolution)
+            {
+                if (!game.CanEvolve(Self, card) || !game.TryGetEvolutionBase(Self, card, out var baseIdx))
+                    continue;
+
+                // Free, keeps mana untouched: a pure upgrade of a similar body.
+                var evoScore = (card.Power / 1000f) * (1f - Profile.ValueTempo) + 3f;
+                if (card.HasKeyword(Keyword.Blocker))
+                    evoScore += 2f;
+                if (card.HasKeyword(Keyword.SpeedAttacker) || card.HasKeyword(Keyword.Slayer))
+                    evoScore += 1f;
+                if (card.Effects.Any(e => e.Id == EffectId.OnPlay_Draw))
+                    evoScore += 2.5f;
+                if (card.Effects.Any(e => e.Id == EffectId.OnPlay_ChargeMana))
+                    evoScore += 2f;
+                if (card.Effects.Any(e => e.Id == EffectId.OnDestroyed_Draw))
+                    evoScore += 1f;
+
+                IReadOnlyList<SpellTarget>? evoChoice = null;
+                if (DuelGame.HasOnPlayTargetChoice(card))
+                {
+                    if (TryChooseOnPlayTarget(game, card, out var owner, out var target))
+                    {
+                        evoChoice = new[] { new SpellTarget(owner, target) };
+                        evoScore += 1.5f;
+                    }
+                    else
+                    {
+                        evoScore -= 2f; // the trigger will fizzle; only worth it for the body
+                    }
+                }
+
+                if (evoScore > bestScore)
+                {
+                    bestScore = evoScore;
+                    playIndex = i;
+                    targets = evoChoice;
+                    evolveBaseIndex = baseIdx;
+                }
+                continue;
+            }
+
+            if (!card.IsCreature || !game.CanSummon(Self, card))
                 continue;
 
             var score = card.ManaCost * Profile.ValueTempo + (card.Power / 1000f) * (1f - Profile.ValueTempo);
             if (card.HasKeyword(Keyword.Blocker))
                 score += 2f;
+            if (card.HasKeyword(Keyword.SpeedAttacker) || card.HasKeyword(Keyword.Slayer))
+                score += 1f;
             if (card.Effects.Any(e => e.Id == EffectId.OnPlay_Draw))
                 score += 2.5f;
+            if (card.Effects.Any(e => e.Id == EffectId.OnPlay_ChargeMana))
+                score += 2f;
             if (card.Effects.Any(e => e.Id == EffectId.OnDestroyed_Draw))
                 score += 1f;
+
+            IReadOnlyList<SpellTarget>? choice = null;
+            if (DuelGame.HasOnPlayTargetChoice(card))
+            {
+                if (TryChooseOnPlayTarget(game, card, out var owner, out var target))
+                {
+                    choice = new[] { new SpellTarget(owner, target) };
+                    score += 1.5f;
+                }
+                else
+                {
+                    score -= 2f; // the trigger will fizzle; only worth it for the body
+                }
+            }
+
             if (score > bestScore)
             {
                 bestScore = score;
                 playIndex = i;
+                targets = choice;
             }
         }
         if (playIndex >= 0)
@@ -277,11 +359,10 @@ public sealed class AiController
             var card = Self.Hand[i].Card;
             if (card.CardType != CardType.Spell || !game.CanPlay(Self, card))
                 continue;
-            if (TryChooseSpellPlay(game, i, out var owner, out var target))
+            if (TryChooseSpellPlay(game, i, out var spellTargets))
             {
                 playIndex = i;
-                spellOwner = owner;
-                spellTarget = target;
+                targets = spellTargets;
                 return true;
             }
         }
@@ -291,78 +372,111 @@ public sealed class AiController
 
     /// <summary>
     /// Decide whether to cast spell <paramref name="handIndex"/> this turn and, for
-    /// targeted spells, which legal target to hit. Removal denies the opponent's
-    /// biggest creature within the power cap; tap/untap/boost enable tempo; draw
-    /// spells burn spare mana only.
+    /// targeted spells, which legal targets to hit. Removal denies the opponent's
+    /// biggest creature within the power cap; tap/untap/boost enable tempo; draw and
+    /// ramp spells burn surplus mana only; wipes and discard press when they matter.
     /// </summary>
-    private bool TryChooseSpellPlay(DuelGame game, int handIndex, out Player? targetOwner, out int targetIndex)
+private bool TryChooseSpellPlay(DuelGame game, int handIndex, out IReadOnlyList<SpellTarget>? targets)
     {
-        targetOwner = null;
-        targetIndex = -1;
+        targets = null;
         var card = Self.Hand[handIndex].Card;
         var openMana = Self.ManaZone.Count(m => !m.IsTapped);
         var surplus = openMana - card.ManaCost;
+        if (surplus < 0)
+            return false;
 
-        var needsTarget = card.Effects.Any(e => e.NeedsTarget);
-        if (needsTarget)
+        if (card.Effects.Any(e => e.NeedsTarget))
         {
-            if (!TryChooseSpellTarget(game, card, out var owner, out var index))
+            if (!TryChooseSpellTargets(game, card, out var list))
                 return false;
-            targetOwner = owner;
-            targetIndex = index;
+            targets = list;
 
-            if (!ReferenceEquals(owner, Self))
+            var aimedAtFoe = list.Any(t => !ReferenceEquals(t.Owner, Self));
+            var isRemoval = card.Effects.Any(e =>
+                e.Id is EffectId.Spell_DestroyPowerAtMost or EffectId.Spell_ReturnToHand);
+            var isTap = card.Effects.Any(e => e.Id == EffectId.Spell_TapCreature);
+            if (aimedAtFoe)
             {
-                // Cards aimed at the opponent: removal/tap are combat pressure.
-                var foePower = owner.BattleZone[index].Card.Power / 1000f;
-                var isRemoval = card.Effects.Any(e =>
-                    e.Id is EffectId.Spell_DestroyPowerAtMost or EffectId.Spell_ReturnToHand);
-                var isTap = card.Effects.Any(e => e.Id == EffectId.Spell_TapCreature);
-                if (isRemoval && (surplus >= 1 || foePower >= 3f))
+                var maxFoePower = list
+                    .Where(t => !ReferenceEquals(t.Owner, Self))
+                    .Max(t => (float)t.Owner.BattleZone[t.Index].Card.Power / 1000f);
+                if (isRemoval && (surplus >= 1 || maxFoePower >= 3f))
                     return true;
                 if (isTap && surplus >= 1)
+                    return true;
+                if (card.Effects.Any(e => e.Id == EffectId.Spell_ReturnUpToToHand) && surplus >= 0)
                     return true;
                 return false;
             }
 
-            // Self-targeted (untap / boost): only with spare mana.
-            return surplus >= 1;
+            return surplus >= 0; // self-targeted untap / boost
         }
 
-        // No-target spells (draw, ...): worth it when mana is spare.
-        return surplus >= 1;
+        // Untargeted spells: mana ramp is always welcome, draw wants surplus mana,
+        // board wipes only when the opponent boards up, discard when the foe holds.
+        if (card.Effects.Any(e => e.Id == EffectId.Spell_ChargeMana))
+            return true;
+        if (card.Effects.Any(e => e.Id == EffectId.Spell_Draw))
+            return surplus >= 1;
+        if (card.Effects.Any(e => e.Id == EffectId.Spell_DestroyAllCreatures))
+            return game.Opponent.BattleZone.Any(c => c.Card.IsCreature);
+        if (card.Effects.Any(e => e.Id == EffectId.Spell_DiscardRandom))
+            return game.Opponent.Hand.Count >= 2 && surplus >= 0;
+        return true;
     }
 
     /// <summary>
-    /// Pick the best legal target for <paramref name="spell"/> among both battle
-    /// zones, scored per effect (destroy/return want the strongest foe creature
-    /// within range, tap wants a ready threat, untap/boost aim at own battle zone).
-    /// The engine's own <see cref="DuelGame.IsLegalSpellTarget"/> keeps every choice
-    /// rule-legal, so the AI can never target illegally.
+    /// Build the target list for <paramref name="spell"/>: one legal target per
+    /// targeting effect, in the order the engine resolves them ("return up to N"
+    /// consumes up to N targets). Any targeting effect without a legal target
+    /// rejects the spell so the AI never casts a wasted card.
     /// </summary>
-    private bool TryChooseSpellTarget(DuelGame game, Card spell, out Player targetOwner, out int targetIndex)
+    private bool TryChooseSpellTargets(DuelGame game, Card spell, out IReadOnlyList<SpellTarget> targets)
     {
-        targetOwner = Self;
-        targetIndex = -1;
-        var bestValue = float.NegativeInfinity;
-        var bestOwner = Self;
-        var bestIndex = -1;
+        var result = new List<SpellTarget>();
+        targets = result;
         // During a normal Main phase the AI is the active player (foe = Opponent);
         // while resolving our own shield triggers the ATTACKER is the foe instead.
         var foe = ReferenceEquals(game.ActivePlayer, Self) ? game.Opponent : game.ActivePlayer;
 
-        void Consider(Player owner, int index, float value)
-        {
-            if (value > bestValue)
-            {
-                bestValue = value;
-                bestOwner = owner;
-                bestIndex = index;
-            }
-        }
-
         foreach (var effect in spell.Effects.Where(e => e.NeedsTarget))
         {
+            var bestValue = float.NegativeInfinity;
+            Player? bestOwner = null;
+            var bestIndex = -1;
+
+            void Consider(Player owner, int index, float value)
+            {
+                if (value > bestValue)
+                {
+                    bestValue = value;
+                    bestOwner = owner;
+                    bestIndex = index;
+                }
+            }
+
+            if (effect.Id == EffectId.Spell_ReturnUpToToHand)
+            {
+                var picks = new List<(Player Owner, int Index, float Value)>();
+                for (var i = 0; i < foe.BattleZone.Count; i++)
+                {
+                    var c = foe.BattleZone[i];
+                    if (c.Card.IsCreature && game.IsLegalSpellTarget(spell, Self, foe, i))
+                        picks.Add((foe, i, 1f + c.Card.Power / 1000f + (c.IsTapped ? 0f : 0.5f)));
+                }
+                for (var i = 0; i < Self.BattleZone.Count; i++)
+                {
+                    var c = Self.BattleZone[i];
+                    if (c.Card.IsCreature && game.IsLegalSpellTarget(spell, Self, Self, i))
+                        picks.Add((Self, i, c.Card.Power / 3000f)); // bouncing own is a last resort
+                }
+                if (picks.Count == 0)
+                    return false;
+                foreach (var pick in picks.OrderByDescending(x => x.Value).Take(Math.Max(1, effect.Value)))
+                    result.Add(new SpellTarget(pick.Owner, pick.Index));
+                continue;
+            }
+
             switch (effect.Id)
             {
                 case EffectId.Spell_DestroyPowerAtMost:
@@ -410,11 +524,87 @@ public sealed class AiController
                     }
                     break;
             }
+
+            if (bestIndex < 0)
+                return false;
+            result.Add(new SpellTarget(bestOwner!, bestIndex));
+        }
+
+        targets = result;
+        return true;
+    }
+
+    /// <summary>
+    /// Pick the best legal creature for <paramref name="creature"/>'s on-play
+    /// targeting ability: destroy/return want the strongest foe within the power
+    /// cap, tap a ready enemy threat, untap a valuable own creature.
+    /// </summary>
+    private bool TryChooseOnPlayTarget(DuelGame game, Card creature, out Player targetOwner, out int targetIndex)
+    {
+        targetOwner = Self;
+        targetIndex = -1;
+        var foe = game.Opponent;
+        var bestValue = float.NegativeInfinity;
+        Player? bestOwner = null;
+        var bestIndex = -1;
+
+        void Consider(Player owner, int index, float value)
+        {
+            if (value > bestValue)
+            {
+                bestValue = value;
+                bestOwner = owner;
+                bestIndex = index;
+            }
+        }
+
+        foreach (var effect in creature.Effects.Where(e => e.Id is
+            EffectId.OnPlay_TapCreature or EffectId.OnPlay_ReturnToHand or
+            EffectId.OnPlay_DestroyPowerAtMost or EffectId.OnPlay_UntapOwnCreature))
+        {
+            switch (effect.Id)
+            {
+                case EffectId.OnPlay_DestroyPowerAtMost:
+                    for (var i = 0; i < foe.BattleZone.Count; i++)
+                    {
+                        var c = foe.BattleZone[i];
+                        if (game.IsLegalOnPlayTarget(creature, Self, foe, i))
+                            Consider(foe, i, 1.5f + c.Card.Power / 1000f + (c.IsTapped ? 0f : 0.5f));
+                    }
+                    break;
+
+                case EffectId.OnPlay_ReturnToHand:
+                    for (var i = 0; i < foe.BattleZone.Count; i++)
+                    {
+                        var c = foe.BattleZone[i];
+                        if (game.IsLegalOnPlayTarget(creature, Self, foe, i))
+                            Consider(foe, i, 1f + c.Card.Power / 1000f + (c.IsTapped ? 0f : 0.5f));
+                    }
+                    break;
+
+                case EffectId.OnPlay_TapCreature:
+                    for (var i = 0; i < foe.BattleZone.Count; i++)
+                    {
+                        var c = foe.BattleZone[i];
+                        if (game.IsLegalOnPlayTarget(creature, Self, foe, i) && !c.IsTapped)
+                            Consider(foe, i, 0.75f + c.Card.Power / 2000f);
+                    }
+                    break;
+
+                case EffectId.OnPlay_UntapOwnCreature:
+                    for (var i = 0; i < Self.BattleZone.Count; i++)
+                    {
+                        var c = Self.BattleZone[i];
+                        if (game.IsLegalOnPlayTarget(creature, Self, Self, i) && c.IsTapped)
+                            Consider(Self, i, 0.5f + c.Card.Power / 2000f);
+                    }
+                    break;
+            }
         }
 
         if (bestIndex < 0)
             return false;
-        targetOwner = bestOwner;
+        targetOwner = bestOwner!;
         targetIndex = bestIndex;
         return true;
     }
@@ -442,17 +632,17 @@ public sealed class AiController
 
             if (card.IsCreature)
             {
+                if (card.IsEvolution)
+                    continue; // evolution creatures are only played by evolving onto a base
                 game.PlayShieldTrigger(handIndex);
                 continue;
             }
-            if (card.Effects.All(e => !e.NeedsTarget) && card.Effects.Any())
-            {
+            if (TryChooseSpellTargets(game, card, out var targets))
+                game.PlayShieldTrigger(handIndex, targets);
+            else if (card.Effects.Any())
                 game.PlayShieldTrigger(handIndex);
-                continue;
-            }
-            if (TryChooseSpellTarget(game, card, out var owner, out var index))
-                game.PlayShieldTrigger(handIndex, owner, index);
-            // No legal target -> the card is left in hand (declined below).
+            // No legal target for a targeted spell -> the card is left in hand
+            // (declined below); untargeted spells are played unconditionally.
         }
 
         if (game.ShieldTriggerWindowActive)
@@ -461,33 +651,43 @@ public sealed class AiController
 
     /// <summary>
     /// Pick one attack. Prefers killing tapped creatures it can overpower for free,
-    /// then swings for shields. Returns <c>true</c> and applies the attack (creature
-    /// or direct) unless a Blocker could intercept a direct swing, in which case
-    /// <paramref name="needsBlockChoice"/> is set and nothing is applied.
+    /// then swings for shields (honoring "can't attack players / creatures",
+    /// "can't be attacked" and outnumbered restrictions). Returns <c>true</c> and
+    /// applies the attack (creature or direct) unless a Blocker could legally
+    /// intercept a direct swing, in which case <paramref name="needsBlockChoice"/>
+    /// is set and nothing is applied.
     /// </summary>
     private bool TryChooseAttack(DuelGame game, out int attackerIndex, out bool needsBlockChoice)
     {
         attackerIndex = -1;
         needsBlockChoice = false;
 
+        var foe = game.Opponent;
+        var outnumbered = foe.BattleZone.Count > Self.BattleZone.Count;
+
         var ready = Self.BattleZone
             .Select((c, i) => (Instance: c, Index: i))
             .Where(x => !x.Instance.IsTapped
                 && !x.Instance.IsSummoningSick
-                && x.Instance.Card.IsCreature)
+                && x.Instance.Card.IsCreature
+                && !(outnumbered && x.Instance.Card.HasKeyword(Keyword.CannotAttackOutnumbered)))
             .OrderByDescending(x => x.Instance.Card.Power)
             .ToList();
         if (ready.Count == 0)
             return false;
 
-        // Free favourable kills first: out-power a tapped creature, nobody dies.
-        var foe = game.Opponent;
+        // Free favourable kills first: out-power a tapped foe creature, nobody dies.
         for (var r = 0; r < ready.Count; r++)
         {
             var (attacker, aIdx) = ready[r];
+            if (attacker.Card.HasKeyword(Keyword.CannotAttackCreatures))
+                continue;
             var target = foe.BattleZone
                 .Select((c, i) => (Instance: c, Index: i))
-                .Where(x => x.Instance.IsTapped && attacker.Card.Power > x.Instance.Card.Power)
+                .Where(x => x.Instance.Card.IsCreature
+                    && !x.Instance.Card.HasKeyword(Keyword.CannotBeAttacked)
+                    && (x.Instance.IsTapped || attacker.Card.HasKeyword(Keyword.CanAttackUntappedCreatures))
+                    && attacker.Card.Power > x.Instance.Card.Power)
                 .OrderByDescending(x => x.Instance.Card.Power)
                 .FirstOrDefault();
             if (target.Instance is not null)
@@ -498,25 +698,30 @@ public sealed class AiController
             }
         }
 
-        // Otherwise crash the shields. Only a potential Blocker forces the caller
-        // to resolve the defender's interception; with the catalog as it stands
-        // (no Blocker data yet) this behaves as a direct swing.
-        var strongest = ready[0];
-        if (Profile.Aggression >= 0.15f)
+        // Otherwise crash the shields. Creatures that "attack each turn" must swing
+        // even for passive profiles; the rest only with enough aggression.
+        var directCandidates = ready
+            .Where(x => !x.Instance.Card.HasKeyword(Keyword.CannotAttackPlayers))
+            .ToList();
+        if (directCandidates.Count == 0)
+            return false;
+        var mustAttack = directCandidates.FirstOrDefault(x => x.Instance.Card.HasKeyword(Keyword.AttacksEachTurn));
+        var swing = mustAttack.Instance is not null
+            ? mustAttack
+            : directCandidates.OrderByDescending(x => x.Instance.Card.Power).First();
+        if (mustAttack.Instance is null && Profile.Aggression < 0.15f)
+            return false;
+
+        var canBlock = DuelGame.CanBeBlocked(swing.Instance.Card) && foe.BattleZone.Any(c =>
+            c.Card.IsCreature && !c.IsTapped && c.Card.HasKeyword(Keyword.Blocker));
+        if (canBlock)
         {
-            var canBlock = foe.BattleZone.Any(c =>
-                c.Card.IsCreature && !c.IsTapped && c.Card.HasKeyword(Keyword.Blocker));
-            if (canBlock)
-            {
-                attackerIndex = strongest.Index;
-                needsBlockChoice = true;
-                return true;
-            }
-            game.AttackPlayer(strongest.Index);
-            attackerIndex = strongest.Index;
+            attackerIndex = swing.Index;
+            needsBlockChoice = true;
             return true;
         }
-
-        return false;
+        game.AttackPlayer(swing.Index);
+        attackerIndex = swing.Index;
+        return true;
     }
 }

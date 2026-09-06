@@ -44,6 +44,7 @@ public static class CardCatalog
         public string ImagePath { get; set; } = "";
         public List<string> Keywords { get; set; } = new();
         public string ScriptEffectId { get; set; } = "";
+        public string EvolutionOf { get; set; } = "";
         public List<EffectJson> Effects { get; set; } = new();
     }
 
@@ -53,6 +54,7 @@ public static class CardCatalog
         public string? Id { get; set; }
         public string? Target { get; set; }
         public int Value { get; set; }
+        public string? Data { get; set; }
     }
 
     /// <summary>All named cards in the catalog, sorted by name.</summary>
@@ -79,7 +81,7 @@ public static class CardCatalog
             var keywords = ParseKeywords(c.Keywords);
             var effects = ParseEffects(c.Effects);
 
-            var card = new Card(c.Id, c.Name!, civ, type, c.ManaCost, c.Power ?? 0, c.Race ?? "", keywords, effects);
+            var card = new Card(c.Id, c.Name!, civ, type, c.ManaCost, c.Power ?? 0, c.Race ?? "", keywords, effects, c.EvolutionOf ?? "");
             records.Add(new CardRecord(card, c.ImagePath, c.ScriptEffectId));
         }
 
@@ -155,7 +157,7 @@ public static class CardCatalog
             var target = EffectTargetScope.None;
             if (!string.IsNullOrEmpty(e.Target))
                 Enum.TryParse<EffectTargetScope>(e.Target, true, out target);
-            yield return new CardEffect(id, target, e.Value);
+            yield return new CardEffect(id, target, e.Value, e.Data ?? "");
         }
     }
 }

@@ -30,9 +30,11 @@ namespace DuelMasters.Scenes.Arena;
 /// </summary>
 public partial class Arena : Control
 {
-    private enum Mode { Idle, SelectHand, SelectTarget, SelectBlock, SelectSpellTarget, SelectShieldTarget }
+    private enum Mode { Idle, SelectHand, SelectTarget, SelectBlock, SelectSpellTarget, SelectShieldTarget, SelectSummonTarget, SelectEvolveTarget, EvolveBase }
 
     private enum CardSizeKind { Full, Mana, Stack }
+
+    private enum CombatRole { Attack, Target, Block }
 
     private const string MainMenuPath = "res://src/ui/main_menu/MainMenu.tscn";
     private const float AiStepDelay = 0.55f;
@@ -70,6 +72,8 @@ public partial class Arena : Control
     private VBoxContainer _topHand = null!;
     private VBoxContainer _topShields = null!;
     private VBoxContainer _bottomShields = null!;
+    private Control? _topShieldsStrip;
+    private Control? _bottomShieldsStrip;
     private VBoxContainer _bottomBattle = null!;
     private VBoxContainer _bottomMana = null!;
     private VBoxContainer _bottomHand = null!;
@@ -97,6 +101,39 @@ public partial class Arena : Control
     private Button _takeHitBtn = null!;
     private Button _newDuelBtn = null!;
 
+    // Topmost animation layer: transient "ghost" cards fly deck->hand (draw) or
+    // battle->graveyard (destroy). Mouse-transparent so it never eats clicks.
+    private Control _fxLayer = null!;
+
+    // Pre-action UI state needed to animate a transition after Refresh rebuilds
+    // every zone. Battle positions are keyed by CardInstance reference (the engine
+    // moves the same instance into the graveyard, so identity survives the action).
+    private sealed class FxSnapshot
+    {
+        public readonly Dictionary<int, int> HandCounts = new();
+        public readonly Dictionary<int, int> DeckCounts = new();
+        public readonly Dictionary<CardInstance, Vector2> BattlePos = new();
+        public readonly Dictionary<int, List<Vector2>> ShieldPos = new();
+    }
+
+    private FxSnapshot? _fx;
+
+    // Tap pose of every zone card at the END of the previous refresh. Because the
+    // engine mutates instances in place and Refresh() rebuilds all views, a view
+    // whose instance tap-state differs from this map animates the change; otherwise
+    // it snaps to the current pose (no animation on ordinary refreshes).
+    private readonly Dictionary<CardInstance, bool> _prevTapped = new();
+
+    // Graveyard viewer overlay (clicking a grave pile lists every card in it).
+    private Control _graveOverlay = null!;
+    private Label _graveTitle = null!;
+    private VBoxContainer _graveList = null!;
+
+    // Combat role badge tints.
+    private static readonly Color AttackTint = new(1f, 0.32f, 0.25f);
+    private static readonly Color TargetTint = new(1f, 0.68f, 0.25f);
+    private static readonly Color BlockTint = new(0.35f, 0.82f, 1f);
+
     // Deck selection overlay.
     private Control _selectRoot = null!;
     private OptionButton _myDeckPick = null!;
@@ -117,6 +154,21 @@ public partial class Arena : Control
     // Targeting state for spells cast from hand / from a shield trigger.
     private int _spellHandIndex = -1;
     private int _triggerHandIndex = -1;
+
+    // Targeting state for a creature's on-play ability ("when it enters the battle
+    // zone, ...") chosen at summon time.
+    private int _summonHandIndex = -1;
+
+    // Targeting state for placing an Evolution creature onto a base creature: the
+    // hand slot being evolved, the on-play ability target picked first (if any),
+    // and then the battlefield selection of a matching-race base.
+    private int _evolveHandIndex = -1;
+    private SpellTarget? _pendingEvolveTarget;
+
+    // Multi-target spell selection ("return up to N creatures"): picked targets and
+    // the remaining capacity. _maxTargets 0 = the normal single-target flow.
+    private int _maxTargets;
+    private readonly List<SpellTarget> _spellTargetPicks = new();
 
     // Hand card popup ("Look at card" / "Play card") shown above the selected card.
     private PanelContainer _handPopup = null!;
@@ -213,6 +265,8 @@ public partial class Arena : Control
         _awaitingBlockChoice = false;
         _game = null!;
         _ai = null;
+        _fx = null;
+        _prevTapped.Clear();
         _selectRoot.Visible = true;
         _turnLabel.Text = "";
         _promptLabel.Text = "";
@@ -234,6 +288,8 @@ public partial class Arena : Control
 
         _game = new DuelGame(bottom, top);
         _ai = _vsAi ? new AiController(top, AiProfile.Standard) : null;
+        _fx = null;
+        _prevTapped.Clear();
 
         try
         {
@@ -292,6 +348,11 @@ public partial class Arena : Control
         root.SizeFlagsHorizontal = SizeFlags.ExpandFill;
         root.SizeFlagsVertical = SizeFlags.ExpandFill;
         margin.AddChild(root);
+
+        // Animation layer floats above the whole board but below the popups/overlays.
+        _fxLayer = new Control { Name = "FxLayer", MouseFilter = Control.MouseFilterEnum.Ignore };
+        _fxLayer.SetAnchorsPreset(LayoutPreset.FullRect);
+        AddChild(_fxLayer);
 
         // Header.
         var header = new HBoxContainer();
@@ -472,6 +533,7 @@ public partial class Arena : Control
         BuildHandPopup();
         BuildLookPopup();
         BuildShieldTriggerPopup();
+        BuildGraveyardOverlay();
         BuildInspectOverlay();
 
         BuildDeckSelection();
@@ -514,18 +576,58 @@ public partial class Arena : Control
         look.Pressed += () => ShowInspect(card);
         _handPopupBox.AddChild(look);
 
-        if (!_game.ManaChargedThisTurn)
+        if (!_game.ManaChargedThisTurn && !card.IsEvolution)
         {
             var charge = new Button { Text = "Charge Mana" };
             charge.Pressed += () => DoCharge(index);
             _handPopupBox.AddChild(charge);
         }
 
-        if (card.IsCreature && !_game.HasAttackedThisTurn)
+        if (card.IsEvolution && !_game.HasAttackedThisTurn)
         {
-            var summon = new Button { Text = "Summon", Disabled = !_game.CanPlay(player, card) };
+            var evolve = new Button
+            {
+                Text = $"Evolve onto a {card.EvolutionOf} creature",
+                Disabled = !_game.CanEvolve(player, card),
+            };
+            evolve.Pressed += () => DoEvolve(index);
+            _handPopupBox.AddChild(evolve);
+
+            if (DuelGame.HasOnPlayTargetChoice(card))
+            {
+                var use = new Button
+                {
+                    Text = "Evolve & use ability",
+                    Disabled = !_game.CanEvolve(player, card) || !AnyLegalOnPlayTarget(card),
+                };
+                use.Pressed += () => DoEvolveTargeted(index);
+                _handPopupBox.AddChild(use);
+            }
+            var free = new Label
+            {
+                Text = $"Free - no mana. Put it on top of one of your {card.EvolutionOf} creatures (it inherits no power; the stack counts as the top card).",
+                AutowrapMode = TextServer.AutowrapMode.WordSmart,
+                CustomMinimumSize = new Vector2(230, 0),
+            };
+            free.AddThemeFontSizeOverride("font_size", 11);
+            _handPopupBox.AddChild(free);
+        }
+        else if (card.IsCreature && !_game.HasAttackedThisTurn)
+        {
+            var summon = new Button { Text = "Summon", Disabled = !_game.CanSummon(player, card) };
             summon.Pressed += () => DoSummon(index);
             _handPopupBox.AddChild(summon);
+
+            if (DuelGame.HasOnPlayTargetChoice(card))
+            {
+                var use = new Button
+                {
+                    Text = "Summon & use ability",
+                    Disabled = !_game.CanSummon(player, card) || !AnyLegalOnPlayTarget(card),
+                };
+                use.Pressed += () => DoSummonTargeted(index);
+                _handPopupBox.AddChild(use);
+            }
         }
         else if (card.CardType == CardType.Spell && !_game.HasAttackedThisTurn)
         {
@@ -562,6 +664,72 @@ public partial class Arena : Control
     private void HideHandPopup()
     {
         _handPopup.Visible = false;
+    }
+
+    private bool AnyLegalOnPlayTarget(Card creature)
+    {
+        if (_game is null)
+            return false;
+        var me = _game.ActivePlayer;
+        var foe = _game.Opponent;
+        for (var i = 0; i < me.BattleZone.Count; i++)
+            if (_game.IsLegalOnPlayTarget(creature, me, me, i))
+                return true;
+        for (var i = 0; i < foe.BattleZone.Count; i++)
+            if (_game.IsLegalOnPlayTarget(creature, me, foe, i))
+                return true;
+        return false;
+    }
+
+    private void ShowSpellTargetConfirm(Card spell)
+    {
+        HideLookPopup();
+        UpdateSpellTargetConfirm(spell);
+    }
+
+    private void UpdateSpellTargetConfirm(Card spell)
+    {
+        foreach (var child in _handPopupBox.GetChildren().OfType<Control>().ToList())
+            child.QueueFree();
+
+        var title = new Label { Text = $"{spell.Name}\nChoose up to {_maxTargets} creatures", AutowrapMode = TextServer.AutowrapMode.WordSmart };
+        title.CustomMinimumSize = new Vector2(230, 0);
+        title.AddThemeFontSizeOverride("font_size", 14);
+        title.AddThemeColorOverride("font_color", CivilizationPalette.Color(spell.Civilization).Lightened(0.25f));
+        title.HorizontalAlignment = HorizontalAlignment.Center;
+        _handPopupBox.AddChild(title);
+
+        var list = _spellTargetPicks.Count == 0
+            ? "No targets selected."
+            : string.Join("\n", _spellTargetPicks.Select(p => $"• {p.Owner.BattleZone[p.Index].Card.Name}"));
+        var summary = new Label { Text = $"{list}\nSelected: {_spellTargetPicks.Count}/{_maxTargets}", AutowrapMode = TextServer.AutowrapMode.WordSmart };
+        summary.CustomMinimumSize = new Vector2(230, 0);
+        summary.AddThemeFontSizeOverride("font_size", 12);
+        _handPopupBox.AddChild(summary);
+
+        var cast = new Button { Text = "Cast spell", Disabled = _spellTargetPicks.Count == 0 };
+        cast.Pressed += ConfirmCastSpellTargets;
+        _handPopupBox.AddChild(cast);
+
+        var cancel = new Button { Text = "Cancel" };
+        cancel.Pressed += () =>
+        {
+            ResetInteraction();
+            Refresh();
+        };
+        _handPopupBox.AddChild(cancel);
+
+        _handPopup.Visible = true;
+        CallDeferred(nameof(PositionHandPopup));
+    }
+
+    private void ConfirmCastSpellTargets()
+    {
+        if (_spellHandIndex < 0 || _spellTargetPicks.Count == 0)
+            return;
+        var hand = _spellHandIndex;
+        var picks = new List<SpellTarget>(_spellTargetPicks);
+        Safe(() => _game.CastSpell(hand, picks));
     }
 
     // --------------------------------------------------------- look popup
@@ -694,6 +862,20 @@ public partial class Arena : Control
             if (handIndex < 0)
                 continue;
             var card = instance.Card;
+            if (card.IsEvolution)
+            {
+                // An evolution creature broken from the shields can only be evolved
+                // onto a base creature, which a shield trigger can never do.
+                var note = new Label
+                {
+                    Text = $"{card.Name} is an Evolution creature and stays in hand (it can only be evolved onto a creature).",
+                    AutowrapMode = TextServer.AutowrapMode.WordSmart,
+                };
+                note.AddThemeFontSizeOverride("font_size", 11);
+                note.AddThemeColorOverride("font_color", UiStyles.MutedText);
+                _triggerPopupBox.AddChild(note);
+                continue;
+            }
             var playable = !card.Effects.Any(e => e.NeedsTarget) || AnyLegalTriggerTarget(card);
             hasPlayable |= playable;
             var idx = handIndex;
@@ -852,16 +1034,166 @@ public partial class Arena : Control
         }
     }
 
+    private void HideInspectIfOpen()
+    {
+        if (_inspectOverlay.Visible)
+            CloseInspect();
+    }
+
+    // -------------------------------------------------------- graveyard viewer
+
+    private void BuildGraveyardOverlay()
+    {
+        _graveOverlay = new Control();
+        _graveOverlay.SetAnchorsPreset(LayoutPreset.FullRect);
+        _graveOverlay.Visible = false;
+        AddChild(_graveOverlay);
+
+        var dim = new ColorRect { Color = new Color(0f, 0f, 0f, 0.82f) };
+        dim.SetAnchorsPreset(LayoutPreset.FullRect);
+        _graveOverlay.AddChild(dim);
+
+        var catchClicks = new Control { MouseFilter = Control.MouseFilterEnum.Stop };
+        catchClicks.SetAnchorsPreset(LayoutPreset.FullRect);
+        catchClicks.GuiInput += (@event) =>
+        {
+            if (@event is InputEventMouseButton { ButtonIndex: MouseButton.Left, Pressed: true })
+                CloseGraveyard();
+        };
+        _graveOverlay.AddChild(catchClicks);
+
+        var center = new CenterContainer { MouseFilter = Control.MouseFilterEnum.Ignore };
+        center.SetAnchorsPreset(LayoutPreset.FullRect);
+        _graveOverlay.AddChild(center);
+
+        var panel = new PanelContainer();
+        panel.AddThemeStyleboxOverride("panel", UiStyles.ModalCard());
+        center.AddChild(panel);
+
+        var box = new VBoxContainer { CustomMinimumSize = new Vector2(720, 0) };
+        box.AddThemeConstantOverride("separation", 10);
+        panel.AddChild(box);
+
+        _graveTitle = new Label
+        {
+            Text = "GRAVE", 
+            HorizontalAlignment = HorizontalAlignment.Center,
+        };
+        _graveTitle.AddThemeFontSizeOverride("font_size", 22);
+        _graveTitle.AddThemeColorOverride("font_color", UiStyles.TitleText);
+        box.AddChild(_graveTitle);
+
+        var scroll = new ScrollContainer
+        {
+            CustomMinimumSize = new Vector2(680, 420),
+            SizeFlagsVertical = SizeFlags.ExpandFill,
+            HorizontalScrollMode = ScrollContainer.ScrollMode.Disabled,
+        };
+        box.AddChild(scroll);
+
+        _graveList = new VBoxContainer { SizeFlagsHorizontal = SizeFlags.ExpandFill };
+        _graveList.AddThemeConstantOverride("separation", 8);
+        scroll.AddChild(_graveList);
+
+        var close = new Button { Text = "Close" };
+        close.Pressed += CloseGraveyard;
+        box.AddChild(close);
+    }
+
+    private void ShowGraveyard(Player p)
+    {
+        foreach (var child in _graveList.GetChildren().ToList())
+        {
+            _graveList.RemoveChild(child);
+            child.QueueFree();
+        }
+
+        _graveTitle.Text = $"GRAVE  ({p.Graveyard.Count})";
+
+        // Newest first (the top of the pile), matching the visible pile face.
+        for (var i = p.Graveyard.Count - 1; i >= 0; i--)
+        {
+            var inst = p.Graveyard[i];
+            var card = inst.Card;
+            var row = new HBoxContainer();
+            row.AddThemeConstantOverride("separation", 10);
+            _graveList.AddChild(row);
+
+            var artPath = ArtFor(card);
+            var view = new CardView(card, artPath, faceDown: false, artOnly: true);
+            var w = _cardW * 0.6f;
+            var h = _cardH * 0.6f;
+            view.SetCardSize(w, h);
+            view.SizeFlagsVertical = SizeFlags.ShrinkCenter;
+            row.AddChild(view);
+
+            var info = new VBoxContainer { SizeFlagsHorizontal = SizeFlags.ExpandFill, SizeFlagsVertical = SizeFlags.ShrinkCenter };
+            info.AddThemeConstantOverride("separation", 2);
+
+            var name = new Label
+            {
+                Text = card.Name,
+                HorizontalAlignment = HorizontalAlignment.Center,
+                AutowrapMode = TextServer.AutowrapMode.WordSmart,
+            };
+            name.AddThemeFontSizeOverride("font_size", 14);
+            name.AddThemeColorOverride("font_color", CivilizationPalette.Color(card.Civilization).Lightened(0.25f));
+            info.AddChild(name);
+
+            var text = new Label
+            {
+                Text = DescribeCard(card),
+                HorizontalAlignment = HorizontalAlignment.Center,
+                AutowrapMode = TextServer.AutowrapMode.WordSmart,
+            };
+            text.AddThemeFontSizeOverride("font_size", 11);
+            text.AddThemeColorOverride("font_color", UiStyles.BodyText);
+            info.AddChild(text);
+
+            var look = new Button { Text = "Look at card", CustomMinimumSize = new Vector2(0, 24) };
+            look.Pressed += () => ShowInspect(card);
+            info.AddChild(look);
+
+            row.AddChild(info);
+        }
+
+        _graveOverlay.Visible = true;
+    }
+
+    private void CloseGraveyard()
+    {
+        _graveOverlay.Visible = false;
+        HideInspectIfOpen();
+    }
+
     public override void _UnhandledInput(InputEvent @event)
     {
         if (@event.IsActionPressed("ui_cancel"))
         {
-            if (_inspectOverlay.Visible)
+            if (_graveOverlay.Visible)
+            {
+                CloseGraveyard();
+                GetViewport().SetInputAsHandled();
+            }
+            else if (_inspectOverlay.Visible)
             {
                 CloseInspect();
                 GetViewport().SetInputAsHandled();
             }
-            else if (_mode is Mode.SelectSpellTarget or Mode.SelectShieldTarget)
+            else if (_mode == Mode.SelectBlock && _attackerIndex >= 0)
+            {
+                // The defender declines to block: the pending attack hits the shields.
+                Safe(() => _game.AttackPlayer(_attackerIndex));
+                GetViewport().SetInputAsHandled();
+            }
+            else if (_mode == Mode.SelectTarget)
+            {
+                ResetInteraction();
+                Prompt("Attack cancelled - pick a creature to attack when ready.");
+                Refresh();
+                GetViewport().SetInputAsHandled();
+            }
+            else if (_mode is Mode.SelectSpellTarget or Mode.SelectShieldTarget or Mode.SelectSummonTarget or Mode.SelectEvolveTarget or Mode.EvolveBase)
             {
                 ResetInteraction();
                 Refresh();
@@ -902,14 +1234,17 @@ public partial class Arena : Control
     {
         var lines = new List<string>
         {
-            card.IsCreature
-                ? $"Creature  -  {card.ManaCost} mana  -  {card.Power} power"
-                : $"Spell  -  {card.ManaCost} mana",
+            card.IsEvolution
+                ? $"Evolution Creature  -  {card.Power} power"
+                : card.IsCreature
+                    ? $"Creature  -  {card.ManaCost} mana  -  {card.Power} power"
+                    : $"Spell  -  {card.ManaCost} mana",
             $"Civilization: {card.Civilization}",
         };
         if (!string.IsNullOrEmpty(card.Race))
             lines.Add($"Race: {card.Race}");
-
+        if (card.IsEvolution)
+            lines.Add($"EVOLUTION - no mana. Put on top of one of your {card.EvolutionOf} creatures.");
         var keywords = new List<string>();
         if (card.HasKeyword(Keyword.Blocker)) keywords.Add("Blocker");
         if (card.HasKeyword(Keyword.ShieldTrigger)) keywords.Add("Shield trigger");
@@ -918,6 +1253,17 @@ public partial class Arena : Control
         if (card.HasKeyword(Keyword.PowerAttacker)) keywords.Add("Power attacker");
         if (card.HasKeyword(Keyword.DoubleBreaker)) keywords.Add("Double breaker");
         if (card.HasKeyword(Keyword.TripleBreaker)) keywords.Add("Triple breaker");
+        if (card.HasKeyword(Keyword.Unblockable)) keywords.Add("Unblockable");
+        if (card.HasKeyword(Keyword.CannotAttackPlayers)) keywords.Add("Can't attack players");
+        if (card.HasKeyword(Keyword.CannotAttackCreatures)) keywords.Add("Can't attack creatures");
+        if (card.HasKeyword(Keyword.CanAttackUntappedCreatures)) keywords.Add("Can attack untapped creatures");
+        if (card.HasKeyword(Keyword.CannotBeAttacked)) keywords.Add("Can't be attacked");
+        if (card.HasKeyword(Keyword.AttacksEachTurn)) keywords.Add("Attacks each turn");
+        if (card.HasKeyword(Keyword.Charger)) keywords.Add("Charger");
+        if (card.HasKeyword(Keyword.Survivor)) keywords.Add("Survivor");
+        if (card.HasKeyword(Keyword.Stealth)) keywords.Add("Stealth");
+        if (card.HasKeyword(Keyword.SummonRequiresSpellCast)) keywords.Add("Summon only if you cast a spell this turn");
+        if (card.HasKeyword(Keyword.CannotAttackOutnumbered)) keywords.Add("Can't attack while outnumbered");
         if (keywords.Count > 0)
             lines.Add(string.Join("  ·  ", keywords));
 
@@ -927,15 +1273,45 @@ public partial class Arena : Control
 
     private static string EffectText(CardEffect effect) => effect.Id switch
     {
-        EffectId.OnPlay_Draw => "When you put this creature into the battle zone, draw a card.",
-        EffectId.OnDestroyed_Draw => "When this creature is destroyed, draw a card.",
+        EffectId.OnPlay_Draw => effect.Value > 1
+            ? $"When you put this creature into the battle zone, draw {effect.Value} cards."
+            : "When you put this creature into the battle zone, draw a card.",
+        EffectId.OnDestroyed_Draw => effect.Value > 1
+            ? $"When this creature is destroyed, draw {effect.Value} cards."
+            : "When this creature is destroyed, draw a card.",
         EffectId.Spell_DestroyPowerAtMost => $"Destroy one of your opponent's creatures that has power {effect.Value} or less.",
         EffectId.Spell_ReturnToHand => "Return one of your opponent's creatures to its owner's hand.",
         EffectId.Spell_TapCreature => "Tap one of your opponent's creatures.",
         EffectId.Spell_UntapOwnCreature => "Untap one of your creatures.",
-        EffectId.Spell_Draw => "Draw a card.",
+        EffectId.Spell_Draw => effect.Value > 1 ? $"Draw {effect.Value} cards." : "Draw a card.",
         EffectId.Spell_BoostPower => $"Until the end of the turn, one of your creatures gets +{effect.Value} power.",
         EffectId.PowerAttacker_AttackBoost => $"Power attacker +{effect.Value} (while attacking, this creature has +{effect.Value} power).",
+
+        EffectId.OnPlay_TapCreature => "When you put this creature into the battle zone, you may tap one creature.",
+        EffectId.OnPlay_ReturnToHand => "When you put this creature into the battle zone, you may return one creature to its owner's hand.",
+        EffectId.OnPlay_DestroyPowerAtMost => $"When you put this creature into the battle zone, you may destroy one creature that has power {effect.Value} or less.",
+        EffectId.OnPlay_UntapOwnCreature => "When you put this creature into the battle zone, you may untap one of your creatures.",
+        EffectId.OnPlay_UntapAllOwnCreatures => "When you put this creature into the battle zone, untap each of your creatures.",
+        EffectId.OnPlay_ChargeMana => "When you put this creature into the battle zone, put the top card of your deck into your mana zone.",
+        EffectId.OnDestroyed_ToHand => "If this creature would be destroyed, put it into its owner's hand instead.",
+        EffectId.OnDestroyed_ToMana => "If this creature would be destroyed, put it into its owner's mana zone instead.",
+        EffectId.Spell_DestroyAllCreatures => "Destroy all creatures in the battle zone.",
+        EffectId.Spell_ReturnUpToToHand => $"Return up to {effect.Value} creatures in the battle zone to their owners' hands.",
+        EffectId.Spell_ChargeMana => "Put the top card of your deck into your mana zone.",
+        EffectId.Spell_DiscardRandom => $"Your opponent discards {effect.Value} random cards from hand.",
+        EffectId.StaticPower_AttackPerGraveyardCiv => $"While attacking, this creature gets +{effect.Value} power for each {effect.Data} card in your graveyard.",
+        EffectId.StaticPower_AttackPerOtherCreature => $"While attacking, this creature gets +{effect.Value} power for each other creature you have.",
+        EffectId.StaticPower_AttackWhileHaveRace => $"While attacking, this creature gets +{effect.Value} power while you have a {effect.Data} in the battle zone.",
+        EffectId.StaticPower_AlwaysWhileHaveRace => $"This creature gets +{effect.Value} power while you have a {effect.Data} in the battle zone.",
+        EffectId.StaticPower_AlwaysPerOtherCreature => string.IsNullOrWhiteSpace(effect.Data)
+            ? $"This creature gets +{effect.Value} power for each other creature you have."
+            : $"This creature gets +{effect.Value} power for each other {effect.Data} creature you have.",
+        EffectId.StaticPower_AuraRace => $"Each other {effect.Data} creature in the battle zone gets +{effect.Value} power.",
+        EffectId.CostIncrease_Summon_ByCiv => $"Each {effect.Data} creature costs {effect.Value} more to summon.",
+        EffectId.CostIncrease_Cast_ByCiv => $"Each {effect.Data} spell costs {effect.Value} more to cast.",
+        EffectId.CostDecrease_Summon_All => $"Your creatures cost {effect.Value} less to summon.",
+        EffectId.CostDecrease_Cast_All => $"Your spells cost {effect.Value} less to cast.",
+        EffectId.CostDecrease_Summon_ByRace => $"Your {effect.Data} creatures cost {effect.Value} less to summon.",
         _ => "",
     };
 
@@ -1013,7 +1389,7 @@ public partial class Arena : Control
     }
 
     /// <summary>Rebuilds a deck/grave pile's mini face + count inside its stored VBox.</summary>
-    private void UpdatePile(VBoxContainer pile, Label caption, bool faceUp, Card? topCard, string label, int count)
+    private void UpdatePile(VBoxContainer pile, Label caption, bool faceUp, Card? topCard, string label, int count, Action? onFaceClick = null)
     {
         // The pile VBox holds [caption, face]; rebuild the face each refresh so the top
         // card / count always reflects the live state.
@@ -1023,10 +1399,16 @@ public partial class Arena : Control
             child.QueueFree();
         }
 
-        var face = new Panel { MouseFilter = Control.MouseFilterEnum.Ignore };
+        var face = new Panel { MouseFilter = onFaceClick is null ? Control.MouseFilterEnum.Ignore : Control.MouseFilterEnum.Stop };
         face.CustomMinimumSize = new Vector2(_stackW, _stackH);
         face.SizeFlagsHorizontal = SizeFlags.ShrinkCenter;
         face.AddThemeStyleboxOverride("panel", PileFaceStyle());
+        if (onFaceClick is not null)
+            face.GuiInput += (@event) =>
+            {
+                if (@event is InputEventMouseButton { ButtonIndex: MouseButton.Left, Pressed: true })
+                    onFaceClick();
+            };
 
         var artPath = faceUp && topCard is not null ? ArtFor(topCard) : null;
         var tex = (artPath is not null && ResourceLoader.Exists(artPath))
@@ -1061,6 +1443,16 @@ public partial class Arena : Control
         }
 
         pile.AddChild(face);
+        if (onFaceClick is not null)
+        {
+            // The whole pile area (caption + margins included) opens the viewer.
+            pile.MouseFilter = Control.MouseFilterEnum.Stop;
+            pile.GuiInput += (@event) =>
+            {
+                if (@event is InputEventMouseButton { ButtonIndex: MouseButton.Left, Pressed: true })
+                    onFaceClick();
+            };
+        }
         caption.Text = $"{label}  {count}";
     }
 
@@ -1285,6 +1677,7 @@ public partial class Arena : Control
     {
         if (_game is null || _game.IsGameOver)
             return;
+        CaptureFx();
         try
         {
             _game.EndMainPhase();
@@ -1323,9 +1716,9 @@ public partial class Arena : Control
             ShowLookPopup(_game.ActivePlayer.Hand[index].Card);
             return;
         }
-        if (_mode is Mode.SelectSpellTarget or Mode.SelectShieldTarget)
+        if (_mode is Mode.SelectSpellTarget or Mode.SelectShieldTarget or Mode.SelectSummonTarget or Mode.SelectEvolveTarget or Mode.EvolveBase)
         {
-            var cancelled = _mode == Mode.SelectSpellTarget
+            var cancelled = _mode is Mode.SelectSpellTarget or Mode.SelectSummonTarget or Mode.SelectEvolveTarget or Mode.EvolveBase
                 && _selectedHandSide == isBottomSide && _selectedHandIndex == index;
             ResetInteraction();
             if (cancelled)
@@ -1363,6 +1756,18 @@ public partial class Arena : Control
         });
     }
 
+    private void DoSummonTargeted(int index)
+    {
+        var creature = _game!.ActivePlayer.Hand[index].Card;
+        _selectedHandSide = _game.ActivePlayer == _game.Player1;
+        _selectedHandIndex = index;
+        _summonHandIndex = index;
+        _mode = Mode.SelectSummonTarget;
+        HideHandPopup();
+        Prompt($"Choose an on-play target for {creature.Name}: click a legal creature (either side), or click the card again to cancel the summon.");
+        Refresh();
+    }
+
     private void DoCast(int index)
     {
         var spell = _game!.ActivePlayer.Hand[index].Card;
@@ -1371,6 +1776,18 @@ public partial class Arena : Control
             _selectedHandSide = _game.ActivePlayer == _game.Player1;
             _selectedHandIndex = index;
             _spellHandIndex = index;
+            var multi = spell.Effects.FirstOrDefault(e => e.Id == EffectId.Spell_ReturnUpToToHand);
+            if (multi is { Value: > 1 })
+            {
+                _maxTargets = multi.Value;
+                _spellTargetPicks.Clear();
+                _mode = Mode.SelectSpellTarget;
+                HideHandPopup();
+                Prompt($"Choose up to {multi.Value} creatures for {spell.Name}: click legal creatures to select (click again to unselect), then confirm the cast.");
+                ShowSpellTargetConfirm(spell);
+                Refresh();
+                return;
+            }
             _mode = Mode.SelectSpellTarget;
             HideHandPopup();
             Prompt($"Choose a target for {spell.Name}: click a legal creature (either side), or click the card again to cancel.");
@@ -1378,6 +1795,45 @@ public partial class Arena : Control
             return;
         }
         Safe(() => _game.CastSpell(index));
+    }
+
+    private void DoEvolve(int index)
+    {
+        var creature = _game!.ActivePlayer.Hand[index].Card;
+        if (DuelGame.HasOnPlayTargetChoice(creature) && AnyLegalOnPlayTarget(creature))
+        {
+            _selectedHandSide = _game.ActivePlayer == _game.Player1;
+            _selectedHandIndex = index;
+            _evolveHandIndex = index;
+            _mode = Mode.SelectEvolveTarget;
+            HideHandPopup();
+            Prompt($"Choose an on-play target for {creature.Name}: click a legal creature (either side), or click the card again to cancel.");
+            Refresh();
+            return;
+        }
+        StartEvolveBaseSelection(index);
+    }
+
+    private void DoEvolveTargeted(int index)
+    {
+        var creature = _game!.ActivePlayer.Hand[index].Card;
+        _selectedHandSide = _game.ActivePlayer == _game.Player1;
+        _selectedHandIndex = index;
+        _evolveHandIndex = index;
+        _mode = Mode.SelectEvolveTarget;
+        HideHandPopup();
+        Prompt($"Choose an on-play target for {creature.Name}: click a legal creature (either side), or click the card again to cancel.");
+        Refresh();
+    }
+
+    private void StartEvolveBaseSelection(int index)
+    {
+        var creature = _game!.ActivePlayer.Hand[index].Card;
+        HideHandPopup();
+        _evolveHandIndex = index;
+        _mode = Mode.EvolveBase;
+        Prompt($"Evolve {creature.Name} onto a {creature.EvolutionOf} creature: click one of your matching-race creatures, or click the hand card again to cancel.");
+        Refresh();
     }
 
     private void OnBattleClicked(bool isBottomSide, int index)
@@ -1418,13 +1874,19 @@ public partial class Arena : Control
                     if (candidate.IsTapped || candidate.IsSummoningSick)
                     {
                         ShowLookPopup(candidate.Card);
+                        Prompt(candidate.IsTapped
+                            ? $"{candidate.Card.Name} has already attacked this turn (tapped). Pick an untapped creature."
+                            : $"{candidate.Card.Name} just entered play and can't attack until your next turn. Pick an untapped creature.");
                         return;
                     }
                     _attackerIndex = index;
                     _mode = Mode.SelectTarget;
                     HideHandPopup();
                     HideLookPopup();
-                    Prompt("Choose a target: a tapped enemy creature, or the enemy shields. Click the enemy zone to attack.");
+                    var finale = _game.Opponent.ShieldCount == 0
+                        ? " The enemy has NO shields left: click the enemy shields zone to land the final attack and win!"
+                        : "";
+                    Prompt($"{_game.ActivePlayer.BattleZone[index].Card.Name} is attacking! Choose a target: a tapped enemy creature, or the enemy shields. Click the enemy zone to attack.{finale}");
                 }
                 else
                 {
@@ -1437,11 +1899,26 @@ public partial class Arena : Control
             case Mode.SelectTarget:
                 if (SideIsActive(isBottomSide))
                 {
+                    if (index == _attackerIndex)
+                    {
+                        ResetInteraction();
+                        Prompt("Attack cancelled - pick a creature to attack when ready.");
+                        break;
+                    }
                     var candidate = _game.ActivePlayer.BattleZone[index];
                     if (!candidate.IsTapped && !candidate.IsSummoningSick)
                     {
                         _attackerIndex = index;
-                        Prompt("Pick a target for the new attacker.");
+                        var finale = _game.Opponent.ShieldCount == 0
+                            ? " (The enemy has no shields - the next direct hit wins!)"
+                            : "";
+                        Prompt($"Pick a target for the new attacker ({_game.ActivePlayer.BattleZone[index].Card.Name}).{finale}");
+                    }
+                    else
+                    {
+                        Prompt(candidate.IsTapped
+                            ? $"{candidate.Card.Name} has already attacked this turn (tapped)."
+                            : $"{candidate.Card.Name} just entered play and can't attack until your next turn.");
                     }
                     break;
                 }
@@ -1464,12 +1941,83 @@ public partial class Arena : Control
                 if (index >= 0 && index < targetOwner.BattleZone.Count
                     && _game.IsLegalSpellTarget(spell, _game.ActivePlayer, targetOwner, index))
                 {
-                    var hand = _spellHandIndex;
-                    Safe(() => _game.CastSpell(hand, targetOwner, index));
+                    if (_maxTargets > 1)
+                    {
+                        var pick = _spellTargetPicks.Find(p => ReferenceEquals(p.Owner, targetOwner) && p.Index == index);
+                        if (pick.Owner is not null)
+                            _spellTargetPicks.Remove(pick);
+                        else if (_spellTargetPicks.Count < _maxTargets)
+                            _spellTargetPicks.Add(new SpellTarget(targetOwner, index));
+                        UpdateSpellTargetConfirm(spell);
+                        Refresh();
+                    }
+                    else
+                    {
+                        var hand = _spellHandIndex;
+                        Safe(() => _game.CastSpell(hand, targetOwner, index));
+                    }
                 }
                 else if (BoardCardAt(isBottomSide, index) is { } spellLook)
                 {
                     ShowLookPopup(spellLook);
+                }
+                break;
+            }
+
+            case Mode.SelectSummonTarget when _summonHandIndex >= 0:
+            {
+                var summonOwner = isBottomSide ? _game.Player1 : _game.Player2;
+                var creature = _game.ActivePlayer.Hand[_summonHandIndex].Card;
+                if (index >= 0 && index < summonOwner.BattleZone.Count
+                    && _game.IsLegalOnPlayTarget(creature, _game.ActivePlayer, summonOwner, index))
+                {
+                    var hand = _summonHandIndex;
+                    Safe(() => _game.SummonCreature(hand, summonOwner, index));
+                }
+                else if (BoardCardAt(isBottomSide, index) is { } summonLook)
+                {
+                    ShowLookPopup(summonLook);
+                }
+                break;
+            }
+
+            case Mode.SelectEvolveTarget when _evolveHandIndex >= 0:
+            {
+                var evolveOwner = isBottomSide ? _game.Player1 : _game.Player2;
+                var evolveCard = _game.ActivePlayer.Hand[_evolveHandIndex].Card;
+                if (index >= 0 && index < evolveOwner.BattleZone.Count
+                    && _game.IsLegalOnPlayTarget(evolveCard, _game.ActivePlayer, evolveOwner, index))
+                {
+                    _pendingEvolveTarget = new SpellTarget(evolveOwner, index);
+                    StartEvolveBaseSelection(_evolveHandIndex);
+                }
+                else if (BoardCardAt(isBottomSide, index) is { } evolveLook)
+                {
+                    ShowLookPopup(evolveLook);
+                }
+                break;
+            }
+
+            case Mode.EvolveBase when _evolveHandIndex >= 0:
+            {
+                var baseOwner = isBottomSide ? _game.Player1 : _game.Player2;
+                var evolveCard = _game.ActivePlayer.Hand[_evolveHandIndex].Card;
+                if (SideIsActive(isBottomSide) && index >= 0 && index < baseOwner.BattleZone.Count
+                    && DuelGame.IsEvolutionBase(evolveCard, baseOwner.BattleZone[index].Card))
+                {
+                    var hand = _evolveHandIndex;
+                    var evolveTarget = _pendingEvolveTarget;
+                    Safe(() =>
+                    {
+                        if (evolveTarget is { } t)
+                            _game.EvolveCreature(hand, index, t.Owner, t.Index);
+                        else
+                            _game.EvolveCreature(hand, index);
+                    });
+                }
+                else if (BoardCardAt(isBottomSide, index) is { } evolveBaseLook)
+                {
+                    ShowLookPopup(evolveBaseLook);
                 }
                 break;
             }
@@ -1550,12 +2098,34 @@ public partial class Arena : Control
         Refresh();
     }
 
+    private string AiAttackerName(int index)
+    {
+        if (_game is null || index < 0 || index >= _game.ActivePlayer.BattleZone.Count)
+            return "The AI";
+        return _game.ActivePlayer.BattleZone[index].Card.Name;
+    }
+
     private bool IsDefenderBlocker(int index)
     {
         var defender = _game.Opponent;
-        return index >= 0 && index < defender.BattleZone.Count
-            && defender.BattleZone[index].Card.HasKeyword(Keyword.Blocker)
-            && !defender.BattleZone[index].IsTapped;
+        if (index < 0 || index >= defender.BattleZone.Count)
+            return false;
+        if (!defender.BattleZone[index].Card.HasKeyword(Keyword.Blocker) || defender.BattleZone[index].IsTapped)
+            return false;
+        Card attackerCard;
+        if (_awaitingBlockChoice)
+        {
+            if (_pendingAiAttackerIndex < 0 || _pendingAiAttackerIndex >= _game.ActivePlayer.BattleZone.Count)
+                return false;
+            attackerCard = _game.ActivePlayer.BattleZone[_pendingAiAttackerIndex].Card;
+        }
+        else
+        {
+            if (_attackerIndex < 0 || _attackerIndex >= _game.ActivePlayer.BattleZone.Count)
+                return false;
+            attackerCard = _game.ActivePlayer.BattleZone[_attackerIndex].Card;
+        }
+        return DuelGame.CanBeBlocked(attackerCard);
     }
 
     private void OnShieldsClicked(bool isBottomSide)
@@ -1588,6 +2158,16 @@ public partial class Arena : Control
         // The active player attacks the DEFENDER's shields.
         if (!SideIsActive(isBottomSide))
         {
+            if (_mode == Mode.Idle)
+            {
+                // The empty shield zone is only a target once an attacker is chosen;
+                // say so instead of silently swallowing the click.
+                Prompt(_game.Opponent.ShieldCount == 0
+                    ? "The enemy has no shields left! Pick one of your UNTAPPED creatures, then click the enemy's shields zone to land the final attack and win."
+                    : "Pick one of your ready creatures first: click it, then click the enemy's shields zone to attack.");
+                return;
+            }
+
             if (_mode is Mode.SelectTarget or Mode.SelectHand)
             {
                 if (_attackerIndex < 0)
@@ -1596,7 +2176,7 @@ public partial class Arena : Control
                     return;
                 }
 
-                if (OpponentHasEligibleBlocker())
+                if (OpponentHasEligibleBlocker(_game.ActivePlayer.BattleZone[_attackerIndex].Card))
                 {
                     if (_vsAi && _ai is not null)
                     {
@@ -1614,10 +2194,10 @@ public partial class Arena : Control
                         return;
                     }
 
-                    _mode = Mode.SelectBlock;
+_mode = Mode.SelectBlock;
                     HideHandPopup();
                     HideLookPopup();
-                    Prompt("The defender may block. Click a Blocker creature, or click the shields again to attack anyway.");
+                    Prompt($"{_game.ActivePlayer.BattleZone[_attackerIndex].Card.Name} attacks! The defender may block: click a Blocker creature, or click the shields to take the hit.");
                     return;
                 }
 
@@ -1634,8 +2214,9 @@ public partial class Arena : Control
         }
     }
 
-    private bool OpponentHasEligibleBlocker() =>
-        _game.Opponent.BattleZone.Any(c => c.Card.IsCreature && !c.IsTapped && c.Card.HasKeyword(Keyword.Blocker));
+    private bool OpponentHasEligibleBlocker(Card attackerCard) =>
+        DuelGame.CanBeBlocked(attackerCard)
+        && _game.Opponent.BattleZone.Any(c => c.Card.IsCreature && !c.IsTapped && c.Card.HasKeyword(Keyword.Blocker));
 
     // ------------------------------------------------------------ AI driving
 
@@ -1694,6 +2275,7 @@ public partial class Arena : Control
         AiStep step;
         try
         {
+            CaptureFx();
             step = _ai!.Step(_game);
         }
         catch (RuleViolationException ex)
@@ -1715,13 +2297,14 @@ public partial class Arena : Control
                 _awaitingBlockChoice = true;
                 _pendingAiAttackerIndex = step.AttackerIndex;
                 _mode = Mode.SelectBlock;
-                Prompt("The AI attacks your shields! Click a Blocker creature to intercept, or click your shields to take the hit.");
+                Prompt($"{AiAttackerName(step.AttackerIndex)} attacks your shields! Click a Blocker creature to intercept, or click your shields to take the hit.");
                 break;
 
             case AiStepKind.TurnEnded:
                 _aiDriving = false;
                 try
                 {
+                    CaptureFx();
                     _game.EndMainPhase();
                     _game.EndTurn();
                     if (!_game.IsGameOver)
@@ -1745,10 +2328,19 @@ public partial class Arena : Control
 
     private void Safe(Action action)
     {
+        CaptureFx();
         try
         {
             action();
             ResetInteraction();
+            // After a successful attack, say that more creatures can still charge in
+            // and attack too (each untapped creature may attack once per turn).
+            if (!_game.IsGameOver && _game.Phase == GamePhase.Main && _game.HasAttackedThisTurn
+                && (_ai is null || !ReferenceEquals(_game.ActivePlayer, _ai.Self))
+                && _game.ActivePlayer.BattleZone.Any(c => !c.IsTapped && !c.IsSummoningSick))
+            {
+                Prompt("You can still attack: click another untapped creature, then the enemy shields (or a tapped enemy creature).");
+            }
         }
         catch (RuleViolationException ex)
         {
@@ -1765,6 +2357,11 @@ public partial class Arena : Control
         _selectedHandIndex = -1;
         _spellHandIndex = -1;
         _triggerHandIndex = -1;
+        _summonHandIndex = -1;
+        _evolveHandIndex = -1;
+        _pendingEvolveTarget = null;
+        _maxTargets = 0;
+        _spellTargetPicks.Clear();
         HideHandPopup();
         HideLookPopup();
         HideTriggerPopup();
@@ -1818,14 +2415,26 @@ public partial class Arena : Control
         BuildShields(_topShields, _game.Player2.ShieldCount, _topShieldsTitle);
 
         UpdatePile(_bottomDeckPile, _bottomDeckLabel, faceUp: false, null, "DECK", _game.Player1.Deck.Count);
-        UpdatePile(_bottomGravePile, _bottomGraveLabel, faceUp: true, _game.Player1.Graveyard.LastOrDefault()?.Card, "GRAVE", _game.Player1.Graveyard.Count);
+        UpdatePile(_bottomGravePile, _bottomGraveLabel, faceUp: true, _game.Player1.Graveyard.LastOrDefault()?.Card, "GRAVE", _game.Player1.Graveyard.Count, () => ShowGraveyard(_game.Player1));
         UpdatePile(_topDeckPile, _topDeckLabel, faceUp: false, null, "DECK", _game.Player2.Deck.Count);
-        UpdatePile(_topGravePile, _topGraveLabel, faceUp: true, _game.Player2.Graveyard.LastOrDefault()?.Card, "GRAVE", _game.Player2.Graveyard.Count);
+        UpdatePile(_topGravePile, _topGraveLabel, faceUp: true, _game.Player2.Graveyard.LastOrDefault()?.Card, "GRAVE", _game.Player2.Graveyard.Count, () => ShowGraveyard(_game.Player2));
 
-        var who = $"{(ReferenceEquals(_game.ActivePlayer, _game.Player1) && _vsAi ? "You" : _game.ActivePlayer.Name)}";
+        var isYou = ReferenceEquals(_game.ActivePlayer, _game.Player1) && _vsAi;
+        var who = isYou ? "You" : _game.ActivePlayer.Name;
+        var turnText = isYou ? "Your turn" : $"{who}'s turn";
+        var noShields = "";
+        if (_game.Player1.ShieldCount == 0 || _game.Player2.ShieldCount == 0)
+        {
+            var endangered = _game.Player1.ShieldCount == 0 && _game.Player2.ShieldCount == 0
+                ? "Both players"
+                : _game.Player1.ShieldCount == 0
+                    ? (_game.Player1.Name == "You" ? "You" : _game.Player1.Name)
+                    : _game.Player2.Name;
+            noShields = $"  |  {endangered} has no shields - the next direct attack wins!";
+        }
         _turnLabel.Text = _game.IsGameOver
             ? $"Game over - {_game.Winner!.Name} wins!"
-            : $"{who}'s turn  |  Turn {_game.TurnNumber}  |  {_game.Phase}" + (_aiDriving ? "  [AI thinking...]" : "");
+            : $"{turnText}  |  Turn {_game.TurnNumber}  |  {_game.Phase}" + (_aiDriving ? "  [AI thinking...]" : "") + noShields;
 
         _endTurn.Disabled = _game.IsGameOver || !CanAct || _game.Phase == GamePhase.End;
         if (!_game.IsGameOver && _game.Phase == GamePhase.End)
@@ -1834,6 +2443,9 @@ public partial class Arena : Control
 
         WireInteraction();
         SyncShieldTriggerPopup();
+
+        CapturePrevTapped();
+        CallDeferred(nameof(PlayFx));
 
         // After a human-owned trigger window closes mid-AI-turn, hand the drive back.
         if (!_game.ShieldTriggerWindowActive && !_aiDriving && _vsAi && _ai is not null
@@ -1852,8 +2464,11 @@ public partial class Arena : Control
             var view = new CardView(inst.Card, backs ? null : ArtFor(inst.Card), faceDown: backs, artOnly: artOnly);
             ApplyCardSize(view, kind);
             view.SizeFlagsVertical = SizeFlags.ShrinkCenter;
-            view.SnapTapped(inst.IsTapped);
             flow.AddChild(view);
+            if (_prevTapped.TryGetValue(inst, out var wasTapped) && wasTapped != inst.IsTapped)
+                view.AnimateFromTapped(wasTapped, inst.IsTapped); // pose at old state, then tween to the new one
+            else
+                view.SnapTapped(inst.IsTapped);
         }
         title.Text = $"{CaptionOf(box)}  ({zone.Count})";
     }
@@ -1862,6 +2477,53 @@ public partial class Arena : Control
     {
         var flow = GetFlow(box);
         ClearFlow(flow);
+
+        // When shields are zero the flow holds no shield cards, so there is nothing
+        // to click for the final (winning) direct attack. Provide a real click target,
+        // a strip with an explicit minimum size, because a child of a container gets
+        // its rect from its minimum size: an empty Control is 0x0 and invisible to the
+        // mouse. With shields on the field the shield cards themselves deliver the
+        // click (see WireZoneCards), so the strip is only needed for the empty zone.
+        var isBottomSide = ReferenceEquals(box, _bottomShields);
+        var existing = isBottomSide ? _bottomShieldsStrip : _topShieldsStrip;
+        if (existing is not null && IsInstanceValid(existing))
+            existing.QueueFree();
+        if (isBottomSide)
+            _bottomShieldsStrip = null;
+        else
+            _topShieldsStrip = null;
+
+        if (count == 0)
+        {
+            var strip = new Control
+            {
+                MouseFilter = Control.MouseFilterEnum.Stop,
+                CustomMinimumSize = new Vector2(168, 56),
+            };
+            strip.Name = "ShieldStripClickCatcher";
+            strip.GuiInput += @event =>
+            {
+                if (@event is InputEventMouseButton { ButtonIndex: MouseButton.Left, Pressed: true })
+                    OnShieldsClicked(isBottomSide);
+            };
+            var hint = new Label
+            {
+                Text = "NO SHIELDS",
+                MouseFilter = Control.MouseFilterEnum.Ignore,
+                HorizontalAlignment = HorizontalAlignment.Center,
+                VerticalAlignment = VerticalAlignment.Center,
+            };
+            hint.AddThemeFontSizeOverride("font_size", 11);
+            hint.AddThemeColorOverride("font_color", UiStyles.BodyText);
+            hint.SetAnchorsPreset(LayoutPreset.FullRect);
+            strip.AddChild(hint);
+            flow.AddChild(strip);
+            if (isBottomSide)
+                _bottomShieldsStrip = strip;
+            else
+                _topShieldsStrip = strip;
+        }
+
         for (var i = 0; i < count; i++)
         {
             var view = new CardView(null, faceDown: true);
@@ -1945,6 +2607,7 @@ public partial class Arena : Control
             {
                 views[i].Clicked += _ => OnBattleClicked(side, idx);
                 views[i].SetSelected(IsTargetCandidate(side, idx));
+                ApplyRoleBadge(views[i], CombatRoleAt(side, idx));
             }
         }
     }
@@ -1958,6 +2621,308 @@ public partial class Arena : Control
     }
 
     /// <summary>
+    /// The current combat role of a battle-zone card while the player is choosing an
+    /// attack target or a blocker: the attacker itself (ATTACK), a legal tapped
+    /// creature target while aiming (TARGET), or a ready Blocker that can intercept
+    /// the pending attack (BLOCK). Rendered as a small ribbon over the card and used
+    /// by the prompts, so the attacking monster and the attacked/blocking monsters
+    /// are always visible in the information block.
+    /// </summary>
+    private CombatRole? CombatRoleAt(bool isBottomSide, int index)
+    {
+        if (_game is null || index < 0)
+            return null;
+        var owner = isBottomSide ? _game.Player1 : _game.Player2;
+        if (index >= owner.BattleZone.Count)
+            return null;
+
+        if (SideIsActive(isBottomSide))
+        {
+            var attackerIndex = _awaitingBlockChoice ? _pendingAiAttackerIndex : _attackerIndex;
+            if (_mode is Mode.SelectTarget or Mode.SelectBlock && attackerIndex == index)
+                return CombatRole.Attack;
+            if (_awaitingBlockChoice && _pendingAiAttackerIndex == index)
+                return CombatRole.Attack;
+            return null;
+        }
+
+        if (_mode == Mode.SelectTarget)
+            return owner.BattleZone[index].IsTapped ? CombatRole.Target : null;
+        if (_mode == Mode.SelectBlock || _awaitingBlockChoice)
+            return IsDefenderBlocker(index) ? CombatRole.Block : null;
+        return null;
+    }
+
+    private void ApplyRoleBadge(CardView view, CombatRole? role)
+    {
+        switch (role)
+        {
+            case CombatRole.Attack:
+                view.SetCombatBadge("ATTACK", AttackTint);
+                break;
+            case CombatRole.Target:
+                view.SetCombatBadge("TARGET", TargetTint);
+                break;
+            case CombatRole.Block:
+                view.SetCombatBadge("BLOCK", BlockTint);
+                break;
+            default:
+                view.SetCombatBadge(null, Colors.White);
+                break;
+        }
+    }
+
+    // ------------------------------------------------- zone transition effects
+
+    /// <summary>
+    /// Records enough UI state (hand/deck counts, every battle-zone card's on-screen
+    /// centre keyed by instance) to play draw/destroy animations after the next
+    /// Refresh rebuilds the board. Called immediately before a game mutation.
+    /// </summary>
+    private void CaptureFx()
+    {
+        if (_game is null)
+        {
+            _fx = null;
+            return;
+        }
+        var fx = new FxSnapshot();
+        fx.HandCounts[0] = _game.Player1.Hand.Count;
+        fx.HandCounts[1] = _game.Player2.Hand.Count;
+        fx.DeckCounts[0] = _game.Player1.Deck.Count;
+        fx.DeckCounts[1] = _game.Player2.Deck.Count;
+        CaptureBattlePositions(fx, _game.Player1, _bottomBattle);
+        CaptureBattlePositions(fx, _game.Player2, _topBattle);
+        CaptureShieldPositions(fx, 0, _bottomShields);
+        CaptureShieldPositions(fx, 1, _topShields);
+        _fx = fx;
+    }
+
+    private static void CaptureShieldPositions(FxSnapshot fx, int playerNo, VBoxContainer box)
+    {
+        var pos = new List<Vector2>();
+        foreach (var view in GetFlow(box).GetChildren().OfType<CardView>())
+            pos.Add(view.GetGlobalRect().GetCenter());
+        fx.ShieldPos[playerNo] = pos;
+    }
+
+    private static void CaptureBattlePositions(FxSnapshot fx, Player p, VBoxContainer box)
+    {
+        var views = GetFlow(box).GetChildren().OfType<CardView>().ToList();
+        var n = Math.Min(views.Count, p.BattleZone.Count);
+        for (var i = 0; i < n; i++)
+            fx.BattlePos[p.BattleZone[i]] = views[i].GetGlobalRect().GetCenter();
+    }
+
+    /// <summary>
+    /// Plays the pending transition animations captured before the last action.
+    /// Runs deferred (next frame) from Refresh so the freshly rebuilt zones have
+    /// been laid out and report correct on-screen positions.
+    /// </summary>
+    private void PlayFx()
+    {
+        if (_game is null || _fx is null)
+        {
+            _fx = null;
+            return;
+        }
+        var fx = _fx;
+        _fx = null;
+
+        PlayDestroyFx(fx);
+        PlayDrawFx(fx);
+        PlayShieldToHandFx(fx);
+    }
+
+    private void PlayDestroyFx(FxSnapshot fx)
+    {
+        PlayGraveFx(fx, _bottomGravePile, _game.Player1);
+        PlayGraveFx(fx, _topGravePile, _game.Player2);
+    }
+
+    private void PlayGraveFx(FxSnapshot fx, VBoxContainer pile, Player p)
+    {
+        var to = PileFaceCenter(pile);
+        for (var i = 0; i < p.Graveyard.Count; i++)
+        {
+            var inst = p.Graveyard[i];
+            if (!fx.BattlePos.TryGetValue(inst, out var from))
+                continue; // not a battle->grave transition we witnessed
+            SpawnFly(inst.Card, faceUp: true, from, to, delay: 0f, fadeOut: true, swell: true);
+        }
+    }
+
+    private void PlayDrawFx(FxSnapshot fx)
+    {
+        PlayDrawFxFor(fx, playerNo: 0, _game.Player1, _bottomDeckPile, _bottomHand, faceUp: true);
+        PlayDrawFxFor(fx, playerNo: 1, _game.Player2, _topDeckPile, _topHand,
+            faceUp: !_vsAi || GameSettings.RevealAiHand);
+    }
+
+    private void PlayDrawFxFor(FxSnapshot fx, int playerNo, Player p, VBoxContainer deckPile, VBoxContainer handBox, bool faceUp)
+    {
+        // A pure draw: the deck lost exactly as many cards as the hand gained.
+        // (Shield breaks also add to hand but don't shrink the deck, so they are
+        // excluded automatically and stay un-animated.)
+        var preDeck = fx.DeckCounts.GetValueOrDefault(playerNo);
+        var preHand = fx.HandCounts.GetValueOrDefault(playerNo);
+        var deckLoss = preDeck - p.Deck.Count;
+        var handGain = p.Hand.Count - preHand;
+        if (deckLoss <= 0 || deckLoss != handGain)
+            return;
+
+        var from = PileFaceCenter(deckPile);
+        var to = HandFlowCenter(handBox);
+        for (var k = 0; k < deckLoss; k++)
+        {
+            var idx = preHand + k;
+            if (idx < 0 || idx >= p.Hand.Count)
+                continue;
+            SpawnFly(p.Hand[idx].Card, faceUp, from, to, delay: k * 0.11f, fadeOut: false, swell: false);
+        }
+    }
+
+    /// <summary>
+    /// Flies the broken shields from their shield-zone spot into the defender's hand.
+    /// Each broken shield lifts the first (top) shield card, so the k-th broken card
+    /// departs from the k-th recorded shield position. Draws between pre-capture and
+    /// now are excluded because a shield break adds to the hand without shrinking the
+    /// deck, so the top few new hand cards were exactly the broken shields.
+    /// </summary>
+    private void PlayShieldToHandFx(FxSnapshot fx)
+    {
+        PlayShieldToHandFxFor(fx, 0, _game.Player1, _bottomHand);
+        PlayShieldToHandFxFor(fx, 1, _game.Player2, _topHand);
+    }
+
+    private void PlayShieldToHandFxFor(FxSnapshot fx, int playerNo, Player p, VBoxContainer handBox)
+    {
+        var preShieldPos = fx.ShieldPos.GetValueOrDefault(playerNo);
+        if (preShieldPos is null || preShieldPos.Count == 0)
+            return;
+        var broken = preShieldPos.Count - p.ShieldCount;
+        if (broken <= 0)
+            return;
+        var preHand = fx.HandCounts.GetValueOrDefault(playerNo);
+        var to = HandFlowCenter(handBox);
+        var faceUp = playerNo == 0 || !_vsAi || GameSettings.RevealAiHand;
+        for (var k = 0; k < broken; k++)
+        {
+            var from = k < preShieldPos.Count ? preShieldPos[k] : HandFlowCenter(handBox);
+            var idx = preHand + k;
+            if (idx < 0 || idx >= p.Hand.Count)
+                continue;
+            SpawnFly(p.Hand[idx].Card, faceUp, from, to, delay: k * 0.11f, fadeOut: false, swell: true);
+        }
+    }
+
+    private static Vector2 PileFaceCenter(VBoxContainer pile)
+    {
+        var face = pile.GetChildren().OfType<Panel>().FirstOrDefault();
+        if (face is null)
+            return pile.GetGlobalRect().GetCenter();
+        return face.GetGlobalRect().GetCenter();
+    }
+
+    private static Vector2 HandFlowCenter(VBoxContainer handBox) =>
+        GetFlow(handBox).GetGlobalRect().GetCenter();
+
+    /// <summary>
+    /// Spawns a transient "ghost" card on the animation layer that flies from
+    /// <paramref name="from"/> to <paramref name="to"/> (global positions) and frees
+    /// itself. Optional: fade out the arriving card (destroy) or swell it slightly
+    /// during flight (destroy drama). Mouse-transparent. With <paramref name="faceUp"/>
+    /// false the ghost shows the card back (hidden draws).
+    /// </summary>
+    private void SpawnFly(Card card, bool faceUp, Vector2 from, Vector2 to, float delay, bool fadeOut, bool swell)
+    {
+        var w = _cardW;
+        var h = _cardH;
+        var ghost = new Control
+        {
+            CustomMinimumSize = new Vector2(w, h),
+            Size = new Vector2(w, h),
+            MouseFilter = Control.MouseFilterEnum.Ignore,
+        };
+        _fxLayer.AddChild(ghost);
+        ghost.GlobalPosition = from - new Vector2(w * 0.5f, h * 0.5f);
+
+        var frame = new Panel { MouseFilter = Control.MouseFilterEnum.Ignore };
+        frame.SetAnchorsPreset(LayoutPreset.FullRect);
+        frame.AddThemeStyleboxOverride("panel", MakeGhostStyle(CivilizationPalette.Color(card.Civilization)));
+        ghost.AddChild(frame);
+
+        var tex = faceUp ? LoadArt(ArtFor(card)) : LoadArt("res://assets/art/cards/BackCard.webp");
+        if (tex is not null)
+        {
+            var img = new TextureRect
+            {
+                Texture = tex,
+                ExpandMode = TextureRect.ExpandModeEnum.IgnoreSize,
+                StretchMode = TextureRect.StretchModeEnum.KeepAspectCovered,
+                MouseFilter = Control.MouseFilterEnum.Ignore,
+            };
+            img.SetAnchorsPreset(LayoutPreset.FullRect);
+            frame.AddChild(img);
+        }
+
+        var tw = ghost.CreateTween();
+        if (delay > 0f)
+            tw.TweenInterval(delay);
+        tw.SetParallel(true);
+        tw.TweenProperty(ghost, "global_position", to - new Vector2(w * 0.5f, h * 0.5f), 0.42f)
+            .SetTrans(Tween.TransitionType.Quad)
+            .SetEase(Tween.EaseType.InOut);
+        if (swell)
+            tw.TweenProperty(ghost, "scale", Vector2.One * 1.07f, 0.42f);
+        if (fadeOut)
+            tw.TweenProperty(ghost, "modulate:a", 0f, 0.42f);
+        tw.Finished += ghost.QueueFree;
+    }
+
+    private static Texture2D? LoadArt(string? path)
+    {
+        if (string.IsNullOrEmpty(path) || !ResourceLoader.Exists(path))
+            return null;
+        return ResourceLoader.Load<Texture2D>(path);
+    }
+
+    private static StyleBoxFlat MakeGhostStyle(Color civ)
+    {
+        var sb = new StyleBoxFlat
+        {
+            BgColor = new Color(civ, 0.9f),
+            BorderColor = civ.Lightened(0.35f),
+            CornerRadiusTopLeft = 3,
+            CornerRadiusTopRight = 3,
+            CornerRadiusBottomLeft = 3,
+            CornerRadiusBottomRight = 3,
+        };
+        sb.SetBorderWidthAll(2);
+        return sb;
+    }
+
+    // ------------------------------------------------------- tap pose tracking
+
+    private void CapturePrevTapped()
+    {
+        if (_game is null)
+            return;
+        CapturePrevTappedZone(_game.Player1.Hand);
+        CapturePrevTappedZone(_game.Player1.ManaZone);
+        CapturePrevTappedZone(_game.Player1.BattleZone);
+        CapturePrevTappedZone(_game.Player2.Hand);
+        CapturePrevTappedZone(_game.Player2.ManaZone);
+        CapturePrevTappedZone(_game.Player2.BattleZone);
+    }
+
+    private void CapturePrevTappedZone(IReadOnlyList<CardInstance> zone)
+    {
+        foreach (var inst in zone)
+            _prevTapped[inst] = inst.IsTapped;
+    }
+
+    /// <summary>
     /// True while a spell-targeting state is active and the clicked battle-zone card
     /// is a legal target for the spell being aimed. Highlights make the board read
     /// as "clickable" instead of forcing the player to remember the targeting rules.
@@ -1966,6 +2931,31 @@ public partial class Arena : Control
     {
         if (_game is null || index < 0)
             return false;
+        if (_mode == Mode.EvolveBase && _evolveHandIndex >= 0 && _evolveHandIndex < _game.ActivePlayer.Hand.Count)
+        {
+            var evolution = _game.ActivePlayer.Hand[_evolveHandIndex].Card;
+            var baseOwner = isBottomSide ? _game.Player1 : _game.Player2;
+            return SideIsActive(isBottomSide) && index < baseOwner.BattleZone.Count
+                && DuelGame.IsEvolutionBase(evolution, baseOwner.BattleZone[index].Card);
+        }
+        if (_mode == Mode.SelectEvolveTarget && _evolveHandIndex >= 0)
+        {
+            if (_evolveHandIndex >= _game.ActivePlayer.Hand.Count)
+                return false;
+            var evolution = _game.ActivePlayer.Hand[_evolveHandIndex].Card;
+            var evolveOwner = isBottomSide ? _game.Player1 : _game.Player2;
+            return index < evolveOwner.BattleZone.Count
+                && _game.IsLegalOnPlayTarget(evolution, _game.ActivePlayer, evolveOwner, index);
+        }
+        if (_mode == Mode.SelectSummonTarget)
+        {
+            if (_summonHandIndex < 0 || _summonHandIndex >= _game.ActivePlayer.Hand.Count)
+                return false;
+            var creature = _game.ActivePlayer.Hand[_summonHandIndex].Card;
+            var summonOwner = isBottomSide ? _game.Player1 : _game.Player2;
+            return index < summonOwner.BattleZone.Count
+                && _game.IsLegalOnPlayTarget(creature, _game.ActivePlayer, summonOwner, index);
+        }
         if (_mode != Mode.SelectSpellTarget && _mode != Mode.SelectShieldTarget)
             return false;
 

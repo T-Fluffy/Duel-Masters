@@ -162,4 +162,20 @@ public class CombatTests
         Assert.Throws<RuleViolationException>(
             () => h.Game.AttackPlayer(0, h.P1, h.P1.BattleZone.IndexOf(ownBlocker)));
     }
+
+    [Fact]
+    public void MustAttackList_AllowsTheWinningDirectAttack_WhenDefenderHasNoShields()
+    {
+        var h = GameHarness.AtMainPhase();
+        var must = h.PutCreature(h.P1, CardFactory.Creature(1, 1000, Civilization.Fire, "Relentless", Keyword.AttacksEachTurn));
+        h.SetShields(h.P2); // zero shields: a direct hit ends the game
+
+        // The "must attack each turn" obligation is still satisfied even though
+        // there are no shields left to break (this is how the final win happens).
+        Assert.Contains(must, h.Game.MustAttackList());
+
+        h.Game.AttackPlayer(0);
+        Assert.True(h.Game.IsGameOver);
+        Assert.Same(h.P1, h.Game.Winner);
+    }
 }

@@ -19,9 +19,7 @@ internal static class CardFactory
         string name = "",
         params Keyword[] keywords)
     {
-        var n = string.IsNullOrWhiteSpace(name)
-            ? $"Creature-{++_serial}"
-            : name;
+        var n = string.IsNullOrWhiteSpace(name) ? $"Creature-{++_serial}" : name;
         return new Card($"c{++_serial}", n, civ, CardType.Creature, cost, power, "R", keywords);
     }
 
@@ -30,11 +28,43 @@ internal static class CardFactory
         int power,
         Civilization civ,
         string name,
-        CardEffect effect,
+        CardEffect? effect,
         params Keyword[] keywords)
     {
         var n = string.IsNullOrWhiteSpace(name) ? $"Creature-{++_serial}" : name;
-        return new Card($"c{++_serial}", n, civ, CardType.Creature, cost, power, "R", keywords, new[] { effect });
+        return new Card($"c{++_serial}", n, civ, CardType.Creature, cost, power, "R", keywords,
+            effect is null ? System.Array.Empty<CardEffect>() : new[] { effect });
+    }
+
+    /// <summary>Creature with a custom race, optional effects and keywords.</summary>
+    public static Card CreatureWithRace(
+        int cost,
+        int power,
+        Civilization civ,
+        string name,
+        string race,
+        IEnumerable<CardEffect>? effects = null,
+        params Keyword[] keywords)
+    {
+        var n = string.IsNullOrWhiteSpace(name) ? $"Creature-{++_serial}" : name;
+        return new Card($"c{++_serial}", n, civ, CardType.Creature, cost, power, race, keywords,
+            effects ?? System.Array.Empty<CardEffect>());
+    }
+
+    /// <summary>Evolution creature that must be placed on a creature of <paramref name="evolvesFrom"/> race.</summary>
+    public static Card Evolution(
+        int cost,
+        int power,
+        Civilization civ,
+        string name,
+        string race,
+        string evolvesFrom,
+        IEnumerable<CardEffect>? effects = null,
+        params Keyword[] keywords)
+    {
+        var n = string.IsNullOrWhiteSpace(name) ? $"Evo-{++_serial}" : name;
+        return new Card($"e{++_serial}", n, civ, CardType.EvolutionCreature, cost, power, race, keywords,
+            effects ?? System.Array.Empty<CardEffect>(), evolvesFrom);
     }
 
     public static Card Spell(int cost, Civilization civ = Civilization.Water, string name = "")
@@ -56,8 +86,8 @@ internal static class CardFactory
     }
 
     /// <summary>Shorthand for authoring <see cref="CardEffect"/> in tests.</summary>
-    public static CardEffect Eff(EffectId id, EffectTargetScope target = EffectTargetScope.None, int value = 0)
-        => new(id, target, value);
+    public static CardEffect Eff(EffectId id, EffectTargetScope target = EffectTargetScope.None, int value = 0, string data = "")
+        => new(id, target, value, data);
 
     /// <summary>Build a player with <paramref name="size"/> cards in the deck.</summary>
     public static Player PlayerWithDeck(string name, int size, params Card[] fixedTop)

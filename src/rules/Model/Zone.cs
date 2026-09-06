@@ -11,5 +11,6 @@ public enum Zone
     BattleZone,
     Graveyard,
     Shields,
-    ShieldZone
+    ShieldZone,
+    Underneath
 }
