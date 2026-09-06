@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_06_108",
+ "page": "Paradise Horn",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Horned Beast",
+ "cost": "4",
+ "power": "3000+",
+ "engtext": "{{Power Attacker|2000}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "108/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "68/110",
+  "set3": "DM-18 Best Challenger ",
+  "setnum3": "85/140"
+ },
+ "wiki": "{{Cardtable\n| image = Paradise Horn.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|樹|じゅ}}{{Ruby|界|かい}}を{{Ruby|守|まも}}るパラダイス・ホーン\n| phonetic = Jukai o Mamoru Paradaisu Hōn\n| race = Horned Beast\n| cost = 4\n| power = 3000+\n| engtext = {{Power Attacker|2000}}\n| jptext = {{Power Attacker|2000|jp}}\n| flavor = Few places on the planet still know the joy of absolute peace. Paradise Horn makes sure this is one of them. ([[DM-06]])\n| flavor2 = その震動に樹木と鳥達が歓喜のダンスを踊る。At the tremor, the trees and birds dance with joy. ([[DM-06]], [[DM-18]])\n| mana = 1\n| artist = Imo Kajii\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 108/110\n| R1 = Uncommon\n| set2 = DM-06 Invincible Soul\n| setnum2 = 68/110\n| R2 = Uncommon\n| set3 = DM-18 Best Challenger \n| setnum3 = 85/140\n| R3 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Nature]]\n[[Category:Horned Beast]]\n[[Category:3000 Power Creatures]]"
+}

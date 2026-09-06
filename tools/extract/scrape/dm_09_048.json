@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_09_048",
+ "page": "Mana Bonanza",
+ "type": "Spell",
+ "civilization": "Nature",
+ "race": "",
+ "cost": "8",
+ "power": "",
+ "engtext": "■ For each [[card]] in your [[mana zone]], put a [[card]] from the top of your [[deck]] into your [[mana zone]] [[tap]]ped.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "48/55",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "20/55",
+  "set3": "DMC-55 CoroCoro Legend 7",
+  "setnum3": "44/84"
+ },
+ "wiki": "{{Cardtable\n| image = Mana Bonanza.jpg\n| civilization = Nature\n| type = Spell\n| jpname = クリスタル・フュージョン\n| phonetic = Kurisutaru Fu~yūjon ''(Crystal Fusion)''\n| cost = 8\n| engtext = ■ For each [[card]] in your [[mana zone]], put a [[card]] from the top of your [[deck]] into your [[mana zone]] [[tap]]ped.\n| jptext = ■ 自分のマナゾーンにあるカードと同じ枚数のカードを、自分の山札の上からマナゾーンにタップして置く。\n| flavor = \"Fertilizer and plant food are decent, I guess, but a gigantic, floating megacrystal does the trick every time.\" —[[Tangle Fist, the Weaver]] ([[DM-09]])\n| flavor2 = 水晶が輝くと、きらり光るマナの群れは動きを早め、ぶつかり合っては分裂していく。When the crystal shines, the shimmering swarm of mana quickens its movement, colliding and splitting apart. ([[DM-09]])\n| flavor3 = 爆発的なマナが、あらゆる無茶を可能にする!  さあ、究極の力を手に入れろ! \"Explosive mana makes all impossibilities possible! Now, seize the ultimate power!\" ([[DMC-55]])\n| mana = 1\n| artist = Toshiaki Takayama\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = 48/55\n| R1 = Rare\n| set2 = DM-09 Invincible Blood\n| setnum2 = 20/55\n| R2 = Rare\n| set3 = DMC-55 CoroCoro Legend 7\n| setnum3 = 44/84\n| R3 = Rare\n}}\n[[Category:OCG]]\n[[Category:TCG]]\n[[Category:Nature]]\n[[Category:Spell]]\n[[Category:Mana Acceleration]]"
+}

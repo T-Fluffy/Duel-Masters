@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_02_021",
+ "page": "Stained Glass",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Cyber Virus",
+ "cost": "3",
+ "power": "1000",
+ "engtext": "■ Whenever this [[creature]] [[attack]]s, you may [[choose]] one of your [[opponent]]'s [[fire]] or [[nature]] [[creature]]s in the [[battle zone]] and return it to its [[owner]]'s [[hand]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "21/55",
+  "set2": "DM-02 Master of Evolution",
+  "setnum2": "25/55"
+ },
+ "wiki": "{{Cardtable\n| image=Stained Glass.jpg\n| civilization = Water\n| type = Creature\n| jpname = ステンドグラス\n| phonetic = Sutendogurasu\n| race = Cyber Virus\n| cost = 3\n| power = 1000\n| engtext = ■ Whenever this [[creature]] [[attack]]s, you may [[choose]] one of your [[opponent]]'s [[fire]] or [[nature]] [[creature]]s in the [[battle zone]] and return it to its [[owner]]'s [[hand]].\n| jptext = ■ このクリーチャーが攻撃するとき、相手がブロックする前に、バトルゾーンにある火または自然のクリーチャーを1体選び、持ち主の手札に戻してよい。\n| flavor = 地上侵攻用プログラム。特定領域のクリーチャーへの対応システムを強化。A ground invasion program. Enhances the response system for creatures in specific areas. ([[DM-02]])\n| flavor2 = The only function of Stained Glass, the most adaptable program created by the [[Cyber Lord]]s, is to aid their invasion of the surface world. ([[DM-02]])\n| mana = 1\n| artist = Atsushi Kawasaki\n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = 21/55\n| R1 = Uncommon\n| set2 = DM-02 Master of Evolution\n| setnum2 = 25/55\n| R2 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Bounce]]\n[[Category:Attack Trigger]]"
+}

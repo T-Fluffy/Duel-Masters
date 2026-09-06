@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_01_050",
+ "page": "Dark Clown",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Brain Jacker",
+ "cost": "4",
+ "power": "6000",
+ "engtext": "{{Blocker|old}}\n\n■ This [[creature]] can't [[attack]].\n\n■ When this [[creature]] wins a [[battle]], [[destroy]] it.",
+ "templates": [
+  "Blocker|old"
+ ],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "50/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "26/110",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "32/140"
+ },
+ "wiki": "{{Cardtable\n| image = Dark Clown.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = ダーク・クラウン\n| phonetic = Dāku Kuraun\n| cost = 4\n| race = Brain Jacker\n| power = 6000\n| engtext = {{Blocker|old}}\n\n■ This [[creature]] can't [[attack]].\n\n■ When this [[creature]] wins a [[battle]], [[destroy]] it.\n| jptext = {{Blocker|jp}}\n\n■ このクリーチャーは攻撃することができない。\n\n■ このクリーチャーがバトルする時、バトルの後、このクリーチャーを破壊する。\n| flavor =\n| mana = 1\n| artist = Jason\n| set1 = DM-01 Base Set\n| setnum1 = 50/110\n| R1 = Rare\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 26/110\n| R2 = Rare\n| set3 = DM-18 Best Challenger\n| setnum3 = 32/140\n| R3 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Brain Jacker]]\n[[Category:6000 Power Creatures]]\n[[Category:Reverse Slayer]]"
+}

@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_04_s04",
+ "page": "Galklife Dragon",
+ "type": "Creature",
+ "civilization": "Fire ",
+ "race": "Armored Dragon",
+ "cost": "7",
+ "power": "6000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], [[destroy]] all [[light]] [[creature]]s that have [[power]] 4000 or less.\n\n{{Double Breaker}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-04 Shadowclash of Blinding Night",
+  "setnum1": "S4/S5",
+  "set2": "DM-04 Challenge of Black Shadow ",
+  "setnum2": "S4/S5"
+ },
+ "wiki": "{{Cardtable\n| image = Galklife Dragon.jpg\n| civilization = Fire \n| type = Creature\n| jpname = ガルクライフ・ドラゴン\n| phonetic = Enshinhei Goriakku\n| cost = 7\n| race = Armored Dragon\n| power = 6000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], [[destroy]] all [[light]] [[creature]]s that have [[power]] 4000 or less.\n\n{{Double Breaker}}\n| jptext = ■ このクリーチャーがバトルゾーンに出たとき、バトルゾーンにあるパワー4000以下の光のクリーチャーすべてを、持ち主の墓地に置く。\n\n{{Double Breaker|jp}}\n| flavor = \"Let the skies burn.\" ([[DM-04]])\n| mana = 1\n| artist = Jason \n| set1 = DM-04 Shadowclash of Blinding Night\n| setnum1 = S4/S5\n| R1 = Super Rare\n| set2 = DM-04 Challenge of Black Shadow \n| setnum2 = S4/S5\n| R2 = Super Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Mass Removal]]\n[[Category:Power Based Removal]]\n[[Category:Come Into Play Trigger]]"
+}

@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_06_102",
+ "page": "Illusory Berry",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Tree Folk",
+ "cost": "3",
+ "power": "3000",
+ "engtext": "",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "102/110",
+  "set2": "DM-06 Invincible Soul ",
+  "setnum2": "104/110"
+ },
+ "wiki": "{{Cardtable\n| image = Illusory Berry.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|幻|げん}}{{Ruby|惑|わく}}ベリー\n| phonetic = Genwaku Berī\n| race = Tree Folk\n| cost = 3\n| power = 3000\n| flavor = \"We rise from the shadow of the [[Fiona Woods]]. We rise to exact our well-earned revenge. We rise to-oh, man, did Sluppo's head pop again? Great. Way to ruin my dramatic speech, Sluppo.\" ([[DM-06]])\n| flavor2 = 闇のエキスをも肥やしとし、どろどろとした果実を実らす。It nurtures itself with the essence of darkness, bearing viscous fruits. ([[DM-06]])\n| mana = 1\n| artist = Norikatsu Miyoshi\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 102/110\n| R1 = Common\n| set2 = DM-06 Invincible Soul \n| setnum2= 104/110\n| R2 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Nature]]\n[[Category:Tree Folk]]\n[[Category:3000 Power Creatures]]\n[[Category:No Abilities]]"
+}

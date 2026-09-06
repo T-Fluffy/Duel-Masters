@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_09_s05",
+ "page": "Stratosphere Giant",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Giant",
+ "cost": "8",
+ "power": "13000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], your [[opponent]] chooses up to 2 [[creature]]s in his [[hand]] and puts them into the [[battle zone]].\n\n{{Triple Breaker}}",
+ "templates": [
+  "Triple Breaker"
+ ],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "S5/S5",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "S5/S5"
+ },
+ "wiki": "{{Cardtable\n| image = Stratosphere Giant.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|驚天の超人|アメージング・ジャイアント}}\n| kana = アメージング・ジャイアント ''(Amazing Giant)''\n| phonetic = Amējingu Jaianto\n| cost = 8\n| race = Giant\n| power = 13000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], your [[opponent]] chooses up to 2 [[creature]]s in his [[hand]] and puts them into the [[battle zone]].\n\n{{Triple Breaker}}\n| jptext = ■ このクリーチャーがバトルゾーンに出たとき、相手は自分自身の手札からクリーチャーを2体まで選び、バトルゾーンに出してもよい。\n\n{{Triple Breaker|jp}}\n| flavor = Born from the pain of the [[Fiona Woods]], it finally put an end to [[Ballom, Master of Death|Ballom]]'s reign. With its foot. ([[DM-09]])\n| flavor2 = 伸ばした腕は国をも超え、遥か彼方の龍を撃つ! It's arms go over nations and hit [[Dragon]]s from a distant point! ([[DM-09]])\n| mana = 1\n| artist = Yarunoca\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = S5/S5\n| R1 = Super Rare\n| set2 = DM-09 Invincible Blood\n| setnum2 = S5/S5\n| R2 = Super Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Come Into Play Trigger]]"
+}

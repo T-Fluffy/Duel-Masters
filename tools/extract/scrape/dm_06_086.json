@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_06_086",
+ "page": "Q-tronic Gargantua",
+ "type": "Evolution Creature",
+ "civilization": "Fire",
+ "race": "Survivor",
+ "cost": "6",
+ "power": "9000",
+ "engtext": "■ [[Evolution]]—Put on one of your [[Survivor]]s.\n\n{{Crew Breaker|Survivor}}",
+ "templates": [
+  "Crew Breaker|Survivor"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "86/110",
+  "set2": "DM-06 Invincible Soul ",
+  "setnum2": "29/110"
+ },
+ "wiki": "{{Cardtable\n| image = Q-tronic Gargantua.jpg\n| civilization = Fire\n| type = Evolution Creature\n| jpname = シグマ・トゥレイト\n| phonetic = Shiguma Tureito ''(Sigma Trait)''\n| race = Survivor\n| cost = 6\n| power = 9000\n| engtext = ■ [[Evolution]]—Put on one of your [[Survivor]]s.\n\n{{Crew Breaker|Survivor}}\n| jptext = ■ 進化－自分のサバイバー1体の上に置く。\n\n■ クルー・ブレイカー： サバイバー （シールドを攻撃したとき、バトルゾーンにある自分の他のサバイバー1体につき、シールドをさらにもう1枚ブレイクする）　\n| flavor = A disaster nearly doomed the [[Survivor]]s. Now disasters merely fuel their fury. ([[DM-06]])\n| flavor2 = 地上の災害に共鳴し、[[Survivor|サバイバー]]はその悲劇を力に変える。The survivor resonates with disasters on the earth, transforming that tragedy into power. ([[DM-06]])\n| mana = 1\n| artist = Shishizaru\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 86/110\n| R1 = Rare\n| set2 = DM-06 Invincible Soul \n| setnum2 = 29/110\n| R2 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]"
+}

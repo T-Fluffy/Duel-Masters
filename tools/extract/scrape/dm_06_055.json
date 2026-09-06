@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_06_055",
+ "page": "Future Slash",
+ "type": "Spell",
+ "civilization": "Darkness",
+ "race": "",
+ "cost": "7",
+ "power": "",
+ "engtext": "■ [[Search]] your [[opponent]]'s [[deck]]. Take up to 2 [[card]]s from his [[deck]] and put them into his [[graveyard]]. Then your [[opponent]] [[shuffle]]s his [[deck]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "55/110",
+  "set2": "Promotional",
+  "setnum2": "P23/Y3"
+ },
+ "wiki": "{{Restriction|Premium}}\n{{Cardtable\n| image = Future Slash.jpg\n| civilization = Darkness\n| type = Spell\n| jpname = フューチャー・スラッシュ\n| phonetic = Fu~yūchā Surasshu\n| cost = 7\n| engtext = ■ [[Search]] your [[opponent]]'s [[deck]]. Take up to 2 [[card]]s from his [[deck]] and put them into his [[graveyard]]. Then your [[opponent]] [[shuffle]]s his [[deck]].\n| jptext = ■ 相手の山札を見る。その中から2枚まで選び、墓地に置かせる。その後、相手は自分自身の山札をシャッフルする。\n| flavor = \"Look on the bright side. Next time a fortune-teller predicts your future, you can ask for a discount.\" -[[Schuka, Duke of Amnesia]] ([[DM-06]])\n| flavor2 = 切り取るのは夢か現実か? それとも、魂か? \"Do you cut through dreams or reality? Or do you cut through souls?\" (P23/Y3)\n| mana = 1\n| artist = Dreamwave\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 55/110\n| R1 = Uncommon\n| set2 = Promotional\n| setnum2 = P23/Y3\n| R2 = No Rarity\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Mill]]\n[[Category:Deck Search]]"
+}

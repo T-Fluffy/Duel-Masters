@@ -1,0 +1,30 @@
+{
+ "card_id": "dm_04_019",
+ "page": "Aqua Guard",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Liquid People",
+ "cost": "1",
+ "power": "2000",
+ "engtext": "{{Blocker}}\n\n■ This [[creature]] can't [[attack]].",
+ "templates": [
+  "Blocker"
+ ],
+ "sets": {
+  "set1": "DM-01 Base Set (OCG)",
+  "setnum1": "84/110 ",
+  "set2": "DM-04 Shadowclash of Blinding Night",
+  "setnum2": "19/55",
+  "set3": "DMC-42 CoroCoro Dream Pack 3: Eternal Gear",
+  "setnum3": "66/90",
+  "set4": "DMC-61 CoroCoro Dream Pack 4: Eternal Heaven",
+  "setnum4": "69/94",
+  "set5": "DMX-03 Deck Builder DX: Alien Edition",
+  "setnum5": "29/42",
+  "set6": "DMX-16 The Great Royal Strategies: Fantasista 12",
+  "setnum6": "61/84",
+  "set7": "Promotional",
+  "setnum7": "P28/Y5, P13/Y8, P21/Y8, P77/Y9, P85/Y9"
+ },
+ "wiki": " {{Cardtable\n| image = Aqua Guard.jpg\n| civilization = Water\n| type = Creature\n| jpname = アクア・ガード\n| phonetic =  Akua Gādo\n| race = Liquid People\n| cost = 1\n| power = 2000\n| engtext = {{Blocker}}\n\n■ This [[creature]] can't [[attack]].\n| jptext = {{Blocker|jp}}\n\n■ このクリーチャーは攻撃することができない。\n| flavor = \"This ocean ain't big enough for the two of us!\" ([[DM-04]])\n| flavor2 = まずはこのオレを越えてみな。\"First, try surpassing me.\" ([[DMX-03]]) \n| flavor3 = おい、聞いたか!? 明日世界が滅亡するらしいぞ! …ん？さっきリツイートさんに聞いたんだよ? \"Hey, did you hear? The world’s supposed to end tomorrow! ...Huh? Where did I hear it? I heard it from [[Retweet, Aqua Warden|Retweet]]-san just now.\" ─'''Aqua Guard''' ([[DMX-16]])\n| flavor4 = 俺こそが守り手の中の守り手よ! 元祖の凄さ、思い知らせてやるぜ! \"I am the guardian among guardians! I'll make you realize the greatness of the original!\" ─'''Aqua Guard''' (P13/Y8)\n| flavor5 = 遙かな昔から深海を守り、幾千もの進化を遂げたものこそ、アクア・ガードなのだ. \"Aqua Guard is the one that has protected the deep sea since ancient times and has undergone thousands of evolutions.\" (P21/Y8)\n| mana = 1\n| artist = Akifumi Yamamoto\n| artist2 = TSUKASA KAWASAKI\n| artist3 = RYO KUNOKI\n| artist4= RYOSUKE NISHIYAMA\n| set1 = DM-01 Base Set (OCG)\n| setnum1 = 84/110 \n| R1 = Common\n| set2 = DM-04 Shadowclash of Blinding Night\n| setnum2 = 19/55\n| R2 = Common\n| set3 = DMC-42 CoroCoro Dream Pack 3: Eternal Gear\n| setnum3 = 66/90\n| R3 = Common\n| set4 = DMC-61 CoroCoro Dream Pack 4: Eternal Heaven\n| setnum4 = 69/94\n| R4 = Common\n| set5 = DMX-03 Deck Builder DX: Alien Edition\n| setnum5 = 29/42\n| R5 = Common\n| set6 = DMX-16 The Great Royal Strategies: Fantasista 12\n| setnum6 = 61/84\n| R6 = Common\n| set7 = Promotional\n| setnum7 = P28/Y5, P13/Y8, P21/Y8, P77/Y9, P85/Y9\n| R7 = Common\n}}\n{{Guard}}\n[[Category:TCG]]\n[[Category:OCG]]"
+}

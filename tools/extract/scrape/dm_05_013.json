@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_05_013",
+ "page": "Snork La, Shrine Guardian",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Guardian",
+ "cost": "3",
+ "power": "3000",
+ "engtext": "{{Blocker}}\n\n■ This [[creature]] can't [[attack]] [[player]]s.\n\n■ Whenever your [[opponent]] causes a [[card]] to be put into your [[graveyard]] from your [[mana zone]], you may return that [[card]] to your [[mana zone]].",
+ "templates": [
+  "Blocker"
+ ],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "13/55",
+  "set2": "DM-05 Return of the Survivor",
+  "setnum2": "7/55"
+ },
+ "wiki": "{{Cardtable\n| image = Snork La, Shrine Guardian.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|神|しん}}{{Ruby|魂|こん}}の{{Ruby|守|しゅ}}{{Ruby|護|ご}}{{Ruby|者|しゃ}}シュノーク・ラー\n| phonetic = Shinkon no Shugosha Shunooku Raa\n| race = Guardian\n| cost = 3\n| power = 3000\n| engtext = {{Blocker}}\n\n■ This [[creature]] can't [[attack]] [[player]]s.\n\n■ Whenever your [[opponent]] causes a [[card]] to be put into your [[graveyard]] from your [[mana zone]], you may return that [[card]] to your [[mana zone]].\n| jptext = {{Blocker|jp}}\n\n■ このクリーチャーは、相手プレイヤーを攻撃できない。\n\n■ このクリーチャーがバトルゾーンにある間、相手によって自分のマナゾーンのカードが自分の墓地に置かれるとき、そのカードを自分のマナゾーンに戻してもよい。\n| flavor = \n| mana = 1\n| artist = Dustmoss\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = 13/55\n| R1 = Rare\n| set2 = DM-05 Return of the Survivor\n| setnum2 = 7/55\n| R2 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Guardian]]\n[[Category:3000 Power Creatures]]\n[[Category:Mana Recovery]]"
+}

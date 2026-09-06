@@ -1,0 +1,30 @@
+{
+ "card_id": "dm_04_016",
+ "page": "Sarius, Vizier of Suppression",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Initiate",
+ "cost": "2",
+ "power": "3000",
+ "engtext": "{{Blocker}}\n\n■ This [[creature]] can't [[attack]] [[player]]s.",
+ "templates": [
+  "Blocker"
+ ],
+ "sets": {
+  "set1": "DM-04 Shadowclash of Blinding Night",
+  "setnum1": "16/55",
+  "set2": "DM-04 Challenge of Black Shadow ",
+  "setnum2": "39/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "95/140",
+  "set4": "DMC-05 Lightning Thunder Deck",
+  "setnum4": "46/82",
+  "set5": "DMC-18 Shobu's Holy Dragon Deck",
+  "setnum5": "55/102",
+  "set6": "DMC-42 CoroCoro Dream Pack 3: Eternal Gear",
+  "setnum6": "61/90",
+  "set7": "Promotional",
+  "setnum7": "P43/Y6, P51/Y6, P76/Y9, P84/Y9"
+ },
+ "wiki": "{{Cardtable\n| image = Sarius, Vizier of Suppression.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|鎮|ちん}}{{Ruby|圧|あつ}}の{{Ruby|使|し}}{{Ruby|徒|と}}サリエス\n| phonetic = Chinatsu no Shito Sariesu\n| race = Initiate\n| cost = 2\n| power = 3000\n| engtext = {{Blocker}}\n\n■ This [[creature]] can't [[attack]] [[player]]s.\n| jptext = {{Blocker|jp}}\n\n■ このクリーチャーは、相手プレイヤーを攻撃できない。\n| flavor = Its got a heart of gold. And a gall bladder of zinc. ([[DM-04]]) \n| flavor2 = 強力な言霊の盾が全身を覆っている。The shield of powerful word spirits covers the entire body. ([[DM-04]], [[DMC-05]], [[DMC-18]])\n| flavor3 = 盾に求められるのは強固にして揺るがぬ事なり。 What is required of a shield is to be strong and unshakable. ([[DM-18]], [[DMC-42]])\n| flavor4 = 天界に危機が迫る時、空を切り裂き、雲を突き抜け、鎮圧の使徒が現れる! When a crisis threatens the heavens, the Vizier of Suppression will appear, cutting through the sky and piercing the clouds! (P43/Y6)\n| flavor5 = 天界に攻め入った者は、まずサリエスが放つ光の障壁を突破しなければならない。Those who invade the heavens must first break through the light barrier released by Sarius. (P51/Y6)\n| flavor6 = 天界への侵入者を察知したとき、光をまとう障壁が現れた。When an intruder was detected in the heavens, a barrier cloaked in light appeared. (P75/Y9)\n| flavor7 = サリエスの意思は、共闘であった。Sarius' intention was cooperation. (P84/Y9)\n| mana = 1\n| artist = Hisashi Momose\n| artist2 = Akifumi Yamamoto\n| artist3 = HIROAKI KUDOU\n| artist4 = TSUKASA KAWASAKI\n| artist5 = YUSUKE TAKITA\n| set1 = DM-04 Shadowclash of Blinding Night\n| setnum1 = 16/55\n| R1 = Common \n| set2 = DM-04 Challenge of Black Shadow \n| setnum2 = 39/55\n| R2 = Common \n| set3 = DM-18 Best Challenger\n| setnum3 = 95/140\n| R3 = Common \n| set4 = DMC-05 Lightning Thunder Deck\n| setnum4 = 46/82\n| R4 = Common \n| set5 = DMC-18 Shobu's Holy Dragon Deck\n| setnum5 = 55/102\n| R5 = Common \n| set6 = DMC-42 CoroCoro Dream Pack 3: Eternal Gear\n| setnum6 = 61/90\n| R6 = Common \n| set7 = Promotional\n| setnum7 = P43/Y6, P51/Y6, P76/Y9, P84/Y9\n| R7 = Common \n}}\n[[Category:TCG]]\n[[Category:OCG]]"
+}

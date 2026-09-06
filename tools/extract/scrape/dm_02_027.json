@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_02_027",
+ "page": "General Dark Fiend",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Dark Lord",
+ "cost": "5",
+ "power": "6000",
+ "engtext": "■ Whenever this [[creature]] [[attack]]s, choose one of your [[shield]]s without [[look]]ing and put it into your [[graveyard]]. You can't use the \"[[shield trigger]]\" [[ability]] of that [[shield]].\n\n{{Double Breaker}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "27/55",
+  "set2": "DM-02 Master of Evolution",
+  "setnum2": "12/55"
+ },
+ "wiki": "{{Cardtable\n| image=General Dark Fiend.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|魔|ま}}{{Ruby|将|しょう}}ダーク・フリード ''(Dark Freed, Demon General)''\n| phonetic = Mashō Dāku Furīdo\n| cost = 5\n| race = Dark Lord\n| power = 6000\n| engtext = ■ Whenever this [[creature]] [[attack]]s, choose one of your [[shield]]s without [[look]]ing and put it into your [[graveyard]]. You can't use the \"[[shield trigger]]\" [[ability]] of that [[shield]].\n\n{{Double Breaker}}\n| jptext = ■ このクリーチャーが攻撃するとき、自分のシールドを1枚選び、自分の墓地に置く。\n\n{{Double Breaker|jp}}\n| flavor = この日、ダークロードは念願の地上侵略を決意した。On this day, the Dark Lord made the long-awaited decision to invade the surface world. ([[DM-02]])\n| mana = 1\n| artist = Hideaki Takamura\n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = 27/55\n| R1 = Rare\n| set2 = DM-02 Master of Evolution\n| setnum2 = 12/55\n| R2 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Dark Lord]]\n[[Category:6000 Power Creatures]]\n[[Category:Self Shield Burn]]\n[[Category:Attack Trigger]]"
+}

@@ -1,0 +1,26 @@
+{
+ "card_id": "dm_01_047",
+ "page": "Bone Assassin, the Ripper",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Living Dead",
+ "cost": "4",
+ "power": "2000",
+ "engtext": "{{Slayer|old}}",
+ "templates": [
+  "Slayer|old"
+ ],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "47/110",
+  "set2": "Shadowclash Collector Tin",
+  "setnum2": "18/46",
+  "set3": "DM-01 Base Set (OCG)",
+  "setnum3": "88/110",
+  "set4": "Shadowclash Collector Tin",
+  "setnum4": "18/46",
+  "set5": "DMC-02 Kokujo's Darkness Deck",
+  "setnum5": "22/43"
+ },
+ "wiki": "{{Cardtable\n| image = Bone Assassin, the Ripper.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|切|き}}り{{Ruby|裂|さ}}く{{Ruby|者|もの}}ボーン・アサシン\n| phonetic = Kiriku Mono Bōn Asashin\n| race = Living Dead\n| cost = 4\n| power = 2000\n| engtext = {{Slayer|old}}\n| jptext = {{Slayer|jp}}\n| flavor = 彼らは最前線に送るべきだ。味方の近くにいると危なくてしょうがないから。 Commanders send them to the front line. It's too dangerous to have them close. ([[DM-01]], [[DMC-02]])\n| mana = 1\n| artist = Nottsuo\n| set1 = DM-01 Base Set\n| setnum1 = 47/110\n| R1 = Common\n| set2 = Shadowclash Collector Tin\n| setnum2 = 18/46\n| R2 = Common\n| set3 = DM-01 Base Set (OCG)\n| setnum3 = 88/110\n| R3 = Common\n| set4 = Shadowclash Collector Tin\n| setnum4 = 18/46\n| R4 = Common\n| set5 = DMC-02 Kokujo's Darkness Deck\n| setnum5 = 22/43\n| R5 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]"
+}

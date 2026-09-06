@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_02_034",
+ "page": "Armored Cannon Balbaro",
+ "type": "Evolution Creature",
+ "civilization": "Fire",
+ "race": "Human",
+ "cost": "3",
+ "power": "3000+",
+ "engtext": "■ [[Evolution]]—Put on one of your [[Human]]s.\n\n■ While [[attack]]ing, this [[creature]] gets +2000 [[power]] for each other [[Human]] in the [[battle zone]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "34/55",
+  "set2": "DM-02 Master of Evolution",
+  "setnum2": "30/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "75/140"
+ },
+ "wiki": "{{Cardtable\n| image=Armored Cannon Balbaro.jpg\n| civilization = Fire\n| type = Evolution Creature\n| jpname = {{Ruby|機|き}}{{Ruby|神|しん}}{{Ruby|装|そう}}{{Ruby|甲|こう}}ヴァルバロス ''(Balbaros, Divine Machine Armor)''\n| phonetic = Kishin Sōkō Barubarosu\n| race = Human\n| cost = 3\n| power = 3000+\n| engtext = ■ [[Evolution]]—Put on one of your [[Human]]s.\n\n■ While [[attack]]ing, this [[creature]] gets +2000 [[power]] for each other [[Human]] in the [[battle zone]].\n| jptext = ■ 進化—自分のヒューマノイド1体の上に置く。\n\n■ 攻撃中、このクリーチャーのパワーは、バトルゾーンにある他のヒューマノイド1体につき+2000される。\n| flavor = \"Can somebody reload me?\" ([[DM-02]])\n| mana = 1\n| artist = Dai\n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = 34/55\n| R1 = Uncommon\n| set2 = DM-02 Master of Evolution\n| setnum2 = 30/55\n| R2 = Uncommon\n| set3 = DM-18 Best Challenger\n| setnum3 = 75/140\n| R3 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Fire]]\n[[Category:Human]]\n[[Category:Evolution Creature]]\n[[Category:3000 Power Creatures]]\n[[Category:Self Increase Power]]\n[[Category:Attack Trigger]]"
+}

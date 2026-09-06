@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_05_012",
+ "page": "Le Quist, the Oracle",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Light Bringer",
+ "cost": "2",
+ "power": "1500",
+ "engtext": "■ Whenever this [[creature]] [[attack]]s, you may [[choose]] a [[darkness]] or [[fire]] [[creature]] in the [[battle zone]] and [[tap]] it. ''(First [[choose]] what this [[creature]] is [[attack]]ing. Then [[choose]] a [[creature]] to [[tap]].)''",
+ "templates": [],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "12/55",
+  "set2": "DM-05 Return of the Survivor",
+  "setnum2": "39/55"
+ },
+ "wiki": "{{Cardtable\n| image = Le Quist, the Oracle.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|予|よ}}{{Ruby|言|げん}}{{Ruby|者|しゃ}}レクイル\n| phonetic = Yogensha Rekuiru\n| race = Light Bringer\n| cost = 2\n| power = 1500\n| engtext = ■ Whenever this [[creature]] [[attack]]s, you may [[choose]] a [[darkness]] or [[fire]] [[creature]] in the [[battle zone]] and [[tap]] it. ''(First [[choose]] what this [[creature]] is [[attack]]ing. Then [[choose]] a [[creature]] to [[tap]].)''\n| jptext = ■ このクリーチャーが攻撃するとき、バトルゾーンにある闇または火のクリーチャーを1体選び、タップしてもよい。（まず、このクリーチャーが何を攻撃するかを選び、その後、タップするクリーチャーを選ぶ）\n| flavor = \"I have developed a devastating new weapon to combat the forces of chaos. I call it 'nap time.'\" ([[DM-05]])\n| mana = 1\n| artist = Katsuhiko Kojoh\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = 12/55\n| R1 = Common\n| set2 = DM-05 Return of the Survivor\n| setnum2 = 39/55\n| R2 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Light Bringer]]\n[[Category:1500 Power Creatures]]\n[[Category:Creature Tapper]]\n[[Category:Attack Trigger]]"
+}

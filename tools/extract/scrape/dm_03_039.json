@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_03_039",
+ "page": "Flametropus",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Rock Beast",
+ "cost": "4",
+ "power": "3000+",
+ "engtext": "■ Whenever this [[creature]] [[attack]]s, you may put a [[card]] from your [[mana zone]] into your [[graveyard]]. If you do, this [[creature]] gets \"[[power attacker]] +3000\" and \"[[double breaker]]\" until the [[End Step|end of the turn]]. ''(A [[creature]] that has \"[[power attacker]] +3000\" and \"[[double breaker]]\" gets +3000 [[power]] while [[attack]]ing and [[break]]s 2 [[shield]]s.)''",
+ "templates": [],
+ "sets": {
+  "set1": "DM-03 Rampage of the Super Warriors",
+  "setnum1": "39/55",
+  "set2": "DM-03 Master of Destruction",
+  "setnum2": "16/55"
+ },
+ "wiki": "{{Cardtable\n| image= Flametropus.jpg\n| civilization = Fire\n| type = Creature\n| jpname = フレムトロプス\n| phonetic = Furemutoropusu\n| cost = 4\n| race = Rock Beast\n| power = 3000+\n| engtext = ■ Whenever this [[creature]] [[attack]]s, you may put a [[card]] from your [[mana zone]] into your [[graveyard]]. If you do, this [[creature]] gets \"[[power attacker]] +3000\" and \"[[double breaker]]\" until the [[End Step|end of the turn]]. ''(A [[creature]] that has \"[[power attacker]] +3000\" and \"[[double breaker]]\" gets +3000 [[power]] while [[attack]]ing and [[break]]s 2 [[shield]]s.)''\n| jptext = ■ このクリーチャーが攻撃するとき、自分のマナゾーンからカードを1枚選び、自分の墓地に置いてよい。そうしたなら、このターン、このクリーチャーは「パワーアタッカー3000」と「W・ブレイカー」を得る。\n| flavor = \n| mana = 1\n| artist = Dustmoss\n| set1 = DM-03 Rampage of the Super Warriors\n| setnum1 = 39/55\n| R1 = Rare\n| set2 = DM-03 Master of Destruction\n| setnum2 = 16/55\n| R2 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Power Attacker +3000]]\n[[Category:Conditional Double Breaker]]\n[[Category:Self Mana Burn]]"
+}

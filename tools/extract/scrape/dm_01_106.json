@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_01_106",
+ "page": "Storm Shell",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Colony Beetle",
+ "cost": "7",
+ "power": "2000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], your [[opponent]] [[choose]]s one of his [[creature]]s in the [[battle zone]] and puts it into his [[mana zone]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "106/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "35/110"
+ },
+ "wiki": "{{Cardtable\n| image = Storm Shell.jpg\n| civilization = Nature\n| type = Creature\n| jpname = シェル・ストーム\n| phonetic = Sheru Stōmu ''(Shell Storm)''\n| race = Colony Beetle\n| cost = 7\n| power = 2000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], your [[opponent]] [[choose]]s one of his [[creature]]s in the [[battle zone]] and puts it into his [[mana zone]].\n| jptext = ■ このクリーチャーがバトルゾーンに出たとき、相手はバトルゾーンから自分自身のクリーチャーを1体選び、持ち主のマナゾーンに置く。\n| flavor = [[Colony Beetle|コロニー・ビートル]]の産卵は悪夢である。弾丸のような卵が、豪雨のように降り注ぐ。 A [[Colony Beetle]]'s spawning is a virtual nightmare. It covers the earth with a hail of its bullet-like eggs.([[DM-01]])\n| mana = 1\n| artist = Sansyu\n| set1 = DM-01 Base Set\n| setnum1 = 106/110\n| R1 = Rare\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 35/110\n| R2 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Nature]]\n[[Category:Colony Beetle]]\n[[Category:2000 Power Creatures]]\n[[Category:Choice Removal]]\n[[Category:Mana Feed]]\n[[Category:Come Into Play Trigger]]"
+}

@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_01_056",
+ "page": "Gigagiele",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Chimera",
+ "cost": "5",
+ "power": "3000",
+ "engtext": "{{Slayer|old}}",
+ "templates": [
+  "Slayer|old"
+ ],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "56/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "25/110",
+  "set3": "Promotional",
+  "setnum3": "P03/＊"
+ },
+ "wiki": "{{Cardtable\n| image = Gigagiele.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = ギガジール\n| phonetic = Gigajīru\n| cost = 5\n| race = Chimera\n| power = 3000\n| engtext = {{Slayer|old}}\n| jptext = ■ スレイヤー（このクリーチャーとバトルした相手クリーチャーは、勝っても持ち主の墓地に置かれる。）\n| flavor = ダークロードは、魔獣をつなぎあわせて、生きた悪夢を作り上げた。 By assembling parts of different magical beasts, the [[Dark Lord]]s created a nightmare. ([[DM-01]] + P03/＊)\n| mana = 1\n| artist = Hisashi Momose\n| set1 = DM-01 Base Set\n| setnum1 = 56/110\n| R1 = Rare\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 25/110\n| R2 = Rare\n| set3 = Promotional\n| setnum3 = P03/＊\n| R3 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Chimera]]\n[[Category:Slayer]]\n[[Category:3000 Power Creatures]]"
+}

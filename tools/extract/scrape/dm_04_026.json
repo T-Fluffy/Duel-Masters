@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_04_026",
+ "page": "Smile Angler",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Gel Fish",
+ "cost": "6",
+ "power": "3000",
+ "engtext": "■ Whenever this [[creature]] [[attack]]s, you may choose a [[card]] in your [[opponent]]'s [[mana zone]] and return it to his [[hand]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-04 Shadowclash of Blinding Night",
+  "setnum1": "26/55",
+  "set2": "DM-04 Challenge of Black Shadow ",
+  "setnum2": "9/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "25/140"
+ },
+ "wiki": "{{Cardtable\n| image = Smile Angler.jpg\n| civilization = Water\n| type = Creature\n| jpname = スマイル・アングラー\n| phonetic = Sumairu Angurā\n| cost = 6\n| race = Gel Fish\n| power = 3000\n| engtext = ■ Whenever this [[creature]] [[attack]]s, you may choose a [[card]] in your [[opponent]]'s [[mana zone]] and return it to his [[hand]].\n| jptext = ■ このクリーチャーが攻撃する時、相手のマナゾーンからカードを1枚選び、持ち主の手札に戻してもよい。\n| flavor = \"I love the ocean! I love fish! I love rocks! I love being an artificial monstrosity constructed by the [[Cyber Lord]]s! Everything is great!\" ([[DM-04]])\n| flavor2 = 深海は今日も異常ないっぺよ。The deep sea is as usual today, no problems at all. ([[DM-04]], [[DM-18]])\n| mana = 1\n| artist = Dai\n| set1 = DM-04 Shadowclash of Blinding Night\n| setnum1 = 26/55\n| R1 = Rare\n| set2 = DM-04 Challenge of Black Shadow \n| setnum2 = 9/55\n| R2 = Rare\n| set3 = DM-18 Best Challenger\n| setnum3 = 25/140\n| R3 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Mana Bounce]]\n[[Category:Attack Trigger]]"
+}

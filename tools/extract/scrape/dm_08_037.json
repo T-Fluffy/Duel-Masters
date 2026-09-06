@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_08_037",
+ "page": "Furious Onslaught",
+ "type": "Spell",
+ "civilization": "Fire",
+ "race": "",
+ "cost": "4",
+ "power": "",
+ "engtext": "■ Until the [[End Step|end of the turn]], each of your [[Dragonoid]]s in the [[battle zone]] is an [[Armored Dragon]] in addition to its other [[race]]s, gets +4000 [[power]], and has \"[[Double breaker]] ''(This [[creature]] [[break]]s 2 [[shield]]s)''.\" ",
+ "templates": [],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "37/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "17/55",
+  "set3": "Promotional",
+  "setnum3": "L15/Y2"
+ },
+ "wiki": "{{Cardtable\n| image = Furious Onslaught.jpg\n| civilization = Fire\n| type = Spell\n| jpname = レジェンド・アタッカー\n| phonetic = Rejendo Atakkā ''(Legend Attacker)''\n| cost = 4\n| engtext = ■ Until the [[End Step|end of the turn]], each of your [[Dragonoid]]s in the [[battle zone]] is an [[Armored Dragon]] in addition to its other [[race]]s, gets +4000 [[power]], and has \"[[Double breaker]] ''(This [[creature]] [[break]]s 2 [[shield]]s)''.\" \n| jptext = ■ このターンが終わるまで、バトルゾーンにある自分のドラゴノイドはすべて、種族にアーマード・ドラゴンを追加し、パワーが+4000され、「W・ブレイカー」を得る。\n| flavor = \"See what happens when you take your vitamins?\" -[[Pyrofighter Magnus]] ([[DM-08]])\n| flavor2 = ダダダ!　ダダダ!　ダダダダダ! \"Dadada! Dadada! Dadadadada!\" ([[DM-08]])\n| mana = 1\n| artist = Norikatsu Miyoshi\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 37/55\n| R1 = Rare\n| set2 = DM-08 Invincible Legend\n| setnum2 = 17/55\n| R2 = Rare\n| set3 = Promotional\n| setnum3 = L15/Y2\n| R3 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Adds Race]]\n[[Category:Increase Power]]\n[[Category:Gives \"Double Breaker\"]]"
+}

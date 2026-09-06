@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_07_016",
+ "page": "Aqua Agent",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Liquid People",
+ "cost": "6",
+ "power": "2000",
+ "engtext": "{{Stealth|Water}}\n\n■ When this [[creature]] would be [[destroy]]ed, you may return it to your [[hand]] [[instead]].",
+ "templates": [
+  "Stealth|Water"
+ ],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "16/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "40/55",
+  "set3": "DMEX-08 Mysterious Black Box Pack",
+  "setnum3": "235/???"
+ },
+ "wiki": "{{Cardtable\n| image = Aqua Agent.jpg\n| civilization = Water\n| type = Creature\n| jpname = アクア・エージェント \n| phonetic = Akua Ējento\n| race = Liquid People\n| cost = 6\n| power = 2000\n| engtext = {{Stealth|Water}}\n\n■ When this [[creature]] would be [[destroy]]ed, you may return it to your [[hand]] [[instead]].\n| jptext = ■ 水ステルス（相手のマナゾーンに水のカードが1枚でもあれば、このクリーチャーはブロックされない）\n\n■ このクリーチャーがバトルゾーンから自分の墓地に置かれるとき、墓地に置くかわりに自分の手札に戻してもよい。\n| flavor = Atop the towers of [[Light]], the rogue spy was given the target of his next mission: [[Water|home]]. ([[DM-07]])\n| flavor2 = サイバー都市の破壊。光り輝く塔の上で、買収されたエージェントは不義のミッションを心に刻み込んだ。Destruction of the Cyber City. On top of a shining tower, the bought agent engraved the unjust mission in their heart. ([[DM-07]])\n| mana = 1\n| artist = Syuichi Obata\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 16/55\n| R1 = Common\n| set2 = DM-07 Invincible Charge\n| setnum2 = 40/55\n| R2 = Common\n| set3 = DMEX-08 Mysterious Black Box Pack\n| setnum3 = 235/???\n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Destruction Substitution]]\n[[Category:Self Bounce]]"
+}

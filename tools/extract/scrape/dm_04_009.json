@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_04_009",
+ "page": "Full Defensor",
+ "type": "Spell",
+ "civilization": "Light",
+ "race": "",
+ "cost": "2",
+ "power": "",
+ "engtext": "{{Shield Trigger|spell}} \n\n■ Until the start of your next [[turn]], each of your [[creature]]s in the [[battle zone]] gets \"[[Blocker]] ''(Whenever an [[opponent]]'s [[creature]] [[attack]]s, you may [[tap]] this [[creature]] to stop the [[attack]]. Then the 2 [[creature]]s [[battle]].)''\"",
+ "templates": [
+  "Shield Trigger|spell"
+ ],
+ "sets": {
+  "set1": "DM-04 Shadowclash of Blinding Night",
+  "setnum1": "9/55",
+  "set2": "DM-04 Challenge of Black Shadow ",
+  "setnum2": "8/55"
+ },
+ "wiki": "{{Cardtable\n| image = Full Defensor.jpg\n| civilization = Light\n| type = Spell\n| jpname = フル・ディフェンサー \n| phonetic = Furu Difensā\n| cost = 2\n| engtext = {{Shield Trigger|spell}} \n\n■ Until the start of your next [[turn]], each of your [[creature]]s in the [[battle zone]] gets \"[[Blocker]] ''(Whenever an [[opponent]]'s [[creature]] [[attack]]s, you may [[tap]] this [[creature]] to stop the [[attack]]. Then the 2 [[creature]]s [[battle]].)''\"\n| jptext = {{Icon|ST}} S・トリガー (この呪文をシールドゾーンから手札に加える時、コストを支払わずにすぐ唱えてもよい)\n\n■ 自分の次のターンが始まるまで、バトルゾーンにある自分のクリーチャーはすべて「ブロッカー」を得る。\n| flavor = \n| mana = 1\n| artist = Norikatsu Miyoshi\n| set1 = DM-04 Shadowclash of Blinding Night\n| setnum1 = 9/55\n| R1 = Rare\n| set2 = DM-04 Challenge of Black Shadow \n| setnum2 = 8/55\n| R2 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Gives \"Blocker\"]]"
+}

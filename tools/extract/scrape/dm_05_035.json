@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_05_035",
+ "page": "Wisp Howler, Shadow of Tears",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Ghost",
+ "cost": "3",
+ "power": "2000",
+ "engtext": "■ [[Nature]] and [[light]] [[slayer]] ''(Whenever this [[creature]] [[battle]]s a [[nature]] or [[light]] [[creature]], [[destroy]] the other [[creature]] after the [[battle]].)''",
+ "templates": [],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "35/55",
+  "set2": "DM-05 Return of the Survivor",
+  "setnum2": "46/55"
+ },
+ "wiki": "{{Cardtable\n| image = Wisp Howler, Shadow of Tears.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|魔|ま}}{{Ruby|幻|げん}}の{{Ruby|影|かげ}}エターナル・クライ ''(Eternal Cry, Shadow of Demonic Illusion)''\n| phonetic = Magengen no Kage Etānaru Kurai\n| race = Ghost\n| cost = 3\n| power = 2000\n| engtext = ■ [[Nature]] and [[light]] [[slayer]] ''(Whenever this [[creature]] [[battle]]s a [[nature]] or [[light]] [[creature]], [[destroy]] the other [[creature]] after the [[battle]].)''\n| jptext = ■ 自然・光スレイヤー（このクリーチャーとバトルした相手の自然または光のクリーチャーは、勝っても持ち主の墓地に置かれる）\n| flavor = Although it has no body to feed, it never stops devouring souls. ([[DM-05]])\n| flavor2 = 哀しみが命の鼓動を飲み込んでいく。Sadness swallows the heartbeat of life. ([[DM-05]])\n| mana = 1\n| artist = Sansyu\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = 35/55\n| R1 = Common\n| set2 = DM-05 Return of the Survivor\n| setnum2 = 46/55\n| R2 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Slayer]]"
+}

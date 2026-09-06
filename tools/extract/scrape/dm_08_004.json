@@ -1,0 +1,28 @@
+{
+ "card_id": "dm_08_004",
+ "page": "Magmadragon Jagalzor",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Volcano Dragon",
+ "cost": "6",
+ "power": "6000",
+ "engtext": "{{Double Breaker}}\n\n{{Turbo Rush|Each of your [[creature]]s in the [[battle zone]] has \"[[speed attacker]].\" ''(A [[creature]] that has \"[[speed attacker]]\" doesn't get [[summoning sickness]].)''}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "4/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "4/55",
+  "set3": "DMC-09 Shobu's Dragon Legend Deck",
+  "setnum3": "2/44",
+  "set4": "DMC-39 Victory Soul",
+  "setnum4": "16/33",
+  "set5": "DMC-43 Never Ending Hero",
+  "setnum5": "20/37",
+  "set6": "DMPCD-01 DueMa Play's CollaboDeck: The Rise of Überdragon & The Rise of Heavenly Gate",
+  "setnum6": "竜7/17"
+ },
+ "wiki": "{{Cardtable\n| image = Magmadragon Jagalzor.jpg\n| civilization = Fire\n| type = Creature\n| jpname = {{Ruby|紅|こう}}{{Ruby|神|しん}}{{Ruby|龍|リゅう}}ジャガルザー ''(Jagalzor, Crimson Divine Dragon)''\n| phonetic = Kōshin Ryū Jagaruzā\n| cost = 6\n| race = Volcano Dragon\n| power = 6000\n| engtext = {{Double Breaker}}\n\n{{Turbo Rush|Each of your [[creature]]s in the [[battle zone]] has \"[[speed attacker]].\" ''(A [[creature]] that has \"[[speed attacker]]\" doesn't get [[summoning sickness]].)''}}\n| jptext = {{Double Breaker|jp}}\n\n■ ターボラッシュ（このターン中に自分の他のクリーチャーがシールドをブレイクしていたら、このターン、このクリーチャーに次の{{Icon|TR}}能力を与える）\n:{{Icon|TR}} 自分のクリーチャーすべてに「スピードアタッカー」を与える。\n| flavor = ボルケーノ・ドラゴンは憤怒の化身。Volcano Dragons are the embodiment of fury. ([[DMPCD-01]])\n| mana = 1\n| artist = Naoki Saito \n| artist2 = Atsushi Kawasaki \n| artist3 = Shishizaru \n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 4/55\n| R1 = Very Rare\n| set2 = DM-08 Invincible Legend\n| setnum2 = 4/55\n| R2 = Very Rare\n| set3 = DMC-09 Shobu's Dragon Legend Deck\n| setnum3 = 2/44\n| R3 = Very Rare\n| set4 = DMC-39 Victory Soul\n| setnum4 = 16/33\n| R4 = Very Rare\n| set5 = DMC-43 Never Ending Hero\n| setnum5 = 20/37\n| R5 = Very Rare\n| set6 = DMPCD-01 DueMa Play's CollaboDeck: The Rise of Überdragon & The Rise of Heavenly Gate\n| setnum6 = 竜7/17\n| R6 = Very Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Gives \"Speed Attacker\"]]\n[[Category:Conditional Speed Attacker]]"
+}

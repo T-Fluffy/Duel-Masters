@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_06_060",
+ "page": "Grinning Axe, the Monstrosity",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Devil Mask",
+ "cost": "3",
+ "power": "1000",
+ "engtext": "{{Slayer}}",
+ "templates": [
+  "Slayer"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "60/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "91/102",
+  "set3": "DMC-21 Zakira's Dragon Commander Power-Up Pack",
+  "setnum3": "71/102"
+ },
+ "wiki": "{{Cardtable\n| image = Grinning Axe, the Monstrosity.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|逆|さか}}{{Ruby|歯|ば}}{{Ruby|怪|かい}}{{Ruby|人|じん}}トマホーク\n| phonetic = Sakaba Kaijin Tomahōku\n| cost = 3\n| race = Devil Mask\n| power = 1000\n| engtext = {{Slayer}}\n| jptext = {{Slayer|jp}} \n| flavor = あいつ、自分の顔食ってない? \"That thing looks like it's eating its own face!\" -[[Mini Titan Gett]] [[DM-06]])\n| mana = 1\n| artist = Akifumi Yamamoto\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 60/110\n| R1 = Common\n| set2 = DM-06 Invincible Soul\n| setnum2 = 91/102\n| R2 = Common\n| set3 = DMC-21 Zakira's Dragon Commander Power-Up Pack\n| setnum3 = 71/102\n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Devil Mask]]\n[[Category:1000 Power Creatures]]\n[[Category:Slayer]]"
+}

@@ -1,0 +1,26 @@
+{
+ "card_id": "dm_09_s01",
+ "page": "Petrova, Channeler of Suns",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Mecha Del Sol",
+ "cost": "5",
+ "power": "3500",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], [[choose a race]] other than [[Mecha Del Sol]]. Each [[creature]] of that [[race]] gets +4000 [[power]].\n\n■ Whenever your [[opponent]] would [[choose]] a [[creature]] in the [[battle zone]], he [[Unchoosable|can't choose]] this one. ''(It can still be [[attack]]ed and [[block]]ed.)''",
+ "templates": [],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "S1/S5",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "S1/S5",
+  "set3": "DMC-34 CoroCoro Dream Pack 2: Eternal Legacy",
+  "setnum3": "S1/S5",
+  "set4": "DMC-43 Never Ending Hero",
+  "setnum4": "8/37",
+  "set5": "DMC-66 Duel Masters: Super Best",
+  "setnum5": "5/36",
+  "set6": "DMD-26 Masters Chronicle Deck: Survivor Evo-Theory α to Ω",
+  "setnum6": "4/17"
+ },
+ "wiki": "{{Cardtable\n| image = Petrova, Channeler of Suns.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|光|こう}}{{Ruby|器|き}}ペトローバ\n| phonetic = Kōki Petorōba\n| race = Mecha Del Sol\n| cost = 5\n| power = 3500\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], [[choose a race]] other than [[Mecha Del Sol]]. Each [[creature]] of that [[race]] gets +4000 [[power]].\n\n■ Whenever your [[opponent]] would [[choose]] a [[creature]] in the [[battle zone]], he [[Unchoosable|can't choose]] this one. ''(It can still be [[attack]]ed and [[block]]ed.)''\n| jptext = ■ このクリーチャーがバトルゾーンに出た時、メカ・デル・ソル以外の種族を1つ選ぶ。その種族を持つクリーチャーすべてのパワーは+4000する。\n\n■ 相手がクリーチャーを選ぶ時、このクリーチャーは選べない。\n| flavor = \"When I awoke, I thought it was noon. Then I realized the sun was still down... but Petrova was overhead.\" -[[Fear Fang]] ([[DM-09]])\n| flavor2 = 高まる龍の鼓動に呼応し、天敵たるの力も強さを増した。Responding to the rising heartbeat of the dragon, even the power of its natural enemies grew stronger. ([[DM-09]], [[DMC-34]])\n| flavor3 = 高まる龍の鼓動に呼応したの力の波動が、味方のサバイバーへと伝わっていく。The wave of the Channeler of Suns's power was growing in response to the [[Dragon]]s and was transmitted to the [[Survivor]]s. ([[DMD-26]])\n| mana = 1\n| artist = Toshiaki Takayama\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = S1/S5\n| R1 = Super Rare\n| set2 = DM-09 Invincible Blood\n| setnum2 = S1/S5\n| R2 = Super Rare\n| set3 = DMC-34 CoroCoro Dream Pack 2: Eternal Legacy\n| setnum3 = S1/S5\n| R3 = Super Rare\n| set4 = DMC-43 Never Ending Hero\n| setnum4 = 8/37\n| R4 = Super Rare\n| set5 = DMC-66 Duel Masters: Super Best\n| setnum5 = 5/36\n| R5 = Super Rare\n| set6 = DMD-26 Masters Chronicle Deck: Survivor Evo-Theory α to Ω\n| setnum6 = 4/17\n| R6 = Super Rare\n}}\n{{Petrova}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Increase Power]]\n[[Category:Unchoosable]]\n[[Category:Come Into Play Trigger]]"
+}

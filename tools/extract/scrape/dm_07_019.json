@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_07_019",
+ "page": "Cetibols",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Sea Hacker",
+ "cost": "3",
+ "power": "2000",
+ "engtext": "■ When this [[creature]] is [[destroy]]ed, you may [[draw]] a [[card]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "19/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "43/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "104/140",
+  "set4": "DMC-42 CoroCoro Dream Pack 3: Eternal Gear",
+  "setnum4": "64/90"
+ },
+ "wiki": "{{Cardtable\n| image = Cetibols.jpg\n| civilization = Water\n| type = Creature\n| jpname = セティボルス\n| phonetic = Setiborusu \n| cost = 3\n| race = Sea Hacker\n| power = 2000\n| engtext = ■ When this [[creature]] is [[destroy]]ed, you may [[draw]] a [[card]].\n| jptext = ■ このクリーチャーが破壊された時、カードを1枚引いてもよい。\n| flavor = \"What's that smell?\" -[[Mighty Bandit, Ace of Thieves|Mighty Bandit]]\n| flavor2 = ちぎれた足からまた生まれる。It is reborn from the severed limb. ([[DM-07]], [[DM-18]], [[DMC-42]])\n| mana = 1\n| artist = Akifumi Yamamoto\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 19/55\n| R1 = Common\n| set2 = DM-07 Invincible Charge\n| setnum2 = 43/55\n| R2 = Common\n| set3 = DM-18 Best Challenger\n| setnum3 = 104/140\n| R3 = Common\n| set4 = DMC-42 CoroCoro Dream Pack 3: Eternal Gear\n| setnum4 = 64/90\n| R4 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Sea Hacker]]\n[[Category:2000 Power Creatures]]\n[[Category:Card Draw]]\n[[Category:Put Into Graveyard]]"
+}

@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_07_054",
+ "page": "Tangle Fist, the Weaver",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Beast Folk",
+ "cost": "4",
+ "power": "2000",
+ "engtext": "{{Tap Ability|Put up to 3 [[card]]s from your [[hand]] into your [[mana zone]].}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "54/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "20/55"
+ },
+ "wiki": "{{Cardtable\n| image = Tangle Fist, the Weaver.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|草原の種|グラス・シード}}\n| kana = グラス・シード ''(Grass Seed)''\n| phonetic = Gurasu Shiido\n| cost = 4\n| race = Beast Folk\n| power = 2000\n| engtext = {{Tap Ability|Put up to 3 [[card]]s from your [[hand]] into your [[mana zone]].}}\n| jptext = ■  このクリーチャーで攻撃するかわりに、タップして次の{{Tap}}能力を使ってもよい。\n:{{Tap}} 自分の手札から3枚まで選び、自分のマナゾーンに置く。\n| flavor = Few shamans study the craft of goop magic. Fewer still become masters. ([[DM-07]]) \n| flavor2 = 旗揚げには、奴の力が必要なんだ! \"We need his power for the banner raising!\" —[[Mini Titan Gett]] ([[DM-07]])\n| mana = 1\n| artist = Mikumo\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 54/55\n| R1 = Rare\n| set2 = DM-07 Invincible Charge\n| setnum2 = 20/55\n| R2 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Tap Ability]]\n[[Category:Mana Acceleration]]"
+}

@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_02_019",
+ "page": "Recon Operation",
+ "type": "Spell",
+ "civilization": "Water",
+ "race": "",
+ "cost": "2",
+ "power": "",
+ "engtext": "■ [[Look]] at up to 3 of your [[opponent]]'s [[shield]]s. Then put them back where they were.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "19/55",
+  "set2": "DM-02 Master of Evolution",
+  "setnum2": "43/55",
+  "set3": "DM-10 Shockwaves of the Shattered Rainbow",
+  "setnum3": "38/110",
+  "set4": "DM-10 Eternal Arms",
+  "setnum4": "86/110"
+ },
+ "wiki": "{{Cardtable\n| image = Recon Operation.jpg\n| civilization = Water\n| type = Spell\n| jpname = マインド・サーチ\n| phonetic = Maindo Sāchi ''(Mind Search)''\n| cost = 2\n| engtext = ■ [[Look]] at up to 3 of your [[opponent]]'s [[shield]]s. Then put them back where they were.\n| jptext = ■ 相手のシールドを3枚まで見る。その後、そのシールドを元の場所に戻す。\n| flavor = That's not a puddle... ([[DM-02]]) \n| flavor2 = なんだ、この程度か。\"That's all there is, huh.\" ([[DM-02]]) \n| flavor3 = A little bit psychic. A little bit psychotic. ([[DM-10]]) \n| flavor4 = お見通しだよ。\"I see right through it.\" ([[DM-10]]) \n| mana = 1\n| artist = Katsuya\n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = 19/55\n| R1 = Common\n| set2 = DM-02 Master of Evolution\n| setnum2 = 43/55\n| R2 = Common\n| set3 = DM-10 Shockwaves of the Shattered Rainbow\n| setnum3 = 38/110\n| R3 = Common\n| set4 = DM-10 Eternal Arms\n| setnum4 = 86/110\n| R4 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Spell]]\n[[Category:Shield Peek]]"
+}

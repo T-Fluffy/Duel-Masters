@@ -1,0 +1,24 @@
+{
+ "card_id": "dm_02_050",
+ "page": "Mana Crisis",
+ "type": "Spell",
+ "civilization": "Nature",
+ "race": "",
+ "cost": "4",
+ "power": "",
+ "engtext": "{{Shield Trigger|spell}} \n\n■ Choose a [[card]] in your [[opponent]]'s [[mana zone]] and put it into his [[graveyard]].",
+ "templates": [
+  "Shield Trigger|spell"
+ ],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "50/55",
+  "set2": "DM-02 Master of Evolution",
+  "setnum2": "35/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "89/140",
+  "set4": "DM23-EX2 Battle of Top!! Dueking MAX 2023",
+  "setnum4": "超32/超38"
+ },
+ "wiki": "{{Cardtable\n| image= Mana Crisis.jpg\n| civilization = Nature\n| type = Spell\n| jpname = マナ・クライシス\n| phonetic = Mana Kuraishisu\n| cost = 4\n| engtext = {{Shield Trigger|spell}} \n\n■ Choose a [[card]] in your [[opponent]]'s [[mana zone]] and put it into his [[graveyard]].\n| jptext = {{Icon|ST}} S・トリガー (この呪文をシールドゾーンから手札に加える時、コストを支払わずにすぐ唱えてもよい)\n\n■ 相手のマナゾーンからカードを1枚選び、持ち主の墓地に置く。　\n| flavor = \n| mana = 1\n| artist = Tsutomu Kawade \n| artist2 = hippo\n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = 50/55\n| R1 = Uncommon\n| set2 = DM-02 Master of Evolution\n| setnum2 = 35/55\n| R2 = Uncommon\n| set3 = DM-18 Best Challenger\n| setnum3 = 89/140\n| R3 = Uncommon\n| set4 = DM23-EX2 Battle of Top!! Dueking MAX 2023\n| setnum4 = 超32/超38\n| R4 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Mana Burn]]"
+}

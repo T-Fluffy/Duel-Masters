@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_06_017",
+ "page": "Cosmogold, Spectral Knight",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Rainbow Phantom",
+ "cost": "4",
+ "power": "3000",
+ "engtext": "{{Tap Ability|Return a [[spell]] from your [[mana zone]] to your [[hand]].}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "17/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "14/110"
+ },
+ "wiki": "{{Cardtable\n| image = Cosmogold, Spectral Knight.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|聖|せい}}{{Ruby|騎|き}}{{Ruby|士|し}}コスモグールド\n| phonetic = Seikishi Kosumogūrudo\n| cost = 4\n| race = Rainbow Phantom\n| power = 3000\n| engtext = {{Tap Ability|Return a [[spell]] from your [[mana zone]] to your [[hand]].}}\n| jptext = ■ このクリーチャーで攻撃するかわりに、タップして次の{{Tap}}能力を使ってもよい。\n:{{Tap}} 自分のマナゾーンから呪文を1枚選び、自分の手札に戻す。\n| flavor = He glows with the reflection of a million stars. ([[DM-06]])\n| flavor2 = 星々の輝きを反射する。その者が生まれし場所は虹の生まれる地。It reflects the brilliance of the stars. The place where that person was born is the land where rainbows are born. ([[DM-06]])\n| mana = 1\n| artist = Ryoya Yuki\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 17/110\n| R1 = Rare\n| set2 = DM-06 Invincible Soul\n| setnum2 = 14/110\n| R2 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Rainbow Phantom]]\n[[Category:Tap Ability]]\n[[Category:3000 Power Creatures]]\n[[Category:Spell Recovery]]"
+}

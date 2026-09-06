@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_02_s04",
+ "page": "Armored Blaster Valdios",
+ "type": "Evolution Creature",
+ "civilization": "Fire",
+ "race": "Human",
+ "cost": "4",
+ "power": "6000",
+ "engtext": "■ [[Evolution]]—Put on one of your [[Human]]s.\n\n■ Each of your other [[Human]]s in the [[battle zone]] gets +1000 [[power]].\n\n{{Double Breaker}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "S4/S5",
+  "set2": "DM-02 Master of Evolution",
+  "setnum2": "S4/S5",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "S7/S10"
+ },
+ "wiki": "{{Cardtable\n| image=Armored Blaster Valdios.jpg\n| civilization = Fire\n| type = Evolution Creature\n| jpname = {{Ruby|機|き}}{{Ruby|神|しん}}{{Ruby|装|そう}}{{Ruby|甲|こう}}ヴァルディオス ''(Divine Machine Armor Valdios)''\n| phonetic = Kishin Sōkō Valudios\n| race = Human\n| cost = 4\n| power = 6000\n| engtext = ■ [[Evolution]]—Put on one of your [[Human]]s.\n\n■ Each of your other [[Human]]s in the [[battle zone]] gets +1000 [[power]].\n\n{{Double Breaker}}\n| jptext = ■ 進化－自分のヒューマノイド1体の上に置く。\n\n■ バトルゾーンにある自分の他のヒューマノイドすべてのパワーは+1000される。\n\n{{Double Breaker|jp}}\n| flavor = \n| mana = 1\n| artist = Hisashi Momose\n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = S4/S5\n| R1 = Super Rare\n| set2 = DM-02 Master of Evolution\n| setnum2 = S4/S5\n| R2 = Super Rare\n| set3 = DM-18 Best Challenger\n| setnum3 = S7/S10\n| R3 = Super Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Increase Power]]"
+}

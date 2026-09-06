@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_09_055",
+ "page": "Whispering Totem",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Mystery Totem",
+ "cost": "4",
+ "power": "2000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], [[search]] your [[deck]]. You may take a '''Whispering Totem''' from your [[deck]], show that [[creature]] to your [[opponent]], and put it into your [[hand]]. Then [[shuffle]] your [[deck]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "55/55",
+  "set2": "DM-09 Invincible Blood ",
+  "setnum2": "34/55 ",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "86/140"
+ },
+ "wiki": "{{Cardtable\n| image = Whispering Totem.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|怪力の化身|マイティ・トーテム}} ''(Avatar of Strength)''\n| kana = マイティ・トーテム ''(Mighty Totem)''\n| phonetic = Maitī Tōtemu\n| race = Mystery Totem\n| cost = 4\n| power = 2000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], [[search]] your [[deck]]. You may take a '''Whispering Totem''' from your [[deck]], show that [[creature]] to your [[opponent]], and put it into your [[hand]]. Then [[shuffle]] your [[deck]].\n| jptext = ■ このクリーチャーをバトルゾーンに出した時、自分の山札を見る。その中から('''怪力の化身''')を1体選び、相手に見せてから自分の手札に加えてもよい。その後、山札をシャッフルする。\n| flavor = \"Psst... come closer... closer.... Wanna hear a secret? I hate woodpeckers.\" ([[DM-09]])\n| flavor2 = 「三龍の矢は、ワシが全部砕くずら!」 \"I will crush all the arrows of the 'Three Dragons'!\" ─'''Whispering Totem''' ([[DM-09]], [[DM-18]])\n| mana = 1\n| artist = Dai\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = 55/55\n| R1 = Uncommon\n| set2 = DM-09 Invincible Blood \n| setnum2 = 34/55 \n| R2 = Uncommon\n| set3 = DM-18 Best Challenger\n| setnum3 = 86/140\n| R3 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Deck Search]]\n[[Category:Come Into Play Trigger]]"
+}

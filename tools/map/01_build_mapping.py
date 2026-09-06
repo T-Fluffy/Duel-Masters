@@ -1,0 +1,462 @@
+"""Phase 2 mapping builder.
+
+Reads tools/extract/_report.json (per-card wiki text + catalog facts) and maps
+each card's english text onto the engine's keyword / effect palette.
+
+For every playable card it emits:
+  keywords    : list[str]                    keyword names (see Keyword enum)
+  effects     : list[{id,target?,value?,data?}]
+  evolutionOf : str|None                     base race for EvolutionCreatures
+  note        : str|None                     documented approximation / unrepresentable
+  src         : str                          the source text, for auditability
+
+Lines no rule consumed are tested against a NOTED pattern table (pattern ->
+documented approximation note); anything still unmatched is collected in
+_lines_unmapped.txt for triage. Run repeatedly; writes mapping.json + triage
+file. Idempotent.
+"""
+from __future__ import annotations
+
+import json
+import re
+from pathlib import Path
+
+ROOT = Path(r"D:\Godot projects\Projects\duel_masters")
+REPORT = ROOT / "tools" / "extract" / "_report.json"
+OUT_DIR = ROOT / "tools" / "map"
+OUT = OUT_DIR / "mapping.json"
+TRIAGE = OUT_DIR / "_lines_unmapped.txt"
+
+
+# ---------------------------------------------------------------- helpers
+
+def norm_line(raw: str) -> str:
+    line = re.sub(r"\s+", " ", raw.strip())
+    line = re.sub(r"^[\s■•\-*]+", "", line)
+    # normalize curly typography to ASCII so rules match cleanly
+    line = line.replace("\u2019", "'").replace("\u2018", "'")
+    line = line.replace("\u201c", '"').replace("\u201d", '"')
+    line = line.replace("\u2014", "-").replace("\u2013", "-")
+    line = line.replace("\u2022", " ")
+    return line.strip()
+
+
+def strip_reminders(text: str) -> str:
+    """Remove italic reminder flourishes: the ''(...)'' spans."""
+    return re.sub(r"\s+", " ", re.sub(r"''.*?''", " ", text)).strip()
+
+
+def scope_of(text: str, default="AnyCreature"):
+    low = text.lower()
+    if "your opponent" in low or "opponent's creatures" in low:
+        return "OpponentCreature"
+    if "one of your creatures" in low or "your creatures" in low:
+        return "OwnCreature"
+    return default
+
+
+def E(id_, t=None, v=0, d=""):
+    out = {"id": id_}
+    if t:
+        out["target"] = t
+    if v:
+        out["value"] = v
+    if d:
+        out["data"] = d
+    return out
+
+
+def add_note(notes, label):
+    if label not in notes:
+        notes.append(label)
+
+
+# ---------------------------------------------------------------- templates
+
+TEMPLATE_KEYWORDS = {
+    "Double Breaker": "DoubleBreaker",
+    "Triple Breaker": "TripleBreaker",
+    "Blocker": "Blocker",
+    "Charger": "Charger",
+    "Speed Attacker": "SpeedAttacker",
+    "Slayer": "Slayer",
+    "Shield Trigger": "ShieldTrigger",
+}
+
+POWER_ATTACKER_TPL = re.compile(r"\{\{Power Attacker\|(\d+)\}\}", re.I)
+STEALTH_TPL = re.compile(r"\{\{Stealth\|(\w+)\}\}", re.I)
+NESTED_SURVIVOR = re.compile(r"^\{\{Survivor\|\|(?:\{\{([A-Za-z ]+)\|dotless\}\})\}\}$")
+
+
+def extract_power_attacker(text: str):
+    m = POWER_ATTACKER_TPL.search(text)
+    if not m:
+        return None, text
+    return int(m.group(1)), text[: m.start()] + " " + text[m.end():]
+
+
+def split_templates(text: str):
+    """Return (leftover, keyword_names). Knows the {{Name|...}} forms."""
+    keywords = []
+    m = NESTED_SURVIVOR.match(text)
+    if m:
+        keywords.append("Survivor")
+        inner = m.group(1)
+        if inner in TEMPLATE_KEYWORDS:
+            keywords.append(TEMPLATE_KEYWORDS[inner])
+        return "", keywords
+    leftover = text
+    for _ in range(6):
+        m = re.search(r"\{\{(?P<name>[A-Za-z ]+?)(?:\|[^{}]*)?\}\}", leftover)
+        if m is None:
+            break
+        name = m.group("name").strip()
+        if name in TEMPLATE_KEYWORDS:
+            keywords.append(TEMPLATE_KEYWORDS[name])
+        leftover = leftover[: m.start()] + " " + leftover[m.end():]
+    return strip_reminders(leftover), keywords
+
+
+# ------------------------------------------------------------ line rule table
+# Each rule: (name, regex, fn(match, text) -> 4-tuple (keywords, effects, note, evolutionOf))
+
+def _rules():
+    R = []
+
+    def rule(name, pattern, fn):
+        R.append((name, re.compile(pattern, re.I), fn))
+        return fn
+
+    def kw(key):
+        return lambda m, t: ([key], [], None, None)
+
+    # ----- bare static keywords
+    rule("CantAttackPlayers", r"^this creature can'?t attack players\.?$", kw("CannotAttackPlayers"))
+    rule("CantAttackCreatures", r"^this creature can'?t attack creatures\.?$", kw("CannotAttackCreatures"))
+    rule("CantAttack", r"^this creature can'?t attack\.?$",
+         lambda m, t: (["CannotAttackPlayers", "CannotAttackCreatures"], [], None, None))
+    rule("CantBeBlocked", r"^this creature can'?t be blocked\.?$", kw("Unblockable"))
+    rule("CanAttackUntapped", r"^this creature can attack untapped creatures\.?$", kw("CanAttackUntappedCreatures"))
+    rule("CantBeAttacked", r"^this creature can'?t be attacked\.?$", kw("CannotBeAttacked"))
+    rule("AttacksEachTurn",
+         r"^this creature attacks each turn,? if able\.?$|^this creature attacks each turn\.?$|^this creature attacks each turn attack if able\|if able\.?$",
+         kw("AttacksEachTurn"))
+    rule("OutnumberedLock", r"^this creature can'?t attack while your opponent has more creatures in the battle zone than",
+         kw("CannotAttackOutnumbered"))
+    rule("NeedsSpellFirst", r"^you can summon this creature only if you have cast a spell this turn\.?$",
+         kw("SummonRequiresSpellCast"))
+    rule("PowerAttackerBare", r"^power attacker \+(\d+)(?:\.| \.)?$",
+         lambda m, t: (["PowerAttacker"], [E("PowerAttacker_AttackBoost", v=int(m.group(1)))], None, None))
+    rule("RaceScopedSlayer", r"^[a-z]+ and [a-z]+ slayer(?: .*)?\.?$",
+         lambda m, t: (["Slayer"], [], "slayer limited to two argued civs", None))
+    rule("BlockerScoped", r"^blocker\|.*$",
+         lambda m, t: (["Blocker"], [], "blocker limited to argued civs", None))
+
+    # ----- evolution
+    rule("EvoDragon", r"^evolution[\u2014\-]put on one of your creatures that has ([A-Za-z ]+) in its race\.?$",
+         lambda m, t: ([], [], None, "Dragon"))
+    rule("EvoRace", r"^evolution[\u2014\-]put on one of your (.+?)(?:s|\.)$",
+         lambda m, t: ([], [], None, m.group(1).strip()))
+
+    # ----- ETB auto/targeted
+    rule("EtbDraw", r"^when you put this creature into the battle zone,?(?: you may)? draw a? card\.?$",
+         lambda m, t: ([], [E("OnPlay_Draw", v=1)], None, None))
+    rule("EtbDrawN", r"^when you put this creature into the battle zone,?(?: you may)? draw (?:up to )?(\d+) cards?\.?$",
+         lambda m, t: ([], [E("OnPlay_Draw", v=int(m.group(1)))], "'up to' drew max", None))
+    rule("EtbCharge", r"^when you put this creature into the battle zone,?(?: you may)? put the top card of your deck into your mana zone\.?$",
+         lambda m, t: ([], [E("OnPlay_ChargeMana")], "may-flag ignored", None))
+    rule("EtbChargeN", r"^when you put this creature into the battle zone,?(?: you may)? put the top (\d+) cards? of your deck into your mana zone\.?$",
+         lambda m, t: ([], [E("OnPlay_ChargeMana")] * int(m.group(1)), "may-flag ignored", None))
+    rule("EtbUntapAll", r"^when you put this creature into the battle zone,?(?: you may)? untap (?:each of your creatures|all your creatures in the battle zone)\.?$",
+         lambda m, t: ([], [E("OnPlay_UntapAllOwnCreatures")], None, None))
+    rule("EtbUntapOne", r"^when you put this creature into the battle zone,?(?: you may)? untap one of your creatures(?: in the battle zone)?\.?$",
+         lambda m, t: ([], [E("OnPlay_UntapOwnCreature", t="OwnCreature")], None, None))
+    rule("EtbTap", r"^when you put this creature into the battle zone,?(?: you may)? choose (?:one of your opponent's creatures(?: in the battle zone)?|a creature(?: in the battle zone)?) and tap it\.?$",
+         lambda m, t: ([], [E("OnPlay_TapCreature", t=scope_of(t))], None, None))
+    rule("EtbReturn", r"^when you put this creature into the battle zone,?(?: you may)? choose (?:a creature(?: in the battle zone)?|one creature(?: in the battle zone)?|1 creature(?: in the battle zone)?|one of your opponent's creatures(?: in the battle zone)?) and return it to its owner's hand\.?$",
+         lambda m, t: ([], [E("OnPlay_ReturnToHand", t=scope_of(t))], None, None))
+    rule("EtbDestroyN", r"^when you put this creature into the battle zone,?(?: you may)? destroy one of your opponent's creatures that has power (\d+)[ ,]*or less\.?$",
+         lambda m, t: ([], [E("OnPlay_DestroyPowerAtMost", t="OpponentCreature", v=int(m.group(1)))], None, None))
+    rule("EtbDestroyAny", r"^when you put this creature into the battle zone,?(?: you may)? destroy one of your opponent's creatures\.?$",
+         lambda m, t: ([], [E("OnPlay_DestroyPowerAtMost", t="OpponentCreature", v=999999)], "no power cap", None))
+
+    # ----- destroyed substitution / triggers
+    rule("DieToMana", r"^when this creature would be destroyed, put it into your mana zone instead\.?$",
+         lambda m, t: ([], [E("OnDestroyed_ToMana")], None, None))
+    rule("DieToHand", r"^when this creature would be destroyed, (?:return|put) it (?:to|into) your hand instead\.?$",
+         lambda m, t: ([], [E("OnDestroyed_ToHand")], None, None))
+    rule("DieToHandMay", r"^when this creature would be destroyed, you may return (?:it|this creature) to your hand instead\.?(?: if you do, put a card from your hand into your graveyard\.?)?$",
+         lambda m, t: ([], [E("OnDestroyed_ToHand")], "may-flag ignored", None))
+    rule("DieDraw", r"^when this creature is destroyed,?(?: you may)? draw (?:a card|(\d+) cards?)\.?$",
+         lambda m, t: ([], [E("OnDestroyed_Draw", v=int(m.group(1) or 1))], None, None))
+
+    # ----- spells
+    rule("SpDestroyN", r"^(?:destroy|choose) (?:one of your opponent's creatures|1 of your opponent's creatures|a creature) that has power (\d+)[ ,]*or less\.?$",
+         lambda m, t: ([], [E("Spell_DestroyPowerAtMost", t=scope_of(t), v=int(m.group(1)))], None, None))
+    rule("SpDestroyAny", r"^destroy one of your opponent's creatures\.?$",
+         lambda m, t: ([], [E("Spell_DestroyPowerAtMost", t="OpponentCreature", v=999999)], "no power cap", None))
+    rule("SpReturn", r"^choose (?:a creature(?: in the battle zone)?|one of your opponent's creatures(?: in the battle zone)?) and return it to its owner's hand\.?(?: if it has dragon in its race, you may draw a card\.?)?$",
+         lambda m, t: ([], [E("Spell_ReturnToHand", t=scope_of(t))], None, None))
+    rule("SpReturnUp", r"^return up to (\d+) creatures? in the battle zone to their owners' hands?\.?$|^choose up to (\d+) creatures? in the battle zone and return them to their owners' hands?\.?$",
+         lambda m, t: ([], [E("Spell_ReturnUpToToHand", t="AnyCreature", v=int(m.group(1) or m.group(2)))], None, None))
+    rule("SpTap", r"^choose one of your opponent's creatures in the battle zone and tap it\.?$",
+         lambda m, t: ([], [E("Spell_TapCreature", t="OpponentCreature")], None, None))
+    rule("SpUntap", r"^untap one of your creatures(?: in the battle zone)?\.?$",
+         lambda m, t: ([], [E("Spell_UntapOwnCreature", t="OwnCreature")], None, None))
+    rule("SpDraw", r"^draw a card\.?$", lambda m, t: ([], [E("Spell_Draw", v=1)], None, None))
+    rule("SpDrawN", r"^draw (\d+) cards?\.?$", lambda m, t: ([], [E("Spell_Draw", v=int(m.group(1)))], None, None))
+    rule("SpDrawUpN", r"^draw up to (\d+) cards?\.?$",
+         lambda m, t: ([], [E("Spell_Draw", v=int(m.group(1)))], "'up to' drew max", None))
+    rule("SpBoost", r"^one of your creatures(?: in the battle zone)? gets \+(\d+) power until the (?:End Step\|)?end of the turn\.?$",
+         lambda m, t: ([], [E("Spell_BoostPower", t="OwnCreature", v=int(m.group(1)))], None, None))
+    rule("SpDestroyAll", r"^destroy all creatures(?: in the battle zone)?\.?$",
+         lambda m, t: ([], [E("Spell_DestroyAllCreatures")], None, None))
+    rule("SpCharge", r"^put the top card of your deck into your mana zone\.?$",
+         lambda m, t: ([], [E("Spell_ChargeMana")], None, None))
+    rule("SpChargeN", r"^put the top (\d+) cards? of your deck into your mana zone\.?$",
+         lambda m, t: ([], [E("Spell_ChargeMana")] * int(m.group(1)), None, None))
+    rule("SpChargerKw", r"^after you cast this spell, put it into your mana zone instead of your graveyard\.?$",
+         lambda m, t: (["Charger"], [], None, None))
+    rule("SpDiscard1", r"^your opponent discards a card at random from his hand\.?$",
+         lambda m, t: ([], [E("Spell_DiscardRandom", v=1)], None, None))
+    rule("SpDiscardN", r"^your opponent discards (\d+) cards? at random from his hand\.?$",
+         lambda m, t: ([], [E("Spell_DiscardRandom", v=int(m.group(1)))], None, None))
+
+    # ----- static powers
+    rule("StAttackPerOther", r"^while attacking, this creature gets \+(\d+) power for each other creature you have in the battle zone\.?$",
+         lambda m, t: ([], [E("StaticPower_AttackPerOtherCreature", v=int(m.group(1)))], None, None))
+    rule("StAttackPerOtherRace", r"^while attacking, this creature gets \+(\d+) power for each other ([A-Za-z ]+?) (?:creature )?in the battle zone\.?$",
+         lambda m, t: ([], [E("StaticPower_AttackPerOtherCreature", v=int(m.group(1)), d=m.group(2).strip())], None, None))
+    rule("StAlwaysPerOtherRace", r"^this creature gets \+(\d+) power for each other ([A-Za-z ]+?) creature you have in the battle zone\.?$",
+         lambda m, t: ([], [E("StaticPower_AlwaysPerOtherCreature", v=int(m.group(1)), d=m.group(2).strip())], None, None))
+    rule("StAlwaysPerOtherYour", r"^this creature gets \+(\d+) power for each of your other ([A-Za-z ]+?) creatures? in the battle zone\.?$",
+         lambda m, t: ([], [E("StaticPower_AlwaysPerOtherCreature", v=int(m.group(1)), d=m.group(2).strip())], None, None))
+    rule("StAttackPerGraveCiv", r"^while attacking, this creature gets \+(\d+) power for each ([a-z]+) card in your graveyard\.?$",
+         lambda m, t: ([], [E("StaticPower_AttackPerGraveyardCiv", v=int(m.group(1)), d=m.group(2).title())], None, None))
+    rule("StAlwaysHaveRace", r"^this creature gets \+(\d+) power while you have (?:at least? 1|a) ([A-Za-z ]+?) in the battle zone\.?$",
+         lambda m, t: ([], [E("StaticPower_AlwaysWhileHaveRace", v=int(m.group(1)), d=m.group(2).strip())], None, None))
+    rule("StAlwaysHaveRaceAlt", r"^while you have (?:a|at least 1) ([A-Za-z ]+?) in the battle zone, this creature gets \+(\d+) power\.?$",
+         lambda m, t: ([], [E("StaticPower_AlwaysWhileHaveRace", v=int(m.group(2)), d=m.group(1).strip())], None, None))
+    rule("StAttackHaveRace", r"^while attacking, this creature gets \+(\d+) power while you have (?:at least? 1|a) ([A-Za-z ]+?) in the battle zone\.?$",
+         lambda m, t: ([], [E("StaticPower_AttackWhileHaveRace", v=int(m.group(1)), d=m.group(2).strip())], None, None))
+    rule("StAttackHaveRaceAlt", r"^while you have (?:at least 1|one) ([A-Za-z ]+?) in the battle zone, this creature gets \+(\d+) power during its attacks\.?$",
+         lambda m, t: ([], [E("StaticPower_AttackWhileHaveRace", v=int(m.group(2)), d=m.group(1).strip())], None, None))
+    rule("StAura", r"^each other ([A-Za-z ]+?) in the battle zone gets \+(\d+) power\.?$",
+         lambda m, t: ([], [E("StaticPower_AuraRace", v=int(m.group(2)), d=m.group(1).strip())], None, None))
+
+    # ----- cost modifiers
+    rule("CostSummonAll", r"^your creatures (?:each )?cost (\d+) less to summon\.?(?: they can'?t cost less than \d+\.?)?$",
+         lambda m, t: ([], [E("CostDecrease_Summon_All", v=int(m.group(1)))], None, None))
+    rule("CostCastAll", r"^your spells (?:each )?cost (\d+) less to cast\.?(?: they can'?t cost less than \d+\.?)?$",
+         lambda m, t: ([], [E("CostDecrease_Cast_All", v=int(m.group(1)))], None, None))
+    rule("CostSummonByRace", r"^your creatures that have ([A-Za-z ]+?) in their race each cost (\d+) less to summon\.?(?: they can'?t cost less than \d+\.?)?$",
+         lambda m, t: ([], [E("CostDecrease_Summon_ByRace", v=int(m.group(2)), d="Dragon")], "exact race substring", None))
+    rule("CostUpCivBoth", r"^each ([a-z]+) creature costs (\d+) more to summon,? and each ([a-z]+) spell costs (\d+) more to cast\.?$",
+         lambda m, t: ([], [E("CostIncrease_Summon_ByCiv", v=int(m.group(2)), d=m.group(1).title()),
+                             E("CostIncrease_Cast_ByCiv", v=int(m.group(4)), d=m.group(3).title())], None, None))
+
+    return R
+
+
+RULES = _rules()
+
+
+# ---------------------------------------------- documented approximations table
+# Patterns that describe effects the engine cannot model. Matching one attaches
+# a documented note to the card instead of leaving the line in triage.
+# Order matters: specific entries run first.
+
+def _noted():
+    N = []
+
+    def note(name, pattern, label):
+        N.append((name, re.compile(pattern, re.I), label))
+
+    note("EndUntap", r"^end step\|at the end of each of your turns, (?:you may )?untap (?:this creature|all your creatures in the battle zone)\.?$", "end-step untap")
+    note("EndSurvivor", r"^end step\|at the end of each of your turns, if this is your only creature in the battle zone, destroy it\.?$", "end-step survivor destroy")
+    note("EndToHand", r"^end step\|at the end of your turn, return this creature to your hand\.?$", "end-step return to hand")
+    note("EndUntapAll", r"^end step\|at the end of the turn,? untap all your creatures in the battle zone\.?$", "end-step untap all")
+    note("EndSearch", r"^end step\|at the end of this turn, search your deck\.", "end-step search")
+    note("TapAbility", r"^: .*$", "tap ability")
+    note("GroupTap", r"^each of your (?:light|water|fire|darkness|nature) creatures may tap instead of attacking to use this creature's ability\.?$", "tap ability")
+    note("AttackTrigger", r"^whenever this creature attacks,", "attack trigger")
+    note("BattleTrigger", r"^whenever this creature (?:wins a battle|becomes blocked|blocks|is attacked|battles|finishes attacking),", "battle/block trigger")
+    note("UnblockedAttack", r"^whenever this creature is attacking your opponent and isn'?t blocked,", "unblocked-attack trigger")
+    note("OppTrigger", r"^whenever your opponent", "opponent trigger")
+    note("OppCreatureTrigger", r"^whenever an opponent'?s creature", "opponent trigger")
+    note("SiblingPut", r"^whenever you put (?:another|a|an) ", "sibling trigger")
+    note("SiblingEvent", r"^whenever another creature (?:is|would be)", "sibling trigger")
+    note("AnyTrigger", r"^whenever (?:any of your creatures|one of your|another of your|one of your other)", "trigger")
+    note("CreateLoss", r"^whenever any of your creatures would be destroyed", "creature-loss trigger")
+    note("WheneverCatch", r"^whenever (?:a player|you|each)", "trigger")
+    note("CastTrigger", r"^when you cast this spell,? ", "cast trigger")
+    note("DestructEvent", r"^when this creature (?:would be destroyed|would be put into your graveyard|is destroyed|is put into your graveyard|wins a battle|battles|attacks),? ", "destruction/battle event")
+    note("WhenAttacks", r"^when this creature attacks", "attack event")
+    note("OnPlayCatch", r"^when you put this creature into the battle zone,? ", "on-play effect")
+    note("EventCatch", r"^when (?:one of|any of|a creature|another|your|you)", "event trigger")
+    note("MonoMana", r"^while all the cards in your mana zone ", "mono-mana static")
+    note("BattleStatic", r"^while (?:battling|attacking) ", "battle static")
+    note("NoShieldStatic", r"^while you have no shields, ", "no-shield static")
+    note("CondStatic", r"^while ", "conditional static")
+    note("UnblockableClause", r"^this creature can'?t be blocked by (?:any creature that has power|creatures that have power|[a-z]+ creatures)", "unblockable clause")
+    note("ProtectionClause", r"^this creature can'?t be attacked by (?:[a-z]+ creatures|[a-z]+ and [a-z]+ creatures|any creature that has)", "protection clause")
+    note("CantAttackUntappedCiv", r"^this creature can attack untapped [a-z]+ creatures\.?$", "can-attack-untapped (civ-scoped)")
+    note("AttackRestriction", r"^this creature can[ ']?t? attack (?:only|if|while|untapped)", "attack restriction")
+    note("FlatStatic", r"^this creature gets \+(\d+) power\.?$", "flat static power")
+    note("CountStatic", r"^this creature gets \+(\d+) power for each ", "count static power")
+    note("PowerLock", r"^creatures that have power \d+ or more can'?t attack\.?$", "power lock")
+    note("GlobalMustAttack", r"^each creature attacks each turn if able\.?$", "global must-attack")
+    note("OppChoice", r"^your opponent chooses?", "opponent choice")
+    note("OppDiscard", r"^your opponent discards", "opponent discard")
+    note("Symmetric", r"^each player ", "symmetric effect")
+    note("ShieldManip", r"^choose (?:one of your shields|any number of your shields|the same number of your shields)", "shield manipulation")
+    note("ShieldToGrave", r"^each of your creatures in the battle zone gets \"?double breaker\"? until the (?:End Step\|)?end of the turn\.?$", "group temporary buff")
+    note("TempGrant", r"^one of your creatures(?: in the battle zone)? gets \"?[a-z+0-9 ]+\"?(?: and \"?[a-z+0-9 ]+\"?)? until the (?:End Step\|)?end of the turn\.?$", "temporary ability grant")
+    note("TempBoostBlocked", r"^one of your creatures(?: in the battle zone)? that has \"?blocker\"? gets \+\d+ power until the (?:End Step\|)?end of the turn\.?$", "blocker-scoped temp boost")
+    note("GroupTempBuff", r"^each of your creatures in the battle zone gets (?:.+ until the (?:End Step\|)?end of the turn|\+\d+ power until)", "group temporary buff")
+    note("MultiTap", r"^choose up to \d+ of your opponent'?s creatures in the battle zone and tap them\.?$", "multi-target tap")
+    note("MassTap", r"^tap all ", "mass tap")
+    note("Destroy", r"^destroy ", "destruction effect")
+    note("Return", r"^return ", "return effect")
+    note("Put", r"^put ", "zone effect")
+    note("Add", r"^add ", "shield effect")
+    note("Search", r"^search ", "search effect")
+    note("Look", r"^look at ", "look effect")
+    note("Reveal", r"^reveal ", "reveal effect")
+    note("Draw", r"^draw ", "draw effect")
+    note("ForEach", r"^for each ", "per-creature effect")
+    note("Conditional", r"^if (?:your|the|all|you|it)", "conditional effect")
+    note("TurnScoped", r"^during your opponent'?s", "turn-scoped effect")
+    note("Lockdown", r"^players can'?t ", "rule lockdown")
+    note("GroupAura", r"^each (?:of your|e) ", "group keyword/power aura")
+    note("RulesText", r"^evolution creatures are put into the battle zone tapped\.?$", "rules text")
+    note("FlexEvo", r"^you can put an evolution creature of any race on this creature\.?$", "flex evolution host")
+    note("BattleUnblockable", r"^while attacking a creature, this creature can'?t be blocked\.?$", "battle unblockable")
+    note("CastRestrict", r"^you can cast this spell only if ", "cast restriction")
+    note("ShieldTriggerBonus", r"^after you cast a spell by using its \"?shield trigger\"? ability, put it into your hand instead of your graveyard\.?$", "shield-trigger bonus")
+    note("Until", r"^until the ", "turn-scoped effect")
+    note("DragonCost", r"^your creatures that have [a-z ]+ in their race each cost", "race-filtered cost discount")
+    note("AttackEnabler", r"^this turn, ignore any effects", "attack-enabler spell")
+    note("LiquidPeopleUnblockable", r"^liquid people can'?t be blocked\.?$", "aura: liquid people unblockable")
+    note("GroupAura2Civ", r"^[\w ]+ and [\w ]+ (?:creatures? )?in the battle zone each get \+\d+ power\.?$", "group aura (two races)")
+    note("ScaleDiscard", r"^discard any number of cards from your hand\. ", "scale-to-discard spell")
+    note("ShieldBreak", r"^whenever this creature (?:would )?break? a shield,? ", "shield-break trigger")
+    note("Targeted", r"^choose ", "targeted effect")
+    note("ThisCreature", r"^this creature ", "creature clause")
+    note("YourClause", r"^your ", "aura/condition")
+    note("NowCatch", r"^unless |^that creature |^both players |^each [a-z]+ |^you may ", "misc unmodelled")
+
+    return N
+
+
+NOTED = _noted()
+
+
+def match_line(line: str):
+    for name, rx, fn in RULES:
+        m = rx.match(line)
+        if m:
+            return name, fn(m, line)
+    return None, None
+
+
+def match_noted(line: str):
+    for name, rx, label in NOTED:
+        if rx.match(line):
+            return name, label
+    return None, None
+
+
+# --------------------------------------------------------------- main driver
+
+def main():
+    report = json.loads(REPORT.read_text(encoding="utf-8"))
+    OUT_DIR.mkdir(exist_ok=True)
+    mapping = []
+    triage = []
+    used_rules = {}
+    used_notes = {}
+
+    for card in report:
+        raw = card.get("engtext") or ""
+        keywords, effects, notes = [], [], []
+        evo = None
+        handled_lines = 0
+
+        for line in (norm_line(x) for x in raw.split("\n")):
+            if not line:
+                continue
+            for templ_note in ("{{Tap Ability", "{{Turbo Rush", "{{Crew Breaker", "use this creature's {{Tap}} ability",
+                               "use this creature's ability"):
+                if templ_note in line:
+                    add_note(notes, "tap/turbo/crew ability not modelled")
+
+            pa, line2 = extract_power_attacker(line)
+            if pa is not None:
+                if "PowerAttacker" not in keywords:
+                    keywords.append("PowerAttacker")
+                effects.append(E("PowerAttacker_AttackBoost", v=pa))
+                line = line2
+
+            if STEALTH_TPL.search(line):
+                if "Stealth" not in keywords:
+                    keywords.append("Stealth")
+                add_note(notes, "stealth (civ-blocked) approximated as unblockable")
+                line = STEALTH_TPL.sub(" ", line)
+
+            rest, tpl_kws = split_templates(line)
+            for k in tpl_kws:
+                if k not in keywords:
+                    keywords.append(k)
+
+            rest = rest.strip()
+            if not rest:
+                handled_lines += 1
+                continue
+
+            name, res = match_line(rest)
+            if res is None:
+                nname, nlabel = match_noted(rest)
+                if nlabel is None:
+                    triage.append(f"{card['id']}  {card['name'][:44]:44s} :: {rest}")
+                    continue
+                add_note(notes, nlabel)
+                used_notes[nname] = used_notes.get(nname, 0) + 1
+                handled_lines += 1
+                continue
+            used_rules[name] = used_rules.get(name, 0) + 1
+            handled_lines += 1
+            kws, effs, note, evo2 = res
+            if evo2 is not None:
+                evo = evo2
+            for k in kws:
+                if k not in keywords:
+                    keywords.append(k)
+            effects.extend(effs)
+            if note:
+                add_note(notes, note)
+
+        if card["type"] == "EvolutionCreature":
+            evo = card.get("race") or evo
+            if "Dragon in its race" in raw:
+                evo = "Dragon"
+
+        mapping.append({"id": card["id"], "keywords": keywords, "effects": effects,
+                        "evolutionOf": evo, "note": "; ".join(notes) if notes else None,
+                        "src": raw})
+
+    OUT.write_text(json.dumps(mapping, ensure_ascii=False, indent=1), encoding="utf-8")
+    Path(TRIAGE).write_text("\n".join(triage), encoding="utf-8")
+
+    n_eff = sum(1 for m in mapping if m["effects"])
+    n_kw = sum(1 for m in mapping if m["keywords"])
+    n_note = sum(1 for m in mapping if m["note"])
+    n_evo = sum(1 for m in mapping if m["evolutionOf"])
+    print(f"cards {len(mapping)} | effects {n_eff} | keywords {n_kw} | notes {n_note} | evo {n_evo}")
+    print(f"rule hits: {sum(used_rules.values())} across {len(used_rules)} rules")
+    print(f"note hits: {sum(used_notes.values())} across {len(used_notes)} patterns")
+    print(f"unmapped lines: {len(triage)}  -> {TRIAGE}")
+
+
+if __name__ == "__main__":
+    main()

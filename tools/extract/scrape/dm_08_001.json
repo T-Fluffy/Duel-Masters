@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_08_001",
+ "page": "Kuukai, Finder of Karma",
+ "type": "Evolution Creature",
+ "civilization": "Light",
+ "race": "Mecha Thunder",
+ "cost": "5",
+ "power": "10500",
+ "engtext": "{{Blocker}}\n\n■ [[Evolution]]—Put on one of your [[Mecha Thunder]]s.\n\n■ Whenever this [[creature]] [[block]]s, [[untap]] it after it [[battle]]s.\n\n■ This [[creature]] can't [[attack]] [[player]]s.",
+ "templates": [
+  "Blocker"
+ ],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "1/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "1/55"
+ },
+ "wiki": "{{Cardtable\n| image = Kuukai, Finder of Karma.jpg\n| civilization = Light\n| type = Evolution Creature\n| jpname = {{Ruby|開|かい}}{{Ruby|眼|がん}}{{Ruby|者|しゃ}}クーカイ\n| phonetic = Kaigansha Kūkai\n| race = Mecha Thunder\n| cost = 5\n| power = 10500\n| engtext = {{Blocker}}\n\n■ [[Evolution]]—Put on one of your [[Mecha Thunder]]s.\n\n■ Whenever this [[creature]] [[block]]s, [[untap]] it after it [[battle]]s.\n\n■ This [[creature]] can't [[attack]] [[player]]s.\n| jptext = {{Blocker|jp}}\n\n■ 進化－自分のメカサンダー1体の上に置く。\n\n■ このクリーチャーは、相手プレイヤーを攻撃できない。\n\n■ このクリーチャーがブロックしたとき、バトルの後でアンタップする。\n| flavor = \n| mana = 1\n| artist = Yarunoca\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 1/55\n| R1 = Very Rare\n| set2 = DM-08 Invincible Legend\n| setnum2 = 1/55\n| R2 = Very Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Evolution Creature]]\n[[Category:Mecha Thunder]]\n[[Category:10500 Power Creatures]]\n[[Category:Creature Untap]]"
+}

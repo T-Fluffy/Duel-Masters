@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_02_035",
+ "page": "Bolzard Dragon",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Armored Dragon",
+ "cost": "6",
+ "power": "5000",
+ "engtext": "■ Whenever this [[creature]] [[attack]]s, choose a [[card]] in your [[opponent]]'s [[mana zone]] and put it into his [[graveyard]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "35/55",
+  "set2": "DM-02 Master of Evolution",
+  "setnum2": "4/55",
+  "set3": "DMC-06 Dragon Strikes Deck",
+  "setnum3": "3/82",
+  "set4": "DM-18 Best Challenger",
+  "setnum4": "12/140"
+ },
+ "wiki": "{{Cardtable\n| image=Bolzard Dragon.jpg\n| civilization = Fire\n| type = Creature\n| jpname = ボルザード・ドラゴン\n| phonetic = Boruzādo Doragon\n| race = Armored Dragon\n| cost = 6\n| power = 5000\n| engtext = ■ Whenever this [[creature]] [[attack]]s, choose a [[card]] in your [[opponent]]'s [[mana zone]] and put it into his [[graveyard]].\n| jptext = ■ このクリーチャーが攻撃するとき、相手のマナゾーンからカードを1枚選び、持ち主の墓地に置く。\n| flavor = When [[Bolshack Dragon|Bolshack]] awakes in the east, Bolzard roars in the west. 東のボルシャックが目覚める時、西のボルザードが咆哮する。  ([[DM-02]], [[DMC-06]])\n| flavor2 = 鎧竜の咆哮が轟く時、大地は割れ天は裂ける。When the armored dragon roars, the earth broke and the heavens cracked. ([[DM-18]])\n| mana = 1\n| artist = Dustmoss\n| artist2 = AMON\n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = 35/55\n| R1 = Very Rare\n| set2 = DM-02 Master of Evolution\n| setnum2 = 4/55\n| R2 = Very Rare\n| set3 = DMC-06 Dragon Strikes Deck\n| setnum3 = 3/82\n| R3 = Very Rare\n| set4 = DM-18 Best Challenger\n| setnum4 = 12/140\n| R4 = Very Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Mana Burn]]\n[[Category:Attack Trigger]]"
+}

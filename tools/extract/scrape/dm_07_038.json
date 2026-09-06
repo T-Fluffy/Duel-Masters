@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_07_038",
+ "page": "Cratersaur",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Rock Beast",
+ "cost": "3",
+ "power": "2000+",
+ "engtext": "■ While you have no [[shield]]s, this [[creature]] can [[attack]] [[untap]]ped [[creature]]s and has \"[[Power attacker]] +3000 ''(While [[attack]]ing, this [[creature]] gets +3000 [[power]])''.\"",
+ "templates": [],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "38/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "31/55"
+ },
+ "wiki": "{{Cardtable\n| image = Cratersaur.jpg\n| civilization = Fire\n| type = Creature\n| jpname = クレーターザウルス\n| phonetic = Kurētāzaurusu ''(Cratersauras)''\n| race = Rock Beast\n| cost = 3\n| power = 2000+\n| engtext = ■ While you have no [[shield]]s, this [[creature]] can [[attack]] [[untap]]ped [[creature]]s and has \"[[Power attacker]] +3000 ''(While [[attack]]ing, this [[creature]] gets +3000 [[power]])''.\"\n| jptext = ■ 自分のシールドが1枚もなければ、このクリーチャーのパワーは+3000され、タップされていないクリーチャーを攻撃することができる。\n| flavor = \"Uh oh-I'm erupting again.\" ([[DM-07]])\n| flavor2 = 溶岩の血が大惨事を巻き起こす。The blood of lava causes a catastrophe. ([[DM-07]])\n| mana = 1\n| artist = Tsuu\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 38/55\n| R1 = Uncommon\n| set2 = DM-07 Invincible Charge\n| setnum2 = 31/55\n| R2 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:2000 Power Creatures]]\n[[Category:Power Attacker +3000]]\n[[Category:Can Attack Untapped Creatures]]"
+}

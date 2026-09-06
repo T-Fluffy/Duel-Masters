@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_02_041",
+ "page": "Galsaur",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Rock Beast",
+ "cost": "5",
+ "power": "4000+",
+ "engtext": "■ While you have no other [[creature]]s in the [[battle zone]], this [[creature]] gets \"[[power attacker]] +4000\" and \"[[double breaker]]\". ''(A [[creature]] that has \"[[power attacker]] +4000\" and \"[[double breaker]]\" gets +4000 [[power]] while [[attack]]ing and [[break]]s 2 [[shield]]s.)''",
+ "templates": [],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "41/55",
+  "set2": "DM-02 Master of Evolution",
+  "setnum2": "48/55",
+  "set3": "Promotional",
+  "setnum3": "B6/7 Y1"
+ },
+ "wiki": "{{Cardtable\n| image=Galsaur.jpg\n| civilization = Fire\n| type = Creature\n| jpname = ガルザウルス\n| phonetic = Garuzaurusu ''(Galsaurus)''\n| race = Rock Beast\n| cost = 5\n| power = 4000+\n| engtext = ■ While you have no other [[creature]]s in the [[battle zone]], this [[creature]] gets \"[[power attacker]] +4000\" and \"[[double breaker]]\". ''(A [[creature]] that has \"[[power attacker]] +4000\" and \"[[double breaker]]\" gets +4000 [[power]] while [[attack]]ing and [[break]]s 2 [[shield]]s.)''\n| jptext = ■ バトルゾーンに他に自分のクリーチャーがなければ、このクリーチャーは「パワーアタッカー+4000」と「W・ブレイカー」を得る。 （攻撃中、そのクリーチャーのパワーは+4000され、シールドを攻撃したとき、シールドを2枚ブレイクする。）　\n| flavor = The first [[Liquid People]] to land on the shore evaporated as soon as they touched the ground. 最初に上陸したリキッド・ピープルの軍隊は、大地に触れたとたん蒸発した。 ([[DM-02]])\n| mana = 1\n| artist = Sansyu\n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = 41/55\n| R1 = Common\n| set2 = DM-02 Master of Evolution\n| setnum2 = 48/55\n| R2 = Common\n|set3 = Promotional\n|setnum3 = B6/7 Y1\n|R3 = Common}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Fire]]\n[[Category:Rock Beast]]\n[[Category:4000 Power Creatures]]\n[[Category:Power Attacker +4000]]\n[[Category:Conditional Double Breaker]]"
+}

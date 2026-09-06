@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_01_105",
+ "page": "Steel Smasher",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Beast Folk",
+ "cost": "2",
+ "power": "3000",
+ "engtext": "■ This [[creature]] can't [[attack]] [[player]]s.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "105/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "107/110",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "137/140"
+ },
+ "wiki": "{{Cardtable\n| image = Steel Smasher.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|鋼鉄の鎚|アイアン・ハンマー}} ''(Hammer of Steel)''\n| phonetic = Aian Hanmā\n| race = Beast Folk\n| cost = 2\n| power = 3000\n| engtext = ■ This [[creature]] can't [[attack]] [[player]]s.\n| jptext = ■ このクリーチャーは、相手プレイヤーを攻撃できない。\n| flavor = おれ、でかい。おれ、強い。おれ、殴る。 \"Me big. Me tough. Me smash.\" ─'''Iron Hammer, Boar Warrior'''  ([[DM-01]], [[DM-18]])\n| mana = 1\n| artist = Katsuya\n| set1 = DM-01 Base Set\n| setnum1 = 105/110\n| R1 = Common\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 107/110\n| R2 = Common\n| set3 = DM-18 Best Challenger\n| setnum3 = 137/140\n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Nature]]\n[[Category:Beast Folk]]\n[[Category:3000 Power Creatures]]"
+}

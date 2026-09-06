@@ -1,0 +1,31 @@
+{
+ "card_id": "dm_05_045",
+ "page": "Twin-Cannon Skyterror",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Armored Wyvern",
+ "cost": "7",
+ "power": "7000",
+ "engtext": "{{Speed Attacker}}\n\n{{Double Breaker}}",
+ "templates": [
+  "Double Breaker",
+  "Speed Attacker"
+ ],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "45/55",
+  "set2": "DM-05 Return of the Survivor",
+  "setnum2": "15/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "37/140",
+  "set4": "DMC-06 Dragon Strikes Deck",
+  "setnum4": "14/102",
+  "set5": "DMC-20 Shobu's Holy Dragon Power-Up Pack",
+  "setnum5": "14/102",
+  "set6": "DMC-42 CoroCoro Dream Pack 3: Eternal Gear",
+  "setnum6": "29/90",
+  "set7": "Promotional",
+  "setnum7": "E5 Y1, P37/Y4"
+ },
+ "wiki": "{{Cardtable\n| image = Twin-Cannon Skyterror.jpg\n| civilization = Fire\n| type = Creature\n| jpname = ツインキャノン・ワイバーン ''(Twin-Cannon Wyvern)''\n| phonetic = Tsuinkyanon Waibān\n| cost = 7\n| race = Armored Wyvern\n| power = 7000\n| engtext = {{Speed Attacker}}\n\n{{Double Breaker}}\n| jptext = {{Speed Attacker|jp}}\n\n{{Double Breaker|jp}}\n| flavor = The first cannon blasts your flesh. The second cannon blasts your soul.\n| flavor2 = 爆音を聞いた時には手遅れだ. By the time you hear the roar, it's already too late. ([[DM-05]])\n| flavor3 = その姿を確認する前、その爆音を聞いた時には諦めるしかない。ワイバーンは、次の瞬間目の前にいるのだから. Before you even see it, the moment you hear that roar, you have no choice but to give up. The wyvern will be right in front of you in the next instant. ([[DM-18]])\n| flavor4 = 圧倒的な何かの接近に、大気が震えた. The atmosphere trembled at the approach of something overwhelming. ([[DMC-20]])\n| flavor5 = 絶えず戦いの火花をまき散らす武闘派集団・火文明。死は誇りであり、潔い散り方こそが本望である. The warlike faction of the Fire Civilization constantly scatters sparks of battle. Death is an honor, and a glorious end is their true desire. (P37/Y4)\n| mana = 1\n| artist = Hideaki Takamura\n| artist2 = Miho Midorikawa \n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = 45/55\n| R1 = Rare\n| set2 = DM-05 Return of the Survivor\n| setnum2 = 15/55\n| R2 = Rare\n| set3 = DM-18 Best Challenger\n| setnum3 = 37/140\n| R3 = Rare\n| set4 = DMC-06 Dragon Strikes Deck\n| setnum4 = 14/102\n| R4 = Rare\n| set5 = DMC-20 Shobu's Holy Dragon Power-Up Pack\n| setnum5 = 14/102\n| R5 = Rare\n| set6 = DMC-42 CoroCoro Dream Pack 3: Eternal Gear\n| setnum6 = 29/90\n| R6 = Rare\n| set7 = Promotional\n| setnum7 = E5 Y1, P37/Y4\n| R7 = Rare\n}}\n{{Twin-Cannon}}\n[[Category:TCG]]\n[[Category:OCG]]"
+}

@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_05_030",
+ "page": "Jewel Spider",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Brain Jacker",
+ "cost": "2",
+ "power": "1000",
+ "engtext": "■ When this [[creature]] is [[destroy]]ed, you may choose one of your [[shield]]s and put it into your [[hand]]. You can't use the \"[[shield trigger]]\" [[ability]] of that [[shield]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "30/55",
+  "set2": "DM-05 Return of the Survivor",
+  "setnum2": "47/55",
+  "set3": "DMC-07 Eternal Insects Deck",
+  "setnum3": "60/82",
+  "set4": "DMC-17 Dark Warriors Deck",
+  "setnum4": "58/78"
+ },
+ "wiki": "{{Cardtable\n| image = Jewel Spider.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = スパイダー・ジュエル\n| phonetic = Supaidā Jueru ''(Spider Jewel)''\n| cost = 2\n| race = Brain Jacker\n| power = 1000\n| engtext = ■ When this [[creature]] is [[destroy]]ed, you may choose one of your [[shield]]s and put it into your [[hand]]. You can't use the \"[[shield trigger]]\" [[ability]] of that [[shield]].\n| jptext = ■ このクリーチャーが破壊された時、自分のシールドを1枚選び、自分の手札に加えてもよい。(その「S・トリガー」能力は使えない)\n| flavor = It climbs webs, walls, trees-anything and everything-in search of warm blood. ([[DM-05]])\n| flavor2 = 天井を這い寄り、壁を忍び、獲物の生き血を狙う。Crawling along the ceiling, sneaking along the walls, it aims for the fresh blood of its prey. ([[DM-05]], [[DMC-07]], [[DMC-17]])\n| mana = 1\n| artist = Masaki Hirooka\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = 30/55\n| R1 = Common\n| set2 = DM-05 Return of the Survivor\n| setnum2 = 47/55\n| R2 = Common\n| set3 = DMC-07 Eternal Insects Deck\n| setnum3 = 60/82\n| R3 = Common\n| set4 = DMC-17 Dark Warriors Deck\n| setnum4 = 58/78\n| R4 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Brain Jacker]]\n[[Category:1000 Power Creatures]]\n[[Category:Shield Recovery]]\n[[Category:Put Into Graveyard]]"
+}

@@ -1,0 +1,26 @@
+{
+ "card_id": "dm_08_028",
+ "page": "Dimension Splitter",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Brain Jacker",
+ "cost": "3",
+ "power": "1000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], you may return all [[creature]]s that have [[Dragon]] in their [[race]] from your [[graveyard]] to your [[hand]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "28/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "29/55",
+  "set3": "DMC-21 Zakira's Dragon Commander Power-Up Pack",
+  "setnum3": "30/102",
+  "set4": "DMC-27 CoroCoro Dream Pack",
+  "setnum4": "28/55",
+  "set5": "DMX-10 Deck Builder Oni DX Bright Star! Leo Edition",
+  "setnum5": "34/56",
+  "set6": "DMX-17 Dragon Souls Festival",
+  "setnum6": "21/37"
+ },
+ "wiki": "{{Cardtable\n| image = Dimension Splitter.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = ディメンジョン・チョーカー\n| phonetic = Dimenjon Chōkā ''(Dimension Choker)''\n| race = Brain Jacker\n| cost = 3\n| power = 1000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], you may return all [[creature]]s that have [[Dragon]] in their [[race]] from your [[graveyard]] to your [[hand]].\n| jptext = ■ このクリーチャーをバトルゾーンに出した時、種族にドラゴンとあるクリーチャーをすべて、自分の墓地から手札に戻してもよい。\n| flavor = They think life is a joke, death is a joke, and mixing the two up is a really funny joke. ([[DM-08]])\n| flavor2 = ディメンジョン・チョーカーが光り輝く時、死のカウントダウンの始まりだ。 When the Dimension Choker shines it's light, a countdown to death commences. ([[DM-08]], [[DMC-27]])\n| flavor3 = こんな僕でもドラゴンたちの力になれるんだ!! \"Even I can become the power for dragons!!\" —'''Dimension Choker''' ([[DMX-10]])\n| flavor4 = これだけの悪魔龍をグレンひとりで倒したとは...しかし、あいつの実力はここまでではなかったはず...力に溺れていなければよいが。\"[[Glenmalt, Dragon Ruler|Glen]] defeated this many Demon Dragons...but his abilities aren't just limited to this. It would be better if he does not drown in his power...\" -[[Fiddich, Explosive Master]] ([[DMX-17]])\n| artist = Katsuhiko Kojoh\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 28/55\n| R1 = Uncommon\n| set2 = DM-08 Invincible Legend\n| setnum2 = 29/55\n| R2 = Uncommon\n| set3 = DMC-21 Zakira's Dragon Commander Power-Up Pack\n| setnum3 = 30/102\n| R3 = Uncommon\n| set4 = DMC-27 CoroCoro Dream Pack\n| setnum4 = 28/55\n| R4 = Uncommon\n| set5 = DMX-10 Deck Builder Oni DX Bright Star! Leo Edition\n| setnum5 = 34/56\n| R5 = Uncommon\n| set6 = DMX-17 Dragon Souls Festival\n| setnum6 = 21/37\n| R6 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Brain Jacker]]\n[[Category:1000 Power Creatures]]\n[[Category:Creature Recovery]]\n[[Category:Come Into Play Trigger]]"
+}

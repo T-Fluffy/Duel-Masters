@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_03_030",
+ "page": "Mudman",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Hedrian",
+ "cost": "4",
+ "power": "2000+",
+ "engtext": "■ While all the [[card]]s in your [[mana zone]] are [[darkness]] [[card]]s, this [[creature]] gets +2000 [[power]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-03 Rampage of the Super Warriors",
+  "setnum1": "30/55",
+  "set2": "DM-03 Master of Destruction",
+  "setnum2": "44/55"
+ },
+ "wiki": "{{Cardtable\n| image= Mudman.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|泥|どろ}}{{Ruby|男|おとこ}}\n| phonetic = Doro Otoko\n| cost = 4\n| race = Hedrian\n| power = 2000+\n| engtext = ■ While all the [[card]]s in your [[mana zone]] are [[darkness]] [[card]]s, this [[creature]] gets +2000 [[power]].\n| jptext = ■ 自分のマナゾーンにあるカードがすべて闇のカードである間、このクリーチャーのパワーは+2000される。\n| flavor = \"We all crawl from the slime. Someday, we'll all return to it.\" ([[DM-03]])\n| flavor2 = すべてのヘドロから生まれ、ヘドロへと戻っていく。Born from all sludge, returning to the sludge. ([[DM-03]])\n| mana = 1\n| artist = Atsushi Kawasaki\n| set1 = DM-03 Rampage of the Super Warriors\n| setnum1 = 30/55\n| R1 = Common\n| set2 = DM-03 Master of Destruction\n| setnum2 = 44/55\n| R2 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Hedrian]]\n[[Category:2000 Power Creatures]]\n[[Category:Self Increase Power]]"
+}

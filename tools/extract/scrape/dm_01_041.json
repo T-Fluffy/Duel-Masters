@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_01_041",
+ "page": "Teleportation",
+ "type": "Spell",
+ "civilization": "Water",
+ "race": "",
+ "cost": "5",
+ "power": "",
+ "engtext": "■ [[Choose]] up to 2 [[creature]]s in the [[battle zone]] and return them to their [[owner]]s' [[hand]]s.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "41/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "21/110",
+  "set3": "DMC-24 Illusion Blue Half Deck",
+  "setnum3": "4/43",
+  "set4": "DM-18 Best Challenger",
+  "setnum4": "29/140"
+ },
+ "wiki": "{{Cardtable\n| image = Teleportation.jpg\n| civilization = Water\n| type = Spell\n| jpname = テレポーテーション\n| phonetic = Terepōtēshon\n| cost = 5\n| engtext = ■ [[Choose]] up to 2 [[creature]]s in the [[battle zone]] and return them to their [[owner]]s' [[hand]]s.\n| jptext = ■ バトルゾーンにあるクリーチャーを2体まで選び、持ち主の手札に戻す。\n| flavor = 生まれる前からやりなおしたら? \"Start all over from your previous life!\" —{{tooltip|Crystal Lancer}} ([[DM-01]])\n| flavor2 = 昨日きやがれ! \"Come back yesterday!\" ([[DM-18]], [[DMS-05]])\n| flavor3 = その遅れ、命取り! \"That delay will be fatal!\" ([[DMC-24]])\n| mana = 1\n| artist = Akifumi Yamamoto\n| artist2 = Dustmoss\n| set1 = DM-01 Base Set\n| setnum1 = 41/110\n| R1 = Rare\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 21/110\n| R2 = Rare\n| set3 = DMC-24 Illusion Blue Half Deck\n| setnum3 = 4/43\n| R3 = Rare\n| set4 = DM-18 Best Challenger\n| setnum4 = 29/140\n| R4 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Bounce]]\n[[Category:Self Bounce]]"
+}

@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_01_107",
+ "page": "Thorny Mandra",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Tree Folk",
+ "cost": "5",
+ "power": "4000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], you may put 1 [[creature]] from your [[graveyard]] into your [[mana zone]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "107/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "10/110"
+ },
+ "wiki": "{{Cardtable\n| image = Thorny Mandra.jpg\n| civilization = Nature\n| type = Creature\n| jpname = トゲ{{Ruby|刺|さ}}しマンドラ\n| phonetic = Togesashi Mandora\n| cost = 5\n| race = Tree Folk\n| power = 4000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], you may put 1 [[creature]] from your [[graveyard]] into your [[mana zone]].\n| jptext = ■ このクリーチャーがバトルゾーンに出たとき、自分の墓地からクリーチャーを1体選び、自分のマナゾーンに置いてよい。\n| flavor = 美しい花。甘い匂い。毒のトゲ。A beautiful flower, an alluring scent...and deadly thorns. ([[DM-01]]) \n| mana = 1\n| artist = Atsushi Kawasaki\n| set1 = DM-01 Base Set\n| setnum1 = 107/110\n| R1 = Very Rare\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 10/110\n| R2 = Very Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Nature]]\n[[Category:Tree Folk]]\n[[Category:4000 Power Creatures]]\n[[Category:Mana Acceleration]]\n[[Category:Come Into Play Trigger]]"
+}

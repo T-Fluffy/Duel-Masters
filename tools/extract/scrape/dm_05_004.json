@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_05_004",
+ "page": "Bladerush Skyterror Q",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Survivor",
+ "cost": "7",
+ "power": "5000",
+ "engtext": "{{Survivor||{{Double Breaker|dotless}}}}",
+ "templates": [
+  "Double Breaker|dotless"
+ ],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "4/55",
+  "set2": "DM-05 Return of the Survivor",
+  "setnum2": "4/55"
+ },
+ "wiki": "{{Cardtable\n| image = Bladerush Skyterror Q.jpg\n| civilization = Fire\n| type = Creature\n| jpname = ブレイドラッシュ・ワイバーン{{Ruby|δ|デルタ}}\n| kana = デルタ ''(Delta)''\n| phonetic = Bureidorasshu Waibān Deruta ''(Bladerush Wyvern Delta)''\n| race = Survivor\n| race2 = Armored Wyvern\n| cost = 7\n| power = 5000\n| engtext = {{Survivor||{{Double Breaker|dotless}}}}\n| jptext = {{Survivor|jp|{{Double Breaker|jpdotless}}}}\n| flavor = Its war cry shreds the clouds. Its blades shred everything else. ([[DM-05]])\n| flavor2 = 右の刃は肉を裂き、左の刃は心を砕く! The blade on the right shreds the flesh, and the blade on the left shatters the heart! ([[DM-05]])\n| mana = 1\n| artist = Shishizaru\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = 4/55\n| R1 = Very Rare\n| set2 = DM-05 Return of the Survivor\n| setnum2 = 4/55\n| R2 = Very Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Double Breaker]]"
+}

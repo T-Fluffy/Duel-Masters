@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_01_100",
+ "page": "Pangaea's Song",
+ "type": "Spell",
+ "civilization": "Nature",
+ "race": "",
+ "cost": "1",
+ "power": "",
+ "engtext": "■ Put 1 of your [[creature]]s from the [[battle zone]] into your [[mana zone]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "100/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "70/110",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "90/140"
+ },
+ "wiki": "{{Cardtable\n| image = Pangaea's Song.jpg\n| jpname = ガイアズ・ソング\n| phonetic = Gaiazu Songu\n| civilization = Nature\n| type = Spell\n| cost = 1\n| engtext = ■ Put 1 of your [[creature]]s from the [[battle zone]] into your [[mana zone]].\n| jptext = ■ バトルゾーンにある自分のクリーチャーを1体、自分のマナゾーンに置く。\n| flavor = \"Here’s something better for you to do.\" —[[Fighter Dual Fang]] ([[DM-01]])\n| flavor2 = 戦士たちよ、小さき者の呼び声に答えよ! \"Warrior, answer the call of the little ones!\" ([[DM-01]])\n| mana = 1\n| artist = Seki\n| artist2 = Ippei Soeda \n| set1 = DM-01 Base Set\n| setnum1 = 100/110\n| R1 = Uncommon\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 70/110\n| R2 = Uncommon\n| set3 = DM-18 Best Challenger\n| setnum3 = 90/140\n| R3 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Nature]]\n[[Category:Spell]]\n[[Category:Mana Acceleration]]\n[[Category:Mana Feed]]\n[[Category:Self Removal]]"
+}

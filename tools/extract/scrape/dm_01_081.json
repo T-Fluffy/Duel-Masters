@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_01_081",
+ "page": "Magma Gazer",
+ "type": "Spell",
+ "civilization": "Fire",
+ "race": "",
+ "cost": "3",
+ "power": "",
+ "engtext": "■ One of your [[creature]]s gets \"[[power attacker]] +4000\" and \"[[double breaker]]\" until the [[End Step|end of the turn]]. ''(A [[creature]] that has \"[[power attacker]] +4000\" and \"[[double breaker]]\" gets +4000 [[power]] while [[attack]]ing and [[break]]s 2 [[shield]]s.)''",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "81/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "33/110",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "43/140"
+ },
+ "wiki": "{{Cardtable\n| image = Magma Gazer.jpg\n| civilization = Fire\n| type = Spell\n| jpname = マグマ・ゲイザー\n| phonetic = Maguma Geizā\n| cost = 3\n| engtext = ■ One of your [[creature]]s gets \"[[power attacker]] +4000\" and \"[[double breaker]]\" until the [[End Step|end of the turn]]. ''(A [[creature]] that has \"[[power attacker]] +4000\" and \"[[double breaker]]\" gets +4000 [[power]] while [[attack]]ing and [[break]]s 2 [[shield]]s.)''\n| jptext = ■ このターンの終わりまで、バトルゾーンにある自分のクリーチャー1体は、「パワーアタッカー+4000」と「W・ブレイカー」を得る。（攻撃中、そのクリーチャーのパワーは+4000され、シールドを攻撃したとき、シールドを2枚ブレイクする。）　\n| flavor = \n| mana = 1\n| artist = Masaki Hirooka\n| artist2 = ittoku\n| set1 = DM-01 Base Set\n| setnum1 = 81/110\n| R1 = Rare\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 33/110\n| R2 = Rare\n| set3 = DM-18 Best Challenger\n| setnum3 = 43/140\n| R3 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Gives \"Power Attacker\"]]\n[[Category:Gives \"Double Breaker\"]]"
+}

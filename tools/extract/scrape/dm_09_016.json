@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_09_016",
+ "page": "Abduction Charger",
+ "type": "Spell",
+ "civilization": "Water",
+ "race": "",
+ "cost": "7",
+ "power": "",
+ "engtext": "■ [[Choose]] up to 2 [[creature]]s in the [[battle zone]] and return them to their [[owner]]s' [[hand]]s.\n\n{{Charger}}",
+ "templates": [
+  "Charger"
+ ],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "16/55",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "11/55",
+  "set3": "DMEX-03 Peri!!! Specialness Overloaded Mystery Pack",
+  "setnum3": "44/69"
+ },
+ "wiki": "{{Cardtable\n| image = Abduction Charger.jpg\n| civilization = Water\n| type = Spell\n| jpname = アナライズ・チャージャー\n| phonetic = Anaraizu Chājā ''(Analyze Charger)''\n| cost = 7\n| engtext = ■ [[Choose]] up to 2 [[creature]]s in the [[battle zone]] and return them to their [[owner]]s' [[hand]]s.\n\n{{Charger}}\n| jptext = ■ バトルゾーンにあるクリーチャーを2体まで選び、持ち主の手札に戻す。\n\n{{Charger|jp}}\n| flavor = \"We have learned all we can about these specimens. But just to be sure, let's probe them again.\" ([[DM-09]])\n| flavor2 = 押さば引け。引かば押せ。If they push, pull. If they pull, push. ([[DM-09]])\n| flavor3 = この「ペリッ!! スペシャルだらけのミステリーパック」を分析したところ……チャージャーも含めて約70個の能力が収録されているようだ! \"After analyzing this 'Peri!!! Specialness Overloaded Mystery Pack', it appears that it contains around 70 different abilities, including Chargers!\" ([[DMEX-03]])\n| mana = 1\n| artist = Akifumi Yamamoto\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = 16/55\n| R1 = Rare\n| set2 = DM-09 Invincible Blood\n| setnum2 = 11/55\n| R2 = Rare\n| set3 = DMEX-03 Peri!!! Specialness Overloaded Mystery Pack\n| setnum3 = 44/69\n| R3 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Charger]]\n[[Category:Bounce]]\n[[Category:Self Bounce]]\n[[Category:Mass Removal]]"
+}

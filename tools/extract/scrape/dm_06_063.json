@@ -1,0 +1,26 @@
+{
+ "card_id": "dm_06_063",
+ "page": "Lone Tear, Shadow of Solitude",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Ghost",
+ "cost": "1",
+ "power": "2000",
+ "engtext": "■ [[End Step|At the end of each of your turns]], if this is your only [[creature]] in the [[battle zone]], [[destroy]] it.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "63/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "93/110",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "117/140",
+  "set4": "DMC-13 CoroCoro New Generation Pack",
+  "setnum4": "28/37",
+  "set5": "DMC-17 Dark Warriors Deck",
+  "setnum5": "60/78",
+  "set6": "DMX-22 Super Black Box Pack",
+  "setnum6": "a46/59"
+ },
+ "wiki": "{{Cardtable\n| image = Lone Tear, Shadow of Solitude.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|孤|こ}}{{Ruby|独|どく}}の{{Ruby|影|かげ}}ロンリー・ウォーカー ''(Lonely Walker, Shadow of Loneliness)''\n| phonetic = Kodoku no Kage Ronrī Wōkā\n| cost = 1\n| race = Ghost\n| power = 2000\n| engtext = ■ [[End Step|At the end of each of your turns]], if this is your only [[creature]] in the [[battle zone]], [[destroy]] it.\n| jptext = ■ 自分のターンの終わりに、バトルゾーンにある自分のクリーチャーがこのクリーチャーだけであれば、破壊する。\n| flavor = It's the tollbooth operator on the highway of despair. ([[DM-06]]}\n| flavor2 = 一人にするな。\"Don't leave me alone.\" ─'''Lone Tear, Shadow of Solitude'''' ([[DM-06]], [[DMC-13]], [[DMC-17]])\n| flavor3 = 光無き所に影無く、味方無き所に彼無し。There is no shadow in the place without light, without him in a place without ally. ([[DM-18]])\n| flavor4 = 超ブラック・ボックスに歴代デュエル・ヒーローが大集合! オレもロンリーとか言ってられないぜ! \"A large collection of successive duel heroes in Super Black Box! I can not even say lonely!\" ─'''Lone Tear, Shadow of Solitude''' ([[DMX-22]])\n| mana = 1\n| artist = Asai Genji\n| artist2 = AMON \n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 63/110\n| R1 = Common\n| set2 = DM-06 Invincible Soul\n| setnum2 = 93/110\n| R2 = Common\n| set3 = DM-18 Best Challenger\n| setnum3 = 117/140\n| R3 = Common\n| set4 = DMC-13 CoroCoro New Generation Pack\n| setnum4 = 28/37\n| R4 = Common\n| set5 = DMC-17 Dark Warriors Deck\n| setnum5 = 60/78\n| R5 = Common\n| set6 = DMX-22 Super Black Box Pack\n| setnum6 = a46/59\n| R6 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Ghost]]\n[[Category:2000 Power Creatures]]\n[[Category:Self Removal]]"
+}

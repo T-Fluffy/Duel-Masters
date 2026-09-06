@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_09_045",
+ "page": "Steam Rumbler Kain",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Armorloid",
+ "cost": "4",
+ "power": "5000",
+ "engtext": "■ Whenever this [[creature]] [[attack]]s, choose one of your [[shield]]s and put it into your [[graveyard]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "45/55",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "49/55"
+ },
+ "wiki": "{{Cardtable\n| image = Steam Rumbler Kain.jpg\n| civilization = Fire\n| type = Creature\n| jpname = {{Ruby|蒸|じょう}}{{Ruby|神|しん}}{{Ruby|兵|へい}}カイン\n| phonetic = Jōshin Hei Kain\n| race = Armorloid\n| cost = 4\n| power = 5000\n| engtext = ■ Whenever this [[creature]] [[attack]]s, choose one of your [[shield]]s and put it into your [[graveyard]].\n| jptext = ■ このクリーチャーが攻撃するとき、自分のシールドが1枚でもあれば、その中から裏向きのまま1枚選び、自分の墓地に置く。ただし、その「S・トリガー」は使えない。\n| flavor = When it's not sifting through rubble, it's usually creating new rubble. ([[DM-09]])\n| flavor2 = カイン自慢の諜報部隊は、必死にバーニング・ビーストの消息を追った。Kain's prideful intelligence unit desperately pursued the whereabouts of the '[[Burning Beast]]'. ([[DM-09]])\n| mana = 1\n| artist = Fruit Parfait\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = 45/55\n| R1 = Common\n| set2 = DM-09 Invincible Blood\n| setnum2 = 49/55\n| R2 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Self Shield Burn]]\n[[Category:Attack Trigger]]"
+}

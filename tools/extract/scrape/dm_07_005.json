@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_07_005",
+ "page": "Spinning Totem",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Mystery Totem",
+ "cost": "5",
+ "power": "4000",
+ "engtext": "{{Tap Ability|This [[turn]], whenever any of your [[nature]] [[creature]]s is [[attack]]ing your [[opponent]] and becomes [[block]]ed, it [[break]]s one of his [[shield]]s. ''(If a [[creature]] has \"[[double breaker]]\" or \"[[triple breaker]],\" it still [[break]]s only one [[shield]].)''}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "5/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "5/55"
+ },
+ "wiki": "{{Cardtable\n| image = Spinning Totem.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|爆転の化身|スピン・トーテム}} ''(Avatar of Extreme Spinning)''\n| phonetic = Supin Tōtemu\n| kana = スピン・トーテム ''(Spin Totem)''\n| race = Mystery Totem\n| cost = 5\n| power = 4000\n| engtext = {{Tap Ability|This [[turn]], whenever any of your [[nature]] [[creature]]s is [[attack]]ing your [[opponent]] and becomes [[block]]ed, it [[break]]s one of his [[shield]]s. ''(If a [[creature]] has \"[[double breaker]]\" or \"[[triple breaker]],\" it still [[break]]s only one [[shield]].)''}}\n| jptext = ■ このクリーチャーで攻撃するかわりに、タップして次の{{Tap}}能力を使ってもよい。\n:{{Tap}} このターン、バトルゾーンにある自分の自然のクリーチャーが相手を攻撃してブロックされたとき、相手のシールドが1枚でもあれば、そのうち1枚をブレイクする。\n| flavor = \n| mana = 1\n| artist = Atsushi Kawasaki\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 5/55\n| R1 = Very Rare\n| set2 = DM-07 Invincible Charge\n| setnum2 = 5/55\n| R2 = Very Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Shield Break]]\n[[Category:Gives \"Trample\"]]"
+}

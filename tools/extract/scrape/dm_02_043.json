@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_02_043",
+ "page": "Mini Titan Gett",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Human",
+ "cost": "2",
+ "power": "2000+",
+ "engtext": "■ This [[creature]] [[attack]]s each [[turn]] [[Attack if Able|if able]].\n\n{{Power Attacker|1000}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "43/55",
+  "set2": "DM-02 Master of Evolution",
+  "setnum2": "49/55",
+  "set3": "DMC-01 Shobu's Blaze Deck",
+  "setnum3": "39/43",
+  "set4": "CoroCoro Dogiragon 40 Card Deck",
+  "setnum4": "9/13"
+ },
+ "wiki": "{{Cardtable\n| image= Mini Titan Gett.jpg\n| civilization = Fire\n| type = Creature\n| jpname = {{Ruby|小|ちい}}さな{{Ruby|勇|ゆう}}{{Ruby|者|しゃ}}ゲット ''(Gett, Small Hero)''\n| phonetic = Chiisana Yūsha Getto\n| cost = 2\n| race = Human\n| power = 2000+\n| engtext = ■ This [[creature]] [[attack]]s each [[turn]] [[Attack if Able|if able]].\n\n{{Power Attacker|1000}}\n| jptext = ■ このクリーチャーは、毎ターン攻撃しなければならない。\n\n{{Power Attacker|1000|jp}}\n| flavor = 絶対、機神装甲を着られるくらい強くなるんだ! \"Someday I'll be strong enough to wear battle armor! You'll see!\" ─'''Mini Titan Gett''' ([[DM-02]])\n| flavor2 = \"Power Attacker is an ability that gets stronger during attacks!\" ─'''Mini Titan Gett''' ([[SpDeck]])\n| mana = 1\n| artist = Ittoku\n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = 43/55\n| R1 = Common\n| set2 = DM-02 Master of Evolution\n| setnum2 = 49/55\n| R2 = Common\n| set3 = DMC-01 Shobu's Blaze Deck\n| setnum3 = 39/43\n| R3 = Common\n| set4 = CoroCoro Dogiragon 40 Card Deck\n| setnum4 = 9/13\n| R4 = Common\n}}\n\n{{Gett}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:2000 Power Creatures]]\n[[Category:Attacks Each Turn If Able]]"
+}

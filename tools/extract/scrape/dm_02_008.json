@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_02_008",
+ "page": "Phal Eega, Dawn Guardian",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Guardian",
+ "cost": "5",
+ "power": "4000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], you may return a [[spell]] from your [[graveyard]] to your [[hand]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "8/55",
+  "set2": "DM-02 Master of Evolution",
+  "setnum2": "6/55"
+ },
+ "wiki": "{{Cardtable\n| image= Phal Eega, Dawn Guardian.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|暁|あかつき}}の{{Ruby|守|しゅ}}{{Ruby|護|ご}}{{Ruby|者|しゃ}}ファル・イーガ\n| phonetic = Akatsuki no Shugosha Faru Īga\n| cost = 5\n| race = Guardian\n| power = 4000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], you may return a [[spell]] from your [[graveyard]] to your [[hand]].\n| jptext = ■ このクリーチャーがバトルゾーンに出たとき、自分の墓地から呪文を1枚選び、自分の手札に戻してよい。\n| flavor = これはまだ演習にすぎない。This is just an exercise. ([[DM-02]])\n| flavor2 =  \"Like the sun, I'm getting all warmed up.\" ([[DM-02]])\n| mana = 1\n| artist = Daisuke Izuka\n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = 8/55\n| R1 = Rare\n| set2 = DM-02 Master of Evolution\n| setnum2 = 6/55\n| R2 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Guardian]]\n[[Category:4000 Power Creatures]]\n[[Category:Spell Recovery]]\n[[Category:Come Into Play Trigger]]"
+}

@@ -1,0 +1,28 @@
+{
+ "card_id": "dm_02_037",
+ "page": "Burst Shot",
+ "type": "Spell",
+ "civilization": "Fire",
+ "race": "",
+ "cost": "6",
+ "power": "",
+ "engtext": "{{Shield Trigger|spell}} \n\n■ [[Destroy]] all [[creature]]s that have [[power]] 2000 or less.",
+ "templates": [
+  "Shield Trigger|spell"
+ ],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "37/55",
+  "set2": "Shadowclash Collector Tin",
+  "setnum2": "36/46",
+  "set3": "DM-02 Master of Evolution",
+  "setnum3": "32/55",
+  "set4": "DM-18 Best Challenger",
+  "setnum4": "42/140",
+  "set5": "DMC-14 Crimson Armorloids Deck",
+  "setnum5": "31/78",
+  "set6": "DMC-19 Zakira's Dragon Commander Deck",
+  "setnum6": "40/102"
+ },
+ "wiki": "{{Cardtable\n| image = Burst Shot.jpg\n| civilization = Fire\n| type = Spell\n| jpname = バースト・ショット\n| phonetic = Bāsuto Shotto\n| cost = 6\n| engtext = {{Shield Trigger|spell}} \n\n■ [[Destroy]] all [[creature]]s that have [[power]] 2000 or less.\n| jptext = {{Icon|ST}} S・トリガー （この呪文をシールドゾーンから手札に加える時、コストを支払わずにすぐ唱えてもよい）\n\n■ パワー2000以下のクリーチャーをすべて破壊する。\n| flavor = \n| mana = 1\n| artist = Sansyu\n| artist2 = Dai\n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = 37/55\n| R1 = Uncommon\n| set2 = Shadowclash Collector Tin\n| setnum2 = 36/46\n| R2 = Uncommon\n| set3 = DM-02 Master of Evolution\n| setnum3 = 32/55\n| R3 = Uncommon\n| set4 = DM-18 Best Challenger\n| setnum4 = 42/140\n| R4 = Uncommon\n| set5 = DMC-14 Crimson Armorloids Deck\n| setnum5 = 31/78\n| R5 = Uncommon\n| set6 = DMC-19 Zakira's Dragon Commander Deck\n| setnum6 = 40/102\n| R6 = Uncommon\n}}\n{{Burst Shot}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Fire]]\n[[Category:Shield Trigger]]\n[[Category:Spell]]\n[[Category:Mass Removal]]\n[[Category:Power Based Removal]]"
+}

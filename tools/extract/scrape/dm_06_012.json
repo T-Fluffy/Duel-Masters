@@ -1,0 +1,24 @@
+{
+ "card_id": "dm_06_012",
+ "page": "Arc Bine, the Astounding",
+ "type": "Evolution Creature",
+ "civilization": "Light",
+ "race": "Guardian",
+ "cost": "5",
+ "power": "5000",
+ "engtext": "■ [[Evolution]]—Put on one of your [[Guardian]]s.\n\n■ Each of your [[light]] [[creature]]s may [[tap]] [[instead]] of [[attack]]ing to use this [[creature]]'s {{Tap}} [[ability]].\n:{{Tap}} [[Choose]] one of your [[opponent]]'s [[creature]]s in the [[battle zone]] and [[tap]] it.",
+ "templates": [
+  "Tap"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "12/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "11/110",
+  "set3": "DMC-13 CoroCoro New Generation Pack",
+  "setnum3": "1/37",
+  "set4": "Promotional",
+  "setnum4": "P1/Y1"
+ },
+ "wiki": "{{Cardtable\n| image = Arc Bine, the Astounding.jpg\n| civilization = Light\n| type = Evolution Creature\n| jpname = {{Ruby|守|しゅ}}{{Ruby|護|ご}}{{Ruby|聖|せい}}{{Ruby|天|てん}}アーク・バイン\n| phonetic = Shugo Seiten Āku Bain\n| cost = 5\n| race = Guardian\n| power = 5000\n| engtext = ■ [[Evolution]]—Put on one of your [[Guardian]]s.\n\n■ Each of your [[light]] [[creature]]s may [[tap]] [[instead]] of [[attack]]ing to use this [[creature]]'s {{Tap}} [[ability]].\n:{{Tap}} [[Choose]] one of your [[opponent]]'s [[creature]]s in the [[battle zone]] and [[tap]] it.\n| jptext = ■ 進化－自分のガーディアン1体の上に置く。\n\n■ バトルゾーンにある自分の光のクリーチャーをタップし、攻撃する代わりに次の{{Tap}}能力を使ってもよい。\n:{{Tap}} バトルゾーンにある相手のクリーチャーを1体選び、タップする。\n| flavor = \"[[Dragonoid]]s like explosions? Then this is their lucky day!\" ([[DM-06]])\n| mana = 1\n| artist = D-Suzuki\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 12/110\n| R1 = Rare\n| set2 = DM-06 Invincible Soul\n| setnum2 = 11/110\n| R2 = Rare\n| set3 = DMC-13 CoroCoro New Generation Pack\n| setnum3 = 1/37\n| R3 = Rare\n| set4 = Promotional\n| setnum4 = P1/Y1\n| R4 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Guardian]]\n[[Category:Evolution Creature]]\n[[Category:Tap Ability]]\n[[Category:5000 Power Creatures]]\n[[Category:Creature Tapper]]\n[[Category:Self Tapper]]"
+}

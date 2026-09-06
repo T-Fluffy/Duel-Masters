@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_01_045",
+ "page": "Black Feather, Shadow of Rage",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Ghost",
+ "cost": "1",
+ "power": "3000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], [[destroy]] one of your [[creature]]s.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "45/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "92/110",
+  "set3": "DM22-EX1 Golden Strategy!! Dueking MAX 2022",
+  "setnum3": "超46/超50"
+ },
+ "wiki": "{{Cardtable\n| image = Black Feather, Shadow of Rage.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|怒|いか}}りの{{Ruby|影|かげ}}ブラック・フェザー\n| phonetic = Ikari no Kage Burakku Fezā\n| race = Ghost\n| cost = 1\n| power = 3000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], [[destroy]] one of your [[creature]]s.\n| jptext = ■ このクリーチャーが出た時、自分のクリーチャーを1体破壊する。\n| flavor = オレのこと、弱いと思ってたやつら、許せねぇ! \"I can't forgive those who thought I was weak!\" —'''Black Feather, Shadow of Rage''' ([[DM22-EX1]])\n| mana = 1\n| artist = Soushi Hirose\n| set1 = DM-01 Base Set\n| setnum1 = 45/110\n| R1 = Common\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 92/110\n| R2 = Common\n| set3 = DM22-EX1 Golden Strategy!! Dueking MAX 2022\n| setnum3 = 超46/超50\n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Ghost]]\n[[Category:3000 Power Creatures]]\n[[Category:Self Removal]]\n[[Category:Come Into Play Trigger]]"
+}

@@ -1,0 +1,24 @@
+{
+ "card_id": "dm_03_012",
+ "page": "Angler Cluster",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Cyber Cluster",
+ "cost": "3",
+ "power": "3000+",
+ "engtext": "{{Blocker}}\n\n■ This [[creature]] can't [[attack]].\n\n■ While all the [[card]]s in your [[mana zone]] are [[water]] [[card]]s, this [[creature]] gets +3000 [[power]].",
+ "templates": [
+  "Blocker"
+ ],
+ "sets": {
+  "set1": "DM-03 Rampage of the Super Warriors",
+  "setnum1": "12/55",
+  "set2": "DM-03 Master of Destruction",
+  "setnum2": "41/55",
+  "set3": "DMC-21 Zakira's Dragon Commander Power-Up Pack",
+  "setnum3": "62/102",
+  "set4": "DMC-27 CoroCoro Dream Pack",
+  "setnum4": "41/55"
+ },
+ "wiki": "{{Cardtable\n| image= Angler Cluster.jpg\n| civilization = Water\n| type = Creature\n| jpname = アングラー・クラスター\n| phonetic = Angurā Kurasutā\n| cost = 3\n| race = Cyber Cluster\n| power = 3000+\n| engtext = {{Blocker}}\n\n■ This [[creature]] can't [[attack]].\n\n■ While all the [[card]]s in your [[mana zone]] are [[water]] [[card]]s, this [[creature]] gets +3000 [[power]].\n| jptext = {{Blocker|jp}}\n\n■ このクリーチャーは攻撃することができない。\n\n■ 自分のマナゾーンにあるカードがすべて水のカードである間、このクリーチャーのパワーは＋3000される。　\n| flavor = \n| mana = 1\n| artist = Kou1\n| set1 = DM-03 Rampage of the Super Warriors\n| setnum1 = 12/55\n| R1 = Common\n| set2 = DM-03 Master of Destruction\n| setnum2 = 41/55\n| R2 = Common\n| set3 = DMC-21 Zakira's Dragon Commander Power-Up Pack\n| setnum3 = 62/102\n| R3 = Common\n| set4 = DMC-27 CoroCoro Dream Pack\n| setnum4 = 41/55\n| R4 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Cyber Cluster]]\n[[Category:3000 Power Creatures]]\n[[Category:Self Increase Power]]"
+}

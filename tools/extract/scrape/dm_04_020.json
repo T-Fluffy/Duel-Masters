@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_04_020",
+ "page": "Aqua Jolter",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Liquid People",
+ "cost": "3",
+ "power": "2000",
+ "engtext": "{{Shield Trigger|creature}}",
+ "templates": [
+  "Shield Trigger|creature"
+ ],
+ "sets": {
+  "set1": "DM-04 Shadowclash of Blinding Night",
+  "setnum1": "20/55",
+  "set2": "DM-04 Challenge of Black Shadow ",
+  "setnum2": "42/55",
+  "set3": "Promotional",
+  "setnum3": "M8/Y1"
+ },
+ "wiki": "{{Cardtable\n| image = Aqua Jolter.jpg\n| civilization = Water\n| type = Creature\n| jpname = アクア・チャージャー\n| phonetic = Akua Chājā\n| race = Liquid People\n| cost = 3\n| power = 2000\n| engtext = {{Shield Trigger|creature}}\n| jptext = {{Icon|ST}} S・トリガー （このクリーチャーをシールドゾーンから手札に加える時、コストを支払わずにすぐ召喚してもよい） \n| flavor = \"Saltwater makes me thirsty.\" ([[DM-04]])\n| flavor2 = 珊瑚の陰より突然現れる。Suddenly appears from behind the coral. ([[DM-04]])\n| flavor3 = It appears suddenly from the shadows of coral reefs. (M8/Y1)\n| mana = 1\n| artist = Daisuke Izuka\n| set1 = DM-04 Shadowclash of Blinding Night\n| setnum1 = 20/55\n| R1 = Common\n| set2 = DM-04 Challenge of Black Shadow \n| setnum2 = 42/55\n| R2 = Common\n| set3 = Promotional\n| setnum3 = M8/Y1\n| R3 = No Rarity\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Liquid People]]\n[[Category:Shield Trigger]]\n[[Category:2000 Power Creatures]]"
+}

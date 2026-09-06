@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_06_038",
+ "page": "Midnight Crawler",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Earth Eater",
+ "cost": "8",
+ "power": "6000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], choose a [[card]] in your [[opponent]]'s [[mana zone]] and return it to his [[hand]].\n\n{{Double Breaker}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "38/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "19/110"
+ },
+ "wiki": "{{Cardtable\n| image = Midnight Crawler.jpg\n| civilization = Water\n| type = Creature\n| jpname = ナイト・クロウラー\n| phonetic = Naito Kurōrā\n| race = Earth Eater\n| cost = 8\n| power = 6000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], choose a [[card]] in your [[opponent]]'s [[mana zone]] and return it to his [[hand]].\n\n{{Double Breaker}}\n| jptext = ■ このクリーチャーがバトルゾーンに出たとき、相手のマナゾーンからカードを1枚選び、持ち主の手札に戻す。\n\n{{Double Breaker|jp}} \n| flavor = \"If you see a pair of twinkling red stars at night, watch out—there's likely a mouth attached to them.\" —[[Fear Fang]] ([[DM-06]])\n| flavor2 = 夜空に紅く輝く星を見つけたら気をつけなさい。その横で大きな口が貴方を狙っているかもしれない。([[DM-06]])\n| mana = 1\n| artist = Syuichi Obata\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 38/110\n| R1 = Rare\n| set2 = DM-06 Invincible Soul\n| setnum2 = 19/110\n| R2 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Mana Bounce]]\n[[Category:Come Into Play Trigger]]"
+}

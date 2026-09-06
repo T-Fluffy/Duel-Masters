@@ -1,0 +1,12 @@
+evos: 47
+dm_02_005 race='Guardian' cost=3 text='■ Evolution—Put on one of your Guardians.\n\n■ When you put this creature into the battle zone, tap all your opponent\'s creatures in the battle zone that have "blocker".'
+dm_02_015 race='Liquid People' cost=6 text="■ Evolution—Put on one of your Liquid People.\n\n■ This creature can't be blocked.\n\n{{Double Breaker}}"
+dm_02_024 race='Parasite Worm' cost=5 text="■ Evolution—Put on one of your Parasite Worms.\n\n■ When you put this creature into the battle zone, you may destroy one of your opponent's creatures."
+dm_02_034 race='Human' cost=3 text='■ Evolution—Put on one of your Humans.\n\n■ While attacking, this creature gets +2000 power for each other Human in the battle zone.'
+dm_02_045 race='Beast Folk' cost=2 text='■ Evolution—Put on one of your Beast Folk.\n\n■ While this creature is tapped, each of your other Beast Folk in the battle zone gets +2000 power.'
+dm_02_s01 race='Guardian' cost=6 text='{{Blocker}}\n\n■ Evolution—Put on one of your Guardians.\n\n{{Double Breaker}}'
+dm_02_s02 race='Liquid People' cost=4 text='■ Evolution—Put on one of your Liquid People.\n\n■ When you put this creature into the battle zone, return all creatures in the battle zone that have "blocker" to their owners\' hands.'
+dm_02_s03 race='Parasite Worm' cost=6 text='■ Evolution—Put on one of your Parasite Worms.\n\n{{Double Breaker}}'
+dm_02_s04 race='Human' cost=4 text='■ Evolution—Put on one of your Humans.\n\n■ Each of your other Humans in the battle zone gets +1000 power.\n\n{{Double Breaker}}'
+dm_02_s05 race='Beast Folk' cost=6 text='■ Evolution—Put on one of your Beast Folk.\n\n■ When you put this creature into the battle zone, put the top 2 cards of your deck into your mana zone.\n\n{{Double Breaker}}'
+races: Counter({'Guardian': 4, 'Liquid People': 3, 'Human': 3, 'Beast Folk': 3, 'Initiate': 3, 'Parasite Worm': 2, 'Ghost': 2, 'Armored Dragon': 2, 'Giant Insect': 2, 'Cyber Virus': 2, 'Rock Beast': 2, 'Survivor': 2, 'Chimera': 2, 'Cyber Lord': 2, 'Leviathan': 1, 'Angel Command': 1, 'Demon Command': 1, 'Horned Beast': 1, 'Cyber Cluster': 1, 'Colony Beetle': 1, 'Dragonoid': 1, 'Tree Folk': 1, 'Mecha Thunder': 1, 'Zombie Dragon': 1, 'Earth Dragon': 1, 'Dark Lord': 1, 'Armored Wyvern': 1})

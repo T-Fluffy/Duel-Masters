@@ -1,0 +1,24 @@
+{
+ "card_id": "dm_07_024",
+ "page": "Titanium Cluster",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Cyber Cluster",
+ "cost": "4",
+ "power": "4000",
+ "engtext": "{{Blocker}}\n\n■ This [[creature]] can't be [[attack]]ed.\n\n■ This [[creature]] can't [[attack]].",
+ "templates": [
+  "Blocker"
+ ],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "24/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "41/55",
+  "set3": "DMC-13 CoroCoro New Generation Pack",
+  "setnum3": "20/37 ",
+  "set4": "Promotional",
+  "setnum4": "P10/Y2"
+ },
+ "wiki": "{{Cardtable\n| image = Titanium Cluster.jpg\n| civilization = Water\n| type = Creature\n| jpname = ウォール・クラスター\n| phonetic = U~ōru Kurasutā\n| race = Cyber Cluster\n| cost = 4\n| power = 4000\n| engtext = {{Blocker}}\n\n■ This [[creature]] can't be [[attack]]ed.\n\n■ This [[creature]] can't [[attack]].\n| jptext = {{Blocker|jp}}\n\n■ このクリーチャーは攻撃することができない。\n\n■ このクリーチャーは攻撃されない。　\n| flavor = Deep beneath the waves, unnoticed, the program that would betray its masters began to run. ([[DM-07]])\n| flavor2 = 誰も気付かぬ深海で、裏切りのプログラムが動き始めていた。Deep in the ocean, where no one notices, the program of betrayal began to activate. ([[DM-07]])\n| flavor3 = 敵の隙をつき、自在なる攻撃で相手の戦意を挫くことこそ、戦略である。Exploiting the enemy's weakness and striking their fighting spirit with versatile attacks is what strategy is all about. ([[DMC-13]])\n| mana = 1\n| artist = Masaki Hirooka\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 24/55\n| R1 = Common\n| set2 = DM-07 Invincible Charge\n| setnum2 = 41/55\n| R2 = Common\n| set3 = DMC-13 CoroCoro New Generation Pack\n| setnum3 = 20/37 \n| R3 = Common\n| set4 = Promotional\n| setnum4 = P10/Y2\n| R4 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Cyber Cluster]]\n[[Category:4000 Power Creatures]]\n[[Category:Unattackable]]"
+}

@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_03_035",
+ "page": "Baby Zoppe",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Fire Bird",
+ "cost": "3",
+ "power": "2000+",
+ "engtext": "■ While all the [[card]]s in your [[mana zone]] are [[fire]] [[card]]s, this [[creature]] gets +2000 [[power]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-03 Rampage of the Super Warriors",
+  "setnum1": "35/55",
+  "set2": "DM-03 Master of Destruction",
+  "setnum2": "49/55",
+  "set3": "DMC-03 Shobu's Blaze Power-Up Pack",
+  "setnum3": "35/43"
+ },
+ "wiki": "{{Cardtable\n| image= Baby Zoppe.jpg\n| civilization = Fire\n| type = Creature\n| jpname = チッチ・ホッピー\n| phonetic = Chitchi Hoppī\n| cost = 3\n| race = Fire Bird\n| power = 2000+\n| engtext = ■ While all the [[card]]s in your [[mana zone]] are [[fire]] [[card]]s, this [[creature]] gets +2000 [[power]].\n| jptext = ■ 自分のマナゾーンにあるカードがすべて火のカードである間、このクリーチャーのパワーは+2000される。\n| flavor = Some [[Fire Bird]]s are so eager to get into battle that they don't bother to finish hatching first. ([[DM-03]])\n| flavor2 = 炎の谷を大忙しで走るのだ。火山の粉塵を食べるため! Running through the Valley of Fire to eat volcanic dust! ([[DM-03]]) \n| mana = 1\n| artist = Ittoku\n| set1 = DM-03 Rampage of the Super Warriors\n| setnum1 = 35/55\n| R1 = Common\n| set2 = DM-03 Master of Destruction\n| setnum2 = 49/55\n| R2 = Common\n| set3 = DMC-03 Shobu's Blaze Power-Up Pack\n| setnum3 = 35/43\n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Fire]]\n[[Category:Fire Bird]]\n[[Category:2000 Power Creatures]]\n[[Category:Self Increase Power]]"
+}

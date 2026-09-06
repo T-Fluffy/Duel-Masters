@@ -1,0 +1,36 @@
+{
+ "card_id": "dm_08_018",
+ "page": "Eureka Charger",
+ "type": "Spell",
+ "civilization": "Water",
+ "race": "",
+ "cost": "4",
+ "power": "",
+ "engtext": "■ [[Draw]] a [[card]].\n\n{{Charger}}",
+ "templates": [
+  "Charger"
+ ],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "18/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "43/55",
+  "set3": "DMC-16 Guardian Blue Deck",
+  "setnum3": "52/78",
+  "set4": "DMC-42 CoroCoro Dream Pack 3: Eternal Gear",
+  "setnum4": "67/90",
+  "set5": "DMX-03 Deck Builder DX: Alien Edition",
+  "setnum5": "32/42",
+  "set6": "DMX-13 White Zenith Pack",
+  "setnum6": "30/36",
+  "set7": "DMX-16 The Great Royal Strategies: Fantasista 12",
+  "setnum7": "62/84",
+  "set8": "DMSP-01 Fancy! Grandy!! JoeDeckie BOX!!",
+  "setnum8": "41/48",
+  "set9": "DMEX-02 Duema Quest Pack ~The Top 12 Legendary Strategies~",
+  "setnum9": "75/84",
+  "set10": "Promotional",
+  "setnum10": "P15/Y14"
+ },
+ "wiki": "{{Cardtable\n| image = Eureka Charger.jpg\n| civilization = Water\n| type = Spell\n| jpname = ブレイン・チャージャー\n| phonetic = Burein Chājā ''(Brain Charger)''\n| cost = 4\n| engtext = ■ [[Draw]] a [[card]].\n\n{{Charger}}\n| jptext = ■ カードを1枚引く。 \n\n{{Charger|jp}}　\n| flavor = \"The expression is 'reach for the stars,' not 'reach for the mysterious ball of crackling electricity.'\" -[[Mighty Bandit, Ace of Thieves|Mighty Bandit]] ([[DM-08]])\n| flavor2 = 災いをもたらす嵐の中にこそ、豊富なマナが眠っている。\"In the storm that brings disaster, abundant mana lies dormant.\" ([[DM-08]], [[DMC-16]], [[DMC-42]])\n| flavor3 = 知となりマナとなる。Becomes wisdom, becomes mana. ([[DMX-03]])\n| flavor4 = ゼロの知識が世界を広げる。Spreading the worldly knowledge of Zero. ([[DMX-13]])\n| flavor5 = リキッド・ピープル閃とは! 各分野のスペシャリスト、プロフェッショナルが終結した秘密結社なのだ!!! \"Liquid People Flash! It is a secret organization where specialists and professionals from various fields have gathered!!!\" ([[DMX-16]])\n| flavor6 = ドローして切り札を探しつつ、増えたマナで高速召喚! 両方できちゃう器用なカード! Draw a card while searching for your trump then use the extra mana for a rapid summon! A versatile card that can do both! ([[DMSP-01]])\n| flavor7 = 切り札を探しながらマナも増やせる、両方こなせちゃう便利なブレインだ!  \"It's a convenient [[Brain]] that can both search for trump cards and increase mana!\" ([[DMEX-02]])\n| flavor8 = 知識が勝利をもたらす。Knowledge brings victory. (P15/Y14)\n| mana = 1\n| artist = Kou1\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 18/55\n| R1 = Common\n| set2 = DM-08 Invincible Legend\n| setnum2 = 43/55\n| R2 = Common\n| set3 = DMC-16 Guardian Blue Deck\n| setnum3 = 52/78\n| R3 = Common\n| set4 = DMC-42 CoroCoro Dream Pack 3: Eternal Gear\n| setnum4 = 67/90\n| R4 = Common\n| set5 = DMX-03 Deck Builder DX: Alien Edition\n| setnum5 = 32/42\n| R5 = Common\n| set6 = DMX-13 White Zenith Pack\n| setnum6 = 30/36\n| R6 = Common\n| set7 = DMX-16 The Great Royal Strategies: Fantasista 12\n| setnum7 = 62/84\n| R7 = Common\n| set8 = DMSP-01 Fancy! Grandy!! JoeDeckie BOX!!\n| setnum8 = 41/48\n| R8 = Common\n| set9 = DMEX-02 Duema Quest Pack ~The Top 12 Legendary Strategies~\n| setnum9 = 75/84\n| R9 = Common\n| set10 = Promotional\n| setnum10 = P15/Y14\n| R10 = Common\n}}\n{{Brain}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Charger]]\n[[Category:Card Draw]]\n[[Category:Brain]]"
+}

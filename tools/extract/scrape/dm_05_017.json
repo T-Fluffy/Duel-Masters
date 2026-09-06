@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_05_017",
+ "page": "Divine Riptide",
+ "type": "Spell",
+ "civilization": "Water",
+ "race": "",
+ "cost": "9",
+ "power": "",
+ "engtext": "■ Each [[player]] returns all [[card]]s from his [[mana zone]] to his [[hand]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "17/55",
+  "set2": "DM-05 Return of the Survivor",
+  "setnum2": "11/55",
+  "set3": "DMX-12 Black Box Pack",
+  "setnum3": "b74/???",
+  "set4": "DMRP-04魔 The Rise of Master Dolszak!! ~Demon Phoenix of Moonless Night~",
+  "setnum4": "11/61"
+ },
+ "wiki": "{{Cardtable\n| image = Divine Riptide.jpg\n| civilization = Water\n| type = Spell\n| jpname = {{Ruby|神|かみ}}{{Ruby|々|がみ}}の{{Ruby|逆|ぎゃく}}{{Ruby|流|りゅう}}\n| phonetic = Kamigami no Gyakuryuu\n| cost = 9\n| engtext = ■ Each [[player]] returns all [[card]]s from his [[mana zone]] to his [[hand]].\n| jptext = ■ 各プレイヤーは、自身のマナゾーンにあるカードをすべて手札に戻す。\n| flavor = \"The Megapocalypse has arrived. It's a bit early, huh?\" —[[Pokolul]] ([[DM-05]])\n| flavor2 = 世界は破滅する。 The world to ruin. ([[DM-05]])\n| flavor3 = 神々はすべてのものを逆にする。カードですらも。 Gods reverse everything. Even a card. ([[DMX-12]])\n| flavor4 = いよいよ闇の奴らが動き出しやがったか。主よ、オレらはどうしますかねぇ。\"So, the [[Seven Kings of Darkness|dark ones]] are finally making their move, huh? My lord, what do we do now?\" ―'''Tigavock, Sea General''' ([[DMRP-04魔]])\n| mana = 1\n| artist = D-Suzuki\n| artist2 = Takaaki Sato\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = 17/55\n| R1 = Rare\n| set2 = DM-05 Return of the Survivor\n| setnum2 = 11/55\n| R2 = Rare\n| set3 = DMX-12 Black Box Pack\n| setnum3 = b74/???\n| R3 = Rare\n| set4 = DMRP-04魔 The Rise of Master Dolszak!! ~Demon Phoenix of Moonless Night~\n| setnum4 = 11/61\n| R4 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Mana Recovery]]\n[[Category:Mana Bounce]]"
+}

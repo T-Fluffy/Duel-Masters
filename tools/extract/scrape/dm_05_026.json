@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_05_026",
+ "page": "Gigakail",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Chimera",
+ "cost": "5",
+ "power": "4000",
+ "engtext": "■ [[Nature]] and [[light]] [[slayer]] ''(Whenever this [[creature]] [[battle]]s a [[nature]] or [[light]] [[creature]], [[destroy]] the other [[creature]] after the [[battle]].)",
+ "templates": [],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "26/55",
+  "set2": "DM-05 Return of the Survivor",
+  "setnum2": "27/55",
+  "set3": "DMC-08 Endless Black Hole Deck",
+  "setnum3": "24/82",
+  "set4": "Promotional",
+  "setnum4": "L16/20 Y1, P24/＊"
+ },
+ "wiki": "{{Cardtable\n| image = Gigakail.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = ギガゲイル\n| phonetic = Gigageiru\n| cost = 5\n| race = Chimera\n| power = 4000\n| engtext = ■ [[Nature]] and [[light]] [[slayer]] ''(Whenever this [[creature]] [[battle]]s a [[nature]] or [[light]] [[creature]], [[destroy]] the other [[creature]] after the [[battle]].)\n| jptext = ■ {{Ruby|自然|しぜん}}・{{Ruby|光|ひかり}}スレイヤー(このクリーチャーとバトルした{{Ruby|相手|あいて}}の{{Ruby|自然|しぜん}}または{{Ruby|光|ひかり}}のクリーチャーは、{{Ruby|勝|か}}っても{{Ruby|持|も}}ち{{Ruby|主|ぬし}}の{{Ruby|墓|ぼ}}{{Ruby|地|ち}}に{{Ruby|置|お}}かれる。)\n| flavor = What it was built out of isn't nearly as disturbing as what was done with the leftovers. ([[DM-05]])\n| flavor2 = 瞳の奥深く、悲しみと憎しみが暗き光を放っている。Deep within their eyes, sorrow and hatred emit a dark light. ([[DM-05]]) \n| flavor3 = 無限の孤独が生を蝕む。Endless solitude corrodes life. (P24/Y1)\n| mana = 1\n| artist = Kou1\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = 26/55\n| R1 = Uncommon\n| set2 = DM-05 Return of the Survivor\n| setnum2 = 27/55\n| R2 = Uncommon\n| set3 = DMC-08 Endless Black Hole Deck\n| setnum3 = 24/82\n| R3 = Uncommon\n| set4 = Promotional\n| setnum4 = L16/20 Y1, P24/＊\n| R4 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Slayer]]"
+}

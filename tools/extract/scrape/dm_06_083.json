@@ -1,0 +1,28 @@
+{
+ "card_id": "dm_06_083",
+ "page": "Phantom Dragon's Flame",
+ "type": "Spell",
+ "civilization": "Fire",
+ "race": "",
+ "cost": "3",
+ "power": "",
+ "engtext": "{{Shield Trigger|spell}} \n\n■ [[Destroy]] one of your [[opponent]]'s [[creature]]s that has [[power]] 2000 or less.",
+ "templates": [
+  "Shield Trigger|spell"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "83/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "102/110",
+  "set3": "DM-10 Shockwaves of the Shattered Rainbow",
+  "setnum3": "73/110",
+  "set4": "DM-10 Eternal Arms",
+  "setnum4": "101/110",
+  "set5": "DM-18 Best Challenger",
+  "setnum5": "129/140",
+  "set6": "DMC-09 Shobu's Dragon Legend Deck ",
+  "setnum6": "44/44"
+ },
+ "wiki": "{{Cardtable\n| image = Phantom Dragon's Flame.jpg\n| civilization = Fire\n| type = Spell\n| jpname = {{Ruby|幻|げん}}{{Ruby|竜|りゅう}}{{Ruby|砲|ほう}}\n| phonetic = Gen Ryuu Hou\n| cost = 3\n| engtext = {{Shield Trigger|spell}} \n\n■ [[Destroy]] one of your [[opponent]]'s [[creature]]s that has [[power]] 2000 or less.\n| jptext = {{Icon|ST}} S・トリガー (この呪文をシールドゾーンから手札に加える時、コストを支払わずにすぐ唱えてもよい)\n\n■ パワー2000以下の相手のクリーチャーを1体破壊する。　\n| flavor = \"Would you prefer a real [[Dragon]]?\" ([[DM-06]])\n| flavor2 = 見かけ倒しと言ってくれるな。\"Don't call it a bluff.\" ([[DM-06]])\n| flavor3 = Some phantoms have healthier appetites than others. ([[DM-10]])\n| flavor4 = そこにいたんだ。 It ''was'' there. ([[DM-10]])\n| flavor5 = ハズレ! \"Wrong!\" ([[DM-18]])\n| mana = 1\n| artist = Taro Yamazaki \n| artist2 = Naoki Saito \n| artist3 = Norikatsu Miyoshi \n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 83/110\n| R1 = Common\n| set2 = DM-06 Invincible Soul\n| setnum2 = 102/110\n| R2 = Common\n| set3 = DM-10 Shockwaves of the Shattered Rainbow\n| setnum3 = 73/110\n| R3 = Common\n| set4 = DM-10 Eternal Arms\n| setnum4 = 101/110\n| R4 = Common\n| set5 = DM-18 Best Challenger\n| setnum5 = 129/140\n| R5 = Common\n| set6 = DMC-09 Shobu's Dragon Legend Deck \n| setnum6 = 44/44\n| R6 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Fire]]\n[[Category:Shield Trigger]]\n[[Category:Spell]]\n[[Category:Power Based Removal]]"
+}

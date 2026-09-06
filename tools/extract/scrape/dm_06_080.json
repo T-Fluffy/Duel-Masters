@@ -1,0 +1,26 @@
+{
+ "card_id": "dm_06_080",
+ "page": "Cutthroat Skyterror",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Armored Wyvern",
+ "cost": "3",
+ "power": "5000",
+ "engtext": "{{Speed Attacker}}\n\n■ This [[creature]] can't [[attack]] [[player]]s.\n\n■ [[End Step|At the end of your turn]], return this [[creature]] to your [[hand]].",
+ "templates": [
+  "Speed Attacker"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "80/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "60/110",
+  "set3": "DMC-06 Dragon Strikes Deck",
+  "setnum3": "33/82",
+  "set4": "DMC-23 Speed Burn Half Deck",
+  "setnum4": "19/43",
+  "set5": "Promotional",
+  "setnum5": "P3/Y2"
+ },
+ "wiki": "{{Cardtable\n| image = Cutthroat Skyterror.jpg\n| civilization = Fire\n| type = Creature\n| jpname = エグゼズ・ワイバーン\n| phonetic = Eguzezu Waibān ''(Excess Wyvern)''\n| race = Armored Wyvern\n| cost = 3\n| power = 5000\n| engtext = {{Speed Attacker}}\n\n■ This [[creature]] can't [[attack]] [[player]]s.\n\n■ [[End Step|At the end of your turn]], return this [[creature]] to your [[hand]].\n| jptext = {{Speed Attacker|jps}}\n\n■ このクリーチャーは、相手プレイヤーを攻撃できない。\n\n■ 自分のターンが終わる時、このクリーチャーを自分の手札に戻す。\n| flavor = 寄せては返す波状攻撃で、光の民を次々と撃破していった。With relentless waves of attacks, they defeated the citizens of Light one after another. ([[DM-06]]. [[DMC-06]], [[DMC-23]])\n| flavor2 = 武器を取れ! 闘いの時が来た!! Take up arms! The time to fight has come!! (P3/Y2)\n| mana = 1\n| artist = Takesi Kuno\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 80/110\n| R1 = Uncommon\n| set2 = DM-06 Invincible Soul\n| setnum2 = 60/110\n| R2 = Uncommon\n| set3 = DMC-06 Dragon Strikes Deck\n| setnum3 = 33/82\n| R3 = Uncommon\n| set4 = DMC-23 Speed Burn Half Deck\n| setnum4 = 19/43\n| R4 = Uncommon\n| set5 = Promotional\n| setnum5 = P3/Y2\n| R5 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]"
+}

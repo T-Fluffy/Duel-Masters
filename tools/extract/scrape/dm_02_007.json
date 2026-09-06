@@ -1,0 +1,28 @@
+{
+ "card_id": "dm_02_007",
+ "page": "Magris, Vizier of Magnetism",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Initiate",
+ "cost": "4",
+ "power": "3000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], you may [[draw]] a [[card]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "7/55",
+  "set2": "DM-02 Master of Evolution",
+  "setnum2": "36/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "99/140",
+  "set4": "DMC-42 CoroCoro Dream Pack 3: Eternal Gear",
+  "setnum4": "58/90",
+  "set5": "DMX-10 Deck Builder Oni DX Bright Star! Leo Edition",
+  "setnum5": "38/56",
+  "set6": "Promotional",
+  "setnum6": "L7/12 Y1",
+  "set7": "DMD-10 1st Deck Oracle Dash",
+  "setnum7": "12/14"
+ },
+ "wiki": "{{Cardtable\n| image=Magris, Vizier of Magnetism.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|磁|じ}}{{Ruby|力|りょく}}の{{Ruby|使|し}}{{Ruby|徒|と}}マグリス ''(Magris, Apostle of Magnetism)''\n| phonetic = Jiryoku no Shito Magurisu\n| race = Initiate\n| cost = 4\n| power = 3000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], you may [[draw]] a [[card]].\n| jptext = ■ このクリーチャーをバトルゾーンに出した時、カードを1枚引いてもよい。\n| flavor = \"Vizier of Magnetism, arise. Your wings are a compass that points to the truth.\" —{{tooltip|Hanusa, Radiance Elemental}} ([[DM-02]]) \n| flavor2 = 磁力の使徒よ覚醒せよ。汝の翼は意志の鎖なり。Awaken, Apostle of Magnetism. Your wings are the chains of will. ([[DM-02]], [[DM-18]], [[DMC-42]])\n| flavor3 = 磁力が新たな仲間を引きつける。Magnetism draws in new allies. ([[DMX-10]])\n| mana = 1\n| artist = Hisanobu Kometani\n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = 7/55\n| R1 = Common\n| set2 = DM-02 Master of Evolution\n| setnum2 = 36/55\n| R2 = Common\n| set3 = DM-18 Best Challenger\n| setnum3 = 99/140\n| R3 = Common\n| set4 = DMC-42 CoroCoro Dream Pack 3: Eternal Gear\n| setnum4 = 58/90\n| R4 = Common\n| set5 = DMX-10 Deck Builder Oni DX Bright Star! Leo Edition\n| setnum5 = 38/56\n| R5 = Common\n| set6 = Promotional\n| setnum6 = L7/12 Y1\n| R6 = Common\n| set7 = DMD-10 1st Deck Oracle Dash\n| setnum7 = 12/14\n| R7 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Initiate]]\n[[Category:3000 Power Creatures]]\n[[Category:Card Draw]]\n[[Category:Come Into Play Trigger]]"
+}

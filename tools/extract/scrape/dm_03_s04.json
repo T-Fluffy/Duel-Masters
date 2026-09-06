@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_03_s04",
+ "page": "Garkago Dragon",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Armored Dragon",
+ "cost": "7",
+ "power": "6000+",
+ "engtext": "{{Double Breaker}}\n\n■ This [[creature]] gets +1000 [[power]] for each other [[fire]] [[creature]] you have in the [[battle zone]].\n\n■ This [[creature]] can [[attack]] [[untap]]ped [[creature]]s.",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-03 Rampage of the Super Warriors",
+  "setnum1": "S4/S5",
+  "set2": "DM-03 Master of Destruction",
+  "setnum2": "S4/S5"
+ },
+ "wiki": "{{Cardtable\n| image= Garkago Dragon.jpg\n| civilization = Fire\n| type = Creature\n| jpname = ガルカーゴ・ドラゴン\n| phonetic = Garukāgo Doragon\n| cost = 7\n| race = Armored Dragon\n| power = 6000+\n| engtext = {{Double Breaker}}\n\n■ This [[creature]] gets +1000 [[power]] for each other [[fire]] [[creature]] you have in the [[battle zone]].\n\n■ This [[creature]] can [[attack]] [[untap]]ped [[creature]]s.\n| jptext = {{Double Breaker|jps}}。 （このクリーチャーは、シールドを2枚ブレイクする）　 \n\n■ このクリーチャーのパワーは、バトルゾーンにある自分の他の火のクリーチャー1体につき+1000される。\n\n■ このクリーチャーは、タップされていないクリーチャーを攻撃できる。　\n|flavor = The more you quiver, the more it smiles. ([[DM-03]])\n|mana = 1\n|artist = Nottsuo\n|set1 = DM-03 Rampage of the Super Warriors\n|setnum1 = S4/S5\n|R1 = Super Rare\n|set2 = DM-03 Master of Destruction\n|setnum2 = S4/S5\n|R2 = Super Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:6000 Power Creatures]]\n[[Category:Can Attack Untapped Creatures]]\n[[Category:Self Increase Power]]"
+}

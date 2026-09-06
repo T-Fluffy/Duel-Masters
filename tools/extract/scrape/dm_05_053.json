@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_05_053",
+ "page": "Nocturnal Giant",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Giant",
+ "cost": "7",
+ "power": "7000+",
+ "engtext": "■ This [[creature]] can't [[attack]] [[creature]]s.\n\n{{Power Attacker|7000}}\n\n{{Triple Breaker}}",
+ "templates": [
+  "Triple Breaker"
+ ],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "53/55",
+  "set2": "DM-05 Return of the Survivor",
+  "setnum2": "18/55",
+  "set3": "Promotional",
+  "setnum3": "L15/20 Y1"
+ },
+ "wiki": "{{Cardtable\n| image = Nocturnal Giant.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|哀哭の超人|ノクターン・ジャイアント}}\n| phonetic = Nokutān Jaianto\n| kana = ノクターン・ジャイアント ''(Nocturne Giant)''\n| race = Giant\n| cost = 7\n| power = 7000+\n| engtext = ■ This [[creature]] can't [[attack]] [[creature]]s.\n\n{{Power Attacker|7000}}\n\n{{Triple Breaker}}\n| jptext = {{Triple Breaker|jp}}\n\n{{Power Attacker|7000|jp}}\n\n■ このクリーチャーは、クリーチャーを攻撃できない。\n| flavor = Does it harness the power of the stars? Does it prefer the cover of night? Or does it just get sunburned really easily? ([[DM-05]])\n| flavor2 = 大地が悲しみに震える。The earth trembles with sorrow. ([[DM-05]]) \n| mana = 1\n| artist = Hikaru Ikusa\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = 53/55\n| R1 = Rare\n| set2 = DM-05 Return of the Survivor\n| setnum2 = 18/55\n| R2 = Rare\n| set3 = Promotional\n| setnum3 = L15/20 Y1\n| R3 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Nature]]\n[[Category:Giant]]\n[[Category:Triple Breaker]]\n[[Category:7000 Power Creatures]]"
+}

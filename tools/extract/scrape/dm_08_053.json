@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_08_053",
+ "page": "Senia, Orchard Avenger",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Tree Folk",
+ "cost": "4",
+ "power": "3000+",
+ "engtext": "{{Turbo Rush|This [[creature]] gets +5000 [[power]] and has \"[[double breaker]] ''(This [[creature]] [[break]]s 2 [[shield]]s)''.\"}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "53/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "53/55"
+ },
+ "wiki": "{{Cardtable\n| image = Senia, Orchard Avenger.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|食|しょう}}{{Ruby|獣|じゅう}}セニア\n| phonetic = Shōjū Senia\n| race = Tree Folk\n| cost = 4\n| power = 3000+\n| engtext = {{Turbo Rush|This [[creature]] gets +5000 [[power]] and has \"[[double breaker]] ''(This [[creature]] [[break]]s 2 [[shield]]s)''.\"}}\n| jptext = {{Turbo Rush|このクリーチャーのパワーは+5000され、「W・ブレイカー」を得る。|jp}}\n| flavor = Whole armies have been lost on fruit-salad expeditions. ([[DM-08]])\n| flavor2 = 森を焼く者は森に食われる。Those who burn the forest will be eaten by the forest. ([[DM-08]]) \n| mana = 1\n| artist = Toshiaki Takayama\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 53/55\n| R1 = Common\n| set2 = DM-08 Invincible Legend\n| setnum2 = 53/55\n| R2 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Conditional Double Breaker]]\n[[Category:3000 Power Creatures]]\n[[Category:Self Increase Power]]"
+}

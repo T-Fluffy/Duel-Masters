@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_01_s08",
+ "page": "Scarlet Skyterror",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Armored Wyvern",
+ "cost": "8",
+ "power": "3000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], [[destroy]] all [[creature]]s that have \"[[blocker]]\".",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "S8/S10",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "S7/S10"
+ },
+ "wiki": "{{Cardtable\n| image = Scarlet Skyterror.jpg\n| civilization = Fire\n| type = Creature\n| jpname = クリムゾン・ワイバーン\n| phonetic = Kurimuzon Waibān ''(Crimson Wyvern)''\n| dename = Scharlach-Himmelsterror\n| itname = Terrore dei Cieli Scarlatto\n| frname = Terreur céleste pourpre\n| esname = Scarlet, terror de los cielos\n| mxname = Scarlet, terror de los cielos\n| ptname = Escarlate, o Terror dos Céus\n| cnname = 腥红装甲飞龙\n| cost = 8\n| race = Armored Wyvern\n| power = 3000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], [[destroy]] all [[creature]]s that have \"[[blocker]]\".\n| jptext = ■ このクリーチャーがバトルゾーンに出たとき、バトルゾーンにある「ブロッカー」を持つクリーチャーをすべて、持ち主の墓地に置く。\n| flavor = The forces of [[Fire]] will never relent. ([[DM-01]])\n| mana = 1\n| artist = Tomofumi Ogasawara\n| set1 = DM-01 Base Set\n| setnum1 = S8/S10\n| R1 = Super Rare\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = S7/S10\n| R2 = Super Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Mass Removal]]\n[[Category:Blocker Based Removal]]\n[[Category:Come Into Play Trigger]]"
+}

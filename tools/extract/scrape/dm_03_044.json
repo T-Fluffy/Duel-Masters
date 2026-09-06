@@ -1,0 +1,36 @@
+{
+ "card_id": "dm_03_044",
+ "page": "Volcanic Arrows",
+ "type": "Spell",
+ "civilization": "Fire",
+ "race": "",
+ "cost": "2",
+ "power": "",
+ "engtext": "{{Shield Trigger|spell}} \n\n■ [[Destroy]] a [[creature]] that has [[power]] 6000 or less.\n\n■ [[Choose]] one of your [[shield]]s and put it into your [[graveyard]].",
+ "templates": [
+  "Shield Trigger|spell"
+ ],
+ "sets": {
+  "set1": "DM-03 Rampage of the Super Warriors",
+  "setnum1": "44/55",
+  "set2": "DM-03 Master of Destruction",
+  "setnum2": "51/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "130/140",
+  "set4": "DMC-05 Lightning Thunder Deck",
+  "setnum4": "74/82",
+  "set5": "DMC-06 Dragon Strikes Deck",
+  "setnum5": "74/82",
+  "set6": "DMC-19 Zakira's Dragon Commander Deck",
+  "setnum6": "96/102",
+  "set7": "DMC-55 CoroCoro Legend 7",
+  "setnum7": "80/84",
+  "set8": "DMC-61 CoroCoro Dream Pack 4: Eternal Heaven",
+  "setnum8": "83/94",
+  "set9": "DMD-01 Start Dash Deck: Fire & Nature",
+  "setnum9": "9/13",
+  "set10": "DMX-11 Rock On Battle All Stars 12",
+  "setnum10": "7/84"
+ },
+ "wiki": "{{Cardtable\n| image= Volcanic Arrows.jpg\n| civilization = Fire\n| type = Spell\n| jpname = ボルカニック・アロー\n| phonetic = Borukanikku Arō\n| cost = 2\n| engtext = {{Shield Trigger|spell}} \n\n■ [[Destroy]] a [[creature]] that has [[power]] 6000 or less.\n\n■ [[Choose]] one of your [[shield]]s and put it into your [[graveyard]].\n| jptext = {{Icon|ST}} S・トリガー (この呪文をシールドゾーンから手札に加える時、コストを支払わずにすぐ唱えてもよい)\n\n■ パワー6000以下のクリーチャーを1体破壊する。\n\n■ 自分のシールドを1枚選び、自分の墓地に置く。\n| flavor = 痛みを恐れず、ぶちかませ! \"Don't fear the pain, go ahead and strike!\" ([[DMC-55]])\n| flavor2 = 真の勝者になるためには、犠牲もいとわない。\"To become a true winner, I won't hesitate to make sacrifices.\" ([[DMD-01]])\n| flavor3 = 気にせずバンバンいっちゃって! 後は私にまかせといて! \"Go ahead and give it your all without worrying! Leave the rest to me!\" ―[[Laurier, Ogre Princess]] ([[DMX-11]])\n| mana = 1\n| artist = Seki\n| set1 = DM-03 Rampage of the Super Warriors\n| setnum1 = 44/55\n| R1 = Common\n| set2 = DM-03 Master of Destruction\n| setnum2 = 51/55\n| R2 = Common\n| set3 = DM-18 Best Challenger\n| setnum3 = 130/140\n| R3 = Common\n| set4 = DMC-05 Lightning Thunder Deck\n| setnum4 = 74/82\n| R4 = Common\n| set5 = DMC-06 Dragon Strikes Deck\n| setnum5 = 74/82\n| R5 = Common\n| set6 = DMC-19 Zakira's Dragon Commander Deck\n| setnum6 = 96/102\n| R6 = Common\n| set7 = DMC-55 CoroCoro Legend 7\n| setnum7 = 80/84\n| R7 = Common\n| set8 = DMC-61 CoroCoro Dream Pack 4: Eternal Heaven\n| setnum8 = 83/94\n| R8 = Common\n| set9 = DMD-01 Start Dash Deck: Fire & Nature\n| setnum9 = 9/13\n| R9 = Common\n| set10 = DMX-11 Rock On Battle All Stars 12\n| setnum10 = 7/84\n| R10 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Fire]]\n[[Category:Shield Trigger]]\n[[Category:Spell]]\n[[Category:Power Based Removal]]\n[[Category:Self Shield Burn]]"
+}

@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_09_021",
+ "page": "Scout Cluster",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Cyber Cluster",
+ "cost": "3",
+ "power": "4000",
+ "engtext": "{{Blocker}}\n\n■ Whenever you put another [[creature]] into the [[battle zone]], return this [[creature]] from the [[battle zone]] to your [[hand]].",
+ "templates": [
+  "Blocker"
+ ],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "21/55",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "41/55"
+ },
+ "wiki": "{{Cardtable\n| image = Scout Cluster.jpg\n| civilization = Water\n| type = Creature\n| jpname = スカウト・クラスター \n| phonetic = Sukauto Kurasutā\n| cost = 3\n| race = Cyber Cluster\n| power = 4000\n| engtext = {{Blocker}}\n\n■ Whenever you put another [[creature]] into the [[battle zone]], return this [[creature]] from the [[battle zone]] to your [[hand]].\n| jptext = {{Blocker|jps}}\n\n■ このクリーチャーがバトルゾーンにある間、自分の他のクリーチャーがバトルゾーンに出たとき、このクリーチャーをバトルゾーンから自分の手札に戻す。\n| flavor = \"Gotta go!\" ([[DM-09]])\n| flavor2 = 深海漂う恥ずかしがり屋。今日も一人で探偵稼業。A timid being floating in the ocean depths. Once again, it takes on detective duties alone. ([[DM-09]]) \n| mana = 1\n| artist = Akifumi Yamamoto\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = 21/55\n| R1 = Common\n| set2 = DM-09 Invincible Blood\n| setnum2 = 41/55\n| R2 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Self Bounce]]"
+}

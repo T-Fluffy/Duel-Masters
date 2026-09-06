@@ -1,0 +1,32 @@
+{
+ "card_id": "dm_05_043",
+ "page": "Rikabu, the Dismantler",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Machine Eater",
+ "cost": "3",
+ "power": "1000",
+ "engtext": "{{Speed Attacker}}",
+ "templates": [
+  "Speed Attacker"
+ ],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "43/55",
+  "set2": "DM-05 Return of the Survivor",
+  "setnum2": "49/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "123/140",
+  "set4": "DMC-23 Speed Burn Half Deck",
+  "setnum4": "32/43",
+  "set5": "DMC-42 CoroCoro Dream Pack 3: Eternal Gear",
+  "setnum5": "79/90",
+  "set6": "CoroCoro Special Deck",
+  "setnum6": "11/14",
+  "set7": "Team Kirifuda Super King Deck 40 Card!!",
+  "setnum7": "4/11",
+  "set8": "DMBD-16 20th Chronicle Deck: Battle Now!! Bolshack Duel",
+  "setnum8": "敵9/敵10"
+ },
+ "wiki": "{{Cardtable\n| image = Rikabu, the Dismantler.jpg\n| civilization = Fire\n| type = Creature\n| jpname = {{Ruby|解|かい}}{{Ruby|体|たい}}{{Ruby|屋|や}}ピーカプ\n| phonetic = Kaitaiya Pīkapu\n| cost = 3\n| race = Machine Eater\n| power = 1000\n| engtext = {{Speed Attacker}}\n| jptext = {{Speed Attacker|jp}}\n| flavor = \"I'll have that ripped apart in no time!\" ([[DM-05]])\n| flavor2 = 「あっとゆう間に、バーラバラのボッコボコ」 \"In the blink of an eye, completely smashed to pieces.\" ─'''Rikabu, the Dismantler''' ([[DM-05]], [[DMC-23]], [[DMC-42]])\n| flavor3 = 通り過ぎた後には鉄くずすら残らない。After passing through, not even scraps of iron remain. ([[DM-18]])\n| flavor4 = エース!! ピーカプで1コンボタマ!　-タマゾー <br> 超速攻で決めてやる!!　-エース <br> \"Ace!! One-combo-tama with Rikabu!\" - Tamazo <br> \" Let's decide it with an ultra-fast attack!!\" -Ace ([[SpDeck3]])\n| flavor5 = 出たばかりのクリーチャーは「召喚酔い」で攻撃できない。だが「スピードアタッカー」を持っているクリーチャーなら、出してすぐに攻撃させられるぞ! \"A creature that has just come out cannot attack due to 'summoning sickness'. However, if a creature has 'speed attacker', you can have it attack right after it's summoned!\" ([[SpDeck7]])\n| flavor6 = 三体神を撃破し、いままで全てを奪ってきたガルド、そしてザキラへの最後の一撃を決めるその刹那。勝舞は気が付く。「大好きな決闘で、人の命は奪えない。」ザキラへとどめをささず、そして父を殺した白凰を受け入れた勝舞。勝舞の長かった闘いがついに終わりを迎えたのだ。\"Having defeated the [[Heavy Death Metal|Three Body God]] and delivering the final blow to [[GARDE]], who had taken everything until now, [[Shobu]] realizes in that moment: 'In my beloved duel, I can't take a life.' Instead of finishing off [[Zakira]], Shobu accepts [[Hakuoh]], who killed his [[Shori|father]]. Shobu's long battle has finally come to an end.\" —History of the battles between Shobu and GARDE, Part 9 ([[DMBD-16]])\n| mana = 1\n| artist = Syuichi Obata \n| artist2 = Daisuke Izuka \n| artist3 = 井上桃太\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = 43/55\n| R1 = Common\n| set2 = DM-05 Return of the Survivor\n| setnum2 = 49/55\n| R2 = Common\n| set3 = DM-18 Best Challenger\n| setnum3 = 123/140\n| R3 = Common\n| set4 = DMC-23 Speed Burn Half Deck\n| setnum4 = 32/43\n| R4 = Common\n| set5 = DMC-42 CoroCoro Dream Pack 3: Eternal Gear\n| setnum5 = 79/90\n| R5 = Common\n| set6 = CoroCoro Special Deck\n| setnum6 = 11/14\n| R6 = Common\n| set7 = Team Kirifuda Super King Deck 40 Card!!\n| setnum7 = 4/11\n| R7 = Common\n| set8 = DMBD-16 20th Chronicle Deck: Battle Now!! Bolshack Duel\n| setnum8 = 敵9/敵10\n| R8 = Common\n}}\n{{Rikabu}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Fire]]\n[[Category:Machine Eater]]\n[[Category:Speed Attacker]]\n[[Category:1000 Power Creatures]]"
+}

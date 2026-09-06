@@ -1,0 +1,24 @@
+{
+ "card_id": "dm_06_007",
+ "page": "Invincible Cataclysm",
+ "type": "Spell",
+ "civilization": "Fire",
+ "race": "",
+ "cost": "13",
+ "power": "",
+ "engtext": "■ Choose up to 3 of your [[opponent]]'s [[shield]]s and put them into his [[graveyard]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "7/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "8/110",
+  "set3": "DMC-42 CoroCoro Dream Pack 3: Eternal Gear",
+  "setnum3": "14/90",
+  "set4": "DMC-66 Duel Masters: Super Best",
+  "setnum4": "33/36",
+  "set5": "DMEX-03 Peri!!! Specialness Overloaded Mystery Pack",
+  "setnum5": "38/69"
+ },
+ "wiki": "{{Cardtable\n| image = Invincible Cataclysm.jpg\n| civilization = Fire\n| type = Spell\n| jpname = インビンシブル・フォートレス\n| phonetic = Inbinshiburu Fōtoresu ''(Invincible Fortress)''\n| cost = 13\n| engtext = ■ Choose up to 3 of your [[opponent]]'s [[shield]]s and put them into his [[graveyard]].\n| jptext = ■ 相手のシールドを 3 枚まで選び、持ち主の墓地に置く。\n| flavor = \"The brutal forces of [[Light]] leveled the capital of the [[Fire]] realm. But deep in the mountains, the [[Fire]] doomsday weapon waits to take revenge.\" ([[DM-06]])\n| flavor2 = 意志持たぬ光の軍隊により、炎の都は瓦礫と化した。だが、山中深くに隠された最終兵器から報復が始まろうとしていた。The army of light, without will, turned the City of Flames into rubble. However, from deep within the mountains, the final weapon hidden there was about to begin its revenge. ([[DM-06]], [[DMC-42]], [[DMC-66]])\n| flavor3 = ラッキー・ダーツからめくれたら、ドーン! バーン! ゴーン! とシールドを3枚焼き尽くす! 相手はアンラッキーだったな! \"If you flip from [[Cosmic Darts|Lucky Darts]], it's Boom! Bang! Gone! burning through three shields! Looks like your opponent was unlucky!\" ([[DMEX-03]])\n| mana = 1\n| artist = Shishizaru\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 7/110\n| R1 = Very Rare\n| set2 = DM-06 Invincible Soul\n| setnum2 = 8/110\n| R2 = Very Rare\n| set3 = DMC-42 CoroCoro Dream Pack 3: Eternal Gear\n| setnum3 = 14/90\n| R3 = Very Rare\n| set4 = DMC-66 Duel Masters: Super Best\n| setnum4 = 33/36\n| R4 = Very Rare\n| set5 = DMEX-03 Peri!!! Specialness Overloaded Mystery Pack\n| setnum5 = 38/69\n| R5 = Very Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Shield Burn]]"
+}

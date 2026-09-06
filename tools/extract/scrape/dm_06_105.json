@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_06_105",
+ "page": "Mighty Bandit, Ace of Thieves",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Beast Folk",
+ "cost": "3",
+ "power": "2000",
+ "engtext": "{{Tap Ability|One of your [[creature]]s in the [[battle zone]] gets +5000 [[power]] until the [[End Step|end of the turn]].}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "105/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "106/110",
+  "set3": "DMC-13 CoroCoro New Generation Pack",
+  "setnum3": "35/37"
+ },
+ "wiki": "{{Cardtable\n| image = Mighty Bandit, Ace of Thieves.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|盗賊の盾|マイティ・バンディッド}} ''(Shield of Thieves)''\n| phonetic = Maiti Bandiddo\n| kana = マイティ・バンディッド ''(Mighty Bandit)''\n| cost = 3\n| race = Beast Folk\n| power = 2000\n| engtext = {{Tap Ability|One of your [[creature]]s in the [[battle zone]] gets +5000 [[power]] until the [[End Step|end of the turn]].}}\n| jptext = ■ このクリーチャーで攻撃する代わりに、タップして次の{{Tap}}能力を使ってもよい。\n:{{Tap}} バトルゾーンにある自分のクリーチャーを1体選ぶ。このターンが終わるまで、そのクリーチャーのパワーは+5000される。\n| flavor = \"Get real. I've never buckled a swash in my life.\" ([[DM-06]])\n| mana = 1\n| artist = Jason\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 105/110\n| R1 = Common\n| set2 = DM-06 Invincible Soul\n| setnum2 = 106/110\n| R2 = Common\n| set3 = DMC-13 CoroCoro New Generation Pack\n| setnum3 = 35/37\n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]"
+}

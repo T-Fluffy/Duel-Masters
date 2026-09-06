@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_01_057",
+ "page": "Gigargon",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Chimera",
+ "cost": "8",
+ "power": "3000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], return up to 2 [[creature]]s from your [[graveyard]] to your [[hand]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "57/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "6/110",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "7/140",
+  "set4": "DMC-02 Kokujo's Darkness Deck",
+  "setnum4": "1/43"
+ },
+ "wiki": "{{Cardtable\n| image = Gigargon.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = ギガルゴン\n| phonetic = Gigarugon\n| cost = 8\n| race = Chimera\n| power = 3000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], return up to 2 [[creature]]s from your [[graveyard]] to your [[hand]].\n| jptext = ■ このクリーチャーをバトルゾーンに出した時、クリーチャーを2体まで、自分の墓地から手札に戻す。\n| flavor = 闇の領域では、死後の安息すら許されない。There is no rest in the Dark Realm, even after death. ([[DM-01]], [[DM-18]])\n| mana = 1\n| artist = Tsutomu Kawade\n| set1 = DM-01 Base Set\n| setnum1 = 57/110\n| R1 = Very Rare\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 6/110\n| R2 = Very Rare\n| set3 = DM-18 Best Challenger\n| setnum3 = 7/140\n| R3 = Very Rare\n| set4 = DMC-02 Kokujo's Darkness Deck\n| setnum4 = 1/43\n| R4 = Very Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Creature Recovery]]\n[[Category:Come Into Play Trigger]]"
+}

@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_07_013",
+ "page": "Rodi Gale, Night Guardian",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Guardian",
+ "cost": "4",
+ "power": "3500",
+ "engtext": "{{Stealth|Darkness}}",
+ "templates": [
+  "Stealth|Darkness"
+ ],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "13/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "36/55",
+  "set3": "DMC-13 CoroCoro New Generation Pack",
+  "setnum3": "16/37"
+ },
+ "wiki": "{{Cardtable\n| image = Rodi Gale, Night Guardian.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|白|びゃく}}{{Ruby|夜|や}}の{{Ruby|守|しゅ}}{{Ruby|護|ご}}{{Ruby|者|しゃ}}ロディ・ゲール\n| phonetic = Byakuya no Shugosha Rodi Geeru\n| cost = 4\n| race = Guardian\n| power = 3500\n| engtext = {{Stealth|Darkness}}\n| jptext = ■ 闇ステルス （相手のマナゾーンに闇のカードが1枚でもあれば、このクリーチャーはブロックされない）　\n| flavor = The wounds of war run deep... and are full of pus. ([[DM-07]])\n| flavor2 = 光の国に深く刻まれた戦いの傷跡。さらなる軍勢が来襲したその時、砕けた使徒の魂が、倒れた聖騎士の精神が、闇の力を封じる盾となる。The battle scars deeply etched in the land of light. When another army strikes, the shattered soul of the viziers and the spirit of the fallen holy knights will become the shield that seals the power of darkness. ([[DM-07]], [[DMC-13]])\n| mana = 1\n| artist = Shishizaru\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 13/55\n| R1 = Common\n| set2 = DM-07 Invincible Charge\n| setnum2 = 36/55\n| R2 = Common\n| set3 = DMC-13 CoroCoro New Generation Pack\n| setnum3 = 16/37\n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]"
+}

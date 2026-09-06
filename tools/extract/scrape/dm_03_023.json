@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_03_023",
+ "page": "Baraga, Blade of Gloom",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Dark Lord",
+ "cost": "4",
+ "power": "4000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], choose one of your [[shield]]s and return it to your [[hand]]. You can't use the \"[[shield trigger]]\" [[ability]] of that [[shield]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-03 Rampage of the Super Warriors",
+  "setnum1": "23/55",
+  "set2": "DM-03 Master of Destruction  ",
+  "setnum2": "28/55",
+  "set3": "DMC-13 CoroCoro New Generation Pack ",
+  "setnum3": "10/37"
+ },
+ "wiki": "{{Cardtable\n| image= Baraga, Blade of Gloom.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|邪|じゃ}}{{Ruby|剣|けん}}バラガ\n| phonetic = Jaken Baraga\n| race = Dark Lord\n| cost = 4\n| power = 4000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], choose one of your [[shield]]s and return it to your [[hand]]. You can't use the \"[[shield trigger]]\" [[ability]] of that [[shield]].\n| jptext = ■ このクリーチャーがバトルゾーンに出たとき、自分のシールドが1枚でもあれば、その中から1枚を裏向きのまま選び、自分の手札に加える。ただし、その「S・トリガー」は使えない。\n| flavor = \"War isn't a game. Sure, one side wins, the other side loses, and it's a lot of fun, but... well... hey, maybe it is a game.\" ([[DM-03]])\n| flavor2 = 我が支配に順ぜよ。さもなくば、死だ。 \"You must submit to my domination. If you don't, you die.\" ([[DM-03]], [[DMC-13]])\n| mana = 1\n| artist = Jason\n| set1 = DM-03 Rampage of the Super Warriors\n| setnum1 = 23/55\n| R1 = Uncommon\n| set2 = DM-03 Master of Destruction  \n| setnum2 = 28/55\n| R2 = Uncommon\n| set3 = DMC-13 CoroCoro New Generation Pack \n| setnum3 = 10/37\n| R3 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Dark Lord]]\n[[Category:4000 Power Creatures]]\n[[Category:Shield Recovery]]\n[[Category:Come Into Play Trigger]]"
+}

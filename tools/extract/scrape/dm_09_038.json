@@ -1,0 +1,28 @@
+{
+ "card_id": "dm_09_038",
+ "page": "Fists of Forever",
+ "type": "Spell",
+ "civilization": "Fire",
+ "race": "",
+ "cost": "1",
+ "power": "",
+ "engtext": "■ Choose one of your [[creature]]s in the [[battle zone]]. Whenever that [[creature]] wins a [[battle]] this [[turn]], [[untap]] it.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "38/55",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "32/55",
+  "set3": "DMC-14 Crimson Armorloids Deck",
+  "setnum3": "34/78",
+  "set4": "DMC-18 Shobu's Holy Dragon Deck",
+  "setnum4": "42/102",
+  "set5": "DMC-27 CoroCoro Dream Pack",
+  "setnum5": "32/55",
+  "set6": "DMC-30 Tyranno Drake Crusher",
+  "setnum6": "14/21",
+  "set7": "DMC-42 CoroCoro Dream Pack 3: Eternal Gear",
+  "setnum7": "51/90"
+ },
+ "wiki": "{{Cardtable\n| image = Fists of Forever.jpg\n| civilization = Fire\n| type = Spell\n| jpname = {{Ruby|無|む}}{{Ruby|限|げん}}{{Ruby|掌|しょう}} ''(Infinite Palms)''\n| phonetic = Mugen Shou\n| cost = 1\n| engtext = ■ Choose one of your [[creature]]s in the [[battle zone]]. Whenever that [[creature]] wins a [[battle]] this [[turn]], [[untap]] it.\n| jptext = ■ バトルゾーンにある自分のクリーチャーを1体選ぶ。このターン、そのクリーチャーがバトルに勝った時、アンタップする。\n| flavor = \"The forces of [[Darkness]] conquered the [[Fiona Woods]] but never tamed it. Its twisted horrors of nature cost [[Ballom, Master of Death|Ballom]] his life. Let me convince some friends to do a little gardening.\" -[[Chaotic Skyterror]] ([[DM-09]])\n| flavor2 = この拳、エンドレス! \"This fist, endless!\" ([[DM-09]], [[DMC-14]], [[DMC-18]], [[DMC-27]], [[DMC-30]], [[DMC-42]])\n| mana = 1\n| artist = Taro Yamazaki\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = 38/55\n| R1 = Uncommon\n| set2 = DM-09 Invincible Blood\n| setnum2 = 32/55\n| R2 = Uncommon\n| set3 = DMC-14 Crimson Armorloids Deck\n| setnum3 = 34/78\n| R3 = Uncommon\n| set4 = DMC-18 Shobu's Holy Dragon Deck\n| setnum4 = 42/102\n| R4 = Uncommon\n| set5 = DMC-27 CoroCoro Dream Pack\n| setnum5 = 32/55\n| R5 = Uncommon\n| set6 = DMC-30 Tyranno Drake Crusher\n| setnum6 = 14/21\n| R6 = Uncommon\n| set7 = DMC-42 CoroCoro Dream Pack 3: Eternal Gear\n| setnum7 = 51/90\n| R7 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Spell]]\n[[Category:Fire]]\n[[Category:Creature Untap]]"
+}

@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_04_005",
+ "page": "Supporting Tulip",
+ "type": "Creature",
+ "civilization": "Nature ",
+ "race": "Tree Folk",
+ "cost": "5",
+ "power": "4000",
+ "engtext": "■ Each [[Angel Command]] in the [[battle zone]] gets \"[[power attacker]] +4000.\" ''(While [[attack]]ing, a [[creature]] that has \"[[power attacker]] +4000\" gets +4000 [[power]].)''",
+ "templates": [],
+ "sets": {
+  "set1": "DM-04 Shadowclash of Blinding Night ",
+  "setnum1": "5/55",
+  "set2": "DM-04 Challenge of Black Shadow ",
+  "setnum2": "5/55"
+ },
+ "wiki": "{{Cardtable\n| image = Supporting Tulip.jpg\n| civilization = Nature \n| type = Creature\n| jpname = {{Ruby|応|おう}}{{Ruby|援|えん}}チューリップ\n| phonetic = Ōen Chūrippu\n| cost = 5\n| race = Tree Folk\n| power = 4000\n| engtext = ■ Each [[Angel Command]] in the [[battle zone]] gets \"[[power attacker]] +4000.\" ''(While [[attack]]ing, a [[creature]] that has \"[[power attacker]] +4000\" gets +4000 [[power]].)''\n| jptext = ■ このクリーチャーがバトルゾーンにある間、バトルゾーンにあるすべてのエンジェル・コマンドは「パワーアタッカー+4000」を得る。 （攻撃中、これらのクリーチャーのパワーは+4000される） 　\n| flavor = They only bloom in outer space. ([[DM-04]])\n| flavor2 = 「無事に戻って下さいね。」 \"Please come back safely.\" -Flower symbolism of '''Supporting Tulip''' ([[DM-04]])\n| mana = 1\n| artist = Atsushi Kawasaki \n| set1 = DM-04 Shadowclash of Blinding Night \n| setnum1 = 5/55\n| R1 = Very Rare\n| set2 = DM-04 Challenge of Black Shadow \n| setnum2 = 5/55\n| R2 = Very Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Power Attacker +4000]]\n[[Category:4000 Power Creatures]]"
+}

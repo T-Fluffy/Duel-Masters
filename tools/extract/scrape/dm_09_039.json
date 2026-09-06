@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_09_039",
+ "page": "Gigio's Hammer",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Xenoparts",
+ "cost": "3",
+ "power": "2000",
+ "engtext": "{{Tap Ability|[[Choose a race]]. Each [[creature]] of that [[race]] [[attack]]s this [[turn]] if able and gets \"[[power attacker]] +4000\" until the [[End Step|end of the turn]]. ''(While [[attack]]ing, a [[creature]] that has \"[[power attacker]] +4000\" gets +4000 [[power]].)''}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "39/55",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "31/55",
+  "set3": "DMC-14 Crimson Armorloids Deck ",
+  "setnum3": "28/78"
+ },
+ "wiki": "{{Cardtable\n| image = Gigio&#39;s Hammer.jpg\n| civilization = Fire\n| type = Creature\n| jpname = ジージョのトンカチ \n| phonetic = Jījo no Tonkachi\n| race = Xenoparts\n| cost = 3\n| power = 2000\n| engtext = {{Tap Ability|[[Choose a race]]. Each [[creature]] of that [[race]] [[attack]]s this [[turn]] if able and gets \"[[power attacker]] +4000\" until the [[End Step|end of the turn]]. ''(While [[attack]]ing, a [[creature]] that has \"[[power attacker]] +4000\" gets +4000 [[power]].)''}}\n| jptext = ■ このクリーチャーで攻撃するかわりに、タップして次の{{Tap}}能力を使ってもよい。\n:{{Tap}} 種族を1つ選ぶ。このターン、その種族のクリーチャーは、可能であれば攻撃し、「パワーアタッカー+4000」を得る。\n| flavor = 地中での深き眠りが、ゼノパーツに単なる道具以上の効果を授けた。The deep slumber beneath the earth granted the Xenoparts effects beyond that of mere tools. ([[DM-09]], [[DMC-14]])\n| mana = 1\n| artist = Haccan\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = 39/55\n| R1 = Uncommon\n| set2 = DM-09 Invincible Blood\n| setnum2 = 31/55\n| R2 = Uncommon\n| set3 = DMC-14 Crimson Armorloids Deck \n| setnum3 = 28/78\n| R3 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Fire]]\n[[Category:Xenoparts]]\n[[Category:Tap Ability]]\n[[Category:2000 Power Creatures]]"
+}

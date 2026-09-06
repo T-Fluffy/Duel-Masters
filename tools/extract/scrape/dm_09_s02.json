@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_09_s02",
+ "page": "Aqua Master",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Liquid People",
+ "cost": "6",
+ "power": "4000",
+ "engtext": "■ Whenever this [[creature]] is [[attack]]ing your [[opponent]] and isn't [[block]]ed, choose one of your [[opponent]]'s [[shield]]s and [[play|turn it]] [[Face Up|face up]]. ''(It stays [[Face Up|face up]] while it's in the [[shield zone]].)''",
+ "templates": [],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "S2/S5",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "S2/S5",
+  "set3": "DMX-12 Black Box Pack",
+  "setnum3": "b35/???"
+ },
+ "wiki": "{{Cardtable\n| image = Aqua Master.jpg\n| civilization = Water\n| type = Creature\n| jpname = アクア・マスター\n| phonetic = Akua Masutā\n| race = Liquid People\n| cost = 6\n| power = 4000\n| engtext = ■ Whenever this [[creature]] is [[attack]]ing your [[opponent]] and isn't [[block]]ed, choose one of your [[opponent]]'s [[shield]]s and [[play|turn it]] [[Face Up|face up]]. ''(It stays [[Face Up|face up]] while it's in the [[shield zone]].)''\n| jptext = ■ このクリーチャーが相手プレイヤーを攻撃してブロックされなかったとき、相手のシールドを1枚選び、表向きにしてプレイする。\n| flavor = \"You can't hide information from the [[Cyber Lord]]s. Haven't you figured it out yet? Your brain's been wired into the [[Water Civilization|Ultracomputer]]!\" ([[DM-09]])\n| flavor2 = 「己の弱さが敗北させるのだよ!」 \"You will be defeated by your own weakness!\" ─'''Aqua Master''' ([[DM-09]])\n| flavor3 = 相手が強かったのではない。己が弱かっただけだ! \"It wasn't that the [[opponent]] was strong. I was just that I was weak.\" ─'''Aqua Master''' ([[DMX-12]])\n| mana = 1\n| artist = Toshiaki Takayama\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = S2/S5\n| R1 = Super Rare\n| set2 = DM-09 Invincible Blood\n| setnum2 = S2/S5\n| R2 = Super Rare\n| set3 = DMX-12 Black Box Pack\n| setnum3 = b35/???\n| R3 = Super Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Liquid People]]\n[[Category:4000 Power Creatures]]\n[[Category:Shield Peek]]\n[[Category:Attack Trigger]]"
+}

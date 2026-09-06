@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_06_100",
+ "page": "Forbidding Totem",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Mystery Totem",
+ "cost": "5",
+ "power": "4000",
+ "engtext": "■ Your [[opponent]]'s [[attack]]ing [[creature]]s [[attack]] [[Mystery Totem]]s if able.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "100/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "38/110"
+ },
+ "wiki": "{{Cardtable\n| image = Forbidding Totem.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|戦いの化身|バトル・トーテム}} ''(Avatar of Battle)''\n| phonetic = Batoru Tōtemu\n| kana = バトル・トーテム ''(Battle Totem)''\n| cost = 5\n| race = Mystery Totem\n| power = 4000\n| engtext = ■ Your [[opponent]]'s [[attack]]ing [[creature]]s [[attack]] [[Mystery Totem]]s if able.\n| jptext = ■ このクリーチャーがバトルゾーンにある間、相手の攻撃クリーチャーは、可能であればミステリー・トーテムを攻撃する。\n| flavor = The personality of an avatar is a reflection of the concept he represents. For example, the avatar of war is straightforward and difficult to control. ([[DM-06]])\n| flavor2 = トーテムの気質は本来の姿から大きな影響を受ける。たとえば、戦いの化身は一本気で直線的だ。A totem's temperament is heavily influenced by its true form. For example, the embodiment of battle is straightforward and single-minded. ([[DM-06]])\n| mana = 1\n| artist = Naoki Saito\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 100/110\n| R1 = Rare\n| set2 = DM-06 Invincible Soul\n| setnum2 = 38/110\n| R2 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Must Attack This Creature If Able]]"
+}

@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_09_007",
+ "page": "Cosmic Wing",
+ "type": "Spell",
+ "civilization": "Light",
+ "race": "",
+ "cost": "3",
+ "power": "",
+ "engtext": "■ Choose one of your [[creature]]s in the [[battle zone]]. It can't be [[block]]ed this [[turn]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "7/55",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "39/55"
+ },
+ "wiki": "{{Cardtable\n| image = Cosmic Wing.jpg\n| civilization = Light\n| type = Spell\n| jpname = コズミック・ウイング\n| phonetic = Kozumikku Uingu\n| cost = 3\n| engtext = ■ Choose one of your [[creature]]s in the [[battle zone]]. It can't be [[block]]ed this [[turn]].\n| jptext = ■ バトルゾーンにある自分のクリーチャーを1体選ぶ。このターン、そのクリーチャーはブロックされない。\n| flavor = \"I'm flying. I'm flying! Whoo-hooo! I've never felt so free! I'm a breeze in the sky. I'm a dancer in the clouds. This is so amazing! Uh, how do I get down?\" ([[DM-09]])\n| flavor2 = 今だ! \"Right now!\" ([[DM-09]]) \n| mana = 1\n| artist = Syuichi Obata\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = 7/55\n| R1 = Common\n| set2 = DM-09 Invincible Blood\n| setnum2 = 39/55\n| R2 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Gives \"Unblockable\"]]"
+}

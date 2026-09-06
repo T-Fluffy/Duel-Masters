@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_05_011",
+ "page": "La Guile, Seeker of Skyfire",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Mecha Thunder",
+ "cost": "6",
+ "power": "7500",
+ "engtext": "{{Double Breaker}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "11/55",
+  "set2": "DM-05 Return of the Survivor",
+  "setnum2": "21/55",
+  "set3": "DMC-05 Lightning Thunder Deck",
+  "setnum3": "18/82"
+ },
+ "wiki": "{{Cardtable\n| image = La Guile, Seeker of Skyfire.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|雷|らい}}{{Ruby|撃|げき}}の{{Ruby|求|ぐ}}{{Ruby|道|どう}}{{Ruby|者|しゃ}}ラ・ガイル\n| phonetic = Raigeki no Kyūdōsha Ra Gairu\n| cost = 6\n| race = Mecha Thunder\n| power = 7500\n| engtext = {{Double Breaker}}\n| jptext = {{Double Breaker|jp}}\n| flavor = Today's weather report: partly cloudy, with an 80 percent chance of being blasted from space. ([[DM-05]])\n| flavor2 = 空に漂う藍色の雲は激しき動乱の兆し。The indigo clouds drifting in the sky herald a storm of intense turmoil. ([[DM-05]], [[DMC-05]])\n| mana = 1\n| artist = Akira Hamada\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = 11/55\n| R1 = Uncommon\n| set2 = DM-05 Return of the Survivor\n| setnum2 = 21/55\n| R2 = Uncommon\n| set3 = DMC-05 Lightning Thunder Deck\n| setnum3 = 18/82\n| R3 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]"
+}

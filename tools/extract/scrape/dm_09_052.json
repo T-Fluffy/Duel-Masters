@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_09_052",
+ "page": "Terradragon Anrist Vhal",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Earth Dragon",
+ "cost": "6",
+ "power": "0000+",
+ "engtext": "■ This [[creature]] gets +2000 [[power]] for each of your other [[nature]] [[creature]]s in the [[battle zone]]. ''(A [[creature]] that has [[power]] 0 or less is [[destroy]]ed.)''\n\n■ While this [[creature]] has [[power]] 6000 or more, it has \"[[double breaker]] ''(This [[creature]] [[break]]s 2 [[shield]]s)''.\"",
+ "templates": [],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "52/55",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "19/55",
+  "set3": "Promotional",
+  "setnum3": "L18/Y2"
+ },
+ "wiki": "{{Cardtable\n| image = Terradragon Anrist Vhal.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|緑|りょく}}{{Ruby|神|しん}}{{Ruby|龍|りゅう}}アンリストヴァル\n| phonetic = Ryokushinryuu Anrisutovar\n| cost = 6\n| race = Earth Dragon\n| power = 0000+\n| engtext = ■ This [[creature]] gets +2000 [[power]] for each of your other [[nature]] [[creature]]s in the [[battle zone]]. ''(A [[creature]] that has [[power]] 0 or less is [[destroy]]ed.)''\n\n■ While this [[creature]] has [[power]] 6000 or more, it has \"[[double breaker]] ''(This [[creature]] [[break]]s 2 [[shield]]s)''.\"\n| jptext = ■ このクリーチャーのパワーは、バトルゾーンにある自分の他の自然のクリーチャー1体につき+2000される。\n\n■ このクリーチャーは、パワーが6000以上のとき、「W・ブレイカー」を得る。\n| flavor = The ever-increasing cries of the world only fuel the [[Dragon]]s' anger. ([[DM-09]])\n| flavor2 = 世界に満ちた怒号の渦が、龍の怒りを増加する! The maelstrom of rage filling the world intensifies the dragon's fury! ([[DM-09]])\n| mana = 1\n| artist = Eiji Kaneda\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = 52/55\n| R1 = Rare\n| set2 = DM-09 Invincible Blood\n| setnum2 = 19/55\n| R2 = Rare\n| set3 = Promotional\n| setnum3 = L18/Y2\n| R3 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Nature]]\n[[Category:Earth Dragon]]\n[[Category:Conditional Double Breaker]]\n[[Category:Self Increase Power]]"
+}

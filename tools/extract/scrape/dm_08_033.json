@@ -1,0 +1,32 @@
+{
+ "card_id": "dm_08_033",
+ "page": "Necrodragon Giland",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Zombie Dragon",
+ "cost": "4",
+ "power": "6000",
+ "engtext": "{{Double Breaker}}\n\n■ When this [[creature]] [[battle]]s, [[destroy]] it after the [[battle]].",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "33/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "45/55",
+  "set3": "DMC-19 Zakira's Dragon Commander Deck",
+  "setnum3": "64/102",
+  "set4": "DMC-27 CoroCoro Dream Pack",
+  "setnum4": "44/55",
+  "set5": "DMC-55 CoroCoro Legend 7",
+  "setnum5": "77/84",
+  "set6": "DMX-10 Deck Builder Oni DX Bright Star! Leo Edition",
+  "setnum6": "50/56",
+  "set7": "DMBD-16 20th Chronicle Deck: Battle Now!! Bolshack Duel",
+  "setnum7": "敵5/敵10",
+  "set8": "Promotional",
+  "setnum8": "P30/Y5"
+ },
+ "wiki": "{{Cardtable\n| image = Necrodragon Giland.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|黒|こく}}{{Ruby|神|しん}}{{Ruby|龍|りゅう}}ギランド\n| phonetic = Kokushinryū Girando\n| cost = 4\n| race = Zombie Dragon\n| power = 6000\n| engtext = {{Double Breaker}}\n\n■ When this [[creature]] [[battle]]s, [[destroy]] it after the [[battle]].\n| jptext = {{Double Breaker|jp}}\n\n■ このクリーチャーがバトルする時、バトルの後、このクリーチャーを破壊する。\n| flavor = The rancor and regrets of thousands upon thousands united into one entity–and the cursed [[Dragon]] stirred from its slumber. ([[DM-08]])\n| flavor2 = 行き場を無くした幾千幾万の恨みと憎しみと怨念。負の思念は連なり寄り添い、竜の姿を形取る。Countless resentments, hatreds, and grudges without a place to go. These negative thoughts intertwine and gather, taking the shape of a dragon. ([[DM-08]], [[DMC-19]], [[DMC-27]])\n| flavor3 = 負の思念で作られた仮初の体も、進化するにはうってつけだった。The temporary body created from negative thoughts was perfectly suited for evolution. ([[DMC-55]])\n| flavor4 = その鱗が落ちた場所は永遠に呪われる。The place where its scales fall will be cursed for eternity. (P30/Y5)\n| flavor5 = 短命と引き替えに強大な力を得たギランドだったが、仲間達がその死をさらに強大な力としてくれた。Though Giland gained immense power at the cost of a short life, his comrades transformed that death into even greater strength. ([[DMX-10]])\n| flavor6 = 勝利とWが戦っている同じころ、エジプトではDMを見つけ出すためにTが「楽園」と称して暴虐を尽くしていた。一度は無数の戦略を持つTに敗北した勝舞。しかし、エスメラルダから渡されたデッキと戦略を引き継いで、見事Tを撃破する。そして舞台は7人のDMが集う日本へと移り変わる。\"At the same time that [[Shobu]] and [[Hakuoh|White]] are fighting, [[Thoth]] is committing atrocities in Egypt, claiming to seek out the DM under the guise of 'paradise.' Shobu, having once been defeated by Thoth, who possesses countless strategies, takes the deck and strategies passed down by [[Esmeralda]] and successfully defeats Thoth. The scene then shifts to Japan, where the seven Duel Masters gather.\" —History of the battles between Shobu and GARDE, Part 5 ([[DMBD-16]])\n| mana = 1\n| artist = Miho Midorikawa\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 33/55\n| R1 = Common\n| set2 = DM-08 Invincible Legend\n| setnum2 = 45/55\n| R2 = Common\n| set3 = DMC-19 Zakira's Dragon Commander Deck\n| setnum3 = 64/102\n| R3 = Common\n| set4 = DMC-27 CoroCoro Dream Pack\n| setnum4 = 44/55\n| R4 = Common\n| set5 = DMC-55 CoroCoro Legend 7\n| setnum5 = 77/84\n| R5 = Common\n| set6 = DMX-10 Deck Builder Oni DX Bright Star! Leo Edition\n| setnum6 = 50/56\n| R6 = Common\n| set7 = DMBD-16 20th Chronicle Deck: Battle Now!! Bolshack Duel\n| setnum7 = 敵5/敵10\n| R7 = Common\n| set8 = Promotional\n| setnum8 = P30/Y5\n| R8 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Reverse Slayer]]"
+}

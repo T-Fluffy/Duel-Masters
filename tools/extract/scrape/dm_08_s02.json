@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_08_s02",
+ "page": "Emperor Quazla",
+ "type": "Evolution Creature",
+ "civilization": "Water",
+ "race": "Cyber Lord",
+ "cost": "6",
+ "power": "5000",
+ "engtext": "{{Blocker}}\n\n■ [[Evolution]]—Put on one of your [[Cyber Lord]]s.\n\n■ Whenever your [[opponent]] uses the \"[[shield trigger]]\" [[ability]] of one of his [[shield]]s, [[draw]] up to 2 [[card]]s.",
+ "templates": [
+  "Blocker"
+ ],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "S2/S5",
+  "set2": "DM-08 Invincible Legend ",
+  "setnum2": "S2/S5"
+ },
+ "wiki": "{{Cardtable\n| image = Emperor Quazla.jpg\n| civilization = Water\n| type = Evolution Creature\n| jpname = エンペラー・アクア ''(Emperor Aqua)''\n| phonetic = Enperā Akua\n| race = Cyber Lord\n| cost = 6\n| power = 5000\n| engtext = {{Blocker}}\n\n■ [[Evolution]]—Put on one of your [[Cyber Lord]]s.\n\n■ Whenever your [[opponent]] uses the \"[[shield trigger]]\" [[ability]] of one of his [[shield]]s, [[draw]] up to 2 [[card]]s.\n| jptext = {{Blocker|jp}}\n\n■ 進化－自分のサイバーロード1体の上に置く。\n\n■ このクリーチャーがバトルゾーンにある間、相手が「S・トリガー」を使うとき、カードを2枚まで引く。\n| flavor = 超進化した頭脳が、最終兵器の設計図を完成させた!  My super-evolved brain has completed the plans for the ultimate weapon! ([[DM-08]])\n| mana = 1\n| artist = Toshiaki Takayama\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = S2/S5\n| R1 = Super Rare\n| set2 = DM-08 Invincible Legend \n| setnum2 = S2/S5\n| R2 = Super Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Card Draw]]"
+}

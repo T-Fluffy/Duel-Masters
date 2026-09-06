@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_07_053",
+ "page": "Stinger Horn, the Delver",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Horned Beast",
+ "cost": "4",
+ "power": "3000+",
+ "engtext": "{{Power Attacker|1000}}\n\n{{Stealth|Water}}",
+ "templates": [
+  "Stealth|Water"
+ ],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "53/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "52/55"
+ },
+ "wiki": "{{Cardtable\n| image = Stinger Horn, the Delver.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|撃|げき}}{{Ruby|墜|つい}}するスティンガー・ホーン\n| phonetic = Gekitsui Suru Sutingā Hōn\n| cost = 4\n| race = Horned Beast\n| power = 3000+\n| engtext = {{Power Attacker|1000}}\n\n{{Stealth|Water}}\n| jptext = {{Power Attacker|1000|jp}}\n\n■ 水ステルス（相手のマナゾーンに水のカードが1枚でもあれば、このクリーチャーはブロックされない）　\n| flavor = \"See? The swimming lessons worked.\" -[[Fear Fang]] ([[DM-07]])\n| flavor2 = 森の怒りが盾となる。The anger of the forest becomes a shield. ([[DM-07]]) \n| mana = 1\n| artist = Asai Genji\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 53/55\n| R1 = Common\n| set2 = DM-07 Invincible Charge\n| setnum2 = 52/55\n| R2 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:3000 Power Creatures]]"
+}

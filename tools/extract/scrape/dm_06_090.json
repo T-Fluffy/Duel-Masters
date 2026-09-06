@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_06_090",
+ "page": "Torchclencher",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Dragonoid",
+ "cost": "3",
+ "power": "2000+",
+ "engtext": "■ While you have at least one other [[fire]] [[creature]] in the [[battle zone]], this [[creature]] has \"[[Power attacker]] +3000 ''(While [[attack]]ing, this [[creature]] gets +3000 [[power]])''.\"",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "90/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "99/110",
+  "set3": "DMC-06 Dragon Strikes Deck",
+  "setnum3": "67/82",
+  "set4": "DMC-11 Shobu's Dragon Legend Power-Up Pack",
+  "setnum4": "39/44"
+ },
+ "wiki": "{{Cardtable\n| image = Torchclencher.jpg\n| civilization = Fire\n| type = Creature\n| jpname = {{Ruby|炎|えん}}{{Ruby|獣|じゅう}}{{Ruby|兵|へい}}マグナム・ブルース ''(Flame Beast Soldier Magnum Blues)\n| phonetic = Enjūhei Magunamu Burūsu\n| race = Dragonoid\n| cost = 3\n| power = 2000+\n| engtext = ■ While you have at least one other [[fire]] [[creature]] in the [[battle zone]], this [[creature]] has \"[[Power attacker]] +3000 ''(While [[attack]]ing, this [[creature]] gets +3000 [[power]])''.\"\n| jptext = ■ バトルゾーンに自分の火のクリーチャーが他に1体でもあれば、このクリーチャーは「パワーアタッカー+3000」を得る。（攻撃中、そのクリーチャーのパワーは+3000される）　\n| flavor = \"When the [[Angel Command|Elemental]]s attacked, no one in the [[Fire]] realm joined the army. They were all already in it.\" ([[DM-06]])\n| flavor2 = 復讐の銃声は、友に捧げるレクイエム。The gunshot of revenge is a requiem dedicated to a friend. ([[DM-06]], [[DMC-06]], [[DMC-11]])\n| mana = 1\n| artist = Kou1\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 90/110\n| R1 = Common\n| set2 = DM-06 Invincible Soul\n| setnum2 = 99/110\n| R2 = Common\n| set3 = DMC-06 Dragon Strikes Deck\n| setnum3 = 67/82\n| R3 = Common\n| set4 = DMC-11 Shobu's Dragon Legend Power-Up Pack\n| setnum4 = 39/44\n| R4 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Power Attacker +3000]]\n[[Category:2000 Power Creatures]]"
+}

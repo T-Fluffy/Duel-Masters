@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_08_029",
+ "page": "Gachack, Mechanical Doll",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Death Puppet",
+ "cost": "3",
+ "power": "2000",
+ "engtext": "{{Turbo Rush|Whenever this [[creature]] is [[attack]]ing your [[opponent]] and isn't [[block]]ed, you may [[destroy]] a [[creature]].}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "29/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "28/55",
+  "set3": "DMC-17 Dark Warriors Deck",
+  "setnum3": "25/78"
+ },
+ "wiki": "{{Cardtable\n| image = Gachack, Mechanical Doll.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|機|き}}{{Ruby|怪|かい}}{{Ruby|人|にん}}{{Ruby|形|ぎょう}}ガチャック\n| phonetic = Kikai Ningyō Gachakku\n| race = Death Puppet\n| cost = 3\n| power = 2000\n| engtext = {{Turbo Rush|Whenever this [[creature]] is [[attack]]ing your [[opponent]] and isn't [[block]]ed, you may [[destroy]] a [[creature]].}}\n| jptext = ■ ターボラッシュ （自分の他のクリーチャーがシールドをブレイクしたあと、そのターンが終わるまで、このクリーチャーは次の{{Icon|TR}}能力を得る）\n:{{Icon|TR}}このクリーチャーが相手プレイヤーを攻撃してブロックされなかった時、クリーチャーを1体破壊してもよい。\n| flavor = \n| mana = 1\n| artist = Dai\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 29/55\n| R1 = Uncommon\n| set2 = DM-08 Invincible Legend\n| setnum2 = 28/55\n| R2 = Uncommon\n| set3 = DMC-17 Dark Warriors Deck\n| setnum3 = 25/78\n| R3 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Fixed Removal]]\n[[Category:Self Removal]]\n[[Category:Sabotage Ability]]"
+}

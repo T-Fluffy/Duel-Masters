@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_06_061",
+ "page": "Intense Evil",
+ "type": "Spell",
+ "civilization": "Darkness",
+ "race": "",
+ "cost": "3",
+ "power": "",
+ "engtext": "{{Shield Trigger|spell}}\n\n■ [[Destroy]] any [[number]] of your [[creature]]s. Then [[draw]] that many [[card]]s.",
+ "templates": [
+  "Shield Trigger|spell"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "61/110"
+ },
+ "wiki": "{{TCGCardtable\n| image = Intense Evil.jpg\n| civilization = Darkness\n| type = Spell\n| cost = 3\n| engtext = {{Shield Trigger|spell}}\n\n■ [[Destroy]] any [[number]] of your [[creature]]s. Then [[draw]] that many [[card]]s.\n| flavor = Every soul has a price-and today they're on sale! ([[DM-06]])\n| artist = Dreamwave\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 61/110\n| R1 = Rare\n}}\n[[Category:TCG]]\n[[Category:Spell]]\n[[Category:Darkness]]\n[[Category:Shield Trigger]]\n[[Category:Self Removal]]\n[[Category:Card Draw]]"
+}

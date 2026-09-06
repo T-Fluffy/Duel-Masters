@@ -1,0 +1,28 @@
+{
+ "card_id": "dm_03_033",
+ "page": "Wailing Shadow Belbetphlo",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Ghost",
+ "cost": "3",
+ "power": "1000",
+ "engtext": "{{Slayer|old}}",
+ "templates": [
+  "Slayer|old"
+ ],
+ "sets": {
+  "set1": "DM-03 Rampage of the Super Warriors",
+  "setnum1": "33/55",
+  "set2": "DM-03 Master of Destruction",
+  "setnum2": "45/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "113/140",
+  "set4": "DMC-02 Kokujo's Darkness Deck",
+  "setnum4": "24/43",
+  "set5": "DMC-13 CoroCoro New Generation Pack",
+  "setnum5": "27/37",
+  "set6": "DMC-19 Zakira's Dragon Commander Deck",
+  "setnum6": "70/102"
+ },
+ "wiki": "{{Cardtable\n| image= Wailing Shadow Belbetphlo.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|嘆|なげ}}きの{{Ruby|影|かげ}}ベルベットフロー\n| phonetic = Nageki no Kage Berubettofurō\n| cost = 3\n| race = Ghost\n| power = 1000\n| engtext = {{Slayer|old}}\n| jptext = {{Slayer|jp}} \n| flavor = The faster it runs from its pain, the faster its pain clutches others. ([[DM-03]])\n| flavor2 = 彼らは痛みから逃げるように走り続ける。そして…。 They continue to run as if escaping from the pain. And then... ([[DM-03]], [[DM-18]], [[DMC-02]], [[DMC-13]], [[DMC-19]])\n| mana = 1\n| artist = Akifumi Yamamoto\n| set1 = DM-03 Rampage of the Super Warriors\n| setnum1 = 33/55\n| R1 = Common\n| set2 = DM-03 Master of Destruction\n| setnum2 = 45/55\n| R2 = Common\n| set3 = DM-18 Best Challenger\n| setnum3 = 113/140\n| R3 = Common\n| set4 = DMC-02 Kokujo's Darkness Deck\n| setnum4 = 24/43\n| R4 = Common\n| set5 = DMC-13 CoroCoro New Generation Pack\n| setnum5 = 27/37\n| R5 = Common\n| set6 = DMC-19 Zakira's Dragon Commander Deck\n| setnum6 = 70/102\n| R6 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Ghost]]\n[[Category:Slayer]]\n[[Category:1000 Power Creatures]]"
+}

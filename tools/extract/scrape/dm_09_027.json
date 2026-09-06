@@ -1,0 +1,26 @@
+{
+ "card_id": "dm_09_027",
+ "page": "Bat Doctor, Shadow of Undeath",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Ghost",
+ "cost": "3",
+ "power": "2000",
+ "engtext": "■ When this [[creature]] is [[destroy]]ed, you may return another [[creature]] from your [[graveyard]] to your [[hand]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "27/55",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "46/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "73/140",
+  "set4": "DMC-14 Crimson Armorloids Deck ",
+  "setnum4": "55/78",
+  "set5": "DMC-19 Zakira's Dragon Commander Deck",
+  "setnum5": "68/102",
+  "set6": "DMX-10 Deck Builder Oni DX Bright Star! Leo Edition",
+  "setnum6": "52/56"
+ },
+ "wiki": "{{Cardtable\n| image = Bat Doctor, Shadow of Undeath.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|暗|くら}}{{Ruby|闇|やみ}}に{{Ruby|潜|ひそ}}む{{Ruby|者|もの}}バット・ドクター\n| phonetic = Kurayami ni Hisomu Mono Batto Dokutā\n| cost = 3\n| race = Ghost\n| power = 2000\n| engtext = ■ When this [[creature]] is [[destroy]]ed, you may return another [[creature]] from your [[graveyard]] to your [[hand]].\n| jptext = ■ このクリーチャーが破壊された時、他のクリーチャーを1体、自分の墓地から手札に戻してもよい。\n| flavor = \"Great. Another failure. Maybe it's time to face the fact that my brain-surgery experiments just aren't going to-Wait! I've got an idea! Nurse, bring me ''six'' rusty spikes!\" ([[DM-09]])\n| flavor2 = 我らにとっての墓地は、彼らにとっての手術室だ。What is a graveyard to us is an operating room to them. ([[DM-09]], [[DMC-14]], [[DMC-19]])\n| flavor3 = 「俺の命をやるよ」 \"I'll give you my own life.\" ─'''Bat Doctor, Shadow of Undeath''' ([[DM-18]])\n| flavor4 = 暗闇に潜んでいる敵の正体をつかんだと思ったら、その影はまた別のものに姿を変えた。I thought that I had grasped the identity of the enemies lurking in the darkness, but then those shadows transformed into another form. ([[DMX-10]])\n| mana = 1\n| artist = Miho Midorikawa\n| artist2 = Katsuya\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = 27/55\n| R1 = Common\n| set2 = DM-09 Invincible Blood\n| setnum2 = 46/55\n| R2 = Common\n| set3 = DM-18 Best Challenger\n| setnum3 = 73/140\n| R3 = Uncommon\n| set4 = DMC-14 Crimson Armorloids Deck \n| setnum4 = 55/78\n| R4 = Common\n| set5 = DMC-19 Zakira's Dragon Commander Deck\n| setnum5 = 68/102\n| R5 = Common\n| set6 = DMX-10 Deck Builder Oni DX Bright Star! Leo Edition\n| setnum6 = 52/56\n| R6 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Creature Recovery]]\n[[Category:Put Into Graveyard]]"
+}

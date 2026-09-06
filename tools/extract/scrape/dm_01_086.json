@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_01_086",
+ "page": "Stonesaur",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Rock Beast",
+ "cost": "5",
+ "power": "4000+",
+ "engtext": "{{Power Attacker|2000}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "86/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "59/110",
+  "set3": "DMC-01 Shobu's Blaze Deck",
+  "setnum3": "17/43"
+ },
+ "wiki": "{{Cardtable\n| image = Stonesaur.jpg\n| civilization = Fire\n| type = Creature\n| jpname = ストーンザウルス\n| phonetic = Sutōnzaurusu ''(Stonesaurus)''\n| cost = 5\n| race = Rock Beast\n| power = 4000+\n| engtext = {{Power Attacker|2000}}\n| jptext = {{Power Attacker|2000|jp}}\n| flavor = 火の領域に安全な場所はない。何もない岩場が最も恐ろしい場所だから。 There is no sanctuary in the [[Fire]] Territory. Especially on the featureless, rocky plains. ([[DM-01]], [[DMC-01]])\n| mana = 1\n| artist = Miho Midorikawa\n| set1 = DM-01 Base Set\n| setnum1 = 86/110\n| R1 = Uncommon\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 59/110\n| R2 = Uncommon\n| set3 = DMC-01 Shobu's Blaze Deck\n| setnum3 = 17/43\n| R3 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Fire]]\n[[Category:Rock Beast]]\n[[Category:4000 Power Creatures]]"
+}

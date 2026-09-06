@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_02_048",
+ "page": "Fortress Shell",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Colony Beetle",
+ "cost": "9",
+ "power": "5000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], choose up to 2 [[card]]s in your [[opponent]]'s [[mana zone]] and put it into his [[graveyard]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "48/55",
+  "set2": "DM-02 Master of Evolution",
+  "setnum2": "18/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "44/140",
+  "set4": "Promotional",
+  "setnum4": "B7/7 Y1"
+ },
+ "wiki": "{{Cardtable\n| image= Fortress Shell.jpg\n| civilization = Nature\n| type = Creature\n| jpname = シェル・フォートレス\n| phonetic = Sheru Fōtoresu ''(Shell Fortress)''\n| cost = 9\n| race = Colony Beetle\n| power = 5000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], choose up to 2 [[card]]s in your [[opponent]]'s [[mana zone]] and put it into his [[graveyard]].\n| jptext = ■ このクリーチャーをバトルゾーンに出した時、相手のマナゾーンからカードを2枚まで選び、持ち主の墓地に置く。\n| flavor = \"Wow! I can't wait to disassemble this!\" 「なんて分解しがいのあるやつだ。」 -[[Nomad Hero Gigio]] ([[DM-02]])\n| flavor2 = もはやそれは生物と呼べる代物ではない、まさに生ける「要塞」だ。It can no longer be called a living organism; it is truly a living 'fortress'. ([[DM-18]])\n| mana = 1\n| artist = Masaki Hirooka\n| artist2 = D-Suzuki \n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = 48/55\n| R1 = Rare\n| set2 = DM-02 Master of Evolution\n| setnum2 = 18/55\n| R2 = Rare\n| set3 = DM-18 Best Challenger\n| setnum3 = 44/140\n| R3 = Rare\n|set4 = Promotional\n|setnum4 = B7/7 Y1\n|R4 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Mana Burn]]\n[[Category:Come Into Play Trigger]]"
+}

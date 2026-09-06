@@ -1,0 +1,28 @@
+{
+ "card_id": "dm_01_028",
+ "page": "Candy Drop",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Cyber Virus",
+ "cost": "3",
+ "power": "1000",
+ "engtext": "■ This [[creature]] can't be [[block]]ed.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "28/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "81/110",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "105/140",
+  "set4": "DMC-24 Illusion Blue Half Deck",
+  "setnum4": "25/43",
+  "set5": "DMC-42 CoroCoro Dream Pack 3: Eternal Gear",
+  "setnum5": "65/90",
+  "set6": "DMC-61 CoroCoro Dream Pack 4: Eternal Heaven ",
+  "setnum6": "68/94",
+  "set7": "DMX-21 Masters Chronicle Pack: Comic of Heroes",
+  "setnum7": "56/70"
+ },
+ "wiki": "{{Cardtable\n| image = Candy Drop.jpg\n| civilization = Water\n| type = Creature\n| jpname = キャンディ・ドロップ\n| phonetic = Kyandi Doroppu \n| race = Cyber Virus\n| cost = 3\n| power = 1000\n| engtext = ■ This [[creature]] can't be [[block]]ed.\n| jptext = ■ このクリーチャーはブロックされない。\n| flavor = No mouth. Big bite. ([[DM-01]])\n| flavor2 = 逃げるわけないじゃない。だってわたし…、真の決闘者なんですもの。\"I'm not running away. Because I… am a [[Kaijudo|true duelist]].\" ─[[Mimi Tasogare]] ([[DMX-21]])\n| mana = 1\n| artist = Gyokan\n| artist2 = Okera \n| set1 = DM-01 Base Set\n| setnum1 = 28/110\n| R1 = Common\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 81/110\n| R2 = Common\n| set3 = DM-18 Best Challenger\n| setnum3 = 105/140\n| R3 = Common\n| set4 = DMC-24 Illusion Blue Half Deck\n| setnum4 = 25/43\n| R4 = Common\n| set5 = DMC-42 CoroCoro Dream Pack 3: Eternal Gear\n| setnum5 = 65/90\n| R5 = Common\n| set6 = DMC-61 CoroCoro Dream Pack 4: Eternal Heaven \n| setnum6 = 68/94\n| R6 = Common\n| set7 = DMX-21 Masters Chronicle Pack: Comic of Heroes\n| setnum7 = 56/70\n| R7 = No Rarity\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Cyber Virus]]\n[[Category:Unblockable]]\n[[Category:1000 Power Creatures]]"
+}

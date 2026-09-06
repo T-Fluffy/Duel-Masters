@@ -1,0 +1,30 @@
+{
+ "card_id": "dm_08_026",
+ "page": "Corpse Charger",
+ "type": "Spell",
+ "civilization": "Darkness",
+ "race": "",
+ "cost": "4",
+ "power": "",
+ "engtext": "■ Put a [[creature]] from your [[graveyard]] into your [[hand]].\n\n{{Charger}}",
+ "templates": [
+  "Charger"
+ ],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "26/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "47/55",
+  "set3": "DMC-19 Zakira's Dragon Commander Deck",
+  "setnum3": "75/102",
+  "set4": "DMC-27 CoroCoro Dream Pack",
+  "setnum4": "47/55",
+  "set5": "DMC-42 CoroCoro Dream Pack 3: Eternal Gear",
+  "setnum5": "74/90",
+  "set6": "DMC-61 CoroCoro Dream Pack 4: Eternal Heaven",
+  "setnum6": "76/94",
+  "set7": "DMR-17 Burning Dogiragon!!",
+  "setnum7": "78/94"
+ },
+ "wiki": "{{Cardtable\n| image = Corpse Charger.jpg\n| civilization = Darkness\n| type = Spell\n| jpname = リバース・チャージャー\n| phonetic = Ribāsu Chājā ''(Reverse Charger)''\n| cost = 4\n| engtext = ■ Put a [[creature]] from your [[graveyard]] into your [[hand]].\n\n{{Charger}}\n| jptext = ■ クリーチャーを1体、自分の墓地から手札に戻す。\n\n{{Charger|jp}}\n| flavor = The dead rose from their graves and began their slow march into the swamp. Only Argoz wondered who would feed his worms while he was away. ([[DM-08]])\n| flavor2 = 動き出した死体は、墓穴の新たな住人を捜しに出かけた。The moving corpse went out looking for a new inhabitant in the grave. ([[DM-08]], [[DMC-19]], [[DMC-27]], [[DMC-42]], [[DMC-61]])\n| flavor3 = 3体の王が革命の力に目覚めたのに呼応して、各国のドラゴンたちも革命の力に目覚めようとしている。In response to the three kings waking up to the power of [[Revolution]], the [[Dragon]]s of each country are also trying to wake up to the power of Revolution. ([[DMR-17]])\n| mana = 1\n| artist = Eiji Kaneda\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 26/55\n| R1 = Common\n| set2 = DM-08 Invincible Legend\n| setnum2 = 47/55\n| R2 = Common\n| set3 = DMC-19 Zakira's Dragon Commander Deck\n| setnum3 = 75/102\n| R3 = Common\n| set4 = DMC-27 CoroCoro Dream Pack\n| setnum4 = 47/55\n| R4 = Common\n| set5 = DMC-42 CoroCoro Dream Pack 3: Eternal Gear\n| setnum5 = 74/90\n| R5 = Common\n| set6 = DMC-61 CoroCoro Dream Pack 4: Eternal Heaven\n| setnum6 = 76/94\n| R6 = Common\n| set7 = DMR-17 Burning Dogiragon!!\n| setnum7 = 78/94\n| R7 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Charger]]\n[[Category:Creature Recovery]]"
+}

@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_09_033",
+ "page": "Trixo, Wicked Doll",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Death Puppet",
+ "cost": "4",
+ "power": "2000",
+ "engtext": "■ Whenever this [[creature]] is [[attack]]ing your [[opponent]] and isn't [[block]]ed, your [[opponent]] chooses one of his [[creature]]s and [[destroy]]s it.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "33/55",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "45/55",
+  "set3": "DMC-21 Zakira's Dragon Commander Power-Up Pack",
+  "setnum3": "67/102",
+  "set4": "DMC-34 CoroCoro Dream Pack 2: Eternal Legacy ",
+  "setnum4": "45/55"
+ },
+ "wiki": "{{Cardtable\n| image = Trixo, Wicked Doll.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|悪|いた}}{{Ruby|戯|ずら}}{{Ruby|人|にん}}{{Ruby|形|ぎょう}}ハロ ''(Hallow, Mischief Doll)''\n| phonetic = Itazura Ningyō Haro\n| race = Death Puppet\n| cost = 4\n| power = 2000\n| engtext = ■ Whenever this [[creature]] is [[attack]]ing your [[opponent]] and isn't [[block]]ed, your [[opponent]] chooses one of his [[creature]]s and [[destroy]]s it.\n| jptext = ■ このクリーチャーが相手プレイヤーを攻撃してブロックされなかった時、相手は自分自身のクリーチャーを1体選び、破壊する。\n| flavor = \"A trick for you. A treat for me.\" ([[DM-09]])\n| flavor2 = 一緒に遊ぶと死ぬから危険。 Together we play and die from danger. ([[DM-09]], [[DMC-21]], [[DMC-34]])\n| mana = 1\n| artist = Ippei Soeda\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = 33/55\n| R1 = Common\n| set2 = DM-09 Invincible Blood\n| setnum2 = 45/55\n| R2 = Common\n| set3 = DMC-21 Zakira's Dragon Commander Power-Up Pack\n| setnum3 = 67/102\n| R3 = Common\n| set4 = DMC-34 CoroCoro Dream Pack 2: Eternal Legacy \n| setnum4 = 45/55\n| R4 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Choice Removal]]\n[[Category:Sabotage Ability]]"
+}

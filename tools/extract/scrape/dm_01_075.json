@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_01_075",
+ "page": "Draglide",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Armored Wyvern",
+ "cost": "5",
+ "power": "5000",
+ "engtext": "■ This [[creature]] [[attack]]s each [[turn]] [[Attack if Able|if able]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "75/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "30/110",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "40/140",
+  "set4": "Promotional",
+  "setnum4": "P2/Y0"
+ },
+ "wiki": "{{Cardtable\n| image = Draglide.jpg\n| civilization = Fire\n| type = Creature\n| jpname = ドラグライド\n| phonetic = Doraguraido\n| cost = 5\n| race = Armored Wyvern\n| power = 5000\n| engtext = ■ This [[creature]] [[attack]]s each [[turn]] [[Attack if Able|if able]].\n| jptext = ■ このクリーチャーは、毎ターン攻撃しなければならない。\n| flavor = ドラグライドはワイバーンとともに成長する。そのきずなが彼らの武器である。Draglides grow with their mounts. Their bond is their weapon. ([[DM-01]])\n| mana = 1\n| artist = Ittoku\n| set1 = DM-01 Base Set\n| setnum1 = 75/110\n| R1 = Rare\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 30/110\n| R2 = Rare\n| set3 = DM-18 Best Challenger\n| setnum3 = 40/140\n| R3 = Rare\n| set4 = Promotional\n| setnum4 = P2/Y0\n| R4 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Fire]]\n[[Category:Armored Wyvern]]\n[[Category:5000 Power Creatures]]\n[[Category:Attacks Each Turn If Able]]"
+}

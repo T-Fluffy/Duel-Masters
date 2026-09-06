@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_03_010",
+ "page": "Sundrop Armor",
+ "type": "Spell",
+ "civilization": "Light",
+ "race": "",
+ "cost": "4",
+ "power": "",
+ "engtext": "■ Add a [[card]] from your [[hand]] to your [[shield]]s [[face down]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-03 Rampage of the Super Warriors",
+  "setnum1": "10/55",
+  "set2": "DM-03 Master of Destruction",
+  "setnum2": "39/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "98/140",
+  "set4": "DMC-27 CoroCoro Dream Pack",
+  "setnum4": "39/55"
+ },
+ "wiki": "{{Cardtable\n| image= Sundrop Armor.jpg\n| civilization = Light\n| type = Spell\n| jpname = ホーリー・メール\n| phonetic = Hōrī Mēru ''(Holy Mail)''\n| cost = 4\n| engtext = ■ Add a [[card]] from your [[hand]] to your [[shield]]s [[face down]].\n| jptext = ■ 自分の手札からカードを1枚選び、裏向きにして自分のシールドに加える。\n| flavor = \"The danger hasn't passed. But we have.\" —{{tooltip|Miar, Comet Elemental}} ([[DM-03]])\n| flavor2 = 危機は去った。ただ回復せよ。\"The crisis has passed. Just recover.\" ([[DM-03]], [[DM-18]], [[DMC-27]])\n| mana = 1\n| artist = Sansyu\n| set1 = DM-03 Rampage of the Super Warriors\n| setnum1 = 10/55\n| R1 = Common\n| set2 = DM-03 Master of Destruction\n| setnum2 = 39/55\n| R2 = Common\n| set3 = DM-18 Best Challenger\n| setnum3 = 98/140\n| R3 = Common\n| set4 = DMC-27 CoroCoro Dream Pack\n| setnum4 = 39/55\n| R4 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Spell]]\n[[Category:Shield Addition]]"
+}

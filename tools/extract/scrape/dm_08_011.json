@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_08_011",
+ "page": "Nariel, the Oracle",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Light Bringer",
+ "cost": "4",
+ "power": "1000",
+ "engtext": "■ [[Creature]]s that have [[power]] 3000 or more can't [[attack]]. ''([[Creature]]s that have [[power]] less than 3000 and get [[power attacker|extra power]] while [[attack]]ing can still [[attack]].)'' ",
+ "templates": [],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "11/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "8/55",
+  "set3": "DMC-17 Dark Warriors Deck",
+  "setnum3": "6/78",
+  "set4": "DMEX-17 20th Anniversary Huge Thanks Memorial Pack: The Chapter of The Ultimacy Dueking MAX",
+  "setnum4": "W8/W20"
+ },
+ "wiki": "{{Restriction|Hall}}\n{{Cardtable\n| image = Nariel, the Oracle.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|予|よ}}{{Ruby|言|げん}}{{Ruby|者|しゃ}}マリエル\n| phonetic = Yogensha Marieru\n| race = Light Bringer\n| cost = 4\n| power = 1000\n| engtext = ■ [[Creature]]s that have [[power]] 3000 or more can't [[attack]]. ''([[Creature]]s that have [[power]] less than 3000 and get [[power attacker|extra power]] while [[attack]]ing can still [[attack]].)'' \n| jptext = ■ パワー3000以上のクリーチャーは攻撃できない。（パワー3000未満のクリーチャーが、攻撃中にパワーが追加された場合、攻撃することができる）\n| flavor = Just as predicted, the earthquakes created by the waking [[Dragon]]s reactivated the sentinels. Everything was still under their control. ([[DM-08]])\n| flavor2 = 予言通りの復活。事態はまだ彼らの手の内にあった。\"The revival as foretold. The situation was still under their control.\" ([[DM-08]])\n| flavor3 = 龍が吐き出す炎でさえも、の言葉を止められない。\"Even the flames spewed by the dragon cannot stop these words.\" ([[DMC-17]])\n| mana = 1\n| artist = Atsushi Kawasaki\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 11/55\n| R1 = Rare\n| set2 = DM-08 Invincible Legend\n| setnum2 = 8/55\n| R2 = Rare\n| set3 = DMC-17 Dark Warriors Deck\n| setnum3 = 6/78\n| R3 = Rare\n| set4 = DMEX-17 20th Anniversary Huge Thanks Memorial Pack: The Chapter of The Ultimacy Dueking MAX\n| setnum4 = W8/W20\n| R4 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Prevents Attacking]]"
+}

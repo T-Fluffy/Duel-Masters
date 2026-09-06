@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_06_092",
+ "page": "Cantankerous Giant",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Giant",
+ "cost": "7",
+ "power": "8000",
+ "engtext": "{{Double Breaker}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "92/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "65/110",
+  "set3": "DMC-61 CoroCoro Dream Pack 4: Eternal Heaven ",
+  "setnum3": "52/94"
+ },
+ "wiki": "{{Cardtable\n| image = Cantankerous Giant.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|跳躍の超人|フライング・ジャイアント}}\n| phonetic = Furaingu Jaianto\n| kana = フライング・ジャイアント ''(Flying Giant)''\n| cost = 7\n| race = Giant\n| power = 8000\n| engtext = {{Double Breaker}}\n| jptext = {{Double Breaker|jp}} \n| flavor = \"I've been tracking an immense creature across the continent by following its huge footprints. One thing puzzles me, though—since when do footprints have thumbs?\" —[[Feather Horn, the Tracker]] ([[DM-06]])\n| flavor2 = 大地を踏む手は力の象徴。The hands that tread the earth are symbols of strength. ([[DM-06]], [[DMC-61]])\n| mana = 1\n| artist = Hisashi Momose\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 92/110\n| R1 = Uncommon\n| set2 = DM-06 Invincible Soul\n| setnum2 = 65/110\n| R2 = Uncommon\n| set3 = DMC-61 CoroCoro Dream Pack 4: Eternal Heaven \n| setnum3 = 52/94\n| R3 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Nature]]\n[[Category:Giant]]\n[[Category:8000 Power Creatures]]"
+}

@@ -1,0 +1,24 @@
+{
+ "card_id": "dm_05_042",
+ "page": "Kip Chippotto",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Fire Bird",
+ "cost": "3",
+ "power": "1000",
+ "engtext": "■ When one of your [[Armored Dragon]]s would be [[destroy]]ed, you may [[destroy]] this [[creature]] [[instead]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "42/55",
+  "set2": "DM-05 Return of the Survivor",
+  "setnum2": "50/55",
+  "set3": "DMC-06 Dragon Strikes Deck",
+  "setnum3": "68/82",
+  "set4": "DMC-09 Shobu's Dragon Legend Deck ",
+  "setnum4": "42/44",
+  "set5": "DMC-20 Shobu's Holy Dragon Power-Up Pack",
+  "setnum5": "88/102"
+ },
+ "wiki": "{{Cardtable\n| image = Kip Chippotto.jpg\n| civilization = Fire\n| type = Creature\n| jpname = ポッポ・チャッピー \n| phonetic = Poppo Chappī\n| race = Fire Bird\n| cost = 3\n| power = 1000\n| engtext = ■ When one of your [[Armored Dragon]]s would be [[destroy]]ed, you may [[destroy]] this [[creature]] [[instead]].\n| jptext = ■ セイバー: アーマード・ドラゴン （このクリーチャーがバトルゾーンにある間、バトルゾーンにある自分のアーマード・ドラゴンが自分の墓地に置かれるとき、そのアーマード・ドラゴンの代わりにこのクリーチャーを自分の墓地に置いてもよい）　\n| flavor = Only the [[Dragon]]s realize these cute little birds hold the secrets of immortality. ([[DM-05]])\n| flavor2 = 竜族だけは知っている。小さな友の体に秘められた不死の力を。Only the dragon kin know. The immortal power hidden within the small friend's body. ([[DM-05]], [[DMC-06]], [[DMC-09]], [[DMC-20]])\n| mana = 1\n| artist = Imo Kajii\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = 42/55\n| R1 = Common\n| set2 = DM-05 Return of the Survivor\n| setnum2 = 50/55\n| R2 = Common\n| set3 = DMC-06 Dragon Strikes Deck\n| setnum3 = 68/82\n| R3 = Common\n| set4 = DMC-09 Shobu's Dragon Legend Deck \n| setnum4 = 42/44\n| R4 = Common\n| set5 = DMC-20 Shobu's Holy Dragon Power-Up Pack\n| setnum5 = 88/102\n| R5 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Fire]]\n[[Category:Fire Bird]]\n[[Category:Saver]]\n[[Category:1000 Power Creatures]]"
+}

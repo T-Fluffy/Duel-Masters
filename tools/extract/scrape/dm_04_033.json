@@ -1,0 +1,30 @@
+{
+ "card_id": "dm_04_033",
+ "page": "Mongrel Man",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Hedrian",
+ "cost": "5",
+ "power": "2000",
+ "engtext": "■ Whenever another [[creature]] is [[destroy]]ed, you may [[draw]] a [[card]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-04 Shadowclash of Blinding Night",
+  "setnum1": "33/55",
+  "set2": "Shadowclash Collector Tin",
+  "setnum2": "26/46, 26a/46",
+  "set3": "DM-04 Challenge of Black Shadow ",
+  "setnum3": "28/55",
+  "set4": "DMC-08 Endless Black Hole Deck",
+  "setnum4": "25/88",
+  "set5": "DMC-14 Crimson Armorloids Deck ",
+  "setnum5": "23/78",
+  "set6": "DMC-19 Zakira's Dragon Commander Deck",
+  "setnum6": "27/102",
+  "set7": "DMC-27 CoroCoro Dream Pack",
+  "setnum7": "27/55",
+  "set8": "Promotional",
+  "setnum8": "M12/Y1"
+ },
+ "wiki": "{{Cardtable\n| image = Mongrel Man.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|屑|くず}}{{Ruby|男|おとこ}} \n| phonetic = Kuzu Otoko\n| race = Hedrian\n| cost = 5\n| power = 2000\n| engtext = ■ Whenever another [[creature]] is [[destroy]]ed, you may [[draw]] a [[card]].\n| jptext = ■ 他のクリーチャーが破壊された時、カードを1枚引いてもよい。\n| flavor = \"Shut off a light for a split second, and darkness rushes in to fill the void. This should be an easy war.\" ([[DM-04]])\n| flavor2 = 臭い?汚い!? 邪妃様 、そんなに褒めてもゴミしか出ないずら。\"Smell? Dirty?! Like the [[Gregoria, Princess of War|Princess of War]], the trash're getting so much praise.\" ([[DM-04]], [[DMC-08]], [[DMC-14]], [[DMC-19]], [[DMC-27]], M12/Y1)\n| mana = 1\n| artist = Dustmoss\n| set1 = DM-04 Shadowclash of Blinding Night\n| setnum1 = 33/55\n| R1 = Uncommon\n| set2 = Shadowclash Collector Tin\n| setnum2 = 26/46, 26a/46\n| R2 = Uncommon\n| set3 = DM-04 Challenge of Black Shadow \n| setnum3 = 28/55\n| R3 = Uncommon\n| set4 = DMC-08 Endless Black Hole Deck\n| setnum4 = 25/88\n| R4 = Uncommon\n| set5 = DMC-14 Crimson Armorloids Deck \n| setnum5 = 23/78\n| R5 = Uncommon\n| set6 = DMC-19 Zakira's Dragon Commander Deck\n| setnum6 = 27/102\n| R6 = Uncommon\n| set7 = DMC-27 CoroCoro Dream Pack\n| setnum7 = 27/55\n| R7 = Uncommon\n| set8 = Promotional\n| setnum8 = M12/Y1\n| R8 = No Rarity\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Hedrian]]\n[[Category:2000 Power Creatures]]\n[[Category:Card Draw]]\n[[Category:Put Into Graveyard]]"
+}

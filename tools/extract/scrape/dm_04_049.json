@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_04_049",
+ "page": "Cannon Shell",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Colony Beetle",
+ "cost": "4",
+ "power": "1000+",
+ "engtext": "{{Shield Trigger|creature}}\n\n■ This [[creature]] gets +1000 [[power]] for each [[shield]] you have.",
+ "templates": [
+  "Shield Trigger|creature"
+ ],
+ "sets": {
+  "set1": "DM-04 Shadowclash of Blinding Night",
+  "setnum1": "49/55",
+  "set2": "DM-04 Challenge of Black Shadow ",
+  "setnum2": "53/55"
+ },
+ "wiki": "{{Cardtable\n| image = Cannon Shell.jpg\n| civilization = Nature\n| type = Creature\n| jpname = シェル・キャノン\n| phonetic = Sheru Kyanon\n| race = Colony Beetle\n| cost = 4\n| power = 1000+\n| engtext = {{Shield Trigger|creature}}\n\n■ This [[creature]] gets +1000 [[power]] for each [[shield]] you have.\n| jptext = {{Icon|ST}} S・トリガー （このクリーチャーをシールドゾーンから手札に加える時、コストを支払わずにすぐ召喚してもよい） \n\n■ このクリーチャーがバトルゾーンにある間、このクリーチャーのパワーは、自分のシールドゾーンにあるカード1枚につき+1000される。\n| flavor = It has hungered for revenge since the [[Dark Lord]]s invaded. ([[DM-04]])\n| mana = 1\n| artist = Kou1\n| set1 = DM-04 Shadowclash of Blinding Night\n| setnum1 = 49/55\n| R1 = Common\n| set2 = DM-04 Challenge of Black Shadow \n| setnum2 = 53/55\n| R2 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Nature]]\n[[Category:Colony Beetle]]\n[[Category:Shield Trigger]]\n[[Category:1000 Power Creatures]]\n[[Category:Self Increase Power]]"
+}

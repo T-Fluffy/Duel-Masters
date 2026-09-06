@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_04_053",
+ "page": "Sword of Benevolent Life",
+ "type": "Spell",
+ "civilization": "Nature",
+ "race": "",
+ "cost": "2",
+ "power": "",
+ "engtext": "■ Each of your [[creature]]s in the [[battle zone]] gets +1000 [[power]] until the [[End Step|end of the turn]] for each [[light]] [[creature]] you have in the [[battle zone]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-04 Shadowclash of Blinding Night",
+  "setnum1": "53/55",
+  "set2": "Shadowclash Collector Tin",
+  "setnum2": "46/46",
+  "set3": "DM-04 Challenge of Black Shadow ",
+  "setnum3": "20/55"
+ },
+ "wiki": "{{Cardtable\n| image = Sword of Benevolent Life.jpg\n| civilization = Nature\n| type = Spell\n| jpname = ブレス・ソード\n| phonetic = Buresu Sōdo ''(Breath Sword)''\n| cost = 2\n| engtext = ■ Each of your [[creature]]s in the [[battle zone]] gets +1000 [[power]] until the [[End Step|end of the turn]] for each [[light]] [[creature]] you have in the [[battle zone]].\n| jptext = ■ このターン、バトルゾーンにある自分の光のクリーチャー1体につき、バトルゾーンにある自分のクリーチャーすべてのパワーはそれぞれ+1000される。\n| flavor = \"{{tooltip|Alcadeias, Lord of Spirits|Alcadeias}} has given us a great gift! We're saved! We're... ummm, can anyone lift that thing?\" —{{tooltip|Fear Fang}} ([[DM-04]])\n| mana = 1\n| artist = Kou1\n| set1 = DM-04 Shadowclash of Blinding Night\n| setnum1 = 53/55\n| R1 = Rare\n| set2 = Shadowclash Collector Tin\n| setnum2 = 46/46\n| R2 = Rare\n| set3 = DM-04 Challenge of Black Shadow \n| setnum3 = 20/55\n| R3 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Nature]]\n[[Category:Spell]]\n[[Category:Increase Power]]"
+}

@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_06_002",
+ "page": "Lu Gila, Silver Rift Guardian",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Guardian",
+ "cost": "5",
+ "power": "4000",
+ "engtext": "{{Blocker}}\n\n■ [[Evolution creature]]s are put into the [[battle zone]] [[tap]]ped.\n\n■ This [[creature]] can't [[attack]] [[player]]s.",
+ "templates": [
+  "Blocker"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "2/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "1/110"
+ },
+ "wiki": "{{Cardtable\n| image = Lu Gila, Silver Rift Guardian.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|銀|ぎん}}{{Ruby|界|かい}}の{{Ruby|守|しゅ}}{{Ruby|護|ご}}{{Ruby|者|しゃ}}ル・ギラ・レシール\n| phonetic = Ginkai no Shugosha Ru Gira Reshīru\n| race = Guardian\n| cost = 5\n| power = 4000\n| engtext = {{Blocker}}\n\n■ [[Evolution creature]]s are put into the [[battle zone]] [[tap]]ped.\n\n■ This [[creature]] can't [[attack]] [[player]]s.\n| jptext = {{Blocker|jp}}\n\n■ このクリーチャーがバトルゾーンにある間、進化クリーチャーはタップされた状態でバトルゾーンに出る。\n\n■ このクリーチャーは、相手プレイヤーを攻撃できない。　\n| flavor = \n| mana = 1\n| artist = Takesi Kuno\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 2/110\n| R1 = Very Rare\n| set2 = DM-06 Invincible Soul\n| setnum2 = 1/110\n| R2 = Very Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Guardian]]\n[[Category:4000 Power Creatures]]\n[[Category:Creature Tapper]]"
+}

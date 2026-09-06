@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_06_004",
+ "page": "Invincible Technology",
+ "type": "Spell",
+ "civilization": "Water",
+ "race": "",
+ "cost": "13",
+ "power": "",
+ "engtext": "■ [[Search]] your [[deck]]. You may take any [[number]] of [[card]]s from your [[deck]], show those [[card]]s to your [[opponent]], and put them into your [[hand]]. Then [[shuffle]] your [[deck]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "4/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "4/110",
+  "set3": "DMX-16 The Great Royal Strategies: Fantasista 12",
+  "setnum3": "31/84"
+ },
+ "wiki": "{{Cardtable\n| image = Invincible Technology.jpg\n| civilization = Water\n| type = Spell\n| jpname = インビンシブル・テクノロジー\n| phonetic = Inbinshiburu Tekunorojī\n| cost = 13\n| engtext = ■ [[Search]] your [[deck]]. You may take any [[number]] of [[card]]s from your [[deck]], show those [[card]]s to your [[opponent]], and put them into your [[hand]]. Then [[shuffle]] your [[deck]].\n| jptext = ■ 自分の山札を見る。その中から好きな枚数のカードを選び、相手に見せてから自分の手札に加えてもよい。その後、山札をシャッフルする。\n| flavor = \"The [[Akashic Plan|Acashic Database]] holds the secrets of the universe. After centuries of [[search]]ing, the [[Cyber Lord]]s have at last found a clue to deciphering it.\" ([[DM-06]])\n| flavor2 = 全宇宙の真理が記されているというアカシック・レコード.サイバーロードはついにその解読の糸口を掴んだ. An [[Akashic Record]] that is the truth of the whole universe is marked, the Cyber Lords finally grabbed the clue of its decoding. ([[DM-06]])\n| flavor3 = 何を知るかも大事だが、何を忘れるか、何を知らないかも大事だ。君が忘れることを選んだ知識を、僕が掘り起こそう。It is also important to know what is important, but what is forgotten or what you do not know is also important. Let me dig through the knowledge that you chose to forget. —Aqua Mediacreator ([[DMX-16]])\n| mana = 1\n| artist = D-Suzuki\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 4/110\n| R1 = Very Rare\n| set2 = DM-06 Invincible Soul\n| setnum2 = 4/110\n| R2 = Very Rare\n| set3 = DMX-16 The Great Royal Strategies: Fantasista 12\n| setnum3 = 31/84\n| R3 = Very Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Deck Search]]"
+}

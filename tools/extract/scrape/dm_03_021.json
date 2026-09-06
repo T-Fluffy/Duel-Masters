@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_03_021",
+ "page": "Shtra",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Cyber Lord",
+ "cost": "4",
+ "power": "2000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], return a [[card]] from your [[mana zone]] to your [[hand]]. Then your [[opponent]] chooses a [[card]] in his [[mana zone]] and returns it to his [[hand]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-03 Rampage of the Super Warriors",
+  "setnum1": "21/55",
+  "set2": "DM-03 Master of Destruction",
+  "setnum2": "40/55",
+  "set3": "Promotional",
+  "setnum3": "P104/Y24"
+ },
+ "wiki": "{{Cardtable\n| image= Shtra.jpg\n| civilization = Water\n| type = Creature\n| jpname = シュトラ\n| phonetic = Shutora\n| race = Cyber Lord\n| cost = 4\n| power = 2000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], return a [[card]] from your [[mana zone]] to your [[hand]]. Then your [[opponent]] chooses a [[card]] in his [[mana zone]] and returns it to his [[hand]].\n| jptext = ■ このクリーチャーがバトルゾーンに出たとき、各プレイヤーは自分自身のマナゾーンからカードを1枚ずつ選び、それぞれの手札に戻す. \n| flavor = 水中に住んでいるということは、風呂に入る必要がないということだ。 Living underwater means never having to take a bath. ([[DM-03]], (P104/Y24)\n| flavor2 = 「一番欲しいものは安心なんだ。」 \"The thing I want most is peace of mind.\" —'''Shtra''' ([[DM-03]])\n| mana = 1\n| artist = Akira Hamada\n| set1 = DM-03 Rampage of the Super Warriors\n| setnum1 = 21/55\n| R1 = Common\n| set2 = DM-03 Master of Destruction\n| setnum2 = 40/55\n| R2 = Common\n| set3 = Promotional\n| setnum3 = P104/Y24\n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Mana Recovery]]\n[[Category:Mana Bounce]]\n[[Category:Come Into Play Trigger]]"
+}

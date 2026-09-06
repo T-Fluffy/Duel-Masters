@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_07_s01",
+ "page": "Siri, Glory Elemental",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Angel Command",
+ "cost": "6",
+ "power": "7000",
+ "engtext": "{{Double Breaker}}\n\n■ While you have no [[shield]]s, this [[creature]] has \"[[blocker]]\" and \"[[End Step|At the end of each of your turns]], you may [[untap]] this [[creature]].\"",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "S1/S5",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "S1/S5"
+ },
+ "wiki": "{{Cardtable\n| image = Siri, Glory Elemental.jpg\n| jpname = {{Ruby|栄|えい}}{{Ruby|光|こう}}の{{Ruby|精|せい}}{{Ruby|霊|れい}}アイリス ''(Iris, Spirit of Glory)''\n| phonetic = Eikou no Seirei Airisu\n| type = Creature\n| civilization = Light\n| cost = 6\n| race = Angel Command\n| power = 7000\n| engtext = {{Double Breaker}}\n\n■ While you have no [[shield]]s, this [[creature]] has \"[[blocker]]\" and \"[[End Step|At the end of each of your turns]], you may [[untap]] this [[creature]].\"\n| jptext = {{Double Breaker|jps}}\n\n■ 自分のシールドが1枚もなければ、このクリーチャーは「ブロッカー」を得る。\n\n■ 自分のターンが終わるとき、自分のシールドが1枚もなければ、 バトルゾーンにあるこのクリーチャーをアンタップしてもよい。\n| flavor = \"I'm not building a weather machine.... I ''am'' a weather machine!\" ([[DM-07]])\n| mana = 1\n| artist = Nottsuo\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = S1/S5\n| R1 = Super Rare\n| set2 = DM-07 Invincible Charge\n| setnum2 = S1/S5\n| R2 = Super Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Conditional Blocker]]\n[[Category:Creature Untap]]"
+}

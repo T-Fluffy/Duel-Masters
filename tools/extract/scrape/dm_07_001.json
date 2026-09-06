@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_07_001",
+ "page": "Gandar, Seeker of Explosions",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Mecha Thunder",
+ "cost": "7",
+ "power": "6500",
+ "engtext": "{{Double Breaker}}\n\n{{Tap Ability|[[End Step|At the end of the turn]], [[untap]] all your [[light]] [[creature]]s.}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "1/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "1/55"
+ },
+ "wiki": "{{Cardtable\n| image = Gandar, Seeker of Explosions.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|爆|ばく}}{{Ruby|雷|らい}}の{{Ruby|求|きゅう}}{{Ruby|道|どう}}{{Ruby|者|しゃ}}ガラ・ガンダール\n| phonetic = Bakurai no Kyūdōsha Gara Gandāru\n| cost = 7\n| race = Mecha Thunder\n| power = 6500\n| engtext = {{Double Breaker}}\n\n{{Tap Ability|[[End Step|At the end of the turn]], [[untap]] all your [[light]] [[creature]]s.}}\n| jptext = {{Double Breaker|jp}}\n\n■ このクリーチャーで攻撃するかわりに、タップして次の{{Tap}}能力を使ってもよい。\n:{{Tap}} このターンの終わりに、自分の光のクリーチャーをすべてアンタップする。\n| flavor = He has a short fuse. ([[DM-07]])\n| mana = 1\n| artist = Katsuya\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 1/55\n| R1 = Very Rare\n| set2 = DM-07 Invincible Charge\n| setnum2 = 1/55\n| R2 = Very Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Mecha Thunder]]\n[[Category:Tap Ability]]\n[[Category:6500 Power Creatures]]\n[[Category:Creature Untap]]"
+}

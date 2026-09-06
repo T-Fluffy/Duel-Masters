@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_08_043",
+ "page": "Torpedo Skyterror",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Armored Wyvern",
+ "cost": "5",
+ "power": "4000+",
+ "engtext": "■  While [[attack]]ing, this [[creature]] gets +2000 [[power]] for each other [[tap]]ped [[creature]] you have in the [[battle zone]]. ",
+ "templates": [],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "43/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "48/55",
+  "set3": "DMC-13 CoroCoro New Generation Pack",
+  "setnum3": "31/37 "
+ },
+ "wiki": "{{Cardtable\n| image = Torpedo Skyterror.jpg\n| civilization = Fire\n| type = Creature\n| jpname = バトルシップ・ワイバーン\n| phonetic = Batorushippu Waibān ''(Battleship Wyvern)''\n| race = Armored Wyvern\n| cost = 5\n| power = 4000+\n| engtext = ■  While [[attack]]ing, this [[creature]] gets +2000 [[power]] for each other [[tap]]ped [[creature]] you have in the [[battle zone]]. \n| jptext = ■ 攻撃中、このクリーチャーのパワーは、バトルゾーンにある自分の他のタップされているクリーチャー1体につき+2000される。\n| flavor = The [[Armored Wyvern|Wyvern]]s weren't that excited about the rise of their long-lost cousins-until they saw the chaos and confusion the [[Dragon]]s caused in the skies. ([[DM-08]])\n| flavor2 = 神龍達に動揺した隙に一部の火の軍勢が大空を目指し、出航した! While the Divine Dragons were wavering, a part of the army of Fire set off for the broad sky! ([[DM-08]])\n| mana = 1\n| artist = Naoki Saito\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 43/55\n| R1 = Common\n| set2 = DM-08 Invincible Legend\n| setnum2 = 48/55\n| R2 = Common\n| set3 = DMC-13 CoroCoro New Generation Pack\n| setnum3 = 31/37 \n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:4000 Power Creatures]]\n[[Category:Self Increase Power]]\n[[Category:Attack Trigger]]"
+}

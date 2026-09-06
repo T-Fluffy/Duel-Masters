@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_06_110",
+ "page": "Trench Scarab",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Giant Insect",
+ "cost": "3",
+ "power": "4000+",
+ "engtext": "■ This [[creature]] can't [[attack]] [[player]]s.\n\n{{Power Attacker|4000}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "110/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "103/110",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "87/140",
+  "set4": "DMC-07 Eternal Insects Deck",
+  "setnum4": "75/82"
+ },
+ "wiki": "{{Cardtable\n| image = Trench Scarab.jpg\n| civilization = Nature\n| type = Creature\n| jpname = ブルーレイザー・ビートル\n| phonetic = Burūreizā Bītoru ''(Bluerazor Beetle)''\n| cost = 3\n| race = Giant Insect\n| power = 4000+\n| engtext = ■ This [[creature]] can't [[attack]] [[player]]s.\n\n{{Power Attacker|4000}}\n| jptext = ■ このクリーチャーは、相手プレイヤーを攻撃できない。\n\n{{Power Attacker|4000|jp}}\n| flavor = Since their sharp blades are dangerous even to one another, these [[Giant Insect|Insect]]s tend to live alone. ([[DM-06]])\n| flavor2 = 全身に備わる鋭利な刃のため、同族ですら離れて暮らす。Due to the sharp blades all over its body, even its own kind lives apart. ([[DM-06]], [[DM-18]], [[DMC-07]])\n| mana = 1\n| artist = Iron Pot\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 110/110\n| R1 = Common\n| set2 = DM-06 Invincible Soul\n| setnum2 = 103/110\n| R2 = Common\n| set3 = DM-18 Best Challenger\n| setnum3 = 87/140\n| R3 = Common\n| set4 = DMC-07 Eternal Insects Deck\n| setnum4 = 75/82\n| R4 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Nature]]\n[[Category:Giant Insect]]\n[[Category:4000 Power Creatures]]"
+}

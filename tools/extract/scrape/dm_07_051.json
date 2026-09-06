@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_07_051",
+ "page": "Mulch Charger",
+ "type": "Spell",
+ "civilization": "Nature",
+ "race": "",
+ "cost": "3",
+ "power": "",
+ "engtext": "■ Put one of your [[creature]]s from the [[battle zone]] into your [[mana zone]].\n\n{{Charger}}",
+ "templates": [
+  "Charger"
+ ],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "51/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "35/55",
+  "set3": "DM22-EX1 Golden Strategy!! Dueking MAX 2022",
+  "setnum3": "97/130"
+ },
+ "wiki": "{{Cardtable\n| image = Mulch Charger.jpg\n| civilization = Nature\n| type = Spell\n| jpname = メビウス・チャージャー\n| phonetic = Mebiusu Chājā ''(Mobius Charger)''\n| cost = 3\n| engtext = ■ Put one of your [[creature]]s from the [[battle zone]] into your [[mana zone]].\n\n{{Charger}}\n| jptext = ■ バトルゾーンにある自分のクリーチャーを1体選び、自分のマナゾーンに置く。\n\n{{Charger|jp}}\n| flavor = Its bark is bone; its sap is blood. Its leaves are real leaves, though. ([[DM-07]])\n| flavor2 = 肉体という器を捨て、生命の大河は流れ続ける。\"Discarding the vessel of the body, the great river of life continues to flow.\" ([[DM-07]])\n| flavor3 = 蒼狼の一族は５柱の神を呼び出した。そのうち１柱は彼らの神話を語り継ぐための物語を生み出す神だった。だが、皮肉にも神自身の物語は語られることがなかった。The Clan of the Blue Wolves summoned five gods. Among them was a god who created stories to carry on their myth. However, ironically, the god's own story was never told. ([[DM22-EX1]])\n| mana = 1\n| artist = Asai Genji\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 51/55\n| R1 = Uncommon\n| set2 = DM-07 Invincible Charge\n| setnum2 = 35/55\n| R2 = Uncommon\n| set3 = DM22-EX1 Golden Strategy!! Dueking MAX 2022\n| setnum3 = 97/130\n| R3 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Nature]]\n[[Category:Charger]]\n[[Category:Spell]]\n[[Category:Mana Acceleration]]\n[[Category:Mana Feed]]\n[[Category:Self Removal]]"
+}

@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_08_s01",
+ "page": "Nastasha, Channeler of Suns",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Mecha Del Sol",
+ "cost": "7",
+ "power": "6000",
+ "engtext": "{{Double Breaker}}\n\n■ When one of your [[shield]]s would be [[break|broken]], you may [[destroy]] this [[creature]] [[instead]].",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "S1/S5",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "S1/S5"
+ },
+ "wiki": "{{Cardtable\n| image = Nastasha, Channeler of Suns.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|光|こう}}{{Ruby|器|き}}ナスターシャ\n| phonetic = Kōki Nastāsha\n| race = Mecha Del Sol\n| cost = 7\n| power = 6000\n| engtext = {{Double Breaker}}\n\n■ When one of your [[shield]]s would be [[break|broken]], you may [[destroy]] this [[creature]] [[instead]].\n| jptext = {{Double Breaker|jp}}\n\n■ このクリーチャーがバトルゾーンにある間、自分のシールドが1枚ブレイクされるとき、かわりにこのクリーチャーを自分の墓地に置いてもよい。\n| flavor = その美しさに宇宙すら震える。The universe trembles at its beauty. ([[DM-08]])\n| mana = 1\n| artist = Masaki Hirooka\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = S1/S5\n| R1 = Super Rare\n| set2 = DM-08 Invincible Legend\n| setnum2 = S1/S5\n| R2 = Super Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Shield Saver]]"
+}

@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_01_103",
+ "page": "Red-Eye Scorpion",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Giant Insect",
+ "cost": "5",
+ "power": "4000",
+ "engtext": "■ When this [[creature]] would be [[destroy]]ed, put it into your [[mana zone]] [[instead]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "103/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "37/110"
+ },
+ "wiki": "{{Cardtable\n| image = Red-Eye Scorpion.jpg\n| civilization = Nature\n| type = Creature\n| jpname = レッドアイ・スコーピオン\n| phonetic = Reddoai Sukōpion\n| cost = 5\n| race = Giant Insect\n| power = 4000\n| engtext = ■ When this [[creature]] would be [[destroy]]ed, put it into your [[mana zone]] [[instead]].\n| jptext = ■ このクリーチャーがバトルゾーンから自分の墓地に置かれるとき、墓地に置くかわりに自分のマナゾーンに置く。\n| flavor = 森の奥で火を燃やしてはいけない。怒りで目を真っ赤に染めたサソリたちが襲ってくるから。Never start a [[fire]] in the depths of the [[Fiona Woods|forest]]. Enraged red-eye scorpions will come after you. ([[DM-01]])\n| mana = 1\n| artist = Kou1\n| set1 = DM-01 Base Set\n| setnum1 = 103/110\n| R1 = Rare\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 37/110\n| R2 = Rare}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Destruction Substitution]]\n[[Category:Mana Acceleration]]"
+}

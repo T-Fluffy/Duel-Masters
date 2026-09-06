@@ -1,0 +1,26 @@
+{
+ "card_id": "dm_01_008",
+ "page": "Iocant, the Oracle",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Light Bringer",
+ "cost": "2",
+ "power": "2000+",
+ "engtext": "{{Blocker|old}}\n\n■ While you have at least 1 [[Angel Command]] in the [[battle zone]], this [[creature]] gets +2000 [[power]].\n\n■ This [[creature]] can't [[attack]] [[player]]s.",
+ "templates": [
+  "Blocker|old"
+ ],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "8/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "45/110",
+  "set3": "DMC-26 Hakuoh's Angel Kingdom Deck",
+  "setnum3": "15/45",
+  "set4": "DMX-12 Black Box Pack",
+  "setnum4": "b87/???",
+  "set5": "DMEX-08 Mysterious Black Box Pack",
+  "setnum5": "28/???"
+ },
+ "wiki": "{{Cardtable\n| image = Iocant, the Oracle.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|予|よ}}{{Ruby|言|げん}}{{Ruby|者|しゃ}}カティノ \n| phonetic = Yogensha Katino ''(Catino, the Prophet)''\n| race = Light Bringer\n| cost = 2\n| power = 2000+\n| engtext = {{Blocker|old}}\n\n■ While you have at least 1 [[Angel Command]] in the [[battle zone]], this [[creature]] gets +2000 [[power]].\n\n■ This [[creature]] can't [[attack]] [[player]]s.\n| jptext = {{Blocker|jp}}\n\n■ このクリーチャーは、相手プレイヤーを攻撃できない。\n\n■ バトルゾーンに自分のエンジェル・コマンドがある間、このクリーチャーのパワーは+2000される。\n| mana = 1\n| artist = Naoki Saito\n| set1 = DM-01 Base Set\n| setnum1 = 8/110\n| R1 = Uncommon\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 45/110\n| R2 = Uncommon\n| set3 = DMC-26 Hakuoh's Angel Kingdom Deck\n| setnum3 = 15/45\n| R3 = Uncommon\n| set4 = DMX-12 Black Box Pack\n| setnum4 = b87/???\n| R4 = Uncommon\n| set5 = DMEX-08 Mysterious Black Box Pack\n| setnum5 = 28/???\n| R5 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:2000 Power Creatures]]\n[[Category:Self Increase Power]]"
+}

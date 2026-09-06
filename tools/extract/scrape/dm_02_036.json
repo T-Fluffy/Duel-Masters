@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_02_036",
+ "page": "Bombersaur",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Rock Beast",
+ "cost": "5",
+ "power": "5000",
+ "engtext": "■ When this [[creature]] is [[destroy]]ed, each [[player]] chooses 2 [[card]]s in his [[mana zone]] and puts them into his [[graveyard]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "36/55",
+  "set2": "DM-02 Master of Evolution",
+  "setnum2": "16/55",
+  "set3": "DMEX-08 Mysterious Black Box Pack",
+  "setnum3": "19/???"
+ },
+ "wiki": "{{Cardtable\n| image= Bombersaur.jpg\n| civilization = Fire\n| type = Creature\n| jpname = ボマーザウルス\n| phonetic = Bomāzaurusu ''(Bombersaurus)''\n| cost = 5\n| race = Rock Beast\n| power = 5000\n| engtext = ■ When this [[creature]] is [[destroy]]ed, each [[player]] chooses 2 [[card]]s in his [[mana zone]] and puts them into his [[graveyard]].\n| jptext = ■ このクリーチャーが破壊された時、各プレイヤーはカードを2枚、自身のマナゾーンから選び、それぞれの墓地に置く。\n| flavor = \"This species inhabits liquid rock. Highly dangerous.\" -[[Liquid People]] scouting report ([[DM-02]])\n| flavor2 = 「液体岩石内に生息。危険度A。」-リキッド・ピープルの報告書 \"Resides within liquid rock. Danger level: A.\" -[[Liquid People]] report ([[DM-02]])\n| flavor3 = かつて封印されていた力が現実のものとなる。A once-sealed power becomes reality. ([[DMEX-08]])\n| mana = 1\n| artist = Akira Hamada\n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = 36/55\n| R1 = Rare\n| set2 = DM-02 Master of Evolution\n| setnum2 = 16/55\n| R2 = Rare\n| set3 = DMEX-08 Mysterious Black Box Pack\n| setnum3 = 19/???\n| R3 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Mana Burn]]\n[[Category:Put Into Graveyard]]"
+}

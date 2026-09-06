@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_04_002",
+ "page": "Astral Warper",
+ "type": "Evolution Creature",
+ "civilization": "Water",
+ "race": "Cyber Virus",
+ "cost": "6",
+ "power": "5000",
+ "engtext": "■ [[Evolution]]—Put on one of your [[Cyber Virus]]es.\n\n■ [[When you put]] this [[creature]] into the [[battle zone]], [[draw]] up to 3 [[card]]s.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-04 Shadowclash of Blinding Night",
+  "setnum1": "2/55",
+  "set2": "DMC-27 CoroCoro Dream Pack",
+  "setnum2": "2/55",
+  "set3": "Promotional",
+  "setnum3": "P13/Y3"
+ },
+ "wiki": "{{Cardtable\n| image = Astral Warper.jpg\n| civilization = Water\n| type = Evolution Creature\n| jpname = アストラル・ネビューラ\n| phonetic = Asutoraru Nebyūra\n| cost = 6\n| race = Cyber Virus\n| power = 5000\n| engtext = ■ [[Evolution]]—Put on one of your [[Cyber Virus]]es.\n\n■ [[When you put]] this [[creature]] into the [[battle zone]], [[draw]] up to 3 [[card]]s.\n| jptext = ■ 進化－自分のサイバー・ウィルス1体の上に置く。\n\n■ このクリーチャーをバトルゾーンに出した時、カードを3枚まで引く。　\n| flavor = \"Can you even comprehend the overwhelming intellectual advantage I have over you?\" ([[DM-04]])\n| flavor2 = 知識は問題の解決を手助けするが、度を越した知識はそれ自体が不幸を呼ぶ。 Knowledge helps with solving problems, but [[Astral Reef|too much knowledge]] can be problem in and of itself. ([[DMC-27]])\n| flavor3 = 知識の渦が、世界を飲み込む!  The whirlpool of knowledge will swallow the world! (P13/Y3)\n| mana = 1\n| artist = Hikaru Ikusa \n| artist2 = Mikio Masuda \n| set1 = DM-04 Shadowclash of Blinding Night\n| setnum1 = 2/55\n| R1 = Very Rare\n| set2 = DMC-27 CoroCoro Dream Pack\n| setnum2 = 2/55\n| R2 = Very Rare\n| set3 = Promotional\n| setnum3 = P13/Y3\n| R3 = Very Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Cyber Virus]]\n[[Category:Evolution Creature]]\n[[Category:5000 Power Creatures]]\n[[Category:Card Draw]]\n[[Category:Come Into Play Trigger]]"
+}

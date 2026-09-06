@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_01_s03",
+ "page": "Aqua Sniper",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Liquid People",
+ "cost": "8",
+ "power": "5000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], [[choose]] up to 2 [[creature]]s in the [[battle zone]] and return them to their [[owner]]s' [[hand]]s.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "S3/S10",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "S3/S10",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "S4/S10",
+  "set4": "DMX-19 Super Rare 100% Pack",
+  "setnum4": "S16/???"
+ },
+ "wiki": "{{Cardtable\n| image = Aqua Sniper.jpg\n| civilization = Water\n| type = Creature\n| jpname = アクア・スナイパー\n| phonetic = Akua Sunaipā\n| dename = Aqua-Scharfschütze\n| itname = Cecchino Acquatico\n| frname = Sniper marin\n| esname = Francotirador acuático\n| mxname = Francotirador acuático\n| ptname = Espreitador Aquático\n| cnname = 狙击手液人\n| race = Liquid People\n| cost = 8\n| power = 5000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], [[choose]] up to 2 [[creature]]s in the [[battle zone]] and return them to their [[owner]]s' [[hand]]s.\n| jptext = ■ このクリーチャーをバトルゾーンに出した時、バトルゾーンにあるクリーチャーを2体まで選び、持ち主の手札に戻す。\n| flavor = Water surrounds, enfolds, buoys... and attacks. ([[DM-01]])\n| flavor2 = あなたは水の中にいる。あなたに水が襲いかかる。You're in water. The water attacks you. ([[DM-01]], [[DM-18]])\n| flavor3 = その射撃の腕は天下無双。ある時には1発の弾丸で2つの標的を打ちとった時もあるという。後の世に言う「一石二鳥」の語源である。His [[Bounce|shooting abilities]] are unparalleled. It is said that at times he [[Bounce|hits]] two targets with one bullet. This was the origin of the saying: \"to kill two birds with one stone\". ([[DMX-19]])\n| mana = 1\n| artist = Seki\n| set1 = DM-01 Base Set\n| setnum1 = S3/S10\n| R1 = Super Rare\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = S3/S10\n| R2 = Super Rare\n| set3 = DM-18 Best Challenger\n| setnum3 = S4/S10\n| R3 = Super Rare\n| set4 = DMX-19 Super Rare 100% Pack\n| setnum4 = S16/???\n| R4 = Super Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Bounce]]\n[[Category:Self Bounce]]\n[[Category:Come Into Play Trigger]]"
+}

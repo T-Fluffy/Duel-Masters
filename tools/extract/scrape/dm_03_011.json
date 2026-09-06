@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_03_011",
+ "page": "Ur Pale, Seeker of Sunlight",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Mecha Thunder",
+ "cost": "4",
+ "power": "2500+",
+ "engtext": "■ While all the [[card]]s in your [[mana zone]] are [[light]] [[card]]s, this [[creature]] gets +2000 [[power]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-03 Rampage of the Super Warriors",
+  "setnum1": "11/55",
+  "set2": "DM-03 Master of Destruction",
+  "setnum2": "37/55",
+  "set3": "Promotional",
+  "setnum3": "M6/Y1"
+ },
+ "wiki": "{{Cardtable\n| image= Ur Pale, Seeker of Sunlight.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|陽|よう}}{{Ruby|光|こう}}の{{Ruby|求|きゅう}}{{Ruby|道|どう}}{{Ruby|者|しゃ}}ル・パーレ\n| phonetic = Yōkō no Kyūdōsha Ru Pāre\n| race = Mecha Thunder\n| cost = 4\n| power = 2500+\n| engtext = ■ While all the [[card]]s in your [[mana zone]] are [[light]] [[card]]s, this [[creature]] gets +2000 [[power]].\n| jptext = ■ 自分のマナゾーンにあるカードがすべて光のカードである間、このクリーチャーのパワーは+2000される。\n| flavor = \"What will it do if it ''finds'' the sunlight?\" ─[[Bloody Squito]] ([[DM-03]], M6/Y1)\n| flavor2 =  地上のものは雷雲を恐れる。それは求道者の巣だから。Those on the ground fear thunderclouds. Because it is a nest of seekers. ([[DM-03]])\n| mana = 1\n| artist = Naoki Saito\n| set1 = DM-03 Rampage of the Super Warriors\n| setnum1 = 11/55\n| R1 = Common\n| set2 = DM-03 Master of Destruction\n| setnum2 = 37/55\n| R2 = Common\n| set3 = Promotional\n| setnum3 = M6/Y1\n| R3 = No Rarity\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Mecha Thunder]]\n[[Category:2500 Power Creatures]]\n[[Category:Self Increase Power]]"
+}

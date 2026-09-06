@@ -1,0 +1,24 @@
+{
+ "card_id": "dm_01_s05",
+ "page": "Deathliger, Lion of Chaos",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Demon Command",
+ "cost": "7",
+ "power": "9000",
+ "engtext": "{{Double Breaker}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "S5/S10",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "S5/S10",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "S6/S10",
+  "set4": "DMX-19 Super Rare 100% Pack",
+  "setnum4": "S24/???"
+ },
+ "wiki": "{{Cardtable\n| image = Deathliger, Lion of Chaos.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|混|こん}}{{Ruby|沌|とん}}の{{Ruby|獅|し}}{{Ruby|子|し}}デスライガー\n| phonetic = Konton no Shishi Desuraigā\n| dename = Deathliger, Löwe des Chaos\n| itname = Deathliger, Leone del Caos\n| frname = Deathliger, lion du chaos\n| esname = Deathliger, león del caos\n| mxname = Deathliger, león del caos\n| ptname = Deathliger, o Leão do Caos\n| cnname = 混沌之王—死亡狮虎\n| race = Demon Command\n| cost = 7\n| power = 9000\n| engtext = {{Double Breaker}}\n| jptext = {{Double Breaker|jp}}\n| flavor = The world is deafened by the roar of the deathliger. ([[DM-01]])\n| flavor2 = 「最初の悪魔」が一柱は、かつて、悪魔神とともに、戦場におもむいた。その姿は、まさに混沌を体現したかのように禍々しくも神々しかった。 The \"First [[Demon Command|Demon]]\" once went to the battlefield with the [[Ballom, Master of Death|Lord of Demons]]. This embodiment of chaos was considered disastrous or godly. ([[DMX-19]])\n| mana = 1\n| artist = Atsushi Kawasaki\n| artist2 = Nottsuo\n| set1 = DM-01 Base Set\n| setnum1 = S5/S10\n| R1 = Super Rare\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = S5/S10\n| R2 = Super Rare\n| set3 = DM-18 Best Challenger\n| setnum3 = S6/S10\n| R3 = Super Rare\n| set4 = DMX-19 Super Rare 100% Pack\n| setnum4 = S24/???\n| R4 = Super Rare\n}}\n{{Liger}}\n[[Category:TCG]]\n[[Category:OCG]]"
+}

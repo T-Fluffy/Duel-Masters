@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_01_089",
+ "page": "Aura Blast",
+ "type": "Spell",
+ "civilization": "Nature",
+ "race": "",
+ "cost": "4",
+ "power": "",
+ "engtext": "■ Each of your [[creature]]s in the [[battle zone]] gets \"[[power attacker]] +2000\" until the [[End Step|end of the turn]]. ''(While [[attack]]ing, a [[creature]] that has \"[[power attacker]] +2000\" gets +2000 [[power]].)''",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "89/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "40/110",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "50/140"
+ },
+ "wiki": "{{Cardtable\n| image = Aura Blast.jpg\n| civilization = Nature\n| type = Spell\n| jpname = オーラ・ブラスター\n| phonetic = Ōra Burasutā ''(Aura Blaster)''\n| cost = 4\n| engtext = ■ Each of your [[creature]]s in the [[battle zone]] gets \"[[power attacker]] +2000\" until the [[End Step|end of the turn]]. ''(While [[attack]]ing, a [[creature]] that has \"[[power attacker]] +2000\" gets +2000 [[power]].)''\n| jptext = ■ このターン、バトルゾーンにある自分のクリーチャーすべてのパワーは攻撃中+2000される。\n| flavor = 聞け! 偉大なる大地のとどろきを! Hear the roar of the mighty Earth! ([[DM-01]], [[DM-18]])\n| mana = 1\n| artist = Nottsuo\n| set1 = DM-01 Base Set\n| setnum1 = 89/110\n| R1 = Rare\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 40/110\n| R2 = Rare\n| set3 = DM-18 Best Challenger\n| setnum3 = 50/140\n| R3 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Gives \"Power Attacker\"]]"
+}

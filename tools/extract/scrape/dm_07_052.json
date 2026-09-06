@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_07_052",
+ "page": "Popple, Flowerpetal Dancer",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Snow Faerie",
+ "cost": "4",
+ "power": "2000",
+ "engtext": "{{Tap Ability|Put the top [[card]] of your [[deck]] into your [[mana zone]].}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "52/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "53/55",
+  "set3": "Promotional",
+  "setnum3": "P17/Y2"
+ },
+ "wiki": "{{Cardtable\n| image = Popple, Flowerpetal Dancer.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|春|はる}}{{Ruby|風|かぜ}}{{Ruby|妖|よう}}{{Ruby|精|せい}}ポップル ''(Popple, Spring Breeze Faerie)''\n| phonetic = Harukaze Yōsei Poppuru\n| cost = 4\n| race = Snow Faerie\n| power = 2000\n| engtext = {{Tap Ability|Put the top [[card]] of your [[deck]] into your [[mana zone]].}}\n| jptext = ■ このクリーチャーで攻撃するかわりに、タップして次の{{Tap}}能力を使ってもよい。\n:{{Tap}} 自分の山札の上から1枚目を、自分のマナゾーンに置く。\n| flavor = \"I wish every day was the first day of spring. Hold on-I have magical powers! I can just do that!\" ([[DM-07]])\n| flavor2 = 舞い散る花びらと、春風の中でランデブー。Amidst the fluttering petals and the spring breeze, a rendezvous. ([[DM-07]])\n| flavor3 = 冬の風を吹き払い、光の絨毯を敷く。その不思議な力は誰のため? \"Blowing away the winter wind, spreading a carpet of light. For whom is this mysterious power? (P17/Y2)\n| mana = 1\n| artist = Daisuke Izuka\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 52/55\n| R1 = Common\n| set2 = DM-07 Invincible Charge\n| setnum2 = 53/55\n| R2 = Common\n| set3 = Promotional\n| setnum3 = P17/Y2\n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Nature]]\n[[Category:Snow Faerie]]\n[[Category:Tap Ability]]\n[[Category:2000 Power Creatures]]\n[[Category:Mana Acceleration]]"
+}

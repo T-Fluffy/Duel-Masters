@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_07_020",
+ "page": "Curious Eye",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Cyber Virus",
+ "cost": "3",
+ "power": "1000",
+ "engtext": "■ Whenever this [[creature]] [[attack]]s, you may [[look]] at one of your [[opponent]]'s [[shield]]s. Then put it back where it was.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "20/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "25/55",
+  "set3": "DMC-13 CoroCoro New Generation Pack ",
+  "setnum3": "9/37 "
+ },
+ "wiki": "{{Cardtable\n| image = Curious Eye.jpg\n| civilization = Water\n| type = Creature\n| jpname = キュリアス・アイ\n| phonetic = Kyuriasu Ai \n| race = Cyber Virus\n| cost = 3\n| power = 1000\n| engtext = ■ Whenever this [[creature]] [[attack]]s, you may [[look]] at one of your [[opponent]]'s [[shield]]s. Then put it back where it was.\n| jptext = ■ このクリーチャーが攻撃するとき、相手のシールドを1枚見てもよい。その後、そのシールドを元の場所に戻す。\n| flavor = \"The spies I send into the [[Darkness]] realm get caught when their teeth chatter in fear. I think I've solved the problem.\" -[[Kyuroro]] ([[DM-07]])\n| flavor2 = 小さな小さな探偵を闇の世界に送ったよ。\"I sent the tiny little detective into the world of darkness.\" —[[Emeral]] ([[DM-07]])\n| mana = 1\n| artist = Katsuya\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 20/55\n| R1 = Uncommon\n| set2 = DM-07 Invincible Charge\n| setnum2 = 25/55\n| R2 = Uncommon\n| set3 = DMC-13 CoroCoro New Generation Pack \n| setnum3 = 9/37 \n| R3 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Cyber Virus]]\n[[Category:1000 Power Creatures]]\n[[Category:Shield Peek]]\n[[Category:Attack Trigger]]"
+}

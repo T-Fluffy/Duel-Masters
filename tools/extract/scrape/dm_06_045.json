@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_06_045",
+ "page": "Shock Hurricane",
+ "type": "Spell",
+ "civilization": "Water",
+ "race": "",
+ "cost": "5",
+ "power": "",
+ "engtext": "■ Return any [[number]] of your [[creature]]s from the [[battle zone]] to your [[hand]]. Then you may [[choose]] that many of your [[opponent]]'s [[creature]]s in the [[battle zone]] and return them to your [[opponent]]'s [[hand]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "45/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "51/110",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "64/140"
+ },
+ "wiki": "{{Cardtable\n| image = Shock Hurricane.jpg\n| civilization = Water\n| type = Spell\n| jpname = ショック・ハリケーン\n| phonetic = Shokku Harikēn\n| cost = 5\n| engtext = ■ Return any [[number]] of your [[creature]]s from the [[battle zone]] to your [[hand]]. Then you may [[choose]] that many of your [[opponent]]'s [[creature]]s in the [[battle zone]] and return them to your [[opponent]]'s [[hand]].\n| jptext = ■ バトルゾーンにある自分のクリーチャーを好きな数選び、自分の手札に戻す。その後、バトルゾーンにある相手のクリーチャーを同じ数選び、持ち主の手札に戻してもよい。\n| flavor = \"I wish I had my umbrellaaaaaaaaaaaaaaaaaaaa!\" ([[DM-06]])\n| flavor2 = 押せば引け、引いたら更に引け。Push to pull, pull to pull even more. ([[DM-06]])\n| flavor3 = 巻き込んだ物の数だけ嵐は大きくなる。The more things you involve, the greater the storm becomes. ([[DM-18]])\n| mana = 1\n| artist = Akifumi Yamamoto\n| artist2 = ZENTOYO\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 45/110\n| R1 = Uncommon\n| set2 = DM-06 Invincible Soul\n| setnum2 = 51/110\n| R2 = Uncommon\n| set3 = DM-18 Best Challenger\n| setnum3 = 64/140\n| R3 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Bounce]]\n[[Category:Mass Removal]]\n[[Category:Self Bounce]]"
+}

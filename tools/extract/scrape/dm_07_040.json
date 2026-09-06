@@ -1,0 +1,30 @@
+{
+ "card_id": "dm_07_040",
+ "page": "Gazarias Dragon",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Armored Dragon",
+ "cost": "5",
+ "power": "4000+",
+ "engtext": "■ While you have no [[shield]]s, this [[creature]] gets +4000 [[power]] and has \"[[double breaker]] ''(This [[creature]] [[break]]s 2 [[shield]]s)''.\"",
+ "templates": [],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "40/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "48/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "77/140",
+  "set4": "DMC-09 Shobu's Dragon Legend Deck ",
+  "setnum4": "35/44",
+  "set5": "DMC-13 CoroCoro New Generation Pack",
+  "setnum5": "32/37",
+  "set6": "DMC-15 Eternal Dragons Deck",
+  "setnum6": "64/78",
+  "set7": "DMC-18 Shobu's Holy Dragon Deck",
+  "setnum7": "81/102",
+  "set8": "DMC-42 CoroCoro Dream Pack 3: Eternal Gear",
+  "setnum8": "77/90"
+ },
+ "wiki": "{{Cardtable\n| image = Gazarias Dragon.jpg\n| civilization = Fire\n| type = Creature\n| jpname = ガザリアス・ドラゴン\n| phonetic = Gazariasu Doragon\n| race = Armored Dragon\n| cost = 5\n| power = 4000+\n| engtext = ■ While you have no [[shield]]s, this [[creature]] gets +4000 [[power]] and has \"[[double breaker]] ''(This [[creature]] [[break]]s 2 [[shield]]s)''.\"\n| jptext = ■ 自分のシールドが1枚もなければ、このクリーチャーのパワーは+4000され、「W・ブレイカー」を得る。\n| flavor = \"My enemies never know what I'll do next. And neither do I!\" ([[DM-07]])\n| flavor2 = 奥深き地で轟いた同胞の断末魔、そこから全てが始まった。The dying scream of a comrade echoed in the deep earth, and from there, everything began. ([[DM-07]], [[DM-18]], [[DMC-42]])\n| mana = 1\n| artist = Hikaru Ikusa\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 40/55\n| R1 = Common\n| set2 = DM-07 Invincible Charge\n| setnum2 = 48/55\n| R2 = Common\n| set3 = DM-18 Best Challenger\n| setnum3 = 77/140\n| R3 = Common\n| set4 = DMC-09 Shobu's Dragon Legend Deck \n| setnum4 = 35/44\n| R4 = Common\n| set5 = DMC-13 CoroCoro New Generation Pack\n| setnum5 = 32/37\n| R5 = Common\n| set6 = DMC-15 Eternal Dragons Deck\n| setnum6 = 64/78\n| R6 = Common\n| set7 = DMC-18 Shobu's Holy Dragon Deck\n| setnum7 = 81/102\n| R7 = Common\n| set8 = DMC-42 CoroCoro Dream Pack 3: Eternal Gear\n| setnum8 = 77/90\n| R8 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Fire]]\n[[Category:Armored Dragon]]\n[[Category:Conditional Double Breaker]]\n[[Category:4000 Power Creatures]]\n[[Category:Self Increase Power]]"
+}

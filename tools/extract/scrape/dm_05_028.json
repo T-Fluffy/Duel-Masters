@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_05_028",
+ "page": "Gigazoul",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Chimera",
+ "cost": "3",
+ "power": "3000",
+ "engtext": "■ While your [[opponent]] has no [[shield]]s, this [[creature]] can't [[attack]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "28/55",
+  "set2": "DM-05 Return of the Survivor",
+  "setnum2": "45/55",
+  "set3": "DMC-08 Endless Black Hole Deck",
+  "setnum3": "56/82"
+ },
+ "wiki": "{{Cardtable\n| image = Gigazoul.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = ギガゾウル\n| phonetic = Gigazouru\n| cost = 3\n| race = Chimera\n| power = 3000\n| engtext = ■ While your [[opponent]] has no [[shield]]s, this [[creature]] can't [[attack]].\n| jptext = ■ 相手にシールドが1枚もなければ、このクリーチャーは攻撃することができない。\n| flavor = \"Perhaps I went a little too far with the experiment....\" -[[Ballom, Master of Death]] ([[DM-05]])\n| flavor2 = 「…合成しすぎたか」 \"...This fusion is a little bit too far.\" -[[Tyrant Black Monarch]] ([[DM-05]])\n| mana = 1\n| artist = Katsuya\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = 28/55\n| R1 = Common\n| set2 = DM-05 Return of the Survivor\n| setnum2 = 45/55\n| R2 = Common\n| set3 = DMC-08 Endless Black Hole Deck\n| setnum3 = 56/82\n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Chimera]]\n[[Category:3000 Power Creatures]]"
+}

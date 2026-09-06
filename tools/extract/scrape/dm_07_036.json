@@ -1,0 +1,28 @@
+{
+ "card_id": "dm_07_036",
+ "page": "Apocalypse Vise",
+ "type": "Spell",
+ "civilization": "Fire",
+ "race": "",
+ "cost": "7",
+ "power": "",
+ "engtext": "■ [[Destroy]] any [[number]] of your [[opponent]]'s [[creature]]s that have total [[power]] 8000 or less.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "36/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "17/55",
+  "set3": "DMC-09 Shobu's Dragon Legend Deck",
+  "setnum3": "10/44",
+  "set4": "DMC-15 Eternal Dragons Deck",
+  "setnum4": "14/78 ",
+  "set5": "DMC-18 Shobu's Holy Dragon Deck",
+  "setnum5": "15/102",
+  "set6": "DMC-27 CoroCoro Dream Pack",
+  "setnum6": "17/55",
+  "set7": "Promotional",
+  "setnum7": "L7 Y2"
+ },
+ "wiki": "{{Cardtable\n| image = Apocalypse Vise.jpg\n| civilization = Fire\n| type = Spell\n| jpname = {{Ruby|地|じ}}{{Ruby|獄|ごく}}{{Ruby|万|まん}}{{Ruby|力|りき}} ''(Hell Vise)''\n| phonetic = Jigoku Manriki\n| cost = 7\n| engtext = ■ [[Destroy]] any [[number]] of your [[opponent]]'s [[creature]]s that have total [[power]] 8000 or less.\n| jptext = ■ 相手のクリーチャーを、パワーの合計が8000以下になるように好きな数選び、破壊する。\n| flavor = \"I've invented a fun new weight-loss machine! It's guaranteed to make you thinner, or your money back!\" —[[Rikabu, the Dismantler]] ([[DM-07]])\n| flavor2 = 痛いの痛いの入り込め。\"Pain, pain, come inside.\" ([[DM-07]], [[DMC-09]], [[DMC-15]], [[DMC-27]])\n| flavor3 = こっからが本番だぜ!! \"The real show starts now!!\" ([[DMC-18]])\n| mana = 1\n| artist = Hisashi Momose\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 36/55\n| R1 = Rare\n| set2 = DM-07 Invincible Charge\n| setnum2 = 17/55\n| R2 = Rare\n| set3 = DMC-09 Shobu's Dragon Legend Deck\n| setnum3 = 10/44\n| R3 = Rare\n| set4 = DMC-15 Eternal Dragons Deck\n| setnum4 = 14/78 \n| R4 = Rare\n| set5 = DMC-18 Shobu's Holy Dragon Deck\n| setnum5 = 15/102\n| R5 = Rare\n| set6 = DMC-27 CoroCoro Dream Pack\n| setnum6 = 17/55\n| R6 = Rare\n| set7 = Promotional\n| setnum7 = L7 Y2\n| R7 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Fire]]\n[[Category:Spell]]\n[[Category:Mass Removal]]\n[[Category:Power Based Removal]]"
+}

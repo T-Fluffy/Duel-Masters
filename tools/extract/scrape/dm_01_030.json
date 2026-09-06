@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_01_030",
+ "page": "Faerie Child",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Cyber Virus",
+ "cost": "4",
+ "power": "2000",
+ "engtext": "■ This [[creature]] can't be [[block]]ed.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "30/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "49/110",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "61/140"
+ },
+ "wiki": "{{Cardtable\n| image = Faerie Child.jpg\n| civilization = Water\n| type = Creature\n| jpname = フェアリー・チャイルド\n| phonetic = Fearī Chairudo\n| race = Cyber Virus\n| cost = 4\n| power = 2000\n| engtext = ■ This [[creature]] can't be [[block]]ed.\n| jptext = ■ このクリーチャーはブロックされない。\n| flavor = 小さな小さな光の群れ。その全てを防ぐことは不可能だ。 A school of teeny, tiny points of light. Stopping them all is impossible. ([[DM-01]], [[DM-18]])\n| mana = 1\n| artist = Hisanobu Kometani\n| set1 = DM-01 Base Set\n| setnum1 = 30/110\n| R1 = Uncommon\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 49/110\n| R2 = Uncommon\n| set3 = DM-18 Best Challenger\n| setnum3 = 61/140\n| R3 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Unblockable]]"
+}

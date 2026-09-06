@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_08_014",
+ "page": "Solar Grass",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Starlight Tree",
+ "cost": "5",
+ "power": "3000",
+ "engtext": "{{Turbo Rush|Whenever this [[creature]] is [[attack]]ing your [[opponent]] and isn't [[block]]ed, [[untap]] all your [[creature]]s in the [[battle zone]] except '''Solar Grasses'''.}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "14/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "21/55"
+ },
+ "wiki": "{{Cardtable\n| image = Solar Grass.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|日向草|ソーラー・グラス}}\n| phonetic = Sōrā Gurasu\n| kana = ソーラー・グラス ''(Solar Grass)''\n| race = Starlight Tree\n| cost = 5\n| power = 3000\n| engtext = {{Turbo Rush|Whenever this [[creature]] is [[attack]]ing your [[opponent]] and isn't [[block]]ed, [[untap]] all your [[creature]]s in the [[battle zone]] except '''Solar Grasses'''.}}\n| jptext = ■ ターボラッシュ （自分の他のクリーチャーがシールドをブレイクしたあと、そのターンが終わるまで、このクリーチャーは次の{{Icon|TR}}能力を得る）\n:{{Icon|TR}}このクリーチャーが相手プレイヤーを攻撃してブロックされなかったとき、バトルゾーンにある、'''日向草'''以外の自分のクリーチャーをすべてアンタップする。\n| flavor = \n| mana = 1\n| artist = Katsuhiko Kojoh\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 14/55\n| R1 = Uncommon\n| set2 = DM-08 Invincible Legend\n| setnum2 = 21/55\n| R2 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Creature Untap]]\n[[Category:Sabotage Ability]]"
+}

@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_04_s05",
+ "page": "Niofa, Horned Protector",
+ "type": "Evolution Creature",
+ "civilization": "Nature",
+ "race": "Horned Beast",
+ "cost": "6",
+ "power": "9000",
+ "engtext": "■ [[Evolution]]—Put on one of your [[Horned Beast]]s.\n\n■ [[When you put]] this [[creature]] into the [[battle zone]], [[search]] your [[deck]]. You may take a [[nature]] [[creature]] from your [[deck]], show that [[creature]] to your [[opponent]], and put it into your [[hand]]. Then [[shuffle]] your [[deck]].\n\n{{Double Breaker}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-04 Shadowclash of Blinding Night",
+  "setnum1": "S5/S5",
+  "set2": "DM-04 Challenge of Black Shadow ",
+  "setnum2": "S5/S5",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "S9/S10"
+ },
+ "wiki": "{{Cardtable\n| image = Niofa, Horned Protector.jpg\n| civilization = Nature\n| type = Evolution Creature\n| jpname = {{Ruby|護|まも}}りの{{Ruby|角|つの}}フィオナ ''(Fiona, Horn of Protection)''\n| phonetic = Mamori no Tsuno Fiona\n| race = Horned Beast\n| cost = 6\n| power = 9000\n| engtext = ■ [[Evolution]]—Put on one of your [[Horned Beast]]s.\n\n■ [[When you put]] this [[creature]] into the [[battle zone]], [[search]] your [[deck]]. You may take a [[nature]] [[creature]] from your [[deck]], show that [[creature]] to your [[opponent]], and put it into your [[hand]]. Then [[shuffle]] your [[deck]].\n\n{{Double Breaker}}\n| jptext = ■ 進化－自分のホーン・ビースト1体の上に置く。\n\n■ このクリーチャーがバトルゾーンに出た時、自分の山札を見る。その中から自然のクリーチャーを1体選び、相手に見せてから自分の手札に加えてもよい。その後、山札をシャッフルする。\n\n{{Double Breaker|jp}} \n| flavor = \n| mana = 1\n| artist = Tsuu\n| set1 = DM-04 Shadowclash of Blinding Night\n| setnum1 = S5/S5\n| R1 = Super Rare\n| set2 = DM-04 Challenge of Black Shadow \n| setnum2 = S5/S5\n| R2 = Super Rare\n| set3 = DM-18 Best Challenger\n| setnum3 = S9/S10\n| R3 = Super Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Deck Search]]\n[[Category:Come Into Play Trigger]]"
+}

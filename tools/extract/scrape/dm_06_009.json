@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_06_009",
+ "page": "Invincible Unity",
+ "type": "Spell",
+ "civilization": "Nature",
+ "race": "",
+ "cost": "13",
+ "power": "",
+ "engtext": "■ Each of your [[creature]]s in the [[battle zone]] gets +8000 [[power]] and \"[[triple breaker]]\" until the [[End Step|end of the turn]]. ''(A [[creature]] that has \"[[triple breaker]]\" [[break]]s 3 [[shield]]s.)''",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "9/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "10/110"
+ },
+ "wiki": "{{Cardtable\n| image = Invincible Unity.jpg\n| civilization = Nature\n| type = Spell\n| jpname = インビンシブル・パワー\n| phonetic = Inbinshiburu Pawā ''(Invincible Power)''\n| cost = 13\n| engtext = ■ Each of your [[creature]]s in the [[battle zone]] gets +8000 [[power]] and \"[[triple breaker]]\" until the [[End Step|end of the turn]]. ''(A [[creature]] that has \"[[triple breaker]]\" [[break]]s 3 [[shield]]s.)''\n| jptext = ■ このターンが終わるまで、バトルゾーンにある自分のクリーチャーのパワーはそれぞれ+8000され、「T・ブレイカー」を得る。\n| flavor = The roots of the [[World Tree, Root of Life|World Tree]] reach into the hearts of all who cherish life. ([[DM-06]])\n| flavor2 = 数年に一度、世界樹は膨大なエナジーを放出する. それは、勇気と力を与える光の洪水だ. 再生が終わり、戦いの時が来た。 Once every few years, the World Tree releases an immense burst of energy. It is a flood of light that grants courage and power. The regeneration is complete, and the time for battle has arrived. ([[DM-06]])\n| mana = 1\n| artist = Hisashi Momose\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 9/110\n| R1 = Very Rare\n| set2 = DM-06 Invincible Soul\n| setnum2 = 10/110\n| R2 = Very Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Increase Power]]\n[[Category:Gives \"Triple Breaker\"]]"
+}

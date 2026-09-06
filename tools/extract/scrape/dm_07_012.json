@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_07_012",
+ "page": "Pulsar Tree",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Starlight Tree",
+ "cost": "5",
+ "power": "1000",
+ "engtext": "■ When one of your [[shield]]s would be [[break|broken]], you may [[destroy]] this [[creature]] [[instead]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "12/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "7/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "20/140"
+ },
+ "wiki": "{{Cardtable\n| image = Pulsar Tree.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|光封樹|トラップ・ツリー}}\n| phonetic = Torappu Tsurī\n| kana = トラップ・ツリー ''(Trap Tree)''\n| race = Starlight Tree\n| cost = 5\n| power = 1000\n| engtext = ■ When one of your [[shield]]s would be [[break|broken]], you may [[destroy]] this [[creature]] [[instead]].\n| jptext = ■ 自分のシールドが1枚ブレイクされる時、かわりにこのクリーチャーを破壊してもよい。\n| flavor = They are the generators that power the [[Light]] civilization's floating fortresses. But did they grow into the cities, or did the cities grow out of them? ([[DM-07]])\n| flavor2 = 塔の灯が、悪しき心を吸い寄せる。The light of the tower draws in wicked hearts. ([[DM-07]], [[DM-18]])\n| mana = 1\n| artist = Naoki Saito\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 12/55\n| R1 = Rare\n| set2 = DM-07 Invincible Charge\n| setnum2 = 7/55\n| R2 = Rare\n| set3 = DM-18 Best Challenger\n| setnum3 = 20/140\n| R3 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Starlight Tree]]\n[[Category:Shield Saver]]\n[[Category:1000 Power Creatures]]"
+}

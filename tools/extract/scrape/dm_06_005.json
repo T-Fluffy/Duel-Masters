@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_06_005",
+ "page": "Invincible Abyss",
+ "type": "Spell",
+ "civilization": "Darkness",
+ "race": "",
+ "cost": "13",
+ "power": "",
+ "engtext": "■ [[Destroy]] all your [[opponent]]'s [[creature]]s.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "5/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "6/110"
+ },
+ "wiki": "{{Cardtable\n| image = Invincible Abyss.jpg\n| civilization = Darkness\n| type = Spell\n| jpname = インビンシブル・アビス\n| phonetic = Inbinshiburu Abisu\n| cost = 13\n| engtext = ■ [[Destroy]] all your [[opponent]]'s [[creature]]s.\n| jptext = ■ 相手は、バトルゾーンにある自分自身のクリーチャーすべてを持ち主の墓地に置く。\n| flavor = \"After the latest [[Nature]] victories in the [[Fiona Woods]], [[Ballom, Master of Death|Ballom]] decided to host peace talks at the sacred Xhalmic Crater. The stadium filled with [[Nature]] and [[Light]] representatives, but [[Ballom, Master of Death|Ballom]], [[Trox, General of Destruction|Trox]] and [[Daidalos, General of Fury|Daidalos]] never showed. As if on cue, the crater started belching toxic gas...\" ([[DM-06]])\n| flavor2 = 猛毒の瘴気立ちこめる大爆発の跡地から、あらゆる生者を憎み、あらゆる魂を汚す恐れと悲しみの精神波動が放出された。From the site of a massive explosion shrouded in deadly miasma, a wave of spiritual energy filled with hatred for all living things and the sorrow that defiles every soul was released. ([[DM-06]])\n| mana = 1\n| artist = Atsushi Kawasaki\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 5/110\n| R1 = Very Rare\n| set2 = DM-06 Invincible Soul\n| setnum2 = 6/110\n| R2 = Very Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Mass Removal]]"
+}

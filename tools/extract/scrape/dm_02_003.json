@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_02_003",
+ "page": "Fonch, the Oracle",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Light Bringer",
+ "cost": "4",
+ "power": "2000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], [[choose]] one of your [[opponent]]'s [[creature]]s in the [[battle zone]] and [[tap]] it.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "3/55",
+  "set2": "DM-02 Master of Evolution",
+  "setnum2": "37/55",
+  "set3": "DMC-20 Shobu's Holy Dragon Power-Up Pack",
+  "setnum3": "51/102",
+  "set4": "DMC-27 CoroCoro Dream Pack",
+  "setnum4": "37/55"
+ },
+ "wiki": "{{Cardtable\n| image=Fonch, the Oracle.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|予|よ}}{{Ruby|言|げん}}{{Ruby|者|しゃ}}フィンチ ''(Finch, the Prophet)''\n| phonetic = Yogensha Finchi\n| cost = 4\n| race = Light Bringer\n| power = 2000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], [[choose]] one of your [[opponent]]'s [[creature]]s in the [[battle zone]] and [[tap]] it.\n| jptext = ■ このクリーチャーをバトルゾーンに出した時、バトルゾーンにある相手のクリーチャーを1体選び、タップしてもよい。\n| flavor = The shining [[Light Bringer|oracle]]s chose to stay out of the way and observe the invasion... for now.\n| flavor2 = くろがねに輝く{{Ruby|予|よ}}{{Ruby|言|げん}}{{Ruby|者|しゃ}}は、変化を見守ることを選んだ。 ([[DM-02]], [[DMC-20]], [[DMC-27]])\n| mana = 1\n| artist = Dustmoss\n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = 3/55\n| R1 = Common\n| set2 = DM-02 Master of Evolution\n| setnum2 = 37/55\n| R2 = Common\n| set3 = DMC-20 Shobu's Holy Dragon Power-Up Pack\n| setnum3 = 51/102\n| R3 = Common\n| set4 = DMC-27 CoroCoro Dream Pack\n| setnum4 = 37/55\n| R4 = Common\n}}\n[[Category:OCG]]\n[[Category:TCG]]\n[[Category:Light]]\n[[Category:Light Bringer]]\n[[Category:2000 Power Creatures]]\n[[Category:Creature Tapper]]\n[[Category:Come Into Play Trigger]]"
+}

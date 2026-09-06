@@ -1,0 +1,24 @@
+{
+ "card_id": "dm_03_032",
+ "page": "Snake Attack",
+ "type": "Spell",
+ "civilization": "Darkness",
+ "race": "",
+ "cost": "4",
+ "power": "",
+ "engtext": "■ Each of your [[creature]]s in the [[battle zone]] gets \"[[double breaker]]\" until the [[End Step|end of the turn]]. ''(A [[creature]] that has \"[[double breaker]]\" [[break]]s 2 [[shield]]s.)''\n\n■ Choose one of your [[shield]]s and put it into your [[graveyard]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-03 Rampage of the Super Warriors",
+  "setnum1": "32/55",
+  "set2": "DM-03 Master of Destruction",
+  "setnum2": "47/55",
+  "set3": "DMC-04 Kokujo's Darkness Power-Up Pack",
+  "setnum3": "31/43",
+  "set4": "DMC-21 Zakira's Dragon Commander Power-Up Pack ",
+  "setnum4": "77/102",
+  "set5": "DMEX-10 W-Kingdom Docking Pack: Onifuda Kingdom & Fushigi Kingdom",
+  "setnum5": "32/42"
+ },
+ "wiki": "{{Cardtable\n| image= Snake Attack.jpg\n| civilization = Darkness\n| type = Spell\n| jpname = スネークアタック\n| phonetic = Sunēkuatakku\n| cost = 4\n| engtext = ■ Each of your [[creature]]s in the [[battle zone]] gets \"[[double breaker]]\" until the [[End Step|end of the turn]]. ''(A [[creature]] that has \"[[double breaker]]\" [[break]]s 2 [[shield]]s.)''\n\n■ Choose one of your [[shield]]s and put it into your [[graveyard]].\n| jptext = ■ このターン、バトルゾーンにある自分のクリーチャーはすべて、「W・ブレイカー」を得る。\n\n■ 自分のシールドが1枚でもあれば、裏向きのまま1枚選び、自分の墓地に置く。\n| flavor = {{tooltip|Baraga, Blade of Gloom|Baraga}} unsuccessfully gave swords to his army of snakes. ([[DM-03]])\n| flavor2 = ～鬼札王国の王技～ <br> ブレイク数をアップしつつ、自分のシールドも減らして鬼タイム突入をサポートしよう! <br> ~[[Onifuda Kingdom]]'s Royal Techniques~ <br> Increase your break count and reduce your own shields to help you enter [[Onitime]]! ([[DMEX-10]])\n| mana = 1\n| artist = Naoki Saito\n| set1 = DM-03 Rampage of the Super Warriors\n| setnum1 = 32/55\n| R1 = Common\n| set2 = DM-03 Master of Destruction\n| setnum2 = 47/55\n| R2 = Common\n| set3 = DMC-04 Kokujo's Darkness Power-Up Pack\n| setnum3 = 31/43\n| R3 = Common\n| set4 = DMC-21 Zakira's Dragon Commander Power-Up Pack \n| setnum4 = 77/102\n| R4 = Common\n| set5 = DMEX-10 W-Kingdom Docking Pack: Onifuda Kingdom & Fushigi Kingdom\n| setnum5 = 32/42\n| R5 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Gives \"Double Breaker\"]]\n[[Category:Self Shield Burn]]"
+}

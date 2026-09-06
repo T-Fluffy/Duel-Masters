@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_08_049",
+ "page": "Dracodance Totem",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Mystery Totem",
+ "cost": "2",
+ "power": "1000",
+ "engtext": "■ When this [[creature]] would be [[destroy]]ed, if you have a [[creature]] that has [[Dragon]] in its [[race]] in your [[mana zone]], put this [[creature]] into your [[mana zone]] [[instead]] of [[destroy]]ing it. Then return a [[creature]] that has [[Dragon]] in its [[race]] from your [[mana zone]] to your [[hand]]. ",
+ "templates": [],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "49/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "34/55",
+  "set3": "DMC-15 Eternal Dragons Deck",
+  "setnum3": "36/78",
+  "set4": "DMC-33 Edge of Dragon",
+  "setnum4": "17/27"
+ },
+ "wiki": "{{Cardtable\n| image = Dracodance Totem.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|竜舞の化身|ドラコダンス・トーテム}} ''(Avatar of Dragon Dance)''\n| phonetic = Dorakodansu Tōtemu\n| kana = ドラコダンス・トーテム ''(Dracodance Totem)''\n| race = Mystery Totem\n| cost = 2\n| power = 1000\n| engtext = ■ When this [[creature]] would be [[destroy]]ed, if you have a [[creature]] that has [[Dragon]] in its [[race]] in your [[mana zone]], put this [[creature]] into your [[mana zone]] [[instead]] of [[destroy]]ing it. Then return a [[creature]] that has [[Dragon]] in its [[race]] from your [[mana zone]] to your [[hand]]. \n| jptext = ■ このクリーチャーが破壊される時、自分のマナゾーンに種族にドラゴンとあるクリーチャーが1体でもあれば、このクリーチャーを墓地に置くかわりに自分のマナゾーンに置く。その後、種族にドラゴンとあるクリーチャーを1体、自分のマナゾーンから手札に戻す。\n| flavor = 最悪の事態になるとは知らず、彼らは約束を守るため、化身に封舞を踊らせた。Unaware that the worst-case scenario would occur, they made the avatar dance the sealing dance to keep their promise. ([[DM-08]], [[DMC-15]], [[DMC-33]])\n| mana = 1\n| artist = Norikatsu Miyoshi\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 49/55\n| R1 = Uncommon\n| set2 = DM-08 Invincible Legend\n| setnum2 = 34/55\n| R2 = Uncommon\n| set3 = DMC-15 Eternal Dragons Deck\n| setnum3 = 36/78\n| R3 = Uncommon\n| set4 = DMC-33 Edge of Dragon\n| setnum4 = 17/27\n| R4 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Destruction Substitution]]\n[[Category:Mana Recovery]]"
+}

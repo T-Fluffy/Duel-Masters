@@ -1,0 +1,26 @@
+{
+ "card_id": "dm_05_009",
+ "page": "Glory Snow",
+ "type": "Spell",
+ "civilization": "Light",
+ "race": "",
+ "cost": "4",
+ "power": "",
+ "engtext": "{{Shield Trigger|spell}} \n\n■ If your [[opponent]] has more [[card]]s in his [[mana zone]] than you have in yours, put the top 2 [[card]]s of your [[deck]] into your [[mana zone]].",
+ "templates": [
+  "Shield Trigger|spell"
+ ],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "9/55",
+  "set2": "DM-05 Return of the Survivor",
+  "setnum2": "8/55",
+  "set3": "DMX-18 Triple Shifter! Dragsolution Allstars",
+  "setnum3": "10/50",
+  "set4": "DMBD-06 Chronicle Legacy Deck 2018: Divine Temple of the Zenith",
+  "setnum4": "19/19",
+  "set5": "DM23-BD7 Exciting Duepa Deck: False Pedant of Negotiation",
+  "setnum5": "26/60"
+ },
+ "wiki": "{{Cardtable\n| image = Glory Snow.jpg\n| civilization = Light\n| type = Spell\n| jpname = グローリー・スノー\n| phonetic = Gurōrī Sunō\n| cost = 4\n| engtext = {{Shield Trigger|spell}} \n\n■ If your [[opponent]] has more [[card]]s in his [[mana zone]] than you have in yours, put the top 2 [[card]]s of your [[deck]] into your [[mana zone]].\n| jptext = {{Icon|ST}} S・トリガー (この呪文をシールドゾーンから手札に加える時、コストを支払わずにすぐ唱えてもよい)\n\n■ 相手のマナゾーンのカードが自分のより多ければ、自分の山札の上から２枚をマナゾーンに置く。\n| flavor = 空舞う光は、誠実な魂を祝福する。The Light flickering in the sky blesses the honest souls. ([[DM-05]])\n| flavor2 = あまりに大きなドラグハートの力。それをコントロールすべく、一度、より大きな器に魂を移す「3D龍解」の研究が各文明ですすめられた。The power of the Draghearts got too strong. In order to control it, research of transferring the souls into a large vessel through the method of [[3D Dragsolution]] was undergone in each civilization.  ([[DMX-18]])\n| flavor3 = あらゆる者を「審判の日」に集わせる力を持つ、セーブ・ザ・デイト。そして、オーエン・ザ・ロードがその姿を現すと、墓地には誰もいなくなった。「創世」と「終焉」、この2柱の力が、ゼロではない新たなゼニスの力を生み出した。　—『オラクルの書 第2章』 [[Save the Date, Zenith of \"Genesis\"|Save the Date]], who gathered those for \"Judgment Day\". And along with the advent of [[Owen the Road, Zenith of \"The End\"|Owen the Road]], not a single soul was left in the [[graveyard]]. \"Genesis\" and \"Armageddon\", the influence of these two deities gave birth to the new power of [[Zenith]]s that were not of Zero. -'Book of Oracle', Chapter 2 ([[DMBD-06]])\n| flavor4 = アナタだけが知っているってセリフ、ちょっと、なんか気に食わないわね。\"The line 'Only you know'... it’s a bit, I don’t know, bothersome.\" <br> —[[Sapphire Misty]] ([[DM23-BD7]])\n| mana = 1\n| artist = Sansyu\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = 9/55\n| R1 = Rare\n| set2 = DM-05 Return of the Survivor\n| setnum2 = 8/55\n| R2 = Rare\n| set3 = DMX-18 Triple Shifter! Dragsolution Allstars\n| setnum3 = 10/50\n| R3 = Rare\n| set4 = DMBD-06 Chronicle Legacy Deck 2018: Divine Temple of the Zenith\n| setnum4 = 19/19\n| R4 = Rare\n| set5 = DM23-BD7 Exciting Duepa Deck: False Pedant of Negotiation\n| setnum5 = 26/60\n| R5 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Shield Trigger]]\n[[Category:Spell]]\n[[Category:Mana Acceleration]]"
+}

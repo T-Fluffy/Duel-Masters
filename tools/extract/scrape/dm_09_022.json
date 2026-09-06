@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_09_022",
+ "page": "Submarine Project",
+ "type": "Spell",
+ "civilization": "Water",
+ "race": "",
+ "cost": "3",
+ "power": "",
+ "engtext": "{{Shield Trigger|spell}} \n\n■ [[Look]] at the top 4 [[card]]s of your [[deck]]. Put one of them into your [[hand]], and put the rest on the bottom of your [[deck]] in any order.",
+ "templates": [
+  "Shield Trigger|spell"
+ ],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "22/55",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "26/55"
+ },
+ "wiki": "{{Cardtable\n| image = Submarine Project.jpg\n| civilization = Water\n| type = Spell\n| jpname = サブマリン・プロジェクト\n| phonetic = Sabumarin Purojekuto\n| cost = 3\n| engtext = {{Shield Trigger|spell}} \n\n■ [[Look]] at the top 4 [[card]]s of your [[deck]]. Put one of them into your [[hand]], and put the rest on the bottom of your [[deck]] in any order.\n| jptext = {{Icon|ST}} S・トリガー\n\n■ 自分の山札の上から4枚を見る。その中から1枚選んで自分の手札に加え、他の3枚を好きな順で自分の山札の一番下に戻す。\n| flavor = \"{{tooltip|Ballom, Master of Death|Ballom}}'s [[Stratosphere Giant|death]] changes nothing. Keep digging to the core.\" —{{tooltip|Emperor Maroll}} ([[DM-09]])\n| flavor2 = 計画無き戦争に、勝利なし。There is no victory in a war without a plan. ([[DM-09]])\n| mana = 1 \n| artist = Norikatsu Miyoshi\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = 22/55\n| R1 = Uncommon\n| set2 = DM-09 Invincible Blood\n| setnum2 = 26/55\n| R2 = Uncommon\n}}\n[[Category:Shield Trigger]]\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Spell]]\n[[Category:Hand Addition]]"
+}

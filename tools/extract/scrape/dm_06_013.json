@@ -1,0 +1,24 @@
+{
+ "card_id": "dm_06_013",
+ "page": "Ballas, Vizier of Electrons",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Initiate",
+ "cost": "2",
+ "power": "2000",
+ "engtext": "",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "13/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "75/110",
+  "set3": "DM-18 Best Challenger ",
+  "setnum3": "96/110",
+  "set4": "DMC-05 Lightning Thunder Deck",
+  "setnum4": "47/82",
+  "set5": "DMC-10 Hakuoh's Holy Spirit Deck",
+  "setnum5": "27/44"
+ },
+ "wiki": "{{Cardtable\n| image = Ballas, Vizier of Electrons.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|電|でん}}{{Ruby|磁|じ}}の{{Ruby|使|し}}{{Ruby|徒|と}}バルアス\n| phonetic = Denji no Shito Baruasu\n| race = Initiate\n| cost = 2\n| power = 2000\n| flavor = For the first time since before the Megapocalypse, the forces of [[Light]] launched a full-fledged invasion of the planet surface. The [[Fire]] troops had no choice but to retreat. ([[DM-06]])\n| flavor2 = 長き戦いの末、光の軍勢は炎熱の部族を撤退させた。After a long battle, the army of light forced the fiery tribe to retreat. ([[DM-06]], [[DM-18]], [[DMC-10]])\n| mana = 1\n| artist = Naoki Saito\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 13/110\n| R1 = Common\n| set2 = DM-06 Invincible Soul\n| setnum2 = 75/110\n| R2 = Common\n| set3 = DM-18 Best Challenger \n| setnum3 = 96/110\n| R3 = Common\n| set4 = DMC-05 Lightning Thunder Deck\n| setnum4 = 47/82\n| R4 = Common\n| set5 = DMC-10 Hakuoh's Holy Spirit Deck\n| setnum5 = 27/44\n| R5 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Initiate]]\n[[Category:2000 Power Creatures]]\n[[Category:No Abilities]]"
+}

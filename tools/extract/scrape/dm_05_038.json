@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_05_038",
+ "page": "Bombat, General of Speed",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Dragonoid",
+ "cost": "5",
+ "power": "3000",
+ "engtext": "{{Speed Attacker}}",
+ "templates": [
+  "Speed Attacker"
+ ],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "38/55",
+  "set2": "DM-05 Return of the Survivor",
+  "setnum2": "31/55",
+  "set3": "DMC-06 Dragon Strikes Deck",
+  "setnum3": "31/82"
+ },
+ "wiki": "{{Cardtable\n| image = Bombat, General of Speed.jpg\n| civilization = Fire\n| type = Creature\n| jpname = {{Ruby|猛|もう}}{{Ruby|爆|ばく}}{{Ruby|軍|ぐん}}{{Ruby|曹|そう}}ボンバット ''(Bombat, Aerial Onslaught Sergeant)''\n| phonetic = Mōbakugun Sō Bonbatto\n| cost = 5\n| race = Dragonoid\n| power = 3000\n| engtext = {{Speed Attacker}}\n| jptext = {{Speed Attacker|jp}}\n| flavor = \"Too slow! Do I have to sit on a rocket to go faster?!\" ([[DM-05]])\n| flavor2 = 「遅い、とろい、鈍すぎる! 人面爆弾撃っちゃうぜ!」 \"Too slow, too clumsy, too dull! I'll fire the human-faced bomb!\" ―'''Bombat, General of Speed''' ([[DM-05]])\n| mana = 1\n| artist = Naoki Saito\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = 38/55\n| R1 = Uncommon\n| set2 = DM-05 Return of the Survivor\n| setnum2 = 31/55\n| R2 = Uncommon\n| set3 = DMC-06 Dragon Strikes Deck\n| setnum3 = 31/82\n| R3 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]"
+}

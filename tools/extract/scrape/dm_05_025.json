@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_05_025",
+ "page": "Steel-Turret Cluster",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Cyber Cluster",
+ "cost": "5",
+ "power": "3000",
+ "engtext": "■ This [[creature]] can't be [[attack]]ed by [[fire]] or [[nature]] [[creature]]s.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "25/55",
+  "set2": "DM-05 Return of the Survivor",
+  "setnum2": "42/55",
+  "set3": "DMC-21 Zakira's Dragon Commander Power-Up Pack",
+  "setnum3": "60/102"
+ },
+ "wiki": "{{Cardtable\n| image = Steel-Turret Cluster.jpg\n| civilization = Water\n| type = Creature\n| jpname = スチールアーム・クラスター\n| phonetic = Suchīruāmu Kurasutā ''(Steel Arm Cluster)''\n| race = Cyber Cluster\n| cost = 5\n| power = 3000\n| engtext = ■ This [[creature]] can't be [[attack]]ed by [[fire]] or [[nature]] [[creature]]s.\n| jptext = ■ このクリーチャーは、火または自然のクリーチャーから攻撃されない。\n| flavor = 敵装甲を解析し、偽装兵団が秘密裏に作成された。 After an analysis of its armor was performed, a squad of decoy troops was quickly constructed. ([[DM-05]], [[DMC-21]])\n| mana = 1\n| artist = D-Suzuki\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = 25/55\n| R1 = Common\n| set2 = DM-05 Return of the Survivor\n| setnum2 = 42/55\n| R2 = Common\n| set3 = DMC-21 Zakira's Dragon Commander Power-Up Pack\n| setnum3 = 60/102\n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Cyber Cluster]]\n[[Category:3000 Power Creatures]]\n[[Category:Unattackable]]"
+}

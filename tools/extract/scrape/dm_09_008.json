@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_09_008",
+ "page": "Cyclolink, Spectral Knight",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Rainbow Phantom",
+ "cost": "4",
+ "power": "3000",
+ "engtext": "■ Whenever this [[creature]] is [[attack]]ing your [[opponent]] and isn't [[block]]ed, [[search]] your [[deck]]. You may take a [[spell]] from your [[deck]], show that [[spell]] to your [[opponent]], and put it into your [[hand]]. Then [[shuffle]] your [[deck]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "8/55",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "36/55",
+  "set3": "DMC-42 CoroCoro Dream Pack 3: Eternal Gear",
+  "setnum3": "59/90"
+ },
+ "wiki": "{{Cardtable\n| image = Cyclolink, Spectral Knight.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|聖|せい}}{{Ruby|騎|き}}{{Ruby|士|し}}メビウスリンク\n| phonetic = Seikishi Mebiusurinku\n| race = Rainbow Phantom\n| cost = 4\n| power = 3000\n| engtext = ■ Whenever this [[creature]] is [[attack]]ing your [[opponent]] and isn't [[block]]ed, [[search]] your [[deck]]. You may take a [[spell]] from your [[deck]], show that [[spell]] to your [[opponent]], and put it into your [[hand]]. Then [[shuffle]] your [[deck]].\n| jptext = ■ このクリーチャーが相手プレイヤーを攻撃してブロックされなかった時、自分の山札を見る。その中から呪文を1枚選び、相手に見せてから自分の手札に加えてもよい。その後、山札をシャッフルする。\n| flavor = \"You will meet your fate... as soon as I stop feeling so... dizzy....\" ([[DM-09]])\n| flavor2 = 虚空に描いた虹色の渦から、未知なる力が溢れだす。From the rainbow-colored vortex drawn in the void, an unknown power overflows. ([[DM-09]], [[DMC-42]])\n| mana = 1\n| artist = Katsuya\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = 8/55\n| R1 = Common\n| set2 = DM-09 Invincible Blood\n| setnum2 = 36/55\n| R2 = Common\n| set3 = DMC-42 CoroCoro Dream Pack 3: Eternal Gear\n| setnum3 = 59/90\n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Deck Search]]\n[[Category:Sabotage Ability]]"
+}

@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_01_097",
+ "page": "Golden Wing Striker",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Beast Folk",
+ "cost": "3",
+ "power": "2000+",
+ "engtext": "{{Power Attacker|2000}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "97/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "104/110"
+ },
+ "wiki": "{{Cardtable\n| image = Golden Wing Striker.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|黄金の翼|ゴールデン・ウィング}} ''(Wing of Gold)''\n| phonetic = Gōruden Uingu\n| cost = 3\n| race = Beast Folk\n| power = 2000+\n| engtext = {{Power Attacker|2000}}\n| jptext =  {{Power Attacker|2000|jp}}\n| flavor = 魔族の戦士は、木の葉を揺らす風よりも速く狩りをする。 Hawk warriors hunt faster than the wind. ([[DM-01]])\n| mana = 1\n| artist = Miho Midorikawa\n| set1 = DM-01 Base Set\n| setnum1 = 97/110\n| R1 = Common\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 104/110\n| R2 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:2000 Power Creatures]]"
+}

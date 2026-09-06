@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_08_048",
+ "page": "Coliseum Shell",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Colony Beetle",
+ "cost": "4",
+ "power": "3000",
+ "engtext": "■ Whenever this [[creature]] becomes [[block]]ed, you may put the top [[card]] of your [[deck]] into your [[mana zone]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "48/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "33/55"
+ },
+ "wiki": "{{Cardtable\n| image = Coliseum Shell.jpg\n| civilization = Nature\n| type = Creature\n| jpname = シェル・コロシアム\n| phonetic = Sheru Koroshiamu\n| race = Colony Beetle\n| cost = 4\n| power = 3000\n| engtext = ■ Whenever this [[creature]] becomes [[block]]ed, you may put the top [[card]] of your [[deck]] into your [[mana zone]].\n| jptext =  ■ このクリーチャーがブロックされたとき、自分の山札の上から1枚目を自分のマナゾーンに加えてもよい。\n| flavor = \"What a terrible, senseless tragedy! My flogoball team was winning!\" -[[Ballom, Master of Death]] ([[DM-08]])\n| flavor2 = 休眠したコロニー・ビートルが、いつどこで目覚めるかは誰にも解らない。No one knows when or where the dormant Colony Beetle will awaken. ([[DM-08]])\n| mana = 1\n| artist = Katsuya\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 48/55\n| R1 = Uncommon\n| set2 = DM-08 Invincible Legend\n| setnum2 = 33/55\n| R2 = Uncommon\n}}\n[[Category:OCG]]\n[[Category:TCG]]\n[[Category:Nature]]\n[[Category:Colony Beetle]]\n[[Category:3000 Power Creatures]]\n[[Category:Mana Acceleration]]"
+}

@@ -1,0 +1,24 @@
+{
+ "card_id": "dm_01_102",
+ "page": "Poisonous Mushroom",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Balloon Mushroom",
+ "cost": "2",
+ "power": "1000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], you may put 1 [[card]] from your [[hand]] into your [[mana zone]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "102/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "69/110",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "88/140",
+  "set4": "DMEX-09 W-Team Docking Pack: Team Kirifuda & Team Wave",
+  "setnum4": "22/42",
+  "set5": "Promotional",
+  "setnum5": "P40/Y4"
+ },
+ "wiki": "{{Cardtable\n| image = Poisonous Mushroom.jpg\n| civilization = Nature\n| type = Creature\n| jpname = シビレアシダケ\n| phonetic = Shibireashidake\n| cost = 2\n| race = Balloon Mushroom\n| power = 1000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], you may put 1 [[card]] from your [[hand]] into your [[mana zone]].\n| jptext = ■ このクリーチャーをバトルゾーンに出した時、自分の手札を1枚、マナゾーンに置いてもよい。\n| flavor = You won't find these mushrooms on salads. ([[DM-01]])\n| flavor2 = 永遠に尽きることのない生命の泉。大地から生まれ、木々と共に死ぬ。掟は命を無駄に使わぬこと、それが自然文明。A fountain of life that never ends. Born from the earth, it dies with the trees. To not utilize life in vain, that is the law of the [[Nature Civilization]]. (P40/Y4)\n| flavor3 = ジョーカーズ星もレインボーの力に溢れた結果、新たにチーム切札の本拠地となったのだ! \"As a result of the Joker's star being filled with the power of the rainbow, it has now become the new headquarters of Team Kirifuda!\" ([[DMEX-09]])\n| mana = 1\n| artist = Daisuke Izuka\n| artist2 = Syuichi Obata\n| set1 = DM-01 Base Set\n| setnum1 = 102/110\n| R1 = Uncommon\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 69/110\n| R2 = Uncommon\n| set3 = DM-18 Best Challenger\n| setnum3 = 88/140\n| R3 = Uncommon\n| set4 = DMEX-09 W-Team Docking Pack: Team Kirifuda & Team Wave\n| setnum4 = 22/42\n| R4 = Uncommon\n| set5 = Promotional\n| setnum5 = P40/Y4\n| R5 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Nature]]\n[[Category:Balloon Mushroom]]\n[[Category:1000 Power Creatures]]\n[[Category:Mana Acceleration]]\n[[Category:Come Into Play Trigger]]"
+}

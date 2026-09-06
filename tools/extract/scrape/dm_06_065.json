@@ -1,0 +1,24 @@
+{
+ "card_id": "dm_06_065",
+ "page": "Proclamation of Death",
+ "type": "Spell",
+ "civilization": "Darkness",
+ "race": "",
+ "cost": "4",
+ "power": "",
+ "engtext": "{{Shield Trigger|spell}}\n\n■ Your [[opponent]] chooses one of his [[creature]]s in the [[battle zone]] and [[destroy]]s it.",
+ "templates": [
+  "Shield Trigger|spell"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "65/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "58/110",
+  "set3": "DMC-07 Eternal Insects Deck",
+  "setnum3": "26/78",
+  "set4": "DMC-17 Dark Warriors Deck",
+  "setnum4": "29/82"
+ },
+ "wiki": "{{Cardtable\n| image = Proclamation of Death.jpg\n| civilization = Darkness\n| type = Spell\n| jpname = {{Ruby|死|し}}の{{Ruby|宣|せん}}{{Ruby|告|こく}}\n| phonetic = Shi no Senkoku\n| cost = 4\n| engtext = {{Shield Trigger|spell}}\n\n■ Your [[opponent]] chooses one of his [[creature]]s in the [[battle zone]] and [[destroy]]s it.\n| jptext = {{Icon|ST}} S・トリガー (この呪文をシールドゾーンから手札に加える時、コストを支払わずにすぐ唱えてもよい)\n\n■ 相手はバトルゾーンにある自分自身のクリーチャーを1体選び、持ち主の墓地に置く。\n| flavor = その眼を見てはいけない。 Do not look at his eyes. ([[DM-06]], [[DMC-07]], [[DMC-17]])\n| mana = 1\n| artist = Atsushi Kawasaki\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 65/110\n| R1 = Uncommon\n| set2 = DM-06 Invincible Soul\n| setnum2 = 58/110\n| R2 = Uncommon\n| set3 = DMC-07 Eternal Insects Deck\n| setnum3 = 26/78\n| R3 = Uncommon\n| set4 = DMC-17 Dark Warriors Deck\n| setnum4 = 29/82\n| R4 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Shield Trigger]]\n[[Category:Spell]]\n[[Category:Choice Removal]]"
+}

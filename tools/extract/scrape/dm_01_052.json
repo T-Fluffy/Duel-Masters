@@ -1,0 +1,26 @@
+{
+ "card_id": "dm_01_052",
+ "page": "Dark Reversal",
+ "type": "Spell",
+ "civilization": "Darkness",
+ "race": "",
+ "cost": "2",
+ "power": "",
+ "engtext": "{{Shield Trigger|spell}} \n\n■ Return a [[creature]] from your [[graveyard]] to your [[hand]].",
+ "templates": [
+  "Shield Trigger|spell"
+ ],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "52/110",
+  "set2": "Shadowclash Collector Tin",
+  "setnum2": "21/46",
+  "set3": "DM-01 Base Set (OCG)",
+  "setnum3": "58/110",
+  "set4": "DM-18 Best Challenger",
+  "setnum4": "74/140",
+  "set5": "DMC-02 Kokujo's Darkness Deck ",
+  "setnum5": "16/43"
+ },
+ "wiki": "{{Cardtable\n| image = Dark Reversal.jpg\n| civilization = Darkness\n| type = Spell\n| jpname = ダーク・リバース\n| phonetic = Dāku Ribāsu ''(Dark Reverse)''\n| cost = 2\n| engtext = {{Shield Trigger|spell}} \n\n■ Return a [[creature]] from your [[graveyard]] to your [[hand]].\n| jptext = {{Icon|ST}} S・トリガー (この呪文をシールドゾーンから手札に加える時、コストを支払わずにすぐ唱えてもよい)\n\n■ クリーチャーを1体、自分の墓地から手札に戻す。\n| flavor =\n| mana = 1\n| artist = Nottsuo\n| set1 = DM-01 Base Set\n| setnum1 = 52/110\n| R1 = Uncommon\n| set2 = Shadowclash Collector Tin\n| setnum2 = 21/46\n| R2 = Uncommon\n| set3 = DM-01 Base Set (OCG)\n| setnum3 = 58/110\n| R3 = Uncommon\n| set4 = DM-18 Best Challenger\n| setnum4 = 74/140\n| R4 = Uncommon\n| set5 = DMC-02 Kokujo's Darkness Deck \n| setnum5 = 16/43\n| R5 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Spell]]\n[[Category:Shield Trigger]]\n[[Category:Creature Recovery]]"
+}

@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_06_s09",
+ "page": "Cliffcrush Giant",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Giant",
+ "cost": "5",
+ "power": "7000",
+ "engtext": "■ While you have any other [[untap]]ped [[creature]]s in the [[battle zone]], this [[creature]] can't [[attack]].\n\n{{Double Breaker}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "S9/S10",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "S10/S10"
+ },
+ "wiki": "{{Cardtable\n| image = Cliffcrush Giant.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|神秘の超人|ミステリー・ジャイアント}}\n| phonetic = Misuterī Jaianto\n| kana = ミステリー・ジャイアント ''(Mystery Giant)''\n| race = Giant\n| cost = 5\n| power = 7000\n| engtext = ■ While you have any other [[untap]]ped [[creature]]s in the [[battle zone]], this [[creature]] can't [[attack]].\n\n{{Double Breaker}}\n| jptext =  ■ バトルゾーンにタップされていない自分のクリーチャーが他に1体でもあれば、このクリーチャーは攻撃することができない。\n\n{{Double Breaker|jp}} \n| flavor = The last time he high-fived someone, he knocked over a mountain. ([[DM-06]])\n| flavor2 = 獣人の祈りが大地を呼び覚ます。The beastman's prayer awakens the earth. ([[DM-06]])\n| mana = 1\n| artist = Sansyu\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = S9/S10\n| R1 = Super Rare\n| set2 = DM-06 Invincible Soul\n| setnum2 = S10/S10\n| R2 = Super Rare\n}}\n{{Tokyo Mystery}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Mystery]]"
+}

@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_05_s03",
+ "page": "Death Cruzer, the Annihilator",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Demon Command",
+ "cost": "7",
+ "power": "13000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], [[destroy]] all your other [[creature]]s.\n\n{{Triple Breaker}}",
+ "templates": [
+  "Triple Breaker"
+ ],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "S3/S5",
+  "set2": "DM-05 Return of the Survivor",
+  "setnum2": "S3/S5",
+  "set3": "DMX-19 Super Rare 100% Pack",
+  "setnum3": "S25/???"
+ },
+ "wiki": "{{Cardtable\n| image = Death Cruzer, the Annihilator.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|殺|さつ}}{{Ruby|戮|りく}}の{{Ruby|羅|ら}}{{Ruby|刹|せつ}}デス・クルーザー\n| phonetic = Satsuriku no Rasetsu Desu Kurūzā\n| race = Demon Command\n| cost = 7\n| power = 13000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], [[destroy]] all your other [[creature]]s.\n\n{{Triple Breaker}}\n| jptext = ■ このクリーチャーがバトルゾーンに出たとき、バトルゾーンにある自分の他のクリーチャーすべてを、自分の墓地に置く。\n\n{{Triple Breaker|jp}}\n| flavor = Its only friend is the empty echo of death. ([[DM-05]])\n| flavor2 = 殺戮の前には敵も味方もない。 Annihilation does not differ friend or enemy. ([[DMX-19]])\n| mana = 1\n| artist = Yoshio Sugiura\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = S3/S5\n| R1 = Super Rare\n| set2 = DM-05 Return of the Survivor\n| setnum2 = S3/S5\n| R2 = Super Rare\n| set3 = DMX-19 Super Rare 100% Pack\n| setnum3 = S25/???\n| R3 = Super Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Self Removal]]\n[[Category:Come Into Play Trigger]]"
+}

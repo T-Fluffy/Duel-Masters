@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_09_013",
+ "page": "Nexus Charger",
+ "type": "Spell",
+ "civilization": "Light",
+ "race": "",
+ "cost": "6",
+ "power": "",
+ "engtext": "■ Add a [[card]] from your [[hand]] to your [[shield]]s [[face down]].\n\n{{Charger}}",
+ "templates": [
+  "Charger"
+ ],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "13/55",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "8/55"
+ },
+ "wiki": "{{Cardtable\n| image = Nexus Charger.jpg\n| civilization = Light\n| type = Spell\n| jpname = セレブ・チャージャー\n| phonetic = Serebu Chājā\n| cost = 6\n| engtext = ■ Add a [[card]] from your [[hand]] to your [[shield]]s [[face down]].\n\n{{Charger}}\n| jptext = ■ 自分の手札から1枚選び、裏向きにして自分のシールドに加える。\n\n{{Charger|jp}}　\n| flavor = \"We have a problem: I failed geometry.\" -[[Mini Titan Gett]] ([[DM-09]])\n| flavor2 = 神々しい風が吹くと、廃墟だったはずの街は再び活動を始めた。When a divine wind blew, the city that had been in ruins began to stir once more. ([[DM-09]])\n| mana = 1\n| artist = Taro Yamazaki\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = 13/55\n| R1 = Rare\n| set2 = DM-09 Invincible Blood\n| setnum2 = 8/55\n| R2 = Rare\n}}\n[[Category:Charger]]\n[[Category:OCG]]\n[[Category:TCG]]\n[[Category:Shield Addition]]"
+}

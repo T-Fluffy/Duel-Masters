@@ -1,0 +1,26 @@
+{
+ "card_id": "dm_05_001",
+ "page": "La Byle, Seeker of the Winds",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Mecha Thunder",
+ "cost": "7",
+ "power": "5000",
+ "engtext": "{{Blocker}}\n\n■ Whenever this [[creature]] [[block]]s, [[untap]] it after it [[battle]]s.",
+ "templates": [
+  "Blocker"
+ ],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "1/55",
+  "set2": "DM-05 Return of the Survivor",
+  "setnum2": "1/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "1/140",
+  "set4": "DMC-05 Lightning Thunder Deck",
+  "setnum4": "1/82",
+  "set5": "DMC-37 Violence Angel",
+  "setnum5": "8/28"
+ },
+ "wiki": "{{Cardtable\n| image = La Byle, Seeker of the Winds.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|風|ふう}}{{Ruby|撃|げき}}の{{Ruby|求|ぐ}}{{Ruby|道|どうし}}{{Ruby|者|ゃ}}ラ・バイル\n| phonetic = Fūgeki no Kyūdōsha Ra Bairu\n| cost = 7\n| race = Mecha Thunder\n| power = 5000\n| engtext = {{Blocker}}\n\n■ Whenever this [[creature]] [[block]]s, [[untap]] it after it [[battle]]s.\n| jptext = {{Blocker|jp}}\n\n■ このクリーチャーがブロックした時、バトルの後、このクリーチャーをアンタップする。\n| flavor = \"Breeze? Nah. Gust? Nah. Tornado? Aw, yeah.\" ([[DM-05]])\n| flavor2 = 空に漂う黄金の雲は優しき平穏の印。The golden clouds drifting in the sky are a sign of gentle peace. ([[DM-05]], [[DM-18]])\n| flavor3 = ラ・バイルは主を襲う災厄の前に必ず立ちはだかる。何度も、何度でも。その命尽きるまで。La Byle will always stand in the face of disaster that threatens its master. Again and again, as many times as it takes, until its life is spent. ([[DMC-37]])\n| mana = 1\n| artist = Hisashi Momose\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = 1/55\n| R1 = Very Rare\n| set2 = DM-05 Return of the Survivor\n| setnum2 = 1/55\n| R2 = Very Rare\n| set3 = DM-18 Best Challenger\n| setnum3 = 1/140\n| R3 = Very Rare\n| set4 = DMC-05 Lightning Thunder Deck\n| setnum4 = 1/82\n| R4 = Very Rare\n| set5 = DMC-37 Violence Angel\n| setnum5 = 8/28\n| R5 = Very Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Mecha Thunder]]\n[[Category:5000 Power Creatures]]\n[[Category:Creature Untap]]"
+}

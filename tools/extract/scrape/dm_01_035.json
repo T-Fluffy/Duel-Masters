@@ -1,0 +1,30 @@
+{
+ "card_id": "dm_01_035",
+ "page": "Marine Flower",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Cyber Virus",
+ "cost": "1",
+ "power": "2000",
+ "engtext": "{{Blocker|old}}\n\n■ This [[creature]] can't [[attack]].",
+ "templates": [
+  "Blocker|old"
+ ],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "35/110",
+  "set2": "DM-04 Challenge of Black Shadow",
+  "setnum2": "43/55",
+  "set3": "DMC-24 Illusion Blue Half Deck",
+  "setnum3": "27/43",
+  "set4": "DMC-27 CoroCoro Dream Pack",
+  "setnum4": "42/55",
+  "set5": "DMC-55 CoroCoro Legend 7",
+  "setnum5": "74/84",
+  "set6": "DMR-17 Burning Dogiragon!!",
+  "setnum6": "70/94",
+  "set7": "DMEX-13 The Great 4 Rising → Powerful Link Pack",
+  "setnum7": "58/84"
+ },
+ "wiki": "{{Cardtable\n| image = Marine Flower.jpg\n| civilization = Water\n| type = Creature\n| jpname = マリン・フラワー\n| phonetic = Marin Furawā\n| cost = 1\n| race = Cyber Virus\n| power = 2000\n| engtext = {{Blocker|old}}\n\n■ This [[creature]] can't [[attack]].\n| jptext = {{Blocker|jpold}}\n\n■ このクリーチャーは攻撃することができない\n| flavor = It blooms in the ocean depths, far from any light. ([[DM-01]])\n| flavor2 = 光の届かぬ深海でひっそりと花開く。It blooms quietly in the deep sea where light cannot reach. ([[DM-04]], [[DMC-27]])\n| flavor3 = とにかく時間を稼ぐんだ! \"Just buy us some time!\" -[[Marinomancer]] ([[DMC-55]])\n| flavor4 = 深海に咲く花、マリン・フラワー。その花言葉は、いつでも心に革命を。The flower that blooms in the deep sea, the Marine Flower. Its flower language is \"Always have revolution in your heart\". ([[DMR-17]])\n| flavor5 = チーム零のキングマスター、ゲンムエンペラーは無限の闇に包まれた宇宙の果てから生まれた無限の龍であり、弱き者を飲み込む「夢幻の無」を操る。[[Team Zero|Team Zero's]] [[King Master Card|King Master]], [[Genmu Emperor, Infinite Dragon|Genmu Emperor]], is an infinite dragon born from the edge of the universe, surrounded by infinite darkness, and controls the \"[[Daydream Dark Matter]]\" that swallows the weak. ([[DMEX-13]])\n| mana = 1\n| artist = Hikaru Ikusa\n| set1 = DM-01 Base Set\n| setnum1 = 35/110\n| R1 = Common\n| set2 = DM-04 Challenge of Black Shadow\n| setnum2 = 43/55\n| R2 = Common\n| set3 = DMC-24 Illusion Blue Half Deck\n| setnum3 = 27/43\n| R3 = Common\n| set4 = DMC-27 CoroCoro Dream Pack\n| setnum4 = 42/55\n| R4 = Common\n| set5 = DMC-55 CoroCoro Legend 7\n| setnum5 = 74/84\n| R5 = Common\n| set6 = DMR-17 Burning Dogiragon!!\n| setnum6 = 70/94\n| R6 = Common\n| set7 = DMEX-13 The Great 4 Rising → Powerful Link Pack\n| setnum7 = 58/84\n| R7 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]"
+}

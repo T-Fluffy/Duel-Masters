@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_09_032",
+ "page": "Slash Charger",
+ "type": "Spell",
+ "civilization": "Darkness",
+ "race": "",
+ "cost": "3",
+ "power": "",
+ "engtext": "■ [[Search]] a [[player]]'s [[deck]]. You may take a [[card]] from that [[deck]] and put it into that [[player]]'s [[graveyard]]. Then the [[player]] [[shuffle]]s his [[deck]].\n\n{{Charger}}",
+ "templates": [
+  "Charger"
+ ],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "32/55",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "14/55",
+  "set3": "Promotional",
+  "setnum3": "L17/Y2"
+ },
+ "wiki": "{{Textwrap|Did you mean '''[[Slash Charger (JP)|Slash Charger]]'''?}}\n{{Restriction|Premium}}\n{{Cardtable\n| image = Slash Charger.jpg\n| civilization = Darkness\n| jpname = ロスト・チャージャー\n| phonetic = Rosuto Chājā ''(Lost Charger)''\n| type = Spell\n| cost = 3\n| engtext = ■ [[Search]] a [[player]]'s [[deck]]. You may take a [[card]] from that [[deck]] and put it into that [[player]]'s [[graveyard]]. Then the [[player]] [[shuffle]]s his [[deck]].\n\n{{Charger}}\n| jptext = ■ 自分または相手の山札を見る。その中からカードを1枚選び、持ち主の墓地に置いてもよい。その後、そのカードの持ち主は山札をシャッフルする。\n\n{{Charger|jp}}　\n| flavor = \"Life is short. And now it's shorter.\" —{{tooltip|Azaghast, Tyrant of Shadows}} ([[DM-09]])\n| flavor2 = 闇の甘言は耳に優しい。The sweet words of darkness are easy on the ears. ([[DM-09]])\n| mana = 1\n| artist = Katsuya\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = 32/55\n| R1 = Rare\n| set2 = DM-09 Invincible Blood\n| setnum2 = 14/55\n| R2 = Rare\n| set3 = Promotional\n| setnum3 = L17/Y2\n| R3 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Charger]]\n[[Category:Mill]]\n[[Category:Self Mill]]\n[[Category:Deck Search]]"
+}

@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_06_027",
+ "page": "Sphere of Wonder",
+ "type": "Spell",
+ "civilization": "Light",
+ "race": "",
+ "cost": "4",
+ "power": "",
+ "engtext": "■ If your [[opponent]] has more [[shield]]s than you do, add the top [[card]] of your [[deck]] to your [[shield]]s [[face down]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath ",
+  "setnum1": "27/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "78/110",
+  "set3": "DMC-05 Lightning Thunder Deck",
+  "setnum3": "49/82",
+  "set4": "DMC-12 Hakuoh's Holy Spirit Power-Up Pack",
+  "setnum4": "32/44"
+ },
+ "wiki": "{{Cardtable\n| image = Sphere of Wonder.jpg\n| civilization = Light\n| type = Spell\n| jpname = エレメンタル・シールド\n| phonetic = Erementaru Shīrudo ''(Elemental Shield)''\n| cost = 4\n| engtext = ■ If your [[opponent]] has more [[shield]]s than you do, add the top [[card]] of your [[deck]] to your [[shield]]s [[face down]].\n| jptext = ■ 相手のシールドが自分のより多い場合、自分の山札の上から1枚目を、自分のシールドに加える。\n| flavor = \"It's immune to swords, lasers, flames, cannonballs, acid, missiles, battering rams, bee stings, paper cuts, little wooden sticks...\" —{{tooltip|Telitol, the Explorer}} ([[DM-06]])\n| flavor2 = 緊急事態の発生に、予備シールドが展開された。An emergency has occurred, and the backup shields have been deployed. ([[DM-06]], [[DMC-05]], [[DMC-12]])\n| mana = 1\n| artist = Youichi Kai\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath \n| setnum1 = 27/110\n| R1 = Common\n| set2 = DM-06 Invincible Soul\n| setnum2 = 78/110\n| R2 = Common\n| set3 = DMC-05 Lightning Thunder Deck\n| setnum3 = 49/82\n| R3 = Common\n| set4 = DMC-12 Hakuoh's Holy Spirit Power-Up Pack\n| setnum4 = 32/44\n| R4 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Spell]]\n[[Category:Shield Addition]]"
+}

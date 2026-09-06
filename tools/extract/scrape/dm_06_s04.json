@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_06_s04",
+ "page": "Q-tronic Hypermind",
+ "type": "Evolution Creature",
+ "civilization": "Water",
+ "race": "Survivor",
+ "cost": "8",
+ "power": "8000",
+ "engtext": "■ [[Evolution]]—Put on one of your [[Survivor]]s.\n\n■ [[When you put]] this [[creature]] into the [[battle zone]], you may [[draw]] a [[card]] for each [[Survivor]] in the [[battle zone]].\n\n{{Double Breaker}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "S4/S10",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "S3/S10"
+ },
+ "wiki": "{{Cardtable\n| image = Q-tronic Hypermind.jpg\n| civilization = Water\n| type = Evolution Creature\n| jpname = ゼータ・トゥレイト \n| phonetic = Zēta Tureito ''(Zeta Trait)''\n| race = Survivor\n| cost = 8\n| power = 8000\n| engtext = ■ [[Evolution]]—Put on one of your [[Survivor]]s.\n\n■ [[When you put]] this [[creature]] into the [[battle zone]], you may [[draw]] a [[card]] for each [[Survivor]] in the [[battle zone]].\n\n{{Double Breaker}}\n| jptext = ■ 進化－自分のサバイバー1体の上に置く。\n\n■ このクリーチャーがバトルゾーンに出たとき、バトルゾーンにあるサバイバーの数と同じ枚数のカードを引いてもよい。\n\n{{Double Breaker|jp}}\n| flavor = \"Don't let me think too hard. It makes the world explode.\" ([[DM-06]])\n| mana = 1\n| artist = Jason\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = S4/S10\n| R1 = Super Rare\n| set2 = DM-06 Invincible Soul\n| setnum2 = S3/S10\n| R2 = Super Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Card Draw]]\n[[Category:Come Into Play Trigger]]"
+}

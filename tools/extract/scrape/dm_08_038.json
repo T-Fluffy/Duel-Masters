@@ -1,0 +1,28 @@
+{
+ "card_id": "dm_08_038",
+ "page": "Kyrstron, Lair Delver",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Dragonoid",
+ "cost": "5",
+ "power": "1000",
+ "engtext": "■ When this [[creature]] is [[destroy]]ed, you may put a [[creature]] that has [[Dragon]] in its [[race]] from your [[hand]] into the [[battle zone]]. ",
+ "templates": [],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "38/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "15/55",
+  "set3": "DMC-11 Shobu's Dragon Legend Power-Up Pack",
+  "setnum3": "8/44",
+  "set4": "DMC-42 CoroCoro Dream Pack 3: Eternal Gear",
+  "setnum4": "30/90",
+  "set5": "DMC-67 Dramatic Wars: Fire and Dragon ",
+  "setnum5": "7/21",
+  "set6": "DMX-17 Dragon Souls Festival",
+  "setnum6": "16/37",
+  "set7": "Promotional",
+  "setnum7": "L16/Y2, P21/Y2, P52/Y11"
+ },
+ "wiki": "{{Cardtable\n| image = Kyrstron, Lair Delver.jpg\n| civilization = Fire\n| type = Creature\n| jpname = {{Ruby|爆|ばく}}{{Ruby|竜|りゅう}}{{Ruby|兵|へい}}ドラグストライク ''(Dragstrike, Blastdragon Soldier)''\n| phonetic = Bakuryū Hei Doragusutoraiku\n| cost = 5\n| race = Dragonoid\n| power = 1000\n| engtext = ■ When this [[creature]] is [[destroy]]ed, you may put a [[creature]] that has [[Dragon]] in its [[race]] from your [[hand]] into the [[battle zone]]. \n| jptext = ■ このクリーチャーが破壊された時、ドラゴンを1体、自分の手札からバトルゾーンに出してもよい。 \n| flavor = \"Sneak in, grab some [[Dragon]] eggs, sneak out, and make one enormous omelet. What could be simpler?\" ([[DM-08]])\n| flavor2 = 我が友イノセントハンターよ、お前が万物の礎となるなら、我はドラゴンの捨て石となろう。\"Oh my friend, [[Innocent Hunter, Blade of All|Innocent Hunter]], if you are to be the [[Burning Beast|foundation]] of all things, then I shall become the discarded stone of the dragon.\" ─'''Kyrstron, Lair Delver''' ([[DM-08]], [[DMC-42]])\n| flavor3 = どんな攻撃も跳ね返し、新たな援軍の出現を待つ。Deflect any attack and await the appearance of new reinforcements. ([[DMC-11]])\n| flavor4 = にゃははは。まさに幸運! 我をもって、千年来の悲願が達成された! \"Nyahahaha! Truly fortunate! With me, a thousand-year-old wish has been fulfilled!\" —'''Kyrstron, Lair Delver''' (P21/Y2)\n| flavor5 = [[Gaial Mobius, Victory Emperor|Gメビウス]]! 俺の犠牲を無駄にするな! \"[[Gaial Mobius, Victory Emperor|Gaial Mobius]]! Don't waste my sacrifice!\" —'''Kyrstron, Lair Delver''' ([[DMX-17]])\n| mana = 1\n| artist = Ken Sugawara\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 38/55\n| R1 = Rare\n| set2 = DM-08 Invincible Legend\n| setnum2 = 15/55\n| R2 = Rare\n| set3 = DMC-11 Shobu's Dragon Legend Power-Up Pack\n| setnum3 = 8/44\n| R3 = Rare \n| set4 = DMC-42 CoroCoro Dream Pack 3: Eternal Gear\n| setnum4 = 30/90\n| R4 =  Rare\n| set5 = DMC-67 Dramatic Wars: Fire and Dragon \n| setnum5 = 7/21\n| R5 =  Rare\n| set6 = DMX-17 Dragon Souls Festival\n| setnum6 = 16/37\n| R6 = Rare\n| set7 =  Promotional\n| setnum7 = L16/Y2, P21/Y2, P52/Y11\n| R7 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:For No Cost]]\n[[Category:Put Into Graveyard]]"
+}

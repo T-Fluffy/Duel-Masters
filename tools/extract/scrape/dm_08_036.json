@@ -1,0 +1,24 @@
+{
+ "card_id": "dm_08_036",
+ "page": "Bruiser Dragon",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Armored Dragon",
+ "cost": "5",
+ "power": "5000",
+ "engtext": "■ When this [[creature]] is [[destroy]]ed, choose one of your [[shield]]s and put it into your [[graveyard]]. ",
+ "templates": [],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "36/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "30/55",
+  "set3": "DMC-09 Shobu's Dragon Legend Deck",
+  "setnum3": "16/44",
+  "set4": "DMC-18 Shobu's Holy Dragon Deck",
+  "setnum4": "35/102",
+  "set5": "Rise of the Dragonoids Deck",
+  "setnum5": "36a/55"
+ },
+ "wiki": "{{Cardtable\n| image = Bruiser Dragon.jpg\n| civilization = Fire\n| type = Creature\n| jpname = ブルーザー・ドラゴン\n| phonetic = Burūzā Doragon\n| cost = 5\n| race = Armored Dragon\n| power = 5000\n| engtext = ■ When this [[creature]] is [[destroy]]ed, choose one of your [[shield]]s and put it into your [[graveyard]]. \n| jptext = ■ このクリーチャーが破壊された時、自分のシールドを1枚選び自分の墓地に置く。\n| flavor = \"It's a [[Dragon]] party! Oh yeah! Time to burn this planet to a crisp!\" ([[DM-08]])\n| flavor2 = 伝説の復活にワイバーンは歓喜した。The wyvern's rejoiced at the revival of the legend. ([[DM-08]], [[DMC-09]], [[DMC-18]]\n| mana = 1\n| artist = Asai Genji\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 36/55\n| R1 = Uncommon\n| set2 = DM-08 Invincible Legend\n| setnum2 = 30/55\n| R2 = Uncommon\n| set3 = DMC-09 Shobu's Dragon Legend Deck\n| setnum3 = 16/44\n| R3 = Uncommon\n| set4 = DMC-18 Shobu's Holy Dragon Deck\n| setnum4 = 35/102\n| R4 = Uncommon\n| set5 = Rise of the Dragonoids Deck\n| setnum5 = 36a/55\n| R5 = Very Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Fire]]\n[[Category:Armored Dragon]]\n[[Category:5000 Power Creatures]]\n[[Category:Put Into Graveyard]]\n[[Category:Self Shield Burn]]"
+}

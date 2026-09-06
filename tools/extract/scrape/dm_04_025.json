@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_04_025",
+ "page": "Marinomancer",
+ "type": "Creature",
+ "civilization": "Water ",
+ "race": "Cyber Lord",
+ "cost": "5",
+ "power": "2000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], you may [[reveal]] the top 3 [[card]]s of your [[deck]]. Put all [[light]] and [[darkness]] [[card]]s from the [[reveal]]ed [[card]]s into your [[hand]], and put the rest into your [[graveyard]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-04 Shadowclash of Blinding Night",
+  "setnum1": "25/55",
+  "set2": "DMC-55 CoroCoro Legend 7",
+  "setnum2": "33/84",
+  "set3": "Promotional",
+  "setnum3": "L9/12 Y1, P15/Y4, P21/Y4"
+ },
+ "wiki": "{{Cardtable\n| image = Marinomancer.jpg\n| civilization = Water \n| type = Creature\n| jpname = エリアス\n| phonetic = Eriasu ''(Elias)''\n| cost = 5\n| race = Cyber Lord\n| power = 2000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], you may [[reveal]] the top 3 [[card]]s of your [[deck]]. Put all [[light]] and [[darkness]] [[card]]s from the [[reveal]]ed [[card]]s into your [[hand]], and put the rest into your [[graveyard]].\n| jptext = ■ このクリーチャーをバトルゾーンに出した時、自分の山札の上から3枚を表向きにしてもよい。その中から光のカードと闇のカードをすべて自分の手札に加え、それ以外を自分の墓地に置く。 \n| flavor = \"I don't know who will win the war. But I know I'm on their side.\" ([[DM-04]])\n| flavor2 = 知識は力、光と闇で世界の全てを知りつくせ! \"Knowledge is power, know everything about the world with light and darkness!\" ([[DMC-55]])\n| mana = 1\n| artist = Katsuya \n| artist2 = Okera\n| set1 = DM-04 Shadowclash of Blinding Night\n| setnum1 = 25/55\n| R1 = Rare\n| set2 = DMC-55 CoroCoro Legend 7\n| setnum2 = 33/84\n| R2 = Rare\n| set3 = Promotional\n| setnum3 = L9/12 Y1, P15/Y4, P21/Y4\n| R3 = Rare\n}}\n{{Aquan}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Cyber Lord]]\n[[Category:2000 Power Creatures]]\n[[Category:Hand Addition]]\n[[Category:Self Mill]]\n[[Category:Come Into Play Trigger]]"
+}

@@ -1,0 +1,32 @@
+{
+ "card_id": "dm_01_029",
+ "page": "Crystal Memory",
+ "type": "Spell",
+ "civilization": "Water",
+ "race": "",
+ "cost": "4",
+ "power": "",
+ "engtext": "{{Shield Trigger|spell}} \n\n■ [[Search]] your [[deck]]. You may take a [[card]] from your [[deck]] and put it into your [[hand]]. Then [[shuffle]] your [[deck]].",
+ "templates": [
+  "Shield Trigger|spell"
+ ],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "29/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "22/110",
+  "set3": "DMC-61 CoroCoro Dream Pack 4: Eternal Heaven ",
+  "setnum3": "19/94",
+  "set4": "DMX-14 The Greatest Strategies Perfect 12",
+  "setnum4": "52/84",
+  "set5": "DMD-24 Masters Chronicle Deck: Bolmeteus Returns",
+  "setnum5": "19/37",
+  "set6": "DMEX-01 Duel Masters: Golden Best",
+  "setnum6": "4/80 [2002]",
+  "set7": "DMEX-02 Duema Quest Pack ~The Top 12 Legendary Strategies~",
+  "setnum7": "81/84",
+  "set8": "Promotional",
+  "setnum8": "P42/Y15"
+ },
+ "wiki": "{{Cardtable\n| image = Crystal Memory.jpg\n| civilization = Water\n| type = Spell\n| jpname = クリスタル・メモリー\n| phonetic = Kurisutaru Memorī\n| cost = 4\n| engtext = {{Shield Trigger|spell}} \n\n■ [[Search]] your [[deck]]. You may take a [[card]] from your [[deck]] and put it into your [[hand]]. Then [[shuffle]] your [[deck]].\n| jptext = {{Icon|ST}} S・トリガー (この呪文をシールドゾーンから手札に加える時、コストを支払わずにすぐ唱えてもよい)\n\n■ 自分の山札を見る。 その中からカードを1枚選び、自分の手札に加える。 その後、山札をシャッフルする。\n| flavor = 自由自在に選べば、攻めも守りも100点満点! To be able to choose freely, perfect for offense and defense! ([[DMX-14]])\n| flavor2 = 記憶は儚く、脆いもの。だが、その積み重ねが人生となる。Memories are fleeting and fragile. Yet, their accumulation becomes a life. ([[DMD-24]])\n| flavor3 = 切り札と、その使い手の思い出は、いつまでも光り輝いている。The trump card and the memories of the user are shining all the time. ([[DMEX-01]])\n| flavor4 = たまにクリーチャー世界に現われる3人組。ウサギ団と名乗る彼らが探すのは、遺跡でも財宝でもなく……レアカード。Sometimes, a trio appears in the creature world. Calling themselves [[Team Usagi]], what they seek is not ruins or treasure, but... rare cards. ([[DMEX-02]])\n| mana = 1\n| artist = Ryoya Yuki\n| artist2 = hatapug\n| artist3 = MATSUMOTO EIGHT\n| set1 = DM-01 Base Set\n| setnum1 = 29/110\n| R1 = Rare\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 22/110\n| R2 = Rare\n| set3 = DMC-61 CoroCoro Dream Pack 4: Eternal Heaven \n| setnum3 = 19/94\n| R3 = Rare\n| set4 = DMX-14 The Greatest Strategies Perfect 12\n| setnum4 = 52/84\n| R4 = Rare\n| set5 = DMD-24 Masters Chronicle Deck: Bolmeteus Returns\n| setnum5 = 19/37\n| R5 = Rare\n| set6 = DMEX-01 Duel Masters: Golden Best\n| setnum6 = 4/80 [2002]\n| R6 = Rare\n| set7 = DMEX-02 Duema Quest Pack ~The Top 12 Legendary Strategies~\n| setnum7 = 81/84\n| R7 = Rare\n| set8 = Promotional\n| setnum8 = P42/Y15\n| R8 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Spell]]\n[[Category:Shield Trigger]]\n[[Category:Deck Search]]"
+}

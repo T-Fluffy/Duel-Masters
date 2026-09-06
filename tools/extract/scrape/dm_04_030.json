@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_04_030",
+ "page": "Gregoria, Princess of War",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Dark Lord",
+ "cost": "6",
+ "power": "5000",
+ "engtext": "■ Each [[Demon Command]] in the [[battle zone]] gets +2000 [[power]] and has \"[[blocker]]\". ''(Whenever one of your [[opponent]]'s [[creature]]s [[attack]]s, you may [[tap]] a [[creature]] that has \"[[blocker]]\" to stop the [[attack]]. Then the 2 [[creature]]s [[battle]].)''",
+ "templates": [],
+ "sets": {
+  "set1": "DM-04 Shadowclash of Blinding Night",
+  "setnum1": "30/55",
+  "set2": "DM-04 Challenge of Black Shadow ",
+  "setnum2": "12/55"
+ },
+ "wiki": "{{Cardtable\n| image = Gregoria, Princess of War.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|邪|じゃ}}{{Ruby|妃|き}}グレゴリア\n| phonetic = Jaki Guregoria\n| race = Dark Lord\n| cost = 6\n| power = 5000\n| engtext = ■ Each [[Demon Command]] in the [[battle zone]] gets +2000 [[power]] and has \"[[blocker]]\". ''(Whenever one of your [[opponent]]'s [[creature]]s [[attack]]s, you may [[tap]] a [[creature]] that has \"[[blocker]]\" to stop the [[attack]]. Then the 2 [[creature]]s [[battle]].)''\n| jptext = ■ このクリーチャーがバトルゾーンにある間、バトルゾーンにあるデーモン・コマンドすべてのパワーは+2000され、「ブロッカー」を得る。\n| flavor = \"Those [[Light Civilization|fools in the clouds]] had better learn to like eternal midnight.\" ([[DM-04]]) \n| mana = 1\n| artist = Jason\n| set1 = DM-04 Shadowclash of Blinding Night\n| setnum1 = 30/55\n| R1 = Rare\n| set2 = DM-04 Challenge of Black Shadow \n| setnum2 = 12/55\n| R2 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Dark Lord]]\n[[Category:5000 Power Creatures]]\n[[Category:Increase Power]]\n[[Category:Gives \"Blocker\"]]"
+}

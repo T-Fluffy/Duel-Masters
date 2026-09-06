@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_07_048",
+ "page": "Freezing Icehammer",
+ "type": "Spell",
+ "civilization": "Nature",
+ "race": "",
+ "cost": "3",
+ "power": "",
+ "engtext": "■ [[Choose]] one of your [[opponent]]'s [[water]] or [[darkness]] [[creature]]s in the [[battle zone]]. Your [[opponent]] puts that [[creature]] into his [[mana zone]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "48/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "55/55"
+ },
+ "wiki": "{{Cardtable\n| image = Freezing Icehammer.jpg\n| civilization = Nature\n| type = Spell\n| jpname = {{Ruby|氷|ひょう}}{{Ruby|結|けつ}}ハンマー\n| phonetic = Hyōketsu Hanmā\n| cost = 3\n| engtext = ■ [[Choose]] one of your [[opponent]]'s [[water]] or [[darkness]] [[creature]]s in the [[battle zone]]. Your [[opponent]] puts that [[creature]] into his [[mana zone]].\n| jptext = ■ バトルゾーンにある相手の闇または水のクリーチャーを1体選ぶ。相手はそれを持ち主のマナゾーンに置く。\n| flavor = \"Freeze 'em and squeeze 'em!\" -[[Garabon, the Glider]] ([[DM-07]])\n| flavor2 = 悪い奴等はガチンガチン! \"The bad guys are rock-solid!\" ([[DM-07]])\n| mana = 1\n| artist = Akira Hamada\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 48/55\n| R1 = Common\n| set2 = DM-07 Invincible Charge\n| setnum2 = 55/55\n| R2 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Nature]]\n[[Category:Spell]]\n[[Category:Mana Feed]]"
+}

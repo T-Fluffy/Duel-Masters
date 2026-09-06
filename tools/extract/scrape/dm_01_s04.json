@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_01_s04",
+ "page": "King Depthcon",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Leviathan",
+ "cost": "7",
+ "power": "6000",
+ "engtext": "{{Double Breaker}}\n\n■ This [[creature]] can't be [[block]]ed.",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "S4/S10",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "S4/S10"
+ },
+ "wiki": "{{Cardtable\n| image = King Depthcon.jpg\n| civilization = Water\n| type = Creature\n| jpname = キング・オリオン \n| phonetic = Kingu Orion ''(King Orion)''\n| dename = König Depthcon\n| itname = Il Re degli Abissi\n| frname = Roi des profondeurs\n| esname = Rey de las profundidades\n| mxname = Rey de las profundidades\n| ptname = Depthcon, Rei das Profundezas\n| cnname = 深海魔王\n| race = Leviathan\n| cost = 7\n| power = 6000\n| engtext = {{Double Breaker}}\n\n■ This [[creature]] can't be [[block]]ed.\n| jptext = {{Double Breaker|jp}} \n\n■ このクリーチャーはブロックされない。\n| flavor = リヴァイアサンは嵐と同じである。通り過ぎるのを待つしかない。[[Leviathan]]s are just like storms. All you can do is wait until they pass. ([[DM-01]])\n| mana = 1\n| artist = Ryoya Yuki\n| set1 = DM-01 Base Set\n| setnum1 = S4/S10\n| R1 = Super Rare\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = S4/S10\n| R2 = Super Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Unblockable]]"
+}

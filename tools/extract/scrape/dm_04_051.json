@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_04_051",
+ "page": "Exploding Cactus",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Tree Folk",
+ "cost": "3",
+ "power": "2000+",
+ "engtext": "■ While you have a [[light]] [[creature]] in the [[battle zone]], this [[creature]] gets +2000 [[power]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-04 Shadowclash of Blinding Night",
+  "setnum1": "51/55",
+  "set2": "Shadowclash Collector Tin",
+  "setnum2": "42/46",
+  "set3": "DM-04 Challenge of Black Shadow ",
+  "setnum3": "54/55"
+ },
+ "wiki": "{{Cardtable\n| image = Exploding Cactus.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|爆|ばく}}{{Ruby|発|はつ}}サボテン\n| phonetic = Bakuhatsu Saboten\n| race = Tree Folk\n| cost = 3\n| power = 2000+\n| engtext = ■ While you have a [[light]] [[creature]] in the [[battle zone]], this [[creature]] gets +2000 [[power]].\n| jptext = ■ バトルゾーンに自分の光のクリーチャーがある間、このクリーチャーのパワーは+2000される。\n| flavor = \"Eww! Now ''that's'' disgusting.\" ─[[Mongrel Man]] ([[DM-04]])\n| flavor2 = 「精霊に見られると、ついはりきって爆発しちゃうんだ。」 \"When the spirits are watching, I tend to get too excited and explode.\" —[[Bronze-Arm Tribe]] ([[DM-04]])\n| mana = 1\n| artist = D-Suzuki\n| set1 = DM-04 Shadowclash of Blinding Night\n| setnum1 = 51/55\n| R1 = Common\n| set2 = Shadowclash Collector Tin\n| setnum2 = 42/46\n| R2 = Common\n| set3 = DM-04 Challenge of Black Shadow \n| setnum3 = 54/55\n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:2000 Power Creatures]]\n[[Category:Self Increase Power]]"
+}

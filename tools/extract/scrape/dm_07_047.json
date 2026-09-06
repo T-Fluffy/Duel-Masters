@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_07_047",
+ "page": "Cryptic Totem",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Mystery Totem",
+ "cost": "6",
+ "power": "6000",
+ "engtext": "{{Double Breaker}}\n\n■ While this [[creature]] is [[tap]]ped, your [[opponent]] can't use the \"[[shield trigger]]\" [[ability]] of his [[shield]]s.",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "47/55"
+ },
+ "wiki": "{{TCGCardtable\n| image = Cryptic Totem.jpg\n| civilization = Nature\n| type = Creature\n| cost = 6\n| race = Mystery Totem\n| power = 6000\n| engtext = {{Double Breaker}}\n\n■ While this [[creature]] is [[tap]]ped, your [[opponent]] can't use the \"[[shield trigger]]\" [[ability]] of his [[shield]]s.\n| flavor = \"He speaks in riddles. Or gibberish. I can't tell.\" -[[Fighter Dual Fang]] ([[DM-07]])\n| artist = Yoko Tsukamoto\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 47/55\n| R1 = Rare\n}}\n[[Category:Prevents Shield Trigger]]"
+}

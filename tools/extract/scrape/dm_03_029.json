@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_03_029",
+ "page": "Jack Viper, Shadow of Doom",
+ "type": "Evolution Creature",
+ "civilization": "Darkness",
+ "race": "Ghost",
+ "cost": "3",
+ "power": "4000",
+ "engtext": "■ [[Evolution]]—Put on one of your [[Ghost]]s.\n\n■ Whenever another of your [[darkness]] [[creature]]s would be put into your [[graveyard]] from the [[battle zone]], you may return it to your [[hand]] [[instead]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-03 Rampage of the Super Warriors",
+  "setnum1": "29/55",
+  "set2": "DM-03 Master of Destruction",
+  "setnum2": "3/55",
+  "set3": "DMX-12 Black Box Pack",
+  "setnum3": "b50/???"
+ },
+ "wiki": "{{Cardtable\n| image= Jack Viper, Shadow of Doom.jpg\n| civilization = Darkness\n| type = Evolution Creature\n| jpname = {{Ruby|絶|ぜつ}}{{Ruby|望|ぼう}}の{{Ruby|魔|ま}}{{Ruby|黒|こく}}ジャックバイパー\n| phonetic = Zetsubō no Makkoku Jakkubaipā\n| cost = 3\n| race = Ghost\n| power = 4000\n| engtext = ■ [[Evolution]]—Put on one of your [[Ghost]]s.\n\n■ Whenever another of your [[darkness]] [[creature]]s would be put into your [[graveyard]] from the [[battle zone]], you may return it to your [[hand]] [[instead]].\n| jptext = ■ 進化－自分のゴースト1体の上に置く。\n\n■ このクリーチャーがバトルゾーンにあり、自分の他の闇のクリーチャーがバトルゾーンから墓地に置かれたとき、その闇のクリーチャーを自分の手札に戻してよい。\n| flavor = Has it conquered death, or has it just replaced it with something worse? ([[DM-03]])\n| flavor2 = [[Ghost|ゴースト]]だけじゃなく、[[Zombie Dragon|ドラゴン・ゾンビ]]とも協力したいぜ! \"I want to team up not only with Ghosts but also with Zombie Dragons!\" ―'''Jack Viper, Shadow of Doom''' ([[DMX-12]])\n| mana = 1\n| artist = Sansyu\n| set1 = DM-03 Rampage of the Super Warriors\n| setnum1 = 29/55\n| R1 = Very Rare\n| set2 = DM-03 Master of Destruction\n| setnum2 = 3/55\n| R2 = Very Rare\n| set3 = DMX-12 Black Box Pack\n| setnum3 = b50/???\n| R3 = Very Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Ghost]]\n[[Category:Evolution Creature]]\n[[Category:4000 Power Creatures]]\n[[Category:Destruction Substitution]]"
+}

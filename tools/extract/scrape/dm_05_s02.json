@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_05_s02",
+ "page": "King Tsunami",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Leviathan",
+ "cost": "12",
+ "power": "12000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], return all other [[creature]]s from the [[battle zone]] to their [[owner]]s' [[hand]]s.\n\n{{Triple Breaker}}",
+ "templates": [
+  "Triple Breaker"
+ ],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "S2/S5",
+  "set2": "DM-05 Return of the Survivor",
+  "setnum2": "S2/S5",
+  "set3": "DMX-12 Black Box Pack",
+  "setnum3": "b33/???"
+ },
+ "wiki": "{{Cardtable\n| image = King Tsunami.jpg\n| civilization = Water\n| type = Creature\n| jpname = キング・アトランティス ''(King Atlantis)''\n| phonetic = Kingu Atorantisu\n| race = Leviathan\n| cost = 12\n| power = 12000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], return all other [[creature]]s from the [[battle zone]] to their [[owner]]s' [[hand]]s.\n\n{{Triple Breaker}}\n| jptext = ■ このクリーチャーがバトルゾーンに出たとき、バトルゾーンにある他のクリーチャーすべてを、持ち主の手札に戻す。\n\n{{Triple Breaker|jp}}\n| flavor = The last time it did a backflip, the resulting tidal waves sank three islands. ([[DM-05]])\n| flavor2 = 陰謀のことも、お宝のことも、もちろん知らない'''キング・アトランティス'''。……「そういえば、レディ・パーロックのことを……」 <br> 1.「([[Self-Destructing Gil Poser|ギル・メイワク]])が何か話していたぞ」→([[Self-Destructing Gil Poser|自爆屋ギル・メイワク]])へ <br> 2.「([[Glider Man|滑空男]])が何か話していたぞ」→([[Glider Man|滑空男]])へ <br> \"King Atlantis, who knows nothing about the conspiracy or the treasure...now that I think about it, what about [[Lady Parlock, Pirate Shaman|Lady Parlock]]...\" <br> 1. 'Gil Poser was talking about something.' → to [[Self-Destructing Gil Poser|Gil Poser]] <br> 2. 'Glider Man was talking about something.' → to [[Glider Man]] ([[DMX-12]])\n| mana = 1\n| artist = Akifumi Yamamoto\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = S2/S5\n| R1 = Super Rare\n| set2 = DM-05 Return of the Survivor\n| setnum2 = S2/S5\n| R2 = Super Rare\n| set3 = DMX-12 Black Box Pack\n| setnum3 = b33/???\n| R3 = Super Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Bounce]]\n[[Category:Mass Removal]]\n[[Category:Self Bounce]]\n[[Category:Come Into Play Trigger]]"
+}

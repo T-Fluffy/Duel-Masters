@@ -1,0 +1,33 @@
+{
+ "card_id": "dm_06_075",
+ "page": "Bazagazeal Dragon",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Armored Dragon",
+ "cost": "8",
+ "power": "8000",
+ "engtext": "{{Speed Attacker}}\n\n■ This [[creature]] can [[attack]] [[untap]]ped [[creature]]s.\n\n{{Double Breaker|s}}\n\n■ [[End Step|At the end of your turn]], return this [[creature]] to your [[hand]].",
+ "templates": [
+  "Double Breaker|s",
+  "Speed Attacker"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "75/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "31/110",
+  "set3": "DMC-09 Shobu's Dragon Legend Deck ",
+  "setnum3": "7/44",
+  "set4": "DMC-13 CoroCoro New Generation Pack",
+  "setnum4": "4/37",
+  "set5": "DMC-15 Eternal Dragons Deck",
+  "setnum5": "10/78",
+  "set6": "DMC-49 Force of Dragon",
+  "setnum6": "18/30",
+  "set7": "DMX-23 Mystery Teach!! Deck Level MAX Pack",
+  "setnum7": "10/60",
+  "set8": "Promotional",
+  "setnum8": "P2/Y3, P60/Y8, P68/Y8"
+ },
+ "wiki": "{{Cardtable\n| image = Bazagazeal Dragon.jpg\n| civilization = Fire\n| type = Creature\n| jpname = バザガジール・ドラゴン\n| phonetic = Bazagajīru Doragon\n| race = Armored Dragon\n| cost = 8\n| power = 8000\n| engtext = {{Speed Attacker}}\n\n■ This [[creature]] can [[attack]] [[untap]]ped [[creature]]s.\n\n{{Double Breaker|s}}\n\n■ [[End Step|At the end of your turn]], return this [[creature]] to your [[hand]].\n| jptext = {{Speed Attacker|jp}} \n\n■ このクリーチャーは、タップされていないクリーチャーを攻撃できる。\n\n{{Double Breaker|jps}} \n\n■ 自分のターンが終わるとき、このクリーチャーがバトルゾーンにあれば、自分の手札に戻す。\n| flavor = \n| mana = 1\n| artist = Ken Sugawara\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 75/110\n| R1 = Rare\n| set2 = DM-06 Invincible Soul\n| setnum2 = 31/110\n| R2 = Rare\n| set3 = DMC-09 Shobu's Dragon Legend Deck \n| setnum3 = 7/44\n| R3 = Rare\n| set4 = DMC-13 CoroCoro New Generation Pack\n| setnum4 = 4/37\n| R4 = Rare\n| set5 = DMC-15 Eternal Dragons Deck\n| setnum5= 10/78\n| R5 = Rare\n| set6 = DMC-49 Force of Dragon\n| setnum6 = 18/30\n| R6 = Rare\n| set7 = DMX-23 Mystery Teach!! Deck Level MAX Pack\n| setnum7 = 10/60\n| R7 = Rare\n| set8 = Promotional\n| setnum8 = P2/Y3, P60/Y8, P68/Y8\n| R8 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Can Attack Untapped Creatures]]"
+}

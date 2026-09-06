@@ -1,0 +1,28 @@
+{
+ "card_id": "dm_06_087",
+ "page": "Rikabu's Screwdriver",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Xenoparts",
+ "cost": "2",
+ "power": "1000",
+ "engtext": "{{Tap Ability|[[Destroy]] one of your [[opponent]]’s [[creature]]s that has “[[blocker]].”}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "87/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "33/110",
+  "set3": "DMC-09 Shobu's Dragon Legend Deck ",
+  "setnum3": "9/44",
+  "set4": "DMC-27 CoroCoro Dream Pack",
+  "setnum4": "16/55",
+  "set5": "DMC-42 CoroCoro Dream Pack 3: Eternal Gear",
+  "setnum5": "31/90",
+  "set6": "DMC-55 CoroCoro Legend 7",
+  "setnum6": "41/84",
+  "set7": "DMX-02 Deck Builder DX: Hunter Edition",
+  "setnum7": "13/42"
+ },
+ "wiki": "{{Cardtable\n| image = Rikabu&#39;s Screwdriver.jpg\n| civilization = Fire\n| type = Creature\n| jpname = ピーカプのドライバー\n| phonetic = Pīkapu no Doraibā ''(Pikabu's Driver)''\n| race = Xenoparts\n| cost = 2\n| power = 1000\n| engtext = {{Tap Ability|[[Destroy]] one of your [[opponent]]’s [[creature]]s that has “[[blocker]].”}}\n| jptext = ■ このクリーチャーで攻撃するかわりに、タップして次の{{Tap}}能力を使ってもよい。\n:{{Tap}} 相手の「ブロッカー」を持つクリーチャーを1体破壊する。\n| flavor = It's good at putting things together. It's better at taking things apart. ([[DM-06]])\n| flavor2 = 道具は持ち主に似る。Tools resemble their owner. ([[DM-06]], [[DMC-27]], [[DMC-42]], [[DMX-02]])\n| flavor3 = 空中に飛び散り、精密な機械を分解していく。It scatters into the air, dismantling the precise machinery. ([[DMC-09]])\n| flavor4 = 邪魔する奴は解体するに限る。\"The best way to deal with those who interfere is to dismantle them.\" —[[Rikabu, the Dismantler]] ([[DMC-55]])\n| mana = 1\n| artist = Atsushi Kawasaki\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 87/110\n| R1 = Rare\n| set2 = DM-06 Invincible Soul\n| setnum2 = 33/110\n| R2 = Rare\n| set3 = DMC-09 Shobu's Dragon Legend Deck \n| setnum3 = 9/44\n| R3 = Rare\n| set4 = DMC-27 CoroCoro Dream Pack\n| setnum4 = 16/55\n| R4 = Rare\n| set5 = DMC-42 CoroCoro Dream Pack 3: Eternal Gear\n| setnum5 = 31/90\n| R5 = Rare\n| set6 = DMC-55 CoroCoro Legend 7\n| setnum6 = 41/84\n| R6 = Rare\n| set7 = DMX-02 Deck Builder DX: Hunter Edition\n| setnum7 = 13/42\n| R7 = Rare\n}}\n{{Rikabu}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Tap Ability]]\n[[Category:Blocker Based Removal]]"
+}

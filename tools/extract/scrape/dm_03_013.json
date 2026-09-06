@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_03_013",
+ "page": "Aqua Deformer",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Liquid People",
+ "cost": "8",
+ "power": "3000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], return 2 [[card]]s from your [[mana zone]] to your [[hand]]. Then your [[opponent]] chooses 2 [[card]]s in his [[mana zone]] and returns them to his [[hand]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-03 Rampage of the Super Warriors",
+  "setnum1": "13/55",
+  "set2": "DM-03 Master of Destruction",
+  "setnum2": "9/55"
+ },
+ "wiki": "{{Cardtable\n| image= Aqua Deformer.jpg\n| civilization = Water\n| type = Creature\n| jpname = アクア・デフォーマー\n| phonetic = Akua Defōmā\n| cost = 8\n| race = Liquid People\n| power = 3000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], return 2 [[card]]s from your [[mana zone]] to your [[hand]]. Then your [[opponent]] chooses 2 [[card]]s in his [[mana zone]] and returns them to his [[hand]].\n| jptext = ■ このクリーチャーがバトルゾーンに出たとき、各プレイヤーは自分自身のマナゾーンからカードを2枚ずつ選び、それぞれの手札に戻す。\n| flavor = Nothing is quite what it seems. ([[DM-03]])\n| mana = 1\n| artist = Dustmoss\n| set1 = DM-03 Rampage of the Super Warriors\n| setnum1 = 13/55\n| R1 = Rare\n| set2 = DM-03 Master of Destruction\n| setnum2 = 9/55\n| R2 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Mana Recovery]]\n[[Category:Mana Bounce]]\n[[Category:Come Into Play Trigger]]"
+}

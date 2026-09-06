@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_06_076",
+ "page": "Choya, the Unheeding",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Human",
+ "cost": "2",
+ "power": "1000+",
+ "engtext": "{{Power Attacker|1000}}\n\n■ Whenever this [[creature]] becomes [[block]]ed, [[no battle happens]]. ''(Both [[creature]]s stay [[tap]]ped.)''",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "76/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "101/110",
+  "set3": "DMC-09 Shobu's Dragon Legend Deck ",
+  "setnum3": "43/44",
+  "set4": "Promotional",
+  "setnum4": "P29/Y5"
+ },
+ "wiki": "{{Cardtable\n| image = Choya, the Unheeding.jpg\n| civilization = Fire\n| type = Creature\n| jpname = {{Ruby|無|む}}{{Ruby|謀|ぼう}}{{Ruby|鉄|てつ}}{{Ruby|人|じん}}チョイヤ\n| phonetic = Mubō Tetsujin Choiyā\n| race = Human\n| cost = 2\n| power = 1000+\n| engtext = {{Power Attacker|1000}}\n\n■ Whenever this [[creature]] becomes [[block]]ed, [[no battle happens]]. ''(Both [[creature]]s stay [[tap]]ped.)''\n| jptext = {{Power Attacker|1000|jp}}\n\n■ このクリーチャーの攻撃がブロックされた場合、バトルは行われない。ただし、両クリーチャーはタップしたままである。　\n| flavor = \"Dude, check this out.\" SPROING! ([[DM-06]])\n| flavor2 = 「まぁまぁ落ち着けよ。」 \"Well, well, calm down.\" ―'''Choya, the Unheeding''' (P29/Y5)\n| mana = 1\n| artist = Dai\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 76/110\n| R1 = Common\n| set2 = DM-06 Invincible Soul\n| setnum2 = 101/110\n| R2 = Common\n| set3 = DMC-09 Shobu's Dragon Legend Deck \n| setnum3 = 43/44\n| R3 = Common\n| set4 = Promotional\n| setnum4 = P29/Y5\n| R4 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Fire]]\n[[Category:Human]]\n[[Category:1000 Power Creatures]]"
+}

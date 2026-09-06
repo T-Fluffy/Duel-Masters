@@ -1,0 +1,26 @@
+{
+ "card_id": "dm_06_103",
+ "page": "Innocent Hunter, Blade of All",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Beast Folk",
+ "cost": "4",
+ "power": "1000",
+ "engtext": "■ You can put an [[evolution]] [[creature]] of any [[race]] on this [[creature]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "103/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "69/110",
+  "set3": "DMC-13 CoroCoro New Generation Pack",
+  "setnum3": "15/37",
+  "set4": "DMC-27 CoroCoro Dream Pack",
+  "setnum4": "34/55",
+  "set5": "DMX-21 Masters Chronicle Pack: Comic of Heroes",
+  "setnum5": "62/70",
+  "set6": "Promotional",
+  "setnum6": "E6 Y1"
+ },
+ "wiki": "{{Cardtable\n| image = Innocent Hunter, Blade of All.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|無垢の宝剣|イノセント・ハンター}} ''(Sword of Innocence)''\n| phonetic = Inosento Hantā\n| kana = イノセント・ハンター ''(Innocent Hunter)''\n| cost = 4\n| race = Beast Folk\n| power = 1000\n| engtext = ■ You can put an [[evolution]] [[creature]] of any [[race]] on this [[creature]].\n| jptext = ■ どんな種族の進化クリーチャーを、このクリーチャーの上に置いてもよい。\n| flavor = His soul is so pure that anywhere he wanders accepts him as a native son. His infinite destinies lie just over the horizon. ([[DM-06]])\n| flavor2 = 彼の器は誰よりも大きく、彼の精神は誰よりも透明だ。将来の王と獣人は呼ぶ。His capacity is greater than anyone else’s, and his spirit is clearer than anyone else’s. He is called the future king and beastman. ([[DM-06]], [[DMC-13]], [[DMC-27]])\n| flavor3 = フェニックスは、ブラックホール・サナトスとビッグバン・アナスタシスの衝突によりすべて消滅したかに見えた。だが、グランドクロス・アブソリュートキュアという生き残りがいた。The [[Phoenix]] seemed to have been completely destroyed by the collision of [[Supernova Black Hole Thanatos|Black Hole Thanatos]] and [[Supernova Bigbang Anastasis|Bigbang Anastasis]]. However, there was a survivor—[[Supernova Grand Cross Absolute Cure|Grand Cross Absolute Cure]]. ([[DMX-21]])\n| mana = 1\n| artist = Syuichi Obata\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 103/110\n| R1 = Uncommon\n| set2 = DM-06 Invincible Soul\n| setnum2 = 69/110\n| R2 = Uncommon\n| set3 = DMC-13 CoroCoro New Generation Pack\n| setnum3 = 15/37\n| R3 = Uncommon\n| set4 = DMC-27 CoroCoro Dream Pack\n| setnum4 = 34/55\n| R4 = Uncommon\n| set5 = DMX-21 Masters Chronicle Pack: Comic of Heroes\n| setnum5 = 62/70\n| R5 = Uncommon\n| set6 = Promotional\n| setnum6 = E6 Y1\n| R6 = Uncommon\n}}\n\n{{Innocent}}\n[[Category:TCG]]\n[[Category:OCG]]"
+}

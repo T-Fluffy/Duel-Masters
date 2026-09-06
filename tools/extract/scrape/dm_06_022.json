@@ -1,0 +1,24 @@
+{
+ "card_id": "dm_06_022",
+ "page": "Lightning Grass",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Starlight Tree",
+ "cost": "3",
+ "power": "3000",
+ "engtext": "",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "22/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "74/110",
+  "set3": "DMC-05 Lightning Thunder Deck",
+  "setnum3": "45/82",
+  "set4": "DMC-10 Hakuoh's Holy Spirit Deck",
+  "setnum4": "25/44",
+  "set5": "DMC-17 Dark Warriors Deck",
+  "setnum5": "45/78"
+ },
+ "wiki": "{{Cardtable\n| image = Lightning Grass.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|藍|あい}}{{Ruby|電|でん}}{{Ruby|草|そう}}\n| phonetic = Aidensō\n| race = Starlight Tree\n| cost = 3\n| power = 3000\n| flavor = The [[Starlight Tree]]s' typical diet consists of moonbeams, lightning, and wisps of clouds. But they're just as happy eating the burning wreckage of broken [[Armorloid]]s. ([[DM-06]])\n| flavor2 = 戦闘の残骸は、空の掃除人の大事な養分となった。The remains of the battle became an important source of nourishment for the Sky Cleaner. ([[DM-06]], [[DMC-05]], [[DMC-10]], [[DMC-17]])\n| mana = 1\n| artist = Akira Hamada\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 22/110\n| R1 = Common\n| set2 = DM-06 Invincible Soul\n| setnum2 = 74/110\n| R2 = Common\n| set3 = DMC-05 Lightning Thunder Deck\n| setnum3 = 45/82\n| R3 = Common\n| set4 = DMC-10 Hakuoh's Holy Spirit Deck\n| setnum4 = 25/44\n| R4 = Common\n| set5 = DMC-17 Dark Warriors Deck\n| setnum5 = 45/78\n| R5 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Starlight Tree]]\n[[Category:3000 Power Creatures]]\n[[Category:No Abilities]]"
+}

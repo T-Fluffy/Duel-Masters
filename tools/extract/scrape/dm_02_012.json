@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_02_012",
+ "page": "Aqua Bouncer",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Liquid People",
+ "cost": "6",
+ "power": "1000",
+ "engtext": "{{Blocker}}\n\n■ [[When you put]] this [[creature]] into the [[battle zone]], you may [[choose]] a [[creature]] in the [[battle zone]] and return it to its [[owner]]'s [[hand]].",
+ "templates": [
+  "Blocker"
+ ],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "12/55",
+  "set2": "DM-02 Master of Evolution",
+  "setnum2": "10/55"
+ },
+ "wiki": "{{Cardtable\n| image=Aqua Bouncer.jpg\n| civilization = Water\n| type = Creature\n| jpname = アクア・バウンサー\n| phonetic = Akua Baunsā\n| cost = 6\n| race = Liquid People\n| power = 1000\n| engtext = {{Blocker}}\n\n■ [[When you put]] this [[creature]] into the [[battle zone]], you may [[choose]] a [[creature]] in the [[battle zone]] and return it to its [[owner]]'s [[hand]].\n| jptext = {{Blocker|jp}}\n\n■ このクリーチャーがバトルゾーンに出たとき、バトルゾーンにあるクリーチャーを1体選び、持ち主の手札に戻してよい。\n| flavor = \n| mana = 1\n| artist = Ryoya Yuki\n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = 12/55\n| R1 = Rare\n| set2 = DM-02 Master of Evolution\n| setnum2 = 10/55\n| R2 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Bounce]]\n[[Category:Self Bounce]]\n[[Category:Come Into Play Trigger]]"
+}

@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_09_040",
+ "page": "Quakesaur",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Rock Beast",
+ "cost": "5",
+ "power": "3000",
+ "engtext": "■ Whenever this [[creature]] is [[attack]]ing your [[opponent]] and isn't [[block]]ed, your [[opponent]] chooses a [[card]] in his [[mana zone]] and puts it into his [[graveyard]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "40/55",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "48/55",
+  "set3": "DMC-21 Zakira's Dragon Commander Power-Up Pack",
+  "setnum3": "82/102"
+ },
+ "wiki": "{{Cardtable\n| image = Quakesaur.jpg\n| civilization = Fire\n| type = Creature\n| jpname = マウントザウルス\n| phonetic = Mauntozaurusu ''(Mountsauras)''\n| cost = 5\n| race = Rock Beast\n| power = 3000\n| engtext = ■ Whenever this [[creature]] is [[attack]]ing your [[opponent]] and isn't [[block]]ed, your [[opponent]] chooses a [[card]] in his [[mana zone]] and puts it into his [[graveyard]].\n| jptext = ■ このクリーチャーが相手プレイヤーを攻撃してブロックされなかった時、相手は自分自身のマナゾーンからカードを1枚選び、持ち主の墓地に置く。\n| flavor = Its blood is magma. Its saliva is also magma. (You can probably guess what its snot and pus are.) ([[DM-09]])\n| flavor2 = 背から吹き出す溶岩が、踏みつけた大地を溶かしていく。The lava erupting from its back melts the earth it treads upon. ([[DM-09]], [[DMC-21]])\n| mana = 1\n| artist = Ken Sugawara\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = 40/55\n| R1 = Common\n| set2 = DM-09 Invincible Blood\n| setnum2 = 48/55\n| R2 = Common\n| set3 = DMC-21 Zakira's Dragon Commander Power-Up Pack\n| setnum3 = 82/102\n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Mana Burn]]\n[[Category:Sabotage Ability]]"
+}

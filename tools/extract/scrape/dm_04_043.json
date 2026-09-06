@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_04_043",
+ "page": "Magmarex",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Rock Beast ",
+ "cost": "5",
+ "power": "3000",
+ "engtext": "{{Shield Trigger|creature}}\n\n■ [[When you put]] this [[creature]] into the [[battle zone]], [[destroy]] all [[creature]]s that have [[power]] 1000.",
+ "templates": [
+  "Shield Trigger|creature"
+ ],
+ "sets": {
+  "set1": "DM-04 Shadowclash of Blinding Night",
+  "setnum1": "43/55",
+  "set2": "DM-04 Challenge of Black Shadow ",
+  "setnum2": "16/55"
+ },
+ "wiki": "{{Cardtable\n| image = Magmarex.jpg\n| civilization = Fire\n| type = Creature\n| jpname = マグマティラノス\n| phonetic = Magumatiranosu ''(Magmatyranos)''\n| race = Rock Beast \n| cost = 5\n| power = 3000\n| engtext = {{Shield Trigger|creature}}\n\n■ [[When you put]] this [[creature]] into the [[battle zone]], [[destroy]] all [[creature]]s that have [[power]] 1000.  \n| jptext = {{Icon|ST}} S・トリガー （このクリーチャーをシールドゾーンから手札に加える時、コストを支払わずにすぐ召喚してもよい） \n\n■ このクリーチャーがバトルゾーンに出たとき、バトルゾーンにあるパワー1000のクリーチャーすべてを、持ち主の墓地に置く。\n| flavor = \"Is it hot in here, or is it just me? Oh... right.\" ([[DM-04]])\n| mana = 1\n| artist =Norikatsu Miyoshi \n| set1 = DM-04 Shadowclash of Blinding Night\n| setnum1 = 43/55\n| R1 = Rare\n| set2 = DM-04 Challenge of Black Shadow \n| setnum2 = 16/55\n| R2 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Mass Removal]]\n[[Category:Power Based Removal]]\n[[Category:Come Into Play Trigger]]"
+}

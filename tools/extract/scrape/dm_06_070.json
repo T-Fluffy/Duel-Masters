@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_06_070",
+ "page": "Zorvaz, the Bonecrusher",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Demon Command",
+ "cost": "5",
+ "power": "8000",
+ "engtext": "{{Blocker}}\n\n■ This [[creature]] can't [[attack]].\n\n■ When this [[creature]] [[battle]]s, [[destroy]] it after the [[battle]].",
+ "templates": [
+  "Blocker"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "70/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "87/110"
+ },
+ "wiki": "{{Cardtable\n| image = Zorvaz, the Bonecrusher.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|砕|さい}}{{Ruby|骨|こつ}}の{{Ruby|刺|し}}{{Ruby|客|かく}}ゾルバス\n| phonetic = Saikotsu no Shikaku Zorubasu\n| cost = 5\n| race = Demon Command\n| power = 8000\n| engtext = {{Blocker}}\n\n■ This [[creature]] can't [[attack]].\n\n■ When this [[creature]] [[battle]]s, [[destroy]] it after the [[battle]].\n| jptext = {{Blocker|jp}}\n\n■ このクリーチャーは攻撃することができない。\n\n■ このクリーチャーはバトルに勝っても、バトルの後、持ち主の墓地に置かれる。\n| flavor = \n| mana = 1\n| artist = Hisashi Momose\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 70/110\n| R1 = Common\n| set2 = DM-06 Invincible Soul\n| setnum2 = 87/110\n| R2 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Demon Command]]\n[[Category:Blocker]]\n[[Category:8000 Power Creatures]]\n[[Category:Reverse Slayer]]"
+}

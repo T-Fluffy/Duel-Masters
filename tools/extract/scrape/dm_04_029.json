@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_04_029",
+ "page": "Gigabolver",
+ "type": "Creature",
+ "civilization": "Darkness ",
+ "race": "Chimera",
+ "cost": "4",
+ "power": "3000",
+ "engtext": "■ [[Player]]s can't use the \"[[shield trigger]]\" [[Ability|abilities]] of [[light]] [[card]]s.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-04 Shadowclash of Blinding Night",
+  "setnum1": "29/55",
+  "set2": "Shadowclash Collector Tin",
+  "setnum2": "24/46",
+  "set3": "DM-04 Challenge of Black Shadow ",
+  "setnum3": "30/55",
+  "set4": "DMC-08 Endless Black Hole Deck",
+  "setnum4": "26/82"
+ },
+ "wiki": "{{Cardtable\n| image = Gigabolver.jpg\n| civilization = Darkness \n| type = Creature\n| jpname = ギガボルバ\n| phonetic = Gigaboruba\n| race = Chimera\n| cost = 4\n| power = 3000\n| engtext = ■ [[Player]]s can't use the \"[[shield trigger]]\" [[Ability|abilities]] of [[light]] [[card]]s.\n| jptext = ■ このクリーチャーがバトルゾーンにある間、誰も光のカードの「S・トリガー」を使えない。\n| flavor = It looks like a hideous monster, but there's really a sweet little girl deep down inside. In its stomach. ([[DM-04]])  \n| flavor2 = 顎部の孔から放たれる魔光は、あらゆるものを腐敗させる。The magical light emitted from the hole in the jaw corrupts everything it touches. ([[DM-04]], [[DMC-08]])\n| mana = 1\n| artist = Kou1 \n| set1 = DM-04 Shadowclash of Blinding Night\n| setnum1 = 29/55\n| R1 = Uncommon\n| set2 = Shadowclash Collector Tin\n| setnum2 = 24/46\n| R2 = Uncommon\n| set3 = DM-04 Challenge of Black Shadow \n| setnum3 = 30/55\n| R3 = Uncommon\n| set4 = DMC-08 Endless Black Hole Deck\n| setnum4 = 26/82\n| R4 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Prevents Shield Trigger]]"
+}

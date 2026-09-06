@@ -1,0 +1,26 @@
+{
+ "card_id": "dm_08_013",
+ "page": "Sol Galla, Halo Guardian",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Guardian",
+ "cost": "2",
+ "power": "1000+",
+ "engtext": "{{Blocker}}\n\n■ Whenever a [[player]] [[cast]]s a [[spell]], this [[creature]] gets +3000 [[power]] until the [[End Step|end of the turn]]. ''(Do what the [[spell]] says before this [[creature]] gets the extra [[power]].)''",
+ "templates": [
+  "Blocker"
+ ],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "13/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "38/55",
+  "set3": "DMC-10 Hakuoh's Holy Spirit Deck",
+  "setnum3": "29/44",
+  "set4": "DMC-13 CoroCoro New Generation Pack",
+  "setnum4": "18/37",
+  "set5": "DMC-20 Shobu's Holy Dragon Power-Up Pack",
+  "setnum5": "56/102"
+ },
+ "wiki": "{{Cardtable\n| image = Sol Galla, Halo Guardian.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|日|にち}}{{Ruby|輪|りん}}の{{Ruby|守|しゅ}}{{Ruby|護|ご}}{{Ruby|者|しゃ}}ソル・ガーラ\n| phonetic = Nichirin no Shugosha Soru Gaara\n| race = Guardian\n| cost = 2\n| power = 1000+\n| engtext = {{Blocker}}\n\n■ Whenever a [[player]] [[cast]]s a [[spell]], this [[creature]] gets +3000 [[power]] until the [[End Step|end of the turn]]. ''(Do what the [[spell]] says before this [[creature]] gets the extra [[power]].)''\n| jptext = {{Blocker|jp}}\n\n■ 誰かが呪文を唱えた場合、そのターンが終わるまで、このクリーチャーのパワーは+3000される.（呪文の効果を行ってからクリーチャーのパワーを増やす）　\n| flavor = \n| mana = 1\n| artist = Iron Pot\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 13/55\n| R1 = Common\n| set2 = DM-08 Invincible Legend\n| setnum2 = 38/55\n| R2 = Common\n| set3 = DMC-10 Hakuoh's Holy Spirit Deck\n| setnum3 = 29/44\n| R3 = Common\n| set4 = DMC-13 CoroCoro New Generation Pack\n| setnum4 = 18/37\n| R4 = Common\n| set5 = DMC-20 Shobu's Holy Dragon Power-Up Pack\n| setnum5 = 56/102\n| R5 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Guardian]]\n[[Category:1000 Power Creatures]]\n[[Category:Self Increase Power]]"
+}

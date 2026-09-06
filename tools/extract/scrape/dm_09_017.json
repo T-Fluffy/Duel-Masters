@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_09_017",
+ "page": "Emperor Maroll",
+ "type": "Evolution Creature",
+ "civilization": "Water",
+ "race": "Cyber Lord",
+ "cost": "3",
+ "power": "5000",
+ "engtext": "■ [[Evolution]]—Put on one of your [[Cyber Lord]]s.\n\n■ Whenever you put another [[creature]] into the [[battle zone]], return this [[creature]] to your [[hand]].\n\n■ Whenever this [[creature]] becomes [[block]]ed, return the [[block]]ing [[creature]] to its [[owner]]'s [[hand]]. ''(This [[creature]] stays [[tap]]ped.)''",
+ "templates": [],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "17/55",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "9/55"
+ },
+ "wiki": "{{Cardtable\n| image = Emperor Maroll.jpg\n| civilization = Water\n| type = Evolution Creature\n| jpname = エンペラー・マロル\n| phonetic = Enperā Maroru\n| race = Cyber Lord\n| cost = 3\n| power = 5000\n| engtext = ■ [[Evolution]]—Put on one of your [[Cyber Lord]]s.\n\n■ Whenever you put another [[creature]] into the [[battle zone]], return this [[creature]] to your [[hand]].\n\n■ Whenever this [[creature]] becomes [[block]]ed, return the [[block]]ing [[creature]] to its [[owner]]'s [[hand]]. ''(This [[creature]] stays [[tap]]ped.)''\n| jptext = ■ 進化－自分のサイバーロード1体の上に置く。\n\n■ このクリーチャーがバトルゾーンにある間、自分の他のクリーチャーがバトルゾーンに出たとき、このクリーチャーを自分の手札に戻す。\n\n■ このクリーチャーがブロックされたとき、バトルは行われない。ブロックしたクリーチャーを持ち主の手札に戻す。\n| flavor = Half supercomputer, half supervillain, all superfreak. ([[DM-09]])\n| mana = 1\n| artist = Masaki Hirooka\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = 17/55\n| R1 = Rare\n| set2= DM-09 Invincible Blood\n| setnum2 = 9/55\n| R2 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Bounce]]\n[[Category:Self Bounce]]"
+}

@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_03_045",
+ "page": "Aurora of Reversal",
+ "type": "Spell",
+ "civilization": "Nature",
+ "race": "",
+ "cost": "5",
+ "power": "",
+ "engtext": "■ Choose any [[number]] of your [[shield]]s and put them into your [[mana zone]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-03 Rampage of the Super Warriors",
+  "setnum1": "45/55",
+  "set2": "DM-03 Master of Destruction",
+  "setnum2": "20/55",
+  "set3": "DMX-12 Black Box Pack",
+  "setnum3": "b82/???",
+  "set4": "DMR-20 Gyuujinmaru's True Identity!!",
+  "setnum4": "24/70"
+ },
+ "wiki": "{{Cardtable\n| image= Aurora of Reversal.jpg\n| civilization = Nature\n| type = Spell\n| jpname = {{Ruby|逆|ぎゃく}}{{Ruby|転|てん}}のオーロラ\n| phonetic = Gyakuten no Ōrora\n| cost = 5\n| engtext = ■ Choose any [[number]] of your [[shield]]s and put them into your [[mana zone]].\n| jptext = ■ 自分のシールドを好きな数、自分のマナゾーンに置く。\n| flavor = The forest hasn't grown this fast since the ancient invasion of the fertilizer fiends. ([[DM-03]])\n| flavor2 = 危機を乗り越える勇気が君にはあるか? \"Do you have the courage to overcome the crisis?\" ([[DM-03]]) \n| flavor3 = 100枚に1枚くらい、裏面が表面に、裏面が表面に印刷されてるカードがあるらしいぞ!? \"It seems like there's a card where about 1 in 100 has the back printed on the front and the back printed on the back!\" ([[DMX-12]])\n| flavor4 = ミラクル・ミラダンテがゼロトリガーの力でS級侵略者たちを蹴散らした時、その革命の光は「壁の雪山」ではオーロラとして観測されたと言う。 When [[Miracle Miradante]] defeated the [[S-Rank Invader]]s with the power of the [[Revolution 0 Trigger|Zero Trigger]], this aurora of [[Revolution]] could be seen on top of the 'snowy mountain wall'. ([[DMR-20]])\n| mana = 1\n| artist = Norikatsu Miyoshi\n| set1 = DM-03 Rampage of the Super Warriors\n| setnum1 = 45/55\n| R1 = Rare\n| set2 = DM-03 Master of Destruction\n| setnum2 = 20/55\n| R2 = Rare\n| set3 = DMX-12 Black Box Pack\n| setnum3 = b82/???\n| R3 = Rare\n| set4 = DMR-20 Gyuujinmaru's True Identity!!\n| setnum4 = 24/70\n| R4 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Nature]]\n[[Category:Spell]]\n[[Category:Mana Acceleration]]\n[[Category:Self Shield Burn]]"
+}

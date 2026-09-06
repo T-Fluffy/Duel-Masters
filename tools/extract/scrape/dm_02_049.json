@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_02_049",
+ "page": "Leaping Tornado Horn",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Horned Beast",
+ "cost": "3",
+ "power": "2000+",
+ "engtext": "■ While [[attack]]ing, this [[creature]] gets +1000 [[power]] for each other [[creature]] you have in the [[battle zone]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "49/55",
+  "set2": "DM-02 Master of Evolution",
+  "setnum2": "52/55"
+ },
+ "wiki": "{{Cardtable\n| image=Leaping Tornado Horn.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|跳|ちょう}}{{Ruby|躍|やく}}するトルネード・ホーン\n| phonetic = Chōyaku Suru Torunēdo Hōn\n| cost = 3\n| race = Horned Beast\n| power = 2000+\n| engtext = ■ While [[attack]]ing, this [[creature]] gets +1000 [[power]] for each other [[creature]] you have in the [[battle zone]].\n| jptext = ■ 攻撃中、このクリーチャーのパワーは、バトルゾーンにある自分のクリーチャー1体につき+1000される。\n| flavor = Beautiful - and deadly - beasts. 強く、そして美しい獣たち。 ([[DM-02]])\n| mana = 1\n| artist = Miho Midorikawa\n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = 49/55\n| R1 = Common\n| set2 = DM-02 Master of Evolution\n| setnum2 = 52/55\n| R2 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Nature]]\n[[Category:Horned Beast]]\n[[Category:2000 Power Creatures]]\n[[Category:Self Increase Power]]\n[[Category:Attack Trigger]]"
+}

@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_01_071",
+ "page": "Burning Power",
+ "type": "Spell",
+ "civilization": "Fire",
+ "race": "",
+ "cost": "1",
+ "power": "",
+ "engtext": "■ One of your [[creature]]s gets \"[[power attacker]] +2000\" until the [[End Step|end of the turn]]. ''(While [[attack]]ing, a [[creature]] that has \"[[power attacker]] +2000\" gets +2000 [[power]].)''",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "71/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "102/110"
+ },
+ "wiki": "{{Cardtable\n| image = Burning Power.jpg\n| civilization = Fire\n| type = Spell\n| jpname = バーニング・パワー\n| phonetic = Bāningu Pawā\n| cost = 1\n| engtext = ■ One of your [[creature]]s gets \"[[power attacker]] +2000\" until the [[End Step|end of the turn]]. ''(While [[attack]]ing, a [[creature]] that has \"[[power attacker]] +2000\" gets +2000 [[power]].)''\n| jptext = ■ バトルゾーンにある自分のクリーチャーを1体選ぶ。 このターンの攻撃中、そのクリーチャーのパワーは+2000される。\n| flavor = うずまく炎の力を見ろ! Witness the power of whirling fire! ([[DM-01]])\n| mana = 1\n| artist = Miho Midorikawa\n| set1 = DM-01 Base Set\n| setnum1 = 71/110\n| R1 = Common\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 102/110\n| R2 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Increase Power]]\n[[Category:Gives \"Power Attacker\"]]"
+}

@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_07_s03",
+ "page": "Crath Lade, Merciless King",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Dark Lord",
+ "cost": "8",
+ "power": "4000",
+ "engtext": "{{Tap Ability|Your [[opponent]] [[discard]]s 2 [[card]]s at random from his [[hand]].}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "S3/S5",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "S3/S5",
+  "set3": "DMX-12 Black Box Pack",
+  "setnum3": "b38/???"
+ },
+ "wiki": "{{Cardtable\n| image = Crath Lade, Merciless King.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|残|ざん}}{{Ruby|虐|ぎゃく}}{{Ruby|覇|は}}{{Ruby|王|おう}}デスカール ''(Death Carl, Merciless King)''\n| phonetic = Zangyaku Haō Desukāru\n| cost = 8\n| race = Dark Lord\n| power = 4000\n| engtext = {{Tap Ability|Your [[opponent]] [[discard]]s 2 [[card]]s at random from his [[hand]].}}\n| jptext = ■ このクリーチャーで攻撃するかわりに、タップして次の{{Tap}}能力を使ってもよい。\n:{{Tap}} 相手の手札から2枚見ないで選び、相手はそれを持ち主の墓地に置く。1枚しかない場合は、相手はその1枚を持ち主の墓地に置く。\n| flavor = \"Mortals are my crops. Their souls are my harvest.\" ([[DM-07]])\n| flavor2 = ドラゴンとも拳で語り合える。I speak to [[Dragon]]s with fists. ([[DM-07]])\n| flavor3 = [[Zenith|ゼニス]]とも拳で語り合える。I speak to [[Zenith]]s with fists. ([[DMX-12]])\n| mana = 1\n| artist = Eiji Kaneda\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = S3/S5\n| R1 = Super Rare\n| set2 = DM-07 Invincible Charge\n| setnum2 = S3/S5\n| R2 = Super Rare\n| set3 = DMX-12 Black Box Pack\n| setnum3 = b38/???\n| R3 = Super Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Tap Ability]]\n[[Category:Card Discard]]"
+}

@@ -1,0 +1,24 @@
+{
+ "card_id": "dm_02_038",
+ "page": "Cavalry General Curatops",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Dragonoid",
+ "cost": "3",
+ "power": "2000",
+ "engtext": "■ This [[creature]] can [[attack]] [[untap]]ped [[creature]]s.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "38/55",
+  "set2": "DM-02 Master of Evolution",
+  "setnum2": "31/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "80/140",
+  "set4": "DMC-01 Shobu's Blaze Deck",
+  "setnum4": "19/43",
+  "set5": "DMC-27 CoroCoro Dream Pack",
+  "setnum5": "30/55"
+ },
+ "wiki": "{{Cardtable\n| image=Cavalry General Curatops.jpg\n| civilization = Fire\n| type = Creature\n| jpname = {{Ruby|騎|き}}{{Ruby|兵|へい}}{{Ruby|総|そう}}{{Ruby|長|ちょう}}キュラトプス\n| phonetic = Kihei Sōchō Kyuratopusu\n| cost = 3\n| race = Dragonoid\n| power = 2000\n| engtext = ■ This [[creature]] can [[attack]] [[untap]]ped [[creature]]s.\n| jptext = ■ このクリーチャーは、タップされていないクリーチャーを攻撃できる。\n| flavor = \"Doesn't your scooter have a flamethrower, a grenade launcher, a bazooka, and a pair of roto-blades too?\" ([[DM-02]])\n| flavor2 = 騎兵たちは、全速で戦場を駆け巡る。戦いの始まりを報告するために。The cavalry rushes across the battlefield at full speed, to report the beginning of the battle. ([[DM-02]], [[DM-18]], [[DMC-27]])\n| mana = 1\n| artist = Atsushi Kawasaki\n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = 38/55\n| R1 = Uncommon\n| set2 = DM-02 Master of Evolution\n| setnum2 = 31/55\n| R2 = Uncommon\n| set3 = DM-18 Best Challenger\n| setnum3 = 80/140\n| R3 = Uncommon\n| set4 = DMC-01 Shobu's Blaze Deck\n| setnum4 = 19/43\n| R4 = Uncommon\n| set5 = DMC-27 CoroCoro Dream Pack\n| setnum5 = 30/55\n| R5 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Can Attack Untapped Creatures]]"
+}

@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_06_059",
+ "page": "Grim Soul, Shadow of Reversal",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Ghost",
+ "cost": "5",
+ "power": "3000",
+ "engtext": "{{Tap Ability|Return a [[darkness]] [[creature]] from your [[graveyard]] to your [[hand]].}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "59/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "88/110",
+  "set3": "DMC-13 CoroCoro New Generation Pack",
+  "setnum3": "25/37 "
+ },
+ "wiki": "{{Cardtable\n| image = Grim Soul, Shadow of Reversal.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|幽|ゆう}}{{Ruby|鬼|き}}の{{Ruby|影|かげ}}リバース・ソウル\n| phonetic = Yūki no Kage Ribāsu Sōru\n| race = Ghost\n| cost = 5\n| power = 3000\n| engtext = {{Tap Ability|Return a [[darkness]] [[creature]] from your [[graveyard]] to your [[hand]].}}\n| jptext = ■ このクリーチャーで攻撃する代わりに、タップして次の{{Tap}}能力を使ってもよい。\n:{{Tap}} 自分の墓地から闇クリーチャーを1体選び、自分の手札に戻す。\n| flavor = \"Quit being dead. Your lifetime contract with [[Ballom, Master of Death|Ballom]] hasn't expired yet.\" ([[DM-06]])\n| flavor2 = 死が安らかとは限らない。Death isn't always peaceful. ([[DM-06]], [[DMC-13]])\n| mana = 1\n| artist = Masaki Hirooka\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 59/110\n| R1 = Common\n| set2 = DM-06 Invincible Soul\n| setnum2 = 88/110\n| R2 = Common\n| set3 = DMC-13 CoroCoro New Generation Pack\n| setnum3 = 25/37 \n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Tap Ability]]\n[[Category:Creature Recovery]]"
+}

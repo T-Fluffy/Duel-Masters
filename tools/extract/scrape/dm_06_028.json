@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_06_028",
+ "page": "Telitol, the Explorer",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Gladiator",
+ "cost": "4",
+ "power": "3000",
+ "engtext": "{{Blocker|s}}\n\n■ [[When you put]] this [[creature]] into the [[battle zone]], you may [[look]] at your [[shield]]s. Then put them back where they were.\n\n■ This [[creature]] can't [[attack]] [[player]]s.",
+ "templates": [
+  "Blocker|s"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "28/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "15/110"
+ },
+ "wiki": "{{Cardtable\n| image = Telitol, the Explorer.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|宣|せん}}{{Ruby|凶|きょう}}{{Ruby|師|し}}エルリオット ''(Elliot, the Missionary)''\n| phonetic = Senkyoushi Eruriotto\n| race = Gladiator\n| cost = 4\n| power = 3000\n| engtext = {{Blocker|s}}\n\n■ [[When you put]] this [[creature]] into the [[battle zone]], you may [[look]] at your [[shield]]s. Then put them back where they were.\n\n■ This [[creature]] can't [[attack]] [[player]]s.\n| jptext = {{Blocker|jps}}\n\n■ このクリーチャーは、相手プレイヤーを攻撃できない。\n\n■ このクリーチャーがバトルゾーンに出たとき、自分のシールドをすべて見てもよい。その後、それを元に戻す。\n| flavor = \"Wherever I go, daylight follows.\" ([[DM-06]])\n| mana = 1\n| artist = Asai Genji\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 28/110\n| R1 = Rare\n| set2 = DM-06 Invincible Soul\n| setnum2 = 15/110\n| R2 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Shield Peek]]\n[[Category:Come Into Play Trigger]]"
+}

@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_01_109",
+ "page": "Tri-horn Shepherd",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Horned Beast",
+ "cost": "5",
+ "power": "5000",
+ "engtext": "",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "109/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "36/110",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "45/140"
+ },
+ "wiki": "{{Cardtable\n| image = Tri-horn Shepherd.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|群|む}}れを{{Ruby|守|まも}}るトライ・ホーン\n| phonetic = Mure o Mamoru Torai Hōn\n| cost = 5\n| race = Horned Beast\n| power = 5000\n| flavor = Sometimes weeks pass before it realizes it has a gored enemy stuck to its horns. ([[DM-01]])\n| mana = 1\n| artist = Daisuke Izuka\n| set1 = DM-01 Base Set\n| setnum1 = 109/110\n| R1 = Rare\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 36/110\n| R2 = Rare\n| set3 = DM-18 Best Challenger\n| setnum3 = 45/140\n| R3 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Nature]]\n[[Category:Horned Beast]]\n[[Category:5000 Power Creatures]]\n[[Category:No Abilities]]"
+}

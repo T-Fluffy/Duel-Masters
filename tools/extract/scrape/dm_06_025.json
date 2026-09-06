@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_06_025",
+ "page": "Rain of Arrows",
+ "type": "Spell",
+ "civilization": "Light",
+ "race": "",
+ "cost": "2",
+ "power": "",
+ "engtext": "■ [[Look]] at your [[opponent]]'s [[hand]]. He [[discard]]s all [[darkness]] [[spell]]s from it.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "25/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "45/110",
+  "set3": "DMC-20 Shobu's Holy Dragon Power-Up Pack",
+  "setnum3": "23/102",
+  "set4": "DMC-27 CoroCoro Dream Pack",
+  "setnum4": "23/55"
+ },
+ "wiki": "{{Cardtable\n| image = Rain of Arrows.jpg\n| civilization = Light\n| type = Spell\n| jpname = レイン・アロー\n| phonetic = Rein Arō ''(Rain Arrow)''\n| cost = 2\n| engtext = ■ [[Look]] at your [[opponent]]'s [[hand]]. He [[discard]]s all [[darkness]] [[spell]]s from it.\n| jptext = ■ 相手の手札を見る。その中から闇の呪文をすべて捨てさせる。\n| flavor = \"Today's weather report calls for sunshine, with an 80 percent chance of kicking your butt.\" -[[Laveil, Seeker of Catastrophe]] ([[DM-06]])\n| flavor2 = 浄化の光矢が降り注ぎ、闇を切り裂く。The purifying light arrows rain down, slicing through the darkness. ([[DM-06]], [[DMC-20]], [[DMC-27]])\n| mana = 1\n| artist = Katsuhiko Kojoh\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 25/110\n| R1 = Uncommon\n| set2 = DM-06 Invincible Soul\n| setnum2 = 45/110\n| R2 = Uncommon\n| set3 = DMC-20 Shobu's Holy Dragon Power-Up Pack\n| setnum3 = 23/102\n| R3 = Uncommon\n| set4 = DMC-27 CoroCoro Dream Pack\n| setnum4 = 23/55\n| R4 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Spell]]\n[[Category:Card Discard]]\n[[Category:Hand Peek]]"
+}

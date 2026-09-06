@@ -1,0 +1,32 @@
+{
+ "card_id": "dm_01_009",
+ "page": "La Ura Giga, Sky Guardian",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Guardian",
+ "cost": "1",
+ "power": "2000",
+ "engtext": "{{Blocker|old}}\n\n■ This [[creature]] can't [[attack]] [[player]]s.",
+ "templates": [
+  "Blocker|old"
+ ],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "9/110",
+  "set2": "Shadowclash Collector Tin",
+  "setnum2": "7/46",
+  "set3": "DM-01 Base Set (OCG)",
+  "setnum3": "76/110",
+  "set4": "DM-28 Battle Galaxy",
+  "setnum4": "76/110",
+  "set5": "DMC-16 Guardian Blue Deck",
+  "setnum5": "48/78",
+  "set6": "DMC-42 CoroCoro Dream Pack 3: Eternal Gear",
+  "setnum6": "62/90",
+  "set7": "DMC-61 CoroCoro Dream Pack 4: Eternal Heaven",
+  "setnum7": "64/94",
+  "set8": "Promotional",
+  "setnum8": "B1/7 Y1, P27/Y5, P31/Y7, P32/Y7"
+ },
+ "wiki": "{{Cardtable\n| image = La Ura Giga, Sky Guardian.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|蒼|そう}}{{Ruby|天|てん}}の{{Ruby|守|しゅ}}{{Ruby|護|ご}}{{Ruby|者|しゃ}}ラ・ウラ・ギガ \n| phonetic = Sōten no Shugosha Ra Ura Giga \n| cost = 1\n| race = Guardian\n| power = 2000\n| engtext = {{Blocker|old}}\n\n■ This [[creature]] can't [[attack]] [[player]]s.\n| jptext = {{Blocker|jp}}\n\n■ このクリーチャーは、相手プレイヤーを攻撃できない。\n| flavor = To protect their floating cities, Guardians are gifted with shining wings.  ([[DM-01]])\n| flavor2 = 守護者たちは輝く翼を授けられた。 天空の都市を守るためである。These aircraft, ideal for mass production and versatility, are manufactured on end. ([[DM-01]])\n| flavor3 = 量産性と汎用性に優れた機体は、時代を超えて製造される。These machines with excellent mass production capability and versatility are manufactured across eras. ([[DMC-61]])\n| flavor4 = 戦いの基本はまず守りを固めることにあり。The fundamental of battle is to solidify defense first. (P31/Y7)\n| flavor5 = 蒼天の守護者はいつかより大きな守護者となる。Blue Sky Guardians will someday become bigger Guardians. (P32/Y7)\n| mana = 1\n| artist = Kou1\n| artist2 = Patricia \n| artist3 = HIROYUKI TADOKORO\n| set1 = DM-01 Base Set\n| setnum1 = 9/110\n| R1 = Common\n| set2 = Shadowclash Collector Tin\n| setnum2 = 7/46\n| R2 = Common\n| set3 = DM-01 Base Set (OCG)\n| setnum3 = 76/110\n| R3 = Common\n| set4 = DM-28 Battle Galaxy\n| setnum4 = 76/110\n| R4 = Common\n| set5 = DMC-16 Guardian Blue Deck\n| setnum5 = 48/78\n| R5 = Common\n| set6 = DMC-42 CoroCoro Dream Pack 3: Eternal Gear\n| setnum6 = 62/90\n| R6 = Common\n| set7 = DMC-61 CoroCoro Dream Pack 4: Eternal Heaven\n| setnum7 = 64/94\n| R7 = Common\n| set8 = Promotional\n| setnum8 = B1/7 Y1, P27/Y5, P31/Y7, P32/Y7\n| R8 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]"
+}

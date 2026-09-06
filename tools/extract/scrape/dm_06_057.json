@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_06_057",
+ "page": "Gnarvash, Merchant of Blood",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Demon Command",
+ "cost": "6",
+ "power": "8000",
+ "engtext": "{{Double Breaker}}\n\n■ [[End Step|At the end of each of your turns]], if this is your only [[creature]] in the [[battle zone]], [[destroy]] it.",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "57/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "24/110"
+ },
+ "wiki": "{{Cardtable\n| image = Gnarvash, Merchant of Blood.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|戦|せん}}{{Ruby|慄|りつ}}の{{Ruby|剛|ごう}}{{Ruby|将|しょう}}アブリン ''(Ablin, General of Fear)''\n| phonetic = Senritsu no Goushou Aburin\n| race = Demon Command\n| cost = 6\n| power = 8000\n| engtext = {{Double Breaker}}\n\n■ [[End Step|At the end of each of your turns]], if this is your only [[creature]] in the [[battle zone]], [[destroy]] it.\n| jptext = {{Double Breaker|jp}}\n\n■ 自分のターンが終わるとき、バトルゾーンにある自分のクリーチャーがこのクリーチャーだけであれば、自分の墓地に置く。　\n| flavor = His mother was right. His face did freeze like that. ([[DM-06]])\n| flavor2 = 血が戦場を求めている。Blood seeks the battlefield. ([[DM-06]])\n| mana = 1\n| artist = Sansyu\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 57/110\n| R1 = Rare\n| set2 = DM-06 Invincible Soul\n| setnum2 = 24/110\n| R2 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Demon Command]]\n[[Category:8000 Power Creatures]]\n[[Category:Self Removal]]"
+}

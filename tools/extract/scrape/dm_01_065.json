@@ -1,0 +1,24 @@
+{
+ "card_id": "dm_01_065",
+ "page": "Wandering Braineater",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Living Dead",
+ "cost": "2",
+ "power": "2000",
+ "engtext": "{{Blocker|old}}\n\n■ This [[creature]] can't [[attack]].",
+ "templates": [
+  "Blocker|old"
+ ],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "65/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "91/110",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "116/140",
+  "set4": "DMC-02 Kokujo's Darkness Deck",
+  "setnum4": "27/43"
+ },
+ "wiki": "{{Cardtable\n| image = Wandering Braineater.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = さまよう{{Ruby|者|もの}}ブレイン・イーター\n| phonetic = Samayō Mono Burein Ītā\n| cost = 2\n| race = Living Dead\n| power = 2000\n| engtext = {{Blocker|old}}\n\n■ This [[creature]] can't [[attack]].\n| jptext = {{Blocker|jpold}}\n\n■ このクリーチャーは攻撃することができない。\n| flavor = Devouring nice, fresh brains is all they know... and all they care about. ([[DM-01]])\n| flavor2 = 彼らは血をすすり、肉をむさぼり喰うことだけを知っている。They only know how to sip blood and devour flesh. ([[DM-01]], [[DM-18]], [[DMC-02]])\n| mana = 1\n| artist = Youichi Kai\n| set1 = DM-01 Base Set\n| setnum1 = 65/110\n| R1 = Common\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 91/110\n| R2 = Common\n| set3 = DM-18 Best Challenger\n| setnum3 = 116/140\n| R3 = Common\n| set4 = DMC-02 Kokujo's Darkness Deck\n| setnum4 = 27/43\n| R4 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Mana Cost 2]]\n[[Category:Living Dead]]\n[[Category:2000 Power Creatures]]"
+}

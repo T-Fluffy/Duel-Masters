@@ -1,0 +1,26 @@
+{
+ "card_id": "dm_01_070",
+ "page": "Brawler Zyler",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Human",
+ "cost": "2",
+ "power": "1000+",
+ "engtext": "{{Power Attacker|2000}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "70/110",
+  "set2": "Shadowclash Collector Tin",
+  "setnum2": "35/46",
+  "set3": "DM-01 Base Set (OCG)",
+  "setnum3": "98/110",
+  "set4": "DM-18 Best Challenger",
+  "setnum4": "125/140",
+  "set5": "DMC-01 Shobu's Blaze Deck",
+  "setnum5": "40/43",
+  "set6": "DMC-25 Shobu's Fullmetal Fire Deck",
+  "setnum6": "42/45"
+ },
+ "wiki": "{{Cardtable\n| image = Brawler Zyler.jpg\n| civilization = Fire\n| type = Creature\n| jpname = {{Ruby|喧|けん}}{{Ruby|嘩|か}}{{Ruby|屋|や}}タイラー\n| phonetic = Kenkaya Tairā\n| cost = 2\n| race = Human\n| power = 1000+\n| engtext = {{Power Attacker|2000}}\n| jptext = {{Power Attacker|2000|jp}}\n| flavor = 「やめときな。怪我するぜ。」 \"I wouldn't, if I were you. You don't want to get hurt.\"  ─'''Brawler Zyler''' ([[DM-01]], [[DM-18]], [[DMC-01]], [[DMS-05]])\n| mana = 1\n| artist = Tsutomu Kawade\n| set1 = DM-01 Base Set\n| setnum1 = 70/110\n| R1 = Common\n| set2 = Shadowclash Collector Tin\n| setnum2 = 35/46\n| R2 = Common\n| set3 = DM-01 Base Set (OCG)\n| setnum3 = 98/110\n| R3 = Common\n| set4 = DM-18 Best Challenger\n| setnum4 = 125/140\n| R4 = Common\n| set5 = DMC-01 Shobu's Blaze Deck\n| setnum5 = 40/43\n| R5 = Common\n| set6 = DMC-25 Shobu's Fullmetal Fire Deck\n| setnum6 = 42/45\n| R6 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:1000 Power Creatures]]"
+}

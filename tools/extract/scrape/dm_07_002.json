@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_07_002",
+ "page": "King Benthos",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Leviathan",
+ "cost": "8",
+ "power": "6000",
+ "engtext": "{{Double Breaker}}\n\n{{Tap Ability|Each of your [[water]] [[creature]]s gets \"This [[creature]] can't be [[block]]ed\" until the [[End Step|end of the turn]].}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "2/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "2/55"
+ },
+ "wiki": "{{Cardtable\n| image = King Benthos.jpg\n| civilization = Water\n| type = Creature\n| jpname = キング・アクエリアス ''(King Aquarius)''\n| phonetic = Kingu Akueriasu\n| race = Leviathan\n| cost = 8\n| power = 6000\n| engtext = {{Double Breaker}}\n\n{{Tap Ability|Each of your [[water]] [[creature]]s gets \"This [[creature]] can't be [[block]]ed\" until the [[End Step|end of the turn]].}}\n| jptext = {{Double Breaker|jp}}\n\n■ このクリーチャーで攻撃するかわりに、タップして次の{{Tap}}能力を使ってもよい。\n:{{Tap}} このターンが終わるまで、バトルゾーンにある自分の水のクリーチャーはすべて、次の能力を得る。「このクリーチャーはブロックされない」\n| flavor = \n| mana = 1\n| artist = Ryoya Yuki\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 2/55\n| R1 = Very Rare\n| set2 = DM-07 Invincible Charge\n| setnum2 = 2/55\n| R2 = Very Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Leviathan]]\n[[Category:Tap Ability]]\n[[Category:6000 Power Creatures]]\n[[Category:Unblockable]]\n[[Category:Gives \"Unblockable\"]]"
+}

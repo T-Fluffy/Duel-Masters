@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_06_072",
+ "page": "Armored Scout Gestuchar",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Armorloid",
+ "cost": "5",
+ "power": "4000+",
+ "engtext": "■ While you have no other [[fire]] [[creature]]s in the [[battle zone]], this [[creature]] has \"[[power attacker]] +3000\" and \"[[double breaker]].\" ''(A [[creature]] that has \"[[power attacker]] +3000\" and \"[[double breaker]]\" gets +3000 [[power]] while [[attack]]ing and breaks 2 [[shield]]s.)''",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "72/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "96/110",
+  "set3": "DMC-13 CoroCoro New Generation Pack",
+  "setnum3": "29/37 "
+ },
+ "wiki": "{{Cardtable\n| image = Armored Scout Gestuchar.jpg\n| civilization = Fire\n| type = Creature\n| jpname = {{Ruby|捜|そう}}{{Ruby|神|しん}}{{Ruby|兵|へい}}グチェラリオン ''(Divine Armored Gucheralion)''\n| phonetic = Sōshinhei Gucherarion\n| race = Armorloid\n| cost = 5\n| power = 4000+\n| engtext = ■ While you have no other [[fire]] [[creature]]s in the [[battle zone]], this [[creature]] has \"[[power attacker]] +3000\" and \"[[double breaker]].\" ''(A [[creature]] that has \"[[power attacker]] +3000\" and \"[[double breaker]]\" gets +3000 [[power]] while [[attack]]ing and breaks 2 [[shield]]s.)''\n| jptext = ■ バトルゾーンに自分の火のクリーチャーが他に1体もなければ、このクリーチャーは「パワーアタッカー+3000」と「W・ブレイカー」を得る。\n| flavor = An [[Armorloid]]'s career has two stages: fearsome warrior and scrap metal. ([[DM-06]])\n| flavor2 = 熾烈な運用に耐えられるのは、自動修復装置のおかげだ。The only reason it can withstand intense operation is thanks to the self-repair system. ([[DM-06]])\n| mana = 1\n| artist = Tomofumi Ogasawara\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 72/110\n| R1 = Common\n| set2 = DM-06 Invincible Soul\n| setnum2 = 96/110\n| R2 = Common\n| set3 = DMC-13 CoroCoro New Generation Pack\n| setnum3 = 29/37 \n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Power Attacker +3000]]\n[[Category:Conditional Double Breaker]]\n[[Category:4000 Power Creatures]]"
+}

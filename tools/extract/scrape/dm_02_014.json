@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_02_014",
+ "page": "Corile",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Cyber Lord",
+ "cost": "5",
+ "power": "2000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], [[choose]] one of your [[opponent]]'s [[creature]]s in the [[battle zone]] and put it on top of his [[deck]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "14/55",
+  "set2": "DM-02 Master of Evolution",
+  "setnum2": "40/55",
+  "set3": "DMC-27 CoroCoro Dream Pack",
+  "setnum3": "40/55",
+  "set4": "Promotional",
+  "setnum4": "T4 Y1"
+ },
+ "wiki": "{{Cardtable\n| image=Corile.jpg\n| civilization = Water\n| type = Creature\n| jpname = コーライル\n| phonetic = Kōrairu \n| race = Cyber Lord\n| cost = 5\n| power = 2000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], [[choose]] one of your [[opponent]]'s [[creature]]s in the [[battle zone]] and put it on top of his [[deck]].\n| jptext = ■ このクリーチャーをバトルゾーンに出した時、バトルゾーンにある相手のクリーチャーを1体選び、持ち主の山札の一番上に置く。\n| flavor = When the cataclysm struck, all the science of the [[Cyber Lord]]s couldn't prevent the collapse of their underwater city. ([[DM-02]])\n| flavor2 = サイバーロードの科学力をもってしても、水中都市の崩壊は止まらなかった。 ([[DM-02]], [[DMC-27]])\n| mana = 1\n| artist = Hikaru Ikusa\n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = 14/55\n| R1 = Common\n| set2 = DM-02 Master of Evolution\n| setnum2 = 40/55\n| R2 = Common\n| set3 = DMC-27 CoroCoro Dream Pack\n| setnum3 = 40/55\n| R3 = Common\n| set4 = Promotional\n| setnum4 = T4 Y1\n| R4 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Cyber Lord]]\n[[Category:2000 Power Creatures]]\n[[Category:Fixed Removal]]\n[[Category:Deck Feed]]\n[[Category:Come Into Play Trigger]]"
+}

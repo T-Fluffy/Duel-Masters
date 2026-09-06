@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_03_005",
+ "page": "Logic Sphere",
+ "type": "Spell",
+ "civilization": "Light",
+ "race": "",
+ "cost": "3",
+ "power": "",
+ "engtext": "{{Shield Trigger|spell}} \n\n■ Return a [[spell]] from your [[mana zone]] to your [[hand]].",
+ "templates": [
+  "Shield Trigger|spell"
+ ],
+ "sets": {
+  "set1": "DM-03 Rampage of the Super Warriors",
+  "setnum1": "5/55",
+  "set2": "DM-03 Master of Destruction",
+  "setnum2": "8/55"
+ },
+ "wiki": "{{Cardtable\n| image= Logic Sphere.jpg\n| civilization = Light\n| type = Spell\n| jpname = プロテクト・キューブ\n| phonetic = Purotekuto Kyūbu ''(Protect Cube)''\n| cost = 3\n| engtext = {{Shield Trigger|spell}} \n\n■ Return a [[spell]] from your [[mana zone]] to your [[hand]].\n| jptext = {{Icon|ST}} S・トリガー (この呪文をシールドゾーンから手札に加える時、コストを支払わずにすぐ唱えてもよい)\n\n■ 自分のマナゾーンから呪文を1枚選び、自分の手札に戻す。\n| flavor = They're all that's holding the planet's atmosphere together. ([[DM-03]])\n| flavor2 = 光よ、今こそ集まれ!! \"Light, come together now!!\" ([[DM-03]])\n| artist = Dustmoss \n| set1 = DM-03 Rampage of the Super Warriors\n| setnum1 = 5/55\n| R1 = Rare\n| set2 = DM-03 Master of Destruction\n| setnum2 = 8/55\n| R2 = Rare\n}}\n{{Logic}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Shield Trigger]]\n[[Category:Spell]]\n[[Category:Mana Recovery]]\n[[Category:Spell Recovery]]"
+}

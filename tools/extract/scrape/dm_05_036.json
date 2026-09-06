@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_05_036",
+ "page": "Blazosaur Q",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Survivor",
+ "cost": "2",
+ "power": "1000+",
+ "engtext": "{{Survivor}} [[Power attacker]] +1000 ''(While [[attack]]ing, this [[creature]] gets +1000 [[power]].)''",
+ "templates": [
+  "Survivor"
+ ],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "36/55",
+  "set2": "DM-05 Return of the Survivor",
+  "setnum2": "51/55"
+ },
+ "wiki": "{{Cardtable\n| image = Blazosaur Q.jpg\n| civilization = Fire\n| type = Creature\n| jpname = ブレイズザウルス{{Ruby|α|アルファ}} \n| kana = アルファ ''(Alpha)''\n| phonetic = Bureizuzaurusu Arufa ''(Blazesaurus Alpha)''\n| race = Survivor\n| race2 = Rock Beast\n| cost = 2\n| power = 1000+\n| engtext = {{Survivor}} [[Power attacker]] +1000 ''(While [[attack]]ing, this [[creature]] gets +1000 [[power]].)''\n| jptext = {{Icon|SVold}} パワーアタッカー +1000 （攻撃中、このクリーチャーのパワーは+1000される。） \n\n■ サバイバー （このクリーチャーがバトルゾーンにある間、自分の他のサバイバーも上の{{Icon|SVold}}能力を得る\n| flavor = The Blazosaur's roar echoes in the ears of every [[Survivor]]. ([[DM-05]])\n| flavor2 = ブレイズザウルスαの咆哮と共に力の波動が味方のサバイバーへと伝わっていく。With Blazosaur Q's roar, waves of power are transmitted to its allied survivors. ([[DM-05]])\n| mana = 1\n| artist = Sansyu\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = 36/55\n| R1 = Common\n| set2 = DM-05 Return of the Survivor\n| setnum2 = 51/55\n| R2 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Power Attacker +1000]]\n[[Category:1000 Power Creatures]]"
+}

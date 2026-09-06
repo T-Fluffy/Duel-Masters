@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_05_s04",
+ "page": "Billion-Degree Dragon",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Armored Dragon",
+ "cost": "10",
+ "power": "15000",
+ "engtext": "{{Triple Breaker}}",
+ "templates": [
+  "Triple Breaker"
+ ],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "S4/S5",
+  "set2": "DM-05 Return of the Survivor",
+  "setnum2": "S4/S5",
+  "set3": "DMX-19 Super Rare 100% Pack",
+  "setnum3": "S31/???"
+ },
+ "wiki": "{{Cardtable\n| image = Billion-Degree Dragon.jpg\n| civilization = Fire\n| type = Creature\n| jpname = グラディアン・レッド・ドラゴン ''(Gradian Red Dragon)''\n| phonetic = Guradian Reddo Doragon\n| race = Armored Dragon\n| cost = 10\n| power = 15000\n| engtext = {{Triple Breaker}}\n| jptext = {{Triple Breaker|jp}}\n| flavor = The Megapocalypse woke it from its slumber deep within the molten core of the planet. It is the avenger of the world. It is legendary. And it is very, very cranky. ([[DM-05]])\n| flavor2 = 封印されしドラゴンが覚醒した時、滅びの声が世界に轟く! When the sealed dragon awakens, the voice of destruction blasts the world! ([[DM-05]])\n| flavor3 = 巨大な龍の歴史はここから始まった。ありとあらゆる巨大な龍のルーツはここにある。今は、すでにその老いた体では前線に立つことはままならないが、その功績は敬意を集め続けている。 The history of gigantic dragons starts here. He is the root of all gigantic dragons. Now while his old body disables him from reaching the front lines, the respect for his achievement continues. ([[DMX-19]])\n| mana = 1\n| artist = Seki\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = S4/S5\n| R1 = Super Rare\n| set2 = DM-05 Return of the Survivor\n| setnum2 = S4/S5\n| R2 = Super Rare\n| set3 = DMX-19 Super Rare 100% Pack\n| setnum3 = S31/???\n| R3 = Super Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]"
+}

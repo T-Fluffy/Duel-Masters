@@ -1,0 +1,28 @@
+{
+ "card_id": "dm_03_054",
+ "page": "Sniper Mosquito",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Giant Insect",
+ "cost": "1",
+ "power": "2000",
+ "engtext": "■ Whenever this [[creature]] [[attack]]s, return a [[card]] from your [[mana zone]] to your [[hand]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-03 Rampage of the Super Warriors",
+  "setnum1": "54/55",
+  "set2": "DM-03 Master of Destruction",
+  "setnum2": "54/55",
+  "set3": "DMC-07 Eternal Insects Deck",
+  "setnum3": "80/82",
+  "set4": "DMC-27 CoroCoro Dream Pack",
+  "setnum4": "54/55",
+  "set5": "DMC-42 CoroCoro Dream Pack 3: Eternal Gear",
+  "setnum5": "88/90",
+  "set6": "DM23-EX2 Battle of Top!! Dueking MAX 2023",
+  "setnum6": "105/112",
+  "set7": "Promotional",
+  "setnum7": "P17/Y14"
+ },
+ "wiki": "{{Cardtable\n| image = Sniper Mosquito.jpg\n| civilization = Nature\n| type = Creature\n| jpname = スナイプ・モスキート\n| phonetic = Sunaipu Mosukīto ''(Snipe Mosquito)''\n| race = Giant Insect\n| cost = 1\n| power = 2000\n| engtext = ■ Whenever this [[creature]] [[attack]]s, return a [[card]] from your [[mana zone]] to your [[hand]].\n| jptext = ■ このクリーチャーが攻撃する時、カードを1枚、自分のマナゾーンから自分の手札に戻す。\n| flavor = It prefers drinking tree sap over drinking blood. But everything else ranks a distant third. ([[DM-03]])\n| flavor2 = 獰猛な外見とは裏腹に水草を食べ、求愛のダンスを踊る。Contrary to its ferocious appearance, it eats aquatic plants and performs a courtship dance. ([[DM-03]], [[DMC-07]], [[DMC-27]], [[DMC-42]])\n| flavor3 = 《獣軍隊 ベアッサー》を《超獣軍隊 ベアフガン》に侵略させ、巨大化した熊が吠える！そしてQ・ブレイカーで残りのシールドを全て薙ぎ払う!! <br> 1枚2枚……とトリガーを願うが、最後の1枚をめくってもトリガーは現れなかった。<br> そのまま《スナイプ・モスキート》でダイレクト・アタックを決め3ターンキルを果たしたのであった!! <br> ー DMGP2nd 第5回戦より <br> He makes \"[[Bearsir, Beast Army]]\" invade into \"[[Bearfugan, Super Beast Army]]\", and the giant bear roars! He then uses 'Quattro Breaker' to sweep away all the remaining shields!! One, two... he hopes for a trigger, but even when he turns over the last card, no trigger appears. He then makes a direct attack with \"[[Sniper Mosquito]]\" and achieves a three-turn kill!! - From the 5th round of DMGP2nd ([[DM23-EX2]])\n| mana = 1\n| artist = Taro Yamazaki\n| set1 = DM-03 Rampage of the Super Warriors\n| setnum1 = 54/55\n| R1 = Common\n| set2 = DM-03 Master of Destruction\n| setnum2 = 54/55\n| R2 = Common\n| set3 = DMC-07 Eternal Insects Deck\n| setnum3 = 80/82\n| R3 = Common\n| set4 = DMC-27 CoroCoro Dream Pack\n| setnum4 = 54/55\n| R4 = Common\n| set5 = DMC-42 CoroCoro Dream Pack 3: Eternal Gear\n| setnum5 = 88/90\n| R5 = Common\n| set6 = DM23-EX2 Battle of Top!! Dueking MAX 2023\n| setnum6 = 105/112\n| R6 = Common\n| set7 = Promotional\n| setnum7 = P17/Y14\n| R7 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Nature]]\n[[Category:Giant Insect]]\n[[Category:2000 Power Creatures]]\n[[Category:Mana Recovery]]\n[[Category:Attack Trigger]]"
+}

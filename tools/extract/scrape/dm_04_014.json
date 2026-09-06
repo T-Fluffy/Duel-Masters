@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_04_014",
+ "page": "Ouks, Vizier of Restoration",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Initiate",
+ "cost": "5",
+ "power": "1000",
+ "engtext": "■ When this [[creature]] would be [[destroy]]ed, add it to your [[shield]]s [[face down]] [[instead]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-04 Shadowclash of Blinding Night",
+  "setnum1": "14/55",
+  "set2": "DM-04 Challenge of Black Shadow ",
+  "setnum2": "7/55"
+ },
+ "wiki": "{{Cardtable\n| image = Ouks, Vizier of Restoration.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|修|しゅう}}{{Ruby|復|ふく}}の{{Ruby|使|し}}{{Ruby|徒|と}}オークス\n| phonetic = Shūfuku no Shito Ōkusu\n| race = Initiate\n| cost = 5\n| power = 1000\n| engtext = ■ When this [[creature]] would be [[destroy]]ed, add it to your [[shield]]s [[face down]] [[instead]].\n| jptext = ■ このクリーチャーがバトルゾーンから自分の墓地に置かれるとき、裏向きにして自分のシールドに加える。\n| flavor = \"'Laser web'? Check. 'Laser spider'? Still on order.\" ([[DM-04]])\n| flavor2 = オークスは残された修復の力を振り絞った。Ouks gathered the remaining power of restoration and summoned it. ([[DM-04]])\n| mana = 1\n| artist = Miho Midorikawa\n| set1 = DM-04 Shadowclash of Blinding Night\n| setnum1 = 14/55\n| R1 = Rare\n| set2 = DM-04 Challenge of Black Shadow \n| setnum2 = 7/55\n| R2 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Destruction Substitution]]\n[[Category:Shield Addition]]"
+}

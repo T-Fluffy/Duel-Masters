@@ -1,0 +1,32 @@
+{
+ "card_id": "dm_01_019",
+ "page": "Solar Ray",
+ "type": "Spell",
+ "civilization": "Light",
+ "race": "",
+ "cost": "2",
+ "power": "",
+ "engtext": "{{Shield Trigger|spell}} \n\n■ [[Choose]] one of your [[opponent]]'s [[creature]]s in the [[battle zone]] and [[tap]] it.",
+ "templates": [
+  "Shield Trigger|spell"
+ ],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "19/110",
+  "set2": "Shadowclash Collector Tin",
+  "setnum2": "14/46",
+  "set3": "DM-01 Base Set (OCG)",
+  "setnum3": "78/110",
+  "set4": "DM-10 Shockwaves of the Shattered Rainbow",
+  "setnum4": "25/110",
+  "set5": "DM-10 Eternal Arms",
+  "setnum5": "78/110",
+  "set6": "DM-18 Best Challenger",
+  "setnum6": "100/140",
+  "set7": "DMC-16 Guardian Blue Deck",
+  "setnum7": "50/78",
+  "set8": "DM-32 Evolution Saga",
+  "setnum8": "77/110"
+ },
+ "wiki": "{{Cardtable\n| image = Solar Ray.jpg\n| civilization = Light\n| type = Spell\n| jpname = ソーラー・レイ\n| phonetic = Sōrā Rei\n| cost = 2\n| engtext = {{Shield Trigger|spell}} \n\n■ [[Choose]] one of your [[opponent]]'s [[creature]]s in the [[battle zone]] and [[tap]] it.\n| jptext = {{Icon|ST}} S・トリガー (この呪文をシールドゾーンから手札に加える時、コストを支払わずにすぐ唱えてもよい)\n\n■ バトルゾーンにある相手のクリーチャーを1体選び、タップする。\n| flavor = \"You're lucky I only used a star. Next time I'll send a ''supernova'' your way.\" —{{tooltip|Elixia, Pureblade Elemental}} ([[DM-10]])\n| flavor2 = 体が動かぬとも出来る事はある。お奨めは最後の懺悔だ。There are things you can do while you're immobile. A suggestion would be to make your final repentance. ([[DM-10]], [[DMC-16]])\n| flavor3 = まばゆい閃光が視界を埋め尽くす! \"A blinding flash of light covers the field of vision!\" ([[DM-32]])\n| mana = 1\n| artist = Jason \n| artist2 = Asai Genji \n| artist3 = Kazuo Matsushima \n| set1 = DM-01 Base Set\n| setnum1 = 19/110\n| R1 = Common\n| set2 = Shadowclash Collector Tin\n| setnum2 = 14/46\n| R2= Common\n| set3 = DM-01 Base Set (OCG)\n| setnum3 = 78/110\n| R3 = Common\n| set4 = DM-10 Shockwaves of the Shattered Rainbow\n| setnum4 = 25/110\n| R4 = Common\n| set5 = DM-10 Eternal Arms\n| setnum5 = 78/110\n| R5 = Common\n| set6 = DM-18 Best Challenger\n| setnum6 = 100/140\n| R6 = Common\n| set7 = DMC-16 Guardian Blue Deck\n| setnum7 = 50/78\n| R7 = Common\n| set8 = DM-32 Evolution Saga\n| setnum8 = 77/110\n| R8 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Creature Tapper]]"
+}

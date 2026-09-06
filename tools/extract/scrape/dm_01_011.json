@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_01_011",
+ "page": "Laser Wing",
+ "type": "Spell",
+ "civilization": "Light",
+ "race": "",
+ "cost": "5",
+ "power": "",
+ "engtext": "■ Choose up to 2 of your [[creature]]s in the [[battle zone]]. They can't be [[block]]ed this [[turn]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "11/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "16/110",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "21/140"
+ },
+ "wiki": "{{Cardtable\n| image = Laser Wing.jpg\n| civilization = Light\n| type = Spell\n| jpname = レーザー・ウイング\n| phonetic = Rēzā Uingu\n| cost = 5\n| engtext = ■ Choose up to 2 of your [[creature]]s in the [[battle zone]]. They can't be [[block]]ed this [[turn]].\n| jptext = ■ バトルゾーンにある自分のクリーチャーを2体まで選ぶ。 このターン、そのクリーチャーはブロックされない。\n| flavor = これが、光の速さだ。 This is light speed. ([[DM-01]])\n| flavor2 = 輝く光翼が、超高速の動きを可能とした。 On shining wings of light, you can move at super-fast speeds. ([[DM-18]])\n| mana = 1\n| artist = Gyokan\n| artist2 = Okera\n| set1 = DM-01 Base Set\n| setnum1 = 11/110\n| R1 = Rare\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 16/110\n| R2 = Rare\n| set3 = DM-18 Best Challenger\n| setnum3 = 21/140\n| R3 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Gives \"Unblockable\"]]"
+}

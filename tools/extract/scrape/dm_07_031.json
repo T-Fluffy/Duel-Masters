@@ -1,0 +1,30 @@
+{
+ "card_id": "dm_07_031",
+ "page": "Propeller Mutant",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Hedrian",
+ "cost": "2",
+ "power": "1000",
+ "engtext": "■ When this [[creature]] is [[destroy]]ed, your [[opponent]] [[discard]]s a [[card]] at random from his [[hand]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "31/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "46/55",
+  "set3": "DMC-17 Dark Warriors Deck",
+  "setnum3": "59/78",
+  "set4": "DMC-21 Zakira's Dragon Commander Power-Up Pack ",
+  "setnum4": "73/102",
+  "set5": "DMC-27 CoroCoro Dream Pack ",
+  "setnum5": "45/55",
+  "set6": "DMC-48 Heroes Cross Pack - Zakira",
+  "setnum6": "38/44",
+  "set7": "DMBD-16 20th Chronicle Deck: Battle Now!! Bolshack Duel",
+  "setnum7": "敵8/敵10",
+  "set8": "Promotional",
+  "setnum8": "P45/Y6, P53/Y6"
+ },
+ "wiki": "{{Cardtable\n| image = Propeller Mutant.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|飛|ひ}}{{Ruby|行|こう}}{{Ruby|男|おとこ}}\n| phonetic = Hikou Otoko\n| cost = 2\n| race = Hedrian\n| power = 1000\n| engtext = ■ When this [[creature]] is [[destroy]]ed, your [[opponent]] [[discard]]s a [[card]] at random from his [[hand]].\n| jptext = ■ このクリーチャーが破壊された時、相手の手札を1枚見ないで選び、捨てさせる。\n| flavor = \"Being a plane is cool, but my real dream is to be a pile of smoldering wreckage!\"\n| flavor2 = フィオナの森へ特攻だ!  泥はおまけに取っときな! \"Charge into [[Fiona Woods]]! Keep the mud as a bonus!\" ([[DM-07]], [[DMC-17]], [[DMC-21]], [[DMC-27]])\n| flavor3 = ザキラ様の野望は、絶対果たすんだ! \"Zakira-sama's ambition will absolutely be fulfilled!\" —[[Ash]] ([[DMC-48]])\n| flavor4 = 白凰の公開処刑を終えたザキラは、いよいよ全決闘者の抹殺を開始する。それを止める為にザキラと闘う勝舞。エジプトのDMから奪った三体神《ヘヴィ・デス・メタル》との戦いは互いの命を奪い合う闘いとなったが、7人のDMの助けと白凰との思い出のデッキによって見事三体神を打ち砕くのだった。　－勝舞とガルドの闘いの歴史 その8 \"After [[Zakira]] completed the public execution of [[Hakuoh]], he finally began the annihilation of all duelists. Shobu stepped in to fight Zakira to put a stop to it. The battle against the [[Horus|Egyptian Duel Master]]’s stolen three Gods, [[Heavy Death Metal]], became a deadly clash for both of their lives. However, with the help of seven duelists and his cherished deck of memories with Hakuoh, Shobu successfully shattered the three Gods.\" —History of the battles between Shobu and GARDE, Part 8 ([[DMBD-16]])\n| flavor5 = 墜落したらただでは済まさない。 それがヘドリアン魂。\"If we crash, we won’t go down easily. That’s the Hedrian spirit.\" (P45/Y6) \n| flavor6 = 放って置くと、泣きを見るぜ! \"If you leave us alone, you’ll end up in tears!\" —'''Propeller Mutant''' (P53/Y6) \n| mana = 1\n| artist = Iron Pot\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 31/55\n| R1 = Common\n| set2 = DM-07 Invincible Charge\n| setnum2 = 46/55\n| R2 = Common\n| set3 = DMC-17 Dark Warriors Deck\n| setnum3 = 59/78\n| R3 = Common\n| set4 = DMC-21 Zakira's Dragon Commander Power-Up Pack \n| setnum4 = 73/102\n| R4 = Common\n| set5 = DMC-27 CoroCoro Dream Pack \n| setnum5 = 45/55\n| R5 = Common\n| set6= DMC-48 Heroes Cross Pack - Zakira\n| setnum6 = 38/44\n| R6 = Common\n| set7 = DMBD-16 20th Chronicle Deck: Battle Now!! Bolshack Duel\n| setnum7 = 敵8/敵10\n| R7 = Common\n| set8 = Promotional\n| setnum8 = P45/Y6, P53/Y6\n| R8 = Common\n}}\n{{Propeller Mutant}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Hedrian]]\n[[Category:1000 Power Creatures]]\n[[Category:Card Discard]]\n[[Category:Put Into Graveyard]]"
+}

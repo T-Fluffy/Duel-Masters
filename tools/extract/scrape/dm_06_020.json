@@ -1,0 +1,24 @@
+{
+ "card_id": "dm_06_020",
+ "page": "Gariel, Elemental of Sunbeams",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Angel Command",
+ "cost": "5",
+ "power": "7500",
+ "engtext": "■ You can [[summon]] this [[creature]] only if you have [[cast]] a [[spell]] this [[turn]].\n\n{{Double Breaker}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "20/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "13/110",
+  "set3": "DMC-10 Hakuoh's Holy Spirit Deck",
+  "setnum3": "5/44",
+  "set4": "Promotional",
+  "setnum4": "P2 Y1"
+ },
+ "wiki": "{{Cardtable\n| image = Gariel, Elemental of Sunbeams.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|綺|き}}{{Ruby|羅|ら}}{{Ruby|星|ぼし}}の{{Ruby|精|せい}}{{Ruby|霊|れい}}ガリアル\n| phonetic = Kiraboshi no Seirei Galiaru\n| cost = 5\n| race = Angel Command\n| power = 7500\n| engtext = ■ You can [[summon]] this [[creature]] only if you have [[cast]] a [[spell]] this [[turn]].\n\n{{Double Breaker}}\n| jptext = ■ 呪文を唱えたターンのみ、このクリーチャーを召喚できる。\n\n{{Double Breaker|jp}}\n| flavor = [[Angel Command|Elemental]]s can't stand being on the ground instead of in the sky. So when they start a war, they make sure it ends quickly. ([[DM-06]])\n| flavor2 = 精霊の翼は闇を切り裂き炎を鎮める。The wings of the elemental slice through the darkness and calm the flames. ([[DM-06]])\n| flavor3 = 敵の突撃を待つように、ゆっくりと姿を変え、戦闘態勢を整える。It slowly changes its form and prepares for battle, as if waiting for the enemy's charge. ([[DMC-10]])\n| mana = 1\n| artist = Akifumi Yamamoto\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 20/110\n| R1 = Rare\n| set2 = DM-06 Invincible Soul\n| setnum2 = 13/110\n| R2 = Rare\n| set3 = DMC-10 Hakuoh's Holy Spirit Deck\n| setnum3 = 5/44\n| R3 = Rare\n| set4 = Promotional\n| setnum4 = P2 Y1\n| R4 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Angel Command]]\n[[Category:7500 Power Creatures]]"
+}

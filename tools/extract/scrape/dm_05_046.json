@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_05_046",
+ "page": "Ambush Scorpion",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Giant Insect",
+ "cost": "5",
+ "power": "3000+",
+ "engtext": "{{Power Attacker|3000}}\n\n■ When this [[creature]] is [[destroy]]ed, you may choose an '''Ambush Scorpion''' in your [[mana zone]] and put it into the [[battle zone]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "46/55",
+  "set2": "DM-05 Return of the Survivor",
+  "setnum2": "53/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "131/140"
+ },
+ "wiki": "{{Cardtable\n| image = Ambush Scorpion.jpg\n| civilization = Nature\n| type = Creature\n| jpname = アンブッシュ・スコーピオン\n| phonetic = Anbusshu Sukōpion\n| cost = 5\n| race = Giant Insect\n| power = 3000+\n| engtext = {{Power Attacker|3000}}\n\n■ When this [[creature]] is [[destroy]]ed, you may choose an '''Ambush Scorpion''' in your [[mana zone]] and put it into the [[battle zone]].\n| jptext = {{Power Attacker|3000|jp}}\n\n■ このクリーチャーがバトルゾーンから自分の墓地に置かれたとき、自分のマナゾーンから'''アンブッシュ・スコーピオン'''を1体選び、バトルゾーンに置いてもよい。\n| flavor = Its hard outer shell covers up an even harder inner core. ([[DM-05]])\n| flavor2 = 最後の声は、復讐の誓い。The final voice is a vow of revenge. ([[DM-05]], [[DM-18]])\n| mana = 1\n| artist = Tomofumi Ogasawara\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = 46/55\n| R1 = Common\n| set2 = DM-05 Return of the Survivor\n| setnum2 = 53/55\n| R2 = Common\n| set3 = DM-18 Best Challenger\n| setnum3 = 131/140\n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:3000 Power Creatures]]\n[[Category:For No Cost]]\n[[Category:Put Into Graveyard]]"
+}

@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_01_016",
+ "page": "Reusol, the Oracle",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Light Bringer",
+ "cost": "2",
+ "power": "2000",
+ "engtext": "",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "16/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "75/110",
+  "set3": "DMC-26 Hakuoh's Angel Kingdom Deck",
+  "setnum3": "33/45"
+ },
+ "wiki": "{{Cardtable\n| image = Reusol, the Oracle.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|予|よ}}{{Ruby|言|げん}}{{Ruby|者|しゃ}}リュゾル\n| phonetic = Yogensha Ryuzoru\n| race = Light Bringer\n| cost = 2\n| power = 2000\n| flavor = Soul and light enmeshed in a web of glory. ([[DM-01]])\n| flavor2 = 天空に輝く塔は、たちを守るためだけに存在する。 The shining towers in the sky exist to protect the [[Light Bringer|oracle]]s. ([[DM-01]], [[DMC-05]], [[DMC-10]], [[DMC-26]])\n| mana = 1\n| artist = Soushi Hirose\n| set1 = DM-01 Base Set\n| setnum1 = 16/110\n| R1 = Common\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 75/110\n| R2 = Common\n| set3 = DMC-26 Hakuoh's Angel Kingdom Deck\n| setnum3 = 33/45\n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Light Bringer]]\n[[Category:2000 Power Creatures]]\n[[Category:No Abilities]]"
+}

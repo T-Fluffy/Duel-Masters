@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_06_040",
+ "page": "Neon Cluster",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Cyber Cluster",
+ "cost": "7",
+ "power": "4000",
+ "engtext": "{{Tap Ability|[[Draw]] 2 [[card]]s.}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "40/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "47/110",
+  "set3": "DMC-13 CoroCoro New Generation Pack",
+  "setnum3": "8/37",
+  "set4": "Promotional",
+  "setnum4": "P4/Y2"
+ },
+ "wiki": "{{Cardtable\n| image = Neon Cluster.jpg\n| civilization = Water\n| type = Creature\n| jpname = シャインシェル・クラスター\n| phonetic = Shainsheru Kurasutā\n| race = Cyber Cluster\n| cost = 7\n| power = 4000\n| engtext = {{Tap Ability|[[Draw]] 2 [[card]]s.}}\n| jptext = ■ このクリーチャーで攻撃する代わりに、タップして次の{{Tap}}能力を使ってもよい。\n:{{Tap}} カードを2枚引く。\n| flavor = \"You can win more wars by thinking than you can by fighting.\" —[[Marinomancer]] ([[DM-06]])\n| flavor2 = 殴ればいいってもんじゃないよ。 \"It's not just about hitting.\" —[[Aquan]] ([[DM-06]], [[DMC-13]])\n| flavor3 = 左前方に敵影、左後方に鉱脈を感知･･･。より深く敵を知れ。Enemy presence detected to the left front, mineral vein detected to the left rear...know your enemy more deeply. (P4/Y2)\n| mana = 1\n| artist = Sansyu\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 40/110\n| R1 = Uncommon\n| set2 = DM-06 Invincible Soul\n| setnum2 = 47/110\n| R2 = Uncommon\n| set3 = DMC-13 CoroCoro New Generation Pack\n| setnum3 = 8/37\n| R3 = Uncommon\n| set4 = Promotional\n| setnum4 = P4/Y2\n| R4 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Cyber Cluster]]\n[[Category:Tap Ability]]\n[[Category:4000 Power Creatures]]\n[[Category:Card Draw]]"
+}

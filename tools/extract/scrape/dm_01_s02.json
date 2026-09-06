@@ -1,0 +1,24 @@
+{
+ "card_id": "dm_01_s02",
+ "page": "Urth, Purifying Elemental",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Angel Command",
+ "cost": "6",
+ "power": "6000",
+ "engtext": "{{Double Breaker}}\n\n■ [[End Step|At the end of each of your turns]], you may [[untap]] this [[creature]].",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "S2/S10",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "S2/S10",
+  "set3": "DMC-54 Legend Chronicle Rival",
+  "setnum3": "5/20",
+  "set4": "Promotional",
+  "setnum4": "P18/Y7, P67/Y25"
+ },
+ "wiki": "{{Cardtable\n| image = Urth, Purifying Elemental.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|浄|じょう}}{{Ruby|化|か}}の{{Ruby|精|せい}}{{Ruby|霊|れい}}ウルス \n| phonetic = Jōka no Seirei Urusu ''(Urth, Spirit of Purification)''\n| dename = Urth, Läuterungselementar\n| itname = Urth, Elementale Purificatore\n| frname = Urth, élémental purificateur\n| esname = Urth, purificador elemental\n| mxname = Urth, purificador elemental\n| ptname = Urth, Elemental da Purificação\n| cnname = 净化元素—乌尔斯\n| race = Angel Command\n| cost = 6\n| power = 6000\n| engtext = {{Double Breaker}}\n\n■ [[End Step|At the end of each of your turns]], you may [[untap]] this [[creature]].\n| jptext = {{Double Breaker|jp}}\n\n■ 自分のターンの終わりに、このクリーチャーをアンタップしてもよい。\n| flavor = It is said the destruction of the Ancient Empire was caused by the descent of the [[Angel Command|elementals]]. ([[DM-01]])\n| flavor2 = 太古帝国が滅びた原因は、精霊が地上に降りてきたためだと言われている。It is said that the reason why the ancient empire was ruined is that the [[Angel Command|spirits]] came down to earth. ([[DM-01]])\n| flavor3 = 触れることすら敵わない圧倒的な輝き! これぞ光の切札なり!! There is no other such overwhelming glow! This is the emblem of light! ([[DMC-54]])\n| flavor4 = 完全なるものを目指した戦士達の、記念すべき第一歩。初めて、その姿を描いた時の緊張が今も蘇る! A memorable first step for warriors who are aiming for perfection. The tension from when the figure first appeared is still alive and well! (P18/Y7) \n| flavor5 = デュエル・マスターズ　2001年8月～2003年2月 (P67/Y25)\n| mana = 1\n| artist = Akifumi Yamamoto\n| artist2 = Shigenobu Matsumoto\n| set1 = DM-01 Base Set\n| setnum1 = S2/S10\n| R1 = Super Rare\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = S2/S10\n| R2 = Super Rare\n| set3 = DMC-54 Legend Chronicle Rival\n| setnum3 = 5/20\n| R3 = Super Rare\n| set4 = Promotional\n| setnum4 = P18/Y7, P67/Y25\n| R4 = Super Rare\n}}\n{{Urth}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Creature Untap]]"
+}

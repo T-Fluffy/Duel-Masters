@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_02_016",
+ "page": "Hypersquid Walter",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Cyber Lord",
+ "cost": "3",
+ "power": "1000",
+ "engtext": "■ Whenever this [[creature]] [[attack]]s, you may [[draw]] a [[card]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "16/55",
+  "set2": "DM-02 Master of Evolution",
+  "setnum2": "11/55",
+  "set3": "DMC-27 CoroCoro Dream Pack ",
+  "setnum3": "9/55"
+ },
+ "wiki": "{{Cardtable\n| image=Hypersquid Walter.jpg\n| civilization = Water\n| type = Creature\n| jpname = ウォルタ\n| phonetic = U~oruta ''(Walter)''\n| race = Cyber Lord\n| cost = 3\n| power = 1000\n| engtext = ■ Whenever this [[creature]] [[attack]]s, you may [[draw]] a [[card]].\n| jptext = ■ このクリーチャーが攻撃する時、カードを1枚引いてもよい。\n| flavor = サイバーロードは、封印された12のプログラムを入力し、リキッド・ピープルの精鋭を生み出した。Using the [[12 Programs|twelve forbidden programs]], the [[Cyber Lord]]s created the elite [[Liquid People]] assault troops. ([[DM-02]], [[DMC-27]])\n| mana = 1\n| artist = Youichi Kai\n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = 16/55\n| R1 = Rare\n| set2 = DM-02 Master of Evolution\n| setnum2 = 11/55\n| R2 = Rare\n| set3 = DMC-27 CoroCoro Dream Pack \n| setnum3 = 9/55\n| R3 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Cyber Lord]]\n[[Category:1000 Power Creatures]]\n[[Category:Card Draw]]\n[[Category:Attack Trigger]]"
+}

@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_01_072",
+ "page": "Chaos Strike",
+ "type": "Spell",
+ "civilization": "Fire",
+ "race": "",
+ "cost": "2",
+ "power": "",
+ "engtext": "■ Choose 1 of your [[opponent]]'s [[untap]]ped [[creature]]s in the [[battle zone]]. Your [[creature]]s can [[attack]] it this [[turn]] as though it were [[tap]]ped.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "72/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "34/110"
+ },
+ "wiki": "{{Cardtable\n| image = Chaos Strike.jpg\n| civilization = Fire\n| type = Spell\n| jpname = カオス・ストライク\n| phonetic = Kaosu Sutoraiku\n| cost = 2\n| engtext = ■ Choose 1 of your [[opponent]]'s [[untap]]ped [[creature]]s in the [[battle zone]]. Your [[creature]]s can [[attack]] it this [[turn]] as though it were [[tap]]ped.\n| jptext = ■ バトルゾーンにある相手のクリーチャーを1体選ぶ。 このターン、選んだクリーチャーがタップされていなくても攻撃できる。\n| flavor = \"You won't escape me!\" ([[DM-01]])\n| flavor2 = お前は、このオレが必ず倒す! \"I will definitely defeat you!\" ([[DM-01]]) \n| mana = 1\n| artist = Soushi Hirose\n| set1 = DM-01 Base Set\n| setnum1 = 72/110\n| R1 = Rare\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 34/110\n| R2 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Fire]]\n[[Category:Spell]]\n[[Category:Can Attack Untapped Creatures]]"
+}

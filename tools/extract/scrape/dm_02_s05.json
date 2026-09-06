@@ -1,0 +1,32 @@
+{
+ "card_id": "dm_02_s05",
+ "page": "Fighter Dual Fang",
+ "type": "Evolution Creature",
+ "civilization": "Nature",
+ "race": "Beast Folk",
+ "cost": "6",
+ "power": "8000",
+ "engtext": "■ [[Evolution]]—Put on one of your [[Beast Folk]].\n\n■ [[When you put]] this [[creature]] into the [[battle zone]], put the top 2 [[card]]s of your [[deck]] into your [[mana zone]].\n\n{{Double Breaker}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "S5/S5",
+  "set2": "DM-02 Master of Evolution",
+  "setnum2": "S5/S5",
+  "set3": "DMC-27 CoroCoro Dream Pack",
+  "setnum3": "S5/S5",
+  "set4": "DMC-39 Victory Soul",
+  "setnum4": "13/33",
+  "set5": "DMC-42 CoroCoro Dream Pack 3: Eternal Gear",
+  "setnum5": "7/90",
+  "set6": "DMC-55 CoroCoro Legend 7",
+  "setnum6": "24/84",
+  "set7": "DMC-61 CoroCoro Dream Pack 4: Eternal Heaven",
+  "setnum7": "S5/S6",
+  "set8": "DMC-66 Duel Masters: Super Best",
+  "setnum8": "15/36"
+ },
+ "wiki": "{{Cardtable\n| image=Fighter Dual Fang.jpg\n| civilization = Nature\n| type = Evolution Creature\n| jpname = {{Ruby|大|だい}}{{Ruby|勇|ゆう}}{{Ruby|者|しゃ}}「{{Ruby|ふたつ牙|デュアル・ファング}}」 ''(Great Hero \"Dual Fang\")''\n| phonetic = Dai Yūsha Deyuaru Fangu\n| kana = デュアル・ファング ''(Dual Fang)''\n| cost = 6\n| race = Beast Folk\n| power = 8000\n| engtext = ■ [[Evolution]]—Put on one of your [[Beast Folk]].\n\n■ [[When you put]] this [[creature]] into the [[battle zone]], put the top 2 [[card]]s of your [[deck]] into your [[mana zone]].\n\n{{Double Breaker}}\n| jptext = ■ 進化—自分のビーストフォーク1体の上に置く。\n\n■ このクリーチャーをバトルゾーンに出した時、 自分の山札の上から2枚を、自分のマナゾーンに置く。\n\n{{Double Breaker|jp}}\n| flavor = 強大な敵を倒し、狡猾な罠を打ち砕く! それが大勇者! Defeat powerful enemies and smash devious traps! That’s the Great Hero! ([[DMC-39]])\n| mana = 1\n| artist = Ryoya Yuki\n| artist2 = Syuichi Obata \n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = S5/S5\n| R1 = Super Rare\n| set2 = DM-02 Master of Evolution\n| setnum2 = S5/S5\n| R2 = Super Rare\n| set3 = DMC-27 CoroCoro Dream Pack\n| setnum3 = S5/S5\n| R3 = Super Rare\n| set4 = DMC-39 Victory Soul\n| setnum4 = 13/33\n| R4 = Super Rare\n| set5 = DMC-42 CoroCoro Dream Pack 3: Eternal Gear\n| setnum5 = 7/90\n| R5 = Super Rare\n| set6 = DMC-55 CoroCoro Legend 7\n| setnum6 = 24/84\n| R6 = Super Rare\n| set7 = DMC-61 CoroCoro Dream Pack 4: Eternal Heaven\n| setnum7 = S5/S6\n| R7 = Super Rare\n| set8 = DMC-66 Duel Masters: Super Best\n| setnum8 = 15/36\n| R8 = Super Rare\n}}\n{{Quattro Fang}}\n{{Fighter Dual Fang}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Mana Acceleration]]\n[[Category:Come Into Play Trigger]]"
+}

@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_07_029",
+ "page": "Hopeless Vortex",
+ "type": "Spell",
+ "civilization": "Darkness",
+ "race": "",
+ "cost": "5",
+ "power": "",
+ "engtext": "■ [[Destroy]] one of your [[opponent]]'s [[creature]]s.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "29/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "14/55"
+ },
+ "wiki": "{{Cardtable\n| image = Hopeless Vortex.jpg\n| civilization = Darkness\n| type = Spell\n| jpname = チェイン・スラッシュ\n| phonetic = Chein Surasshu ''(Chain Slash)''\n| cost = 5\n| engtext = ■ [[Destroy]] one of your [[opponent]]'s [[creature]]s.\n| jptext = ■ バトルゾーンにある相手のクリーチャーを1体選ぶ。相手はそれを持ち主の墓地に置く。\n| flavor = \"How do you know you won't like excruciating pain? Have you ever tried it?\" —[[Crath Lade, Merciless King]] ([[DM-07]])\n| flavor2 = 憎しみや悲しみは連鎖する。Hatred and sorrow are cyclical. ([[DM-07]])\n| mana = 1\n| artist = Shishizaru\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 29/55\n| R1 = Rare\n| set2 = DM-07 Invincible Charge\n| setnum2 = 14/55\n| R2 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Spell]]\n[[Category:Fixed Removal]]"
+}

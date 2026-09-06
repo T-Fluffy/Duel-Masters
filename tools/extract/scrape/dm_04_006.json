@@ -1,0 +1,24 @@
+{
+ "card_id": "dm_04_006",
+ "page": "Aeris, Flight Elemental",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Angel Command",
+ "cost": "5",
+ "power": "9000",
+ "engtext": "■ This [[creature]] can't [[attack]] [[player]]s.\n\n■  This [[creature]] can [[attack]] [[untap]]ped [[darkness]] [[creature]]s.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-04 Shadowclash of Blinding Night",
+  "setnum1": "6/55",
+  "set2": "Shadowclash Collector Tin",
+  "setnum2": "3/46",
+  "set3": "DM-04 Challenge of Black Shadow ",
+  "setnum3": "6/55",
+  "set4": "DMC-27 CoroCoro Dream Pack",
+  "setnum4": "8/55",
+  "set5": "Promotional",
+  "setnum5": "P17/＊"
+ },
+ "wiki": "{{Cardtable\n| image = Aeris, Flight Elemental.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|飛|ひ}}{{Ruby|翔|しょう}}の{{Ruby|精|せい}}{{Ruby|霊|れい}}アリエス ''(Aries, Spirit of Flying)''\n| phonetic = Hishō no Seirei Ariesu\n| race = Angel Command\n| cost = 5\n| power = 9000\n| engtext = ■ This [[creature]] can't [[attack]] [[player]]s.\n\n■  This [[creature]] can [[attack]] [[untap]]ped [[darkness]] [[creature]]s.\n| jptext = ■ このクリーチャーは、タップされていない闇のクリーチャーを攻撃できる。\n\n■ このクリーチャーは、相手プレイヤーを攻撃できない。\n| flavor = \"All armies, move out! It's time to make [[Photocide, Lord of the Wastes|Photocide]] see the light!\" ([[DM-04]])\n| flavor2 = これより、[[Photocide, Lord of the Wastes|荒廃の巨王ジェノサイド]]討伐作戦を開始!　全軍発進! \"Now, the operation to suppress [[Photocide, Lord of the Wastes|Genocide, Giant Lord of the Wastes]] begins! All armies, move out!\" ([[DM-04]])\n| flavor3 = 光の祝福と夕闇の加護に包まれて、無敵艦隊が飛翔する。 Wrapped in the blessings of light and the protection of dusk, the invincible fleet soars. (P17/＊)\n| mana = 1\n| artist = Sansyu\n| set1 = DM-04 Shadowclash of Blinding Night\n| setnum1 = 6/55\n| R1 = Rare\n| set2 = Shadowclash Collector Tin\n| setnum2 = 3/46\n| R2 = Rare\n| set3 = DM-04 Challenge of Black Shadow \n| setnum3 = 6/55\n| R3 = Rare\n| set4 = DMC-27 CoroCoro Dream Pack\n| setnum4 = 8/55\n| R4 = Rare\n| set5 = Promotional\n| setnum5 = P17/＊\n| R5 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Can Attack Untapped Creatures]]"
+}

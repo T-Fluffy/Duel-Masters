@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_01_044",
+ "page": "Virtual Tripwire",
+ "type": "Spell",
+ "civilization": "Water",
+ "race": "",
+ "cost": "3",
+ "power": "",
+ "engtext": "■ [[Choose]] one of your [[opponent]]'s [[creature]]s in the [[battle zone]] and [[tap]] it.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "44/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "85/110"
+ },
+ "wiki": "{{Textwrap|This card is included in the '''[[Trap]]''' name category.}}\n{{Cardtable\n| image = Virtual Tripwire.jpg\n| civilization = Water\n| type = Spell\n| jpname = エレメンタル・トラップ\n| phonetic = Erementaru Torappu ''(Elemental Trap)''\n| cost = 3\n| engtext = ■ [[Choose]] one of your [[opponent]]'s [[creature]]s in the [[battle zone]] and [[tap]] it.\n| jptext = ■ バトルゾーンにある相手のクリーチャーを1体選び、タップする。\n| flavor = おねがい、じっとしててね。……死ぬまで It will stay until it dies. ([[DM-01]])\n| mana = 1\n| artist = Akifumi Yamamoto\n| set1 = DM-01 Base Set\n| setnum1 = 44/110\n| R1 = Common\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 85/110\n| R2 = Common\n}}\n{{Trap}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Creature Tapper]]\n[[Category:Trap]]"
+}

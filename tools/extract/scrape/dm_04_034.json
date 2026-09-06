@@ -1,0 +1,24 @@
+{
+ "card_id": "dm_04_034",
+ "page": "Photocide, Lord of the Wastes",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Demon Command",
+ "cost": "5",
+ "power": "9000",
+ "engtext": "■ This [[creature]] can't [[attack]] [[player]]s.\n\n■ This [[creature]] can [[attack]] [[untap]]ped [[light]] [[creature]]s.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-04 Shadowclash of Blinding Night",
+  "setnum1": "34/55",
+  "set2": "Shadowclash Collector Tin",
+  "setnum2": "27/46",
+  "set3": "DM-04 Challenge of Black Shadow",
+  "setnum3": "13/55",
+  "set4": "DMC-27 CoroCoro Dream Pack",
+  "setnum4": "12/55",
+  "set5": "Promotional",
+  "setnum5": "T2 Y2, P18/＊"
+ },
+ "wiki": "{{Cardtable\n| image = Photocide, Lord of the Wastes.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|荒|こう}}{{Ruby|廃|はい}}の{{Ruby|巨|きょ}}{{Ruby|王|おう}}ジェノサイド ''(Genocide, Giant Lord of the Wastes)''\n| phonetic = Kōhai no Kyoō Jenosido\n| cost = 5\n| race = Demon Command\n| power = 9000\n| engtext = ■ This [[creature]] can't [[attack]] [[player]]s.\n\n■ This [[creature]] can [[attack]] [[untap]]ped [[light]] [[creature]]s.\n| jptext = ■ このクリーチャーは、タップされていない光のクリーチャーを攻撃できる。\n\n■ このクリーチャーは、相手プレイヤーを攻撃できない。\n| flavor = \"I will snuff out the sun and the stars! Then I'll move on to the candles and the lanterns. If I have time, I'll take care of those glow sticks people wear around their necks. But the sun is first!\" ([[DM-04]])\n| flavor2 = 我は…破壊する。我が餓えを満たさんがために。 I will destroy... to satisfy my hunger. ([[DM-04]], [[DMC-27]])\n| flavor3 = 命あるドクロの叫声が、廃宮の王を呼び覚ます。 When the skull with life screams, the king of the abandoned palace awakens. (P18/＊)\n| mana = 1\n| artist = Akifumi Yamamoto\n| set1 = DM-04 Shadowclash of Blinding Night\n| setnum1 = 34/55\n| R1 = Rare\n| set2 = Shadowclash Collector Tin\n| setnum2 = 27/46\n| R2 = Rare\n| set3 = DM-04 Challenge of Black Shadow\n| setnum3 = 13/55\n| R3 = Rare\n| set4 = DMC-27 CoroCoro Dream Pack\n| setnum4 = 12/55\n| R4 = Rare\n| set5 = Promotional\n| setnum5 = T2 Y2, P18/＊\n| R5 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Can Attack Untapped Creatures]]"
+}

@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_01_082",
+ "page": "Meteosaur",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Rock Beast",
+ "cost": "5",
+ "power": "2000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], [[destroy]] one of your [[opponent]]'s [[creature]]s that has [[power]] 2000 or less.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "82/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "60/110",
+  "set3": "DMC-03 Shobu's Blaze Power-Up Pack",
+  "setnum3": "18/43",
+  "set4": "DMC-23 Speed Burn Half Deck",
+  "setnum4": "18/43"
+ },
+ "wiki": "{{Cardtable\n| image = Meteosaur.jpg\n| civilization = Fire\n| type = Creature\n| jpname = メテオザウルス\n| phonetic = Meteozaurusu ''(Meteosaurus)''\n| race = Rock Beast\n| cost = 5\n| power = 2000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], [[destroy]] one of your [[opponent]]'s [[creature]]s that has [[power]] 2000 or less.\n| jptext = ■ このクリーチャーをバトルゾーンに出した時、バトルゾーンにある相手のパワー2000以下のクリーチャーを1体破壊してもよい。\n| flavor = \n| mana = 1\n| artist = Masateru Ikeda\n| set1 = DM-01 Base Set\n| setnum1 = 82/110\n| R1 = Uncommon\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 60/110\n| R2 = Uncommon\n| set3 = DMC-03 Shobu's Blaze Power-Up Pack\n| setnum3 = 18/43\n| R3 = Uncommon\n| set4 = DMC-23 Speed Burn Half Deck\n| setnum4 = 18/43\n| R4 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Fire]]\n[[Category:Rock Beast]]\n[[Category:2000 Power Creatures]]\n[[Category:Power Based Removal]]\n[[Category:Come Into Play Trigger]]"
+}

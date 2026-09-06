@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_09_005",
+ "page": "Vreemah, Freaky Mojo Totem",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Mystery Totem",
+ "cost": "5",
+ "power": "4000",
+ "engtext": "■ Whenever you put another [[creature]] into the [[battle zone]], each [[Beast Folk]] in the [[battle zone]] gets +2000 [[power]] and \"[[double breaker]]\" until the [[End Step|end of the turn]]. ''(A [[creature]] that has \"[[double breaker]]\" [[break]]s 2 [[shield]]s.)''",
+ "templates": [],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "5/55",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "5/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "15/140"
+ },
+ "wiki": "{{Cardtable\n| image = Vreemah, Freaky Mojo Totem.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|鼓舞の化身|ダンシング・トーテム}} ''(Avatar of Inspiration)''\n| kana = ダンシング・トーテム ''(Dancing Totem)''\n| phonetic = Danshingu Tōtemu\n| cost = 5\n| race = Mystery Totem\n| power = 4000\n| engtext = ■ Whenever you put another [[creature]] into the [[battle zone]], each [[Beast Folk]] in the [[battle zone]] gets +2000 [[power]] and \"[[double breaker]]\" until the [[End Step|end of the turn]]. ''(A [[creature]] that has \"[[double breaker]]\" [[break]]s 2 [[shield]]s.)''\n| jptext = ■ 自分の他のクリーチャーをバトルゾーンに出した時、そのターンの終わりまで、バトルゾーンにあるビーストフォークのパワーは+2000され、「W・ブレイカー」を得る。 \n| flavor = It lays down savage jungle beats to help its friends lay down savage jungle beatings. ([[DM-09]])\n| flavor2 = うらうらうらうら殴るずら! \"Ura ura ura ura naguru zura!\" (\"I’m gonna pummel you, pummel you, pummel you!\") ([[DM-09]])\n| flavor3 = 叩いて叩いて叩きまくるずら! \"Katateite katateite kataki makuru zura!\" ( \"I'll keep slapping you, slapping you, slapping you!\") ([[DM-18]])\n| mana = 1\n| artist = Jason \n| artist2 = Akifumi Yamamoto \n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = 5/55\n| R1 = Very Rare\n| set2 = DM-09 Invincible Blood\n| setnum2 = 5/55\n| R2 = Very Rare\n| set3 = DM-18 Best Challenger\n| setnum3 = 15/140\n| R3 = Very Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Increase Power]]\n[[Category:Gives \"Double Breaker\"]]"
+}

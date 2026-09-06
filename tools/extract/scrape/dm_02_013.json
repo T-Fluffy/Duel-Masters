@@ -1,0 +1,24 @@
+{
+ "card_id": "dm_02_013",
+ "page": "Aqua Shooter",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Liquid People",
+ "cost": "4",
+ "power": "2000",
+ "engtext": "{{Blocker}}",
+ "templates": [
+  "Blocker"
+ ],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "13/55",
+  "set2": "DM-02 Master of Evolution",
+  "setnum2": "42/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "102/140",
+  "set4": "DMC-42 CoroCoro Dream Pack 3: Eternal Gear",
+  "setnum4": "63/90"
+ },
+ "wiki": "{{Cardtable\n| image=Aqua Shooter.jpg\n| jpname = アクア・シューター\n| phonetic = Akua Shūtā\n| type = Creature\n| civilization = Water\n| cost = 4\n| race = Liquid People\n| power = 2000\n| engtext = {{Blocker}}\n| jptext = {{Blocker|jp}}\n| flavor = リキッド・ピープルはプログラムによりその能力を変える。[[Liquid People]] can modify their abilities by reprogramming themselves. ([[DM-02]])\n| mana = 1\n| artist = Tsutomu Kawade\n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = 13/55\n| R1 = Common\n| set2 = DM-02 Master of Evolution\n| setnum2 = 42/55\n| R2 =  Common\n| set3 = DM-18 Best Challenger\n| setnum3 = 102/140\n| R3 =  Common\n| set4 = DMC-42 CoroCoro Dream Pack 3: Eternal Gear\n| setnum4 = 63/90\n| R4 =  Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]"
+}

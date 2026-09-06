@@ -1,0 +1,30 @@
+{
+ "card_id": "dm_03_014",
+ "page": "Emeral",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Cyber Lord",
+ "cost": "2",
+ "power": "1000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], you may add a [[card]] from your [[hand]] to your [[shield]]s [[face down]]. If you do, choose one of your [[shield]]s and put it into your [[hand]]. You can't use the \"[[shield trigger]]\" [[ability]] of that [[shield]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-03 Rampage of the Super Warriors",
+  "setnum1": "14/55",
+  "set2": "DM-03 Master of Destruction",
+  "setnum2": "42/55",
+  "set3": "DMC-37 Violence Angel",
+  "setnum3": "25/28",
+  "set4": "DMC-56 The Samurai Legend",
+  "setnum4": "33/39",
+  "set5": "DMC-66 Duel Masters: Super Best",
+  "setnum5": "36/36",
+  "set6": "DMX-21 Masters Chronicle Pack: Comic of Heroes",
+  "setnum6": "69/70",
+  "set7": "DMX-22 Super Black Box Pack",
+  "setnum7": "b23/???",
+  "set8": "Promotional",
+  "setnum8": "L8/12 Y1"
+ },
+ "wiki": "{{Restriction|Hall}}\n{{Cardtable\n| image= Emeral.jpg\n| civilization = Water\n| type = Creature\n| jpname = エメラル\n| phonetic = Emeraru\n| race = Cyber Lord\n| cost = 2\n| power = 1000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], you may add a [[card]] from your [[hand]] to your [[shield]]s [[face down]]. If you do, choose one of your [[shield]]s and put it into your [[hand]]. You can't use the \"[[shield trigger]]\" [[ability]] of that [[shield]].\n| jptext = ■ このクリーチャーをバトルゾーンに出した時、自分の手札を1枚、裏向きにしてシールドに加えてもよい。そうした場合、自分のシールドを1枚、手札に加える。ただし、その「S・トリガー」は使えない。\n| flavor = \"If you think I'm good at this, watch me play video games.\" ([[DM-03]])\n| flavor2 = 小さな思いつきのいたずらが、あまりに大きな災難に。The mischief of a small whim turned into too great a disaster. ([[DMC-37]])\n| flavor3 = 最古の封印。その時、他文明の防衛手段を乱用する者が封じられた。The oldest seals. At that time, one who abused the defense mechanisms of other civilizations was sealed away. ([[DMX-21]])\n| flavor4 = 彼は、戻ることを許されなかった。He wasn't allowed to return. ([[DMX-22]])\n| mana = 1\n| artist = Dai\n| artist2 = Toshiaki Takayama\n| set1 = DM-03 Rampage of the Super Warriors\n| setnum1 = 14/55\n| R1 = Common\n| set2 = DM-03 Master of Destruction\n| setnum2 = 42/55\n| R2 = Common\n| set3 = DMC-37 Violence Angel\n| setnum3 = 25/28\n| R3 = Common\n| set4 = DMC-56 The Samurai Legend\n| setnum4 = 33/39\n| R4 = Common\n| set5 = DMC-66 Duel Masters: Super Best\n| setnum5 = 36/36\n| R5 = Common\n| set6 = DMX-21 Masters Chronicle Pack: Comic of Heroes\n| setnum6 = 69/70\n| R6 = Common\n| set7 = DMX-22 Super Black Box Pack\n| setnum7 = b23/???\n| R7 = Common\n| set8 = Promotional\n| setnum8 = L8/12 Y1\n| R8 = Common\n}}\n{{Emeral}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Shield Manipulation]]\n[[Category:Come Into Play Trigger]]"
+}

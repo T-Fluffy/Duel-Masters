@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_04_052",
+ "page": "Mystic Inscription",
+ "type": "Spell",
+ "civilization": "Nature",
+ "race": "",
+ "cost": "6",
+ "power": "",
+ "engtext": "■ Add the top [[card]] of your [[deck]] to your [[shield]]s [[face down]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-04 Shadowclash of Blinding Night",
+  "setnum1": "52/55",
+  "set2": "DM-04 Challenge of Black Shadow ",
+  "setnum2": "19/55"
+ },
+ "wiki": "{{Cardtable\n| image = Mystic Inscription.jpg\n| civilization = Nature\n| type = Spell\n| jpname = ミステリー・ブレス\n| phonetic = Misuterī Buresu ''(Mystery Breath)''\n| cost = 6\n| engtext = ■ Add the top [[card]] of your [[deck]] to your [[shield]]s [[face down]].\n| jptext = ■ 自分の山札の上から1枚目を、裏向きのまま自分のシールドに加える。\n| flavor = \"The [[Angel Command]]s have sent us a divine message! Let's see: 'Ice cream, rye bread, bananas, laundry detergent...'\" ([[DM-04]]) \n| flavor2 = 異様に成長した木々。その中心には大きな石碑がそびえ立つ。The trees have grown in a strange, unnatural way. At their center stands a towering stone monument. ([[DM-04]])\n| mana = 1\n| artist = Taro Yamazaki\n| set1 = DM-04 Shadowclash of Blinding Night\n| setnum1 = 52/55\n| R1 = Rare\n| set2 = DM-04 Challenge of Black Shadow \n| setnum2 = 19/55\n| R2 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Nature]]\n[[Category:Spell]]\n[[Category:Shield Addition]]\n[[Category:Mystery]]"
+}

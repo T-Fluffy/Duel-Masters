@@ -1,0 +1,24 @@
+{
+ "card_id": "dm_08_054",
+ "page": "Terradragon Gamiratar",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Earth Dragon",
+ "cost": "4",
+ "power": "6000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], your [[opponent]] may choose a [[creature]] in his [[hand]] and put it into the [[battle zone]].\n\n{{Double Breaker}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "54/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "18/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "48/140",
+  "set4": "Promotional",
+  "setnum4": "P15/Y2"
+ },
+ "wiki": "{{Cardtable\n| image = Terradragon Gamiratar.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|緑|りょく}}{{Ruby|神|しん}}{{Ruby|龍|りゅう}}ガミラタール\n| phonetic = Ryokushinryuu Gamirataaru\n| race = Earth Dragon\n| cost = 4\n| power = 6000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], your [[opponent]] may choose a [[creature]] in his [[hand]] and put it into the [[battle zone]].\n\n{{Double Breaker}}\n| jptext = ■ このクリーチャーをバトルゾーンに出した時、相手は自分自身の手札からクリーチャーを1体選び、バトルゾーンに置いてもよい\n\n{{Double Breaker|jp}}\n| flavor = [[Emperor Quazla|Quazla]]'s doomsday device caused the planet's core to crack. That was the alarm clock the [[Dragon]]s had been waiting for. ([[DM-08]])\n| flavor2 = 再誕に出会えた幸運の報酬は、踏み潰される初めてのドラゴンになることだった。The reward for the fortune of encountering rebirth was becoming the first dragon to be crushed. ([[DM-08]])\n| flavor3 = 火文明の地に誤って生まれた緑神龍は、生まれた瞬間、絶望を味わい、そして出会いによって救われた。The Terradragon, born by accident in the Fire Civilization, tasted despair the moment it was born, and was then saved through an encounter. ([[DM-18]])\n| flavor4 = その神は戦いを望む。The deity desires battle. (P15/Y2)\n| mana = 1\n| artist = Mikumo \n| artist2 = Haccan \n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 54/55\n| R1 = Rare\n| set2 = DM-08 Invincible Legend\n| setnum2 = 18/55\n| R2 = Rare\n| set3 = DM-18 Best Challenger\n| setnum3 = 48/140\n| R3 = Rare\n| set4 = Promotional\n| setnum4 = P15/Y2\n| R4 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Nature]]\n[[Category:Earth Dragon]]\n[[Category:6000 Power Creatures]]\n[[Category:Come Into Play Trigger]]"
+}

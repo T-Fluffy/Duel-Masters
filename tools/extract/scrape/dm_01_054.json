@@ -1,0 +1,42 @@
+{
+ "card_id": "dm_01_054",
+ "page": "Ghost Touch",
+ "type": "Spell",
+ "civilization": "Darkness",
+ "race": "",
+ "cost": "2",
+ "power": "",
+ "engtext": "{{Shield Trigger|spell}} \n\n■ Your [[opponent]] [[discard]]s a [[card]] at random from his [[hand]].",
+ "templates": [
+  "Shield Trigger|spell"
+ ],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "54/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "94/110",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "120/140",
+  "set4": "DMC-02 Kokujo's Darkness Deck",
+  "setnum4": "32/43",
+  "set5": "DMC-08 Endless Black Hole Deck",
+  "setnum5": "62/82",
+  "set6": "DMC-61 CoroCoro Dream Pack 4: Eternal Heaven",
+  "setnum6": "77/94",
+  "set7": "DMX-03 Deck Builder DX: Alien Edition",
+  "setnum7": "38/42",
+  "set8": "DMX-14 The Greatest Strategies Perfect 12",
+  "setnum8": "49/84",
+  "set9": "DMR-17 Burning Dogiragon!!",
+  "setnum9": "79/94",
+  "set10": "DMR-21 Team Hamukatsu and Dogiragon Buster",
+  "setnum10": "73/94",
+  "set11": "DMX-25 Final Memorial Pack ~E1, E2, E3 edition~",
+  "setnum11": "49/51",
+  "set12": "Duel Masters Card Gummy 3",
+  "setnum12": "P77/Y19",
+  "set13": "Promotional",
+  "setnum13": "P5/Y11"
+ },
+ "wiki": "{{Cardtable\n| image = Ghost Touch.jpg\n| civilization = Darkness\n| type = Spell\n| jpname = ゴースト・タッチ\n| phonetic = Gōsuto Tatchi\n| cost = 2\n| engtext = {{Shield Trigger|spell}} \n\n■ Your [[opponent]] [[discard]]s a [[card]] at random from his [[hand]].\n| jptext = {{Icon|ST}} S・トリガー (この呪文をシールドゾーンから手札に加える時、コストを支払わずにすぐ唱えてもよい)\n\n■ 相手の手札を1枚見ないで選び、捨てさせる。\n| flavor = 取り引きをしよう。Let's make a deal. ([[DMX-03]])\n| flavor2 = タッチ! タッチ! そこにタッチ! \"Touch! Touch! Touch there!\" ([[DMX-14]])\n| flavor3 = 闇の国と光の国の間にある『壁の雪山』はふたつの国の平和を守っていた。復讐の侵略者は悪霊の力でこれを破壊しようと考えた。The \"Snowy Mountain Wall\" between the Darkness country and Light country kept them at peace. The [[Invader]]s of Revenge thought of destroying it with the power of evil spirits. ([[DMR-17]])\n| flavor4 = 悪魔との接触は、一瞬でも精神を崩壊させる。Even a mere moment of contact with the devil would crush your spirit. ([[DMR-21]])\n| flavor5 = うらめしやー!\"I cannot believe it!\" ─[[Katta Kirifuda]] ([[DMX-25]])\n| flavor6 = うぎゃー! で、出たー! 何が起こったホワット!!  \"Ugyaaa! It's, it's appeared! Just what is happening!\" ─[[Dragon Ryu]] (P5/Y11)\n| flavor7 = さあ、鬼タイムの幕明けだ! \"Now, the dawn of [[Onitime]] begins!\" ─[[Abaku Onifuda]] (P77/Y19)\n| mana = 1\n| artist = Soushi Hirose\n| artist2 = Tonbi Aburaya\n| artist3 = Shigenobu Matsumoto\n| artist4 = YASUYUKI NODA\n| set1 = DM-01 Base Set\n| setnum1 = 54/110\n| R1 = Common\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 94/110\n| R2 = Common\n| set3 = DM-18 Best Challenger\n| setnum3 = 120/140\n| R3 = Common\n| set4 = DMC-02 Kokujo's Darkness Deck\n| setnum4 = 32/43\n| R4 = Common\n| set5 = DMC-08 Endless Black Hole Deck\n| setnum5 = 62/82\n| R5 = Common\n| set6 = DMC-61 CoroCoro Dream Pack 4: Eternal Heaven\n| setnum6 = 77/94\n| R6 = Common\n| set7 = DMX-03 Deck Builder DX: Alien Edition\n| setnum7 = 38/42\n| R7 = Common\n| set8 = DMX-14 The Greatest Strategies Perfect 12\n| setnum8 = 49/84\n| R8 = Common\n| set9 = DMR-17 Burning Dogiragon!!\n| setnum9 = 79/94\n| R9 = Common\n| set10 = DMR-21 Team Hamukatsu and Dogiragon Buster\n| setnum10 = 73/94\n| R10 = Common\n| set11 = DMX-25 Final Memorial Pack ~E1, E2, E3 edition~\n| setnum11 = 49/51\n| R11 = Common\n| set12 = Duel Masters Card Gummy 3\n| setnum12 = P77/Y19\n| R12 = Common\n| set13 = Promotional\n| setnum13 = P5/Y11\n| R13 = Common\n}}\n{{Touch}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Card Discard]]"
+}

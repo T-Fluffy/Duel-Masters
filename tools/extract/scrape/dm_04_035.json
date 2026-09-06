@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_04_035",
+ "page": "Purple Piercer",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Brain Jacker",
+ "cost": "3",
+ "power": "2000",
+ "engtext": "■ This [[creature]] can't be [[attack]]ed by [[light]] [[creature]]s.\n\n■ This [[creature]] can't be [[block]]ed by [[light]] [[creature]]s.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-04 Shadowclash of Blinding Night",
+  "setnum1": "35/55",
+  "set2": "Shadowclash Collector Tin",
+  "setnum2": "28/46",
+  "set3": "DM-04 Challenge of Black Shadow ",
+  "setnum3": "48/55",
+  "set4": "DMC-07 Eternal Insects Deck",
+  "setnum4": "58/82"
+ },
+ "wiki": "{{Cardtable\n| image = Purple Piercer.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = パープル・ピアス\n| phonetic = Pāpuru Piasu ''(Purple Pierce)''\n| race = Brain Jacker\n| cost = 3\n| power = 2000\n| engtext = ■ This [[creature]] can't be [[attack]]ed by [[light]] [[creature]]s.\n\n■ This [[creature]] can't be [[block]]ed by [[light]] [[creature]]s.\n| jptext = ■  このクリーチャーは、光のクリーチャーに攻撃またはブロックされない。\n| flavor = You do ''not'' want to get in a tickle fight with this thing. ([[DM-04]]) \n| flavor2 = 綺麗な薔薇に棘があるように、綺麗な細工には悪魔が宿る。Just as a beautiful rose has thorns, a beautiful craft carries a demon within. ([[DM-04]]) \n| mana = 1\n| artist = Naoki Saito \n| set1 = DM-04 Shadowclash of Blinding Night\n| setnum1 = 35/55\n| R1 = Common\n| set2 = Shadowclash Collector Tin\n| setnum2 = 28/46\n| R2 = Common\n| set3 = DM-04 Challenge of Black Shadow \n| setnum3 = 48/55\n| R3 = Common\n| set4 = DMC-07 Eternal Insects Deck\n| setnum4 = 58/82\n| R4 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Brain Jacker]]\n[[Category:Unblockable]]\n[[Category:2000 Power Creatures]]\n[[Category:Unattackable]]"
+}

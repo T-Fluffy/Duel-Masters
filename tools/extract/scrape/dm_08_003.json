@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_08_003",
+ "page": "Megaria, Empress of Dread",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Dark Lord",
+ "cost": "5",
+ "power": "5000",
+ "engtext": "■ Each [[creature]] in the [[battle zone]] has \"[[slayer]].\" ''(Whenever a [[creature]] that has \"[[slayer]]\" [[battle]]s, [[destroy]] the other [[creature]] after the [[battle]].)",
+ "templates": [],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "3/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "3/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "9/140",
+  "set4": "DMC-17 Dark Warriors Deck ",
+  "setnum4": "2/78"
+ },
+ "wiki": "{{Cardtable\n| image = Megaria, Empress of Dread.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|暗|あん}}{{Ruby|黒|こく}}{{Ruby|皇|こう}}{{Ruby|女|じょ}}メガリア\n| phonetic = Ankoku Kōjo Megaria\n| race = Dark Lord\n| cost = 5\n| power = 5000\n| engtext = ■ Each [[creature]] in the [[battle zone]] has \"[[slayer]].\" ''(Whenever a [[creature]] that has \"[[slayer]]\" [[battle]]s, [[destroy]] the other [[creature]] after the [[battle]].)\n| jptext = ■ バトルゾーンにあるクリーチャーはすべて「スレイヤー」を得る。(「スレイヤー」を得たクリーチャーがバトルする時、バトルの後、相手クリーチャーを破壊する)\n| flavor = Before the eerily silent army, she raised the chalice of souls. \"This time,\" she snarled, \"it better be filled with ''diet'' souls.\" ([[DM-08]])\n| flavor2 = 不気味に沈黙する軍勢の前で、幾千もの魂を封じた邪杯を手に掲げる。Before the eerily silent army, she raised the cursed chalice that contains thousands of souls. ([[DM-08]], [[DM-18]])\n| flavor3 = 「我が愛しき兵士達よ。誇り高く死ぬがよい!」 \"My beloved soldiers, die with pride!\" -'''Megaria, Empress of Dread''' ([[DMC-17]])\n| mana = 1\n| artist = Tsuu\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 3/55\n| R1 = Very Rare\n| set2 = DM-08 Invincible Legend\n| setnum2 = 3/55\n| R2 = Very Rare\n| set3 = DM-18 Best Challenger\n| setnum3 = 9/140\n| R3 = Very Rare\n| set4 = DMC-17 Dark Warriors Deck \n| setnum4 = 2/78\n| R4 = Very Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Gives \"Slayer\"]]\n[[Category:Slayer]]"
+}

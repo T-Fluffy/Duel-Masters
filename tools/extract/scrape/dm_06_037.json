@@ -1,0 +1,26 @@
+{
+ "card_id": "dm_06_037",
+ "page": "Madrillon Fish",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Gel Fish",
+ "cost": "2",
+ "power": "3000",
+ "engtext": "{{Blocker}}\n\n■ This [[creature]] can't [[attack]].",
+ "templates": [
+  "Blocker"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "37/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "82/110",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "106/140",
+  "set4": "DMC-08 Endless Black Hole Deck",
+  "setnum4": "51/82",
+  "set5": "DMC-24 Illusion Blue Half Deck",
+  "setnum5": "26/43"
+ },
+ "wiki": "{{Cardtable\n| image = Madrillon Fish.jpg\n| civilization = Water\n| type = Creature\n| jpname = マドリオン・フィッシュ \n| phonetic = Madorion Fisshu\n| race = Gel Fish\n| cost = 2\n| power = 3000\n| engtext = {{Blocker}}\n\n■ This [[creature]] can't [[attack]].\n| jptext = {{Blocker|jp}}\n\n■ このクリーチャーは攻撃することができない。　\n| flavor = \"I see they've loosened the definition of 'fish.'\" -[[Cantankerous Giant]] ([[DM-06]])\n| flavor2 = 特殊監視機構始動。Special surveillance system activated. ([[DM-06]], [[DM-18]], [[DMC-08]], [[DMC-24]])\n| mana = 1\n| artist = Akira Hamada\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 37/110\n| R1 = Common\n| set2 = DM-06 Invincible Soul\n| setnum2 = 82/110\n| R2 = Common\n| set3 = DM-18 Best Challenger\n| setnum3 = 106/140\n| R3 = Common\n| set4 = DMC-08 Endless Black Hole Deck\n| setnum4 = 51/82\n| R4 = Common\n| set5 = DMC-24 Illusion Blue Half Deck\n| setnum5 = 26/43\n| R5 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Gel Fish]]\n[[Category:3000 Power Creatures]]"
+}

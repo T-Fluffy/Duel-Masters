@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_06_097",
+ "page": "Factory Shell Q",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Survivor",
+ "cost": "6",
+ "power": "2000",
+ "engtext": "{{Survivor}} [[When you put]] this [[creature]] into the [[battle zone]], [[search]] your [[deck]]. You may take a [[Survivor]] from your [[deck]], show that [[Survivor]] to your [[opponent]], and put it into your [[hand]]. Then [[shuffle]] your [[deck]].",
+ "templates": [
+  "Survivor"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "97/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "37/110",
+  "set3": "DMD-26 Masters Chronicle Deck: Survivor Evo-Theory α to Ω",
+  "setnum3": "15/17"
+ },
+ "wiki": "{{Cardtable\n| image = Factory Shell Q.jpg\n| civilization = Nature\n| type = Creature\n| jpname = シェル・ファクトリー{{Ruby|γ|ガンマ}} \n| kana = ガンマ ''(Gamma)''\n| phonetic = Sheru Fakutorī Gamma ''(Shell Factory Gamma)''\n| race = Survivor\n| race2 = Colony Beetle\n| cost = 6\n| power = 2000\n| engtext = {{Survivor}} [[When you put]] this [[creature]] into the [[battle zone]], [[search]] your [[deck]]. You may take a [[Survivor]] from your [[deck]], show that [[Survivor]] to your [[opponent]], and put it into your [[hand]]. Then [[shuffle]] your [[deck]].\n| jptext = {{Icon|SVold}} このクリーチャーがバトルゾーンに出たとき、自分の山札を見る。 その中からサバイバーを1体選び、相手に見せてから自分の手札に加えてもよい。 その後、山札をシャッフルする。\n\n■ サバイバー （このクリーチャーがバトルゾーンにある間、自分の他のサバイバーも上の {{Icon|SVold}} 能力を得る）\n| flavor = \n| mana = 1\n| artist = Daisuke Izuka\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 97/110\n| R1 = Rare\n| set2 = DM-06 Invincible Soul\n| setnum2 = 37/110\n| R2 = Rare\n| set3 = DMD-26 Masters Chronicle Deck: Survivor Evo-Theory α to Ω\n| setnum3 = 15/17\n| R3 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Deck Search]]\n[[Category:Come Into Play Trigger]]"
+}

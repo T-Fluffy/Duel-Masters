@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_07_037",
+ "page": "Astronaut Skyterror",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Armored Wyvern",
+ "cost": "5",
+ "power": "4000+",
+ "engtext": "■ While you have no other [[creature]]s in the [[battle zone]], this [[creature]] has \"[[Power attacker]] +4000 ''(While [[attack]]ing, this [[creature]] gets +4000 [[power]])''\" and \"[[Double breaker]] ''(This [[creature]] [[break]]s 2 [[shield]]s)''.\"",
+ "templates": [],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "37/55 ",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "49/55 ",
+  "set3": "DMC-13 CoroCoro New Generation Pack",
+  "setnum3": "30/37 ",
+  "set4": "Promotional",
+  "setnum4": "P13/Y2"
+ },
+ "wiki": "{{Cardtable\n| image = Astronaut Skyterror.jpg\n| civilization = Fire\n| type = Creature\n| jpname = アストロノーツ・ワイバーン\n| phonetic = Asutoronōtsu Waibān ''(Astronaut Wyvern)''\n| race = Armored Wyvern\n| cost = 5\n| power = 4000+\n| engtext = ■ While you have no other [[creature]]s in the [[battle zone]], this [[creature]] has \"[[Power attacker]] +4000 ''(While [[attack]]ing, this [[creature]] gets +4000 [[power]])''\" and \"[[Double breaker]] ''(This [[creature]] [[break]]s 2 [[shield]]s)''.\"\n| jptext = ■ バトルゾーンに他に自分のクリーチャーがなければ、このクリーチャーは「パワーアタッカー+4000」と「W・ブレイカー」を得る。 （攻撃中、そのクリーチャーのパワーは+4000され、シールドを攻撃したとき、シールドを2枚ブレイクする）　\n| flavor = \"In case of emergency, you're in deep trouble.\" ([[DM-07]])\n| flavor2 = 古き伝説に、龍族は「星を渡る者」と記されていた。 In the legends of old, Dragons were recorded as  \"Star-givers\". ([[DM-07]])\n| flavor3 =古き伝説では、龍に触れた死者は甦り、生者は死を与えられると書かれていた。In the legends of old, the dead touched by Dragons are revived, and death is given to the living. (P13/Y2)\n| mana = 1\n| artist = Yoko Tsukamoto\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 37/55 \n| R1 = Common\n| set2 = DM-07 Invincible Charge\n| setnum2 = 49/55 \n| R2 = Common\n| set3 = DMC-13 CoroCoro New Generation Pack\n| setnum3 = 30/37 \n| R3 = Common\n| set4 = Promotional\n| setnum4 = P13/Y2\n| R4 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Conditional Double Breaker]]\n[[Category:Power Attacker +4000]]"
+}

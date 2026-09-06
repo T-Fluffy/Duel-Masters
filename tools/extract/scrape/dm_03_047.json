@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_03_047",
+ "page": "Gigamantis",
+ "type": "Evolution Creature",
+ "civilization": "Nature",
+ "race": "Giant Insect",
+ "cost": "4",
+ "power": "5000",
+ "engtext": "■ [[Evolution]]—Put on one of your [[Giant Insect]]s.\n\n■ Whenever another of your [[nature]] [[creature]]s would be put into your [[graveyard]] from the [[battle zone]], put it into your [[mana zone]] [[instead]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-03 Rampage of the Super Warriors",
+  "setnum1": "47/55",
+  "set2": "DM-03 Master of Destruction",
+  "setnum2": "5/55",
+  "set3": "DMC-07 Eternal Insects Deck",
+  "setnum3": "4/82"
+ },
+ "wiki": "{{Cardtable\n| image= Gigamantis.jpg\n| civilization = Nature\n| type = Evolution Creature\n| jpname = {{Ruby|大|だい}}{{Ruby|昆|こん}}{{Ruby|虫|ちゅう}}ギガマンティス\n| phonetic = Dai Konchū Gigamantisu\n| race = Giant Insect\n| cost = 4\n| power = 5000\n| engtext = ■ [[Evolution]]—Put on one of your [[Giant Insect]]s.\n\n■ Whenever another of your [[nature]] [[creature]]s would be put into your [[graveyard]] from the [[battle zone]], put it into your [[mana zone]] [[instead]].\n| jptext = ■ 進化－自分のジャイアント・インセクト1体の上に置く。\n\n■ このクリーチャーがバトルゾーンにある間に、自分の他の自然のクリーチャーがバトルゾーンから墓地に置かれるとき、その自然のクリーチャーを自分のマナゾーンに置く。 \n| flavor = \"But I don't wanna be a tree!\" -[[Fear Fang]] ([[DM-03]])\n| flavor2 = 強靱なるもの、強靱なる魂! \"Strong ones, resilient souls!\" ([[DM-03]])\n| mana = 1\n| artist = Katsuya\n| set1 = DM-03 Rampage of the Super Warriors\n| setnum1 = 47/55\n| R1 = Very Rare\n| set2 = DM-03 Master of Destruction\n| setnum2 = 5/55\n| R2 = Very Rare\n| set3 = DMC-07 Eternal Insects Deck\n| setnum3 = 4/82\n| R3 = Very Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Destruction Substitution]]\n[[Category:Mana Acceleration]]"
+}

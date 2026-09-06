@@ -1,0 +1,24 @@
+{
+ "card_id": "dm_01_021",
+ "page": "Szubs Kin, Twilight Guardian",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Guardian",
+ "cost": "5",
+ "power": "6000",
+ "engtext": "{{Blocker|old}}\n\n■ This [[creature]] can't [[attack]] [[player]]s.",
+ "templates": [
+  "Blocker|old"
+ ],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "21/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "11/110",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "17/140",
+  "set4": "Promotional",
+  "setnum4": "P3/Y0"
+ },
+ "wiki": "{{Cardtable\n| image = Szubs Kin, Twilight Guardian.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|黄|たそ}}{{Ruby|昏|がれ}}の{{Ruby|守|しゅ}}{{Ruby|護|ご}}{{Ruby|者|しゃ}}シーブス・キーン\n| phonetic = Tasogare no Shugosha Shībusu Kīn\n| race = Guardian\n| cost = 5\n| power = 6000\n| engtext = {{Blocker|old}}\n\n■ This [[creature]] can't [[attack]] [[player]]s.\n| jptext = {{Blocker|jpold}}\n\n■ このクリーチャーは、相手プレイヤーを攻撃できない。 \n| flavor = 天空の塔の住人たちは、侵入者をけして許さなかった。Those who dwell in the sky towers eradicate all intruders. ([[DM-01]], [[DM-18]])\n| mana = 1\n| artist = Ittoku\n| set1 = DM-01 Base Set\n| setnum1 = 21/110\n| R1 = Rare\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 11/110\n| R2 = Rare\n| set3 = DM-18 Best Challenger\n| setnum3 = 17/140\n| R3 = Rare\n| set4 = Promotional\n| setnum4 = P3/Y0\n| R4 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Guardian]]\n[[Category:6000 Power Creatures]]"
+}

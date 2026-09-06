@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_06_089",
+ "page": "Spastic Missile",
+ "type": "Spell",
+ "civilization": "Fire",
+ "race": "",
+ "cost": "3",
+ "power": "",
+ "engtext": "■ [[Destroy]] one of your [[opponent]]'s [[creature]]s that has [[power]] 3000 or less.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "89/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "63/110",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "81/140",
+  "set4": "DMC-05 Lightning Thunder Deck",
+  "setnum4": "34/82"
+ },
+ "wiki": "{{Cardtable\n| image = Spastic Missile.jpg\n| civilization = Fire\n| type = Spell\n| jpname = ピコット・ミサイル\n| phonetic = Pikotto Misairu\n| cost = 3\n| engtext = ■ [[Destroy]] one of your [[opponent]]'s [[creature]]s that has [[power]] 3000 or less.\n| jptext = ■ パワー3000以下の相手のクリーチャーを1体破壊する。\n| flavor = \"Hee hee! The missiles are having as much fun as I am!\" —{{tooltip|Rikabu, the Dismantler}} ([[DM-06]])\n| flavor2 = 増えすぎだ! \"There's too many!\" ([[DM-06]], [[DM-18]], [[DMC-05]])\n| mana = 1\n| artist = Iron Pot\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 89/110\n| R1 = Uncommon\n| set2 = DM-06 Invincible Soul\n| setnum2 = 63/110\n| R2 = Uncommon\n| set3 = DM-18 Best Challenger\n| setnum3 = 81/140\n| R3 = Uncommon\n| set4 = DMC-05 Lightning Thunder Deck\n| setnum4 = 34/82\n| R4 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Fire]]\n[[Category:Spell]]\n[[Category:Power Based Removal]]"
+}

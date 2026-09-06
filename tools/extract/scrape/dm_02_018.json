@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_02_018",
+ "page": "Plasma Chaser",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Gel Fish",
+ "cost": "6",
+ "power": "4000",
+ "engtext": "■ Whenever this [[creature]] [[attack]]s, you may [[draw]] a [[number]] of [[card]]s equal to the [[number]] of [[creature]]s your [[opponent]] has in the [[battle zone]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "18/55",
+  "set2": "DM-02 Master of Evolution",
+  "setnum2": "2/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "5/140"
+ },
+ "wiki": "{{Cardtable\n| image=Plasma Chaser.jpg\n| civilization = Water\n| type = Creature\n| jpname = プラズマ・チェイサー\n| phonetic = Purazuma Cheisā\n| race = Gel Fish\n| cost = 6\n| power = 4000\n| engtext = ■ Whenever this [[creature]] [[attack]]s, you may [[draw]] a [[number]] of [[card]]s equal to the [[number]] of [[creature]]s your [[opponent]] has in the [[battle zone]].\n| jptext = ■ このクリーチャーが攻撃する時、バトルゾーンにある相手のクリーチャーの数と同じ枚数のカードを引いてもよい。\n| flavor = A program to aid the [[Cyber Lord]]s' land assault, it contains an advanced tracking system designed to function against multiple [[opponent]]s. ([[DM-02]])\n| flavor2 = 地上侵攻用プログラム。1対多数戦闘を想定し、自動追尾システムを強化。Ground invasion program. Designed for one-on-many combat, with an enhanced automatic tracking system. ([[DM-02]], [[DM-18]])\n| mana = 1\n| artist = Daisuke Izuka\n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = 18/55\n| R1 = Very Rare\n| set2 = DM-02 Master of Evolution\n| setnum2 = 2/55\n| R2 = Very Rare\n| set3 = DM-18 Best Challenger\n| setnum3 = 5/140\n| R3 = Very Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Gel Fish]]\n[[Category:4000 Power Creatures]]\n[[Category:Card Draw]]\n[[Category:Attack Trigger]]"
+}

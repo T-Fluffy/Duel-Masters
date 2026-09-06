@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_03_015",
+ "page": "Flood Valve",
+ "type": "Spell",
+ "civilization": "Water",
+ "race": "",
+ "cost": "2",
+ "power": "",
+ "engtext": "{{Shield Trigger|spell}}\n\n■ Return a [[card]] from your [[mana zone]] to your [[hand]].",
+ "templates": [
+  "Shield Trigger|spell"
+ ],
+ "sets": {
+  "set1": "DM-03 Rampage of the Super Warriors",
+  "setnum1": "15/55",
+  "set2": "DM-03 Master of Destruction",
+  "setnum2": "26/55"
+ },
+ "wiki": "{{Cardtable\n| image= Flood Valve.jpg\n| civilization = Water\n| type = Spell\n| jpname = ハイパー・ウェーブ\n| phonetic = Haipā U~ēbu ''(Hyper Wave)''\n| cost = 2\n| engtext = {{Shield Trigger|spell}}\n\n■ Return a [[card]] from your [[mana zone]] to your [[hand]].\n| jptext = {{Icon|ST}} S・トリガー (この呪文をシールドゾーンから手札に加える時、コストを支払わずにすぐ唱えてもよい)\n\n■ 自分のマナゾーンからカードを1枚選び、自分の手札に戻す。\n| flavor = \"Open up freshwater valve 23D. I'm thirsty.\" ([[DM-03]])\n| flavor2 = 真打登場! \"The main act appears!\" ([[DM-03]])\n| mana = 1\n| artist = Atsushi Kawasaki\n| set1 = DM-03 Rampage of the Super Warriors\n| setnum1 = 15/55\n| R1 = Uncommon\n| set2 = DM-03 Master of Destruction\n| setnum2 = 26/55\n| R2 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Mana Recovery]]"
+}

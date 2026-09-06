@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_03_049",
+ "page": "Masked Pomegranate",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Tree Folk",
+ "cost": "5",
+ "power": "1000+",
+ "engtext": "■ This [[creature]] gets +1000 [[power]] for each of your other [[nature]] [[creature]]s in the [[battle zone]].\n\n■ This [[creature]] can't be [[block]]ed by any [[creature]] that has [[power]] 4000 or less.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-03 Rampage of the Super Warriors",
+  "setnum1": "49/55",
+  "set2": "DM-03 Master of Destruction",
+  "setnum2": "33/55"
+ },
+ "wiki": "{{Cardtable\n| image= Masked Pomegranate.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|奇|き}}{{Ruby|面|めん}}ざくろ\n| phonetic = Kimen Zakuro\n| race = Tree Folk\n| cost = 5\n| power = 1000+\n| engtext = ■ This [[creature]] gets +1000 [[power]] for each of your other [[nature]] [[creature]]s in the [[battle zone]].\n\n■ This [[creature]] can't be [[block]]ed by any [[creature]] that has [[power]] 4000 or less.\n| jptext = ■ このクリーチャーのパワーは、バトルゾーンにある自分の他の自然のクリーチャー1体につき+1000される。\n\n■ このクリーチャーは、パワー4000以下のクリーチャーにブロックされない。\n| flavor = It's related to the raspberry bush. ([[DM-03]])\n| flavor2 = 「歌ってやるとドンドン育つよ。」 \"Singing to them, they grow stronger and stronger.\" -[[Silver Axe]] ([[DM-03]])\n| mana = 1\n| artist = Naoki Saito\n| set1 = DM-03 Rampage of the Super Warriors\n| setnum1 = 49/55\n| R1 = Uncommon\n| set2 = DM-03 Master of Destruction\n| setnum2 = 33/55\n| R2 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Nature]]\n[[Category:Tree Folk]]\n[[Category:1000 Power Creatures]]\n[[Category:Unblockable]]\n[[Category:Self Increase Power]]"
+}

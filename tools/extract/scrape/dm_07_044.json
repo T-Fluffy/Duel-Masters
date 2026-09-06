@@ -1,0 +1,23 @@
+{
+ "card_id": "dm_07_044",
+ "page": "Valkrowzer, Ultra Rock Beast",
+ "type": "Evolution Creature",
+ "civilization": "Fire",
+ "race": "Rock Beast",
+ "cost": "6",
+ "power": "9000",
+ "engtext": "■ [[Evolution]]—Put on one of your [[Rock Beast]]s.\n\n{{Stealth|Water}}\n\n{{Double Breaker}}",
+ "templates": [
+  "Double Breaker",
+  "Stealth|Water"
+ ],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "44/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "15/55",
+  "set3": "Promotional",
+  "setnum3": "L8 Y2, P12/Y2"
+ },
+ "wiki": "{{Cardtable\n| image = Valkrowzer, Ultra Rock Beast.jpg\n| civilization = Fire\n| type = Evolution Creature\n| jpname = {{Ruby|超|ちょう}}{{Ruby|巨|きょ}}{{Ruby|岩|がん}}{{Ruby|獣|じゅう}}ヴォルクラウザー\n| phonetic = Chō Kyogan Jū Vorukuraudzā\n| cost = 6\n| race = Rock Beast\n| power = 9000\n| engtext = ■ [[Evolution]]—Put on one of your [[Rock Beast]]s.\n\n{{Stealth|Water}}\n\n{{Double Breaker}}\n| jptext = ■ 進化－自分のロック・ビースト1体の上に置く。\n\n■ 水ステルス （相手のマナゾーンに水のカードが1枚でもあれば、このクリーチャーはブロックされない）\n\n{{Double Breaker|jp}} \n| flavor = \"I liked him better when he was dormant.\" -[[Tropico]] ([[DM-07]])\n| flavor2 = 一瞬にして、海底都市は遺跡に成り下がった。In an instant, the underwater city was reduced to ruins. ([[DM-07]]) \n| flavor3 = 新たなる闘いが近づいている。その力は地底深くに沈められている。A new battle is approaching. Its power lies buried deep underground. (P12/Y2)\n| mana = 1\n| artist = Taro Yamazaki\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 44/55\n| R1 = Rare\n| set2 = DM-07 Invincible Charge\n| setnum2 = 15/55\n| R2 = Rare\n| set3 = Promotional\n| setnum3 = L8 Y2, P12/Y2\n| R3 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]"
+}

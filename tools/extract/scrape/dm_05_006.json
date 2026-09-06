@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_05_006",
+ "page": "Ballus, Dogfight Enforcer Q",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Survivor",
+ "cost": "5",
+ "power": "3000",
+ "engtext": "{{Survivor}} [[End Step|At the end of each of your turns]], [[untap]] this [[creature]].",
+ "templates": [
+  "Survivor"
+ ],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "6/55",
+  "set2": "DM-05 Return of the Survivor",
+  "setnum2": "22/55",
+  "set3": "Promotional",
+  "setnum3": "L13/20 Y1, P21/＊"
+ },
+ "wiki": "{{Cardtable\n| image = Ballus, Dogfight Enforcer Q.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|戦|せん}}{{Ruby|空|くう}}の{{Ruby|伝|でん}}{{Ruby|道|どう}}{{Ruby|士|し}}バルス{{Ruby|β|ベータ}}\n| kana = ベータ ''(Beta)''\n| phonetic = Senkū no Denōshi Barusu Beta\n| cost = 5\n| race = Survivor\n| race2 = Berserker\n| power = 3000\n| engtext = {{Survivor}} [[End Step|At the end of each of your turns]], [[untap]] this [[creature]].\n| jptext = {{Icon|SVold}} このクリーチャーがバトルゾーンにある間、自分のターンの終わりに、これをアンタップする。\n\n■ サバイバー （このクリーチャーがバトルゾーンにある間、自分の他のサバイバーも上の{{Icon|SVold}}能力を得る）\n| flavor = To indicate the telepathic link shared by all [[Survivor]]s, scientists added a code letter to their names. ([[DM-05]])\n| flavor2 = 微妙な違和感。人々は、サバイバー達の名に一字を加えてそれを表現した。A subtle sense of discomfort. People expressed it by adding a single character to the names of the survivors. ([[DM-05]]) \n| flavor3 = 宇宙と大地の狭間、言葉無き伝道師は何を伝えるのだろう。Between the cosmos and the earth, what message does the wordless enforcer convey? (P21/Y＊)\n| mana = 1\n| artist = Naoki Saito\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = 6/55\n| R1 = Uncommon\n| set2 = DM-05 Return of the Survivor\n| setnum2 = 22/55\n| R2 = Uncommon\n| set3 = Promotional\n| setnum3 = L13/20 Y1, P21/＊\n| R3 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Creature Untap]]"
+}

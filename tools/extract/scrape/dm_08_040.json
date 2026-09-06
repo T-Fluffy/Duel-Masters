@@ -1,0 +1,24 @@
+{
+ "card_id": "dm_08_040",
+ "page": "Missile Soldier Ultimo",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Dragonoid",
+ "cost": "3",
+ "power": "2000+",
+ "engtext": "{{Turbo Rush|This [[creature]] can [[attack]] [[untap]]ped [[creature]]s and has \"[[Power attacker]] +4000 ''(While [[attack]]ing, this [[creature]] gets +4000 [[power]])''.\"}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "40/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "50/55",
+  "set3": "DMC-09 Shobu's Dragon Legend Deck",
+  "setnum3": "40/44",
+  "set4": "DMC-27 CoroCoro Dream Pack",
+  "setnum4": "49/55",
+  "set5": "Promotional",
+  "setnum5": "P19/Y2, P19b/Y2"
+ },
+ "wiki": "{{Cardtable\n| image = Missile Soldier Ultimo.jpg\n| civilization = Fire\n| type = Creature\n| jpname = {{Ruby|肉|にく}}{{Ruby|弾|だん}}{{Ruby|兵|へい}}ウルティモ\n| phonetic = Nikudan Hei Ultimo\n| cost = 3\n| race = Dragonoid\n| power = 2000+\n| engtext = {{Turbo Rush|This [[creature]] can [[attack]] [[untap]]ped [[creature]]s and has \"[[Power attacker]] +4000 ''(While [[attack]]ing, this [[creature]] gets +4000 [[power]])''.\"}}\n| jptext = ■ ターボラッシュ （自分の他のクリーチャーがシールドをブレイクしたあと、そのターンが終わるまで、このクリーチャーは次の{{Icon|TR}}能力を得る）\n:{{Icon|TR}} このクリーチャーはタップされていないクリーチャーを攻撃でき、「パワーアタッカー+4000」を得る。\n| flavor = \n| mana = 1\n| artist = Syuichi Obata\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 40/55\n| R1 = Common\n| set2 = DM-08 Invincible Legend\n| setnum2 = 50/55\n| R2 = Common\n| set3 = DMC-09 Shobu's Dragon Legend Deck\n| setnum3 = 40/44\n| R3 = Common\n| set4 = DMC-27 CoroCoro Dream Pack\n| setnum4 = 49/55\n| R4 = Common\n| set5 = Promotional\n| setnum5 = P19/Y2, P19b/Y2\n| R5 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Power Attacker +4000]]\n[[Category:2000 Power Creatures]]\n[[Category:Can Attack Untapped Creatures]]"
+}

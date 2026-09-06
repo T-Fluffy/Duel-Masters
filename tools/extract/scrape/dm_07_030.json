@@ -1,0 +1,23 @@
+{
+ "card_id": "dm_07_030",
+ "page": "Phantasmal Horror Gigazabal",
+ "type": "Evolution Creature",
+ "civilization": "Darkness",
+ "race": "Chimera",
+ "cost": "5",
+ "power": "9000",
+ "engtext": "■ [[Evolution]]—Put on one of your [[Chimera]]s.\n\n{{Stealth|Light}}\n\n{{Double Breaker}}",
+ "templates": [
+  "Double Breaker",
+  "Stealth|Light"
+ ],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "30/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "12/55",
+  "set3": "Promotional",
+  "setnum3": "L5 Y2, P18/Y2"
+ },
+ "wiki": "{{Cardtable\n| image = Phantasmal Horror Gigazabal.jpg\n| civilization = Darkness\n| type = Evolution Creature\n| jpname = {{Ruby|超|ちょう}}{{Ruby|幻|げん}}{{Ruby|獣|じゅう}}ドグザバル ''(Dogzabal, Ultra Magical Beast)''\n| phonetic = Chou Genju Doguzabaru\n| race = Chimera\n| cost = 5\n| power = 9000\n| engtext = ■ [[Evolution]]—Put on one of your [[Chimera]]s.\n\n{{Stealth|Light}}\n\n{{Double Breaker}}\n| jptext = ■ 進化－自分のキマイラ1体の上に置く。\n\n■ 光ステルス（相手のマナゾーンに光のカードが1枚でもあれば、このクリーチャーはブロックされない）\n\n{{Double Breaker|jp}}\n| flavor = One moment, a gleaming city. The next moment, ash. ([[DM-07]])\n| flavor2 = 暴虐の炎に、白き都は灰燼と化した。By the flames of tyranny, the white city was reduced to ashes. ([[DM-07]])\n| mana = 1\n| artist = Taro Yamazaki\n| artist2 = Sansyu\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 30/55\n| R1 = Rare\n| set2 = DM-07 Invincible Charge\n| setnum2 = 12/55\n| R2 = Rare\n| set3 = Promotional\n| setnum3 = L5 Y2, P18/Y2\n| R3 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]"
+}

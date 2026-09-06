@@ -1,0 +1,28 @@
+{
+ "card_id": "dm_02_024",
+ "page": "Chaos Worm",
+ "type": "Evolution Creature",
+ "civilization": "Darkness",
+ "race": "Parasite Worm",
+ "cost": "5",
+ "power": "5000",
+ "engtext": "■ [[Evolution]]—Put on one of your [[Parasite Worm]]s.\n\n■ [[When you put]] this [[creature]] into the [[battle zone]], you may [[destroy]] one of your [[opponent]]'s [[creature]]s.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "24/55",
+  "set2": "DM-02 Master of Evolution",
+  "setnum2": "27/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "67/140",
+  "set4": "DMC-42 CoroCoro Dream Pack 3: Eternal Gear",
+  "setnum4": "44/90",
+  "set5": "DMC-55 CoroCoro Legend 7",
+  "setnum5": "52/84",
+  "set6": "DMC-61 CoroCoro Dream Pack 4: Eternal Heaven",
+  "setnum6": "44/94",
+  "set7": "Promotional",
+  "setnum7": "L10/12 Y1"
+ },
+ "wiki": "{{Cardtable\n| image=Chaos Worm.jpg\n| civilization = Darkness\n| type = Evolution Creature\n| jpname = {{Ruby|魔|ま}}{{Ruby|獣|じゅう}}{{Ruby|虫|ちゅう}}カオス・ワーム ''(Chaos Worm, Monstrous Bug)''\n| phonetic = Ma Jū Chū Kaosu Wāmu\n| cost = 5\n| race = Parasite Worm\n| power = 5000\n| engtext = ■ [[Evolution]]—Put on one of your [[Parasite Worm]]s.\n\n■ [[When you put]] this [[creature]] into the [[battle zone]], you may [[destroy]] one of your [[opponent]]'s [[creature]]s.\n| jptext = ■ 進化－自分のパラサイトワーム1体の上に置く。\n\n■ このクリーチャーをバトルゾーンに出した時、相手のクリーチャーを1体破壊してもよい。\n| flavor = 混沌の魔獣虫は、あらゆるものを食らいつくす! The chaotic demon beast insect devours everything in its path! ([[DMC-55]], [[DMC-61]])\n| mana = 1\n| artist = Naoki Saito\n| artist2 = Nottsuo\n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = 24/55\n| R1 = Uncommon\n| set2 = DM-02 Master of Evolution\n| setnum2 = 27/55\n| R2 = Uncommon\n| set3 = DM-18 Best Challenger\n| setnum3 = 67/140\n| R3 = Uncommon\n| set4 = DMC-42 CoroCoro Dream Pack 3: Eternal Gear\n| setnum4 = 44/90\n| R4 = Uncommon\n| set5 = DMC-55 CoroCoro Legend 7\n| setnum5 = 52/84\n| R5 = Uncommon\n| set6 = DMC-61 CoroCoro Dream Pack 4: Eternal Heaven\n| setnum6 = 44/94\n| R6 = Uncommon\n| set7 = Promotional\n| setnum7 = L10/12 Y1\n| R7 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Fixed Removal]]\n[[Category:Come Into Play Trigger]]"
+}

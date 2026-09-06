@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_06_030",
+ "page": "Yuluk, the Oracle",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Light Bringer",
+ "cost": "1",
+ "power": "2500",
+ "engtext": "■ You can [[summon]] this [[creature]] only if you have [[cast]] a [[spell]] this [[turn]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "30/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "76/110",
+  "set3": "DMC-10 Hakuoh's Holy Spirit Deck ",
+  "setnum3": "30/44"
+ },
+ "wiki": "{{Cardtable\n| image = Yuluk, the Oracle.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|予|よ}}{{Ruby|言|げん}}{{Ruby|者|しゃ}}ユーク\n| phonetic = Yogensha Yūku\n| race = Light Bringer\n| cost = 1\n| power = 2500\n| engtext = ■ You can [[summon]] this [[creature]] only if you have [[cast]] a [[spell]] this [[turn]].\n| jptext = 呪文を唱えたターンのみ、このクリーチャーを召喚することができる。\n| flavor = \"As an [[Light Bringer|Oracle]], I have the power to see the future. But my lottery numbers still never get picked!\" ([[DM-06]])\n| flavor2 = 予言者の言葉は、時紡ぐ神々の置き手紙。The words of the oracles are messages left behind by the gods who weave time. ([[DM-06]], [[DMC-10]])\n| mana = 1\n| artist = Sansyu\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 30/110\n| R1 = Common\n| set2 = DM-06 Invincible Soul\n| setnum2 = 76/110\n| R2 = Common\n| set3 = DMC-10 Hakuoh's Holy Spirit Deck \n| setnum3 = 30/44\n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Light Bringer]]\n[[Category:2500 Power Creatures]]"
+}

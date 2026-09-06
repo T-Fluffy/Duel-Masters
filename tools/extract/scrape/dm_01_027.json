@@ -1,0 +1,26 @@
+{
+ "card_id": "dm_01_027",
+ "page": "Brain Serum",
+ "type": "Spell",
+ "civilization": "Water",
+ "race": "",
+ "cost": "4",
+ "power": "",
+ "engtext": "{{Shield Trigger|spell}} \n\n■ [[Draw]] up to 2 [[card]]s.",
+ "templates": [
+  "Shield Trigger|spell"
+ ],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "27/110",
+  "set2": "DM-18 Best Challenger",
+  "setnum2": "65/140",
+  "set3": "DMC-24 Illusion Blue Half Deck",
+  "setnum3": "14/43",
+  "set4": "DMC-31 Great Mecha-O Eraser",
+  "setnum4": "10/21",
+  "set5": "Promotional",
+  "setnum5": "A2/Y1, P10/Y3"
+ },
+ "wiki": "{{Cardtable\n| image = Brain Serum.jpg\n| civilization = Water\n| type = Spell\n| jpname = ネオ・ブレイン\n| phonetic = Neo Burein ''(Neo Brain)''\n| cost = 4\n| engtext = {{Shield Trigger|spell}} \n\n■ [[Draw]] up to 2 [[card]]s.\n| jptext = {{Icon|ST}} S・トリガー（この呪文をシールドゾーンから手札に加える時、コストを支払わずにすぐ唱えてもよい）\n\n■ カードを2枚まで引く。\n| flavor = 知は最も偉大な力なり! Knowledge is the greatest of strengths! ([[DM-18]], [[DMC-24]], [[DMC-31]])\n| flavor2 = 未来を掴みとれ! Take the future into your own hands! (P10/Y3)\n| mana = 1\n| artist = Dreamwave\n| artist2 = hippo\n| set1 = DM-01 Base Set\n| setnum1 = 27/110\n| R1 = Uncommon\n| set2 = DM-18 Best Challenger\n| setnum2 = 65/140\n| R2 = Uncommon\n| set3 = DMC-24 Illusion Blue Half Deck\n| setnum3 = 14/43\n| R3 = Uncommon\n| set4 = DMC-31 Great Mecha-O Eraser\n| setnum4 = 10/21\n| R4 = Uncommon\n| set5 = Promotional\n| setnum5 = A2/Y1, P10/Y3\n| R5 = Uncommon\n}}\n{{Brain}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Card Draw]]\n[[Category:Brain]]"
+}

@@ -1,0 +1,28 @@
+{
+ "card_id": "dm_01_098",
+ "page": "Mighty Shouter",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Beast Folk",
+ "cost": "3",
+ "power": "2000",
+ "engtext": "■ When this [[creature]] would be [[destroy]]ed, put it into your [[mana zone]] [[instead]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "98/110",
+  "set2": "Shadowclash Collector Tin",
+  "setnum2": "43/46",
+  "set3": "DM-01 Base Set (OCG)",
+  "setnum3": "105/110",
+  "set4": "DM-18 Best Challenger",
+  "setnum4": "135/140",
+  "set5": "DMC-22 Hell Boost Half Deck",
+  "setnum5": "38/43",
+  "set6": "Promotional",
+  "setnum6": "M15/Y1",
+  "set7": "Promotional",
+  "setnum7": "P6 Y0"
+ },
+ "wiki": "{{Cardtable\n| image = Mighty Shouter.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|無敵の咆哮|マイティ・シャウター}} ''(Roar of Invincible)''\n| phonetic = Maiti Shautā\n| cost = 3\n| race = Beast Folk\n| power = 2000\n| engtext = ■ When this [[creature]] would be [[destroy]]ed, put it into your [[mana zone]] [[instead]].\n| jptext = ■ このクリーチャーが破壊される時、墓地に置くかわりに自分のマナゾーンに置く。\n| flavor = \"I am ''not'' pink!\" ([[DM-01]])\n| flavor2 = \"See? I told you I'm not pink!\" (M15/Y1)\n| flavor3 = His tusks are shattered. His rage is intact. (P6/Y0)\n| mana = 1\n| artist = Dustmoss \n| set1 = DM-01 Base Set\n| setnum1 = 98/110\n| R1 = Common\n| set2 = Shadowclash Collector Tin\n| setnum2 = 43/46\n| R2 = Common\n| set3 = DM-01 Base Set (OCG)\n| setnum3 = 105/110\n| R3 = Common\n| set4 = DM-18 Best Challenger\n| setnum4 = 135/140\n| R4 = Common\n| set5 = DMC-22 Hell Boost Half Deck\n| setnum5 = 38/43\n| R5 = Common\n| set6 = Promotional\n| setnum6 = M15/Y1\n| R6 = No Rarity\n| set7 = Promotional\n| setnum7 = P6 Y0\n| R7 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Destruction Substitution]]\n[[Category:Mana Acceleration]]"
+}

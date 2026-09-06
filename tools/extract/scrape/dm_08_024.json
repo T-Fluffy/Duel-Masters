@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_08_024",
+ "page": "Vikorakys",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Sea Hacker",
+ "cost": "3",
+ "power": "1000",
+ "engtext": "{{Turbo Rush|When this [[creature]] [[attack]]s, [[search]] your [[deck]]. You may take a [[card]] from your [[deck]] and put it into your [[hand]]. Then [[shuffle]] your [[deck]].}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "24/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "10/55",
+  "set3": "Promotional",
+  "setnum3": "L11/Y2"
+ },
+ "wiki": "{{Cardtable\n| image = Vikorakys.jpg\n| civilization = Water\n| type = Creature\n| jpname = ビコラキス\n| phonetic = Bikorakisu\n| race = Sea Hacker\n| cost = 3\n| power = 1000\n| engtext = {{Turbo Rush|When this [[creature]] [[attack]]s, [[search]] your [[deck]]. You may take a [[card]] from your [[deck]] and put it into your [[hand]]. Then [[shuffle]] your [[deck]].}}\n| jptext = ■ ターボラッシュ （自分の他のクリーチャーがシールドをブレイクしたあと、そのターンが終わるまで、このクリーチャーは次の{{Icon|TR}}能力を得る）\n:{{Icon|TR}}このクリーチャーが攻撃するとき、自分の山札を見る。その中から1枚選び、自分の手札に加えてもよい。その後、山札をシャッフルする。\n| flavor = \n| mana = 1\n| artist = Ittoku\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 24/55\n| R1 = Rare\n| set2 = DM-08 Invincible Legend\n| setnum2 = 10/55\n| R2 = Rare\n| set3 = Promotional\n| setnum3 = L11/Y2\n| R3 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Deck Search]]\n[[Category:Attack Trigger]]"
+}

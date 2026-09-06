@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_07_s05",
+ "page": "Headlong Giant",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Giant",
+ "cost": "9",
+ "power": "14000",
+ "engtext": "■ This [[creature]] can't [[attack]] if you have no [[card]]s in your [[hand]].\n\n■ Whenever this [[creature]] [[attack]]s, [[discard]] a [[card]] from your [[hand]].\n\n■ This [[creature]] can't be [[block]]ed by any [[creature]] that has [[power]] 4000 or less.\n\n{{Triple Breaker}}",
+ "templates": [
+  "Triple Breaker"
+ ],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "S5/S5",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "S5/S5",
+  "set3": "DMC-66 Duel Masters: Super Best",
+  "setnum3": "16/36"
+ },
+ "wiki": "{{Cardtable\n| image = Headlong Giant.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|金剛の超人|ブレーブ・ジャイアント}}\n| phonetic = Burēbu Jaianto\n| kana = ブレーブ・ジャイアント ''(Brave Giant)'' \n| race = Giant\n| cost = 9\n| power = 14000\n| engtext = ■ This [[creature]] can't [[attack]] if you have no [[card]]s in your [[hand]].\n\n■ Whenever this [[creature]] [[attack]]s, [[discard]] a [[card]] from your [[hand]].\n\n■ This [[creature]] can't be [[block]]ed by any [[creature]] that has [[power]] 4000 or less.\n\n{{Triple Breaker}}\n| jptext = ■ 自分の手札を1枚自分の墓地に置かなければ、このクリーチャーは攻撃することができない。　\n\n■ このクリーチャーは、パワー4000以下のクリーチャーにブロックされない。\n\n{{Triple Breaker|jps}}\n| flavor = \n| mana = 1\n| artist = Masaki Hirooka\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = S5/S5\n| R1 = Super Rare\n| set2 = DM-07 Invincible Charge\n| setnum2 = S5/S5\n| R2 = Super Rare\n| set3 = DMC-66 Duel Masters: Super Best\n| setnum3 = 16/36\n| R3 = Super Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Unblockable]]\n[[Category:Self Discard]]\n[[Category:Attack Trigger]]"
+}

@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_03_024",
+ "page": "Bone Piercer",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Brain Jacker",
+ "cost": "2",
+ "power": "1000",
+ "engtext": "■ When this [[creature]] is put into your [[graveyard]] from the [[battle zone]], you may return a [[creature]] from your [[mana zone]] to your [[hand]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-03 Rampage of the Super Warriors",
+  "setnum1": "24/55",
+  "set2": "DM-03 Master of Destruction",
+  "setnum2": "46/55",
+  "set3": "DMC-02 Kokujo's Darkness Deck",
+  "setnum3": "28/43",
+  "set4": "DMEX-08 Mysterious Black Box Pack",
+  "setnum4": "30/???"
+ },
+ "wiki": "{{Cardtable\n| image= Bone Piercer.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = ボーン・ピアース\n| phonetic = Bōn Piāsu\n| cost = 2\n| race = Brain Jacker\n| engtext = ■ When this [[creature]] is put into your [[graveyard]] from the [[battle zone]], you may return a [[creature]] from your [[mana zone]] to your [[hand]].\n| jptext = ■ このクリーチャーが破壊された時、クリーチャーを1体、自分のマナゾーンから手札に戻してもよい。\n| power = 1000\n| flavor = \"What do you mean that's not food? Just give me some ketchup!\" ([[DM-03]])\n| flavor2 = 生き物という生き物は彼らのえさなのだ。Creature after creature, they are their food. ([[DM-03]], [[DMC-02]])\n| flavor3 = デュエマすごろく「デュエル・マスターズ」の遊び方をすごろくマスターのボーン・ピアース様が解説しちゃうぞ! まず、すごろくのスタート地点になるのはカード名にスタートと付いているカードだ。そして、すごろくのマスがテキストのバックに描かれているカードを集めてデッキにしてシャッフルすれば準備完了! <br> 山札のトップをめくって出たマナコスト分だけコマを進められるぞ。進むマスが無くなったら、<br> 山札から新しいカードをめくってマスを追加しよう。【E】のマスに止まったら、そのカードのフレーバーテキストに書いてある効果が発動するのだ。カード名にゴールとあるカードにたどり着けば勝利だぞ! \"Bone Piercer, the master of Sugoroku, will explain how to play 'Duema Sugoroku Duel Masters! First of all, the starting point of Sugoroku is [[Startdash Buster, Divine Hero Mech|the card with \"Start\" in the name of the card]]. Then, gather the cards with spaces drawn on the back of the text, shuffle them into a deck, and you're ready to go! You can advance your piece by flipping the top card of the deck and moving spaces equal to the mana cost. When there are no more spaces to advance, flip over a new card from the deck and add more spaces. If you stop at the [E] space, the effect written in the flavor text of that card will be activated. If you reach [[Goldenden Trap|a card with \"goal\" in the name of the card]], you will win!\" ―'''Bone Piercer''' ([[DMEX-08]])\n| mana = 1\n| artist = Taro Yamazaki\n| set1 = DM-03 Rampage of the Super Warriors\n| setnum1 = 24/55\n| R1 = Common\n| set2 = DM-03 Master of Destruction\n| setnum2 = 46/55\n| R2 = Common\n| set3 = DMC-02 Kokujo's Darkness Deck\n| setnum3 = 28/43\n| R3 = Common\n| set4 = DMEX-08 Mysterious Black Box Pack\n| setnum4 = 30/???\n| R4 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Brain Jacker]]\n[[Category:1000 Power Creatures]]\n[[Category:Put Into Graveyard]]\n[[Category:Mana Recovery]]"
+}

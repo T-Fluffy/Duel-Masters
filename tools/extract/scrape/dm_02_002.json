@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_02_002",
+ "page": "Ethel, Star Sea Elemental",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Angel Command",
+ "cost": "6",
+ "power": "5500",
+ "engtext": "■ This [[creature]] can't be [[block]]ed.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "2/55",
+  "set2": "DM-02 Master of Evolution",
+  "setnum2": "1/55",
+  "set3": "DMC-34 CoroCoro Dream Pack 2: Eternal Legacy",
+  "setnum3": "1/55",
+  "set4": "Shadowclash Collector Tin",
+  "setnum4": "1/46"
+ },
+ "wiki": "{{Cardtable\n| image= Ethel, Star Sea Elemental.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|星|せい}}{{Ruby|海|かい}}の{{Ruby|精|せい}}{{Ruby|霊|れい}}エーテル ''(Ethel, Spirit of the Star Sea)''\n| phonetic = Seikai no Seirei Eteru\n| cost = 6\n| race = Angel Command\n| power = 5500\n| engtext = ■ This [[creature]] can't be [[block]]ed.\n| jptext = ■ このクリーチャーはブロックされない。\n| flavor = 精霊の力は、はるかな星空にまで及ぶという。The glow of the [[Angel Command|elemental]]s reaches out even to the stars. ([[DM-02]], [[DMC-34]])\n| mana = 1\n| artist = Seki\n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = 2/55\n| R1 = Very Rare\n| set2 = DM-02 Master of Evolution\n| setnum2 = 1/55\n| R2 = Very Rare\n| set3 = DMC-34 CoroCoro Dream Pack 2: Eternal Legacy\n| setnum3 = 1/55\n| R3 = Very Rare\n| set4 = Shadowclash Collector Tin\n| setnum4 = 1/46\n| R4 = Very Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Unblockable]]"
+}

@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_09_020",
+ "page": "Kelp Candle",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Cyber Virus",
+ "cost": "2",
+ "power": "1000",
+ "engtext": "{{Blocker}}\n\n■ This [[creature]] can't [[attack]].\n\n■ Whenever this [[creature]] [[block]]s, [[look]] at the top 4 [[card]]s of your [[deck]]. Put one of them into your [[hand]], and put the rest on the bottom of your [[deck]] in any order.",
+ "templates": [
+  "Blocker"
+ ],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "20/55",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "42/55"
+ },
+ "wiki": "{{Cardtable\n| image = Kelp Candle.jpg\n| civilization = Water\n| type = Creature\n| jpname = フェアリー・キャンドル\n| phonetic = Fearī Kyandoru\n| cost = 2\n| race = Cyber Virus\n| power = 1000\n| engtext = {{Blocker}}\n\n■ This [[creature]] can't [[attack]].\n\n■ Whenever this [[creature]] [[block]]s, [[look]] at the top 4 [[card]]s of your [[deck]]. Put one of them into your [[hand]], and put the rest on the bottom of your [[deck]] in any order.\n| jptext = {{Blocker|jp}}\n\n■ このクリーチャーは攻撃することができない。\n\n■ このクリーチャーがブロックしたとき、自分の山札の上から4枚を見る。その中から1枚選んで自分の手札に加え、他の3枚を好きな順で自分の山札の一番下に戻す。\n| flavor = 姿形は小さいけれど、儲けはがっぽり狙うもの。Small in size and shape, but aiming for a hefty profit. ([[DM-09]])\n| mana = 1\n| artist = Iron Pot\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = 20/55\n| R1 = Common\n| set2 = DM-09 Invincible Blood\n| setnum2 = 42/55\n| R2 = Common\n}}\n[[Category:Cyber Virus]]\n[[Category:Water]]\n[[Category:1000 Power Creatures]]\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Hand Addition]]"
+}

@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_01_061",
+ "page": "Stinger Worm",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Parasite Worm",
+ "cost": "3",
+ "power": "5000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], [[destroy]] one of your [[creature]]s.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "61/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "57/110",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "71/140"
+ },
+ "wiki": "{{Cardtable\n| image = Stinger Worm.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|凶|きょう}}{{Ruby|食|しょく}}{{Ruby|虫|ちゅう}}スティンガーワーム \n| phonetic = Kiyoushokuchuu Sutingāwāmu ''(Stinger Worm, Gluttony Bug)''\n| cost = 3\n| race = Parasite Worm\n| power = 5000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], [[destroy]] one of your [[creature]]s.\n| jptext = ■ このクリーチャーをバトルゾーンに出した時、自分のクリーチャーを1体破壊する。\n| flavor = ワームは死体をあやつって、次の死体を作り出す。When [[Parasite Worm|worms]] kill a creature, they can still make it move. ([[DM-01]], [[DM-18]])\n| mana = 1\n| artist = Norikatsu Miyoshi\n| set1 = DM-01 Base Set\n| setnum1 = 61/110\n| R1 = Uncommon\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 57/110\n| R2 = Uncommon\n| set3 = DM-18 Best Challenger\n| setnum3 = 71/140\n| R3 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Self Removal]]\n[[Category:Come Into Play Trigger]]"
+}

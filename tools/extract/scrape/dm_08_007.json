@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_08_007",
+ "page": "Laser Whip",
+ "type": "Spell",
+ "civilization": "Light",
+ "race": "",
+ "cost": "4",
+ "power": "",
+ "engtext": "■ [[Choose]] one of your [[opponent]]'s [[creature]]s in the [[battle zone]] and [[tap]] it. Then you may [[choose]] one of your [[creature]]s in the [[battle zone]]. If you do, it can't be [[block]]ed this [[turn]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "7/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "22/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "58/140"
+ },
+ "wiki": "{{Cardtable\n| image = Laser Whip.jpg\n| civilization = Light\n| type = Spell\n| jpname = レーザー・ウィップ \n| phonetic = Rēzā U~ippu\n| cost = 4\n| engtext = ■ [[Choose]] one of your [[opponent]]'s [[creature]]s in the [[battle zone]] and [[tap]] it. Then you may [[choose]] one of your [[creature]]s in the [[battle zone]]. If you do, it can't be [[block]]ed this [[turn]].\n| jptext = ■ バトルゾーンにある相手のクリーチャーを1体選び、タップする。その後、バトルゾーンにある自分のクリーチャーを1体選んでもよい。このターンそのクリーチャーはブロックされない。\n| flavor = \"No, no, no! It's not a laser! It's a high-intensity, focused, optical beam! Of course, it needs a laser to work.\" -[[Ouks, Vizier of Restoration]] ([[DM-08]])\n| flavor2 = 光は全てを律する。Light governs everything. ([[DM-08]], [[DM-18]])\n| mana = 1\n| artist = Takesi Kuno\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 7/55\n| R1 = Uncommon\n| set2 = DM-08 Invincible Legend\n| setnum2 = 22/55\n| R2 = Uncommon\n| set3 = DM-18 Best Challenger\n| setnum3 = 58/140\n| R3 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Creature Tapper]]\n[[Category:Gives \"Unblockable\"]]"
+}

@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_01_024",
+ "page": "Aqua Knight",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Liquid People",
+ "cost": "5",
+ "power": "4000",
+ "engtext": "■ When this [[creature]] would be [[destroy]]ed, return it to your [[hand]] [[instead]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "24/110 ",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "17/110 ",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "27/140",
+  "set4": "Promotional",
+  "setnum4": "B4/7 Y1"
+ },
+ "wiki": "{{Cardtable\n| image = Aqua Knight.jpg\n| civilization = Water\n| type = Creature\n| jpname = アクア・ナイト\n| phonetic = Akua Naito\n| race = Liquid People\n| cost = 5\n| power = 4000\n| engtext = ■ When this [[creature]] would be [[destroy]]ed, return it to your [[hand]] [[instead]].\n| jptext = ■ このクリーチャーが破壊される時、墓地に置くかわりに自分の手札に戻す。\n| flavor = Like a whirlpool, it never seems to end. ([[DM-01]])\n| mana = 1\n| artist = D-Suzuki\n| artist2 = Shin \"JASON\" Nagasawa\n| set1 = DM-01 Base Set\n| setnum1 = 24/110 \n| R1 = Rare\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 17/110 \n| R2 = Rare\n| set3 = DM-18 Best Challenger\n| setnum3 = 27/140\n| R3 = Rare\n| set4 = Promotional\n| setnum4 = B4/7 Y1\n| R4 = Rare \n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Destruction Substitution]]\n[[Category:Self Bounce]]"
+}

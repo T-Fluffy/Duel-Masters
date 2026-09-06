@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_04_055",
+ "page": "Torcon",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Beast Folk",
+ "cost": "2",
+ "power": "1000",
+ "engtext": "{{Shield Trigger|creature}}",
+ "templates": [
+  "Shield Trigger|creature"
+ ],
+ "sets": {
+  "set1": "DM-04 Shadowclash of Blinding Night",
+  "setnum1": "55/55",
+  "set2": "DM-04 Challenge of Black Shadow ",
+  "setnum2": "55/55",
+  "set3": "Promotional",
+  "setnum3": "L12/12 Y1, P83/Y9, P91/Y9"
+ },
+ "wiki": "{{Cardtable\n| image = Torcon.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|孤高の願|ハイエスト・ブレス}} ''(Lone Ambition)''\n| kana = ハイエスト・ブレス ''(Highest Breath)''\n| phonetic = Haiesto Buresu\n| cost = 2\n| race = Beast Folk\n| power = 1000\n| engtext = {{Shield Trigger|creature}}\n| jptext = {{Icon|ST}} S・トリガー （このクリーチャーをシールドゾーンから手札に加える時、コストを支払わずにすぐ召喚してもよい） \n| flavor = \"This ritual seeds the sky with lightning, rips infected trees up by the roots, and turns me a rockin' shade of blue.\" ([[DM-04]])\n| flavor2 = 孤高の願が究極最終必殺奥義を使った!<br>...[[Bone Piercer|ボーン・ピアース]]は道に迷ってちょっとだけ困った。<br> Torcon used his greatest secret technique!<br>[[Bone Piercer]] seriously wondered why he lost his path.<br>([[DM-04]])\n| flavor3 = フィオナの森の平和を願い、祈りを捧げ続ける。Wishing for peace in [[Fiona Woods]] and continuing to offer prayers.  (P83/Y9)\n| flavor4 = 孤高の願の数珠は、死んだ仲間の希望をつなげたもの。The Highest Breath rosary is a connection of the hopes of dead comrades. (P91/Y9)\n| mana = 1 \n| artist = Akira Hamada \n| artist2 = KEITA HATTORI \n| artist3 = KAIRI SHOYAMA \n| set1 = DM-04 Shadowclash of Blinding Night\n| setnum1 = 55/55\n| R1 = Common\n| set2 = DM-04 Challenge of Black Shadow \n| setnum2 = 55/55\n| R2 = Common\n| set3 = Promotional\n| setnum3 = L12/12 Y1, P83/Y9, P91/Y9\n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Nature]]\n[[Category:Beast Folk]]\n[[Category:Shield Trigger]]\n[[Category:1000 Power Creatures]]"
+}

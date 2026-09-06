@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_06_034",
+ "page": "Hazard Crawler",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Earth Eater",
+ "cost": "5",
+ "power": "6000",
+ "engtext": "{{Blocker}}\n\n■ This [[creature]] can't [[attack]].",
+ "templates": [
+  "Blocker"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "34/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "48/110",
+  "set3": "DMC-08 Endless Black Hole Deck",
+  "setnum3": "22/82"
+ },
+ "wiki": "{{Cardtable\n| image = Hazard Crawler.jpg\n| civilization = Water\n| type = Creature\n| jpname = ハザード・クロウラー\n| phonetic = Hazādo Kurourā\n| race = Earth Eater\n| cost = 5\n| power = 6000\n| engtext = {{Blocker}}\n\n■ This [[creature]] can't [[attack]].\n| jptext = {{Blocker|jp}}\n\n■ このクリーチャーは攻撃することができない。\n| flavor = 全ては海から始まり、海が全てを終わらせる。All life came from the sea. Now the sea's coming to take it back. ([[DM-06]])\n| mana = 1\n| artist = Tsuu\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 34/110\n| R1 = Uncommon\n| set2 = DM-06 Invincible Soul\n| setnum2 = 48/110\n| R2 = Uncommon\n| set3 = DMC-08 Endless Black Hole Deck\n| setnum3 = 22/82\n| R3 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Earth Eater]]\n[[Category:6000 Power Creatures]]"
+}

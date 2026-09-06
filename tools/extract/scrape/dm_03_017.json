@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_03_017",
+ "page": "King Ponitas",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Leviathan",
+ "cost": "8",
+ "power": "4000",
+ "engtext": "■ Whenever this [[creature]] [[attack]]s, [[search]] your [[deck]]. You may take a [[water]] [[card]] from your [[deck]], show that [[card]] to your [[opponent]], and put it into your [[hand]]. Then [[shuffle]] your [[deck]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-03 Rampage of the Super Warriors",
+  "setnum1": "17/55",
+  "set2": "DM-03 Master of Destruction",
+  "setnum2": "24/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "59/140",
+  "set4": "DMC-27 CoroCoro Dream Pack",
+  "setnum4": "24/55"
+ },
+ "wiki": "{{Cardtable\n| image= King Ponitas.jpg\n| civilization = Water\n| type = Creature\n| jpname = キング・ボニータス\n| phonetic = Kingu Bonītasu\n| race = Leviathan\n| cost = 8\n| power = 4000\n| engtext = ■ Whenever this [[creature]] [[attack]]s, [[search]] your [[deck]]. You may take a [[water]] [[card]] from your [[deck]], show that [[card]] to your [[opponent]], and put it into your [[hand]]. Then [[shuffle]] your [[deck]].\n| jptext = ■ このクリーチャーが攻撃する時、自分の山札を見る。その中から水のカードを1枚選び、相手に見せてから自分の手札に加えてもよい。その後、山札をシャッフルする。\n| flavor = \"I caught five fishermen today. But you should have seen the one that got away!\" ([[DM-03]])\n| flavor2 = 通り過ぎるのを持っていたら、すべてを失うことになる。\"If you hold on to passing things, you'll end up losing everything.\" ([[DM-03]])\n| mana = 1\n| artist = Yusaku Nakaaki\n| set1 = DM-03 Rampage of the Super Warriors\n| setnum1 = 17/55\n| R1 = Uncommon\n| set2 = DM-03 Master of Destruction\n| setnum2 = 24/55\n| R2 = Uncommon\n| set3 = DM-18 Best Challenger\n| setnum3 = 59/140\n| R3 = Uncommon\n| set4 = DMC-27 CoroCoro Dream Pack\n| setnum4 = 24/55\n| R4 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Leviathan]]\n[[Category:4000 Power Creatures]]\n[[Category:Deck Search]]\n[[Category:Attack Trigger]]"
+}

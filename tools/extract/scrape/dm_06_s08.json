@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_06_s08",
+ "page": "Lava Walker Executo",
+ "type": "Evolution Creature",
+ "civilization": "Fire",
+ "race": "Dragonoid",
+ "cost": "4",
+ "power": "5000",
+ "engtext": "■ [[Evolution]]—Put on one of your [[Dragonoid]]s.\n\n■ Each of your [[fire]] [[creature]]s may [[tap]] [[instead]] of [[attack]]ing to use this [[creature]]'s {{Tap}} [[ability]].\n:{{Tap}} One of your [[fire]] [[creature]]s in the [[battle zone]] gets +3000 [[power]] until the [[End Step|end of the turn]].",
+ "templates": [
+  "Tap"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "S8/S10",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "S7/S10"
+ },
+ "wiki": "{{Cardtable\n| image = Lava Walker Executo.jpg\n| civilization = Fire\n| type = Evolution Creature\n| jpname = {{Ruby|甲|かっ}}{{Ruby|冑|ちゅう}}{{Ruby|神|しん}}{{Ruby|龍|りゅう}}エグゼキューター\n| phonetic = Kacchūshinryū Eguzekūtā\n| race = Dragonoid\n| cost = 4\n| power = 5000\n| engtext = ■ [[Evolution]]—Put on one of your [[Dragonoid]]s.\n\n■ Each of your [[fire]] [[creature]]s may [[tap]] [[instead]] of [[attack]]ing to use this [[creature]]'s {{Tap}} [[ability]].\n:{{Tap}} One of your [[fire]] [[creature]]s in the [[battle zone]] gets +3000 [[power]] until the [[End Step|end of the turn]].\n| jptext = ■ 進化－自分のドラゴノイド1体の上に置く。\n\n■ このクリーチャーがバトルゾーンにある間、バトルゾーンにある自分の火のクリーチャーをタップし、攻撃する代わりに次の{{Tap}}能力を使ってもよい。\n:{{Tap}} バトルゾーンにある自分の火のクリーチャーを1体選ぶ。このターンが終わるまで、そのクリーチャーのパワーは+3000される。\n| flavor = \"Ooh! Ouch! Hot hot hot!\" ([[DM-06]])\n| mana = 1\n| artist = Tomofumi Ogasawara\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = S8/S10\n| R1 = Super Rare\n| set2 = DM-06 Invincible Soul\n| setnum2 = S7/S10\n| R2 = Super Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Tap Ability]]\n[[Category:Increase Power]]\n[[Category:Self Tapper]]"
+}

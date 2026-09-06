@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_06_054",
+ "page": "Frost Specter, Shadow of Age",
+ "type": "Evolution Creature",
+ "civilization": "Darkness",
+ "race": "Ghost",
+ "cost": "3",
+ "power": "5000",
+ "engtext": "■ [[Evolution]]—Put on one of your [[Ghost]]s.\n\n■ Each of your [[Ghost]]s in the [[battle zone]] has \"[[slayer]].\" ''(Whenever a [[creature]] that has \"[[slayer]]\" [[battle]]s, [[destroy]] the other [[creature]] after the [[battle]].)''",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "54/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "23/110",
+  "set3": "DMC-21 Zakira's Dragon Commander Power-Up Pack",
+  "setnum3": "5/102",
+  "set4": "DMC-27 CoroCoro Dream Pack  ",
+  "setnum4": "14/55"
+ },
+ "wiki": "{{Cardtable\n| image = Frost Specter, Shadow of Age.jpg\n| civilization = Darkness\n| type = Evolution Creature\n| jpname = {{Ruby|恐|きょう}}{{Ruby|慌|こう}}の{{Ruby|魔|ま}}{{Ruby|黒|こく}}デス・スペクター\n| phonetic = Kyōkō no Makkoku Desu Supekutā\n| race = Ghost\n| cost = 3\n| power = 5000\n| engtext = ■ [[Evolution]]—Put on one of your [[Ghost]]s.\n\n■ Each of your [[Ghost]]s in the [[battle zone]] has \"[[slayer]].\" ''(Whenever a [[creature]] that has \"[[slayer]]\" [[battle]]s, [[destroy]] the other [[creature]] after the [[battle]].)''\n| jptext = ■ 進化－自分のゴースト1体の上に置く。\n\n■ バトルゾーンにある自分のゴーストはすべて「スレイヤー」を得る。（「スレイヤー」を得たクリーチャーがバトルする時、バトルの後、相手クリーチャーを破壊する）\n| flavor = \"The young get older. The old get older. And everyone forgets my birthday.\" ([[DM-06]])\n| mana = 1\n| artist = Ittoku\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 54/110\n| R1 = Rare\n| set2 = DM-06 Invincible Soul\n| setnum2 = 23/110\n| R2 = Rare\n| set3 = DMC-21 Zakira's Dragon Commander Power-Up Pack\n| setnum3 = 5/102\n| R3 = Rare\n| set4 = DMC-27 CoroCoro Dream Pack  \n| setnum4 = 14/55\n| R4 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Gives \"Slayer\"]]\n[[Category:Slayer]]"
+}

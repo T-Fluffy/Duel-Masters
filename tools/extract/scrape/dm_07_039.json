@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_07_039",
+ "page": "Energy Charger",
+ "type": "Spell",
+ "civilization": "Fire",
+ "race": "",
+ "cost": "3",
+ "power": "",
+ "engtext": "■ One of your [[creature]]s gets +2000 [[power]] until the [[End Step|end of the turn]].\n\n{{Charger}}",
+ "templates": [
+  "Charger"
+ ],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "39/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "32/55"
+ },
+ "wiki": "{{Cardtable\n| image = Energy Charger.jpg\n| civilization = Fire\n| type = Spell\n| jpname = エナジー・チャージャー\n| phonetic = Enajī Chājā\n| cost = 3\n| engtext = ■ One of your [[creature]]s gets +2000 [[power]] until the [[End Step|end of the turn]].\n\n{{Charger}}\n| jptext = ■ バトルゾーンにある自分のクリーチャーを1体選ぶ。このターンが終わるまで、そのクリーチャーのパワーは+2000される。\n\n{{Charger|jp}}\n| flavor = \"Prepare the lava injection!\" ─[[Sky Crusher, the Agitator]] ([[DM-07]])\n| flavor2 = 勝負はこれからだ! \"The real battle starts now!\" ([[DM-07]])\n| mana = 1\n| artist = Shishizaru\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 39/55\n| R1 = Uncommon\n| set2 = DM-07 Invincible Charge\n| setnum2 = 32/55\n| R2 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Charger]]\n[[Category:Increase Power]]"
+}

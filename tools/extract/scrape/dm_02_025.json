@@ -1,0 +1,32 @@
+{
+ "card_id": "dm_02_025",
+ "page": "Critical Blade",
+ "type": "Spell",
+ "civilization": "Darkness",
+ "race": "",
+ "cost": "2",
+ "power": "",
+ "engtext": "{{Shield Trigger|spell}} \n\n■ [[Destroy]] one of your [[opponent]]'s [[creature]]s that has \"[[blocker]]\".",
+ "templates": [
+  "Shield Trigger|spell"
+ ],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "25/55",
+  "set2": "Shadowclash Collector Tin",
+  "setnum2": "20/46",
+  "set3": "DM-02 Master of Evolution",
+  "setnum3": "47/55",
+  "set4": "DM-18 Best Challenger",
+  "setnum4": "119/140",
+  "set5": "DMC-07 Eternal Insects Deck",
+  "setnum5": "63/82",
+  "set6": "DMC-21 Zakira's Dragon Commander Power-Up Pack",
+  "setnum6": "79/102",
+  "set7": "DMC-42 CoroCoro Dream Pack 3: Eternal Gear",
+  "setnum7": "75/90",
+  "set8": "DMX-03 Deck Builder DX: Alien Edition",
+  "setnum8": "39/42"
+ },
+ "wiki": "{{Cardtable\n| image = Critical Blade.jpg\n| civilization = Darkness\n| type = Spell\n| jpname = クリティカル・ブレード\n| phonetic = Kuritikaru Burēdo\n| cost = 2\n| engtext = {{Shield Trigger|spell}} \n\n■ [[Destroy]] one of your [[opponent]]'s [[creature]]s that has \"[[blocker]]\".\n| jptext = {{Icon|ST}} S・トリガー (この呪文をシールドゾーンから手札に加える時、コストを支払わずにすぐ唱えてもよい)\n\n■ バトルゾーンにある相手の「ブロッカー」を持つクリーチャーを1体選び、持ち主の墓地に置く. \n| flavor = \n| mana = 1\n| artist = Nottsuo\n| artist2 = gel\n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = 25/55\n| R1 = Common\n| set2 = Shadowclash Collector Tin\n| setnum2 = 20/46\n| R2 = Common\n| set3 = DM-02 Master of Evolution\n| setnum3 = 47/55\n| R3 = Common\n| set4 = DM-18 Best Challenger\n| setnum4 = 119/140\n| R4 = Common\n| set5 = DMC-07 Eternal Insects Deck\n| setnum5 = 63/82\n| R5 = Common\n| set6 = DMC-21 Zakira's Dragon Commander Power-Up Pack\n| setnum6 = 79/102\n| R6 = Common\n| set7 = DMC-42 CoroCoro Dream Pack 3: Eternal Gear\n| setnum7 = 75/90\n| R7 = Common\n| set8 = DMX-03 Deck Builder DX: Alien Edition\n| setnum8 = 39/42\n| R8 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Shield Trigger]]\n[[Category:Spell]]\n[[Category:Blocker Based Removal]]"
+}

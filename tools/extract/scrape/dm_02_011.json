@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_02_011",
+ "page": "Wyn, the Oracle",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Light Bringer",
+ "cost": "2",
+ "power": "1500",
+ "engtext": "■ Whenever this [[creature]] [[attack]]s, you may [[look]] at one of your [[opponent]]'s [[shield]]s. Then put it back where it was.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "11/55",
+  "set2": "DM-02 Master of Evolution",
+  "setnum2": "22/55"
+ },
+ "wiki": "{{Cardtable\n| image= Wyn, the Oracle.jpg\n| jpname = {{Ruby|予|よ}}{{Ruby|言|げん}}{{Ruby|者|しゃ}}ウィン ''(Wyn, the Prophet)''\n| phonetic = Yogensha Win\n| type = Creature\n| civilization = Light\n| cost = 2\n| race = Light Bringer\n| power = 1500\n| engtext = ■ Whenever this [[creature]] [[attack]]s, you may [[look]] at one of your [[opponent]]'s [[shield]]s. Then put it back where it was.\n| jptext = ■ このクリーチャーが攻撃するとき、相手のシールドを1枚選んで見てよい。そのあとそれを元に戻す。\n| flavor = 姿消えゆく予言者は、新しい時代を予見した。As the [[Light Bringer|oracle]]s disappeared one by one, they each proclaimed the dawn of a new era. ([[DM-02]])\n| mana = 1\n| artist = Kou1\n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = 11/55\n| R1 = Uncommon\n| set2 = DM-02 Master of Evolution\n| setnum2 = 22/55\n| R2 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light Bringer]]\n[[Category:Light]]\n[[Category:1500 Power Creatures]]\n[[Category:Shield Peek]]\n[[Category:Attack Trigger]]"
+}

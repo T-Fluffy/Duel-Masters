@@ -1,0 +1,28 @@
+{
+ "card_id": "dm_03_037",
+ "page": "Boltail Dragon",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Armored Dragon",
+ "cost": "7",
+ "power": "9000",
+ "engtext": "{{Double Breaker}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-03 Rampage of the Super Warriors",
+  "setnum1": "37/55",
+  "set2": "DM-03 Master of Destruction",
+  "setnum2": "15/55",
+  "set3": "DMC-01 Shobu's Blaze Deck",
+  "setnum3": "9/43",
+  "set4": "DMC-06 Dragon Strikes Deck",
+  "setnum4": "12/82",
+  "set5": "DMC-18 Shobu's Holy Dragon Deck ",
+  "setnum5": "13/102",
+  "set6": "Promotional",
+  "setnum6": "L11/12 Y1, P13/＊"
+ },
+ "wiki": "{{Cardtable\n| image= Boltail Dragon.jpg\n| civilization = Fire\n| type = Creature\n| jpname = ボルテール・ドラゴン\n| phonetic = Borutēru Doragon\n| race = Armored Dragon\n| cost = 7\n| power = 9000\n| engtext = {{Double Breaker}}\n| jptext = {{Double Breaker|jp}}\n| flavor = \"[[Leviathan]]s? I can ''juggle'' [[Leviathan]]s!\" ([[DM-03]])\n| flavor2 = たったの一撃でリヴァイアサンを轟沈させる。The Leviathan sinks with just one hit. ([[DM-03]], [[DMC-01]], [[DMC-06]], [[DMC-18]], P13/＊)\n| mana = 1\n| artist = Miho Midorikawa\n| set1 = DM-03 Rampage of the Super Warriors\n| setnum1 = 37/55\n| R1 = Rare\n| set2 = DM-03 Master of Destruction\n| setnum2 = 15/55\n| R2 = Rare\n| set3 = DMC-01 Shobu's Blaze Deck\n| setnum3 = 9/43\n| R3 = Rare\n| set4 = DMC-06 Dragon Strikes Deck\n| setnum4 = 12/82\n| R4 = Rare\n| set5 = DMC-18 Shobu's Holy Dragon Deck \n| setnum5 = 13/102\n| R5 = Rare\n| set6 = Promotional\n| setnum6 = L11/12 Y1, P13/＊\n| R6 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]"
+}

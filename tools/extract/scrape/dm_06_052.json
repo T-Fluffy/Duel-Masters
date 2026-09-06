@@ -1,0 +1,23 @@
+{
+ "card_id": "dm_06_052",
+ "page": "Cursed Pincher",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Brain Jacker",
+ "cost": "4",
+ "power": "2000",
+ "engtext": "{{Blocker}}\n\n{{Slayer}}\n\n■ This [[creature]] can't [[attack]].",
+ "templates": [
+  "Blocker",
+  "Slayer"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "52/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "90/110",
+  "set3": "DMC-21 Zakira's Dragon Commander Power-Up Pack",
+  "setnum3": "66/102"
+ },
+ "wiki": "{{Cardtable\n| image = Cursed Pincher.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = カース・ペンダント\n| phonetic = Kāsu Pendanto ''(Curse Pendant)''\n| race = Brain Jacker\n| cost = 4\n| power = 2000\n| engtext = {{Blocker}}\n\n{{Slayer}}\n\n■ This [[creature]] can't [[attack]].\n| jptext = {{Blocker|jp}}\n\n{{Slayer|jp}}\n\n■ このクリーチャーは攻撃することができない。\n| flavor = \n| mana = 1\n| artist = Akifumi Yamamoto\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 52/110\n| R1 = Common\n| set2 = DM-06 Invincible Soul\n| setnum2 = 90/110\n| R2 = Common\n| set3 = DMC-21 Zakira's Dragon Commander Power-Up Pack\n| setnum3 = 66/102\n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Brain Jacker]]\n[[Category:Slayer]]\n[[Category:2000 Power Creatures]]"
+}

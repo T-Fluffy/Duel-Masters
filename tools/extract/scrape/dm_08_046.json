@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_08_046",
+ "page": "Bakkra Horn, the Silent",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Horned Beast",
+ "cost": "4",
+ "power": "2000",
+ "engtext": "■ Whenever you put a [[Dragonoid]] or a [[creature]] that has [[Dragon]] in its [[race]] into the [[battle zone]], put the top [[card]] of your [[deck]] into your [[mana zone]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "46/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "54/55",
+  "set3": "DMC-15 Eternal Dragons Deck ",
+  "setnum3": "73/78",
+  "set4": "DMC-20 Shobu's Holy Dragon Power-Up Pack",
+  "setnum4": "98/102"
+ },
+ "wiki": "{{Cardtable\n| image = Bakkra Horn, the Silent.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|沈|ちん}}{{Ruby|黙|もく}}するバックラー・ホーン\n| phonetic = Chinmoku Suru Bakkurā Hōn\n| cost = 4\n| race = Horned Beast\n| power = 2000\n| engtext = ■ Whenever you put a [[Dragonoid]] or a [[creature]] that has [[Dragon]] in its [[race]] into the [[battle zone]], put the top [[card]] of your [[deck]] into your [[mana zone]].\n| jptext = ■ このクリーチャーがバトルゾーンにある間、自分のドラゴンまたはドラゴノイドがバトルゾーンに出たとき、自分の山札の上から1枚目を自分のマナゾーンに置く。\n| flavor = Breaking the ancient oath, it led the way to the waterfall where the [[Earth Dragon|Terradragon]]s lay dreaming. ([[DM-08]])\n| flavor2 = 掟を破り、神龍の眠る滝へと導いた。\"Breaking the rules, I led them to the waterfall where the Terradragon sleeps.\" ([[DM-08]])\n| mana = 1\n| artist = Sansyu\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 46/55\n| R1 = Common\n| set2 = DM-08 Invincible Legend\n| setnum2 = 54/55\n| R2 = Common\n| set3 = DMC-15 Eternal Dragons Deck \n| setnum3 = 73/78\n| R3 = Common\n| set4 = DMC-20 Shobu's Holy Dragon Power-Up Pack\n| setnum4 = 98/102\n| R4 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Nature]]\n[[Category:Horned Beast]]\n[[Category:2000 Power Creatures]]\n[[Category:Mana Acceleration]]"
+}

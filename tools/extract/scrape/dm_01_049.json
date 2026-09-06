@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_01_049",
+ "page": "Creeping Plague",
+ "type": "Spell",
+ "civilization": "Darkness",
+ "race": "",
+ "cost": "1",
+ "power": "",
+ "engtext": "■ Whenever any of your [[creature]]s becomes [[block]]ed this [[turn]], it gets \"[[slayer]]\" until the end of the [[turn]]. ''(When a [[creature]] that has \"[[slayer]]\" loses a [[battle]], [[destroy]] the other [[creature]].)''",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "49/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "28/110"
+ },
+ "wiki": "{{Cardtable\n| image = Creeping Plague.jpg\n| civilization = Darkness\n| type = Spell\n| jpname = ブラック・スレイヤー\n| phonetic = Burakku Sureiyā ''(Black Slayer)''\n| cost = 1\n| engtext = ■ Whenever any of your [[creature]]s becomes [[block]]ed this [[turn]], it gets \"[[slayer]]\" until the end of the [[turn]]. ''(When a [[creature]] that has \"[[slayer]]\" loses a [[battle]], [[destroy]] the other [[creature]].)''\n| jptext = ■ このターン、自分のクリーチャーをブロックした相手クリーチャーはすべて、バトルに勝っても持ち主の墓地に置かれる。\n| flavor = Witness the power of the Dark! ([[DM-01]])\n| flavor2 = これが闇の戦士たちの力だ! \"This is the power of the soldiers of [[Darkness]]!\" ([[DM-01]])\n| mana = 1\n| artist = Ryoya Yuki\n| set1 = DM-01 Base Set\n| setnum1 = 49/110\n| R1 = Rare\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 28/110\n| R2 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Gives \"Slayer\"]]"
+}

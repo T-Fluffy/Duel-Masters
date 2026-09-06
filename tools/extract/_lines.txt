@@ -1,0 +1,543 @@
+  84  TPL:{{Double Breaker}}
+  45  TPL:{{Shield Trigger|spell}}
+  42  TPL:{{Blocker}}
+  28  This creature can't attack players.
+  23  This creature can't attack.
+  19  TPL:{{Blocker|old}}
+  15  TPL:{{Charger}}
+  12  TPL:{{Power Attacker|3000}}
+  12  TPL:{{Shield Trigger|creature}}
+  11  TPL:{{Power Attacker|2000}}
+  10  TPL:{{Triple Breaker}}
+   9  This creature can't be blocked.
+   8  TPL:{{Speed Attacker}}
+   6  This creature can attack untapped creatures.
+   5  End Step|At the end of each of your turns, you may untap this creature.
+   5  TPL:{{Power Attacker|1000}}
+   4  TPL:{{Slayer|old}}
+   4  TPL:{{Power Attacker|4000}}
+   4  When this creature would be destroyed, put it into your mana zone instead.
+   4  Evolution—Put on one of your Guardians.
+   4  This creature can't attack creatures.
+   4  TPL:{{Blocker|s}}
+   4  TPL:{{Slayer}}
+   4  End Step|At the end of your turn, return this creature to your hand.
+   4  This creature can't be attacked.
+   3  When you put this creature into the battle zone, you may choose one of your opponent's creatures in the battle zone and tap it.
+   3  Choose one of your opponent's creatures in the battle zone and tap it.
+   3  When this creature would be destroyed, return it to your hand instead.
+   3  Choose a creature in the battle zone and return it to its owner's hand.
+   3  When this creature wins a battle, destroy it.
+   3  This creature attacks each turn Attack if Able|if able.
+   3  This creature can't be blocked by any creature that has power 4000 or less.
+   3  Whenever this creature blocks, untap it after it battles.
+   3  Whenever this creature attacks, you may look at one of your opponent's shields. Then put it back where it was.
+   3  When you put this creature into the battle zone, you may choose a creature in the battle zone and return it to its owner's hand.
+   3  Evolution—Put on one of your Liquid People.
+   3  Evolution—Put on one of your Humans.
+   3  Evolution—Put on one of your Beast Folk.
+   3  Evolution—Put on one of your Initiates.
+   3  Choose one of your shields and put it into your graveyard.
+   3  When you put this creature into the battle zone, return a card from your mana zone to your hand.
+   3  You can summon this creature only if you have cast a spell this turn.
+   3  Whenever your opponent summons a creature or casts a spell, this creature gets "blocker" until the End Step|end of the turn. ''(Whenever an opponent's creature attacks, you may tap a creature that has "blocker" to stop the attack. Then the 2 creatures battle.)''
+   3  End Step|At the end of each of your turns, if this is your only creature in the battle zone, destroy it.
+   3  When this creature battles, destroy it after the battle.
+   3  TPL:{{Stealth|Water}}
+   3  Evolution—Put on one of your creatures that has Dragon in its race.
+   2  When this creature would be destroyed, put it into your hand instead.
+   2  Choose one of your creatures in the battle zone. It can't be blocked this turn.
+   2  When you put this creature into the battle zone, you may draw a card.
+   2  Choose up to 2 creatures in the battle zone and return them to their owners' hands.
+   2  When you put this creature into the battle zone, destroy one of your creatures.
+   2  Destroy one of your opponent's untapped creatures.
+   2  When you put this creature into the battle zone, your opponent discards a card at random from his hand.
+   2  Destroy one of your opponent's creatures.
+   2  When you put this creature into the battle zone, put 1 card from your mana zone into your graveyard.
+   2  Search your deck. You may take a creature from your deck, show that creature to your opponent, and put it into your hand. Then shuffle your deck.
+   2  Evolution—Put on one of your Parasite Worms.
+   2  Whenever this creature attacks, your opponent discards a card at random from his hand.
+   2  While attacking, this creature gets +2000 power for each other tapped creature you have in the battle zone.
+   2  While attacking, this creature gets +1000 power for each other creature you have in the battle zone.
+   2  This creature can't be blocked by any creature that has power 5000 or less.
+   2  When this creature would be put into your graveyard from the battle zone, add it to your shields face down instead.
+   2  Return a card from your mana zone to your hand.
+   2  When you put this creature into the battle zone, you may return a spell from your mana zone to your hand.
+   2  Add a card from your hand to your shields face down.
+   2  Evolution—Put on one of your Ghosts.
+   2  Evolution—Put on one of your Giant Insects.
+   2  Evolution—Put on one of your Cyber Viruses.
+   2  Evolution—Put on one of your Rock Beasts.
+   2  This creature can't be blocked by darkness creatures.
+   2  Whenever this creature attacks, you may choose a darkness or fire creature in the battle zone and tap it. ''(First choose what this creature is attacking. Then choose a creature to tap.)''
+   2  While your opponent has no shields, this creature can't attack.
+   2  This creature gets +1000 power for each water creature and darkness creature your opponent has in the battle zone.
+   2  Whenever this creature becomes blocked, it breaks one of your opponent's shields.
+   2  TPL:{{Tap Ability|Choose one of your creatures in the battle zone. It can't be blocked this turn.}}
+   2  Whenever this creature becomes blocked, no battle happens. ''(Both creatures stay tapped.)''
+   2  Destroy one of your opponent's creatures that has power 2000 or less.
+   2  Evolution—Put on one of your Survivors.
+   2  Evolution—Put on one of your Chimeras.
+   2  When one of your shields would be break|broken, you may destroy this creature instead.
+   2  TPL:{{Stealth|Darkness}}
+   2  When you put this creature into the battle zone, choose one of your shields and put it into your hand. You can't use the "shield trigger" ability of that shield.
+   2  TPL:{{Stealth|Light}}
+   2  Whenever any of your creatures would be destroyed this turn, put it into your mana zone instead.
+   2  When you put another creature into the battle zone, destroy this creature.
+   2  Whenever this creature attacks, choose one of your shields and put it into your graveyard.
+   2  Evolution—Put on one of your Cyber Lords.
+   2  Whenever this creature blocks, look at the top 4 cards of your deck. Put one of them into your hand, and put the rest on the bottom of your deck in any order.
+   2  While this creature has power 6000 or more, it has "Double breaker ''(This creature breaks 2 shields)''."
+   2  While attacking a creature, this creature can't be blocked.
+   1  Tap all your opponent's creatures in the battle zone.
+   1  While you have at least 1 Angel Command in the battle zone, this creature gets +2000 power.
+   1  Choose up to 2 of your creatures in the battle zone. They can't be blocked this turn.
+   1  Choose up to 2 of your opponent's creatures in the battle zone and tap them.
+   1  When you put this creature into the battle zone, search your deck. You may take a spell from your deck, show that spell to your opponent, and put it into your hand. Then shuffle your deck.
+   1  End Step|At the end of each of your turns, you may untap all your creatures in the battle zone.
+   1  Draw up to 2 cards.
+   1  Search your deck. You may take a card from your deck and put it into your hand. Then shuffle your deck.
+   1  When you put this creature into the battle zone, if you have a Cyber Lord in the battle zone, draw up to 3 cards.
+   1  When you put this creature into the battle zone, draw up to 2 cards.
+   1  When you put this creature into the battle zone, return all creatures in the battle zone that have power 2000 or less to its owner's hand.
+   1  This creature can't be blocked while you have at least 2 other creatures in the battle zone.
+   1  When you put this creature into the battle zone, you may choose 1 creature in the battle zone and return it to its owner's hand.
+   1  Whenever any of your creatures becomes blocked this turn, it gets "slayer" until the end of the turn. ''(When a creature that has "slayer" loses a battle, destroy the other creature.)''
+   1  Return a creature from your graveyard to your hand.
+   1  Your opponent discards a card at random from his hand.
+   1  When you put this creature into the battle zone, destroy 2 of your other creatures or destroy this creature.
+   1  When you put this creature into the battle zone, return up to 2 creatures from your graveyard to your hand.
+   1  When you put this creature into the battle zone, your opponent chooses one of his creatures and destroys it.
+   1  When you put this creature into the battle zone, destroy all creatures that have power 3000 or less.
+   1  While you have at least 1 Human in the battle zone, this creature gets +2000 power during its attacks.
+   1  While attacking, this creature gets +1000 power for each fire card in your graveyard.
+   1  One of your creatures gets "power attacker +2000" until the End Step|end of the turn. ''(While attacking, a creature that has "power attacker +2000" gets +2000 power.)''
+   1  Choose 1 of your opponent's untapped creatures in the battle zone. Your creatures can attack it this turn as though it were tapped.
+   1  Destroy 1 of your opponent's creatures that has power 2000 or less.
+   1  When you put this creature into the battle zone, put 2 cards from your mana zone into your graveyard.
+   1  While you have at least 1 Armorloid in the battle zone, this creature gets +2000 power during its attacks.
+   1  One of your creatures gets "power attacker +4000" and "double breaker" until the End Step|end of the turn. ''(A creature that has "power attacker +4000" and "double breaker" gets +4000 power while attacking and breaks 2 shields.)''
+   1  When you put this creature into the battle zone, destroy one of your opponent's creatures that has power 2000 or less.
+   1  When you put this creature into the battle zone, destroy one of your creatures. Then your opponent chooses one of his creatures and destroys it.
+   1  Destroy one of your opponent's creatures that has power 4000 or less.
+   1  Each of your creatures in the battle zone gets "power attacker +2000" until the End Step|end of the turn. ''(While attacking, a creature that has "power attacker +2000" gets +2000 power.)''
+   1  When you put this creature into the battle zone, put the top card of your deck into your mana zone.
+   1  Choose one of your opponent's creatures in the battle zone and put it into his mana zone.
+   1  Put 1 of your creatures from the battle zone into your mana zone.
+   1  When you put this creature into the battle zone, you may put 1 card from your hand into your mana zone.
+   1  This creature can't be blocked by any creature that has power 3000 or less.
+   1  When you put this creature into the battle zone, your opponent chooses one of his creatures in the battle zone and puts it into his mana zone.
+   1  When you put this creature into the battle zone, you may put 1 creature from your graveyard into your mana zone.
+   1  Put the top 2 cards of your deck into your mana zone.
+   1  When you put this creature into the battle zone, choose up to 2 creatures in the battle zone and return them to their owners' hands.
+   1  When you put this creature into the battle zone, destroy all creatures that have "blocker".
+   1  This turn, ignore any effects that would prevent your creatures from attacking your opponent. ''(For example, ignore summoning sickness and card effects that say "This creature can't attack" or "This creature can't attack players". Your creatures can't attack creatures this way.)''
+   1  When you put this creature into the battle zone, choose one of your opponent's creatures in the battle zone and tap it.
+   1  Whenever this creature attacks, search your deck. You may take a spell from your deck, show that spell to your opponent, and put it into your hand. Then shuffle your deck.
+   1  When you put this creature into the battle zone, tap all your opponent's creatures in the battle zone that have "blocker".
+   1  Search your deck. You may take a spell from your deck, show that spell to your opponent, and put it into your hand. Then shuffle your deck.
+   1  When you put this creature into the battle zone, you may return a spell from your graveyard to your hand.
+   1  When you put this creature into the battle zone, choose one of your opponent's creatures in the battle zone and put it on top of his deck.
+   1  Whenever this creature attacks, you may draw a card.
+   1  Liquid People can't be blocked.
+   1  Whenever this creature attacks, you may draw a number of cards equal to the number of creatures your opponent has in the battle zone.
+   1  Look at up to 3 of your opponent's shields. Then put them back where they were.
+   1  Whenever this creature attacks, you may choose one of your opponent's fire or nature creatures in the battle zone and return it to its owner's hand.
+   1  When you cast this spell, if your opponent has 3 or more creatures in the battle zone, draw 3 cards.
+   1  Whenever this creature attacks, you may return a creature from your graveyard to your hand.
+   1  When you put this creature into the battle zone, you may destroy one of your opponent's creatures.
+   1  Destroy one of your opponent's creatures that has "blocker".
+   1  Whenever this creature attacks, choose one of your shields without looking and put it into your graveyard. You can't use the "shield trigger" ability of that shield.
+   1  When this creature would be put into your graveyard from the battle zone, you may return it to your hand instead. If you do, discard a card from your hand.
+   1  Your opponent discards all cards from his hand.
+   1  When this creature attacks a player, destroy it after the attack.
+   1  When you put this creature into the battle zone, destroy one of your creatures that has power 3000 or less.
+   1  While attacking, this creature gets +2000 power for each other Human in the battle zone.
+   1  Whenever this creature attacks, choose a card in your opponent's mana zone and put it into his graveyard.
+   1  When this creature is destroyed, each player chooses 2 cards in his mana zone and puts them into his graveyard.
+   1  Destroy all creatures that have power 2000 or less.
+   1  When this creature is destroyed, each player chooses a card in his mana zone and puts it into his graveyard.
+   1  While you have no other creatures in the battle zone, this creature gets "power attacker +4000" and "double breaker". ''(A creature that has "power attacker +4000" and "double breaker" gets +4000 power while attacking and breaks 2 shields.)''
+   1  Whenever this creature attacks, you may choose a creature in the battle zone that has "blocker" and destroy it.
+   1  Each of your creatures in the battle zone gets +1000 power until the End Step|end of the turn.
+   1  Each of your creatures in the battle zone that can attack creatures can attack untapped creatures this turn.
+   1  While this creature is tapped, each of your other Beast Folk in the battle zone gets +2000 power.
+   1  Your creatures each cost 1 less to summon. They can't cost less than 1.
+   1  Your spells each cost 1 less to cast. They can't cost less than 1.
+   1  When you put this creature into the battle zone, choose up to 2 cards in your opponent's mana zone and put it into his graveyard.
+   1  Choose a card in your opponent's mana zone and put it into his graveyard.
+   1  Search your deck. You may take a card from your deck and put it into your mana zone. Then shuffle your deck.
+   1  When you put this creature into the battle zone, search your deck. You may take a creature from your deck, show that creature to your opponent, and put it into your hand. Then shuffle your deck.
+   1  Whenever this creature attacks, you may put the top card of your deck into your mana zone.
+   1  When you put this creature into the battle zone, return all creatures in the battle zone that have "blocker" to their owners' hands.
+   1  Each of your other Humans in the battle zone gets +1000 power.
+   1  When you put this creature into the battle zone, put the top 2 cards of your deck into your mana zone.
+   1  This creature gets +1000 power for each other light creature you have in the battle zone.
+   1  After you cast this spell, put it into your mana zone instead of your graveyard.
+   1  Return a spell from your mana zone to your hand.
+   1  Whenever this creature attacks, you may return a light spell from your graveyard to your hand.
+   1  Each of your other light creatures in the battle zone has "blocker". ''(Whenever one of your opponent's creatures attacks, you may tap a creature that has "blocker" to stop the attack. Then the 2 creatures battle.)''
+   1  While all the cards in your mana zone are light cards, this creature has "Blocker ''(Whenever an opponent's creature attacks, you may tap this creature to stop the attack. Then the 2 creatures battle.)''"
+   1  While all the cards in your mana zone are light cards, this creature gets +2000 power.
+   1  While all the cards in your mana zone are water cards, this creature gets +3000 power.
+   1  When you put this creature into the battle zone, return 2 cards from your mana zone to your hand. Then your opponent chooses 2 cards in his mana zone and returns them to his hand.
+   1  When you put this creature into the battle zone, you may add a card from your hand to your shields face down. If you do, choose one of your shields and put it into your hand. You can't use the "shield trigger" ability of that shield.
+   1  Whenever this creature attacks, you may choose a creature in the battle zone that has power 2000 or less and return it to its owner's hand. ''(Return the creature to its owner's hand before your opponent can block with it.)''
+   1  Whenever this creature attacks, search your deck. You may take a water card from your deck, show that card to your opponent, and put it into your hand. Then shuffle your deck.
+   1  Evolution—Put on one of your Leviathans.
+   1  Your other water creatures in the battle zone can't be blocked.
+   1  Look at your opponent's hand and shields. Then put the shields back where they were.
+   1  Reveal the top 4 cards of your deck. Put all water cards from among them into your hand and the rest into your graveyard.
+   1  When you put this creature into the battle zone, return a card from your mana zone to your hand. Then your opponent chooses a card in his mana zone and returns it to his hand.
+   1  When you put this creature into the battle zone, choose one of your shields and return it to your hand. You can't use the "shield trigger" ability of that shield.
+   1  When this creature is put into your graveyard from the battle zone, you may return a creature from your mana zone to your hand.
+   1  You may destroy one of your darkness creatures. If you do, return a creature from your mana zone to your hand.
+   1  Whenever this creature attacks, you may return a darkness creature from your graveyard to your hand.
+   1  Choose any number of your shields and put them into your hand. You can't use the "shield trigger" ability|abilities of those shields.
+   1  Whenever another of your darkness creatures would be put into your graveyard from the battle zone, you may return it to your hand instead.
+   1  While all the cards in your mana zone are darkness cards, this creature gets +2000 power.
+   1  This creature gets +1000 power for each other darkness creature you have in the battle zone.
+   1  Each of your creatures in the battle zone gets "double breaker" until the End Step|end of the turn. ''(A creature that has "double breaker" breaks 2 shields.)''
+   1  Whenever this creature attacks, put a non-fire card from your mana zone into your graveyard. Then your opponent chooses a non-fire card in his mana zone and puts it into his graveyard.
+   1  While all the cards in your mana zone are fire cards, this creature gets +2000 power.
+   1  You can cast this spell only if all the cards in your mana zone are fire cards.
+   1  Each of your creatures in the battle zone gets "power attacker +4000" and "double breaker" until the End Step|end of the turn. ''(A creature that has "power attacker +4000" and "double breaker" gets +4000 power while attacking and breaks 2 shields.)''
+   1  Whenever this creature attacks, you may put a card from your mana zone into your graveyard. If you do, this creature gets "power attacker +3000" and "double breaker" until the End Step|end of the turn. ''(A creature that has "power attacker +3000" and "double breaker" gets +3000 power while attacking and breaks 2 shields.)''
+   1  Whenever this creature attacks, you may destroy one of your opponent's creatures that has power 2000 or less.
+   1  Destroy all your opponent's creatures that have power 3000 or less.
+   1  This creature can't attack while your opponent has more creatures in the battle zone than you do.
+   1  Evolution—Put on one of your Armored Dragons.
+   1  Each of your other fire creatures has "power attacker +2000". ''(While attacking, a creature that has "power attacker +2000" gets +2000 power.)''
+   1  Destroy a creature that has power 6000 or less.
+   1  Choose any number of your shields and put them into your mana zone.
+   1  Whenever another of your nature creatures would be put into your graveyard from the battle zone, put it into your mana zone instead.
+   1  Add a card from your mana zone to your shields face down.
+   1  This creature gets +1000 power for each of your other nature creatures in the battle zone.
+   1  When you put this creature into the battle zone, you may choose one of your opponent's evolution creatures in the battle zone and put the top card of that creature into your opponent's graveyard.
+   1  Whenever this creature attacks, you may put a nature card from your graveyard into your mana zone.
+   1  While all the cards in your mana zone are nature cards, this creature gets +3000 power and has "Double breaker ''(This creature breaks 2 shields)''."
+   1  Return a creature that costs 6 or more from your mana zone to your hand.
+   1  Whenever this creature attacks, return a card from your mana zone to your hand.
+   1  This creature gets +1000 power for each other water creature you have in the battle zone.
+   1  Whenever this creature attacks, you may draw a card for each of your other water creatures in the battle zone.
+   1  This creature gets +1000 power for each other fire creature you have in the battle zone.
+   1  Whenever this creature attacks, return all creatures from your mana zone to your hand.
+   1  Evolution—Put on one of your Angel Commands.
+   1  Players can't cast spells other than light spells.
+   1  When you put this creature into the battle zone, draw up to 3 cards.
+   1  When you put this creature into the battle zone, your opponent discards a card at random from his hand for each other darkness creature you have in the battle zone.
+   1  When you put this creature into the battle zone, you may destroy one of your opponent's creatures that has power 3000 or less.
+   1  Each Angel Command in the battle zone gets "power attacker +4000." ''(While attacking, a creature that has "power attacker +4000" gets +4000 power.)''
+   1  This creature can attack untapped darkness creatures.
+   1  Players can't use the "shield trigger" ability|abilities of darkness cards.
+   1  Until the start of your next turn, each of your creatures in the battle zone gets "Blocker ''(Whenever an opponent's creature attacks, you may tap this creature to stop the attack. Then the 2 creatures battle.)''"
+   1  This creature can't be attacked by darkness creatures.
+   1  Each darkness creature costs 2 more to summon, and each darkness spell costs 2 more to cast.
+   1  Whenever another creature is put into the battle zone, you may draw a card.
+   1  When this creature would be destroyed, add it to your shields face down instead.
+   1  Each other light creature in the battle zone gets +2000 power.
+   1  Tap all creatures in the battle zone except light creatures.
+   1  End Step|At the end of the turn, untap all your creatures in the battle zone.
+   1  Return up to 2 cards from your mana zone to your hand.
+   1  For each light creature you have in the battle zone, you may choose a card in your opponent's mana zone and return it to his hand.
+   1  For each darkness creature you have in the battle zone, you may choose one of your opponent's creatures and return it to his hand.
+   1  Light and darkness creatures in the battle zone each get +1000 power.
+   1  When you put this creature into the battle zone, you may reveal the top 3 cards of your deck. Put all light and darkness cards from the revealed cards into your hand, and put the rest into your graveyard.
+   1  Whenever this creature attacks, you may choose a card in your opponent's mana zone and return it to his hand.
+   1  Destroy up to 2 of your opponent's creatures.
+   1  Destroy one of your creatures.
+   1  Put any number of cards from your mana zone into your graveyard. Then draw that many cards.
+   1  Players can't use the "shield trigger" Ability|abilities of light cards.
+   1  Each Demon Command in the battle zone gets +2000 power and has "blocker". ''(Whenever one of your opponent's creatures attacks, you may tap a creature that has "blocker" to stop the attack. Then the 2 creatures battle.)''
+   1  Whenever another creature is destroyed, you may draw a card.
+   1  This creature can attack untapped light creatures.
+   1  This creature can't be attacked by light creatures.
+   1  This creature can't be blocked by light creatures.
+   1  Each other darkness creature in the battle zone gets +2000 power.
+   1  When you put this creature into the battle zone, you may return a Living Dead from your graveyard to your hand.
+   1  Your opponent chooses and discards a card from his hand for each light creature he has in the battle zone.
+   1  Each light creature costs 2 more to summon and each light spell costs 2 more to cast.
+   1  While you have a darkness creature in the battle zone, this creature gets +2000 power.
+   1  Each Demon Command in the battle zone has "power attacker +4000" and "double breaker." ''(A creature that has "power attacker +4000" and "double breaker" gets +4000 power while attacking and breaks 2 shields.)''
+   1  When you put this creature into the battle zone, destroy all creatures that have power 1000.
+   1  Discard any number of cards from your hand. Then choose the same number of your creatures in the battle zone. Each of those creatures gets "double breaker" until the End Step|end of the turn. ''(A creature that has "double breaker" breaks 2 shields.)''
+   1  Each light creature costs 1 more to summon and each light spell costs 1 more to cast.
+   1  Each Armored Dragon in the battle zone gets +1000 power.
+   1  Until the End Step|end of the turn, each of your creatures in the battle zone gets "While attacking, this creature gets +1000 power for each darkness card in your mana zone."
+   1  This creature gets +1000 power for each shield you have.
+   1  Each darkness creature costs 1 more to summon and each darkness spell costs 1 more to cast.
+   1  While you have a light creature in the battle zone, this creature gets +2000 power.
+   1  Add the top card of your deck to your shields face down.
+   1  Each of your creatures in the battle zone gets +1000 power until the End Step|end of the turn for each light creature you have in the battle zone.
+   1  Whenever this creature attacks, you may destroy one of your other creatures. If you do, this creature gets +2000 power and "double breaker" until the End Step|end of the turn. ''(A creature that has "double breaker" breaks 2 shields.)''
+   1  When you put this creature into the battle zone, tap one of your opponent's creatures in the battle zone for each untapped light card in your mana zone.
+   1  When you put this creature into the battle zone, you may return all Angel Commands and all Demon Commands from your graveyard to your hand.
+   1  Angel Commands and Demon Commands in the battle zone each get +2000 power.
+   1  Evolution—Put on one of your Demon Commands.
+   1  When you put this creature into the battle zone, destroy all creatures except darkness creatures.
+   1  When you put this creature into the battle zone, destroy all light creatures that have power 4000 or less.
+   1  Evolution—Put on one of your Horned Beasts.
+   1  When you put this creature into the battle zone, search your deck. You may take a nature creature from your deck, show that creature to your opponent, and put it into your hand. Then shuffle your deck.
+   1  When this creature is destroyed, destroy all creatures that have power 3000 or less.
+   1  TPL:{{Survivor||{{Double Breaker|dotless}}}}
+   1  When this creature is destroyed, you may put an '''Obsidian Scarab''' from your mana zone into the battle zone.
+   1  TPL:{{Survivor}} End Step|At the end of each of your turns, untap this creature.
+   1  This creature can't be blocked by creatures that have power 4000 or more.
+   1  TPL:{{Survivor}} {{Blocker}}
+   1  If your opponent has more cards in his mana zone than you have in yours, put the top 2 cards of your deck into your mana zone.
+   1  When you put this creature into the battle zone, if your opponent has more cards in his mana zone than you have in yours, put the top card of your deck into your mana zone.
+   1  Whenever your opponent causes a card to be put into your graveyard from your mana zone, you may return that card to your mana zone.
+   1  For each water creature you have in the battle zone, you may choose one of your opponent's creatures in the battle zone and tap it.
+   1  TPL:{{Shield Trigger|s}}
+   1  Each player returns all cards from his mana zone to his hand.
+   1  TPL:{{Icon|Block}} Blocker|Fire and nature blocker ''(Whenever an opponent's fire or nature creature attacks, you may tap this creature to stop the attack. Then the 2 creatures battle.)''
+   1  Whenever any of your creatures finishes attacking this turn, you may draw 2 cards for each shield it broke.
+   1  Whenever your opponent uses the "shield trigger" ability of a shield break|broken by this creature, you may untap this creature.
+   1  TPL:{{Survivor}} This creature can't be blocked.
+   1  TPL:{{Survivor}} Whenever this creature attacks, you may draw a card.
+   1  This creature can't be attacked by fire or nature creatures.
+   1  Nature and light slayer ''(Whenever this creature battles a nature or light creature, destroy the other creature after the battle.)
+   1  TPL:{{Survivor||{{Slayer|dotless}}}}
+   1  Each nature creature costs 1 more to summon, and each nature spell costs 1 more to cast.
+   1  When this creature is destroyed, you may choose one of your shields and put it into your hand. You can't use the "shield trigger" ability of that shield.
+   1  Look at your opponent's hand and choose a card from it. Your opponent discards that card.
+   1  TPL:{{Survivor}} Whenever this creature attacks, your opponent chooses and discards a card from his hand.
+   1  During your opponent's next turn, each of his creatures attacks if able.
+   1  Nature and light slayer ''(Whenever this creature battles a nature or light creature, destroy the other creature after the battle.)''
+   1  TPL:{{Survivor}} Power attacker +1000 ''(While attacking, this creature gets +1000 power.)''
+   1  TPL:{{Power Attacker|8000}}
+   1  For each nature creature you have in the battle zone, you may choose a card in your opponent's mana zone and put it into his graveyard.
+   1  Each player counts the cards in his hand, shuffles those cards into his deck, then draws that many cards.
+   1  When one of your Armored Dragons would be destroyed, you may destroy this creature instead.
+   1  This creature can attack untapped water creatures.
+   1  When this creature is destroyed, you may choose an '''Ambush Scorpion''' in your mana zone and put it into the battle zone.
+   1  TPL:{{Survivor}} When this creature would be destroyed, put it into your mana zone instead.
+   1  Whenever this creature attacks, return 2 creatures from your mana zone to your hand.
+   1  End Step|At the end of this turn, search your deck. For each of your opponent's shields your creatures broke this turn, you may take a creature from your deck, show it to your opponent, and put it into your hand. Then shuffle your deck.
+   1  Put up to 2 creatures from your graveyard into your mana zone.
+   1  TPL:{{Power Attacker|7000}}
+   1  When you put this creature into the battle zone, search your deck. You may take a Giant Insect from your deck, show that Giant Insect to your opponent, and put it into your hand. Then shuffle your deck.
+   1  TPL:{{Survivor}} This creature gets +1000 power.
+   1  When you put this creature into the battle zone, return all other creatures from the battle zone to their owners' hands.
+   1  When you put this creature into the battle zone, destroy all your other creatures.
+   1  Add up to 3 cards from the top of your deck to your shields face down.
+   1  Evolution creatures are put into the battle zone tapped.
+   1  TPL:{{Tap Ability|Choose a creature in the battle zone and return it to its owner's hand.}}
+   1  Search your deck. You may take any number of cards from your deck, show those cards to your opponent, and put them into your hand. Then shuffle your deck.
+   1  Destroy all your opponent's creatures.
+   1  TPL:{{Tap Ability|Your opponent chooses one of his creatures in the battle zone and destroys it.}}
+   1  Choose up to 3 of your opponent's shields and put them into his graveyard.
+   1  Each of your creatures in the battle zone gets +8000 power and "triple breaker" until the End Step|end of the turn. ''(A creature that has "triple breaker" breaks 3 shields.)''
+   1  TPL:{{Tap Ability|Choose a shield and look at it. Then put it back where it was.}}
+   1  TPL:Each of your light creatures may tap instead of attacking to use this creature's {{Tap}} ability.
+   1  TPL::{{Tap}} Choose one of your opponent's creatures in the battle zone and tap it.
+   1  Tap all creatures in the battle zone that don't have "blocker."
+   1  Whenever this creature blocks, no battle happens. ''(Both creatures stay tapped.)''
+   1  TPL:{{Tap Ability|Choose one of your opponent's creatures in the battle zone and tap it.}}
+   1  TPL:{{Tap Ability|Return a spell from your mana zone to your hand.}}
+   1  During your opponent's turn, if this creature would be discarded from your hand, put it into the battle zone instead.
+   1  TPL:{{Survivor}} When you put this creature into the battle zone, search your deck. You may take a spell from your deck, show that spell to your opponent, and put it into your hand. Then shuffle your deck.
+   1  One of your creatures in the battle zone that has "blocker" gets +4000 power until the End Step|end of the turn.
+   1  Look at your opponent's hand. He discards all darkness spells from it.
+   1  This creature gets +2000 power for each shield you have.
+   1  If your opponent has more shields than you do, add the top card of your deck to your shields face down.
+   1  When you put this creature into the battle zone, you may look at your shields. Then put them back where they were.
+   1  Draw 2 cards.
+   1  Evolution—Put on one of your Cyber Clusters.
+   1  TPL:Each of your water creatures may tap instead of attacking to use this creature's {{Tap}} ability.
+   1  TPL::{{Tap}} Draw a card.
+   1  Whenever an opponent's creature would break a shield, you choose the shield instead of your opponent.
+   1  When you put this creature into the battle zone, choose a card in your opponent's mana zone and return it to his hand.
+   1  Return up to 3 cards from your mana zone to your hand.
+   1  TPL:{{Tap Ability|Draw 2 cards.}}
+   1  When you put this creature into the battle zone, count the cards in your hand, shuffle those cards into your deck, then draw that many cards.
+   1  TPL:{{Survivor}} When you put this creature into the battle zone, you may choose one of your opponent's creatures in the battle zone and tap it.
+   1  Return any number of your creatures from the battle zone to your hand. Then you may choose that many of your opponent's creatures in the battle zone and return them to your opponent's hand.
+   1  This creature can attack only creatures that have "blocker."
+   1  Each of your Ghosts in the battle zone has "slayer." ''(Whenever a creature that has "slayer" battles, destroy the other creature after the battle.)''
+   1  Search your opponent's deck. Take up to 2 cards from his deck and put them into his graveyard. Then your opponent shuffles his deck.
+   1  TPL:{{Survivor}} When you put this creature into the battle zone, you may return a Survivor from your graveyard to your hand.
+   1  TPL:{{Tap Ability|Return a darkness creature from your graveyard to your hand.}}
+   1  Destroy any number of your creatures. Then draw that many cards.
+   1  TPL:{{Tap Ability|One of your creatures in the battle zone gets "slayer" until the End Step|end of the turn. ''(Whenever a creature that has "slayer" battles, destroy the other creature after the battle.)''}}
+   1  Your opponent chooses one of his creatures in the battle zone and destroys it.
+   1  When this creature is destroyed, each player discards his hand.
+   1  When you put this creature into the battle zone, you may destroy one of your opponent's creatures that has power 4000 or less.
+   1  While you have no other fire creatures in the battle zone, this creature has "power attacker +3000" and "double breaker." ''(A creature that has "power attacker +3000" and "double breaker" gets +3000 power while attacking and breaks 2 shields.)''
+   1  This creature attacks each turn if able.
+   1  TPL:{{Double Breaker|s}}
+   1  Your creatures that have Dragon in their race each cost 2 less to summon. ''(Dragonoids don't count.)'' They can't cost less than 2.
+   1  Destroy one of your opponent's creatures that has "blocker" and power 6000 or less.
+   1  Your opponent chooses one of his creatures in the battle zone or a card in his mana zone and puts it into his graveyard.
+   1  TPL:{{Tap Ability|One of your creatures in the battle zone gets "speed attacker" until the End Step|end of the turn.}}
+   1  TPL:{{Tap Ability|One of your fire creatures in the battle zone gets "double breaker" until the End Step|end of the turn. ''(A creature that has "double breaker" breaks 2 shields.)''}}
+   1  TPL:{{Crew Breaker|Survivor}}
+   1  TPL:{{Tap Ability|Destroy one of your opponent’s creatures that has “blocker.”}}
+   1  TPL:{{Survivor||{{Speed Attacker|dotless}}}}
+   1  Destroy one of your opponent's creatures that has power 3000 or less.
+   1  While you have at least one other fire creature in the battle zone, this creature has "Power attacker +3000 ''(While attacking, this creature gets +3000 power)''."
+   1  TPL:{{Tap Ability|Put up to 3 cards from your graveyard into your mana zone.}}
+   1  TPL:{{Tap Ability|Search your deck. You may take a creature from your deck, show that creature to your opponent, and put it into your hand. Then shuffle your deck.}}
+   1  TPL:{{Survivor}} When you put this creature into the battle zone, search your deck. You may take a Survivor from your deck, show that Survivor to your opponent, and put it into your hand. Then shuffle your deck.
+   1  Put the top card of your deck into your mana zone.
+   1  Your opponent's attacking creatures attack Mystery Totems if able.
+   1  You can put an evolution creature of any race on this creature.
+   1  Evolution—Put on one of your Colony Beetles.
+   1  TPL:Each of your nature creatures may tap instead of attacking to use this creature's {{Tap}} ability.
+   1  TPL::{{Tap}} Put the top card of your deck into your mana zone.
+   1  TPL:{{Tap Ability|One of your creatures in the battle zone gets +5000 power until the End Step|end of the turn.}}
+   1  Search your deck. You may take a non-nature card from your deck and put it into your mana zone. Then shuffle your deck.
+   1  Choose one of your opponent’s evolution creatures in the battle zone and put the top card of that creature into your opponent’s mana zone.
+   1  When you put this creature into the battle zone, choose up to 2 of your opponent's creatures in the battle zone and tap them.
+   1  When you put this creature into the battle zone, you may draw a card for each Survivor in the battle zone.
+   1  Whenever this creature attacks, destroy one of your creatures.
+   1  TPL:Each of your darkness creatures may tap instead of attacking to use this creature's {{Tap}} ability.
+   1  TPL::{{Tap}} Your opponent discards a card at random from his hand.
+   1  Whenever this creature would break a shield, your opponent puts that shield into his graveyard instead.
+   1  Evolution—Put on one of your Dragonoids.
+   1  TPL:Each of your fire creatures may tap instead of attacking to use this creature's {{Tap}} ability.
+   1  TPL::{{Tap}} One of your fire creatures in the battle zone gets +3000 power until the End Step|end of the turn.
+   1  While you have any other untapped creatures in the battle zone, this creature can't attack.
+   1  This creature can't be blocked by any creature that has power 8000 or less.
+   1  TPL:{{Tap Ability|End Step|At the end of the turn, untap all your light creatures.}}
+   1  TPL:{{Tap Ability|Each of your water creatures gets "This creature can't be blocked" until the End Step|end of the turn.}}
+   1  TPL:{{Tap Ability|Until the End Step|end of the turn, each of your darkness creatures in the battle zone gets +4000 power and "double breaker." Whenever any of those creatures battles this turn, destroy it after the battle.}}
+   1  TPL:{{Tap Ability|Each of your fire creatures gets "This creature can attack untapped creatures" until the End Step|end of the turn.}}
+   1  TPL:{{Tap Ability|This turn, whenever any of your nature creatures is attacking your opponent and becomes blocked, it breaks one of his shields. ''(If a creature has "double breaker" or "triple breaker," it still breaks only one shield.)''}}
+   1  While you have no shields, this creature has "Blocker ''(Whenever an opponent's creature attacks, you may tap this creature to stop the attack. Then the 2 creatures battle)''."
+   1  Tap all darkness creatures in the battle zone, or tap all fire creatures in the battle zone.
+   1  TPL:{{Stealth|Fire}}
+   1  Choose one of your creatures in the battle zone. This turn, it can't be blocked and you ignore any effects that would prevent that creature from attacking your opponent. ''(For example, ignore summoning sickness and card effects that say "This creature can't attack" or "This creature can't attack players." Your creatures can't attack creatures this way.)''
+   1  TPL:{{Tap Ability|Add one of your creatures from the battle zone to your shields face down.}}
+   1  When this creature would be destroyed, you may return it to your hand instead.
+   1  TPL:{{Tap Ability|Choose a card in your opponent's mana zone and return it to his hand.}}
+   1  When this creature is destroyed, you may draw a card.
+   1  TPL:{{Tap Ability|Look at the top 3 cards of your deck. Then put them back in any order.}}
+   1  When you put this creature into the battle zone, you may add up to 2 cards from your hand to your shields face down. If you do, choose the same number of your shields and put them into your hand. You can't use the "shield trigger" ability of those shields.
+   1  When this creature would be destroyed, you may return it to your hand instead. If you do, put a card from your hand into your graveyard.
+   1  TPL:{{Stealth|Nature}}
+   1  When this creature is destroyed, your opponent discards a card at random from his hand.
+   1  Whenever this creature is attacked, it gets "slayer" until the End Step|end of the turn. ''(Whenever a creature that has "slayer" battles, destroy the other creature after the battle.)''
+   1  Destroy one of your opponent's untapped light or untapped nature creatures.
+   1  One of your creatures in the battle zone gets "slayer" until the End Step|end of the turn. ''(Whenever a creature that has "slayer" battles, destroy the other creature after the battle.)''
+   1  Destroy any number of your opponent's creatures that have total power 8000 or less.
+   1  While you have no other creatures in the battle zone, this creature has "Power attacker +4000 ''(While attacking, this creature gets +4000 power)''" and "Double breaker ''(This creature breaks 2 shields)''."
+   1  While you have no shields, this creature can attack untapped creatures and has "Power attacker +3000 ''(While attacking, this creature gets +3000 power)''."
+   1  One of your creatures gets +2000 power until the End Step|end of the turn.
+   1  While you have no shields, this creature gets +4000 power and has "double breaker ''(This creature breaks 2 shields)''."
+   1  TPL:{{Tap Ability|Destroy one of your opponent's creatures that has power 2000 or less.}}
+   1  TPL:{{Tap Ability|Return a creature from your mana zone to your hand.}}
+   1  While this creature is tapped, your opponent can't use the "shield trigger" ability of his shields.
+   1  Choose one of your opponent's water or darkness creatures in the battle zone. Your opponent puts that creature into his mana zone.
+   1  Put one of your creatures from the battle zone into your mana zone.
+   1  TPL:{{Tap Ability|Put the top card of your deck into your mana zone.}}
+   1  TPL:{{Tap Ability|Put up to 3 cards from your hand into your mana zone.}}
+   1  Evolution—Put on one of your Tree Folk.
+   1  While you have no shields, this creature has "blocker" and "End Step|At the end of each of your turns, you may untap this creature."
+   1  Whenever you draw the card at the Step#Step 2 (Draw)|start of your turn, you may draw an extra card.
+   1  TPL:{{Tap Ability|Your opponent discards 2 cards at random from his hand.}}
+   1  TPL:{{Tap Ability|Each player puts a card from his mana zone into his graveyard.}}
+   1  This creature can't attack if you have no cards in your hand.
+   1  Whenever this creature attacks, discard a card from your hand.
+   1  Evolution—Put on one of your Mecha Thunders.
+   1  Each creature in the battle zone has "slayer." ''(Whenever a creature that has "slayer" battles, destroy the other creature after the battle.)
+   1  TPL:{{Turbo Rush|Each of your creatures in the battle zone has "speed attacker." ''(A creature that has "speed attacker" doesn't get summoning sickness.)''}}
+   1  TPL:{{Tap Ability|Search your deck. You may take a creature that has Dragon in its race from your deck and put it into the battle zone. Then shuffle your deck. That creature has "speed attacker." At the End Step|end of the turn, destroy it.}}
+   1  Choose one of your opponent's creatures in the battle zone and tap it. If it has Dragon in its race, add the top card of your deck to your shields face down.
+   1  Choose one of your opponent's creatures in the battle zone and tap it. Then you may choose one of your creatures in the battle zone. If you do, it can't be blocked this turn.
+   1  Choose up to 2 of your creatures in the battle zone. At the End Step|end of the turn, you may untap them.
+   1  TPL:{{Turbo Rush|Whenever this creature attacks, you may look at 2 of your opponent's shields. Then put them back where they were.}}
+   1  This creature can't be attacked by any creature that has Dragon in its race.
+   1  Creatures that have power 3000 or more can't attack. ''(Creatures that have power less than 3000 and get power attacker|extra power while attacking can still attack.)''
+   1  TPL:{{Blocker|dragon}}
+   1  While battling a creature that has Dragon in its race, this creature gets +6000 power.
+   1  Whenever a player casts a spell, this creature gets +3000 power until the End Step|end of the turn. ''(Do what the spell says before this creature gets the extra power.)''
+   1  TPL:{{Turbo Rush|Whenever this creature is attacking your opponent and isn't blocked, untap all your creatures in the battle zone except '''Solar Grasses'''.}}
+   1  Whenever any of your creatures attacks, you may choose one of your opponent's creatures in the battle zone and tap it. ''(First choose what your creature is attacking. Then choose a creature to tap.)''
+   1  Whenever this creature attacks, you may draw a card for each other tapped creature you have in the battle zone.
+   1  Draw a card.
+   1  When you put this creature into the battle zone, look at your opponent's hand.
+   1  TPL:{{Turbo Rush|This creature can't be blocked.}}
+   1  Whenever this creature attacks, you may look at your opponent's hand and at the top card of his deck.
+   1  Your creatures in the battle zone can't be blocked this turn.
+   1  TPL:{{Turbo Rush|When this creature attacks, search your deck. You may take a card from your deck and put it into your hand. Then shuffle your deck.}}
+   1  Choose a creature in the battle zone and return it to its owner's hand. If it has Dragon in its race, you may draw a card.
+   1  Put a creature from your graveyard into your hand.
+   1  Your opponent chooses and discards 2 cards from his hand.
+   1  When you put this creature into the battle zone, you may return all creatures that have Dragon in their race from your graveyard to your hand.
+   1  TPL:{{Turbo Rush|Whenever this creature is attacking your opponent and isn't blocked, you may destroy a creature.}}
+   1  TPL:{{Turbo Rush|Whenever this creature attacks, your opponent discards his hand.}}
+   1  Whenever you put a Dragonoid or a creature that has Dragon in its race into the battle zone, destroy the creature that has the least power in the battle zone. If there's a tie, you choose from among the tied creatures.
+   1  When this creature is destroyed, choose one of your shields and put it into your graveyard.
+   1  Until the End Step|end of the turn, each of your Dragonoids in the battle zone is an Armored Dragon in addition to its other races, gets +4000 power, and has "Double breaker ''(This creature breaks 2 shields)''."
+   1  When this creature is destroyed, you may put a creature that has Dragon in its race from your hand into the battle zone.
+   1  TPL:{{Turbo Rush|This creature can attack untapped creatures and has "Power attacker +4000 ''(While attacking, this creature gets +4000 power)''."}}
+   1  TPL:{{Turbo Rush|Whenever this creature attacks, you may destroy one of your opponent's creatures that has power 4000 or less.}}
+   1  Each creature in the battle zone that has Dragon in its race has "speed attacker." ''(A creature that has "speed attacker" doesn't get summoning sickness.)''
+   1  Whenever you put a Dragonoid or a creature that has Dragon in its race into the battle zone, put the top card of your deck into your mana zone.
+   1  TPL:{{Turbo Rush|Whenever this creature is attacking your opponent and becomes blocked, it breaks one of your opponent's shields.}}
+   1  Whenever this creature becomes blocked, you may put the top card of your deck into your mana zone.
+   1  When this creature would be destroyed, if you have a creature that has Dragon in its race in your mana zone, put this creature into your mana zone instead of destroying it. Then return a creature that has Dragon in its race from your mana zone to your hand.
+   1  Each of your creatures in the battle zone gets +3000 power until the End Step|end of the turn.
+   1  Whenever another creature is put into the battle zone, this creature gets +3000 power until the End Step|end of the turn.
+   1  TPL:{{Turbo Rush|This creature gets +5000 power and has "double breaker ''(This creature breaks 2 shields)''."}}
+   1  When you put this creature into the battle zone, your opponent may choose a creature in his hand and put it into the battle zone.
+   1  Whenever your opponent uses the "shield trigger" ability of one of his shields, draw up to 2 cards.
+   1  This creature gets +2000 power for each creature in your graveyard.
+   1  Whenever this creature attacks, choose up to 2 cards in your opponent's mana zone. Your opponent puts those cards into his graveyard.
+   1  After you cast a spell by using its "shield trigger" ability, put it into your hand instead of your graveyard.
+   1  Whenever your opponent uses the "shield trigger" ability of one of his shields, you may add the top card of your deck to your shields face down.
+   1  Whenever you put another creature that has Cyber in its race into the battle zone, you may draw a card.
+   1  Evolution—Put on one of your Dark Lords.
+   1  Whenever you put a Ghost into the battle zone, you may destroy one of your opponent's untapped creatures.
+   1  Evolution—Put on one of your Armored Wyverns.
+   1  Whenever this creature is attacking your opponent and isn't blocked, take an Extra Turn|extra turn after this one.
+   1  Whenever you put another creature into the battle zone, each Beast Folk in the battle zone gets +2000 power and "double breaker" until the End Step|end of the turn. ''(A creature that has "double breaker" breaks 2 shields.)''
+   1  Whenever this creature is attacking your opponent and isn't blocked, search your deck. You may take a spell from your deck, show that spell to your opponent, and put it into your hand. Then shuffle your deck.
+   1  When this creature is destroyed, choose up to 2 of your opponent's creatures in the battle zone and tap them.
+   1  When this creature would be destroyed, if another '''Kalute, Vizier of Eternity''' is in the battle zone, return this creature to your hand instead.
+   1  Whenever you put a Guardian into the battle zone, you may choose one of your opponent's creatures in the battle zone and tap it.
+   1  Whenever another creature would be destroyed, it stays in the battle zone instead.
+   1  TPL:{{Tap Ability|Choose a race. At the end of this turn, untap all creatures of that race in the battle zone.}}
+   1  Choose a race. Until the start of your next turn, each of your creatures in the battle zone of that race gets "Blocker ''(Whenever an opponent's creature attacks, you may tap this creature to stop the attack. Then the 2 creatures battle)''."
+   1  Whenever you put another creature into the battle zone, return this creature to your hand.
+   1  Whenever this creature becomes blocked, return the blocking creature to its owner's hand. ''(This creature stays tapped.)''
+   1  TPL:{{Tap Ability|Choose a race. Whenever one of your creatures of that race would be destroyed this turn, return it to your hand instead.}}
+   1  Choose a race. Creatures of that race can't be blocked this turn.
+   1  Whenever you put another creature into the battle zone, return this creature from the battle zone to your hand.
+   1  Look at the top 4 cards of your deck. Put one of them into your hand, and put the rest on the bottom of your deck in any order.
+   1  When you put this creature into the battle zone, look at your opponent's shields. Then put them back where they were.
+   1  Whenever this creature is attacking your opponent and isn't blocked, you may choose a creature in the battle zone and return it to its owner's hand.
+   1  When this creature is destroyed, you may return another creature from your graveyard to your hand.
+   1  Each creature attacks each turn if able.
+   1  Your opponent chooses one of his creatures in the battle zone or one of his shields and puts it into his graveyard.
+   1  Whenever your opponent casts a spell, he chooses and discards a card from his hand, then chooses a card in his mana zone and puts it into his graveyard.
+   1  This creature gets +2000 power for each darkness creature in your graveyard. ''(A creature that has power 0 or less is destroyed.)''
+   1  Search a player's deck. You may take a card from that deck and put it into that player's graveyard. Then the player shuffles his deck.
+   1  Whenever this creature is attacking your opponent and isn't blocked, your opponent chooses one of his creatures and destroys it.
+   1  TPL:{{Tap Ability|Choose a race. Each creature of that race gets "slayer" until the End Step|end of the turn. ''(Whenever a creature that has "slayer" battles, destroy the other creature after the battle.)''}}
+   1  Choose a race. Return up to 3 creatures of that race from your graveyard to your hand.
+   1  Destroy all creatures that have power 4000 or less.
+   1  Choose one of your creatures in the battle zone. Whenever that creature wins a battle this turn, untap it.
+   1  TPL:{{Tap Ability|Choose a race. Each creature of that race attacks this turn if able and gets "power attacker +4000" until the End Step|end of the turn. ''(While attacking, a creature that has "power attacker +4000" gets +4000 power.)''}}
+   1  Whenever this creature is attacking your opponent and isn't blocked, your opponent chooses a card in his mana zone and puts it into his graveyard.
+   1  Choose a race. This turn, each creature of that race can attack untapped creatures and can't be blocked while attacking a creature.
+   1  Whenever this creature is attacking your opponent and isn't blocked, you may destroy one of your opponent's creatures that has power 3000 or less.
+   1  Whenever one of your Armorloids is destroyed, your opponent chooses a card in his mana zone and puts it into his graveyard.
+   1  Whenever this creature is attacking your opponent and isn't blocked, search your deck. You may take a creature from your deck, show that creature to your opponent, and put it into your hand. Then shuffle your deck.
+   1  Choose a race. You may put any number of creatures of that race from your hand into your mana zone.
+   1  For each card in your mana zone, put a card from the top of your deck into your mana zone tapped.
+   1  TPL:{{Tap Ability|Choose a race. Creatures of that race can't be blocked by creatures that have power 3000 or less this turn.}}
+   1  Whenever this creature attacks, you may choose one of your opponent's untapped creatures that has "blocker." This turn, that creature blocks this creature if able and this creature can't be blocked by other creatures.
+   1  Whenever this creature becomes blocked, it gets +3000 power until the End Step|end of the turn.
+   1  This creature gets +2000 power for each of your other nature creatures in the battle zone. ''(A creature that has power 0 or less is destroyed.)''
+   1  While this creature has power 6000 or more, it has "double breaker ''(This creature breaks 2 shields)''."
+   1  Your opponent chooses one of his creatures in the battle zone and puts it into his mana zone.
+   1  When you put this creature into the battle zone, search your deck. You may take a '''Whispering Totem''' from your deck, show that creature to your opponent, and put it into your hand. Then shuffle your deck.
+   1  When you put this creature into the battle zone, choose a race other than Mecha Del Sol. Each creature of that race gets +4000 power.
+   1  Whenever your opponent would choose a creature in the battle zone, he Unchoosable|can't choose this one. ''(It can still be attacked and blocked.)''
+   1  Whenever this creature is attacking your opponent and isn't blocked, choose one of your opponent's shields and play|turn it Face Up|face up. ''(It stays Face Up|face up while it's in the shield zone.)''
+   1  When this creature is destroyed, destroy all creatures.
+   1  This creature gets +3000 power for each card in your hand. ''(A creature that has power 0 or less is destroyed.)''
+   1  While this creature has power 15000 or more, it has "Triple breaker ''(This creature breaks 3 shields)''" instead of "double breaker."
+   1  When you put this creature into the battle zone, your opponent chooses up to 2 creatures in his hand and puts them into the battle zone.

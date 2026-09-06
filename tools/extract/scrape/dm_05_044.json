@@ -1,0 +1,16 @@
+{
+ "card_id": "dm_05_044",
+ "page": "Ruthless Skyterror",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Armored Wyvern",
+ "cost": "4",
+ "power": "6000",
+ "engtext": "■ This [[creature]] can [[attack]] [[untap]]ped [[water]] [[creature]]s.\n\n■ This [[creature]] can't [[attack]] [[player]]s.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "44/55"
+ },
+ "wiki": "{{TCGCardtable\n| image = Ruthless Skyterror.jpg\n| civilization = Fire\n| type = Creature\n| cost = 4\n| race = Armored Wyvern\n| power = 6000\n| engtext = ■ This [[creature]] can [[attack]] [[untap]]ped [[water]] [[creature]]s.\n\n■ This [[creature]] can't [[attack]] [[player]]s.\n| flavor = \"If you don't kneel before my wrath, you'll certainly kneel after it.\" ([[DM-05]])\n| artist = Yoko Tsukamoto\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = 44/55\n| R1 = Common\n}}\n[[Category:Can Attack Untapped Creatures]]"
+}

@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_01_s09",
+ "page": "Deathblade Beetle",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Giant Insect",
+ "cost": "5",
+ "power": "3000+",
+ "engtext": "{{Power Attacker|4000}}\n\n{{Double Breaker}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "S9/S10",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "S10/S10",
+  "set3": "DMX-19 Super Rare 100% Pack",
+  "setnum3": "S47/???"
+ },
+ "wiki": "{{Cardtable\n| image = Deathblade Beetle.jpg\n| civilization = Nature\n| type = Creature\n| jpname = デスブレード・ビートル\n| phonetic = Desuburēdo Bītoru\n| dename = Todesklingenkäfer\n| itname = Scarafaggio Lamamortale\n| frname = Scarabée mortelames\n| esname = Escarabajo asesino\n| mxname = Escarabajo asesino\n| ptname = Besouro Lâminas Mortais\n| cnname = 利刃甲虫\n| race = Giant Insect\n| cost = 5\n| power = 3000+\n| engtext = {{Power Attacker|4000}}\n\n{{Double Breaker}}\n| jptext = {{Power Attacker|4000|jp}}\n\n{{Double Breaker|jp}}\n| flavor = やつは全てを食い荒らす。It devours all. ([[DM-01]])\n| flavor2 = フィオナの森は、何度焼かれても蘇る、生命をはぐくむ森。デスブレード・ビートルはそこでも特に力強い生命の象徴とされていた。 The [[Fiona Woods]] regenerates no matter how many times it has been burnt. It is the forest of life. Deathblade Beetle is one of the symbols of its powerful life. ([[DMX-19]])\n| mana = 1\n| artist = Dustmoss\n| artist2 = Kou1\n| set1 = DM-01 Base Set\n| setnum1 = S9/S10\n| R1 = Super Rare\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = S10/S10\n| R2 = Super Rare\n| set3 = DMX-19 Super Rare 100% Pack\n| setnum3 = S47/???\n| R3 = Super Rare\n}}\n{{Deathblade}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:3000 Power Creatures]]"
+}

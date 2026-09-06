@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_07_006",
+ "page": "Bex, the Oracle",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Light Bringer",
+ "cost": "3",
+ "power": "2500",
+ "engtext": "■ While you have no [[shield]]s, this [[creature]] has \"[[Blocker]] ''(Whenever an [[opponent]]'s [[creature]] [[attack]]s, you may [[tap]] this [[creature]] to stop the [[attack]]. Then the 2 [[creature]]s [[battle]])''.\"",
+ "templates": [],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "6/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "38/55",
+  "set3": "DMC-10 Hakuoh's Holy Spirit Deck ",
+  "setnum3": "26/44"
+ },
+ "wiki": "{{Cardtable\n| image = Bex, the Oracle.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|予|よ}}{{Ruby|言|げん}}{{Ruby|者|しゃ}}ベクス\n| phonetic = Yogensha Bekusu\n| race = Light Bringer\n| cost = 3\n| power = 2500\n| engtext = ■ While you have no [[shield]]s, this [[creature]] has \"[[Blocker]] ''(Whenever an [[opponent]]'s [[creature]] [[attack]]s, you may [[tap]] this [[creature]] to stop the [[attack]]. Then the 2 [[creature]]s [[battle]])''.\"\n| jptext = ■ 自分のシールドが1枚もなければ、このクリーチャーは「ブロッカー」を得る。\n| flavor = \"Five... four... three... two...\" ([[DM-07]])\n| flavor2 = 予言者の歌声は、夢見の神殿の門を開いた。The oracles's song opened the gates of the [[Silver Glory|Temple of Dreams]]. ([[DM-07]], [[DMC-10]])\n| mana = 1\n| artist = Sansyu\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 6/55\n| R1 = Common\n| set2 = DM-07 Invincible Charge\n| setnum2 = 38/55\n| R2 = Common\n| set3 = DMC-10 Hakuoh's Holy Spirit Deck \n| setnum3 = 26/44\n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Light Bringer]]\n[[Category:2500 Power Creatures]]\n[[Category:Conditional Blocker]]"
+}

@@ -1,0 +1,28 @@
+{
+ "card_id": "dm_05_034",
+ "page": "Vashuna, Sword Dancer",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Demon Command",
+ "cost": "5",
+ "power": "7000",
+ "engtext": "■ While your [[opponent]] has no [[shield]]s, this [[creature]] can't [[attack]].\n\n{{Double Breaker}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "Shadowclash Collector Tin",
+  "setnum1": "32/46",
+  "set2": "DM-05 Survivors of the Megapocalypse",
+  "setnum2": "34/55",
+  "set3": "DM-05 Return of the Survivor",
+  "setnum3": "12/33",
+  "set4": "Shadowclash Collector Tin",
+  "setnum4": "32/46",
+  "set5": "DMC-38 Castle of Demon",
+  "setnum5": "19/33",
+  "set6": "DMC-61 CoroCoro Dream Pack 4: Eternal Heaven",
+  "setnum6": "20/94"
+ },
+ "wiki": "{{Cardtable\n| image = Vashuna, Sword Dancer.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|剣|けん}}{{Ruby|舞|ぶ}}の{{Ruby|修|しゅ}}{{Ruby|羅|ら}}ヴァシュナ\n| phonetic = Kenbu no Shura Vashuna\n| cost = 5\n| race = Demon Command\n| power = 7000\n| engtext = ■ While your [[opponent]] has no [[shield]]s, this [[creature]] can't [[attack]].\n\n{{Double Breaker}}\n| jptext = {{Double Breaker|jp}}\n\n■ 相手にシールドが1枚もなければ、このクリーチャーは攻撃することができない。\n| flavor = \"My specialties are ballet, tap, and merciless obliteration.\" ([[DM-05]])\n| flavor2 = 「東国の武技を見せてやろう!」 I'll show you the martial art of Tōgoku! -'''Vashuna, Sword Dancer''' ([[DM-05]])\n| flavor3 = 刃が踊り、舞う影が修羅となる。The blade dances, the dancing shadow becomes a fight. ([[DMC-38]], [[DMC-61]])\n| mana = 1\n| artist = Jason\n| set1 = Shadowclash Collector Tin\n| setnum1 = 32/46\n| R1 = Rare\n| set2 = DM-05 Survivors of the Megapocalypse\n| setnum2 = 34/55\n| R2 = Rare\n| set3 = DM-05 Return of the Survivor\n| setnum3 = 12/33\n| R3 = Rare\n| set4 = Shadowclash Collector Tin\n| setnum4 = 32/46\n| R4 = Rare\n| set5 = DMC-38 Castle of Demon\n| setnum5 = 19/33\n| R5 = Rare\n| set6 = DMC-61 CoroCoro Dream Pack 4: Eternal Heaven\n| setnum6 = 20/94\n| R6 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]"
+}

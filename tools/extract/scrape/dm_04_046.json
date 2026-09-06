@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_04_046",
+ "page": "Pippie Kuppie",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Fire Bird",
+ "cost": "2",
+ "power": "1000",
+ "engtext": "■ Each [[Armored Dragon]] in the [[battle zone]] gets +1000 [[power]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-04 Shadowclash of Blinding Night",
+  "setnum1": "46/55",
+  "set2": "DM-04 Challenge of Black Shadow ",
+  "setnum2": "50/55",
+  "set3": "DMC-06 Dragon Strikes Deck",
+  "setnum3": "71/82",
+  "set4": "DMC-18 Shobu's Holy Dragon Deck ",
+  "setnum4": "91/102"
+ },
+ "wiki": "{{Cardtable\n| image = Pippie Kuppie.jpg\n| civilization = Fire\n| type = Creature\n| jpname = ピッピ・クッピー\n| phonetic = Pippi Kuppī ''(Pippi Kuppi)''\n| cost = 2\n| race = Fire Bird\n| power = 1000\n| engtext = ■ Each [[Armored Dragon]] in the [[battle zone]] gets +1000 [[power]].\n| jptext = ■ バトルゾーンにあるアーマード・ドラゴンすべてのパワーは+1000される。\n| flavor = When a [[Fire Bird]] senses a [[Dragon]] in trouble, the whole flock rises into the air, chirps \"kuripppie\", and dashes to the rescue. ([[DM-04]])   \n| flavor2 = 「みんなで竜のおじちゃんを守るんだ!」\"We'll all protect the dragon elder!\" <br> 「クピピー!」のんきな小鳥が大合唱。\"Cupeep!\" The cheerful little birds sang in chorus. ([[DM-04]], [[DMC-06]], [[DMC-18]])\n| mana = 1\n| artist = Syuichi Obata \n| set1 = DM-04 Shadowclash of Blinding Night\n| setnum1 = 46/55\n| R1 = Common\n| set2 = DM-04 Challenge of Black Shadow \n| setnum2 = 50/55\n| R2 = Common\n| set3 = DMC-06 Dragon Strikes Deck\n| setnum3 = 71/82\n| R3 = Common\n| set4 = DMC-18 Shobu's Holy Dragon Deck \n| setnum4 = 91/102\n| R4 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Fire]]\n[[Category:Fire Bird]]\n[[Category:1000 Power Creatures]]\n[[Category:Increase Power]]"
+}

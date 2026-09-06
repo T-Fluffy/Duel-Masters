@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_07_026",
+ "page": "Dream Pirate, Shadow of Theft",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Ghost",
+ "cost": "4",
+ "power": "3000",
+ "engtext": "■ When this [[creature]] would be [[destroy]]ed, you may return it to your [[hand]] [[instead]]. If you do, put a [[card]] from your [[hand]] into your [[graveyard]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "26/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "44/55",
+  "set3": "DMEX-08 Mysterious Black Box Pack",
+  "setnum3": "116/???"
+ },
+ "wiki": "{{Cardtable\n| image = Dream Pirate, Shadow of Theft.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|夢|む}}{{Ruby|幻|げん}}の{{Ruby|影|かげ}}ダーク・バンディット\n| phonetic = Mugen no Kage Dāku Banditto\n| cost = 4\n| race = Ghost\n| power = 3000\n| engtext = ■ When this [[creature]] would be [[destroy]]ed, you may return it to your [[hand]] [[instead]]. If you do, put a [[card]] from your [[hand]] into your [[graveyard]].\n| jptext = ■ このクリーチャーが破壊される時、墓地に置くかわりに手札に戻してもよい。そうしたら、自分の手札を1枚、墓地に置く。\n| flavor = \"Avast, me mateys, and check out my new pirate dictionary! Arrrrr. Yo ho ho. Hmm, it's pretty short. Arrrrr!\" ([[DM-07]])\n| flavor2 = 他人とは、略奪するまで魂を育ててくれる牧場みたいなものだ。Other people are like farms that nurture your soul until they are plundered. ([[DM-07]])\n| flavor3= 死んだと思えば、生きている。相手を欺く初歩の初歩じゃ。\"If you think you're dead, you're still alive. It's the most basic trick to deceive your opponent.\"　―Excerpt from [[Zero Nemesis, Shadow of Panic|Devil Marshall]]'s Tactics Book ([[DMEX-08]])\n| mana = 1\n| artist = Kou1\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 26/55\n| R1 = Common\n| set2 = DM-07 Invincible Charge\n| setnum2 = 44/55\n| R2 = Common\n| set3 = DMEX-08 Mysterious Black Box Pack\n| setnum3 = 116/???\n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Destruction Substitution]]\n[[Category:Self Discard]]\n[[Category:Self Bounce]]"
+}

@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_07_011",
+ "page": "Miracle Portal",
+ "type": "Spell",
+ "civilization": "Light",
+ "race": "",
+ "cost": "4",
+ "power": "",
+ "engtext": "■ Choose one of your [[creature]]s in the [[battle zone]]. This [[turn]], it can't be [[block]]ed and you [[ignore]] any [[effect]]s that would prevent that [[creature]] from [[attack]]ing your [[opponent]]. ''(For example, [[ignore]] [[summoning sickness]] and [[card]] [[effect]]s that say \"This [[creature]] can't [[attack]]\" or \"This [[creature]] can't [[attack]] [[player]]s.\" Your [[creature]]s can't [[attack]] [[creature]]s this way.)''",
+ "templates": [],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "11/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "39/55"
+ },
+ "wiki": "{{Cardtable\n| image = Miracle Portal.jpg\n| civilization = Light\n| type = Spell\n| jpname = ミラクル・ポータル \n| phonetic = Mirakuru Pōtaru\n| cost = 4\n| engtext = ■ Choose one of your [[creature]]s in the [[battle zone]]. This [[turn]], it can't be [[block]]ed and you [[ignore]] any [[effect]]s that would prevent that [[creature]] from [[attack]]ing your [[opponent]]. ''(For example, [[ignore]] [[summoning sickness]] and [[card]] [[effect]]s that say \"This [[creature]] can't [[attack]]\" or \"This [[creature]] can't [[attack]] [[player]]s.\" Your [[creature]]s can't [[attack]] [[creature]]s this way.)''\n| jptext = ■ バトルゾーンにある自分のクリーチャーを1体選ぶ。このターン、そのクリーチャーはブロックされない。また、「このクリーチャーは攻撃することができない」または「このクリーチャーは相手プレイヤーを攻撃できない」と書かれていても、このターンそのクリーチャーは相手プレイヤーを攻撃することができる。\n| flavor = \n| mana = 1\n| artist = Katsuhiko Kojoh\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 11/55\n| R1 = Common\n| set2 = DM-07 Invincible Charge\n| setnum2 = 39/55\n| R2 = Common\n}}\n{{Diamond State}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Gives \"Unblockable\"]]\n[[Category:Ignore]]"
+}

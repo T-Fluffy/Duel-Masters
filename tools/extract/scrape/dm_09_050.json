@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_09_050",
+ "page": "Solid Horn",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Horned Beast",
+ "cost": "6",
+ "power": "5000",
+ "engtext": "■ When this [[creature]] would be [[destroy]]ed, put it into your [[mana zone]] [[instead]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "50/55",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "52/55",
+  "set3": "Promotional",
+  "setnum3": "P26/Y2"
+ },
+ "wiki": "{{Cardtable\n| image = Solid Horn.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|警|けい}}{{Ruby|護|ご}}するソリッド・ホーン\n| phonetic = Keigo Suru Soriddo Hōn\n| cost = 6\n| race = Horned Beast\n| power = 5000\n| engtext = ■ When this [[creature]] would be [[destroy]]ed, put it into your [[mana zone]] [[instead]].\n| jptext = ■ このクリーチャーがバトルゾーンから自分の墓地に置かれるとき、墓地に置くかわりに自分のマナゾーンに置く。\n| flavor = It has a simple philosophy: If it sees an enemy, it fights. If it doesn't see an enemy, it looks for one. ([[DM-09]])\n| flavor2 = 敵あらば戦い、無ければ探す。警護するソリッド・ホーンの行動原理は単純だが、心強い。If there is an enemy, fight; if not, search. The guiding principle of the Solid Horn's actions is simple, but reassuring. ([[DM-09]])\n| flavor3 = 流した血潮が強さの糧。不屈の闘志を持つ者だけが、勝利の美酒を味わえるのだ! The blood that has been shed becomes the fuel for strength. Only those with unwavering fighting spirit can taste the sweet wine of victory! (P26/Y2)\n| mana = 1\n| artist = Kou1\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = 50/55\n| R1 = Common\n| set2 = DM-09 Invincible Blood\n| setnum2 = 52/55\n| R2= Common\n| set3 = Promotional\n| setnum3 = P26/Y2\n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Destruction Substitution]]\n[[Category:Mana Acceleration]]"
+}

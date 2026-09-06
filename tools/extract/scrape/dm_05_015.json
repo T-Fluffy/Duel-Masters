@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_05_015",
+ "page": "Thunder Net",
+ "type": "Spell",
+ "civilization": "Light",
+ "race": "",
+ "cost": "2",
+ "power": "",
+ "engtext": "■ For each [[water]] [[creature]] you have in the [[battle zone]], you may [[choose]] one of your [[opponent]]'s [[creature]]s in the [[battle zone]] and [[tap]] it.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "15/55",
+  "set2": "DM-05 Return of the Survivor",
+  "setnum2": "23/55"
+ },
+ "wiki": "{{Cardtable\n| image = Thunder Net.jpg\n| civilization = Light\n| type = Spell\n| jpname = サンダー・ネット\n| phonetic = Sandā Netto\n| cost = 2\n| engtext = ■ For each [[water]] [[creature]] you have in the [[battle zone]], you may [[choose]] one of your [[opponent]]'s [[creature]]s in the [[battle zone]] and [[tap]] it.\n| jptext = ■ バトルゾーンにある自分の水のクリーチャー1体につき、バトルゾーンにある相手のクリーチャーを1体選び、タップしてもよい。\n| flavor = 雲間から装置が飛び出すと、稲妻の網が敵を捕らえる! \"When the device is activated, a net of electricity snares our enemies!\" —{{tooltip|Syrius, Firmament Elemental}} ([[DM-05]])\n| mana = 1\n| artist = Katsuya\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = 15/55\n| R1 = Uncommon\n| set2 = DM-05 Return of the Survivor\n| setnum2 = 23/55\n| R2 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Spell]]\n[[Category:Creature Tapper]]"
+}

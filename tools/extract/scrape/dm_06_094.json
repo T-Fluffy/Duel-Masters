@@ -1,0 +1,26 @@
+{
+ "card_id": "dm_06_094",
+ "page": "Charmilia, the Enticer",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Snow Faerie",
+ "cost": "4",
+ "power": "3000",
+ "engtext": "{{Tap Ability|[[Search]] your [[deck]]. You may take a [[creature]] from your [[deck]], show that [[creature]] to your [[opponent]], and put it into your [[hand]]. Then [[shuffle]] your [[deck]].}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "94/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "39/110",
+  "set3": "DMC-15 Eternal Dragons Deck",
+  "setnum3": "16/78",
+  "set4": "Block Rockers Deck",
+  "setnum4": "94a/110",
+  "set5": "Promotional",
+  "setnum5": "L3 Y2",
+  "set6": "DMX-09 Deck Builder Oni DX Go For It! Katta Edition",
+  "setnum6": "25/56"
+ },
+ "wiki": "{{Cardtable\n| image = Charmilia, the Enticer.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|魅|み}}{{Ruby|了|りょう}}{{Ruby|妖|よう}}{{Ruby|精|せい}}チャミリア ''(Charmilia, Fascination Faerie)''\n| phonetic = Miryō Yōsei Chamiria\n| race = Snow Faerie\n| cost = 4\n| power = 3000\n| engtext = {{Tap Ability|[[Search]] your [[deck]]. You may take a [[creature]] from your [[deck]], show that [[creature]] to your [[opponent]], and put it into your [[hand]]. Then [[shuffle]] your [[deck]].}}\n| jptext = ■ このクリーチャーで攻撃する代わりに、タップして次の{{Tap}}能力を使ってもよい。\n:{{Tap}}自分の山札を見る。その中からクリーチャーを1体選び、相手に見せてから自分の手札に加えてもよい。その後、山札をシャッフルする。\n| flavor = \"Hmm. Flurry or blizzard?\" ([[DM-06]])\n| flavor2 = 雪国には人を惑わす妖精がいるという。It is said that in the snow country, there are faeries that deceive people. ([[DM-06]])\n| flavor3 = 「ドラゴン様に私たちの願いが届きますように。」 \"May our wishes reach the Dragon-sama.\"　─'''Charmilia, the Enticer''' ([[DMC-15]])\n| flavor4 = あんたもあたしのために戦いな! \"Fight for me too!\" ─'''Charmilia, the Enticer''' ([[DMX-09]])\n| mana = 1\n| artist = Jason\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 94/110\n| R1 = Rare\n| set2 = DM-06 Invincible Soul\n| setnum2 = 39/110\n| R2 = Rare\n| set3 = DMC-15 Eternal Dragons Deck\n| setnum3 = 16/78\n| R3 = Rare\n| set4 = Block Rockers Deck\n| setnum4 = 94a/110\n| R4 = Rare\n| set5 = Promotional\n| setnum5 = L3 Y2\n| R5 = Rare\n| set6 = DMX-09 Deck Builder Oni DX Go For It! Katta Edition\n| setnum6 = 25/56\n| R6 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Nature]]\n[[Category:Snow Faerie]]\n[[Category:Tap Ability]]\n[[Category:3000 Power Creatures]]\n[[Category:Deck Search]]"
+}

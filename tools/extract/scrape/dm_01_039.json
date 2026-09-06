@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_01_039",
+ "page": "Seamine",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Fish",
+ "cost": "6",
+ "power": "4000",
+ "engtext": "{{Blocker|old}}",
+ "templates": [
+  "Blocker|old"
+ ],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "39/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "4/110"
+ },
+ "wiki": "{{Cardtable\n| image = Seamine.jpg\n| civilization = Water\n| type = Creature\n| jpname = シーマイン\n| phonetic = Shīmain\n| race = Fish\n| cost = 6\n| power = 4000\n| engtext = {{Blocker|old}}\n| jptext = {{Blocker|jp}}\n| flavor = 美しい物を見ながら死にたいのならば、水中都市に攻めこめばいい。 If the last thing you want to see in your life is something beautiful, attack an underwater city. ([[DM-01]])\n| artist = Tomofumi Ogasawara\n| set1 = DM-01 Base Set\n| setnum1 = 39/110\n| R1 = Very Rare\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 4/110\n| R2 = Very Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Fish]]\n[[Category:4000 Power Creatures]]"
+}

@@ -1,0 +1,24 @@
+{
+ "card_id": "dm_04_015",
+ "page": "Re Bil, Seeker of Archery",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Mecha Thunder",
+ "cost": "7",
+ "power": "6000",
+ "engtext": "■ Each other [[light]] [[creature]] in the [[battle zone]] gets +2000 [[power]].\n\n{{Double Breaker}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-04 Shadowclash of Blinding Night",
+  "setnum1": "15/55",
+  "set2": "DM-04 Challenge of Black Shadow",
+  "setnum2": "21/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "16/140",
+  "set4": "DMC-05 Lightning Thunder Deck",
+  "setnum4": "17/82"
+ },
+ "wiki": "{{Cardtable\n| image = Re Bil, Seeker of Archery.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|聖|せい}}{{Ruby|弓|きゅう}}の{{Ruby|求|きゅう}}{{Ruby|道|どう}}{{Ruby|者|しゃ}}レ・ビール\n| phonetic = Seikyū no Kyūdōsha Re Bīru\n| cost = 7\n| race = Mecha Thunder\n| power = 6000\n| engtext = ■ Each other [[light]] [[creature]] in the [[battle zone]] gets +2000 [[power]].\n\n{{Double Breaker}}\n| jptext = ■ このクリーチャーがバトルゾーンにある間、バトルゾーンにある他の光のクリーチャーすべてのパワーはそれぞれ+2000される。\n\n{{Double Breaker|jp}}\n| flavor = \"Bulls-eye!\" ([[DM-04]])\n| mana = 1\n| artist = Eiji Kaneda \n| set1 = DM-04 Shadowclash of Blinding Night\n| setnum1 = 15/55\n| R1 = Uncommon\n| set2 = DM-04 Challenge of Black Shadow\n| setnum2 = 21/55\n| R2 = Uncommon\n| set3 = DM-18 Best Challenger\n| setnum3 = 16/140\n| R3 = Rare\n| set4 = DMC-05 Lightning Thunder Deck\n| setnum4 = 17/82\n| R4 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Mecha Thunder]]\n[[Category:6000 Power Creatures]]\n[[Category:Increase Power]]"
+}

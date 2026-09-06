@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_07_049",
+ "page": "Fruit of Eternity",
+ "type": "Spell",
+ "civilization": "Nature",
+ "race": "",
+ "cost": "4",
+ "power": "",
+ "engtext": "{{Shield Trigger|spell}} \n\n■ Whenever any of your [[creature]]s would be [[destroy]]ed this [[turn]], put it into your [[mana zone]] [[instead]].",
+ "templates": [
+  "Shield Trigger|spell"
+ ],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "49/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "34/55",
+  "set3": "DMEX-08 Mysterious Black Box Pack",
+  "setnum3": "67/???"
+ },
+ "wiki": "{{Cardtable\n| image = Fruit of Eternity.jpg\n| civilization = Nature\n| type = Spell\n| jpname = {{Ruby|不|ふ}}{{Ruby|死|じ}}{{Ruby|身|み}}の{{Ruby|果|か}}{{Ruby|実|じつ}}\n| phonetic = Fushimi no Kajitsu\n| cost = 4\n| engtext = {{Shield Trigger|spell}} \n\n■ Whenever any of your [[creature]]s would be [[destroy]]ed this [[turn]], put it into your [[mana zone]] [[instead]].\n| jptext = {{Icon|ST}} S・トリガー (この呪文をシールドゾーンから手札に加える時、コストを支払わずにすぐ唱えてもよい)\n\n■ このターン、自分のクリーチャー1体がバトルゾーンから自分の墓地に置かれるとき、墓地に置くかわりに自分のマナゾーンに置く。\n| flavor = \n| mana = 1\n| artist = Sansyu\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 49/55\n| R1 = Uncommon\n| set2 = DM-07 Invincible Charge\n| setnum2 = 34/55\n| R2 = Uncommon\n| set3 = DMEX-08 Mysterious Black Box Pack\n| setnum3 = 67/???\n| R3 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Nature]]\n[[Category:Shield Trigger]]\n[[Category:Spell]]\n[[Category:Destruction Substitution]]\n[[Category:Mana Acceleration]]"
+}

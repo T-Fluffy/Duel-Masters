@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_03_022",
+ "page": "Stinger Ball",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Cyber Virus",
+ "cost": "3",
+ "power": "1000",
+ "engtext": "■  Whenever this [[creature]] [[attack]]s, you may [[look]] at one of your [[opponent]]'s [[shield]]s. Then put it back where it was.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-03 Rampage of the Super Warriors",
+  "setnum1": "22/55",
+  "set2": "DM-03 Master of Destruction",
+  "setnum2": "25/55",
+  "set3": "DMC-27 CoroCoro Dream Pack ",
+  "setnum3": "25/55"
+ },
+ "wiki": "{{Cardtable\n| image= Stinger Ball.jpg\n| civilization = Water\n| type = Creature\n| jpname = スティンガー・ボール\n| phonetic = Sutingā Bōru\n| race = Cyber Virus\n| cost = 3\n| power = 1000\n| engtext = ■  Whenever this [[creature]] [[attack]]s, you may [[look]] at one of your [[opponent]]'s [[shield]]s. Then put it back where it was.\n| jptext = ■ このクリーチャーが攻撃する時、相手のシールドを1枚見てもよい。その後、そのシールドを元の場所に戻す。\n| flavor = The eyes have it. ([[DM-03]])\n| flavor2 = 水の中には一億の目が用意されている。A hundred million eyes are prepared in the water. ([[DM-03]])\n| mana = 1\n| artist = Hideaki Takamura\n| set1 = DM-03 Rampage of the Super Warriors\n| setnum1 = 22/55\n| R1 = Uncommon\n| set2 = DM-03 Master of Destruction\n| setnum2 = 25/55\n| R2 = Uncommon\n| set3 = DMC-27 CoroCoro Dream Pack \n| setnum3 = 25/55\n| R3 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Cyber Virus]]\n[[Category:1000 Power Creatures]]\n[[Category:Shield Peek]]\n[[Category:Attack Trigger]]"
+}

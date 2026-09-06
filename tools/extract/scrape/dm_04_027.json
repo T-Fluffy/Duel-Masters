@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_04_027",
+ "page": "Chains of Sacrifice",
+ "type": "Spell",
+ "civilization": "Darkness",
+ "race": "",
+ "cost": "8",
+ "power": "",
+ "engtext": "■ [[Destroy]] up to 2 of your [[opponent]]'s [[creature]]s.\n\n■ [[Destroy]] one of your [[creature]]s.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-04 Shadowclash of Blinding Night",
+  "setnum1": "27/55",
+  "set2": "DM-04 Challenge of Black Shadow ",
+  "setnum2": "14/55"
+ },
+ "wiki": "{{Cardtable\n| image = Chains of Sacrifice.jpg\n| civilization = Darkness\n| type = Spell\n| jpname = いけにえの{{Ruby|鎖|くさり}}\n| phonetic = Ikenie no Kusari\n| cost = 8\n| engtext = ■ [[Destroy]] up to 2 of your [[opponent]]'s [[creature]]s.\n\n■ [[Destroy]] one of your [[creature]]s.\n| jptext = ■ バトルゾーンにある相手のクリーチャーを2体まで選び、持ち主の墓地に置く。\n\n■ バトルゾーンに自分のクリーチャーが1体でもあれば、その中から1体選び、自分の墓地に置く。\n| flavor = \"The only thing stronger than my chains is your fear.\" -[[Trox, General of Destruction]] ([[DM-04]])\n| mana = 1\n| artist = Sansyu\n| set1 = DM-04 Shadowclash of Blinding Night\n| setnum1 = 27/55\n| R1 = Rare\n| set2 = DM-04 Challenge of Black Shadow \n| setnum2 = 14/55\n| R2 = Rare\n}}\n{{Olzekia}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Self Removal]]\n[[Category:Fixed Removal]]\n[[Category:Mass Removal]]"
+}

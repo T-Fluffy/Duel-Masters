@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_04_028",
+ "page": "Darkpact",
+ "type": "Spell",
+ "civilization": "Darkness ",
+ "race": "",
+ "cost": "2",
+ "power": "",
+ "engtext": "■ Put any [[number]] of [[card]]s from your [[mana zone]] into your [[graveyard]]. Then [[draw]] that many [[card]]s.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-04 Shadowclash of Blinding Night",
+  "setnum1": "28/55",
+  "set2": "DM-04 Challenge of Black Shadow ",
+  "setnum2": "49/55",
+  "set3": "DMC-21 Zakira's Dragon Commander Power-Up Pack",
+  "setnum3": "78/102",
+  "set4": "DM26-RP1 Garde of Bolmeteus",
+  "setnum4": "T9/T10"
+ },
+ "wiki": "{{Cardtable\n| image = Darkpact.jpg\n| civilization = Darkness \n| type = Spell\n| jpname = {{Ruby|悪|あく}}{{Ruby|魔|ま}}の{{Ruby|契|けい}}{{Ruby|約|やく}} ''(Devil's Contract)''\n| phonetic = Akuma no Keiyaku\n| cost = 2\n| engtext = ■ Put any [[number]] of [[card]]s from your [[mana zone]] into your [[graveyard]]. Then [[draw]] that many [[card]]s.\n| jptext = ■ 自分のマナゾーンから好きな枚数のカードを自分の墓地に置く。その後、その枚数と同じ数のカードを引く。\n| flavor = \"Why don't mortals embrace despair? All my ghoul friends really seem to enjoy it.\" -[[Ballom, Master of Death]] ([[DM-04]])  \n| flavor2 = 「何故、人は目の前にある絶望に目をつむるのだ?」 \"Why do people turn a blind eye to the despair right in front of them?\" ─[[Jack Viper, Shadow of Doom]] ([[DM-04]], [[DMC-21]])\n| flavor3 = 何故、人は目の前にある絶望に目をつむるのだ？その絶望が未来には希望に代わることもあるのに。 \"Why do people turn a blind eye to the despair right before them? Even though that despair may one day become hope in the future.\" —[[Jack Viper, Shadow of Doom]] ([[DM26-RP1]])\n| mana = 1\n| artist = Katsuya\n| set1 = DM-04 Shadowclash of Blinding Night\n| setnum1 = 28/55\n| R1 = Common\n| set2 = DM-04 Challenge of Black Shadow \n| setnum2 = 49/55\n| R2 = Common\n| set3 = DMC-21 Zakira's Dragon Commander Power-Up Pack\n| setnum3 = 78/102\n| R3 = Common\n| set4 = DM26-RP1 Garde of Bolmeteus\n| setnum4 = T9/T10\n| R4 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Spell]]\n[[Category:Card Draw]]"
+}

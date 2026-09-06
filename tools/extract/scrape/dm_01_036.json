@@ -1,0 +1,24 @@
+{
+ "card_id": "dm_01_036",
+ "page": "Phantom Fish",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Gel Fish",
+ "cost": "3",
+ "power": "4000",
+ "engtext": "{{Blocker|old}}\n\n■ This [[creature]] can't [[attack]].",
+ "templates": [
+  "Blocker|old"
+ ],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "36/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "79/110",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "103/140",
+  "set4": "Promotional",
+  "setnum4": "B3/7 Y1"
+ },
+ "wiki": "{{Cardtable\n| image = Phantom Fish.jpg\n| civilization = Water\n| type = Creature\n| jpname = ファントム・フィッシュ\n| phonetic = Fantomu Fisshu\n| race = Gel Fish\n| cost = 3\n| power = 4000\n| engtext = {{Blocker|old}}\n\n■ This [[creature]] can't [[attack]].\n| jptext = {{Blocker|jp}}\n\n■ このクリーチャーは攻撃することができない\n| flavor =\n| mana = 1\n| artist = Ittoku\n| set1 = DM-01 Base Set\n| setnum1 = 36/110\n| R1 = Common\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 79/110\n| R2 = Common\n| set3 = DM-18 Best Challenger\n| setnum3 = 103/140\n| R3 = Common\n|set4 = Promotional\n|setnum4 = B3/7 Y1\n|R4 = Common}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Gel Fish]]\n[[Category:4000 Power Creatures]]"
+}

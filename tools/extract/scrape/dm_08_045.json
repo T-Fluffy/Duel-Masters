@@ -1,0 +1,36 @@
+{
+ "card_id": "dm_08_045",
+ "page": "Volcano Charger",
+ "type": "Spell",
+ "civilization": "Fire",
+ "race": "",
+ "cost": "4",
+ "power": "",
+ "engtext": "■ [[Destroy]] one of your [[opponent]]'s [[creature]]s that has [[power]] 2000 or less.\n\n{{Charger}}",
+ "templates": [
+  "Charger"
+ ],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "45/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "32/55",
+  "set3": "DMC-15 Eternal Dragons Deck",
+  "setnum3": "33/78",
+  "set4": "DMC-18 Shobu's Holy Dragon   Deck",
+  "setnum4": "41/102",
+  "set5": "DMC-25 Shobu's Fullmetal Fire Deck",
+  "setnum5": "25/45",
+  "set6": "DMC-40 Heavy Death Metal",
+  "setnum6": "13/14",
+  "set7": "DMC-48 Heroes Cross Pack - Zakira",
+  "setnum7": "27/44",
+  "set8": "DMC-58 Mad Rock Chester",
+  "setnum8": "14/16",
+  "set9": "DMC-61 CoroCoro Dream Pack 4: Eternal Heaven",
+  "setnum9": "50/94",
+  "set10": "DMX-20 Deck Ultimate Perfection!! Due-Max 160 ~Revolution & Invasion~",
+  "setnum10": "50/68"
+ },
+ "wiki": "{{Cardtable\n| image = Volcano Charger.jpg\n| civilization = Fire\n| type = Spell\n| jpname = クリムゾン・チャージャー\n| phonetic = Kurimuzon Chājā ''(Crimson Charger)''\n| cost = 4\n| engtext = ■ [[Destroy]] one of your [[opponent]]'s [[creature]]s that has [[power]] 2000 or less.\n\n{{Charger}}\n| jptext = ■ 相手のパワー2000以下のクリーチャーを1体破壊する。\n\n{{Charger|jp}}\n| flavor = Crimson petals scar the earth, sowing the seeds for the next eruptions. ([[DM-08]])\n| flavor2 = 深紅の炎は大地を焦がし、次なる噴火の種をまき散らす。The crimson flames scorch the earth, scattering the seeds for the next eruption. ([[DM-08]], [[DMC-15]], [[DMC-18]], [[DMC-25]], [[DMC-40]], [[DMC-61]])\n| flavor3 = 俺だってガルドの一員なんだ! \"I'm also a member of [[GARDE]].\" ─[[Ash]] ([[DMC-48]])\n| mana = 1\n| artist = Mikumo\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 45/55\n| R1 = Uncommon\n| set2 = DM-08 Invincible Legend\n| setnum2 = 32/55\n| R2 = Uncommon\n| set3 = DMC-15 Eternal Dragons Deck\n| setnum3 = 33/78\n| R3 = Uncommon\n| set4 = DMC-18 Shobu's Holy Dragon   Deck\n| setnum4 = 41/102\n| R4 = Uncommon\n| set5 = DMC-25 Shobu's Fullmetal Fire Deck\n| setnum5 = 25/45\n| R5 = Uncommon\n| set6 = DMC-40 Heavy Death Metal\n| setnum6 = 13/14\n| R6 = Uncommon\n| set7 = DMC-48 Heroes Cross Pack - Zakira\n| setnum7 = 27/44\n| R7 = Uncommon\n| set8 = DMC-58 Mad Rock Chester\n| setnum8 = 14/16\n| R8 = Uncommon\n| set9 = DMC-61 CoroCoro Dream Pack 4: Eternal Heaven\n| setnum9 = 50/94\n| R9 = Uncommon\n| set10 = DMX-20 Deck Ultimate Perfection!! Due-Max 160 ~Revolution & Invasion~\n| setnum10 = 50/68\n| R10 = Uncommon\n}}\n\n\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Charger]]\n[[Category:Power Based Removal]]"
+}

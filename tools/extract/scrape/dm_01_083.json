@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_01_083",
+ "page": "Nomad Hero Gigio",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Machine Eater",
+ "cost": "5",
+ "power": "3000",
+ "engtext": "■ This [[creature]] can [[attack]] [[untap]]ped [[creature]]s.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "83/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "31/110",
+  "set3": "DMC-01 Shobu's Blaze Deck",
+  "setnum3": "10/43"
+ },
+ "wiki": "{{Cardtable\n| image = Nomad Hero Gigio.jpg\n| civilization = Fire\n| type = Creature\n| jpname = {{Ruby|放|ほう}}{{Ruby|浪|ろう}}の{{Ruby|勇|ゆう}}{{Ruby|者|しゃ}}ジージョ\n| phonetic = Hōrō no Yūsha Jījo\n| race = Machine Eater\n| cost = 5\n| power = 3000\n| engtext = ■ This [[creature]] can [[attack]] [[untap]]ped [[creature]]s.\n| jptext = ■ このクリーチャーは、タップされていないクリーチャーを攻撃できる。\n| flavor = さあ旅に出よう。新しい世界には、一体どんなゴミがあるんだろう! 」 \"Time to move on. So many unexplored worlds, so much trash to find!\" ─'''Nomad Hero Gigio''' ([[DM-01]])\n| mana = 1\n| artist = Eiji Kaneda\n| set1 = DM-01 Base Set\n| setnum1 = 83/110\n| R1 = Rare\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 31/110\n| R2 = Rare\n| set3 = DMC-01 Shobu's Blaze Deck\n| setnum3 = 10/43\n| R3 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Can Attack Untapped Creatures]]"
+}

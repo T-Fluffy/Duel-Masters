@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_06_033",
+ "page": "Fort Megacluster",
+ "type": "Evolution Creature",
+ "civilization": "Water",
+ "race": "Cyber Cluster",
+ "cost": "5",
+ "power": "5000",
+ "engtext": "■ [[Evolution]]—Put on one of your [[Cyber Cluster]]s.\n\n■ Each of your [[water]] [[creature]]s may [[tap]] [[instead]] of [[attack]]ing to use this [[creature]]'s {{Tap}} [[ability]].\n:{{Tap}} [[Draw]] a [[card]].",
+ "templates": [
+  "Tap"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "33/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "17/110"
+ },
+ "wiki": "{{Cardtable\n| image = Fort Megacluster.jpg\n| civilization = Water\n| type = Evolution Creature\n| jpname = フォート・メガクラスター \n| phonetic = Fōto Megakurasutā\n| race = Cyber Cluster\n| cost = 5\n| power = 5000\n| engtext = ■ [[Evolution]]—Put on one of your [[Cyber Cluster]]s.\n\n■ Each of your [[water]] [[creature]]s may [[tap]] [[instead]] of [[attack]]ing to use this [[creature]]'s {{Tap}} [[ability]].\n:{{Tap}} [[Draw]] a [[card]].\n| jptext = ■ 進化－自分のサイバー・クラスター1体の上に置く。\n\n■ このクリーチャーがバトルゾーンにある間、バトルゾーンにある自分の水のクリーチャーをタップし、攻撃する代わりに次の{{Tap}}能力を使ってもよい。\n:{{Tap}} カードを1枚引く。\n| flavor = The [[Cyber Lord]]s are racing the [[Dragonoid]]s to be the first to drill to the planet's core. ([[DM-06]])\n| mana = 1\n| artist = Shishizaru\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 33/110\n| R1 = Rare\n| set2 = DM-06 Invincible Soul\n| setnum2 = 17/110\n| R2 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Cyber Cluster]]\n[[Category:Evolution Creature]]\n[[Category:Tap Ability]]\n[[Category:5000 Power Creatures]]\n[[Category:Card Draw]]\n[[Category:Self Tapper]]"
+}

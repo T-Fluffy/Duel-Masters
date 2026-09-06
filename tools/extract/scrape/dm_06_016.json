@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_06_016",
+ "page": "Chen Treg, Vizier of Blades",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Initiate",
+ "cost": "5",
+ "power": "2000",
+ "engtext": "{{Tap Ability|[[Choose]] one of your [[opponent]]'s [[creature]]s in the [[battle zone]] and [[tap]] it.}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "16/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "71/110",
+  "set3": "DMC-05 Lightning Thunder Deck",
+  "setnum3": "41/82",
+  "set4": "DMC-10 Hakuoh's Holy Spirit Deck",
+  "setnum4": "21/44"
+ },
+ "wiki": "{{Cardtable\n| image = Chen Treg, Vizier of Blades.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|鋭|えい}}{{Ruby|刃|じん}}の{{Ruby|使|し}}{{Ruby|徒|と}}グーレ・チェーン\n| phonetic = Eijin no Shito Gūre Chēn\n| cost = 5\n| race = Initiate\n| power = 2000\n| engtext = {{Tap Ability|[[Choose]] one of your [[opponent]]'s [[creature]]s in the [[battle zone]] and [[tap]] it.}}\n| jptext = ■ このクリーチャーで攻撃するかわりに、タップして次の{{Tap}}能力を使ってもよい。\n:{{Tap}} バトルゾーンにある相手のクリーチャーを1体選び、タップする。\n| flavor = Its blade, forged in the heat of stars, can penetrate any armor. ([[DM-06]])\n| flavor2 = 幾星霜を経て鍛えられし剣は全てを貫く。The sword, forged through countless years, pierces through everything. ([[DM-06]], [[DMC-05]], [[DMC-10]])\n| mana = 1\n| artist = Hikaru Ikusa\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 16/110\n| R1 = Common\n| set2 = DM-06 Invincible Soul\n| setnum2 = 71/110\n| R2 = Common\n| set3 = DMC-05 Lightning Thunder Deck\n| setnum3 = 41/82\n| R3 = Common\n| set4 = DMC-10 Hakuoh's Holy Spirit Deck\n| setnum4 = 21/44\n| R4 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Initiate]]\n[[Category:Tap Ability]]\n[[Category:2000 Power Creatures]]\n[[Category:Creature Tapper]]"
+}

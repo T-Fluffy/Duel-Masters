@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_09_051",
+ "page": "Storm Wrangler, the Furious",
+ "type": "Evolution Creature",
+ "civilization": "Nature",
+ "race": "Beast Folk",
+ "cost": "4",
+ "power": "5000+",
+ "engtext": "■ [[Evolution]]—Put on one of your [[Beast Folk]].\n\n■ Whenever this [[creature]] [[attack]]s, you may choose one of your [[opponent]]'s [[untap]]ped [[creature]]s that has \"[[blocker]].\" This [[turn]], that [[creature]] [[block]]s this [[creature]] if able and this [[creature]] can't be [[block]]ed by other [[creature]]s.\n\n■ Whenever this [[creature]] becomes [[block]]ed, it gets +3000 [[power]] until the [[End Step|end of the turn]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "51/55",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "18/55",
+  "set3": "DMC-13 CoroCoro New Generation Pack",
+  "setnum3": "5/37",
+  "set4": "Promotional",
+  "setnum4": "E3/Y2"
+ },
+ "wiki": "{{Cardtable\n| image = Storm Wrangler, the Furious.jpg\n| civilization = Nature\n| type = Evolution Creature\n| jpname = {{Ruby|大|だい}}{{Ruby|勇|ゆう}}{{Ruby|者|しゃ}}「{{Ruby|猛虎の怒り|ストーム・クロウ}}」 ''(Big Hero \"Wrath of Fierce Tiger\")''\n| kana = ストーム・クロウ ''(Storm Claw)''\n| phonetic = Daiyūsha Sutōmu Kurō\n| cost = 4\n| race = Beast Folk\n| power = 5000+\n| engtext = ■ [[Evolution]]—Put on one of your [[Beast Folk]].\n\n■ Whenever this [[creature]] [[attack]]s, you may choose one of your [[opponent]]'s [[untap]]ped [[creature]]s that has \"[[blocker]].\" This [[turn]], that [[creature]] [[block]]s this [[creature]] if able and this [[creature]] can't be [[block]]ed by other [[creature]]s.\n\n■ Whenever this [[creature]] becomes [[block]]ed, it gets +3000 [[power]] until the [[End Step|end of the turn]].\n| jptext = ■ 進化—自分のビーストフォーク1体の上に置く。\n\n■ このクリーチャーが攻撃するとき、相手の「ブロッカー」を持つクリーチャーを1体選んでもよい。このターン、そのクリーチャーは、可能であればこのクリーチャーの攻撃をブロックし、このクリーチャーは他のクリーチャーにブロックされない。\n\n■ このクリーチャーがブロックされたとき、このターンの終わりまで、このクリーチャーのパワーは+3000される。\n| flavor = \n| mana = 1\n| artist = Taro Yamazaki\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = 51/55\n| R1 = Rare\n| set2 = DM-09 Invincible Blood\n| setnum2 = 18/55\n| R2 = Rare\n| set3 = DMC-13 CoroCoro New Generation Pack\n| setnum3 = 5/37\n| R3 = Rare\n| set4 = Promotional\n| setnum4 = E3/Y2\n| R4 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Nature]]\n[[Category:Evolution Creature]]\n[[Category:Beast Folk]]\n[[Category:5000 Power Creatures]]\n[[Category:Self Increase Power]]\n[[Category:Force Block]]\n[[Category:Unblockable]]\n[[Category:Attack Trigger]]"
+}

@@ -1,0 +1,26 @@
+{
+ "card_id": "dm_01_091",
+ "page": "Burning Mane",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Beast Folk",
+ "cost": "2",
+ "power": "2000",
+ "engtext": "",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "91/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "108/110",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "138/140",
+  "set4": "DMC-22 Hell Boost Half Deck",
+  "setnum4": "40/43",
+  "set5": "DMC-61 CoroCoro Dream Pack 4: Eternal Heaven",
+  "setnum5": "86/94",
+  "set6": "Team Kirifuda Super King Deck 40 Card!!",
+  "setnum6": "10/11"
+ },
+ "wiki": "{{Cardtable\n| image = Burning Mane.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|炎のたてがみ|バーニング・ヘアー}} ''(Mane of Flame)''\n| phonetic = Bāningu Heā\n| cost = 2\n| race = Beast Folk\n| power = 2000\n| flavor = 若木を根こそぎに引き抜くと、それが小枝であるかのように振り回した。 It pulled up a young tree by its roots, swinging it over its head as though it were a twig. ([[DM-01]], [[DMC-22]], [[DMC-61]])\n| flavor2 = 彼等の前で自然を汚してはならない。その理由が知りたければ、一度試してみればいい。ただし、やるなら一人の時にやってくれ。 You must not pollute nature in front of them. If you want to know the reason, you should try it once. However, if you do, please do it alone. ([[DM-18]], [[DMS-05]])\n| flavor3 = 1マナや2マナの小型獣を並べて攻撃しまくるのが、このデッキの戦略だ! \"The strategy of this deck is to line up small creatures with a mana cost of 1 or 2 and attack relentlessly!\" ([[SpDeck7]])\n| mana = 1\n| artist = Sansyu\n| artist2 = Seki\n| set1 = DM-01 Base Set\n| setnum1 = 91/110\n| R1 = Common\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 108/110\n| R2 = Common\n| set3 = DM-18 Best Challenger\n| setnum3 = 138/140\n| R3 = Common\n| set4 = DMC-22 Hell Boost Half Deck\n| setnum4 = 40/43\n| R4 = Common\n| set5 = DMC-61 CoroCoro Dream Pack 4: Eternal Heaven\n| setnum5 = 86/94\n| R5 = Common\n| set6 = Team Kirifuda Super King Deck 40 Card!!\n| setnum6 = 10/11\n| R6 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Nature]]\n[[Category:Beast Folk]]\n[[Category:2000 Power Creatures]]\n[[Category:No Abilities]]"
+}

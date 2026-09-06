@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_05_040",
+ "page": "Cataclysmic Eruption",
+ "type": "Spell",
+ "civilization": "Fire",
+ "race": "",
+ "cost": "8",
+ "power": "",
+ "engtext": "■ For each [[nature]] [[creature]] you have in the [[battle zone]], you may choose a [[card]] in your [[opponent]]'s [[mana zone]] and put it into his [[graveyard]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "40/55",
+  "set2": "DM-05 Return of the Survivor",
+  "setnum2": "17/55"
+ },
+ "wiki": "{{Cardtable\n| image = Cataclysmic Eruption.jpg\n| civilization = Fire\n| type = Spell\n| jpname = {{Ruby|竜|りゅう}}{{Ruby|脈|みゃく}}{{Ruby|噴|ふん}}{{Ruby|火|か}} ''(Dragon Pulse Eruption)''\n| phonetic = Ryuumyaku Funka\n| cost = 8\n| engtext = ■ For each [[nature]] [[creature]] you have in the [[battle zone]], you may choose a [[card]] in your [[opponent]]'s [[mana zone]] and put it into his [[graveyard]].\n| jptext = ■ バトルゾーンにある自分の自然のクリーチャー1体につき、相手のマナゾーンから1枚選び、持ち主の墓地に置いてもよい。\n| flavor = The skies fell, the seas boiled, the caves collapsed, the volcanoes melted, and the forests burned. The planet cracked open, and the Megapocalypse began. ([[DM-05]])\n| flavor2 = 溶岩の渦が、森を川を人を飲み込んだ。The vortex of lava swallowed the forest, the river, and the people. ([[DM-05]])\n| mana = 1\n| artist = Katsuhiko Kojoh\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = 40/55\n| R1 = Rare\n| set2 = DM-05 Return of the Survivor\n| setnum2 = 17/55\n| R2 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Fire]]\n[[Category:Spell]]\n[[Category:Mana Burn]]"
+}

@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_07_s04",
+ "page": "Sky Crusher, the Agitator",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Dragonoid",
+ "cost": "7",
+ "power": "4000",
+ "engtext": "{{Tap Ability|Each [[player]] puts a [[card]] from his [[mana zone]] into his [[graveyard]].}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "S4/S5",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "S4/S5"
+ },
+ "wiki": "{{Cardtable\n| image = Sky Crusher, the Agitator.jpg\n| civilization = Fire\n| type = Creature\n| jpname = {{Ruby|激|げき}}{{Ruby|震|しん}}{{Ruby|闘|とう}}{{Ruby|士|し}}スカイ・クラッシャー\n| phonetic = Gekishin Tōshi Sukai Kurasshā\n| cost = 7\n| race = Dragonoid\n| power = 4000\n| engtext = {{Tap Ability|Each [[player]] puts a [[card]] from his [[mana zone]] into his [[graveyard]].}}\n| jptext = ■ このクリーチャーで攻撃するかわりに、タップして次の{{Tap}}能力を使ってもよい。\n:{{Tap}} 各プレイヤーは、自分自身のマナゾーンからカードを1枚選び、それぞれの墓地に置く。\n| flavor = Firing goes a lot faster when you skip all that pesky readying and aiming. ([[DM-07]])\n| flavor2 = 吹きすさぶ風に乗り、光の国へ侵攻せよ! \"By riding the blowing winds, we invade the [[Light Civilization|civilization of Light]]!\" ([[DM-07]])\n| mana = 1\n| artist = Naoki Saito\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = S4/S5\n| R1 = Super Rare\n| set2 = DM-07 Invincible Charge\n| setnum2 = S4/S5\n| R2 = Super Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Mana Burn]]"
+}

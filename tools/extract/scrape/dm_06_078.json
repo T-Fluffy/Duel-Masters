@@ -1,0 +1,32 @@
+{
+ "card_id": "dm_06_078",
+ "page": "Comet Missile",
+ "type": "Spell",
+ "civilization": "Fire",
+ "race": "",
+ "cost": "1",
+ "power": "",
+ "engtext": "{{Shield Trigger|spell}} \n\n■ [[Destroy]] one of your [[opponent]]'s [[creature]]s that has \"[[blocker]]\" and [[power]] 6000 or less.",
+ "templates": [
+  "Shield Trigger|spell"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "78/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "64/43",
+  "set3": "DMC-06 Dragon Strikes Deck ",
+  "setnum3": "35/82",
+  "set4": "DMC-09 Shobu's Dragon Legend Deck",
+  "setnum4": "19/44",
+  "set5": "DMC-23 Speed Burn Half Deck",
+  "setnum5": "21/43",
+  "set6": "DMC-34 CoroCoro Dream Pack 2: Eternal Legacy",
+  "setnum6": "28/55",
+  "set7": "DMC-55 CoroCoro Legend 7",
+  "setnum7": "58/84",
+  "set8": "DMC-61 CoroCoro Dream Pack 4: Eternal Heaven ",
+  "setnum8": "51/94"
+ },
+ "wiki": "{{Cardtable\n| image = Comet Missile.jpg\n| civilization = Fire\n| type = Spell\n| jpname = {{Ruby|火|か}}{{Ruby|炎|えん}}{{Ruby|流|りゅう}}{{Ruby|星|せい}}{{Ruby|弾|だん}} ''(Flame Meteor Bullet)''\n| phonetic = Kaen Ryūsei Dan\n| cost = 1\n| engtext = {{Shield Trigger|spell}} \n\n■ [[Destroy]] one of your [[opponent]]'s [[creature]]s that has \"[[blocker]]\" and [[power]] 6000 or less.\n| jptext = {{Icon|ST}} S・トリガー （この呪文をシールドゾーンから手札に加える時、コストを支払わずにすぐ唱えてもよい） \n\n■ バトルゾーンにある、相手の「ブロッカー」を持つパワー6000以下のクリーチャーを1体選び、持ち主の墓地に置く。　\n| flavor = \"The masters of subtlety are at it again.\" —[[Craze Valkyrie, the Drastic]] ([[DM-06]])\n| flavor2 =  隕石落とし! 巨大な壁をぶち壊せ! \"Drop the meteorite! Destroy the huge wall!\" ([[DMC-55]], [[DMC-61]])\n| mana = 1\n| artist = Jason\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 78/110\n| R1 = Uncommon\n| set2 = DM-06 Invincible Soul\n| setnum2 = 64/43\n| R2 = Uncommon\n| set3 = DMC-06 Dragon Strikes Deck \n| setnum3 = 35/82\n| R3 = Uncommon\n| set4 = DMC-09 Shobu's Dragon Legend Deck\n| setnum4 = 19/44\n| R4 = Uncommon\n| set5 = DMC-23 Speed Burn Half Deck\n| setnum5 = 21/43\n| R5 = Uncommon\n| set6 = DMC-34 CoroCoro Dream Pack 2: Eternal Legacy\n| setnum6 = 28/55\n| R6 = Uncommon\n| set7 = DMC-55 CoroCoro Legend 7\n| setnum7 = 58/84\n| R7 = Uncommon\n| set8 = DMC-61 CoroCoro Dream Pack 4: Eternal Heaven \n| setnum8 = 51/94\n| R8 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Fire]]\n[[Category:Spell]]\n[[Category:Shield Trigger]]\n[[Category:Blocker Based Removal]]\n[[Category:Power Based Removal]]"
+}

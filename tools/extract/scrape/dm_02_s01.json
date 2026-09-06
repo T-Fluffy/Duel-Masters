@@ -1,0 +1,23 @@
+{
+ "card_id": "dm_02_s01",
+ "page": "Ladia Bale, the Inspirational",
+ "type": "Evolution Creature",
+ "civilization": "Light",
+ "race": "Guardian",
+ "cost": "6",
+ "power": "9500",
+ "engtext": "{{Blocker}}\n\n■ [[Evolution]]—Put on one of your [[Guardian]]s.\n\n{{Double Breaker}}",
+ "templates": [
+  "Blocker",
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "S1/S5",
+  "set2": "DM-02 Master of Evolution",
+  "setnum2": "S1/S5",
+  "set3": "DMC-27 CoroCoro Dream Pack",
+  "setnum3": "S1/S5"
+ },
+ "wiki": "{{Cardtable\n| image=Ladia Bale, the Inspirational.jpg\n| civilization = Light\n| type = Evolution Creature\n| jpname = {{Ruby|守|しゅ}}{{Ruby|護|ご}}{{Ruby|聖|せい}}{{Ruby|天|てん}}ラディア・バーレ\n| phonetic = Shugo Seiten Radyia Bāre\n| race = Guardian\n| cost = 6\n| power = 9500\n| engtext = {{Blocker}}\n\n■ [[Evolution]]—Put on one of your [[Guardian]]s.\n\n{{Double Breaker}}\n| jptext = {{Blocker|jp}}\n\n■ 進化—自分のガーディアン1体の上に置く。\n\n{{Double Breaker|jp}}\n| flavor = \n| mana = 1\n| artist = Kou1\n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = S1/S5\n| R1 = Super Rare\n| set2 = DM-02 Master of Evolution\n| setnum2 = S1/S5\n| R2 = Super Rare\n| set3 = DMC-27 CoroCoro Dream Pack\n| setnum3 = S1/S5\n| R3 = Super Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]"
+}

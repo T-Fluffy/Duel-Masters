@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_03_008",
+ "page": "Sieg Balicula, the Intense",
+ "type": "Evolution Creature",
+ "civilization": "Light",
+ "race": "Initiate",
+ "cost": "3",
+ "power": "5000",
+ "engtext": "■ [[Evolution]]—Put on one of your [[Initiate]]s.\n\n■ Each of your other [[light]] [[creature]]s in the [[battle zone]] has \"[[blocker]]\". ''(Whenever one of your [[opponent]]'s [[creature]]s [[attack]]s, you may [[tap]] a [[creature]] that has \"[[blocker]]\" to stop the [[attack]]. Then the 2 [[creature]]s [[battle]].)''",
+ "templates": [],
+ "sets": {
+  "set1": "DM-03 Rampage of the Super Warriors",
+  "setnum1": "8/55",
+  "set2": "DM-03 Master of Destruction",
+  "setnum2": "1/55"
+ },
+ "wiki": "{{Cardtable\n| image= Sieg Balicula, the Intense.jpg\n| civilization = Light\n| type = Evolution Creature\n| jpname = {{Ruby|聖|せい}}{{Ruby|天|てん}}{{Ruby|使|し}}ジーク・バリキューラ\n| phonetic = Seitenshi Sīku Barikyūra\n| cost = 3\n| race = Initiate\n| power = 5000\n| engtext = ■ [[Evolution]]—Put on one of your [[Initiate]]s.\n\n■ Each of your other [[light]] [[creature]]s in the [[battle zone]] has \"[[blocker]]\". ''(Whenever one of your [[opponent]]'s [[creature]]s [[attack]]s, you may [[tap]] a [[creature]] that has \"[[blocker]]\" to stop the [[attack]]. Then the 2 [[creature]]s [[battle]].)''\n| jptext = ■ 進化－自分のイニシエート1体の上に置く。\n\n■ このクリーチャーがバトルゾーンにある間、バトルゾーンにある自分の他の光のクリーチャーは「ブロッカー」を得る。\n| flavor = その力は決して聖なるものではなかった。\"That power was never sacred.\" ([[DM-03 Master of Destruction|DM-03]])\n| mana = 1\n| artist = Masaki Hirooka \n| set1 = DM-03 Rampage of the Super Warriors\n| setnum1 = 8/55\n| R1 = Very Rare\n| set2 = DM-03 Master of Destruction\n| setnum2 = 1/55\n| R2 = Very Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Initiate]]\n[[Category:Evolution Creature]]\n[[Category:5000 Power Creatures]]\n[[Category:Gives \"Blocker\"]]"
+}

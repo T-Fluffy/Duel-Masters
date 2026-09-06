@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_05_023",
+ "page": "Spikestrike Ichthys Q",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Survivor",
+ "cost": "6",
+ "power": "3000",
+ "engtext": "{{Survivor}} This [[creature]] can't be [[block]]ed.",
+ "templates": [
+  "Survivor"
+ ],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "23/55",
+  "set2": "DM-05 Return of the Survivor",
+  "setnum2": "41/55"
+ },
+ "wiki": "{{Cardtable\n| image = Spikestrike Ichthys Q.jpg\n| civilization = Water\n| type = Creature\n| jpname = {{Ruby|流星魚|スターブルー・フィッシュ}}{{Ruby|α|アルファ}}\n| kana = スターブルー・フィッシュ ''(Starblue Fish)'' アルファ ''(Alpha)''\n| phonetic = Sutāburū Fisshu Arufa ''(Starblue Fish Alpha)''\n| race = Survivor\n| race2 = Fish\n| cost = 6\n| power = 3000\n| engtext = {{Survivor}} This [[creature]] can't be [[block]]ed.\n| jptext = {{Icon|SVold}} このクリーチャーはブロックされない。\n\n■ サバイバー （このクリーチャーがバトルゾーンにある間、自分の他のサバイバーも上の{{Icon|SVold}}能力を得る）\n| flavor = \"If the Megapocalypse couldn't stop me, what makes you think you can?\" ([[DM-05]])\n| flavor2 = 熾烈な閉鎖空間の旅路。過酷な環境が民の命を奪っていった。A fierce journey through a closed space. The harsh environment claimed the lives of the people. ([[DM-05]]) \n| mana = 1\n| artist = Shishizaru\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = 23/55\n| R1 = Common\n| set2 = DM-05 Return of the Survivor\n| setnum2 = 41/55\n| R2 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Unblockable]]"
+}

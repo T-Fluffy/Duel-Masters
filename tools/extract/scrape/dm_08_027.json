@@ -1,0 +1,16 @@
+{
+ "card_id": "dm_08_027",
+ "page": "Cranium Clamp",
+ "type": "Spell",
+ "civilization": "Darkness",
+ "race": "",
+ "cost": "4",
+ "power": "",
+ "engtext": "■ Your [[opponent]] chooses and [[discard]]s 2 [[card]]s from his [[hand]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "27/55"
+ },
+ "wiki": "{{TCGCardtable\n| image = Cranium Clamp.jpg\n| civilization = Darkness\n| type = Spell\n| cost = 4\n| engtext = ■ Your [[opponent]] chooses and [[discard]]s 2 [[card]]s from his [[hand]].\n| flavor = \"Hold still! This is the only headache remedy I know. I promise, soon you won't be able to feel your head at all!\" ([[DM-08]])\n| artist = Akifumi Yamamoto\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 27/55\n| R1 = Rare\n}}\n[[Category:Card Discard]]"
+}

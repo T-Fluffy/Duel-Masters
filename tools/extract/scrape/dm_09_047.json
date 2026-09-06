@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_09_047",
+ "page": "Dance of the Sproutlings",
+ "type": "Spell",
+ "civilization": "Nature",
+ "race": "",
+ "cost": "3",
+ "power": "",
+ "engtext": "■ [[Choose a race]]. You may put any [[number]] of [[creature]]s of that [[race]] from your [[hand]] into your [[mana zone]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "47/55",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "55/55"
+ },
+ "wiki": "{{Cardtable\n| image = Dance of the Sproutlings.jpg\n| civilization = Nature\n| type = Spell\n| jpname = {{Ruby|強欲|ごうよく}}の{{Ruby|開拓|かいたく}} ''(Cultivation of Greed)''\n| phonetic = Goyoku no Kaitaku\n| cost = 3\n| engtext = ■ [[Choose a race]]. You may put any [[number]] of [[creature]]s of that [[race]] from your [[hand]] into your [[mana zone]].\n| jptext = 種族を1つ選ぶ。その種族のクリーチャーを自分の手札から好きな枚数選び、自分のマナゾーンに置いてもよい。\n| flavor = \"It is time for a new forest. It is time for the sproutlings. I'll go get the freaky golden head-statue thing we always use for that.\" ─[[Fighter Dual Fang]] ([[DM-09]])\n| flavor2 = 戦う前に、耕しやがれ。\"Before you fight, you better plow the field.\" ([[DM-09]])\n| mana = 1\n| artist = Akifumi Yamamoto\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = 47/55\n| R1 = Common\n| set2 = DM-09 Invincible Blood\n| setnum2 = 55/55\n| R2 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Mana Acceleration]]"
+}

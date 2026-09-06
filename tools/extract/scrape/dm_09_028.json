@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_09_028",
+ "page": "Gabzagul, Warlord of Pain",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Dark Lord",
+ "cost": "6",
+ "power": "5000",
+ "engtext": "■ Each [[creature]] [[attack]]s each [[turn]] if able.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "28/55",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "12/55"
+ },
+ "wiki": "{{Cardtable\n| image = Gabzagul, Warlord of Pain.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|闘|とう}}{{Ruby|将|しょう}}バグザグール\n| phonetic = Tōshō Baguzagūru\n| race = Dark Lord\n| cost = 6\n| power = 5000\n| engtext = ■ Each [[creature]] [[attack]]s each [[turn]] if able.\n| jptext = ■ このクリーチャーがバトルゾーンにある間、すべてのクリーチャーは、可能なら毎ターン攻撃する。\n| flavor = \"My minions! Here is tomorrow's schedule. 7-8: Morning workout. 8-9: Pain. 9-10: 'Ripping Out Spines' seminar. 10-11: Pain. 11-12: Fright practice. 12-1: Lunch. 1-2: Pain. 2-3: Arts & crafts. 3-4: Pain. 4-5: More pain. 5-6: Excruciating, unbearable pain. Sleep well!\" ([[DM-09]])\n| flavor2 = 「貴様らの命、死皇帝アザガーストに捧げよ!」 \"I use my life to support [[Azaghast, Tyrant of Shadows|Azaghast, Emperor of Death]]!\" ─'''Gabzagul, Warlord of Pain''' ([[DM-09]])\n| mana = 1\n| artist = Naoki Saito\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = 28/55\n| R1 = Rare\n| set2 = DM-09 Invincible Blood\n| setnum2 = 12/55\n| R2 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Dark Lord]]\n[[Category:5000 Power Creatures]]\n[[Category:Attacks Each Turn If Able]]\n[[Category:Force Attack]]"
+}

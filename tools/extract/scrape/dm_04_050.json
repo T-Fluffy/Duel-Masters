@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_04_050",
+ "page": "Dew Mushroom",
+ "type": "Creature",
+ "civilization": "Nature ",
+ "race": "Balloon Mushroom",
+ "cost": "3",
+ "power": "1000",
+ "engtext": "■  Each [[darkness]] [[creature]] [[cost]]s 1 more to [[summon]] and each [[darkness]] [[spell]] [[cost]]s 1 more to [[cast]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-04 Shadowclash of Blinding Night",
+  "setnum1": "50/55",
+  "set2": "DM-04 Challenge of Black Shadow ",
+  "setnum2": "35/55"
+ },
+ "wiki": "{{Cardtable\n| image = Dew Mushroom.jpg\n| civilization = Nature \n| type = Creature\n| jpname = カスミダケ\n| phonetic = Kasumidake\n| race = Balloon Mushroom\n| cost = 3\n| power = 1000\n| engtext = ■  Each [[darkness]] [[creature]] [[cost]]s 1 more to [[summon]] and each [[darkness]] [[spell]] [[cost]]s 1 more to [[cast]].\n| jptext = ■ このクリーチャーがバトルゾーンにある間、闇のクリーチャーを召喚するコストと闇の呪文を唱えるコストは、それぞれ+1される。\n| flavor = \"The only thing grosser than eating a mushroom is having a mushroom eat me.\" -[[Giliam, the Tormentor]] ([[DM-04]])\n| flavor2 = しゅるるるる。ここの闇はなかなか美味いぞ。Shurururu. The darkness here is quite delicious. ([[DM-04]])\n| mana = 1\n| artist = Masaki Hirooka\n| set1 = DM-04 Shadowclash of Blinding Night\n| setnum1 = 50/55\n| R1 = Uncommon\n| set2 = DM-04 Challenge of Black Shadow \n| setnum2 = 35/55\n| R2 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Cost Increase]]"
+}

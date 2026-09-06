@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_02_055",
+ "page": "Xeno Mantis",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Giant Insect",
+ "cost": "7",
+ "power": "6000",
+ "engtext": "■ This [[creature]] can't be [[block]]ed by any [[creature]] that has [[power]] 5000 or less.\n\n{{Double Breaker}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "55/55",
+  "set2": "DM-02 Master of Evolution",
+  "setnum2": "5/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "13/140"
+ },
+ "wiki": "{{Cardtable\n| image=Xeno Mantis.jpg\n| civilization = Nature\n| type = Creature\n| jpname = ゼノ・マンティス\n| phonetic = Zeno Mantisu\n| cost = 7\n| race = Giant Insect\n| power = 6000\n| engtext = ■ This [[creature]] can't be [[block]]ed by any [[creature]] that has [[power]] 5000 or less.\n\n{{Double Breaker}}\n| jptext = ■ このクリーチャーは、パワー5000以下のクリーチャーにブロックされない。\n\n{{Double Breaker|jp}}\n| flavor = The invading [[Parasite Worm|Worm]]s drained the magical life out of the forest... and the cataclysm began. ([[DM-02]])\n| flavor2 = 闇のワームがその力を飲み込み、平和な森を地獄に変えた。 The [[Parasite Worm|Worms of Darkness]] absorbed it's power and turned the peaceful forest into a living hell. ([[DM-02]], [[DM-18]])\n| mana = 1\n| artist = Katsuya\n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = 55/55\n| R1 = Very Rare\n| set2 = DM-02 Master of Evolution\n| setnum2 = 5/55\n| R2 = Very Rare\n| set3 = DM-18 Best Challenger\n| setnum3 = 13/140\n| R3 = Very Rare\n}}\n{{Xeno}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Nature]]\n[[Category:Giant Insect]]\n[[Category:6000 Power Creatures]]\n[[Category:Unblockable]]"
+}

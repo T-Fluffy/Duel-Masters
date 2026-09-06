@@ -1,0 +1,24 @@
+{
+ "card_id": "dm_05_032",
+ "page": "Skullsweeper Q",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Survivor",
+ "cost": "4",
+ "power": "1000",
+ "engtext": "{{Survivor}} Whenever this [[creature]] [[attack]]s, your [[opponent]] chooses and [[discard]]s a [[card]] from his [[hand]].",
+ "templates": [
+  "Survivor"
+ ],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "32/55",
+  "set2": "DM-05 Return of the Survivor",
+  "setnum2": "13/55",
+  "set3": "DMEX-18 20th Anniversary Huge Thanks Memorial Pack: The Chapter of The Shadow Parallel Masters",
+  "setnum3": "61/75",
+  "set5": "Promotional",
+  "setnum5": "L17/20 Y1, P25/＊"
+ },
+ "wiki": "{{Cardtable\n| image = Skullsweeper Q.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = ダーク・ティアラ{{Ruby|γ|ガンマ}} \n| kana = ガンマ ''(Gamma)''\n| phonetic = Dāku Tiara Ganma ''(Dark Tiara Gamma)''\n| race = Survivor\n| race2 = Brain Jacker\n| cost = 4\n| power = 1000\n| engtext = {{Survivor}} Whenever this [[creature]] [[attack]]s, your [[opponent]] chooses and [[discard]]s a [[card]] from his [[hand]].\n| jptext = {{Icon|SVold}} このクリーチャーが攻撃するとき、相手の手札が1枚でもあれば、相手はその中から1枚選んで持ち主の墓地に置く。\n\n■ サバイバー （このクリーチャーがバトルゾーンにある間、自分の他のサバイバーも上の{{Icon|SVold}}能力を得る）\n| flavor = They don't like it when their victims twitch. They're ticklish. ([[DM-05]])\n| flavor2 = 闇にざわめき、心を汚す。The darkness stirs, tainting the heart. ([[DM-05]])\n| flavor3 = 一部のブレインジャッカーはサファイア・ミスティがウィズダムを監視するために自身の装飾物を送り込んだ種族だった。Some of the Brain Jackers were a species to whom [[Sapphire Misty]] had sent her ornaments to monitor [[Sapphire Wisdom|Wisdom]]. ([[DMEX-18]])\n| flavor4 = 闇夜に紛れ、貴方の心に忍び込む。Blending into the dark night, I sneak into your heart. (P25/＊)\n| mana = 1\n| artist = Jason\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = 32/55\n| R1 = Rare\n| set2 = DM-05 Return of the Survivor\n| setnum2 = 13/55\n| R2 = Rare\n| set3 = DMEX-18 20th Anniversary Huge Thanks Memorial Pack: The Chapter of The Shadow Parallel Masters\n| setnum3 = 61/75\n| R3 = Common\n| set5 = Promotional\n| setnum5 = L17/20 Y1, P25/＊\n| R5 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Card Discard]]\n[[Category:Attack Trigger]]"
+}

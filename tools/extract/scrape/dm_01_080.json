@@ -1,0 +1,32 @@
+{
+ "card_id": "dm_01_080",
+ "page": "Immortal Baron, Vorg",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Human",
+ "cost": "2",
+ "power": "2000",
+ "engtext": "",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "80/110 ",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "97/110 ",
+  "set3": "DMC-01 Shobu's Blaze Deck",
+  "setnum3": "36/43",
+  "set4": "DM-18 Best Challenger",
+  "setnum4": "124/140",
+  "set5": "DM-33 Rising Dragon",
+  "setnum5": "51/55",
+  "set6": "CoroCoro Dogiragon 40 Card Deck",
+  "setnum6": "11/13",
+  "set7": "CoroCoro Special Deck",
+  "setnum7": "12/14",
+  "set8": "Welcome! Onifuda Kingdom Deck 40 Card!!",
+  "setnum8": "10/11",
+  "set9": "Special King Deck: Joe's Fire Civilization",
+  "setnum9": "8/10"
+ },
+ "wiki": "{{Cardtable\n| image = Immortal Baron, Vorg.jpg\n| civilization = Fire\n| type = Creature\n| jpname = {{Ruby|不|ふ}}{{Ruby|死|じ}}{{Ruby|身|み}}{{Ruby|男|だん}}{{Ruby|爵|しゃく}}ボーグ\n| phonetic = Fujimin Danshaku Bōgu\n| cost = 2\n| race = Human\n| power = 2000\n| flavor = 「わかるか。相手よりでかい武器を持ってるやつが勝つんだよ。」 \"You see? The one who wins is the one who has the bigger weapon.\"  —'''Immortal Baron, Vorg''' ([[DM-01]], [[DMC-01]])\n| flavor2 =「何でも話せる相棒に出会えたことを心から感謝しているさ。」 \"I'm truly grateful to have met a partner with whom I can talk about anything.\" —[[Mini Titan Gett]] ([[DM-18]], [[DMS-05]])\n| flavor3 = 遥かな年月を経て、あの伝説の男が帰ってきたぁぁぁぁ! \"After countless years, that legendary man has returned!\" —炎舌実況ミラクル・ショー ([[DM-33]])\n| flavor4 = 毎ターン 、 クリーチャーを出し続けるのが、勝利への近道! \"The shortcut to victory is to keep producing creatures every turn!\" —'''Immortal Baron, Vorg''' ([[SpDeck]])\n| flavor5 = あ゛～～～～～ -ゾンビーくん&不死身男爵ボーグ \"Aaaahhhhhh!\" -Zombie-kun and Immortal Baron, Vorg! ([[SpDeck3]])\n| flavor6 = ガンガン攻撃して「鬼タイム」でパワーアップしたクリーチャーの力で敵を蹴散らす! それがこのデッキの戦略だ!! \"Relentlessly attack and scatter enemies with the power of creatures powered up by 'Onitime'! That's the strategy of this deck!\" ([[SpDeck8]])\n| flavor7 = クリーチャーで相手のシールドをすべてブレイクしてダイレクトアタック! これがデュエマのキホン! とにかくクリーチャーをならべまくれ! \"Break all your opponent's shields with creatures and go for a direct attack! That's the basics of Duel Masters! Just keep lining up creatures!\" ([[Gum1]])\n| mana = 1\n| artist = Dustmoss \n| artist2 = Toshiaki Takayama \n| artist3 = koji nishino\n| artist4 = ながとしやすなり\n| set1 = DM-01 Base Set\n| setnum1 = 80/110 \n| R1 = Common\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 97/110 \n| R2 = Common\n| set3 = DMC-01 Shobu's Blaze Deck\n| setnum3 = 36/43\n| R3 = Common\n| set4 = DM-18 Best Challenger\n| setnum4 = 124/140\n| R4 = Common\n| set5 = DM-33 Rising Dragon\n| setnum5 = 51/55\n| R5 = Common\n| set6 = CoroCoro Dogiragon 40 Card Deck\n| setnum6 = 11/13\n| R6 = Common\n| set7 = CoroCoro Special Deck\n| setnum7 = 12/14\n| R7 = Common\n| set8 = Welcome! Onifuda Kingdom Deck 40 Card!!\n| setnum8 = 10/11\n| R8 = Common\n| set9 = Special King Deck: Joe's Fire Civilization\n| setnum9 = 8/10\n| R9 = Common\n}}\n{{Vorg}}\n[[Category:TCG]]\n[[Category:OCG]]"
+}

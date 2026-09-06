@@ -1,0 +1,26 @@
+{
+ "card_id": "dm_05_037",
+ "page": "Bolgash Dragon",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Armored Dragon",
+ "cost": "8",
+ "power": "4000+",
+ "engtext": "{{Power Attacker|8000}}\n\n{{Triple Breaker}}",
+ "templates": [
+  "Triple Breaker"
+ ],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "37/55",
+  "set2": "DM-05 Return of the Survivor",
+  "setnum2": "30/55",
+  "set3": "DMC-18 Shobu's Holy Dragon Deck ",
+  "setnum3": "34/102",
+  "set4": "DMC-33 Edge of Dragon",
+  "setnum4": "12/27",
+  "set5": "Promotional",
+  "setnum5": "L20/20 Y1, P23/＊"
+ },
+ "wiki": "{{Cardtable\n| image = Bolgash Dragon.jpg\n| civilization = Fire\n| type = Creature\n| jpname = ボルガッシュ・ドラゴン\n| phonetic = Borugasshu Doragon\n| race = Armored Dragon\n| cost = 8\n| power = 4000+\n| engtext = {{Power Attacker|8000}}\n\n{{Triple Breaker}}\n| jptext = {{Power Attacker|8000|jp}}\n\n{{Triple Breaker|jp}}\n| flavor = Its suit of armor belches out an electric smog cloud that serves as both camouflage and weapon. ([[DM-05]])\n| flavor2 = 我に刃向かう小さき者どもめ! You insignificant fools who dare defy me! ([[DM-05]])  \n| flavor3 = 大地が海が人が獣が、蒼き業火に溶けていく。The earth, the sea, the people, and the beasts are melting into the azure flames. (P23/＊)\n| mana = 1\n| artist = Atsushi Kawasaki\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = 37/55\n| R1 = Uncommon\n| set2 = DM-05 Return of the Survivor\n| setnum2 = 30/55\n| R2 = Uncommon\n| set3 = DMC-18 Shobu's Holy Dragon Deck \n| setnum3 = 34/102\n| R3 = Uncommon\n| set4 = DMC-33 Edge of Dragon\n| setnum4 = 12/27\n| R4 = Uncommon\n| set5 = Promotional\n| setnum5 = L20/20 Y1, P23/＊\n| R5 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:4000 Power Creatures]]"
+}

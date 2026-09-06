@@ -1,0 +1,24 @@
+{
+ "card_id": "dm_06_050",
+ "page": "Zepimeteus",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Sea Hacker",
+ "cost": "1",
+ "power": "2000",
+ "engtext": "{{Blocker}}\n\n■ This [[creature]] can't [[attack]].",
+ "templates": [
+  "Blocker"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "50/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "84/110",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "108/140",
+  "set4": "DMC-08 Endless Black Hole Deck",
+  "setnum4": "52/82"
+ },
+ "wiki": "{{Cardtable\n| image = Zepimeteus.jpg\n| civilization = Water\n| type = Creature\n| jpname = ゼピメテウス\n| phonetic = Zepimeteusu\n| cost = 1\n| race = Sea Hacker\n| power = 2000\n| engtext = {{Blocker}}\n\n■ This [[creature]] can't [[attack]].\n| jptext = {{Blocker|jp}}\n\n■ このクリーチャーは攻撃することができない。　\n| flavor = Those used to be nuclear submarines. Now they're bathtub toys. ([[DM-06]])\n| flavor2 = あいつの体、俺の歌よりビリビリしてやがる! (Thanks to my song, I up and sent ripples throughout this guy's body!) —[[Explosive Dude Joe]] ([[DM-06]], [[DM-18]], [[DMC-08]], [[DMS-02]], [[DMS-05]])\n| mana = 1\n| artist = Naoki Saito\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 50/110\n| R1 = Common\n| set2 = DM-06 Invincible Soul\n| setnum2 = 84/110\n| R2 = Common\n| set3 = DM-18 Best Challenger\n| setnum3 = 108/140\n| R3 = Common\n| set4 = DMC-08 Endless Black Hole Deck\n| setnum4 = 52/82\n| R4 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Sea Hacker]]\n[[Category:2000 Power Creatures]]\n[[Category:Blocker]]"
+}

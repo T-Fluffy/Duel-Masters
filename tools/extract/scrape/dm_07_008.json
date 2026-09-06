@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_07_008",
+ "page": "Justice Jamming",
+ "type": "Spell",
+ "civilization": "Light",
+ "race": "",
+ "cost": "3",
+ "power": "",
+ "engtext": "■ [[Tap]] all [[darkness]] [[creature]]s in the [[battle zone]], or [[tap]] all [[fire]] [[creature]]s in the [[battle zone]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "8/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "8/55"
+ },
+ "wiki": "{{Cardtable\n| image = Justice Jamming.jpg\n| civilization = Light\n| type = Spell\n| jpname = ジャスティス・ジャミング\n| phonetic = Jasutisu Jamingu\n| cost = 3\n| engtext = ■ [[Tap]] all [[darkness]] [[creature]]s in the [[battle zone]], or [[tap]] all [[fire]] [[creature]]s in the [[battle zone]].\n| jptext = ■ バトルゾーンにあるすべての闇のクリーチャーか、すべての火のクリーチャーどちらかをタップする。\n| flavor = [[Sky Crusher, the Agitator|Sky Crusher]]'s army couldn't decide which was worse-when the forbidding stone tablets rose up, or when the forbidding stone tablets fell over.\n| flavor2 = 突如現れた石碑の群れが、敵の視界を幻惑する。The sudden appearance of a group of stone monuments dazzles the enemy's vision. ([[DM-07]])\n| mana = 1\n| artist = Kou1\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 8/55\n| R1 = Rare\n| set2 = DM-07 Invincible Charge\n| setnum2 = 8/55\n| R2 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Spell]]\n[[Category:Creature Tapper]]\n[[Category:Modal Ability]]"
+}

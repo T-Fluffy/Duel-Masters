@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_01_s06",
+ "page": "Zagaan, Knight of Darkness",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Demon Command",
+ "cost": "6",
+ "power": "7000",
+ "engtext": "{{Double Breaker}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "S6/S10",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "S6/S10",
+  "set3": "DMX-12 Black Box Pack",
+  "setnum3": "b40/???"
+ },
+ "wiki": "{{Cardtable\n| image = Zagaan, Knight of Darkness.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|暗|あん}}{{Ruby|黒|こく}}の{{Ruby|騎|き}}{{Ruby|士|し}}ザガーン\n| phonetic = Ankoku no Kishi Zagān\n| dename = Zagaan, Ritter der Finsternis\n| itname = Zagaan, Re delle Tenebre\n| frname = Zagaan, chevalier de l’ombre\n| esname = Zagaan, caballero gris\n| mxname = Zagaan, caballero gris\n| ptname = Zagaan, o Cavaleiro das Trevas\n| cnname = 黑暗骑士—赞冈\n| race = Demon Command\n| cost = 6\n| power = 7000\n| engtext = {{Double Breaker}}\n| jptext = {{Double Breaker|jp}}\n| flavor = \"If I were to send him to the field, he'd overwhelm the enemy in an instant. Where's the fun in that?\" —[[Ballom, Master of Death]] ([[DM-01]])\n| flavor2 = 「つまらん。やつを戦場に出したら、一方的に勝つに決まっている。」\"How boring. When he enters the battlefield, the battlefield pretty much becomes one-sided to us.\" —[[Tyrant Black Monarch]] ([[DM-01]])\n| flavor3 = つまらんやつを戦場に出したら、戦場がどうなるか知っているのか? \"Do you know what happens to the battlefield when you send a boring guy into it?\" ―[[Devil Diabolos Double Zeta, Ultimate Awakened]] ([[DMX-12]])\n| mana = 1\n| artist = Tsutomu Kawade\n| set1 = DM-01 Base Set\n| setnum1 = S6/S10\n| R1 = Super Rare\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = S6/S10\n| R2 = Super Rare\n| set3 = DMX-12 Black Box Pack\n| setnum3 = b40/???\n| R3 = Super Rare\n}}\n{{Zagaan}}\n[[Category:TCG]]\n[[Category:OCG]]"
+}

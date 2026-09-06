@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_08_030",
+ "page": "Gigaclaws",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Chimera",
+ "cost": "5",
+ "power": "2000",
+ "engtext": "{{Turbo Rush|Whenever this [[creature]] [[attack]]s, your [[opponent]] [[discard]]s his [[hand]].}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "30/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "44/55"
+ },
+ "wiki": "{{Cardtable\n| image = Gigaclaws.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = ギガクローズ\n| phonetic = Gigakurōzu\n| cost = 5\n| race = Chimera\n| power = 2000\n| engtext = {{Turbo Rush|Whenever this [[creature]] [[attack]]s, your [[opponent]] [[discard]]s his [[hand]].}}\n| jptext = ■ ターボラッシュ(自分の他のクリーチャーがシールドをブレイクした後、そのターンが終わるまで、このクリーチャーは次の{{Icon|TR}}能力を得る)\n:{{Icon|TR}}このクリーチャーが攻撃するとき、相手は自分自身の手札をすべて、持ち主の墓地に置く。\n| flavor = \n| mana = 1\n| artist = Hikaru Ikusa\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 30/55\n| R1 = Common\n| set2 = DM-08 Invincible Legend\n| setnum2 = 44/55\n| R2 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Card Discard]]\n[[Category:Attack Trigger]]"
+}

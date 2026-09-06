@@ -1,0 +1,23 @@
+{
+ "card_id": "dm_04_022",
+ "page": "Hunter Cluster",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Cyber Cluster",
+ "cost": "4",
+ "power": "1000",
+ "engtext": "{{Blocker}} \n\n{{Shield Trigger|creature}}",
+ "templates": [
+  "Blocker",
+  "Shield Trigger|creature"
+ ],
+ "sets": {
+  "set1": "DM-04 Shadowclash of Blinding Night",
+  "setnum1": "22/55",
+  "set2": "DM-04 Challenge of Black Shadow ",
+  "setnum2": "26/55",
+  "set3": "DMC-08 Endless Black Hole Deck",
+  "setnum3": "23/82"
+ },
+ "wiki": "{{Cardtable\n| image = Hunter Cluster.jpg\n| civilization = Water\n| type = Creature\n| jpname = ハンター・クラスター\n| phonetic = Hantā Kurasutā\n| race = Cyber Cluster\n| cost = 4\n| power = 1000\n| engtext = {{Blocker}} \n\n{{Shield Trigger|creature}}\n| jptext = {{Blocker|jp}}\n\n{{Icon|ST}} S・トリガー （このクリーチャーをシールドゾーンから手札に加える時、コストを支払わずにすぐ召喚してもよい） \n| flavor = \n| mana = 1\n| artist = Seki\n| set1 = DM-04 Shadowclash of Blinding Night\n| setnum1 = 22/55\n| R1 = Uncommon\n| set2 = DM-04 Challenge of Black Shadow \n| setnum2 = 26/55\n| R2 = Uncommon\n| set3 = DMC-08 Endless Black Hole Deck\n| setnum3 = 23/82\n| R3 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Cyber Cluster]]\n[[Category:Shield Trigger]]\n[[Category:1000 Power Creatures]]"
+}

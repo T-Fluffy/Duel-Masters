@@ -1,0 +1,24 @@
+{
+ "card_id": "dm_08_008",
+ "page": "Lunar Charger",
+ "type": "Spell",
+ "civilization": "Light",
+ "race": "",
+ "cost": "3",
+ "power": "",
+ "engtext": "■ Choose up to 2 of your [[creature]]s in the [[battle zone]]. At the [[End Step|end of the turn]], you may [[untap]] them.\n\n{{Charger}}",
+ "templates": [
+  "Charger"
+ ],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "8/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "39/55",
+  "set3": "DMC-10 Hakuoh's Holy Spirit Deck ",
+  "setnum3": "33/44",
+  "set4": "DMR-17 Burning Dogiragon!!",
+  "setnum4": "65/94"
+ },
+ "wiki": "{{Cardtable\n| image = Lunar Charger.jpg\n| civilization = Light\n| type = Spell\n| jpname = ソーラー・チャージャー\n| phonetic = Sōrā Chājā ''(Solar Charger)''\n| cost = 3\n| engtext = ■ Choose up to 2 of your [[creature]]s in the [[battle zone]]. At the [[End Step|end of the turn]], you may [[untap]] them.\n\n{{Charger}}\n| jptext = ■ バトルゾーンにある自分のクリーチャーを2体まで選ぶ。このターンの終わりに、そのクリーチャーをアンタップしてもよい。\n\n{{Charger|jp}}　\n| flavor = Gratho loved bouncing stuff off of walls. That night, the walls had their revenge. ([[DM-08]])\n| flavor2 = ぐしゃり。Squished. ([[DMC-10]])\n| flavor3 = 争いのない平和な土地、『ランド大陸』。だが、あの『侵略の日』をきっかけに、欲望に身を任せる侵略者たちが破壊を繰り返す戦乱の地となった。The peaceful land without conflict, the [[Rando Continent]]. However, after that 'Day of Invasion', it became a war-torn land, as [[Invader]]s, driven by their desires, repeated acts of destruction. ([[DMR-17]])\n| mana = 1\n| artist = Akira Hamada\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 8/55\n| R1 = Common\n| set2 = DM-08 Invincible Legend\n| setnum2 = 39/55\n| R2 = Common\n| set3 = DMC-10 Hakuoh's Holy Spirit Deck \n| setnum3 = 33/44\n| R3 = Common\n| set4 = DMR-17 Burning Dogiragon!!\n| setnum4 = 65/94\n| R4 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Charger]]\n[[Category:Creature Untap]]"
+}

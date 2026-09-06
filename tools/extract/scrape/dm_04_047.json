@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_04_047",
+ "page": "Sword of Malevolent Death",
+ "type": "Spell",
+ "civilization": "Fire",
+ "race": "",
+ "cost": "4",
+ "power": "",
+ "engtext": "■ Until the [[End Step|end of the turn]], each of your [[creature]]s in the [[battle zone]] gets \"While [[attack]]ing, this [[creature]] gets +1000 [[power]] for each [[darkness]] [[card]] in your [[mana zone]].\"",
+ "templates": [],
+ "sets": {
+  "set1": "DM-04 Shadowclash of Blinding Night",
+  "setnum1": "47/55",
+  "set2": "Shadowclash Collector Tin",
+  "setnum2": "39/46",
+  "set3": "DM-04 Challenge of Black Shadow ",
+  "setnum3": "33/55"
+ },
+ "wiki": "{{Cardtable\n| image = Sword of Malevolent Death.jpg\n| civilization = Fire\n| type = Spell\n| jpname = デーモン・ソード\n| phonetic = Dēmon Sōdo ''(Demon Sword)''\n| cost = 4\n| engtext = ■ Until the [[End Step|end of the turn]], each of your [[creature]]s in the [[battle zone]] gets \"While [[attack]]ing, this [[creature]] gets +1000 [[power]] for each [[darkness]] [[card]] in your [[mana zone]].\"\n| jptext = ■ このターンの攻撃中、バトルゾーンにある自分のクリーチャーすべてのパワーは、自分のマナゾーンにある闇のカード1枚につき+1000される。\n| flavor = {{tooltip|Ballom, Master of Death|Ballom}} gives his armies haunted swords, each with a soul trapped inside. ([[DM-04]])\n| flavor2 = 邪悪の剣が戦士に力を与える。The sword of evil grants power to the warrior. ([[DM-04]])\n| mana = 1\n| artist = Masaki Hirooka\n| set1 = DM-04 Shadowclash of Blinding Night\n| setnum1 = 47/55\n| R1 = Uncommon\n| set2 = Shadowclash Collector Tin\n| setnum2 = 39/46\n| R2 = Uncommon\n| set3 = DM-04 Challenge of Black Shadow \n| setnum3 = 33/55\n| R3 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Increase Power]]"
+}

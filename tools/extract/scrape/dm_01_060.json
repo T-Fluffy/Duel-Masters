@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_01_060",
+ "page": "Skeleton Soldier, the Defiled",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Living Dead",
+ "cost": "4",
+ "power": "3000",
+ "engtext": "",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "60/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "87/110",
+  "set3": "DMC-02 Kokujo's Darkness Deck",
+  "setnum3": "21/43"
+ },
+ "wiki": "{{Cardtable\n| image = Skeleton Soldier, the Defiled.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|汚|けが}}れた{{Ruby|者|もの}}スケルトンソルジャー\n| phonetic = Kegareta Mono Sukerutonsorujā\n| cost = 4\n| race = Living Dead\n| power = 3000\n| flavor = \"Rip. Tear. Gnash. They all make the same delightful noises.\" ([[DM-01]])\n| mana = 1\n| artist = Katsuya\n| set1 = DM-01 Base Set\n| setnum1 = 60/110\n| R1 = Common\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 87/110\n| R2 = Common\n| set3 = DMC-02 Kokujo's Darkness Deck\n| setnum3 = 21/43\n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Living Dead]]\n[[Category:3000 Power Creatures]]\n[[Category:No Abilities]]"
+}

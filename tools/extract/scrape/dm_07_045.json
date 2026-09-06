@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_07_045",
+ "page": "Wild Racer Chief Garan",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Human",
+ "cost": "3",
+ "power": "2000+",
+ "engtext": "{{Power Attacker|1000}}\n\n{{Stealth|Light}}",
+ "templates": [
+  "Stealth|Light"
+ ],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "45/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "50/55",
+  "set3": "DMC-09 Shobu's Dragon Legend Deck ",
+  "setnum3": "38/44"
+ },
+ "wiki": "{{Cardtable\n| image = Wild Racer Chief Garan.jpg\n| civilization = Fire\n| type = Creature\n| jpname = {{Ruby|暴|ぼう}}{{Ruby|走|そう}}{{Ruby|番|ばん}}{{Ruby|長|ちょう}}ギャラン\n| phonetic = Bōsōban Chō Gyaran\n| race = Human\n| cost = 3\n| power = 2000+\n| engtext = {{Power Attacker|1000}}\n\n{{Stealth|Light}}\n| jptext = {{Power Attacker|1000|jp}}\n\n■ 光ステルス （相手のマナゾーンに光のカードが1枚でもあれば、このクリーチャーはブロックされない）\n| flavor = Burning rubber, burning rage. ([[DM-07]])\n| flavor2 = 火と自然。異なる文明の壁を乗り越え、行動を共にするレジスタンス「バーニング・ビースト」が旗揚げされた。Fire and nature. The resistance of '[[Burning Beast]]' has been established, transcending the walls of different civilizations and acting together. ([[DM-07]], [[DMC-09]]) \n| mana = 1\n| artist = Jason\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 45/55\n| R1 = Common\n| set2 = DM-07 Invincible Charge\n| setnum2 = 50/55\n| R2 = Common\n| set3 = DMC-09 Shobu's Dragon Legend Deck \n| setnum3 = 38/44\n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:2000 Power Creatures]]"
+}

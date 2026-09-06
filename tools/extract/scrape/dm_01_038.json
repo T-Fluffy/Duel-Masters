@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_01_038",
+ "page": "Saucer-Head Shark",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Gel Fish",
+ "cost": "5",
+ "power": "3000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], return all [[creature]]s in the [[battle zone]] that have [[power]] 2000 or less to its [[owner]]'s [[hand]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "38/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "18/110",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "28/140"
+ },
+ "wiki": "{{Cardtable\n| image = Saucer-Head Shark.jpg\n| civilization = Water\n| type = Creature\n| jpname = ソーサーヘッド・シャーク\n| phonetic = Sōsāheddo Shāku\n| cost = 5\n| race = Gel Fish\n| power = 3000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], return all [[creature]]s in the [[battle zone]] that have [[power]] 2000 or less to its [[owner]]'s [[hand]].\n| jptext = ■ このクリーチャーをバトルゾーンに出した時、バトルゾーンにあるパワー2000以下のクリーチャーをすべて、持ち主の手札に戻す。\n| flavor = \"Isn't it cool? The heads can be combined.\" —[[Tropico]] \n| flavor2 = 「かっこいいだろう。あたまががったいするんだぜ。」 \"Isn't it cool? It'll make your head spin!\" —[[Tropico]]  ([[DM-01]])\n| flavor3 = 「やっぱ、とうぶにどっきんぐするのはおとこのろまんだよな! 」 \"After all, the true romance for a man is going for a headlong rush!\" —[[Tropico]] ([[DM-18]])\n| mana = 1\n| artist = Naoki Saito \n| artist2 = Takesi Kuno \n| set1 = DM-01 Base Set\n| setnum1 = 38/110\n| R1 = Rare\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 18/110\n| R2 = Rare\n| set3 = DM-18 Best Challenger\n| setnum3 = 28/140\n| R3 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Bounce]]\n[[Category:Mass Removal]]\n[[Category:Power Based Removal]]\n[[Category:Self Bounce]]\n[[Category:Come Into Play Trigger]]"
+}

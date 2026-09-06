@@ -1,0 +1,28 @@
+{
+ "card_id": "dm_07_043",
+ "page": "Otherworldly Warrior Naglu",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Armorloid",
+ "cost": "6",
+ "power": "4000+",
+ "engtext": "■ This [[creature]] can't be [[attack]]ed.\n\n{{Power Attacker|3000}}\n\n{{Double Breaker}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "43/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "30/55",
+  "set3": "DMC-11 Shobu's Dragon Legend Power-Up Pack ",
+  "setnum3": "15/44",
+  "set4": "DMC-13 CoroCoro New Generation Pack",
+  "setnum4": "12/37 ",
+  "set5": "DMC-14 Crimson Armorloids Deck",
+  "setnum5": "27/78",
+  "set6": "Promotional",
+  "setnum6": "43/55 (German)"
+ },
+ "wiki": "{{Cardtable\n| image = Otherworldly Warrior Naglu.jpg\n| civilization = Fire\n| type = Creature\n| jpname = {{Ruby|怪|かい}}{{Ruby|神|しん}}{{Ruby|兵|へい}}ナグール\n| phonetic = Kaishinhei Nagūru\n| race = Armorloid\n| cost = 6\n| power = 4000+\n| engtext = ■ This [[creature]] can't be [[attack]]ed.\n\n{{Power Attacker|3000}}\n\n{{Double Breaker}}\n| jptext = {{Power Attacker|3000|jp}}\n\n{{Double Breaker|jp}}\n\n■ このクリーチャーは攻撃されない。　\n| flavor = It's a grabbin', drillin', clampin', smashin', shootin', stompin' fighter. ([[DM-07]])\n| flavor2 = 敵も見かけに騙される。Even the enemy is deceived by appearances. ([[DM-07]])\n| mana = 1\n| artist = Dai\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 43/55\n| R1 = Uncommon\n| set2 = DM-07 Invincible Charge\n| setnum2 = 30/55\n| R2 = Uncommon\n| set3 = DMC-11 Shobu's Dragon Legend Power-Up Pack \n| setnum3 = 15/44\n| R3= Uncommon\n| set4 = DMC-13 CoroCoro New Generation Pack\n| setnum4 = 12/37 \n| R4 = Uncommon\n| set5 = DMC-14 Crimson Armorloids Deck\n| setnum5 = 27/78\n| R5 = Uncommon\n| set6 = Promotional\n| setnum6 = 43/55 (German)\n| R6 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:4000 Power Creatures]]\n[[Category:Unattackable]]"
+}

@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_01_026",
+ "page": "Aqua Vehicle",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Liquid People",
+ "cost": "2",
+ "power": "1000",
+ "engtext": "",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "26/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "83/110",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "107/140",
+  "set4": "DMD-17 Beginning Dragon Deck: Crystal Memory Dragon",
+  "setnum4": "12/14"
+ },
+ "wiki": "{{Cardtable\n| image = Aqua Vehicle.jpg\n| civilization = Water\n| type = Creature\n| jpname = アクア・ビークル\n| phonetic = Akua Bīkuru \n| cost = 2\n| race = Liquid People\n| power = 1000\n| flavor = The chip implanted in its head lets the Cyber Lords control its brain waves. ([[DM-01]])\n| flavor2 = [[Dragon|ドラゴン]]のエッセンスを凝縮した素材「龍素」。それを発見したのは[[Liquid People Sen|リキッド・ピープル閃]]だった。彼らはそこから[[Crystal Command Dragon|クリスタル・コマンド・ドラゴン]]を生み出し完全に制御することに成功した。 ...かに見えたが、「龍素」にはまだまだ隠された力が眠っているのだ! The material 'Dragon Element' or 'Dragment,' which condenses the power of dragons. It was discovered by the [[Liquid People Sen]]. From it, they created the [[Crystal Command Dragon]]s and succeeded in fully controlling it....or so it seemed, but 'Dragment' still holds hidden powers waiting to be awakened!\" ([[DMD-17]])\n| mana = 1\n| artist = Atsushi Kawasaki \n| artist2 = Toshiaki Takayama\n| set1 = DM-01 Base Set\n| setnum1 = 26/110\n| R1 = Common\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 83/110\n| R2 = Common\n| set3 = DM-18 Best Challenger\n| setnum3 = 107/140\n| R3 = Common\n| set4 = DMD-17 Beginning Dragon Deck: Crystal Memory Dragon\n| setnum4 = 12/14\n| R4 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Liquid People]]\n[[Category:1000 Power Creatures]]\n[[Category:No Abilities]]"
+}

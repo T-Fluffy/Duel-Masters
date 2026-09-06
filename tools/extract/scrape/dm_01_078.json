@@ -1,0 +1,26 @@
+{
+ "card_id": "dm_01_078",
+ "page": "Fire Sweeper Burning Hellion",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Dragonoid",
+ "cost": "4",
+ "power": "3000+",
+ "engtext": "{{Power Attacker|2000}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "78/110",
+  "set2": "Shadowclash Collector Tin",
+  "setnum2": "37/46",
+  "set3": "DM-01 Base Set (OCG)",
+  "setnum3": "95/110",
+  "set4": "DM-18 Best Challenger",
+  "setnum4": "121/140",
+  "set5": "DMC-01 Shobu's Blaze Deck",
+  "setnum5": "33/43",
+  "set6": "Promotional",
+  "setnum6": "E2 Y1"
+ },
+ "wiki": "{{Cardtable\n| image = Fire Sweeper Burning Hellion.jpg\n| civilization = Fire\n| type = Creature\n| jpname = {{Ruby|掃|そう}}{{Ruby|討|とう}}{{Ruby|兵|へい}}バーニング・ヘル ''(Burning Hell, the Sweeper Soldier)''\n| phonetic = Sōtōhei Burning Hell\n| race = Dragonoid\n| cost = 4\n| power = 3000+\n| engtext = {{Power Attacker|2000}}\n| jptext = {{Power Attacker|2000|jp}}\n| flavor = 最も遅くまで前線に残る者が、最も多く敵を倒すことができる。Those who leave the battle last are the ones who savor victory the longest. ([[DM-01]])\n| mana = 1\n| artist = Sansyu\n| set1 = DM-01 Base Set\n| setnum1 = 78/110\n| R1 = Common\n| set2 = Shadowclash Collector Tin\n| setnum2 = 37/46\n| R2 = Common\n| set3 = DM-01 Base Set (OCG)\n| setnum3 = 95/110\n| R3 = Common\n| set4 = DM-18 Best Challenger\n| setnum4 = 121/140\n| R4 = Common\n| set5 = DMC-01 Shobu's Blaze Deck\n| setnum5 = 33/43\n| R5 = Common\n| set6 = Promotional\n| setnum6 = E2 Y1\n| R6 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:3000 Power Creatures]]"
+}

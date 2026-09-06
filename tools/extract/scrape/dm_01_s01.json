@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_01_s01",
+ "page": "Hanusa, Radiance Elemental",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Angel Command",
+ "cost": "7",
+ "power": "9500",
+ "engtext": "{{Double Breaker}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "S1/S10",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "S1/S10",
+  "set3": "DMX-19 Super Rare 100% Pack",
+  "setnum3": "S8/???"
+ },
+ "wiki": "{{Cardtable\n| image = Hanusa, Radiance Elemental.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|光|こう}}{{Ruby|輪|りん}}の{{Ruby|精|せい}}{{Ruby|霊|れい}}シャウナ \n| phonetic = Kōrin no Seirei Shauna ''(Shauna, Spirit of Radiance)''\n| dename = Hanusa, Strahlungselementar\n| itname = Hanusa, Elementale Radiante\n| frname = Hanusa, elemental rayonnant\n| esname = Hanusa, resplandor natural\n| mxname = Hanusa, resplandor natural\n| ptname =Hanusa, Elemental da Radiação\n| cnname = 光之元素-哈努沙\n| race = Angel Command\n| cost = 7\n| power = 9500\n| engtext = {{Double Breaker}}\n| jptext = {{Double Breaker|jp}}\n| flavor = The sky was scorched by [[Dragon]]s' fire, and the earth gouged by [[Angel Command|elemental]]s' rays. The battle raged for seven nights and seven days. ドラゴンの炎が天を焼き、精霊の光線が大地をえぐった。その戦いは七日七晩のあいだ続いた。The fire of the [[Dragon]]s burnt the heavens, and the rays of the [[Angel Command|Spirits]] gouged the earth. The fight lasted seven nights. ([[DM-01]])\n| flavor2 = 世界の始まりの時から二度と見れないと思っていた「聖なる光」が、ここに蘇る。その光は、ふたたび七日七晩にわたる戦いを導くのか、それとも龍の支配を終わらせるのか...。The \"Holy Light\" from the beginning of the world, thought never to be seen for a second time, revives in this moment. Will this light once again lead this battle to rage on for seven days and seven nights, or will it end the reign of the [[Dragon]]s... ([[DMX-19]])\n| mana = 1\n| artist = Masaki Hirooka\n| set1 = DM-01 Base Set\n| setnum1 = S1/S10\n| R1 = Super Rare\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = S1/S10\n| R2 = Super Rare\n| set3 = DMX-19 Super Rare 100% Pack\n| setnum3 = S8/???\n| R3 = Super Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]"
+}

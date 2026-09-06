@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_07_046",
+ "page": "Brood Shell",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Colony Beetle",
+ "cost": "4",
+ "power": "3000",
+ "engtext": "{{Tap Ability|Return a [[creature]] from your [[mana zone]] to your [[hand]].}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "46/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "33/55"
+ },
+ "wiki": "{{Cardtable\n| image = Brood Shell.jpg\n| civilization = Nature\n| type = Creature\n| jpname = シェル・ブリーダー\n| phonetic = Sheru Burīdā\n| race = Colony Beetle\n| cost = 4\n| power = 3000\n| engtext = {{Tap Ability|Return a [[creature]] from your [[mana zone]] to your [[hand]].}}\n| jptext = ■ このクリーチャーで攻撃するかわりに、タップして次の{{Tap}}能力を使ってもよい。\n:{{Tap}} 自分のマナゾーンからクリーチャーを1体選び、自分の手札に戻す。\n| flavor = [[Colony Beetle]]s do nothing but lay eggs, ponder the existential questions of truth and beauty, and lay more eggs. ([[DM-07]])\n| flavor2 = ぷくりとふくらむ腹の中、卵が一杯隠れてる。Inside the puffed-up belly, many eggs are hidden. ([[DM-07]])\n| mana = 1\n| artist = Norikatsu Miyoshi\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 46/55\n| R1 = Uncommon\n| set2 = DM-07 Invincible Charge\n| setnum2 = 33/55\n| R2 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Nature]]\n[[Category:Colony Beetle]]\n[[Category:Tap Ability]]\n[[Category:3000 Power Creatures]]"
+}

@@ -1,0 +1,28 @@
+{
+ "card_id": "dm_08_005",
+ "page": "Kachua, Keeper of the Icegate",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Snow Faerie",
+ "cost": "7",
+ "power": "3000",
+ "engtext": "{{Tap Ability|[[Search]] your [[deck]]. You may take a [[creature]] that has [[Dragon]] in its [[race]] from your [[deck]] and put it into the [[battle zone]]. Then [[shuffle]] your [[deck]]. That [[creature]] has \"[[speed attacker]].\" At the [[End Step|end of the turn]], [[destroy]] it.}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "5/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "5/55",
+  "set3": "DMC-15 Eternal Dragons Deck",
+  "setnum3": "4/28",
+  "set4": "DMC-27 CoroCoro Dream Pack ",
+  "setnum4": "5/55",
+  "set5": "DMC-64 CoroCoro Legend 7: Dynamite Movie",
+  "setnum5": "15/42",
+  "set6": "DMX-16 The Great Royal Strategies: Fantasista 12",
+  "setnum6": "38/84",
+  "set7": "DM22-EX1 Golden Strategy!! Dueking MAX 2022",
+  "setnum7": "35/130"
+ },
+ "wiki": "{{Cardtable\n| image = Kachua, Keeper of the Icegate.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|幻想|げんそう}}{{Ruby|妖精|ようせい}}カチュア ''(Kachua, Fantasy Faerie)''\n| phonetic = Gensō Yōsei Kachua\n| cost = 7\n| race = Snow Faerie\n| power = 3000\n| engtext = {{Tap Ability|[[Search]] your [[deck]]. You may take a [[creature]] that has [[Dragon]] in its [[race]] from your [[deck]] and put it into the [[battle zone]]. Then [[shuffle]] your [[deck]]. That [[creature]] has \"[[speed attacker]].\" At the [[End Step|end of the turn]], [[destroy]] it.}}\n| jptext = ■ このクリーチャーで攻撃するかわりに、タップして次の{{Tap}}能力を使ってもよい。\n:{{Tap}} 自分の山札を見る。その中から種族にドラゴンとあるクリーチャーを1体選び、バトルゾーンに出してもよい。その後、山札をシャッフルする。そのクリーチャーは「スピードアタッカー」を得る。このターンの終わりに、そのクリーチャーを破壊する。\n| flavor = ドラゴンを愛するのはバードたちだけではない! \"It's not just the birds who love dragons!\" ([[DM22-EX1]])\n| mana = 1\n| artist = Eiji Kaneda\n| artist2 = Okera \n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 5/55\n| R1 = Very Rare\n| set2 = DM-08 Invincible Legend\n| setnum2 = 5/55\n| R2 = Very Rare\n| set3 = DMC-15 Eternal Dragons Deck\n| setnum3 = 4/28\n| R3 = Very Rare\n| set4 = DMC-27 CoroCoro Dream Pack \n| setnum4 = 5/55\n| R4 = Very Rare\n| set5 = DMC-64 CoroCoro Legend 7: Dynamite Movie\n| setnum5 = 15/42\n| R5 = Very Rare\n| set6 = DMX-16 The Great Royal Strategies: Fantasista 12\n| setnum6 = 38/84\n| R6 = Very Rare\n| set7 = DM22-EX1 Golden Strategy!! Dueking MAX 2022\n| setnum7 = 35/130\n| R7 = Very Rare\n}}\n{{Kachua}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Nature]]\n[[Category:Snow Faerie]]\n[[Category:Tap Ability]]\n[[Category:3000 Power Creatures]]\n[[Category:Recruit]]\n[[Category:Gives \"Speed Attacker\"]]\n[[Category:Self Removal]]"
+}

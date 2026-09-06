@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_05_005",
+ "page": "Obsidian Scarab",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Giant Insect",
+ "cost": "6",
+ "power": "5000+",
+ "engtext": "{{Power Attacker|3000}}\n\n{{Double Breaker}}\n\n■ When this [[creature]] is [[destroy]]ed, you may put an '''Obsidian Scarab''' from your [[mana zone]] into the [[battle zone]].",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "5/55",
+  "set2": "DM-05 Return of the Survivor",
+  "setnum2": "5/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "14/140"
+ },
+ "wiki": "{{Cardtable\n| image = Obsidian Scarab.jpg\n| civilization = Nature\n| type = Creature\n| jpname = オブシディアン・ビートル ''(Obsidian Beetle)''\n| phonetic = Obusidian Bītoru\n| cost = 6\n| race = Giant Insect\n| power = 5000+\n| engtext = {{Power Attacker|3000}}\n\n{{Double Breaker}}\n\n■ When this [[creature]] is [[destroy]]ed, you may put an '''Obsidian Scarab''' from your [[mana zone]] into the [[battle zone]].\n| jptext = {{Power Attacker|3000|jp}}\n\n{{Double Breaker|jp}}\n\n■ このクリーチャーがバトルゾーンから自分の墓地に置かれたとき、自分のマナゾーンから'''オブシディアン・ビートル'''を1体選び、バトルゾーンに置いてもよい。\n| flavor = \n| mana = 1\n| artist = Masaki Hirooka\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = 5/55\n| R1 = Very Rare\n| set2 = DM-05 Return of the Survivor\n| setnum2 = 5/55\n| R2 = Very Rare\n| set3 = DM-18 Best Challenger\n| setnum3 = 14/140\n| R3 = Very Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:5000 Power Creatures]]\n[[Category:For No Cost]]\n[[Category:Put Into Graveyard]]"
+}

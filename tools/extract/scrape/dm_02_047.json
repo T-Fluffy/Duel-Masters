@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_02_047",
+ "page": "Essence Elf",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Tree Folk",
+ "cost": "2",
+ "power": "1000",
+ "engtext": "■ Your [[spell]]s each [[cost]] 1 less to [[cast]]. They can't [[cost]] less than 1.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "47/55",
+  "set2": "DM-02 Master of Evolution",
+  "setnum2": "54/55"
+ },
+ "wiki": "{{Cardtable\n| image=Essence Elf.jpg\n| civilization = Nature\n| type = Creature\n| jpname = ラブ・エルフィン\n| phonetic = Rabu Erufin ''(Love Elfin)''\n| cost = 2\n| race = Tree Folk\n| power = 1000\n| engtext = ■ Your [[spell]]s each [[cost]] 1 less to [[cast]]. They can't [[cost]] less than 1.\n| jptext = ■ このクリーチャーがバトルゾーンにある間、自分の呪文を唱えるとき、支払うコストは1少なくなる。ただし、コストが1のときは少なくならない。\n| flavor = 銀髭団が傷つき、倒れた時、美しい妖精たちがその窮地を救った。 When the [[Silverbeard Tribe|Silver Beards]] fell, mystical elves came to rescue them. ([[DM-02]])\n| mana = 1\n| artist = Eiji Kaneda\n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = 47/55\n| R1 = Common\n| set2 = DM-02 Master of Evolution\n| setnum2 = 54/55\n| R2 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Cost Reduction]]"
+}

@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_03_050",
+ "page": "Pouch Shell",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Colony Beetle",
+ "cost": "4",
+ "power": "1000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], you may choose one of your [[opponent]]'s [[evolution]] [[creature]]s in the [[battle zone]] and put the top card of that [[creature]] into your [[opponent]]'s [[graveyard]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-03 Rampage of the Super Warriors",
+  "setnum1": "50/55",
+  "set2": "DM-03 Master of Destruction",
+  "setnum2": "34/55"
+ },
+ "wiki": "{{Cardtable\n| image = Pouch Shell.jpg\n| civilization = Nature\n| type = Creature\n| jpname = シェル・ポーチ\n| phonetic = Sheru Pōchi ''(Shell Pouch)''\n| race = Colony Beetle\n| cost = 4\n| power = 1000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], you may choose one of your [[opponent]]'s [[evolution]] [[creature]]s in the [[battle zone]] and put the top card of that [[creature]] into your [[opponent]]'s [[graveyard]].\n| jptext = ■ このクリーチャーがバトルゾーンに出たとき、バトルゾーンにある相手の進化クリーチャーを1体選び、そのクリーチャーの一番上のカードを持ち主の墓地に置いてよい。\n| flavor = A blast to the past. ([[DM-03]])\n| flavor2 = [[Colony Beetle|コロニー・ビートル]]の卵は本能のまま攻撃を繰り返す。The eggs of the Colony Beetle instinctively repeat attacks. ([[DM-03]]) \n| mana = 1\n| artist = Ryoya Yuki\n| set1 = DM-03 Rampage of the Super Warriors\n| setnum1 = 50/55\n| R1 = Uncommon\n| set2 = DM-03 Master of Destruction\n| setnum2 = 34/55\n| R2 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Nature]]\n[[Category:Colony Beetle]]\n[[Category:1000 Power Creatures]]\n[[Category:Come Into Play Trigger]]"
+}

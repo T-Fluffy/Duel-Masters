@@ -1,0 +1,26 @@
+{
+ "card_id": "dm_06_015",
+ "page": "Chekicul, Vizier of Endurance",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Initiate",
+ "cost": "5",
+ "power": "1000",
+ "engtext": "{{Blocker|s}}\n\n■ Whenever this [[creature]] [[block]]s, [[no battle happens]]. ''(Both [[creature]]s stay [[tap]]ped.)''\n\n■ This [[creature]] can't [[attack]].",
+ "templates": [
+  "Blocker|s"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "15/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "72/110",
+  "set3": "DMC-05 Lightning Thunder Deck",
+  "setnum3": "42/82",
+  "set4": "DMC-10 Hakuoh's Holy Spirit Deck ",
+  "setnum4": "22/44",
+  "set5": "DMC-20 Shobu's Holy Dragon Power-Up Pack",
+  "setnum5": "50/102"
+ },
+ "wiki": "{{Cardtable\n| image = Chekicul, Vizier of Endurance.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|不|ふ}}{{Ruby|屈|くつ}}の{{Ruby|使|し}}{{Ruby|徒|と}}チーキ・クーレ\n| phonetic = Fukutsu no Shito Chīki Kūre\n| race = Initiate\n| cost = 5\n| power = 1000\n| engtext = {{Blocker|s}}\n\n■ Whenever this [[creature]] [[block]]s, [[no battle happens]]. ''(Both [[creature]]s stay [[tap]]ped.)''\n\n■ This [[creature]] can't [[attack]].\n| jptext = {{Blocker|jps}}\n\n■ このクリーチャーが攻撃をブロックした時、バトルは行われない。ただし、両クリーチャーはタップしたままである。\n\n■ このクリーチャーは攻撃することができない。\n| flavor = \"If you don't chill out, I'll start an ice age and make you chill out!\"\n| flavor2 = 中枢の護衛のため、その使徒はエネルギーを蓄え、姿を変えていった。In order to guard the core, the Vizier stored energy and began to change its form. ([[DM-06]], [[DMC-05]], [[DMC-20]])\n| flavor3 = 侵入者が増えることにより、その速度は増し、形は刃と化す。As the number of intruders increases, its speed intensifies, and its form transforms into a blade. ([[DMC-10]])\n| mana = 1\n| artist = Naoki Saito\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 15/110\n| R1 = Common\n| set2 = DM-06 Invincible Soul\n| setnum2 = 72/110\n| R2 = Common\n| set3 = DMC-05 Lightning Thunder Deck\n| setnum3 = 42/82\n| R3 = Common\n| set4 = DMC-10 Hakuoh's Holy Spirit Deck \n| setnum4 = 22/44\n| R4 = Common\n| set5 = DMC-20 Shobu's Holy Dragon Power-Up Pack\n| setnum5 = 50/102\n| R5 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Initiate]]\n[[Category:1000 Power Creatures]]"
+}

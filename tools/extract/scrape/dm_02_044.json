@@ -1,0 +1,28 @@
+{
+ "card_id": "dm_02_044",
+ "page": "Rumble Gate",
+ "type": "Spell",
+ "civilization": "Fire",
+ "race": "",
+ "cost": "4",
+ "power": "",
+ "engtext": "■ Each of your [[creature]]s in the [[battle zone]] gets +1000 [[power]] until the [[End Step|end of the turn]].\n\n■ Each of your [[creature]]s in the [[battle zone]] that can [[attack]] [[creature]]s can [[attack]] [[untap]]ped [[creature]]s this [[turn]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "44/55",
+  "set2": "DM-02 Master of Evolution",
+  "setnum2": "51/55",
+  "set3": "DMC-03 Shobu's Blaze Power-Up Pack",
+  "setnum3": "42/43",
+  "set4": "DMC-05 Lightning Thunder Deck",
+  "setnum4": "73/82",
+  "set5": "DMC-20 Shobu's Holy Dragon Power-Up Pack",
+  "setnum5": "93/102",
+  "set6": "DMC-27 CoroCoro Dream Pack",
+  "setnum6": "51/55",
+  "set7": "DMC-30 Tyranno Drake Crusher",
+  "setnum7": "21/21"
+ },
+ "wiki": "{{Cardtable\n| image=Rumble Gate.jpg\n| civilization = Fire\n| type = Spell\n| jpname = クエイク・ゲート\n| phonetic = Kueiku Gēto ''(Quake Gate)''\n| cost = 4\n| engtext = ■ Each of your [[creature]]s in the [[battle zone]] gets +1000 [[power]] until the [[End Step|end of the turn]].\n\n■ Each of your [[creature]]s in the [[battle zone]] that can [[attack]] [[creature]]s can [[attack]] [[untap]]ped [[creature]]s this [[turn]].\n| jptext = ■ このターン、バトルゾーンにある自分のクリーチャーすべてのパワーは+1000され、タップされていないクリーチャーを攻撃できる。\n| flavor = 安心するのはまだ早いぜ。It's too soon to let down your guard. ([[DM-02]])\n| mana = 1\n| artist = Kou1\n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = 44/55\n| R1 = Common\n| set2 = DM-02 Master of Evolution\n| setnum2 = 51/55\n| R2 = Common\n| set3 = DMC-03 Shobu's Blaze Power-Up Pack\n| setnum3 = 42/43\n| R3 = Common\n| set4 = DMC-05 Lightning Thunder Deck\n| setnum4 = 73/82\n| R4 = Common\n| set5 = DMC-20 Shobu's Holy Dragon Power-Up Pack\n| setnum5 = 93/102\n| R5 = Common\n| set6 = DMC-27 CoroCoro Dream Pack\n| setnum6 = 51/55\n| R6 = Common\n| set7 = DMC-30 Tyranno Drake Crusher\n| setnum7 = 21/21\n| R7 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Fire]]\n[[Category:Spell]]\n[[Category:Increase Power]]\n[[Category:Can Attack Untapped Creatures]]"
+}

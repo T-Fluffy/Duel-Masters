@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_03_046",
+ "page": "Dawn Giant",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Giant",
+ "cost": "7",
+ "power": "11000",
+ "engtext": "■ This [[creature]] can't [[attack]] [[creature]]s.\n\n{{Double Breaker}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-03 Rampage of the Super Warriors",
+  "setnum1": "46/55",
+  "set2": "DM-03 Master of Destruction",
+  "setnum2": "18/55",
+  "set3": "DMC-27 CoroCoro Dream Pack",
+  "setnum3": "18/55"
+ },
+ "wiki": "{{Cardtable\n| image= Dawn Giant.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|夜明けの超人|ドーン・ジャイアント}}\n| phonetic = Dōn Jaianto\n| kana = ドーン・ジャイアント ''(Dawn Giant)''\n| cost = 7\n| race = Giant\n| power = 11000\n| engtext = ■ This [[creature]] can't [[attack]] [[creature]]s.\n\n{{Double Breaker}}\n| jptext = {{Double Breaker|jp}}\n\n■ このクリーチャーは、クリーチャーを攻撃できない。\n| flavor = That's not the sound of an earthquake. That's just the Dawn Giants snoring. ([[DM-03]])\n| flavor2 = 森がある限り、1000年前の過去も1000年後の未来も彼らはこうしている。As long as the forest exists, they will continue to do so, 1000 years in the past and 1000 years in the future. ([[DM-03]]\n| mana = 1\n| artist = Hideaki Takamura\n| set1 = DM-03 Rampage of the Super Warriors\n| setnum1 = 46/55\n| R1 = Rare\n| set2 = DM-03 Master of Destruction\n| setnum2 = 18/55\n| R2 = Rare\n| set3 = DMC-27 CoroCoro Dream Pack\n| setnum3 = 18/55\n| R3 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Nature]]\n[[Category:Giant]]\n[[Category:11000 Power Creatures]]\n[[Category:Double Breaker]]"
+}

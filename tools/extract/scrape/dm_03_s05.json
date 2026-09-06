@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_03_s05",
+ "page": "Earthstomp Giant",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Giant",
+ "cost": "5",
+ "power": "8000",
+ "engtext": "{{Double Breaker}}\n\n■ Whenever this [[creature]] [[attack]]s, return all [[creature]]s from your [[mana zone]] to your [[hand]].",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-03 Rampage of the Super Warriors",
+  "setnum1": "S5/S5",
+  "set2": "DM-03 Master of Destruction",
+  "setnum2": "S5/S5"
+ },
+ "wiki": "{{Cardtable\n| image= Earthstomp Giant.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|天空の超人|エアリアル・ジャイアント}}\n| phonetic = Earieru Jaianto\n| kana = エアリアル・ジャイアント ''(Aerial Giant)''\n| race = Giant\n| cost = 5\n| power = 8000\n| engtext = {{Double Breaker}}\n\n■ Whenever this [[creature]] [[attack]]s, return all [[creature]]s from your [[mana zone]] to your [[hand]].\n| jptext = {{Double Breaker|jp}}\n\n■ このクリーチャーが攻撃するとき、自分のマナゾーンにあるクリーチャーをすべて、自分の手札に戻す。\n| flavor = \"He's doing more damage to the forest than the [[Parasite Worm]]s! Are you sure he's on our side?\" -[[Fighter Dual Fang]] ([[DM-03]])\n| flavor2 = 闇が森を侵した時、王がゆっくりと目覚めた。When [[Darkness]] invaded the forest, the kings awaken. ([[DM-03]])\n| mana = 1\n| artist = Yoshio Sugiura\n| set1 = DM-03 Rampage of the Super Warriors\n| setnum1 = S5/S5\n| R1 = Super Rare\n| set2 = DM-03 Master of Destruction\n| setnum2 = S5/S5\n| R2 = Super Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Mana Recovery]]\n[[Category:Attack Trigger]]"
+}

@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_09_043",
+ "page": "Simian Warrior Grash",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Armorloid",
+ "cost": "4",
+ "power": "3000",
+ "engtext": "■ Whenever one of your [[Armorloid]]s is [[destroy]]ed, your [[opponent]] chooses a [[card]] in his [[mana zone]] and puts it into his [[graveyard]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "43/55",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "16/55",
+  "set3": "DMC-14 Crimson Armorloids Deck",
+  "setnum3": "12/78",
+  "set4": "DMEX-08 Mysterious Black Box Pack",
+  "setnum4": "73/???"
+ },
+ "wiki": "{{Cardtable\n| image = Simian Warrior Grash.jpg\n| civilization = Fire\n| type = Creature\n| jpname = {{Ruby|猿|えん}}{{Ruby|神|しん}}{{Ruby|兵|へい}}アッシュ ''(Ash, Divine Monkey Soldier)''\n| phonetic = Enshinhei Asshu\n| race = Armorloid\n| cost = 4\n| power = 3000\n| engtext = ■ Whenever one of your [[Armorloid]]s is [[destroy]]ed, your [[opponent]] chooses a [[card]] in his [[mana zone]] and puts it into his [[graveyard]].\n| jptext = ■ このクリーチャーがバトルゾーンにある間、自分のアーマロイドがバトルゾーンから自分の墓地に置かれたとき、相手は自分自身のマナゾーンからカードを1枚選び、持ち主の墓地に置く。\n| flavor = \"Thanks to my fist cannons, I can punch someone in the face from up to two miles away!\"\n| flavor2 = うなる拳。飛び交う弾頭。隠しきれない炎の闘志! Roaring fists. Flying warheads. Unconcealable fiery fighting spirit! ([[DM-09]])\n| flavor3 = その身を燃やし、活路を開け! Ignite your body, and forge a path forward! ([[DMC-14]])\n| flavor4 = デュエマクイズ Lv.12 Duel Masters Quiz Lv.12 <br> 猿は猿でも殿堂入りしている猿はゴエモンキーですが、この『謎のブラックボックスパック』で初めてホイルになった殿堂カードは何枚でしょう? A monkey is a monkey, but the monkey that made it to the [[Hall of Fame]] is [[Goemonkey! Snake-Handed Boss|Goemonkey]]. So, how many Hall of Fame cards became foil for the first time in the Mysterious Black Box Pack? <br> 答え：16枚 Answer: 16 cards ([[DMEX-08]])\n| mana = 1\n| artist = Atsushi Kawasaki\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = 43/55\n| R1 = Rare\n| set2 = DM-09 Invincible Blood\n| setnum2 = 16/55\n| R2 = Rare\n| set3 = DMC-14 Crimson Armorloids Deck\n| setnum3 = 12/78\n| R3 = Rare\n| set4 = DMEX-08 Mysterious Black Box Pack\n| setnum4 = 73/???\n| R4 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Mana Burn]]\n[[Category:Put Into Graveyard]]"
+}

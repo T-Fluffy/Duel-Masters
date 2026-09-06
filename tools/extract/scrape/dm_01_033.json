@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_01_033",
+ "page": "King Coral",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Leviathan",
+ "cost": "3",
+ "power": "1000",
+ "engtext": "{{Blocker|old}}",
+ "templates": [
+  "Blocker|old"
+ ],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "33/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "51/110",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "63/140"
+ },
+ "wiki": "{{Cardtable\n| image = King Coral.jpg\n| civilization = Water\n| type = Creature\n| jpname= キング・クラーケン\n| phonetic = Kingu Kurāken ''(King Kraken)''\n| race = Leviathan\n| cost = 3\n| power = 1000\n| engtext = {{Blocker|old}}\n| jptext = {{Blocker|jp}}\n| flavor = リヴァイアサンは長い長い時間をかけて成長し、やがて世界で最も大きな生物となる。[[Leviathan]]s mature slowly, eventually growing to become the largest creatures in the world. ([[DM-01]])\n| mana = 1\n| artist = Hideaki Takamura\n| set1 = DM-01 Base Set\n| setnum1 = 33/110\n| R1 = Uncommon\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 51/110\n| R2 = Uncommon\n| set3 = DM-18 Best Challenger\n| setnum3 = 63/140\n| R3 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Leviathan]]\n[[Category:1000 Power Creatures]]"
+}

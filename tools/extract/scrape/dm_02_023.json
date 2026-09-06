@@ -1,0 +1,26 @@
+{
+ "card_id": "dm_02_023",
+ "page": "Amber Piercer",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Brain Jacker",
+ "cost": "4",
+ "power": "2000",
+ "engtext": "■ Whenever this [[creature]] [[attack]]s, you may return a [[creature]] from your [[graveyard]] to your [[hand]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "23/55",
+  "set2": "DM-02 Master of Evolution",
+  "setnum2": "14/55",
+  "set3": "DMC-04 Kokujo's Darkness Power-Up Pack",
+  "setnum3": "5/43",
+  "set4": "DMC-07 Eternal Insects Deck",
+  "setnum4": "8/82",
+  "set5": "DMC-27 CoroCoro Dream Pack",
+  "setnum5": "13/55",
+  "set6": "Kokujo's Darkness Deck (TCG)",
+  "setnum6": "23a/55"
+ },
+ "wiki": "{{Cardtable\n| image=Amber Piercer.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = アンバー・ピアス\n| phonetic = Anbā Piasu ''(Amber Pierce)''\n| cost = 4\n| race = Brain Jacker\n| power = 2000\n| engtext = ■ Whenever this [[creature]] [[attack]]s, you may return a [[creature]] from your [[graveyard]] to your [[hand]].\n| jptext = ■ このクリーチャーが攻撃する時、クリーチャーを1体、自分の墓地から手札に戻してもよい。\n| flavor = \"Let's see what we can dig up.\" ([[Kokujo's Darkness Deck (TCG)|Kokujo's Darkness Deck]])\n| flavor2 = 「ちくりとするだけです。すぐ楽になりますよ。」\"It just makes it crispy. It will feel easy now.\" ―[[Alcaclown, Heavenly Crime Fallen General|Malvas, Dark Clown]] ([[DM-02]], [[DMC-04]], [[DMC-07]], [[DMC-27]])\n| mana = 1\n| artist = Daisuke Izuka\n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = 23/55\n| R1 = Rare\n| set2 = DM-02 Master of Evolution\n| setnum2 = 14/55\n| R2 = Rare\n| set3 = DMC-04 Kokujo's Darkness Power-Up Pack\n| setnum3 = 5/43\n| R3 = Rare\n| set4 = DMC-07 Eternal Insects Deck\n| setnum4 =  8/82\n| R4 = Rare\n| set5 = DMC-27 CoroCoro Dream Pack\n| setnum5 = 13/55\n| R5 = Rare\n| set6 = Kokujo's Darkness Deck (TCG)\n| setnum6 = 23a/55\n| R6 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Attack Trigger]]\n[[Category:Creature Recovery]]"
+}

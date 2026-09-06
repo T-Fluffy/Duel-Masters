@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_03_053",
+ "page": "Roar of the Earth",
+ "type": "Spell",
+ "civilization": "Nature",
+ "race": "",
+ "cost": "2",
+ "power": "",
+ "engtext": "{{Shield Trigger|spell}} \n\n■ Return a [[creature]] that [[cost]]s 6 or more from your [[mana zone]] to your [[hand]].",
+ "templates": [
+  "Shield Trigger|spell"
+ ],
+ "sets": {
+  "set1": "DM-03 Rampage of the Super Warriors",
+  "setnum1": "53/55",
+  "set2": "DM-03 Master of Destruction",
+  "setnum2": "55/55",
+  "set3": "DMC-20 Shobu's Holy Dragon Power-Up Pack",
+  "setnum3": "102/102"
+ },
+ "wiki": "{{Cardtable\n| image = Roar of the Earth.jpg\n| civilization = Nature\n| type = Spell\n| jpname = {{Ruby|大|だい}}{{Ruby|地|ち}}の{{Ruby|咆|ほう}}{{Ruby|哮|こう}}\n| phonetic = Daichi no Hōkō\n| cost = 2\n| engtext = {{Shield Trigger|spell}} \n\n■ Return a [[creature]] that [[cost]]s 6 or more from your [[mana zone]] to your [[hand]].\n| jptext = {{Icon|ST}} S・トリガー (この呪文をシールドゾーンから手札に加える時、コストを支払わずにすぐ唱えてもよい)\n\n■ コスト6以上のクリーチャーを1体、自分のマナゾーンから自分の手札に戻す。\n| flavor = When danger looms, heroes rise. ([[DM-03]])\n| flavor2 = 大地が王を生む。\"The earth begets kings.\" ([[DM-03]], [[DMC-20]])\n| mana = 1\n| artist = Taro Yamazaki\n| set1 = DM-03 Rampage of the Super Warriors\n| setnum1 = 53/55\n| R1 = Common\n| set2 = DM-03 Master of Destruction\n| setnum2 = 55/55\n| R2 = Common\n| set3 = DMC-20 Shobu's Holy Dragon Power-Up Pack\n| setnum3 = 102/102\n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Nature]]\n[[Category:Shield Trigger]]\n[[Category:Spell]]\n[[Category:Mana Recovery]]"
+}

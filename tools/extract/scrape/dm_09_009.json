@@ -1,0 +1,34 @@
+{
+ "card_id": "dm_09_009",
+ "page": "Jil Warka, Time Guardian",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Guardian",
+ "cost": "3",
+ "power": "2000",
+ "engtext": "{{Blocker}}\n\n■ This [[creature]] can't [[attack]] [[player]]s.\n\n■ When this [[creature]] is [[destroy]]ed, [[choose]] up to 2 of your [[opponent]]'s [[creature]]s in the [[battle zone]] and [[tap]] them.",
+ "templates": [
+  "Blocker"
+ ],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "9/55",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "37/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "56/140",
+  "set4": "DMC-16 Guardian Blue Deck",
+  "setnum4": "46/78",
+  "set5": "DMC-18 Shobu's Holy Dragon Deck",
+  "setnum5": "54/102",
+  "set6": "DMC-61 CoroCoro Dream Pack 4: Eternal Heaven",
+  "setnum6": "61/94",
+  "set7": "DMX-10 Deck Builder Oni DX Bright Star! Leo Edition",
+  "setnum7": "40/56",
+  "set8": "DMX-16 The Great Royal Strategies: Fantasista 12",
+  "setnum8": "52/84",
+  "set9": "DMEX-07 Hissatsu!! Maximum the Master Pack",
+  "setnum9": "19/48"
+ },
+ "wiki": "{{Cardtable\n| image = Jil Warka, Time Guardian.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|時|じ}}{{Ruby|空|くう}}の{{Ruby|守|しゅ}}{{Ruby|護|ご}}{{Ruby|者|しゃ}}ジル・ワーカ\n| phonetic = Jikū no Shugosha Jiru Wāka\n| race = Guardian\n| cost = 3\n| power = 2000\n| engtext = {{Blocker}}\n\n■ This [[creature]] can't [[attack]] [[player]]s.\n\n■ When this [[creature]] is [[destroy]]ed, [[choose]] up to 2 of your [[opponent]]'s [[creature]]s in the [[battle zone]] and [[tap]] them.\n| jptext = {{Blocker|jp}}\n\n■ このクリーチャーは相手プレイヤーを攻撃できない。\n\n■ このクリーチャーが破壊された時、バトルゾーンにある相手のクリーチャーを2体まで選び、タップする。\n| flavor = の思念は、死後も光の国を守り続ける。The guardian's thoughts will continue to protect the land of light even after death. ([[DM-09]], [[DMC-16]], [[DMC-18]], [[DMC-61]])\n| flavor2 = 死して動く、その捕獲機は全ての戦闘で有効であった。Even in death, the capture device remained effective in every battle. ([[DM-18]])\n| flavor3 = ジル・ワーカは、自分が主君を守りきれないと知ると、その命を賭けて時間を稼ぐ事にした。Knowing that he could not protect his lord, Jil Warka decided to risk his life to buy time. ([[DMX-10]])\n| flavor4 = ジャスティス・ウイングの翼は純白、オーブは正義を象徴する。そしてその鎧は、悪に屈しない決意の表れだ。The wings of [[Justice Wing]] are pure white, the orb symbolizes justice. And its armor is a manifestation of the resolve to never bow to evil. ([[DMX-16]])\n| flavor5 = サッヴァーク†による正義の裁きは、天と地の境界線を決定する事すら可能な神の裁きなのか……我々は天を守るために戦う決心ができた。\"Is the judgment of justice by [[Savark Calibur, Ghiramessiah|Savark Calibur]] a divine judgment capable of determining the boundary between heaven and earth...? We have made the decision to fight in order to protect the heavens.\" — '''Jil Warka, Time Guardian''' ([[DMEX-07]])\n| mana = 1\n| artist = Katsuhiko Kojoh\n| artist2 = Ittoku\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = 9/55\n| R1 = Common\n| set2 = DM-09 Invincible Blood\n| setnum2 = 37/55\n| R2 = Common\n| set3 = DM-18 Best Challenger\n| setnum3 = 56/140\n| R3 = Uncommon\n| set4 = DMC-16 Guardian Blue Deck\n| setnum4 = 46/78\n| R4 = Common\n| set5 = DMC-18 Shobu's Holy Dragon Deck\n| setnum5 = 54/102\n| R5 = Common\n| set6 = DMC-61 CoroCoro Dream Pack 4: Eternal Heaven\n| setnum6 = 61/94\n| R6 = Common\n| set7 = DMX-10 Deck Builder Oni DX Bright Star! Leo Edition\n| setnum7 = 40/56\n| R7 = Common\n| set8 = DMX-16 The Great Royal Strategies: Fantasista 12\n| setnum8 = 52/84\n| R8 = Uncommon\n| set9 = DMEX-07 Hissatsu!! Maximum the Master Pack\n| setnum9 = 19/48\n| R9 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Guardian]]\n[[Category:2000 Power Creatures]]\n[[Category:Creature Tapper]]\n[[Category:Put Into Graveyard]]"
+}

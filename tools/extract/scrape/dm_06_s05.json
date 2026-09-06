@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_06_s05",
+ "page": "Daidalos, General of Fury",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Demon Command",
+ "cost": "4",
+ "power": "11000",
+ "engtext": "■ Whenever this [[creature]] [[attack]]s, [[destroy]] one of your [[creature]]s.\n\n{{Double Breaker}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "S5/S10",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "S6/S10"
+ },
+ "wiki": "{{Cardtable\n| image = Daidalos, General of Fury.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|憤|ふん}}{{Ruby|怒|ぬ}}の{{Ruby|猛|もう}}{{Ruby|将|しょう}}ダイダロス ''(Daedalus, Furious General)''\n| phonetic = Funnu no Mōshō Daidarosu\n| race = Demon Command\n| cost = 4\n| power = 11000\n| engtext = ■ Whenever this [[creature]] [[attack]]s, [[destroy]] one of your [[creature]]s.\n\n{{Double Breaker}}\n| jptext = ■ バトルゾーンにある、自分の他のクリーチャー1体を自分の墓地に置かなければ、このクリーチャーは攻撃することができない。\n\n{{Double Breaker|jp}}\n| flavor = \"Friend or foe? [[Dragonoid]], [[Guardian]], or [[Giant]]? They're all the same. They're all dinner.\" ([[DM-06]])\n| flavor2 = 怒りの瘴気は味方すら巻き込む。The miasma of fury engulfs even allies. ([[DM-06]]) \n| mana = 1\n| artist = Yarunoca\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = S5/S10\n| R1 = Super Rare\n| set2 = DM-06 Invincible Soul\n| setnum2 = S6/S10\n| R2 = Super Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Self Removal]]\n[[Category:Attack Trigger]]"
+}

@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_06_s03",
+ "page": "Crystal Jouster",
+ "type": "Evolution Creature",
+ "civilization": "Water",
+ "race": "Liquid People",
+ "cost": "7",
+ "power": "7000",
+ "engtext": "■ [[Evolution]]—Put on one of your [[Liquid People]].\n\n{{Double Breaker}}\n\n■ When this [[creature]] would be [[destroy]]ed, return it to your [[hand]] [[instead]].",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "S3/S10",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "S4/S5",
+  "set3": "DMC-27 CoroCoro Dream Pack",
+  "setnum3": "S2/S5"
+ },
+ "wiki": "{{Cardtable\n| image = Crystal Jouster.jpg\n| civilization = Water\n| type = Evolution Creature\n| jpname = クリスタル・ジャベリン\n| phonetic = Kurisutaru Jaberin\n| race = Liquid People\n| cost = 7\n| power = 7000\n| engtext = ■ [[Evolution]]—Put on one of your [[Liquid People]].\n\n{{Double Breaker}}\n\n■ When this [[creature]] would be [[destroy]]ed, return it to your [[hand]] [[instead]].\n| jptext = ■ 進化—自分のリキッド・ピープル1体の上に置く。\n\n{{Double Breaker|jp}}\n\n■ このクリーチャーが破壊される時、墓地に置くかわりに自分の手札に戻す。\n| flavor = 一つにして無限の戦士。An infinite number of warriors in one. ([[DM-06]])\n| flavor2 = 自らの死さえ、予想の範疇。反撃の仕掛けは万端だ。Even their own death is within the realm of expectation. The counterattack is fully prepared. ([[DMC-27]])\n| mana = 1\n| artist = Masaki Hirooka\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = S3/S10\n| R1 = Super Rare\n| set2 = DM-06 Invincible Soul\n| setnum2 = S4/S5\n| R2 = Super Rare\n| set3 = DMC-27 CoroCoro Dream Pack\n| setnum3 = S2/S5\n| R3 = Super Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Destruction Substitution]]\n[[Category:Self Bounce]]"
+}

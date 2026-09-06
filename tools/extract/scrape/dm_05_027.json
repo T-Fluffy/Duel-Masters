@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_05_027",
+ "page": "Gigaling Q",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Survivor",
+ "cost": "5",
+ "power": "2000",
+ "engtext": "{{Survivor||{{Slayer|dotless}}}}",
+ "templates": [
+  "Slayer|dotless"
+ ],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "27/55",
+  "set2": "DM-05 Return of the Survivor",
+  "setnum2": "44/55"
+ },
+ "wiki": "{{Cardtable\n| image = Gigaling Q.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = ギガリング{{Ruby|α|アルファ}}\n| kana = アルファ ''(Alpha)''\n| phonetic = Gigaringu Arufa ''(Gigaling Alpha)''\n| race = Survivor\n| race2 = Chimera\n| cost = 5\n| power = 2000\n| engtext = {{Survivor||{{Slayer|dotless}}}}\n| jptext = {{Survivor|jp|{{Slayer|jpdotless}}}}\n| flavor = Did the Megapocalypse create the [[Survivor]]s, or did it just set them free? ([[DM-05]])\n| flavor2 = くるりと巻くよ滅びの輪。くるりくるりと命を奪う。The circle of destruction spins around. Spinning, spinning, it takes away life. ([[DM-05]]) \n| mana = 1\n| artist = Ken Sugawara\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = 27/55\n| R1 = Common\n| set2 = DM-05 Return of the Survivor\n| setnum2 = 44/55\n| R2 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Gives \"Slayer\"]]"
+}

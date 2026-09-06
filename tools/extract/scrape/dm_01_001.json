@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_01_001",
+ "page": "Chilias, the Oracle",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Light Bringer",
+ "cost": "4",
+ "power": "2500",
+ "engtext": "■ When this [[creature]] would be [[destroy]]ed, put it into your [[hand]] [[instead]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "1/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "14/110"
+ },
+ "wiki": "{{Cardtable\n| image = Chilias, the Oracle.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|予|よ}}{{Ruby|言|げん}}{{Ruby|者|しゃ}}キリアス\n| phonetic = Yogensha Kiriasu\n| race = Light Bringer\n| cost = 4\n| power = 2500\n| engtext = ■ When this [[creature]] would be [[destroy]]ed, put it into your [[hand]] [[instead]].\n| jptext = ■ このクリーチャーがバトルゾーンから自分の墓地に置かれるとき、墓地に置くかわりに自分の手札に戻す。\n| flavor = 天空に輝く塔は、たちを守るためだけに存在する。The shining towers in the sky exist to protect the [[Light Bringer|oracle]]s. ([[DM-01]])\n| mana = 1\n| artist = Akira Hamada\n| set1 = DM-01 Base Set\n| setnum1 = 1/110\n| R1 = Rare \n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 14/110\n| R2 = Rare \n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Destruction Substitution]]\n[[Category:Self Bounce]]"
+}

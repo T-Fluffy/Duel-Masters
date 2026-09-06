@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_02_026",
+ "page": "Dark Titan Maginn",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Demon Command",
+ "cost": "6",
+ "power": "4000",
+ "engtext": "■ Whenever this [[creature]] [[attack]]s, your [[opponent]] [[discard]]s a [[card]] at random from his [[hand]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "26/55",
+  "set2": "DM-02 Master of Evolution",
+  "setnum2": "3/55"
+ },
+ "wiki": "{{Cardtable\n| image=Dark Titan Maginn.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|暗|あん}}{{Ruby|黒|こく}}{{Ruby|巨|きょ}}{{Ruby|兵|へい}}マギン\n| phonetic = Ankoku Kyōhei Magin\n| race = Demon Command\n| cost = 6\n| power = 4000\n| engtext = ■ Whenever this [[creature]] [[attack]]s, your [[opponent]] [[discard]]s a [[card]] at random from his [[hand]].\n| jptext = ■ このクリーチャーが攻撃するとき、相手の手札からカードを1枚見ないで選び、相手はそれを持ち主の墓地に置く。\n| flavor = The forces of [[Darkness]] began their invasion by turning the [[Fiona Woods]] into a nice, comfortable realm of horror. 闇の軍勢は、フィアナの森を住み慣れた地獄に変えた。 ([[DM-02]])\n| mana = 1\n| artist = Hikaru Ikusa\n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = 26/55\n| R1 = Very Rare\n| set2 = DM-02 Master of Evolution\n| setnum2 = 3/55\n| R2 = Very Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Card Discard]]\n[[Category:Attack Trigger]]"
+}

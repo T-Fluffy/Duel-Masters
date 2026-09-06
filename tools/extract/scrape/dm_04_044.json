@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_04_044",
+ "page": "Mega Detonator",
+ "type": "Spell",
+ "civilization": "Fire",
+ "race": "",
+ "cost": "2",
+ "power": "",
+ "engtext": "■ [[Discard]] any [[number]] of [[card]]s from your [[hand]]. Then choose the same [[number]] of your [[creature]]s in the [[battle zone]]. Each of those [[creature]]s gets \"[[double breaker]]\" until the [[End Step|end of the turn]]. ''(A [[creature]] that has \"[[double breaker]]\" [[break]]s 2 [[shield]]s.)''",
+ "templates": [],
+ "sets": {
+  "set1": "DM-04 Shadowclash of Blinding Night",
+  "setnum1": "44/55",
+  "set2": "DM-04 Challenge of Black Shadow ",
+  "setnum2": "17/55"
+ },
+ "wiki": "{{Cardtable\n| image = Mega Detonator.jpg\n| civilization = Fire\n| type = Spell\n| jpname = メガ・ブラスター\n| phonetic = Mega Burasutā\n| cost = 2\n| engtext = ■ [[Discard]] any [[number]] of [[card]]s from your [[hand]]. Then choose the same [[number]] of your [[creature]]s in the [[battle zone]]. Each of those [[creature]]s gets \"[[double breaker]]\" until the [[End Step|end of the turn]]. ''(A [[creature]] that has \"[[double breaker]]\" [[break]]s 2 [[shield]]s.)''\n| jptext = ■ 自分の手札から好きな枚数を選び、自分の墓地に置く。その後、その枚数と同じ数の自分のクリーチャーをバトルゾーンから選ぶ。このターン、選ばれたクリーチャーは「W・ブレイカー」を得る。 （シールドを攻撃したとき、シールドを2枚ブレイクする）　\n| flavor = \"They don't call me an arms dealer for nothing.\" —[[Engineer Kipo|Engineer Pipo]] ([[DM-04]])\n| mana = 1\n| artist = Atsushi Kawasaki\n| set1 = DM-04 Shadowclash of Blinding Night\n| setnum1 = 44/55\n| R1 = Rare\n| set2 = DM-04 Challenge of Black Shadow \n| setnum2 = 17/55\n| R2 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Self Discard]]\n[[Category:Gives \"Double Breaker\"]]"
+}

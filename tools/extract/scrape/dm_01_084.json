@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_01_084",
+ "page": "Onslaughter Triceps",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Dragonoid",
+ "cost": "3",
+ "power": "5000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], put 1 [[card]] from your [[mana zone]] into your [[graveyard]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "84/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "63/110",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "79/140",
+  "set4": "DMC-06 Dragon Strikes Deck",
+  "setnum4": "32/82"
+ },
+ "wiki": "{{Cardtable\n| image = Onslaughter Triceps.jpg\n| civilization = Fire\n| type = Creature\n| jpname = {{Ruby|強|きょう}}{{Ruby|襲|しゅう}}{{Ruby|兵|へい}}ギガントス ''(Assault Soldier Gigantos)''\n| phonetic = Kyoushuuhei Gigantos\n| cost = 3\n| race = Dragonoid\n| power = 5000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], put 1 [[card]] from your [[mana zone]] into your [[graveyard]].\n| jptext = ■ このクリーチャーをバトルゾーンに出した時、カードを1枚、自分のマナゾーンから墓地に置く。\n| flavor = 最も早く前線に出る者が、最も早く敵を倒すことができる。The first to the front lines are the first to taste victory. ([[DM-01]], [[DMC-18]], [[DMC-06]])\n| mana = 1\n| artist = Katsuya\n| set1 = DM-01 Base Set\n| setnum1 = 84/110\n| R1 = Uncommon\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 63/110\n| R2 = Uncommon\n| set3 = DM-18 Best Challenger\n| setnum3 = 79/140\n| R3 = Uncommon\n| set4 = DMC-06 Dragon Strikes Deck\n| setnum4 = 32/82\n| R4 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Come Into Play Trigger]]\n[[Category:Self Mana Burn]]"
+}

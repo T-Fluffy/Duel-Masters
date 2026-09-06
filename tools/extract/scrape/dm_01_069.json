@@ -1,0 +1,40 @@
+{
+ "card_id": "dm_01_069",
+ "page": "Bolshack Dragon",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Armored Dragon",
+ "cost": "6",
+ "power": "6000+",
+ "engtext": "■ While [[attack]]ing, this [[creature]] gets +1000 [[power]] for each [[fire]] [[card]] in your [[graveyard]].\n\n{{Double Breaker}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "69/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "8/110",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "11/140",
+  "set4": "DMC-01 Shobu's Blaze Deck",
+  "setnum4": "2/43",
+  "set5": "DMC-53 Legend Chronicle Shobu",
+  "setnum5": "9/20",
+  "set6": "DMC-66 Duel Masters: Super Best",
+  "setnum6": "32/36",
+  "set7": "DMX-21 Masters Chronicle Pack: Comic of Heroes",
+  "setnum7": "3/70",
+  "set8": "DMX-21 Masters Chronicle Pack: Comic of Heroes",
+  "setnum8": "㊙1/㊙3",
+  "set9": "DMX-22 Super Black Box Pack",
+  "setnum9": "b71/???",
+  "set10": "DMEX-01 Duel Masters: Golden Best",
+  "setnum10": "1/80 [2002]",
+  "set11": "DMEX-17 20th Anniversary Huge Thanks Memorial Pack: The Chapter of The Ultimacy Dueking MAX",
+  "setnum11": "超1/超40 [2002]",
+  "set15": "Promotional",
+  "setnum15": "P34/Y6, P48/Y6, P56/Y6, P50/Y7, P95/Y9, P15/Y25"
+ },
+ "wiki": "{{Cardtable\n| image = Bolshack Dragon.jpg\n| civilization = Fire\n| type = Creature\n| jpname = ボルシャック・ドラゴン\n| phonetic = Borushakku Doragon\n| dename = Bolshack-Drache\n| itname = Drago Bolshack\n| frname = Dragon bolshack\n| esname = Dragón Bolshack\n| mxname = Dragón Bolshack\n| ptname = Dragão Bolshack\n| cnname = 毀灭之龙\n| race = Armored Dragon\n| cost = 6\n| power = 6000+\n| engtext = ■ While [[attack]]ing, this [[creature]] gets +1000 [[power]] for each [[fire]] [[card]] in your [[graveyard]].\n\n{{Double Breaker}}\n| jptext = ■ 攻撃中、このクリーチャーのパワーは、自分の墓地にある火のカード1枚につき+1000される。\n\n{{Double Breaker|jp}}\n| flavor = The last city that offended it is now a ruin. ([[DM-01]])\n| flavor2 = その怒りに触れたために、ひとつの都市が消滅した。Because it incurred its wrath, an entire city was wiped out. ([[DM-01]], [[DMC-01]])\n| flavor3 = 心を1つにして信じあったとき、その夢はきっと叶う! When you fuse your hearts as one and believe, your dreams will come true! ([[DMC-53]])\n| flavor4 = 片目のボルシャックを見たら、その姿を魂に刻むと良い。その龍は真に勇敢な龍だから。If you see the one-eyed Bolshack, engrave that figure into your soul. That dragon is a truly courageous dragon. ([[DM-18]], [[DMC-66]])\n| flavor5 = ボルシャック・ドラゴンの両肩に存在するボルシャック・ブラスターは、目にも止まらぬ攻撃で相手の防御を打ち崩す。The Bolshack Blasters on both shoulders of Bolshack Dragon unleash blinding attacks that shatter the opponent's defenses. ([[DMX-21]])\n| flavoe6 = 友情を力に。それが火の象徴。Turn friendship into power. That is the symbol of fire. ([[DMX-21]], Secret Card)\n| flavor7 = ドラゴンとファイアー・バード、その友情の物語はここからはじまった。The story of friendship between Dragons and [[Fire Bird]]s began here. ([[DMX-22]])\n| flavor8 = デュエル・マスターズの歴史はここから始まった。 The history of the Duel Masters began here. ([[DMEX-01]])\n| flavor9 = 怒りは力に、悲しみは勇気に変わる。散っていった仲間の魂をそのペン先に込めて、紅き炎で描き上げる!! Rage into power, and sorrow into courage. Engrave the souls of the companions who fallen into the tip of the pen and illustrate the crimson flames!!  (P34/Y6)\n| flavor10 = 失いし片目は歴戦の証、その強さ雷電の如く! The lost eye is the proof of battles, and that strength is like lightning! (P48/Y6)\n| flavor11 = 燃え上がる爆炎は闘士の証。敗れていった友の悲しみを怒りに変える! The rising flames are the proof of a warrior. The sorrows of fallen companions will be changed into rage! (P56/Y6)\n| flavor12 = 日本一を目指す者たちを、彼はいつだって全力で応援する!! He always roots for those who to aim to be the top in Japan! (P50/Y7)\n| flavor13 = デュエルがつないだ俺たちの友情は永遠だろ?　Our friendship connected through duels is eternal, right? (P95/Y9)\n| flavor14 = デュエル・マスターズの25年。それは仲間との戦いの歴史。25 years of Duel Masters. It is a history of battles with comrades. (P15/Y25)\n| mana = 1\n| artist = Ryoya Yuki\n| artist2 = Ittoku\n| artist3 = Shigenobu Matsumoto\n| artist4 = MATSUMOTO EITO\n| artist5 = HIROAKI KUDOU\n| artist6 = KEITA HATTORI\n| artist7 = shosuke\n| artist8 = Futaro \n| set1 = DM-01 Base Set\n| setnum1 = 69/110\n| R1 = Very Rare\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 8/110\n| R2 = Very Rare\n| set3 = DM-18 Best Challenger\n| setnum3 = 11/140\n| R3 = Very Rare\n| set4 = DMC-01 Shobu's Blaze Deck\n| setnum4 = 2/43\n| R4 = Very Rare\n| set5 = DMC-53 Legend Chronicle Shobu\n| setnum5 = 9/20\n| R5 = Very Rare\n| set6 = DMC-66 Duel Masters: Super Best\n| setnum6 = 32/36\n| R6 = Very Rare\n| set7 = DMX-21 Masters Chronicle Pack: Comic of Heroes\n| setnum7 = 3/70\n| R7 = Very Rare\n| set8 = DMX-21 Masters Chronicle Pack: Comic of Heroes\n| setnum8 = ㊙1/㊙3\n| R8 = Secret Card\n| set9 = DMX-22 Super Black Box Pack\n| setnum9 = b71/???\n| R9 = Very Rare\n| set10 = DMEX-01 Duel Masters: Golden Best\n| setnum10 = 1/80 [2002]\n| R10 = Very Rare\n| set11 = DMEX-17 20th Anniversary Huge Thanks Memorial Pack: The Chapter of The Ultimacy Dueking MAX\n| setnum11 = 超1/超40 [2002]\n| R11 = Very Rare\n| set15 = Promotional\n| setnum15 = P34/Y6, P48/Y6, P56/Y6, P50/Y7, P95/Y9, P15/Y25\n| R15 = Very Rare\n| dmwiki = ボルシャック・ドラゴン\n}}\n{{Bolshack}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:6000 Power Creatures]]\n[[Category:Bolshack]]\n[[Category:Self Increase Power]]\n[[Category:Attack Trigger]]"
+}

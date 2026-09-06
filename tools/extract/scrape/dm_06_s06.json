@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_06_s06",
+ "page": "Phantasmal Horror Gigazald",
+ "type": "Evolution Creature",
+ "civilization": "Darkness",
+ "race": "Chimera",
+ "cost": "5",
+ "power": "5000",
+ "engtext": "■ [[Evolution]]—Put on one of your [[Chimera]]s.\n\n■ Each of your [[darkness]] [[creature]]s may [[tap]] [[instead]] of [[attack]]ing to use this [[creature]]'s {{Tap}} [[ability]].\n:{{Tap}} Your [[opponent]] [[discard]]s a [[card]] at random from his [[hand]].",
+ "templates": [
+  "Tap"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "S6/S10",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "S5/S10"
+ },
+ "wiki": "{{Cardtable\n| image = Phantasmal Horror Gigazald.jpg\n| civilization = Darkness\n| type = Evolution Creature\n| jpname = {{Ruby|超|ちょう}}{{Ruby|幻|げん}}{{Ruby|獣|じゅう}}グラザルド ''(Grazal, Ultra Magical Beast)''\n| phonetic = Chou Genju Gurazaru\n| race = Chimera\n| cost = 5\n| power = 5000\n| engtext = ■ [[Evolution]]—Put on one of your [[Chimera]]s.\n\n■ Each of your [[darkness]] [[creature]]s may [[tap]] [[instead]] of [[attack]]ing to use this [[creature]]'s {{Tap}} [[ability]].\n:{{Tap}} Your [[opponent]] [[discard]]s a [[card]] at random from his [[hand]].\n| jptext = ■ 進化－自分のキマイラ1体の上に置く。\n\n■ このクリーチャーがバトルゾーンにある間、バトルゾーンにある自分の闇のクリーチャーをタップし、攻撃する代わりに次の{{Tap}}能力を使ってもよい。\n:{{Tap}} 相手の手札からカードを1枚見ないで選び、持ち主の墓地に置く。\n| flavor = \"Pretend I'm a nightmare. You won't go as insane that way.\" ([[DM-06]])\n| mana = 1\n| artist = Nottsuo\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = S6/S10\n| R1 = Super Rare\n| set2 = DM-06 Invincible Soul\n| setnum2 = S5/S10\n| R2 = Super Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Tap Ability]]\n[[Category:Card Discard]]\n[[Category:Self Tapper]]"
+}

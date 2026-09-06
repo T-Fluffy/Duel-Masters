@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_02_046",
+ "page": "Elf-X",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Tree Folk",
+ "cost": "4",
+ "power": "2000",
+ "engtext": "■ Your [[creature]]s each [[cost]] 1 less to [[summon]]. They can't [[cost]] less than 1.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "46/55",
+  "set2": "DM-02 Master of Evolution",
+  "setnum2": "20/55",
+  "set3": "DMC-20 Shobu's Holy Dragon Power-Up Pack",
+  "setnum3": "18/102",
+  "set4": "DMC-27 CoroCoro Dream Pack",
+  "setnum4": "19/55"
+ },
+ "wiki": "{{Cardtable\n| image=Elf-X.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|念|ねん}}{{Ruby|仏|ぶつ}}エルフィン ''(Praying Buddha Elfin)''\n| phonetic = Nenbutsu Erufin\n| cost = 4\n| race = Tree Folk\n| power = 2000\n| engtext = ■ Your [[creature]]s each [[cost]] 1 less to [[summon]]. They can't [[cost]] less than 1.\n| jptext = ■ 自分のクリーチャーを召喚する時、支払うコストは1少なくなる。ただし、コストは1より少なくならない。\n| flavor = 最初に森に入ったキマイラたちは、森そのものから攻撃を受けた。 The first [[Chimera]]s to invade the [[Fiona Woods]] didn't expect an attack from the forest itself. ([[DM-02]], [[DMC-27]])\n| flavor2 = 闇夜に金粉が舞い、眠れる妖精達が踊りだす。Golden powder dances in the dark night, and the sleeping faeries begin to dance. ([[DMC-20]])\n| mana = 1\n| artist = Yusaku Nakaaki\n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = 46/55\n| R1 = Rare\n| set2 = DM-02 Master of Evolution\n| setnum2 = 20/55\n| R2 = Rare\n| set3 = DMC-20 Shobu's Holy Dragon Power-Up Pack\n| setnum3 = 18/102\n| R3 = Rare\n| set4 = DMC-27 CoroCoro Dream Pack\n| setnum4 = 19/55\n| R4 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Nature]]\n[[Category:Tree Folk]]\n[[Category:2000 Power Creatures]]\n[[Category:Cost Reduction]]"
+}

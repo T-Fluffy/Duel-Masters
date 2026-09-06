@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_08_015",
+ "page": "Thrumiss, Zephyr Guardian",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Guardian",
+ "cost": "6",
+ "power": "3000",
+ "engtext": "■ Whenever any of your [[creature]]s [[attack]]s, you may [[choose]] one of your [[opponent]]'s [[creature]]s in the [[battle zone]] and [[tap]] it. ''(First [[choose]] what your [[creature]] is [[attack]]ing. Then [[choose]] a [[creature]] to [[tap]].)'' ",
+ "templates": [],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "15/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "7/55",
+  "set3": "DMC-16 Guardian Blue Deck",
+  "setnum3": "5/78",
+  "set4": "DMC-27 CoroCoro Dream Pack",
+  "setnum4": "7/55"
+ },
+ "wiki": "{{Cardtable\n| image = Thrumiss, Zephyr Guardian.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|疾|しっ}}{{Ruby|風|ぷう}}の{{Ruby|守|しゅ}}{{Ruby|護|ご}}{{Ruby|者|しゃ}}スール・ミース\n| phonetic = Shippū no Shugosha Sūrumīsu\n| race = Guardian\n| cost = 6\n| power = 3000\n| engtext = ■ Whenever any of your [[creature]]s [[attack]]s, you may [[choose]] one of your [[opponent]]'s [[creature]]s in the [[battle zone]] and [[tap]] it. ''(First [[choose]] what your [[creature]] is [[attack]]ing. Then [[choose]] a [[creature]] to [[tap]].)'' \n| jptext = ■ 自分のクリーチャーが攻撃する時、バトルゾーンにある相手のクリーチャーを1体選び、タップしてもよい。(ただし、まず何を攻撃するか選んでから、タップしたいクリーチャーを選ぶ)\n| flavor = \"Catch my drift?\" ([[DM-08]])\n| flavor2 = 光と風は混じり合い、その力を際限無く増していく。Light and wind blend together, their power increasing without limit. ([[DM-08]], [[DMC-27]])\n| flavor3 = まず譲り、時を待て。光の旗艦が勝利を導くまで。First, yield and wait for the time. Until the flagship of light leads to victory. ([[DMC-16]])\n| mana = 1\n| artist = Hisashi Momose\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 15/55\n| R1 = Rare\n| set2 = DM-08 Invincible Legend\n| setnum2 = 7/55\n| R2 = Rare\n| set3 = DMC-16 Guardian Blue Deck\n| setnum3 = 5/78\n| R3 = Rare\n| set4 = DMC-27 CoroCoro Dream Pack\n| setnum4 = 7/55\n| R4 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Guardian]]\n[[Category:3000 Power Creatures]]\n[[Category:Creature Tapper]]\n[[Category:Attack Trigger]]\n[[Category:Gives \"Attack Trigger\"]]"
+}

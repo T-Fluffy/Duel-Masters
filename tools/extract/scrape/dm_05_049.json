@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_05_049",
+ "page": "Brutal Charge",
+ "type": "Spell",
+ "civilization": "Nature",
+ "race": "",
+ "cost": "2",
+ "power": "",
+ "engtext": "■ [[End Step|At the end of this turn]], [[search]] your [[deck]]. For each of your [[opponent]]'s [[shield]]s your [[creature]]s broke this [[turn]], you may take a [[creature]] from your [[deck]], show it to your [[opponent]], and put it into your [[hand]]. Then [[shuffle]] your [[deck]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "49/55",
+  "set2": "DM-05 Return of the Survivor",
+  "setnum2": "20/55",
+  "set3": "DMC-27 CoroCoro Dream Pack",
+  "setnum3": "20/55",
+  "set4": "DMX-12 Black Box Pack",
+  "setnum4": "b83/???"
+ },
+ "wiki": "{{Cardtable\n| image = Brutal Charge.jpg\n| civilization = Nature\n| type = Spell\n| jpname = ビースト・チャージ\n| phonetic = Bīsuto Chāji ''(Beast Charge)''\n| cost = 2\n| engtext = ■ [[End Step|At the end of this turn]], [[search]] your [[deck]]. For each of your [[opponent]]'s [[shield]]s your [[creature]]s broke this [[turn]], you may take a [[creature]] from your [[deck]], show it to your [[opponent]], and put it into your [[hand]]. Then [[shuffle]] your [[deck]].\n| jptext = ■ このターンが終わりに、自分の山札を見る。その中から、このターンに自分のクリーチャーがブレイクした相手のシールド1枚につきクリーチャー1体を選び、相手に見せてから自分の手札に加えてもよい。その後、山札をシャッフルする。\n| flavor = Kondu started to regret joining Wrugh's carpool. ([[DM-05]])\n| flavor2 = 豚穴に入らずんば豚子を得ず。 One cannot gain piglets without entering the pig's den. ([[DM-05]], [[DMC-27]])\n| flavor3 = 攻撃的な姿勢がさらなる仲間を呼ぶ。An aggressive stance calls for more allies. ([[DMX-12]])\n| mana = 1\n| artist = Dustmoss\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = 49/55\n| R1 = Rare\n| set2 = DM-05 Return of the Survivor\n| setnum2 = 20/55\n| R2 = Rare\n| set3 = DMC-27 CoroCoro Dream Pack\n| setnum3 = 20/55\n| R3 = Rare\n| set4 = DMX-12 Black Box Pack\n| setnum4 = b83/???\n| R4 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Spell]]\n[[Category:Nature]]\n[[Category:Deck Search]]"
+}

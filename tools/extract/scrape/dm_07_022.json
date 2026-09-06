@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_07_022",
+ "page": "Riptide Charger",
+ "type": "Spell",
+ "civilization": "Water",
+ "race": "",
+ "cost": "5",
+ "power": "",
+ "engtext": "■ [[Choose]] a [[creature]] in the [[battle zone]] and return it to its [[owner]]'s [[hand]].\n\n{{Charger}}",
+ "templates": [
+  "Charger"
+ ],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "22/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "26/55",
+  "set3": "DMC-27 CoroCoro Dream Pack",
+  "setnum3": "26/55"
+ },
+ "wiki": "{{Cardtable\n| image = Riptide Charger.jpg\n| civilization = Water\n| jpname = スパイラル・チャージャー\n| phonetic = Supairaru Chājā ''(Spiral Charger)''\n| type = Spell\n| cost = 5\n| engtext = ■ [[Choose]] a [[creature]] in the [[battle zone]] and return it to its [[owner]]'s [[hand]].\n\n{{Charger}}\n| jptext = ■ バトルゾーンにあるクリーチャーを1体選び、持ち主の手札に戻す。\n\n{{Charger|jp}}　\n| flavor = \"Congratulations! You've won an all-expenses-paid trip to Anywhere Else. Thanks for playing!\" —[[Corile]] ([[DM-07]])\n| flavor2 = 出直しやがれ! \"Come back after you've improved!\" ([[DM-07]], [[DMC-27]])\n| mana = 1\n| artist = Asai Genji\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 22/55\n| R1 = Uncommon\n| set2 = DM-07 Invincible Charge\n| setnum2 = 26/55\n| R2 = Uncommon\n| set3 = DMC-27 CoroCoro Dream Pack\n| setnum3 = 26/55\n| R3 = Uncommon\n}}\n{{Spiral}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Charger]]\n[[Category:Bounce]]\n[[Category:Self Bounce]]"
+}

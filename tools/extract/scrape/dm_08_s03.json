@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_08_s03",
+ "page": "Super Necrodragon Abzo Dolba",
+ "type": "Evolution Creature",
+ "civilization": "Darkness",
+ "race": "Zombie Dragon",
+ "cost": "6",
+ "power": "11000+",
+ "engtext": "■ [[Evolution]]—Put on one of your [[creature]]s that has [[Dragon]] in its [[race]].\n\n■ This [[creature]] gets +2000 [[power]] for each [[creature]] in your [[graveyard]].\n\n{{Triple Breaker}}",
+ "templates": [
+  "Triple Breaker"
+ ],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "S3/S5",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "S3/S5"
+ },
+ "wiki": "{{Cardtable\n| image = Super Necrodragon Abzo Dolba.jpg\n| civilization = Darkness\n| type = Evolution Creature\n| jpname = {{Ruby|超|ちょう}}{{Ruby|神|しん}}{{Ruby|龍|りゅう}}アブゾ・ドルバ\n| phonetic = Chō Shinryū Abuzo Doruba\n| kana = ちょうしんりゅう ''(Chōshinryū)''\n| race = Zombie Dragon\n| cost = 6\n| power = 11000+\n| engtext = ■ [[Evolution]]—Put on one of your [[creature]]s that has [[Dragon]] in its [[race]].\n\n■ This [[creature]] gets +2000 [[power]] for each [[creature]] in your [[graveyard]].\n\n{{Triple Breaker}}\n| jptext = ■ 進化－自分のドラゴン1体の上に置く。\n\n■ このクリーチャーがバトルゾーンにある間、このクリーチャーのパワーは自分の墓地にあるクリーチャー1体につき+2000される。\n\n{{Triple Breaker|jp}}\n| flavor = The [[Dragon]]s rose. Hopes fell. ([[DM-08]])\n| mana = 1\n| artist = Ittoku\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = S3/S5\n| R1 = Super Rare\n| set2 = DM-08 Invincible Legend\n| setnum2 = S3/S5\n| R2 = Super Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:11000 Power Creatures]]\n[[Category:Self Increase Power]]"
+}

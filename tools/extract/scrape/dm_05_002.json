@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_05_002",
+ "page": "King Mazelan",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Leviathan",
+ "cost": "8",
+ "power": "7000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], you may [[choose]] a [[creature]] in the [[battle zone]] and return it to its [[owner]]'s [[hand]].\n\n{{Double Breaker}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "2/55",
+  "set2": "DM-05 Return of the Survivor",
+  "setnum2": "2/55"
+ },
+ "wiki": "{{Cardtable\n| image = King Mazelan.jpg\n| civilization = Water\n| type = Creature\n| jpname = キング・マゼラン\n| phonetic = Kingu Mageran\n| race = Leviathan\n| cost = 8\n| power = 7000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], you may [[choose]] a [[creature]] in the [[battle zone]] and return it to its [[owner]]'s [[hand]].\n\n{{Double Breaker}}\n| jptext = {{Double Breaker|jp}} \n\n■ このクリーチャーがバトルゾーンに出たとき、バトルゾーンにあるクリーチャーを1体選び、持ち主の手札に戻してもよい。　\n| flavor = It patrols the [[Cyber Lord]]s' new undersea city. In exchange, it gets to eat any intruders it finds. ([[DM-05]])\n| mana = 1\n| artist = Katsuya\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = 2/55\n| R1 = Very Rare\n| set2 = DM-05 Return of the Survivor\n| setnum2 = 2/55\n| R2 = Very Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Bounce]]\n[[Category:Fixed Removal]]\n[[Category:Self Bounce]]\n[[Category:Come Into Play Trigger]]"
+}

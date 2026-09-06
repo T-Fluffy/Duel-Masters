@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_09_044",
+ "page": "Snaptongue Lizard",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Dune Gecko",
+ "cost": "6",
+ "power": "3000+",
+ "engtext": "■ While [[attack]]ing a [[creature]], this [[creature]] can't be [[block]]ed.\n\n{{Power Attacker|3000}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "44/55",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "30/55"
+ },
+ "wiki": "{{Cardtable\n| image = Snaptongue Lizard.jpg\n| civilization = Fire\n| type = Creature\n| jpname = ジョー・リザード\n| phonetic = Jō Rizādo ''(Joe Lizard)''\n| race = Dune Gecko\n| cost = 6\n| power = 3000+\n| engtext = ■ While [[attack]]ing a [[creature]], this [[creature]] can't be [[block]]ed.\n\n{{Power Attacker|3000}}\n| jptext = ■ このクリーチャーは、クリーチャーを攻撃するときブロックされない。\n\n{{Power Attacker|3000|jp}}　\n| flavor = It tastes your fear. Actually, it tastes everything. ([[DM-09]])\n| flavor2 = 「障害は全て解除済み。さあ、地中を発進だ!」 \"All obstacles have been cleared. Now, let's launch into the ground!\" —[[Explosive Dude Joe]] ([[DM-09]])\n| mana = 1\n| artist = Norikatsu Miyoshi\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = 44/55\n| R1 = Uncommon\n| set2 = DM-09 Invincible Blood\n| setnum2 = 30/55\n| R2 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Fire]]\n[[Category:Dune Gecko]]\n[[Category:3000 Power Creatures]]\n[[Category:Unblockable]]"
+}

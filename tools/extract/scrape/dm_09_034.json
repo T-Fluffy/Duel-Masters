@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_09_034",
+ "page": "Venom Worm",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Parasite Worm",
+ "cost": "3",
+ "power": "1000",
+ "engtext": "{{Tap Ability|[[Choose a race]]. Each [[creature]] of that [[race]] gets \"[[slayer]]\" until the [[End Step|end of the turn]]. ''(Whenever a [[creature]] that has \"[[slayer]]\" [[battle]]s, [[destroy]] the other [[creature]] after the [[battle]].)''}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "34/55",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "28/55",
+  "set3": "DMC-21 Zakira's Dragon Commander Power-Up Pack",
+  "setnum3": "31/102"
+ },
+ "wiki": "{{Cardtable\n| image = Venom Worm.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|毒|どく}}{{Ruby|牙|が}}{{Ruby|虫|ちゅう}}ベノム・ワーム\n| phonetic = Dokuga Chū Benomu Wāmu\n| cost = 3\n| race = Parasite Worm\n| power = 1000\n| engtext = {{Tap Ability|[[Choose a race]]. Each [[creature]] of that [[race]] gets \"[[slayer]]\" until the [[End Step|end of the turn]]. ''(Whenever a [[creature]] that has \"[[slayer]]\" [[battle]]s, [[destroy]] the other [[creature]] after the [[battle]].)''}}\n| jptext =  種族を1つ選ぶ。このターンが終わるまで、その種族のクリーチャーは「スレイヤー」を得る。\n| flavor = \"Ewww. And I thought ''I'' was disgusting.\" -[[Gigazoul]] ([[DM-09]])\n| mana = 1\n| artist = Jason\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = 34/55\n| R1 = Uncommon\n| set2 = DM-09 Invincible Blood\n| setnum2 = 28/55\n| R2 = Uncommon\n| set3 = DMC-21 Zakira's Dragon Commander Power-Up Pack\n| setnum3 = 31/102\n| R3 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Tap Ability]]\n[[Category:Gives \"Slayer\"]]"
+}

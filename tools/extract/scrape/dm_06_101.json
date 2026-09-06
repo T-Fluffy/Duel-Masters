@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_06_101",
+ "page": "Garabon, the Glider",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Snow Faerie",
+ "cost": "2",
+ "power": "1000+",
+ "engtext": "{{Power Attacker|2000}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "101/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "108/110"
+ },
+ "wiki": "{{Cardtable\n| image = Garabon, the Glider.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|滑|かっ}}{{Ruby|降|こう}}{{Ruby|妖|よう}}{{Ruby|精|せい}}ガラボン\n| phonetic = Kakkō Yōsei Garabon\n| race = Snow Faerie\n| cost = 2\n| power = 1000+\n| engtext = {{Power Attacker|2000}}\n| jptext = {{Power Attacker|2000|jp}}\n| flavor = \"Yaaaurgh! Who's up for a snowball fight?\" ([[DM-06]])\n| flavor2 = 彼らの頭に蒸気を見たら、醜い事になる前に逃げ出した方がいい。 If you see steam on their heads, you should run away before it becomes ugly. ([[DM-06]])\n| mana = 1\n| artist = Hideaki Takamura\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 101/110\n| R1 = Common\n| set2 = DM-06 Invincible Soul\n| setnum2 = 108/110\n| R2 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:1000 Power Creatures]]"
+}

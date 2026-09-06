@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_04_018",
+ "page": "Whisking Whirlwind",
+ "type": "Spell",
+ "civilization": "Light",
+ "race": "",
+ "cost": "1",
+ "power": "",
+ "engtext": "■ [[End Step|At the end of the turn]], [[untap]] all your [[creature]]s in the [[battle zone]].  ",
+ "templates": [],
+ "sets": {
+  "set1": "DM-04 Shadowclash of Blinding Night",
+  "setnum1": "18/55",
+  "set2": "DM-04 Challenge of Black Shadow ",
+  "setnum2": "40/55"
+ },
+ "wiki": "{{Cardtable\n| image = Whisking Whirlwind.jpg\n| civilization = Light\n| type = Spell\n| jpname = ライト・ディフェンス\n| phonetic = Raito Difensu ''(Light Defense)''\n| cost = 1\n| engtext = ■ [[End Step|At the end of the turn]], [[untap]] all your [[creature]]s in the [[battle zone]].  \n| jptext = 自分のターンの終わりに、バトルゾーンにある自分のクリーチャーをすべてアンタップする。\n| flavor = Get ready for a bad hair day. ([[DM-04]])\n| flavor2 = 攻撃は最大の防御なり。防御は最大の攻撃なり。\"Attack is the best form of defense. Defense is the best form of attack.\" ([[DM-04]]) \n| mana = 1\n| artist = Katsuya \n| set1 = DM-04 Shadowclash of Blinding Night\n| setnum1 = 18/55\n| R1 = Common\n| set2 = DM-04 Challenge of Black Shadow \n| setnum2 = 40/55\n| R2 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Spell]]\n[[Category:Creature Untap]]"
+}

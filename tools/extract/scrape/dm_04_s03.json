@@ -1,0 +1,34 @@
+{
+ "card_id": "dm_04_s03",
+ "page": "Ballom, Master of Death",
+ "type": "Evolution Creature",
+ "civilization": "Darkness",
+ "race": "Demon Command",
+ "cost": "8",
+ "power": "12000",
+ "engtext": "■ [[Evolution]]—Put on one of your [[Demon Command]]s.\n\n■ [[When you put]] this [[creature]] into the [[battle zone]], [[destroy]] all [[creature]]s except [[darkness]] [[creature]]s.\n\n{{Double Breaker}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-04 Shadowclash of Blinding Night",
+  "setnum1": "S3/S5",
+  "set2": "DM-04 Challenge of Black Shadow ",
+  "setnum2": "S3/S5",
+  "set3": "DMC-27 CoroCoro Dream Pack",
+  "setnum3": "S3/S5",
+  "set4": "DMC-38 Castle of Demon",
+  "setnum4": "7/33",
+  "set5": "DMC-54 Legend Chronicle Rival",
+  "setnum5": "6/20",
+  "set6": "DMX-21 Masters Chronicle Pack: Comic of Heroes",
+  "setnum6": "38/70",
+  "set7": "DMX-21 Masters Chronicle Pack: Comic of Heroes",
+  "setnum7": "㊙3/㊙3",
+  "set8": "DMD-33 Masters Chronicle Deck 2016: The World's End by the God of Devils",
+  "setnum8": "5/19",
+  "set9": "Promotional",
+  "setnum9": "P5/Y7, P47/Y7, P13/Y9, P17/Y25"
+ },
+ "wiki": "{{Cardtable\n| image = Ballom, Master of Death.jpg\n| civilization = Darkness\n| type = Evolution Creature\n| jpname = {{Ruby|悪|あく}}{{Ruby|魔|ま}}{{Ruby|神|しん}}バロム ''(Ballom, Lord of Demons)''\n| phonetic = Akuma Shin Baromu\n| race = Demon Command\n| cost = 8\n| power = 12000\n| engtext = ■ [[Evolution]]—Put on one of your [[Demon Command]]s.\n\n■ [[When you put]] this [[creature]] into the [[battle zone]], [[destroy]] all [[creature]]s except [[darkness]] [[creature]]s.\n\n{{Double Breaker}}\n| jptext = ■ 進化：自分のデーモン・コマンド・クリーチャー1体の上に置く。\n\n{{Double Breaker|jps}}  \n\n■ このクリーチャーが出た時、闇ではないクリーチャーをすべて破壊する。\n| flavor = \"You see a world. I see a graveyard-to-be.\" ([[DM-04]])\n| flavor2 = 魔城の主がその手をかざす時、闇が世界を包むだろう. When the master of the [[Evil Fortress]] brandishes his hand, the world shall be enveloped in darkness. ([[DMC-38]])\n| flavor3 = 死神とは、命、魂、そして希望すらも喰らい尽くす、孤独と絶望の王. The god of death is, devoting himself to devouring life, souls and hope, a god of solitude and despair. ([[DMC-54]])\n| flavor4 = かつて、私は一人の剣豪だったような気がする。だが、そんな記憶も記録もすべて破壊してしまった。\"I have the feeling that I once was [[Stallob, the Lifequasher|one of the greatest swordsmen]]. However, all memories and records of that have been destroyed.\" ─'''Ballom, Master of Death''' ([[DMX-21]])\n| flavor5 = 破壊を力に。それが闇の象徴。To turn destruction into power. That is the symbol of [[darkness]]. ([[DMX-21]], Secret Card)\n| flavor6 = 輝かしい才能とそれを自分たちのためだけに使う身勝手な魂。それが我ら闇文明の矜持。[[Gigavrand|The souls that have the potential and use it for themselves only]]. That is the pride of [[Darkness]]. ([[DMD-33]])\n| flavor7 = 悪魔の力が神をも超える! The power of the devil surpasses even the gods! (P47/Y7)\n| flavor8 = 絶望の王の力が、確実に世界を闇に変えてしまう. The power of the god of despair will definitely subvert the world into darkness. (P13/Y9)\n| flavor9 = デュエル・マスターズの25年。それは相手に絶望を与えた歴史。25 years of Duel Masters. It is a history of bringing despair to opponents. (P17/Y25)\n| mana = 1\n| artist = Ittoku\n| artist2 = Masaki Hirooka \n| artist3 = hippo\n| artist4 = TSUKASA KAWASAKI\n| set1 = DM-04 Shadowclash of Blinding Night\n| setnum1 = S3/S5\n| R1 = Super Rare\n| set2 = DM-04 Challenge of Black Shadow \n| setnum2 = S3/S5\n| R2 = Super Rare\n| set3 = DMC-27 CoroCoro Dream Pack\n| setnum3 = S3/S5\n| R3 = Super Rare\n| set4 = DMC-38 Castle of Demon\n| setnum4 = 7/33\n| R4 = Super Rare\n| set5 = DMC-54 Legend Chronicle Rival\n| setnum5 = 6/20\n| R5 = Super Rare\n| set6 = DMX-21 Masters Chronicle Pack: Comic of Heroes\n| setnum6 = 38/70\n| R6 = Super Rare\n| set7 = DMX-21 Masters Chronicle Pack: Comic of Heroes\n| setnum7 = ㊙3/㊙3\n| R7 = Secret Card\n| set8 = DMD-33 Masters Chronicle Deck 2016: The World's End by the God of Devils\n| setnum8 = 5/19\n| R8 = Super Rare\n| set9 = Promotional\n| setnum9 = P5/Y7, P47/Y7, P13/Y9, P17/Y25\n| R9 = Super Rare\n}}\n\n{{Ballom}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Mass Removal]]\n[[Category:Ballom]]\n[[Category:Come Into Play Trigger]]"
+}

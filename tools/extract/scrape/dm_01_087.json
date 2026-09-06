@@ -1,0 +1,24 @@
+{
+ "card_id": "dm_01_087",
+ "page": "Super Explosive Volcanodon",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Dragonoid",
+ "cost": "4",
+ "power": "2000+",
+ "engtext": "{{Power Attacker|4000}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "87/110",
+  "set2": "Shadowclash Collector Tin",
+  "setnum2": "38/46",
+  "set3": "DM-01 Base Set (OCG)",
+  "setnum3": "62/110",
+  "set4": "DM-18 Best Challenger",
+  "setnum4": "78/140",
+  "set5": "Promotional",
+  "setnum5": "M13/Y1, P1/Y1"
+ },
+ "wiki": "{{Cardtable\n| image = Super Explosive Volcanodon.jpg\n| civilization = Fire\n| type = Creature\n| jpname = {{Ruby|超|ちょう}}{{Ruby|砲|ほう}}{{Ruby|手|しゅ}}ボルカノドン ''(Ultra Gunner Volcanodon)''\n| phonetic = Chōhōshu Borukanodon\n| race = Dragonoid\n| cost = 4\n| power = 2000+\n| engtext = {{Power Attacker|4000}}\n| jptext = {{Power Attacker|4000|jp}}\n| flavor = After it attacks, the lucky are left with rubble. ([[DM-01]])\n| flavor2 = 城壁すらも意味がない。一撃で何も残らない。Even the castle walls are meaningless. With one strike, nothing remains. ([[DM-01]])\n| mana = 1\n| artist = Naoki Saito\n| set1 = DM-01 Base Set\n| setnum1 = 87/110\n| R1 = Uncommon\n| set2 = Shadowclash Collector Tin\n| setnum2 = 38/46\n| R2 = Uncommon\n| set3 = DM-01 Base Set (OCG)\n| setnum3 = 62/110\n| R3 = Uncommon\n| set4 = DM-18 Best Challenger\n| setnum4 = 78/140\n| R4 = Uncommon\n| set5 = Promotional\n| setnum5 = M13/Y1, P1/Y1\n| R5 = No Rarity\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:2000 Power Creatures]]"
+}

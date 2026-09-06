@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_05_007",
+ "page": "Calgo, Vizier of Rainclouds",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Initiate",
+ "cost": "3",
+ "power": "2000",
+ "engtext": "■ This [[creature]] can't be [[block]]ed by [[creature]]s that have [[power]] 4000 or more.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "7/55",
+  "set2": "DM-05 Return of the Survivor",
+  "setnum2": "38/55"
+ },
+ "wiki": "{{Cardtable\n| image = Calgo, Vizier of Rainclouds.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|乱|らん}}{{Ruby|雲|うん}}の{{Ruby|使|し}}{{Ruby|徒|と}}カルゴ \n| phonetic = Ranun no Shito Karugo\n| cost = 3\n| race = Initiate\n| power = 2000\n| engtext = ■ This [[creature]] can't be [[block]]ed by [[creature]]s that have [[power]] 4000 or more.\n| jptext = ■ このクリーチャーは、パワー4000以上のクリーチャーにブロックされない。\n| flavor = 乱雲の使徒よ、覚醒せよ。汝の祈りは裁きの矛なり。\"Arise, Vizier of Rainclouds. Your lash is the blade of justice.\" —{{tooltip|Hanusa, Radiance Elemental}} ([[DM-05]])\n| mana = 1\n| artist = Masaki Hirooka\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = 7/55\n| R1 = Common\n| set2 = DM-05 Return of the Survivor\n| setnum2 = 38/55\n| R2 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Initiate]]\n[[Category:2000 Power Creatures]]\n[[Category:Unblockable]]"
+}

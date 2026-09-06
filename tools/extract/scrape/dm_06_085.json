@@ -1,0 +1,38 @@
+{
+ "card_id": "dm_06_085",
+ "page": "Pyrofighter Magnus",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Dragonoid",
+ "cost": "3",
+ "power": "3000",
+ "engtext": "{{Speed Attacker}}\n\n■ [[End Step|At the end of your turn]], return this [[creature]] to your [[hand]].",
+ "templates": [
+  "Speed Attacker"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "85/110, 85a/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "98/110",
+  "set3": "DMC-06 Dragon Strikes Deck",
+  "setnum3": "66/82",
+  "set4": "DMC-21 Zakira's Dragon Commander Power-Up Pack",
+  "setnum4": "85/102",
+  "set5": "DMC-27 CoroCoro Dream Pack",
+  "setnum5": "48/55",
+  "set6": "DMC-41 Wild Kingdom ",
+  "setnum6": "11/14",
+  "set7": "DMC-42 CoroCoro Dream Pack 3: Eternal Gear",
+  "setnum7": "78/90",
+  "set8": "DMC-55 CoroCoro Legend 7",
+  "setnum8": "78/84",
+  "set9": "Duel Masters Starter Deck 2",
+  "setnum9": "85a/110",
+  "set10": "DMD-01 Start Dash Deck: Fire & Nature",
+  "setnum10": "7/13",
+  "set11": "Promotional ",
+  "setnum11": "P37/Y7, P38/Y7, P65/Y8, P73/Y8"
+ },
+ "wiki": "{{Cardtable\n| image = Pyrofighter Magnus.jpg\n| civilization = Fire\n| type = Creature\n| jpname = {{Ruby|襲|しゅう}}{{Ruby|撃|げき}}{{Ruby|者|しゃ}}エグゼドライブ ''(Raider Exedrive)''\n| phonetic = Shuugekisha Eguzedoraibu\n| race = Dragonoid\n| cost = 3\n| power = 3000\n| engtext = {{Speed Attacker}}\n\n■ [[End Step|At the end of your turn]], return this [[creature]] to your [[hand]].\n| jptext = {{Speed Attacker|jp}}\n\n■ 自分のターンの終わりに、このクリーチャーを自分の手札に戻す。\n| flavor = At maximum speed, he reaches escape velocity and teleports to a whole new dimension...but which one? ([[DM-06]])\n| flavor2 = 音すらぶっちぎり。Even sound is completely surpassed. ([[DM-06]], [[DMC-21]], [[DMC-27]], [[DMC-41]], [[DMC-42]])\n| flavor3 = 一撃離脱の風が一瞬の隙をつく! \"The wind of a single strike and escape exploits a momentary opening!\" ([[DMC-55]])\n| flavor4 = 俺って男はイケイケメン! \"I'm such a cool guy!\" ─'''Pyrofighter Magnus''' ([[DMD-01]])\n| flavor5 = 俺を捕まえることなんて、誰にも出来ないぜ! \"No one can catch me! I'm untouchable!\" ─'''Pyrofighter Magnus''' (P38/Y7)\n| flavor6 = 俺様の豪速について来れるかな? \"I wonder if you can keep up with my incredible speed?\" ─'''Pyrofighter Magnus''' (P65/Y8)\n| flavor7 = 俺って男は、斬れるしキレる! \"I'm a guy who can cut and be sharp!\" ─'''Pyrofighter Magnus''' (P73/Y8)\n| mana = 1\n| artist = Yarunoca\n| artist2 = HIROYUKI TAOKORO\n| artist3 = KENICHI AKAMATSU\n| artist4 = KEIGO KIMURA\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 85/110, 85a/110\n| R1 = Common\n| set2 = DM-06 Invincible Soul\n| setnum2 = 98/110\n| R2 = Common\n| set3 = DMC-06 Dragon Strikes Deck\n| setnum3 = 66/82\n| R3 = Common\n| set4 = DMC-21 Zakira's Dragon Commander Power-Up Pack\n| setnum4 = 85/102\n| R4 = Common\n| set5 = DMC-27 CoroCoro Dream Pack\n| setnum5 = 48/55\n| R5 = Common\n| set6 = DMC-41 Wild Kingdom \n| setnum6 = 11/14\n| R6 = Common\n| set7 = DMC-42 CoroCoro Dream Pack 3: Eternal Gear\n| setnum7 = 78/90\n| R7 = Common\n| set8 = DMC-55 CoroCoro Legend 7\n| setnum8 = 78/84\n| R8 = Common\n| set9 = Duel Masters Starter Deck 2\n| setnum9 = 85a/110\n| R9 = Common\n| set10 = DMD-01 Start Dash Deck: Fire & Nature\n| setnum10 = 7/13\n| R10 = Common\n| set11 = Promotional \n| setnum11 = P37/Y7, P38/Y7, P65/Y8, P73/Y8\n| R11 = Common\n}}\n{{Exedrive}}\n[[Category:TCG]]\n[[Category:OCG]]"
+}

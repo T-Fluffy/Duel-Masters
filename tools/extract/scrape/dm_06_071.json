@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_06_071",
+ "page": "Armored Decimator Valkaizer",
+ "type": "Evolution Creature",
+ "civilization": "Fire",
+ "race": "Human",
+ "cost": "5",
+ "power": "5000",
+ "engtext": "■ [[Evolution]]—Put on one of your [[Human]]s.\n\n■ [[When you put]] this [[creature]] into the [[battle zone]], you may [[destroy]] one of your [[opponent]]'s [[creature]]s that has [[power]] 4000 or less.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "71/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "30/110",
+  "set3": "DMC-09 Shobu's Dragon Legend Deck",
+  "setnum3": "6/44"
+ },
+ "wiki": "{{Cardtable\n| image = Armored Decimator Valkaizer.jpg\n| civilization = Fire\n| type = Evolution Creature\n| jpname = {{Ruby|機|き}}{{Ruby|神|しん}}{{Ruby|装|そう}}{{Ruby|甲|こう}}ヴァルカイザー ''(Valkaizer, Divine Machine Armor)''\n| phonetic = Kishin Sōkō Varukaizā\n| race = Human\n| cost = 5\n| power = 5000\n| engtext = ■ [[Evolution]]—Put on one of your [[Human]]s.\n\n■ [[When you put]] this [[creature]] into the [[battle zone]], you may [[destroy]] one of your [[opponent]]'s [[creature]]s that has [[power]] 4000 or less.\n| jptext = ■ 進化－自分のヒューマノイド1体の上に置く。\n\n■ このクリーチャーがバトルゾーンに出たとき、バトルゾーンにある、パワー4000以下の相手のクリーチャーを1体選び、持ち主の墓地に置いてもよい。\n| flavor = \"With a gun this big, how can I miss?\" ([[DM-06]])\n| flavor2 = 我がマントの元に集まりし者どもよ、光の馬鹿野郎をぶっつぶすぞ! \"Gather, those who are under my cloak! We will crush the foolish Light bastards!\" ([[DM-06]])\n| flavor3 = 光の馬鹿野郎とヴァルカイザーはつぶやき、[[Gariel, Elemental of Sunbeams|ガリアル]]の部隊に突撃した。\"The fools of Light and Valkaiser muttered, then he charged at Gariel's forces.\" ([[DMC-09]])\n| mana = 1\n| artist = Shishizaru\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 71/110\n| R1 = Rare\n| set2 = DM-06 Invincible Soul\n| setnum2 = 30/110\n| R2 = Rare\n| set3 = DMC-09 Shobu's Dragon Legend Deck\n| setnum3 = 6/44\n| R3 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Fire]]\n[[Category:Human]]\n[[Category:Evolution Creature]]\n[[Category:5000 Power Creatures]]\n[[Category:Power Based Removal]]\n[[Category:Come Into Play Trigger]]"
+}

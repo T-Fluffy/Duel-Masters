@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_06_068",
+ "page": "Tentacle Worm",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Parasite Worm",
+ "cost": "4",
+ "power": "3000",
+ "engtext": "",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "68/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "89/110",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "111/140"
+ },
+ "wiki": "{{Cardtable\n| image = Tentacle Worm.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|烈|れつ}}{{Ruby|裂|さく}}{{Ruby|虫|ちゅう}}テンタクル・ワーム\n| phonetic = Retsusakusou Chuu Tentakuru Wāmu\n| cost = 4\n| race = Parasite Worm\n| power = 3000\n| flavor = Deep in the roots of the [[Fiona Woods]], the seeds of destruction writhe, squirm, crawl...and multiply. ([[DM-06]])\n| flavor2 = 森の地中深くでは、災厄の芽がのたうちながら増殖を続けている。 Deep within the forest's ground, the seeds of calamity crawl and continue to proliferate. ([[DM-06]], [[DM-18]])\n| mana = 1\n| artist = Koji Watanabe\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 68/110\n| R1 = Common\n| set2 = DM-06 Invincible Soul\n| setnum2 = 89/110\n| R2 = Common\n| set3 = DM-18 Best Challenger\n| setnum3 = 111/140\n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Parasite Worm]]\n[[Category:3000 Power Creatures]]\n[[Category:No Abilities]]"
+}

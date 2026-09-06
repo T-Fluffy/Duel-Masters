@@ -1,0 +1,32 @@
+{
+ "card_id": "dm_08_044",
+ "page": "Totto Pipicchi",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Fire Bird",
+ "cost": "3",
+ "power": "1000",
+ "engtext": "■ Each [[creature]] in the [[battle zone]] that has [[Dragon]] in its [[race]] has \"[[speed attacker]].\" ''(A [[creature]] that has \"[[speed attacker]]\" doesn't get [[summoning sickness]].)'' ",
+ "templates": [],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "44/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "51/55",
+  "set3": "DMC-09 Shobu's Dragon Legend Deck",
+  "setnum3": "41/44",
+  "set4": "DMC-15 Eternal Dragons Deck",
+  "setnum4": "78/78",
+  "set5": "DMC-19 Zakira's Dragon Commander Deck",
+  "setnum5": "86/102",
+  "set6": "DMC-36 Heaven of Dragon",
+  "setnum6": "28/28",
+  "set7": "DMC-49 Force of Dragon",
+  "setnum7": "29/30",
+  "set8": "DMC-67 Dramatic Wars: Fire and Dragon ",
+  "setnum8": "17/21",
+  "set9": "Promotional",
+  "setnum9": "P16/Y2, P15/Y6, P47/Y6, P66/Y6"
+ },
+ "wiki": "{{Cardtable\n| image = Totto Pipicchi.jpg\n| civilization = Fire\n| type = Creature\n| jpname = トット・ピピッチ\n| phonetic = Totto Pipitchi \n| race = Fire Bird\n| cost = 3\n| power = 1000\n| engtext = ■ Each [[creature]] in the [[battle zone]] that has [[Dragon]] in its [[race]] has \"[[speed attacker]].\" ''(A [[creature]] that has \"[[speed attacker]]\" doesn't get [[summoning sickness]].)'' \n| jptext = ■ バトルゾーンにあるドラゴンはすべて、「スピードアタッカー」を得る。(「スピードアタッカー」を得たクリーチャーは召喚酔いしない)\n| flavor = The [[Fire Bird]]s flitted across the sky, their voices raised in joy. The time of awakening had come at last. ([[DM-08]])\n| flavor2 = 勇気の翼で風に乗り、歓喜の声を上げて、大集合。待ちに待った時が来た。Ride the wind with the wings of courage, raise your voices in joy, and gather together. The long-awaited moment has arrived. ([[DM-08]], [[DMC-09]], [[DMC-15]], [[DMC-19]])\n| flavor3 = 小さな尾が描く炎の軌跡が、竜を導く目印となる。The trail of flames drawn by the small tail becomes the guiding mark for the dragon. ([[DMC-36]])\n| flavor4 = 竜達は信じている。その赤き翼が導く先に勝利があると。The dragons believe. There is victory ahead, guided by those crimson wings. ([[DMC-49]])\n| flavor5 = 今年も始まったドラゴンスピードレース!  勝利のチェッカーフラッグが振られるのは、NEXか? XXか? The Dragon speed race has started again this year! Will the checkered flag of victory be waved for [[NEX]] or [[Double Cross]]? ([[DMC-67]])\n| flavor6 = ドンドン加速する、戦いの先頭を行こう! Accelerating more and more, let's lead the front of the battle! (P16/Y2)\n| flavor7 = 赤き翼に勇気を乗せて、もっともっと勝利の道を走り続けろ! With courage carried on the crimson wings, keep running down the path of victory, more and more! (P15/Y6)\n| flavor8 = 大きな翼には、もっと大きな勇気を! 本当の切り札は実は彼なのだ。With larger wings, comes even greater courage! The true trump card is actually him. (P47/Y6)\n| flavor9 = 小さな翼からさらに大きな翼へと、心と勇気が受継がれて繋いでいく。From small wings to even larger wings, the heart and courage are inherited and passed on. (P55/Y6)\n| mana = 1\n| artist = Toshiaki Takayama\n| artist2 = KEITA HATTORI\n| artist3 = MATSUMOTO EITO\n| artist4 = Hippo\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 44/55\n| R1 = Common\n| set2 = DM-08 Invincible Legend\n| setnum2 = 51/55\n| R2 = Common\n| set3 = DMC-09 Shobu's Dragon Legend Deck\n| setnum3 = 41/44\n| R3 = Common\n| set4 = DMC-15 Eternal Dragons Deck\n| setnum4 = 78/78\n| R4 = Common\n| set5 = DMC-19 Zakira's Dragon Commander Deck\n| setnum5 = 86/102\n| R5 = Common\n| set6 = DMC-36 Heaven of Dragon\n| setnum6 = 28/28\n| R6 = Common \n| set7 = DMC-49 Force of Dragon\n| setnum7 = 29/30\n| R7 = Common \n| set8 = DMC-67 Dramatic Wars: Fire and Dragon \n| setnum8 = 17/21\n| R8 = Common \n| set9 = Promotional\n| setnum9 = P16/Y2, P15/Y6, P47/Y6, P66/Y6\n| R9 = Common \n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Fire]]\n[[Category:Fire Bird]]\n[[Category:1000 Power Creatures]]\n[[Category:Gives \"Speed Attacker\"]]"
+}

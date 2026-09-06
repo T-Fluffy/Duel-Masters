@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_08_034",
+ "page": "Scream Slicer, Shadow of Fear",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Ghost",
+ "cost": "6",
+ "power": "4000",
+ "engtext": "■ Whenever you put a [[Dragonoid]] or a [[creature]] that has [[Dragon]] in its [[race]] into the [[battle zone]], [[destroy]] the [[creature]] that has the least [[power]] in the [[battle zone]]. If there's a tie, you [[choose]] from among the tied [[creature]]s.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "34/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "13/55",
+  "set3": "DMC-13 CoroCoro New Generation Pack",
+  "setnum3": "3/37",
+  "set4": "Promotional",
+  "setnum4": "L13/Y2"
+ },
+ "wiki": "{{Cardtable\n| image = Scream Slicer, Shadow of Fear.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|恐|きょう}}{{Ruby|怖|ふ}}の{{Ruby|影|かげ}}スクリーム・アサシン\n| phonetic = Kyōfu no Kage Sukurīmu Asashin\n| cost = 6\n| race = Ghost\n| power = 4000\n| engtext = ■ Whenever you put a [[Dragonoid]] or a [[creature]] that has [[Dragon]] in its [[race]] into the [[battle zone]], [[destroy]] the [[creature]] that has the least [[power]] in the [[battle zone]]. If there's a tie, you [[choose]] from among the tied [[creature]]s.\n| jptext = ■ このクリーチャーがバトルゾーンにある間、自分のドラゴンまたはドラゴノイドがバトルゾーンに出たとき、バトルゾーンにあるパワーの一番小さなクリーチャーを1体選び、持ち主の墓地に置く。 \n| flavor = Neither flesh nor blood nor souls can ever slake the thirst of the dead. ([[DM-08]], L13/Y2)\n| flavor2 = 満月の夜、恐怖の扉が開かれる。On the night of the full moon, the door of terror will open. ([[DM-08]])\n| flavor3 = 貴様の魂では、このバトルに耐えられない。Your soul can't withstand this battle. ([[DMC-13]])\n| mana = 1\n| artist = Yoko Tsukamoto\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 34/55\n| R1 = Rare\n| set2 = DM-08 Invincible Legend\n| setnum2 = 13/55\n|R2 = Rare\n|set3 = DMC-13 CoroCoro New Generation Pack\n|setnum3 = 3/37\n|R3 = Rare\n|set4 = Promotional\n|setnum4 = L13/Y2\n|R4 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Power Based Removal]]"
+}

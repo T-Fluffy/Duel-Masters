@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_02_040",
+ "page": "Engineer Kipo",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Machine Eater",
+ "cost": "2",
+ "power": "2000",
+ "engtext": "■ When this [[creature]] is [[destroy]]ed, each [[player]] chooses a [[card]] in his [[mana zone]] and puts it into his [[graveyard]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "40/55",
+  "set2": "DM-02 Master of Evolution",
+  "setnum2": "50/55",
+  "set3": "DMC-01 Shobu's Blaze Deck",
+  "setnum3": "37/43",
+  "set4": "DMEX-08 Mysterious Black Box Pack",
+  "setnum4": "12/???"
+ },
+ "wiki": "{{Cardtable\n| image=Engineer Kipo.jpg\n| jpname = {{Ruby|技|ぎ}}{{Ruby|師|し}}ピーポ ''(Engineer Pipo)''\n| phonetic = Gishi Pīpo\n| civilization = Fire\n| type = Creature\n| cost = 2\n| race = Machine Eater\n| power = 2000\n| engtext = ■ When this [[creature]] is [[destroy]]ed, each [[player]] chooses a [[card]] in his [[mana zone]] and puts it into his [[graveyard]].\n| jptext = ■ このクリーチャーがバトルゾーンから自分の墓地に置かれるとき、各プレイヤーは自分自身のマナゾーンからカードを1枚選び、それぞれの墓地に置く。\n| flavor = \"Perfect. Fine. No problem. It's a piece of cake to disassemble these [[Water]] machines.\"\n| flavor2 = 完璧完璧、超OK。水の機械の分解なんてお茶の子さいさいさ。」 —'''Engineer Kipo''' ([[DM-02]], [[DMC-01]])\n| flavor3 = デュエマクイズ Lv.7 Duel Masters Quiz Lv. 7 <br> 技師ピーポが愛用していたゼノパーツの名前は? What is the name of the Xenoparts used by [[Engineer Kipo]]? <br> 答え：ピーポのバール Answer: [[Kipo's Contraption]] ([[DMEX-08]])\n| mana = 1\n| artist = Seki\n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = 40/55\n| R1 = Common\n| set2 = DM-02 Master of Evolution\n| setnum2 = 50/55\n| R2 = Common\n| set3 = DMC-01 Shobu's Blaze Deck\n| setnum3 = 37/43\n| R3 = Common\n| set4 = DMEX-08 Mysterious Black Box Pack\n| setnum4 = 12/???\n| R4 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Mana Burn]]\n[[Category:Put Into Graveyard]]"
+}

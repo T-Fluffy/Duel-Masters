@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_08_010",
+ "page": "Misha, Channeler of Suns",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Mecha Del Sol",
+ "cost": "5",
+ "power": "5000",
+ "engtext": "■ This [[creature]] can't be [[attack]]ed by any [[creature]] that has [[Dragon]] in its [[race]]. ",
+ "templates": [],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "10/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "36/55",
+  "set3": "DMC-10 Hakuoh's Holy Spirit Deck",
+  "setnum3": "20/44",
+  "set4": "DMC-16 Guardian Blue Deck",
+  "setnum4": "42/78"
+ },
+ "wiki": "{{Cardtable\n| image = Misha, Channeler of Suns.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|光|こう}}{{Ruby|器|き}}マーシャ\n| phonetic = Kouki Maasha\n| cost = 5\n| race = Mecha Del Sol\n| power = 5000\n| engtext = ■ This [[creature]] can't be [[attack]]ed by any [[creature]] that has [[Dragon]] in its [[race]]. \n| jptext = ■ ドラゴンは、このクリーチャーを攻撃できない。\n| flavor = Once the [[Dragon]]s awoke, so did the [[Dragon]] hunters. The [[Dragon]] photographers woke up next, followed closely by the [[Dragon]] dentists, [[Dragon]] insurance agents, and [[Dragon]] souvenir-shop owners. ([[DM-08]])\n| flavor2 = 龍が覚醒した時、封印されていた四つの神殿が活動を始めた。When the dragon awoke, the four sealed temples began to stir into action. ([[DM-08]], [[DMC-10]], [[DMC-16]])\n| mana = 1\n| artist = Akira Hamada\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 10/55\n| R1 = Common\n| set2 = DM-08 Invincible Legend\n| setnum2 = 36/55\n| R2 = Common\n| set3 = DMC-10 Hakuoh's Holy Spirit Deck\n| setnum3 = 20/44\n| R3 = Common\n| set4 = DMC-16 Guardian Blue Deck\n| setnum4 = 42/78\n| R4 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Mecha Del Sol]]\n[[Category:5000 Power Creatures]]\n[[Category:Unattackable]]"
+}

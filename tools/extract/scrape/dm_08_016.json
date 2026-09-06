@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_08_016",
+ "page": "Aqua Grappler",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Liquid People",
+ "cost": "5",
+ "power": "3000",
+ "engtext": "■ Whenever this [[creature]] [[attack]]s, you may [[draw]] a [[card]] for each other [[tap]]ped [[creature]] you have in the [[battle zone]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "16/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "9/55",
+  "set3": "Promotional",
+  "setnum3": "P22/Y2"
+ },
+ "wiki": "{{Cardtable\n| image = Aqua Grappler.jpg\n| civilization = Water\n| type = Creature\n| jpname = アクア・グラップラー\n| phonetic =  Akua Gurappurā\n| race = Liquid People\n| cost = 5\n| power = 3000\n| engtext = ■ Whenever this [[creature]] [[attack]]s, you may [[draw]] a [[card]] for each other [[tap]]ped [[creature]] you have in the [[battle zone]].\n| jptext = ■ このクリーチャーが攻撃するとき、バトルゾーンにある自分の他のタップされたクリーチャー1体につき1枚、カードを引いてもよい。\n| flavor = \"I specialize in kicking! And jumping! And sometimes spinning and whirling! I know my mom spent all that money on grappling lessons, but that's just not what I'm into anymore.\" ([[DM-08]])\n| flavor2 = 「もう少しだ! このAGが行くまで死んではダメだ!」 \"Just a little more! Don't die until this AG reaches!\" ─'''Aqua Grappler''' ([[DM-08]])\n| flavor3 = 「おらおらおら、ここはこのAGに任せな! 困ったときは、オレとオレの部下共がどんな困難も突き破ってやるぜ!」 \"Oi oi oi, leave this to this AG! When you're in trouble, my subordinates and I will break through any hardship for you!\" ─'''Aqua Grappler''' (P22/Y2)\n| mana = 1\n| artist = Hisashi Momose\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 16/55\n| R1 = Rare\n| set2 = DM-08 Invincible Legend\n| setnum2 = 9/55\n| R2 = Rare\n| set3 = Promotional\n| setnum3 = P22/Y2\n| R3 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Card Draw]]\n[[Category:Attack Trigger]]"
+}

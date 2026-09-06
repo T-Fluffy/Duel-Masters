@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_05_s05",
+ "page": "Avalanche Giant",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Giant",
+ "cost": "6",
+ "power": "8000",
+ "engtext": "■ This [[creature]] can't [[attack]] [[creature]]s.\n\n■ Whenever this [[creature]] becomes [[block]]ed, it [[break]]s one of your [[opponent]]'s [[shield]]s.\n\n{{Double Breaker}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "S5/S5",
+  "set2": "DM-05 Return of the Survivor",
+  "setnum2": "S5/S5",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "S10/S10"
+ },
+ "wiki": "{{Cardtable\n| image = Avalanche Giant.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|神拳の超人|アヴァランチ・ジャイアント}}\n| kana = アヴァランチ・ジャイアント ''(Avalanche Giant)''\n| phonetic = Avaranchi Jaianto\n| cost = 6\n| race = Giant\n| power = 8000\n| engtext = ■ This [[creature]] can't [[attack]] [[creature]]s.\n\n■ Whenever this [[creature]] becomes [[block]]ed, it [[break]]s one of your [[opponent]]'s [[shield]]s.\n\n{{Double Breaker}}\n| jptext = {{Double Breaker|jp}}\n\n■ このクリーチャーは、クリーチャーを攻撃できない。\n\n■ このクリーチャーがブロックされた時、相手のシールドを1枚ブレイクする。\n| flavor = Its name is misleading. Mountains tremble in fear at the sight of it, and that causes avalanches. What it actually does to the mountains is much, much worse. ([[DM-05]])\n| mana = 1\n| artist = Nottsuo\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = S5/S5\n| R1 = Super Rare\n| set2 = DM-05 Return of the Survivor\n| setnum2 = S5/S5\n| R2 = Super Rare\n| set3 = DM-18 Best Challenger\n| setnum3 = S10/S10\n| R3 = Super Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Shield Break]]\n[[Category:Trample]]"
+}

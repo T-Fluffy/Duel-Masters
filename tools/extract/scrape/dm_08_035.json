@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_08_035",
+ "page": "Tyrant Worm",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Parasite Worm",
+ "cost": "1",
+ "power": "2000",
+ "engtext": "■ [[When you put]] another [[creature]] into the [[battle zone]], [[destroy]] this [[creature]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "35/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "46/55"
+ },
+ "wiki": "{{Cardtable\n| image = Tyrant Worm.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|暴|ぼう}}{{Ruby|虐|ぎゃく}}{{Ruby|虫|ちゅう}}タイラント・ワーム\n| phonetic = Bougyaku Chuu Tairanto Wāmu\n| race = Parasite Worm\n| cost = 1\n| power = 2000\n| engtext = ■ [[When you put]] another [[creature]] into the [[battle zone]], [[destroy]] this [[creature]].\n| jptext = ■ 自分の他のクリーチャーがバトルゾーンに出たとき、このクリーチャーを自分の墓地に置く。\n| flavor = It's scared of scared people. ([[DM-08]])\n| flavor2 = 飽くなき破壊衝動が、最後には自身をも葬り去る。Its never-ending destructive impulses will ultimately bury itself. ([[DM-08]])\n| mana = 1\n| artist = Youichi Kai\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 35/55\n| R1 = Common\n| set2 = DM-08 Invincible Legend\n| setnum2 = 46/55\n| R2 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Parasite Worm]]\n[[Category:2000 Power Creatures]]\n[[Category:Self Removal]]\n[[Category:Come Into Play Trigger]]"
+}

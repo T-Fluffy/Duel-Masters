@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_08_019",
+ "page": "Grape Globbo",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Cyber Virus",
+ "cost": "2",
+ "power": "1000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], [[look]] at your [[opponent]]'s [[hand]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "19/55",
+  "set2": "DM-08 Invincible Legend ",
+  "setnum2": "42/55",
+  "set3": "DMC-13 CoroCoro New Generation Pack",
+  "setnum3": "24/37 "
+ },
+ "wiki": "{{Cardtable\n| image = Grape Globbo.jpg\n| civilization = Water\n| type = Creature\n| jpname = グレープ・ジェリー\n| phonetic = Gurēpu Jerī ''(Grape Jelly)''\n| race = Cyber Virus\n| cost = 2\n| power = 1000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], [[look]] at your [[opponent]]'s [[hand]].\n| jptext = ■ このクリーチャーがバトルゾーンに出たとき、相手の手札を見る。　\n| flavor = \"I'm quite fully protected from telepathic spies. Indeed, that's what my spiffy hat is for. Wha-hai!!!\" -[[Quixotic Hero Swine Snout]] ([[DM-08]])\n| flavor2 = 探査物が見つけたあいつを誘導してみよう。\"Let's try guiding the one that the probe found.\" —[[Tropico]] ([[DM-08]], [[DMC-13]])\n| mana = 1\n| artist = Daisuke Izuka\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 19/55\n| R1 = Common\n| set2 = DM-08 Invincible Legend \n| setnum2 = 42/55\n| R2 = Common\n| set3 = DMC-13 CoroCoro New Generation Pack\n| setnum3 = 24/37 \n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Cyber Virus]]\n[[Category:Water]]\n[[Category:1000 Power Creatures]]\n[[Category:Hand Peek]]\n[[Category:Come Into Play Trigger]]"
+}

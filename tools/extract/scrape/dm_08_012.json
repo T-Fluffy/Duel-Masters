@@ -1,0 +1,25 @@
+{
+ "card_id": "dm_08_012",
+ "page": "Sasha, Channeler of Suns",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Mecha Del Sol",
+ "cost": "8",
+ "power": "9500+",
+ "engtext": "{{Blocker|dragon}}\n\n■ While [[battling]] a [[creature]] that has [[Dragon]] in its [[race]], this [[creature]] gets +6000 [[power]].\n\n{{Double Breaker}}",
+ "templates": [
+  "Blocker|dragon",
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "12/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "6/55",
+  "set3": "DMC-12 Hakuoh's Holy Spirit Power-Up Pack",
+  "setnum3": "3/44",
+  "set4": "Promotional",
+  "setnum4": "E2/Y2"
+ },
+ "wiki": "{{Cardtable\n| image = Sasha, Channeler of Suns.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|光|こう}}{{Ruby|器|き}}サーシャ\n| phonetic = Kōki Saasha\n| race = Mecha Del Sol\n| cost = 8\n| power = 9500+\n| engtext = {{Blocker|dragon}}\n\n■ While [[battling]] a [[creature]] that has [[Dragon]] in its [[race]], this [[creature]] gets +6000 [[power]].\n\n{{Double Breaker}}\n| jptext = {{Blocker|dragonjp}}\n\n■ ドラゴンとバトルするとき、このクリーチャーのパワーは+6000される。\n\n{{Double Breaker|jps}} \n| flavor = \n| mana = 1\n| artist = Jason\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 12/55\n| R1 = Rare\n| set2 = DM-08 Invincible Legend\n| setnum2 = 6/55\n| R2 = Rare\n| set3 = DMC-12 Hakuoh's Holy Spirit Power-Up Pack\n| setnum3 = 3/44\n| R3 = Rare\n| set4 = Promotional\n| setnum4 = E2/Y2\n| R4 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Self Increase Power]]"
+}

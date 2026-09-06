@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_08_042",
+ "page": "Slaphappy Soldier Galback",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Dragonoid",
+ "cost": "4",
+ "power": "3000",
+ "engtext": "{{Turbo Rush|Whenever this [[creature]] [[attack]]s, you may [[destroy]] one of your [[opponent]]'s [[creature]]s that has [[power]] 4000 or less.}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "42/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "16/55",
+  "set3": "Promotional",
+  "setnum3": "P2/Y2"
+ },
+ "wiki": "{{Cardtable\n| image = Slaphappy Soldier Galback.jpg\n| civilization = Fire\n| type = Creature\n| jpname = {{Ruby|重|じゅう}}{{Ruby|装|そう}}{{Ruby|兵|へい}}ガルバック\n| phonetic = Jūsō Hei Garubakku \n| race = Dragonoid\n| cost = 4\n| power = 3000\n| engtext = {{Turbo Rush|Whenever this [[creature]] [[attack]]s, you may [[destroy]] one of your [[opponent]]'s [[creature]]s that has [[power]] 4000 or less.}}\n| jptext = ■ ターボラッシュ （自分の他のクリーチャーがシールドをブレイクした後、そのターンが終わるまで、このクリーチャーは次の{{Icon|TR}}能力を得る） \n:{{Icon|TR}} このクリーチャーが攻撃するとき、バトルゾーンにあるパワー4000以下の相手のクリーチャーを1体選び、持ち主の墓地に置いてもよい。　\n| flavor = \n| mana = 1\n| artist = Masaki Hirooka\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 42/55\n| R1 = Rare\n| set2 = DM-08 Invincible Legend\n| setnum2 = 16/55\n| R2 = Rare\n| set3 = Promotional\n| setnum3= P2/Y2\n| R3 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Power Based Removal]]\n[[Category:Attack Trigger]]"
+}

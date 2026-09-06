@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_01_092",
+ "page": "Coiling Vines",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Tree Folk",
+ "cost": "4",
+ "power": "3000",
+ "engtext": "■ When this [[creature]] would be [[destroy]]ed, put it into your [[mana zone]] [[instead]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "92/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "67/110",
+  "set3": "DMEX-08 Mysterious Black Box Pack",
+  "setnum3": "239/???"
+ },
+ "wiki": "{{Cardtable\n| image = Coiling Vines.jpg\n| civilization = Nature\n| type = Creature\n| jpname = からみカズラ\n| phonetic = Karamikazura\n| race = Tree Folk\n| cost = 4\n| power = 3000\n| engtext = ■ When this [[creature]] would be [[destroy]]ed, put it into your [[mana zone]] [[instead]].\n| jptext = ■ このクリーチャーがバトルゾーンから自分の墓地に置かれるとき、墓地に置くかわりに自分のマナゾーンに置く。\n| flavor = They eat vegetarians. ([[DM-01]])\n| flavor2 = デュエマクイズ Lv.3 Duel Masters  Quiz Lv.3 <br> デュエル・マスターズ第1弾の発売日は!? What is the release date of the first Duel Masters set!? <br> 答え：2002年5月30日 Answer: [[DM-01 Base Set (OCG)|May 30, 2002]] ([[DMEX-08]])\n| mana = 1\n| artist = D-Suzuki\n| set1 = DM-01 Base Set\n| setnum1 = 92/110\n| R1 = Uncommon\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 67/110\n| R2 = Uncommon\n| set3 = DMEX-08 Mysterious Black Box Pack\n| setnum3 = 239/???\n| R3 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Destruction Substitution]]\n[[Category:Mana Acceleration]]"
+}

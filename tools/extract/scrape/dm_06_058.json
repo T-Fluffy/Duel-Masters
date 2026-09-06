@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_06_058",
+ "page": "Grave Worm Q",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Survivor",
+ "cost": "5",
+ "power": "3000",
+ "engtext": "{{Survivor}} [[When you put]] this [[creature]] into the [[battle zone]], you may return a [[Survivor]] from your [[graveyard]] to your [[hand]].",
+ "templates": [
+  "Survivor"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "58/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "26/110",
+  "set3": "Promotional",
+  "setnum3": "L19/20 Y1"
+ },
+ "wiki": "{{Cardtable\n| image = Grave Worm Q.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|死|し}}{{Ruby|縛|ばく}}{{Ruby|虫|ちゅう}}グレイブ・ワーム{{Ruby|γ|ガンマ}}\n| kana = ガンマ ''(Gamma)''\n| phonetic = Shibakuchu Gureibu Wāmu Gamma ''(Grave Worm Gamma, Deathbound Bug)''\n| race = Survivor\n| race2 = Parasite Worm\n| cost = 5\n| power = 3000\n| engtext = {{Survivor}} [[When you put]] this [[creature]] into the [[battle zone]], you may return a [[Survivor]] from your [[graveyard]] to your [[hand]].\n| jptext = {{Icon|SVold}} このクリーチャーがバトルゾーンに出たとき、自分の墓地からサバイバーを1体選び、自分の手札に戻してもよい。\n\n■ サバイバー （このクリーチャーがバトルゾーンにある間、自分の他のサバイバーも上の{{Icon|SVold}}能力を得る）\n| flavor = Its unvenom can unkill an unvictim in thirty seconds flat. ([[DM-06]])\n| mana = 1\n| artist = Yoko Tsukamoto\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 58/110\n| R1 = Rare\n| set2 = DM-06 Invincible Soul\n| setnum2 = 26/110\n| R2 = Rare\n| set3 = Promotional\n| setnum3 = L19/20 Y1\n| R3 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Creature Recovery]]\n[[Category:Come Into Play Trigger]]"
+}

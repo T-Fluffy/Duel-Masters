@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_06_035",
+ "page": "King Triumphant",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Leviathan",
+ "cost": "8",
+ "power": "7000",
+ "engtext": "■ Whenever your [[opponent]] [[summon]]s a [[creature]] or [[cast]]s a [[spell]], this [[creature]] gets \"[[blocker]]\" until the [[End Step|end of the turn]]. ''(Whenever an [[opponent]]'s [[creature]] [[attack]]s, you may [[tap]] a [[creature]] that has \"[[blocker]]\" to stop the [[attack]]. Then the 2 [[creature]]s [[battle]].)''\n\n{{Double Breaker}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "35/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "18/110"
+ },
+ "wiki": "{{Cardtable\n| image = King Triumphant.jpg\n| civilization = Water\n| type = Creature\n| jpname = キング・トラファルガー\n| phonetic = Kingu Torafarugā\n| race = Leviathan\n| cost = 8\n| power = 7000\n| engtext = ■ Whenever your [[opponent]] [[summon]]s a [[creature]] or [[cast]]s a [[spell]], this [[creature]] gets \"[[blocker]]\" until the [[End Step|end of the turn]]. ''(Whenever an [[opponent]]'s [[creature]] [[attack]]s, you may [[tap]] a [[creature]] that has \"[[blocker]]\" to stop the [[attack]]. Then the 2 [[creature]]s [[battle]].)''\n\n{{Double Breaker}}\n| jptext = {{Double Breaker|jps}} \n\n■ 相手がクリーチャーを召喚するか呪文を唱えた場合、そのターンが終わるまで、このクリーチャーは「ブロッカー」を得る。(相手クリーチャーが攻撃するとき、このクリーチャーをタップして、その攻撃を阻止してよい。そのあと、その相手クリーチャーとバトルする)\n| flavor = \n| mana = 1\n| artist = Taro Yamazaki\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 35/110\n| R1 = Rare\n| set2 = DM-06 Invincible Soul\n| setnum2 = 18/110\n| R2 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Leviathan]]\n[[Category:7000 Power Creatures]]\n[[Category:Conditional Blocker]]"
+}

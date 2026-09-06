@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_04_s02",
+ "page": "King Aquakamui",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Leviathan",
+ "cost": "7",
+ "power": "5000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], you may return all [[Angel Command]]s and all [[Demon Command]]s from your [[graveyard]] to your [[hand]].\n\n■ [[Angel Command]]s and [[Demon Command]]s in the [[battle zone]] each get +2000 [[power]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-04 Shadowclash of Blinding Night",
+  "setnum1": "S2/S5",
+  "set2": "DM-04 Challenge of Black Shadow ",
+  "setnum2": "S2/S5",
+  "set3": "DMC-34 CoroCoro Dream Pack 2: Eternal Legacy",
+  "setnum3": "S2/S5"
+ },
+ "wiki": "{{Cardtable\n| image = King Aquakamui.jpg\n| civilization = Water\n| type = Creature\n| jpname = キング・アクアカムイ\n| phonetic = Kingu Akuakamui\n| cost = 7\n| race = Leviathan\n| power = 5000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], you may return all [[Angel Command]]s and all [[Demon Command]]s from your [[graveyard]] to your [[hand]].\n\n■ [[Angel Command]]s and [[Demon Command]]s in the [[battle zone]] each get +2000 [[power]].\n| jptext = ■  このクリーチャーをバトルゾーンに出した時、エンジェル・コマンドとデーモン・コマンドをすべて、自分の墓地から手札に戻してもよい。\n\n■ バトルゾーンにあるエンジェル・コマンドとデーモン・コマンドすべてのパワーは+2000される。\n| flavor = He drifts along the currents of war. ([[DM-04]])\n| mana = 1\n| artist = Dustmoss \n| artist2 = Norikatsu Miyoshi \n| set1 = DM-04 Shadowclash of Blinding Night\n| setnum1 = S2/S5\n| R1 = Super Rare\n| set2 = DM-04 Challenge of Black Shadow \n| setnum2 = S2/S5\n| R2 = Super Rare\n| set3 = DMC-34 CoroCoro Dream Pack 2: Eternal Legacy\n| setnum3 = S2/S5\n| R3 = Super Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Increase Power]]\n[[Category:Creature Recovery]]\n[[Category:Come Into Play Trigger]]"
+}

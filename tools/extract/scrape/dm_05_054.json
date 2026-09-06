@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_05_054",
+ "page": "Scissor Scarab",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Giant Insect",
+ "cost": "7",
+ "power": "5000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], [[search]] your [[deck]]. You may take a [[Giant Insect]] from your [[deck]], show that [[Giant Insect]] to your [[opponent]], and put it into your [[hand]]. Then [[shuffle]] your [[deck]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "54/55",
+  "set2": "DM-05 Return of the Survivor ",
+  "setnum2": "52/55"
+ },
+ "wiki": "{{Cardtable\n| image = Scissor Scarab.jpg\n| civilization = Nature\n| type = Creature\n| jpname = シザーズ・ビートル\n| phonetic = Shizāzu Bītoru ''(Scissors Beetle)''\n| race = Giant Insect\n| cost = 7\n| power = 5000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], [[search]] your [[deck]]. You may take a [[Giant Insect]] from your [[deck]], show that [[Giant Insect]] to your [[opponent]], and put it into your [[hand]]. Then [[shuffle]] your [[deck]].\n| jptext = ■ このクリーチャーがバトルゾーンに出たとき、自分の山札を見る。その中からジャイアント・インセクトを1体選び、相手に見せてから自分の手札に加えてもよい。その後、山札をシャッフルする。\n| flavor = アーマロイドの装甲が、まるで紙のように引き裂かれていく。It tears through the armor of [[Armorloid]]s like paper. ([[DM-05]])\n| mana = 1\n| artist = Norikatsu Miyoshi\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = 54/55\n| R1 = Common\n| set2 = DM-05 Return of the Survivor \n| setnum2 = 52/55\n| R2 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Nature]]\n[[Category:Giant Insect]]\n[[Category:5000 Power Creatures]]\n[[Category:Deck Search]]\n[[Category:Come Into Play Trigger]]"
+}

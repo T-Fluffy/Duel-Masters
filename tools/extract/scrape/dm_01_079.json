@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_01_079",
+ "page": "Gatling Skyterror",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Armored Wyvern",
+ "cost": "7",
+ "power": "7000",
+ "engtext": "■ This [[creature]] can [[attack]] [[untap]]ped [[creature]]s.\n\n{{Double Breaker}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "79/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "7/110",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "10/140"
+ },
+ "wiki": "{{Cardtable\n| image = Gatling Skyterror.jpg\n| civilization = Fire\n| type = Creature\n| jpname = ガトリング・ワイバーン ''(Gatling Wyvern)''\n| phonetic = Gatoringu Waibān\n| cost = 7\n| race = Armored Wyvern\n| power = 7000\n| engtext = ■ This [[creature]] can [[attack]] [[untap]]ped [[creature]]s.\n\n{{Double Breaker}}\n| jptext = ■ このクリーチャーは、タップされていないクリーチャーを攻撃できる。\n\n{{Double Breaker|jp}}\n| flavor = Part chopper, part chomper. ([[DM-01]])\n| mana = 1\n| artist = Hisashi Momose \n| artist2 = D-Suzuki\n| set1 = DM-01 Base Set\n| setnum1 = 79/110\n| R1 = Very Rare\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 7/110\n| R2 = Very Rare\n| set3 = DM-18 Best Challenger\n| setnum3 = 10/140\n| R3 = Very Rare \n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Can Attack Untapped Creatures]]"
+}

@@ -1,0 +1,24 @@
+{
+ "card_id": "dm_02_001",
+ "page": "Diamond Cutter",
+ "type": "Spell",
+ "civilization": "Light",
+ "race": "",
+ "cost": "5",
+ "power": "",
+ "engtext": "■ This [[turn]], [[ignore]] any [[effect]]s that would prevent your [[creature]]s from [[attack]]ing your [[opponent]]. ''(For example, [[ignore]] [[summoning sickness]] and [[card]] [[effect]]s that say \"This [[creature]] can't [[attack]]\" or \"This [[creature]] can't [[attack]] [[player]]s\". Your [[creature]]s can't [[attack]] [[creature]]s this way.)''",
+ "templates": [],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "1/55",
+  "set2": "DM-02 Master of Evolution",
+  "setnum2": "23/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "57/140",
+  "set4": "DMC-16 Guardian Blue Deck",
+  "setnum4": "21/78",
+  "set5": "DMC-26 Hakuoh's Angel Kingdom Deck",
+  "setnum5": "16/45"
+ },
+ "wiki": "{{Cardtable\n| image=Diamond Cutter.jpg\n| civilization = Light\n| type = Spell\n| jpname = ダイヤモンド・カッター\n| phonetic = Daiyamondo Kattā\n| cost = 5\n| engtext = ■ This [[turn]], [[ignore]] any [[effect]]s that would prevent your [[creature]]s from [[attack]]ing your [[opponent]]. ''(For example, [[ignore]] [[summoning sickness]] and [[card]] [[effect]]s that say \"This [[creature]] can't [[attack]]\" or \"This [[creature]] can't [[attack]] [[player]]s\". Your [[creature]]s can't [[attack]] [[creature]]s this way.)''\n| jptext = ■ このターン、相手プレイヤーを攻撃することができない効果はすべて無効になる。（召喚酔いや、「このクリーチャーは攻撃することができない」または「このクリーチャーは、相手プレイヤーを攻撃できない」などの効果が無効になる）\n| flavor = 今、光の封印を解き放つ。 Now, I unleash the seal of light. ([[DM-02]], [[DMC-16]], [[DMC-26]])\n| flavor2 = この光の刃だけが希望だった時代がある。そして他の希望が生まれたとしても、その刃の光は未だに輝き続ける。There was a time when this blade of light was the only hope. And even when other hopes were born, the light of that blade continues to shine. ([[DM-18]])\n| mana = 1\n| artist = Akifumi Yamamoto\n| artist2 = Okera\n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = 1/55\n| R1 = Uncommon\n| set2 = DM-02 Master of Evolution\n| setnum2 = 23/55\n| R2 = Uncommon\n| set3 = DM-18 Best Challenger\n| setnum3 = 57/140\n| R3 = Uncommon\n| set4 = DMC-16 Guardian Blue Deck\n| setnum4 = 21/78\n| R4 = Uncommon\n| set5 = DMC-26 Hakuoh's Angel Kingdom Deck\n| setnum5 = 16/45\n| R5 = Uncommon\n}}\n{{Diamond State}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Spell]]\n[[Category:Ignore]]"
+}

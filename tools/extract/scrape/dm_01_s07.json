@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_01_s07",
+ "page": "Astrocomet Dragon",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Armored Dragon",
+ "cost": "7",
+ "power": "6000+",
+ "engtext": "{{Power Attacker|4000}}\n\n{{Double Breaker}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "S7/S10",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "S8/S10",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "S8/S10"
+ },
+ "wiki": "{{Cardtable\n| image = Astrocomet Dragon.jpg\n| civilization = Fire\n| type = Creature\n| jpname = メテオ・ドラゴン \n| phonetic = Meteo Doragon ''(Meteor Dragon)''\n| dename = Astrokometdrache\n| itname = Drago Astrocomet\n| frname = Dragon astrocomète\n| esname = Dragón astrocometa\n| mxname = Dragón astrocometa\n| ptname = Dragão Sideral\n| cost = 7\n| race = Armored Dragon\n| power = 6000+\n| engtext = {{Power Attacker|4000}}\n\n{{Double Breaker}}\n| jptext = {{Power Attacker|4000|jp}}\n\n{{Double Breaker|jp}}  \n| flavor = 全身の武器ひとつひとつが、国すらも滅ぼす力を秘めている。Even the smallest weapon attached to it has enough firepower to lay waste to an entire nation. ([[DM-01]])\n| flavor2 = 大地に落ちた空は、竜の姿となった。When the sky fell to the earth, it was in the shape of a dragon. ([[DM-18]])\n| mana = 1\n| artist = Yusaku Nakaaki \n| artist2 = ozica \n| set1 = DM-01 Base Set\n| setnum1 = S7/S10\n| R1 = Super Rare\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = S8/S10\n| R2 = Super Rare\n| set3 = DM-18 Best Challenger\n| setnum3 = S8/S10\n| R3 = Super Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:6000 Power Creatures]]"
+}

@@ -1,0 +1,32 @@
+{
+ "card_id": "dm_01_006",
+ "page": "Holy Awe",
+ "type": "Spell",
+ "civilization": "Light",
+ "race": "",
+ "cost": "6",
+ "power": "",
+ "engtext": "{{Shield Trigger|spell}}\n\n■ [[Tap]] all your [[opponent]]'s [[creature]]s in the [[battle zone]].",
+ "templates": [
+  "Shield Trigger|spell"
+ ],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "6/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "15/110",
+  "set3": "DMC-05 Lightning Thunder Deck",
+  "setnum3": "5/82",
+  "set4": "DMC-16 Guardian Blue Deck",
+  "setnum4": "8/78",
+  "set5": "DMC-37 Violence Angel",
+  "setnum5": "11/28",
+  "set6": "DMX-21 Masters Chronicle Pack: Comic of Heroes",
+  "setnum6": "35/70",
+  "set7": "DMPCD-01 DueMa Play's CollaboDeck: The Rise of Überdragon & The Rise of Heavenly Gate",
+  "setnum7": "天7/16",
+  "set8": "Promotional",
+  "setnum8": "T3 Y1, K1/Y1"
+ },
+ "wiki": "{{Textwrap|This card is included in the '''[[Spark]]''' name category.}}\n{{Cardtable\n| image = Holy Awe.jpg\n| civilization = Light\n| type = Spell\n| jpname = ホーリー・スパーク\n| phonetic = Hōrī Supāku ''(Holy Spark)''\n| cost = 6\n| engtext = {{Shield Trigger|spell}}\n\n■ [[Tap]] all your [[opponent]]'s [[creature]]s in the [[battle zone]].\n| jptext = {{Icon|ST}} S・トリガー(この呪文をシールドゾーンから手札に加える時、コストを支払わずにすぐ唱えてもよい) \n\n■ バトルゾーンにある相手のクリーチャーすべてをタップする。\n| flavor = 溢れ出す光が、全てを白く、天国のように塗りつぶした。 The overflowing light filled all, painting everything as white as the heavens.  ([[DMC-37]], [[DMPCD-01]])\n| flavor2 = 聖霊王。その御身が放つまばゆい光は、悪しき者の妨害を許さない。 -『アルカディアス・バイブル』第1章 第5節 \"Lord of Spirits. The dazzling light emanating from his body doesn't allow interference from evil ones.\"  -'[[Alcadeias Bible]]', Chapter 1, Verse 5 ([[DMX-21]])\n| flavor3 = \"Today's special is the lightning platter with a side dish of fried you.\" —[[Fu Reil, Seeker of Storms]] (K1/Y1)\n| mana = 1\n| artist = Naoki Saito\n| set1 = DM-01 Base Set\n| setnum1 = 6/110\n| R1 = Rare\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 15/110\n| R2 = Rare\n| set3 = DMC-05 Lightning Thunder Deck\n| setnum3 = 5/82\n| R3 = Rare\n| set4 = DMC-16 Guardian Blue Deck\n| setnum4 = 8/78\n| R4 = Rare\n| set5 = DMC-37 Violence Angel\n| setnum5 = 11/28\n| R5 = Rare\n| set6 = DMX-21 Masters Chronicle Pack: Comic of Heroes\n| setnum6 = 35/70\n| R6 = Rare\n| set7 = DMPCD-01 DueMa Play's CollaboDeck: The Rise of Überdragon & The Rise of Heavenly Gate\n| setnum7 = 天7/16\n| R7 = Rare\n| set8 = Promotional\n| setnum8 = T3 Y1, K1/Y1\n| R8 = Rare\n}}\n{{Spark}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Creature Tapper]]\n[[Category:Holy Spark]]\n[[Category:Spark]]"
+}

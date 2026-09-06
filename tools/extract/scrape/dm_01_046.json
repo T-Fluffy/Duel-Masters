@@ -1,0 +1,38 @@
+{
+ "card_id": "dm_01_046",
+ "page": "Bloody Squito",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Brain Jacker",
+ "cost": "2",
+ "power": "4000",
+ "engtext": "{{Blocker|old}}\n\n■ This [[creature]] can't [[attack]].\n\n■ When this [[creature]] wins a [[battle]], [[destroy]] it.",
+ "templates": [
+  "Blocker|old"
+ ],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "46/110",
+  "set2": "Shadowclash Collector Tin",
+  "setnum2": "17/46",
+  "set3": "DM-01 Base Set (OCG)",
+  "setnum3": "89/110",
+  "set4": "DM-18 Best Challenger",
+  "setnum4": "114/140",
+  "set5": "DMC-02 Kokujo's Darkness Deck",
+  "setnum5": "25/43",
+  "set6": "DMC-07 Eternal Insects Deck",
+  "setnum6": "59/82",
+  "set7": "DMC-19 Zakira's Dragon Commander Deck",
+  "setnum7": "72/102",
+  "set8": "DMC-58 Mad Rock Chester",
+  "setnum8": "15/16",
+  "set9": "DMD-02 Start Dash Deck: Water & Darkness",
+  "setnum9": "14/15",
+  "set10": "Win and Jashin 40-Card Special Deck",
+  "setnum10": "3/11",
+  "set11": "Promotional",
+  "setnum11": "P33/Y7, P34/Y7, P66/Y8, P74/Y8"
+ },
+ "wiki": "{{Cardtable\n| image = Bloody Squito.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = ブラッディ・イヤリング\n| phonetic = Buraddi Iyaringu ''(Bloody Earring)''\n| cost = 2\n| race = Brain Jacker\n| power = 4000\n| engtext = {{Blocker|old}}\n\n■ This [[creature]] can't [[attack]].\n\n■ When this [[creature]] wins a [[battle]], [[destroy]] it.\n| jptext = {{Blocker|jp}}\n\n■ このクリーチャーは攻撃することができない。\n\n■ このクリーチャーがバトルする時、バトルの後、このクリーチャーを破壊する。\n| flavor = 闘いに集まり、闇に還る習性を持つ。They gather to fight and return to the darkness. (P66/Y8)\n| flavor2 = 死を求めさまよう、理解を超えた命。Wandering seeking death, life beyond understanding. (P74/Y8)\n| flavor3 = ブロッカーを持っているクリーチャーは、相手のクリーチャーの攻撃に対してかわりにバトルしてくれるぞ! \"Creatures that have blocker will battle against your opponent's creature attacks instead!\" ([[SpDeck9]])\n| mana = 1\n| artist = Atsushi Kawasaki \n| artist2 = Hideaki Takamura \n| artist3 = HIROHIDE NISHIMURA \n| artist4 = hokuyu\n| artist5 = KEIGO KIMURA\n| artist6 = RYOSUKE NISHIYAMA\n| set1 = DM-01 Base Set\n| setnum1 = 46/110\n| R1 = Common\n| set2 = Shadowclash Collector Tin\n| setnum2 = 17/46\n| R2 = Common\n| set3 = DM-01 Base Set (OCG)\n| setnum3 = 89/110\n| R3 = Common\n| set4 = DM-18 Best Challenger\n| setnum4 = 114/140\n| R4 = Common\n| set5 = DMC-02 Kokujo's Darkness Deck\n| setnum5 = 25/43\n| R5 = Common\n| set6 = DMC-07 Eternal Insects Deck\n| setnum6 = 59/82\n| R6 = Common\n| set7 = DMC-19 Zakira's Dragon Commander Deck\n| setnum7 = 72/102\n| R7 = Common\n| set8 = DMC-58 Mad Rock Chester\n| setnum8 = 15/16\n| R8 = Common\n| set9 = DMD-02 Start Dash Deck: Water & Darkness\n| setnum9 = 14/15\n| R9 = Common\n| set10 = Win and Jashin 40-Card Special Deck\n| setnum10 = 3/11\n| R10 = Common\n| set11 = Promotional\n| setnum11 = P33/Y7, P34/Y7, P66/Y8, P74/Y8\n| R11 = Common\n}}\n{{Bloody}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Brain Jacker]]\n[[Category:4000 Power Creatures]]\n[[Category:Reverse Slayer]]"
+}

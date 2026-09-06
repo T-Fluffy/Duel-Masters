@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_08_s05",
+ "page": "Super Terradragon Bailas Gale",
+ "type": "Evolution Creature",
+ "civilization": "Nature",
+ "race": "Earth Dragon",
+ "cost": "5",
+ "power": "9000",
+ "engtext": "■ [[Evolution]]—Put on one of your [[creature]]s that has [[Dragon]] in its [[race]].\n\n■ After you [[cast]] a [[spell]] by using its \"[[shield trigger]]\" [[ability]], put it into your [[hand]] [[instead]] of your [[graveyard]].\n\n{{Double Breaker}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "S5/S5",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "S5/S5"
+ },
+ "wiki": "{{Cardtable\n| image = Super Terradragon Bailas Gale.jpg\n| civilization = Nature\n| type = Evolution Creature\n| jpname = {{Ruby|超|ちょう}}{{Ruby|神|しん}}{{Ruby|龍|りゅう}}バイラス・ゲイル\n| phonetic = Chō Shinryū Bairasu Geiru\n| cost = 5\n| race = Earth Dragon\n| power = 9000\n| engtext = ■ [[Evolution]]—Put on one of your [[creature]]s that has [[Dragon]] in its [[race]].\n\n■ After you [[cast]] a [[spell]] by using its \"[[shield trigger]]\" [[ability]], put it into your [[hand]] [[instead]] of your [[graveyard]].\n\n{{Double Breaker}}\n| jptext = ■  進化－自分のドラゴン1体の上に置く。\n\n■  このクリーチャーがバトルゾーンにある間、S・トリガーを使って自分の呪文を唱えたとき、その呪文を墓地に置くかわりに自分の手札に戻す。\n\n{{Double Breaker|jp}}\n| mana = 1\n| artist = Taro Yamazaki\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = S5/S5\n| R1 = Super Rare\n| set2 = DM-08 Invincible Legend\n| setnum2 = S5/S5\n| R2 = Super Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Spell Recovery]]"
+}

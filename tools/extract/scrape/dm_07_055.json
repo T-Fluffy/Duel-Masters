@@ -1,0 +1,23 @@
+{
+ "card_id": "dm_07_055",
+ "page": "World Tree, Root of Life",
+ "type": "Evolution Creature",
+ "civilization": "Nature",
+ "race": "Tree Folk",
+ "cost": "6",
+ "power": "7000+",
+ "engtext": "■ [[Evolution]]—Put on one of your [[Tree Folk]].\n\n{{Power Attacker|2000}}\n\n{{Stealth|Darkness}}\n\n{{Double Breaker}}",
+ "templates": [
+  "Double Breaker",
+  "Stealth|Darkness"
+ ],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "55/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "18/55",
+  "set3": "Promotional",
+  "setnum3": "L9 Y2"
+ },
+ "wiki": "{{Cardtable\n| image = World Tree, Root of Life.jpg\n| civilization = Nature\n| type = Evolution Creature\n| jpname = {{Ruby|世|せ}}{{Ruby|界|かい}}{{Ruby|樹|じゅ}}ユグドラジーガ ''(Yggdrasiga, World Tree)''\n| phonetic = Sekai Ju Yuggudarajīga\n| race = Tree Folk\n| cost = 6\n| power = 7000+\n| engtext = ■ [[Evolution]]—Put on one of your [[Tree Folk]].\n\n{{Power Attacker|2000}}\n\n{{Stealth|Darkness}}\n\n{{Double Breaker}}\n| jptext = ■ 進化－自分のツリー・フォーク1体の上に置く。\n\n{{Power Attacker|2000|jp}}\n\n■ 闇ステルス （相手のマナゾーンに闇のカードが1枚でもあれば、このクリーチャーはブロックされない）\n\n■ W ・ブレイカー　\n| flavor = \n| mana = 1\n| artist = D-Suzuki\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 55/55\n| R1 = Rare\n| set2 = DM-07 Invincible Charge\n| setnum2 = 18/55\n| R2 = Rare\n| set3 = Promotional\n| setnum3 = L9 Y2\n| R3 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:7000 Power Creatures]]"
+}

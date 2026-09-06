@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_03_018",
+ "page": "Legendary Bynor",
+ "type": "Evolution Creature",
+ "civilization": "Water",
+ "race": "Leviathan",
+ "cost": "6",
+ "power": "8000",
+ "engtext": "■ [[Evolution]]—Put on one of your [[Leviathan]]s.\n\n■ Your other [[water]] [[creature]]s in the [[battle zone]] can't be [[block]]ed.\n\n{{Double Breaker}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-03 Rampage of the Super Warriors",
+  "setnum1": "18/55",
+  "set2": "DM-03 Master of Destruction",
+  "setnum2": "2/55"
+ },
+ "wiki": "{{Cardtable\n| image= Legendary Bynor.jpg\n| civilization = Water\n| type = Evolution Creature\n| jpname = レジェンダリー・バイロン ''(Legendary Byron)''\n| phonetic = Rajendarii Bairon\n| race = Leviathan\n| cost = 6\n| power = 8000\n| engtext = ■ [[Evolution]]—Put on one of your [[Leviathan]]s.\n\n■ Your other [[water]] [[creature]]s in the [[battle zone]] can't be [[block]]ed.\n\n{{Double Breaker}}\n| jptext = ■ 進化－自分のリヴァイアサン1体の上に置く。\n\n{{Double Breaker|jp}}\n\n■ このクリーチャーがバトルゾーンにある間、バトルゾーンにある自分の他の水のクリーチャーはブロックされない。\n| flavor = \"I can see my ocean from here.\" ([[DM-03]])\n| mana = 1\n| artist = Seki\n| set1 = DM-03 Rampage of the Super Warriors\n| setnum1 = 18/55\n| R1 = Very Rare\n| set2 = DM-03 Master of Destruction\n| setnum2 = 2/55\n| R2 = Very Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Leviathan]]\n[[Category:Evolution Creature]]\n[[Category:8000 Power Creatures]]\n[[Category:Gives \"Unblockable\"]]"
+}

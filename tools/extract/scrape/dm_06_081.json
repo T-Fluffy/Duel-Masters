@@ -1,0 +1,24 @@
+{
+ "card_id": "dm_06_081",
+ "page": "Legionnaire Lizard",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Dune Gecko",
+ "cost": "6",
+ "power": "4000",
+ "engtext": "{{Speed Attacker}}\n\n{{Tap Ability|One of your [[creature]]s in the [[battle zone]] gets \"[[speed attacker]]\" until the [[End Step|end of the turn]].}}",
+ "templates": [
+  "Speed Attacker"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "81/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "95/44",
+  "set3": "DMC-09 Shobu's Dragon Legend Deck",
+  "setnum3": "34/44",
+  "set4": "DMC-20 Shobu's Holy Dragon Power-Up Pack",
+  "setnum4": "80/102"
+ },
+ "wiki": "{{Cardtable\n| image = Legionnaire Lizard.jpg\n| civilization = Fire\n| type = Creature\n| jpname = ムラマサ・リザード\n| phonetic = Muramasa Rizādo ''(Muramasa Lizard)''\n| cost = 6\n| race = Dune Gecko\n| power = 4000\n| engtext = {{Speed Attacker}}\n\n{{Tap Ability|One of your [[creature]]s in the [[battle zone]] gets \"[[speed attacker]]\" until the [[End Step|end of the turn]].}}\n| jptext = {{Speed Attacker|jp}}\n\n■ このクリーチャーで攻撃するかわりに、タップして次の{{Tap}}能力を使ってもよい。\n:{{Tap}} バトルゾーンにある自分のクリーチャーを1体は、このターンが終わるまで「スピードアタッカー」を得る。\n| flavor = \n| mana = 1\n| artist = Yarunoca\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 81/110\n| R1 = Common\n| set2 = DM-06 Invincible Soul\n| setnum2 = 95/44\n| R2 = Common\n| set3 = DMC-09 Shobu's Dragon Legend Deck\n| setnum3 = 34/44\n| R3 = Common\n| set4 = DMC-20 Shobu's Holy Dragon Power-Up Pack\n| setnum4 = 80/102\n| R4 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Gives \"Speed Attacker\"]]"
+}

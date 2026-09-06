@@ -1,0 +1,26 @@
+{
+ "card_id": "dm_09_041",
+ "page": "Relentless Blitz",
+ "type": "Spell",
+ "civilization": "Fire",
+ "race": "",
+ "cost": "3",
+ "power": "",
+ "engtext": "■ [[Choose a race]]. This [[turn]], each [[creature]] of that [[race]] can [[attack]] [[untap]]ped [[creature]]s and can't be [[block]]ed while [[attack]]ing a [[creature]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "41/55",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "51/55",
+  "set3": "DMC-14 Crimson Armorloids Deck",
+  "setnum3": "71/78",
+  "set4": "DMC-15 Eternal Dragons Deck",
+  "setnum4": "71/78",
+  "set5": "DMC-19 Zakira's Dragon Commander Deck",
+  "setnum5": "94/102",
+  "set6": "DMC-34 CoroCoro Dream Pack 2: Eternal Legacy",
+  "setnum6": "51/55"
+ },
+ "wiki": "{{Cardtable\n| image = Relentless Blitz.jpg\n| civilization = Fire\n| type = Spell\n| jpname = フル・コマンド\n| phonetic = Furu Komando ''(Full Command)''\n| cost = 3\n| engtext = ■ [[Choose a race]]. This [[turn]], each [[creature]] of that [[race]] can [[attack]] [[untap]]ped [[creature]]s and can't be [[block]]ed while [[attack]]ing a [[creature]].\n| jptext = ■ 種族を1つ選ぶ。このターン、その種族のクリーチャーは、アンタップされているクリーチャーを攻撃することができ、クリーチャーを攻撃する時ブロックされない。\n| flavor = At the signal, the warriors fell upon their foes like a crashing wave, leaving nothing but destruction in their wake. ([[DM-09]])\n| flavor2 = 左手のボタンが、殲滅の合図! \"The button on the left hand is the signal for annihilation!\" ([[DM-09]], [[DMC-14]], [[DMC-15]], [[DMC-19]], [[DMC-34]]) \n| mana = 1\n| artist = Jason\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = 41/55\n| R1 = Common\n| set2 = DM-09 Invincible Blood\n| setnum2 = 51/55\n| R2 = Common\n| set3 = DMC-14 Crimson Armorloids Deck\n| setnum3 = 71/78\n| R3 = Common\n| set4 = DMC-15 Eternal Dragons Deck\n| setnum4 = 71/78\n| R4 = Common\n| set5 = DMC-19 Zakira's Dragon Commander Deck\n| setnum5 = 94/102\n| R5 = Common\n| set6 = DMC-34 CoroCoro Dream Pack 2: Eternal Legacy\n| setnum6 = 51/55\n| R6 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Can Attack Untapped Creatures]]\n[[Category:Gives \"Unblockable\"]]"
+}

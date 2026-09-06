@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_06_014",
+ "page": "Bonds of Justice",
+ "type": "Spell",
+ "civilization": "Light",
+ "race": "",
+ "cost": "4",
+ "power": "",
+ "engtext": "{{Shield Trigger|spell}} \n\n■ [[Tap]] all [[creature]]s in the [[battle zone]] that don't have \"[[blocker]].\"",
+ "templates": [
+  "Shield Trigger|spell"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "14/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "16/110",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "22/140"
+ },
+ "wiki": "{{Cardtable\n| image = Bonds of Justice.jpg\n| civilization = Light\n| type = Spell\n| jpname = ジャスティス・バインド\n| phonetic = Jasutisu Baindo ''(Justice Bind)''\n| cost = 4\n| engtext = {{Shield Trigger|spell}} \n\n■ [[Tap]] all [[creature]]s in the [[battle zone]] that don't have \"[[blocker]].\"\n| jptext = {{Icon|ST}} S・トリガー （この呪文をシールドゾーンから手札に加える時、コストを支払わずにすぐ唱えてもよい）\n\n■ バトルゾーンにある、「ブロッカー」以外のクリーチャーをすべてタップする。\n| flavor = \"Need a lift?\" -[[Kanesill, the Explorer]] ([[DM-06]])\n| flavor2 = 断罪の時。The time of judgment. ([[DM-06]])\n| flavor3 = 正義の名の下に捕縛せよ! \"Capture them in the name of justice!\" ([[DM-18]])\n| mana = 1\n| artist = Katsuya \n| artist2 = Nakagawa \n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 14/110\n| R1 = Rare\n| set2 = DM-06 Invincible Soul\n| setnum2 = 16/110\n| R2 = Rare\n| set3 = DM-18 Best Challenger\n| setnum3 = 22/140\n| R3 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Mana Cost 4]]\n[[Category:Spell]]\n[[Category:Shield Trigger]]\n[[Category:Creature Tapper]]\n[[Category:Self Tapper]]"
+}

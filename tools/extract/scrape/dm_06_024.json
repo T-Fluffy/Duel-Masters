@@ -1,0 +1,24 @@
+{
+ "card_id": "dm_06_024",
+ "page": "Protective Force",
+ "type": "Spell",
+ "civilization": "Light",
+ "race": "",
+ "cost": "1",
+ "power": "",
+ "engtext": "{{Shield Trigger|spell}} \n\n■ One of your [[creature]]s in the [[battle zone]] that has \"[[blocker]]\" gets +4000 [[power]] until the [[End Step|end of the turn]].",
+ "templates": [
+  "Shield Trigger|spell"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "24/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "46/110",
+  "set3": "DMC-10 Hakuoh's Holy Spirit Deck ",
+  "setnum3": "14/44",
+  "set4": "DMC-20 Shobu's Holy Dragon Power-Up Pack ",
+  "setnum4": "24/102"
+ },
+ "wiki": "{{Cardtable\n| image = Protective Force.jpg\n| civilization = Light\n| type = Spell\n| jpname = プロテクト・フォース\n| phonetic = Purotekuto Fōsu ''(Protect Force)''\n| cost = 1\n| engtext = {{Shield Trigger|spell}} \n\n■ One of your [[creature]]s in the [[battle zone]] that has \"[[blocker]]\" gets +4000 [[power]] until the [[End Step|end of the turn]].\n| jptext = {{Icon|ST}} S・トリガー (この呪文をシールドゾーンから手札に加える時、コストを支払わずにすぐ唱えてもよい)\n\n■ バトルゾーンにある、自分の「ブロッカー」を持つクリーチャー1体のパワーは、このターンが終わるまで+4000される。\n| mana = 1\n| artist = Kou1\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 24/110\n| R1 = Uncommon\n| set2 = DM-06 Invincible Soul\n| setnum2 = 46/110\n| R2 = Uncommon\n| set3 = DMC-10 Hakuoh's Holy Spirit Deck \n| setnum3 = 14/44\n| R3 = Uncommon\n| set4 = DMC-20 Shobu's Holy Dragon Power-Up Pack \n| setnum4 = 24/102\n| R4 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Increase Power]]"
+}

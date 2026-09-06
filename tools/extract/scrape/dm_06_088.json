@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_06_088",
+ "page": "Rumblesaur Q",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Survivor",
+ "cost": "6",
+ "power": "3000",
+ "engtext": "{{Survivor||{{Speed Attacker|dotless}}}}",
+ "templates": [
+  "Speed Attacker|dotless"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "88/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "59/110",
+  "set3": "Promotional",
+  "setnum3": "L1 Y2"
+ },
+ "wiki": "{{Cardtable\n| image = Rumblesaur Q.jpg\n| civilization = Fire\n| type = Creature\n| jpname = スフィンティラノス{{Ruby|β|ベータ}} \n| kana = ベータ ''(Beta)''\n| phonetic = Sufintiranosu Bēta ''(Sphintilanos Beta)''\n| cost = 6\n| race = Survivor\n| race2 = Rock Beast\n| power = 3000\n| engtext = {{Survivor||{{Speed Attacker|dotless}}}}\n| jptext = {{Survivor|newjp|{{Speed Attacker|jpdotless}}}}\n| flavor = \"You'd run fast too, if you were on fire.\" ([[DM-06]])\n| flavor2 = 岩壁を裂き、炎の獅子が蘇る。The rock wall is torn apart, and the flame lion is resurrected. ([[DM-06]])\n| mana = 1\n| artist = Akira Hamada\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 88/110\n| R1 = Uncommon\n| set2 = DM-06 Invincible Soul\n| setnum2 = 59/110\n| R2 = Uncommon\n| set3 = Promotional\n| setnum3 = L1 Y2\n| R3 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Speed Attacker]]"
+}

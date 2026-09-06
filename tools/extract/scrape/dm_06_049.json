@@ -1,0 +1,30 @@
+{
+ "card_id": "dm_06_049",
+ "page": "Thrash Crawler",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Earth Eater",
+ "cost": "4",
+ "power": "5000",
+ "engtext": "{{Blocker|s}}\n\n■ [[When you put]] this [[creature]] into the [[battle zone]], return a [[card]] from your [[mana zone]] to your [[hand]].\n\n■ This [[creature]] can't [[attack]].",
+ "templates": [
+  "Blocker|s"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "49/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "50/110",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "60/140",
+  "set4": "DMC-24 Illusion Blue Half Deck",
+  "setnum4": "12/43",
+  "set5": "DMC-42 CoroCoro Dream Pack 3: Eternal Gear",
+  "setnum5": "41/90",
+  "set6": "DMX-07 Duel Madness! Heroes Victory Pack: Mission Roar Wilder",
+  "setnum6": "11/21",
+  "set7": "Promotional",
+  "setnum7": "P43/Y7, P44/Y7"
+ },
+ "wiki": "{{Cardtable\n| image = Thrash Crawler.jpg\n| civilization = Water\n| type = Creature\n| jpname = ストーム・クロウラー\n| phonetic = Sutōmu Kurourā ''(Storm Crawler)''\n| cost = 4\n| race = Earth Eater\n| power = 5000\n| engtext = {{Blocker|s}}\n\n■ [[When you put]] this [[creature]] into the [[battle zone]], return a [[card]] from your [[mana zone]] to your [[hand]].\n\n■ This [[creature]] can't [[attack]].\n| jptext = {{Blocker|jp}}\n\n■ このクリーチャーがバトルゾーンに出たとき、自分のマナゾーンからカードを1枚選び、自分の手札に戻す。\n\n■ このクリーチャーは攻撃することができない。\n| flavor = Erosion... with a vengeance. ([[DM-06]])\n| mana = 1\n| artist = Yoko Tsukamoto\n| artist2 = Shin \"JASON\" Nagasawa \n| artist3 = KAIRI SHOYAMA\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 49/110\n| R1 = Uncommon\n| set2 = DM-06 Invincible Soul\n| setnum2 = 50/110\n| R2 = Uncommon\n| set3 = DM-18 Best Challenger\n| setnum3 = 60/140\n| R3 = Uncommon\n| set4 = DMC-24 Illusion Blue Half Deck\n| setnum4 = 12/43\n| R4 = Uncommon\n| set5 = DMC-42 CoroCoro Dream Pack 3: Eternal Gear\n| setnum5 = 41/90\n| R5 = Uncommon\n| set6 = DMX-07 Duel Madness! Heroes Victory Pack: Mission Roar Wilder\n| setnum6 = 11/21\n| R6 = Uncommon\n| set7 = Promotional\n| setnum7 = P43/Y7, P44/Y7\n| R7 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Mana Recovery]]\n[[Category:Come Into Play Trigger]]\n[[Category:Card Recovery]]"
+}

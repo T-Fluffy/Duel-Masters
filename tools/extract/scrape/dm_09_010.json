@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_09_010",
+ "page": "Kalute, Vizier of Eternity",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Initiate",
+ "cost": "2",
+ "power": "1000",
+ "engtext": "■ When this [[creature]] would be [[destroy]]ed, if another '''Kalute, Vizier of Eternity''' is in the [[battle zone]], return this [[creature]] to your [[hand]] [[instead]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "10/55",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "38/55",
+  "set3": "DMC-17 Dark Warriors Deck",
+  "setnum3": "47/78"
+ },
+ "wiki": "{{Cardtable\n| image = Kalute, Vizier of Eternity.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|双|そう}}{{Ruby|光|こう}}の{{Ruby|使|し}}{{Ruby|徒|と}}カリュート\n| phonetic = Sōkō no Shito Karyūto\n| cost = 2\n| race = Initiate\n| power = 1000\n| engtext = ■ When this [[creature]] would be [[destroy]]ed, if another '''Kalute, Vizier of Eternity''' is in the [[battle zone]], return this [[creature]] to your [[hand]] [[instead]].\n| jptext = ■ このクリーチャーが破壊された時、バトルゾーンに('''双光の使徒カリュート''')が他に1体でもあれば、このクリーチャーを墓地に置くかわりに自分の手札に戻す。\n| flavor = 双光の使徒よ、覚醒せよ。汝の波動は永遠の詩なり。 \"Arise, Vizier of Eternity. Your aura is the poetry of time.\" —{{tooltip|Hanusa, Radiance Elemental}} ([[DM-09]], [[DMC-17]])\n| mana = 1\n| artist = Miya\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = 10/55\n| R1 = Common\n| set2 = DM-09 Invincible Blood\n| setnum2 = 38/55\n| R2 = Common\n| set3 = DMC-17 Dark Warriors Deck\n| setnum3 = 47/78\n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Destruction Substitution]]\n[[Category:Self Bounce]]"
+}

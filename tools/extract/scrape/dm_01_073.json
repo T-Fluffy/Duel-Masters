@@ -1,0 +1,24 @@
+{
+ "card_id": "dm_01_073",
+ "page": "Crimson Hammer",
+ "type": "Spell",
+ "civilization": "Fire",
+ "race": "",
+ "cost": "2",
+ "power": "",
+ "engtext": "■ [[Destroy]] 1 of your [[opponent]]'s [[creature]]s that has [[power]] 2000 or less.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "73/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "101/110",
+  "set3": "DMC-01 Shobu's Blaze Deck",
+  "setnum3": "43/43",
+  "set4": "DMC-23 Speed Burn Half Deck",
+  "setnum4": "37/43",
+  "set5": "DMC-42 CoroCoro Dream Pack 3: Eternal Gear",
+  "setnum5": "83/90"
+ },
+ "wiki": "{{Cardtable\n| image = Crimson Hammer.jpg\n| civilization = Fire\n| type = Spell\n| jpname = クリムゾン・ハンマー\n| phonetic = Kurimuzon Janmā\n| cost = 2\n| engtext = ■ [[Destroy]] 1 of your [[opponent]]'s [[creature]]s that has [[power]] 2000 or less.\n| jptext = ■ バトルゾーンにある、パワー2000以下の相手のクリーチャーを1体選び、持ち主の墓地に置く。\n| flavor = There's nothing a [[Machine Eater]] enjoys more than a good game of Whack-a-[[Aqua Hulcus|Hulcus]]. ([[DM-01]])\n| flavor2 = 油断は死を意味する…。 Overconfidence means death... ([[DM-01]], [[DMC-01]], [[DMC-23]], [[DMC-42]])\n| mana = 1\n| artist = Daisuke Izuka\n| set1 = DM-01 Base Set\n| setnum1 = 73/110\n| R1 = Common\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 101/110\n| R2 = Common\n| set3 = DMC-01 Shobu's Blaze Deck\n| setnum3 = 43/43\n| R3 = Common\n| set4 = DMC-23 Speed Burn Half Deck\n| setnum4 = 37/43\n| R4 = Common\n| set5 = DMC-42 CoroCoro Dream Pack 3: Eternal Gear\n| setnum5 = 83/90\n| R5 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Fire]]\n[[Category:Spell]]\n[[Category:Power Based Removal]]"
+}

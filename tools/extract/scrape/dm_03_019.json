@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_03_019",
+ "page": "Liquid Scope",
+ "type": "Spell",
+ "civilization": "Water",
+ "race": "",
+ "cost": "4",
+ "power": "",
+ "engtext": "{{Shield Trigger|spell}} \n\n■ [[Look]] at your [[opponent]]'s [[hand]] and [[shield]]s. Then put the [[shield]]s back where they were.",
+ "templates": [
+  "Shield Trigger|spell"
+ ],
+ "sets": {
+  "set1": "DM-03 Rampage of the Super Warriors",
+  "setnum1": "19/55",
+  "set2": "DM-03 Master of Destruction",
+  "setnum2": "43/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "109/140"
+ },
+ "wiki": "{{Cardtable\n| image= Liquid Scope.jpg\n| civilization = Water\n| type = Spell\n| jpname = リキッド・スコープ\n| phonetic = Rikiddo Sukōpu\n| cost = 4\n| engtext = {{Shield Trigger|spell}} \n\n■ [[Look]] at your [[opponent]]'s [[hand]] and [[shield]]s. Then put the [[shield]]s back where they were.\n| jptext = {{Icon|ST}} S・トリガー (この呪文をシールドゾーンから手札に加える時、コストを支払わずにすぐ唱えてもよい)\n\n■ 自分のマナゾーンからカードを1枚選び、自分の手札に戻す。\n相手の手札とシールドを見る。\n| flavor = \"Let's see if your brain is ticklish.\" -[[Legendary Bynor]] ([[DM-03]])\n| flavor2 =  見られたら、おしまいなんだよ! \"If you're seen, it's all over!\" ([[DM-03]])\n| mana = 1\n| artist = Akifumi Yamamoto\n| set1 = DM-03 Rampage of the Super Warriors\n| setnum1 = 19/55\n| R1 = Common\n| set2 = DM-03 Master of Destruction\n| setnum2 = 43/55\n| R2 = Common\n| set3 = DM-18 Best Challenger\n| setnum3 = 109/140\n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Shield Trigger]]\n[[Category:Spell]]\n[[Category:Hand Peek]]\n[[Category:Shield Peek]]"
+}

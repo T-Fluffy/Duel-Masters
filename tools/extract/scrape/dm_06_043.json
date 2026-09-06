@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_06_043",
+ "page": "Raptor Fish",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Gel Fish",
+ "cost": "6",
+ "power": "3000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], count the [[card]]s in your [[hand]], [[shuffle]] those [[card]]s into your [[deck]], then [[draw]] that many [[card]]s.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "43/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "20/110"
+ },
+ "wiki": "{{Cardtable\n| image = Raptor Fish.jpg\n| civilization = Water\n| type = Creature\n| jpname = ラプター・フィッシュ\n| phonetic = Raputā Fisshu\n| race = Gel Fish\n| cost = 6\n| power = 3000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], count the [[card]]s in your [[hand]], [[shuffle]] those [[card]]s into your [[deck]], then [[draw]] that many [[card]]s.\n| jptext = ■ このクリーチャーがバトルゾーンに出たとき、自分の手札を山札に戻してシャッフルし、その枚数と同じ枚数のカードを引く。\n| flavor = \"Its control chip is busted. Each time it blinks, I- Its control chip is busted. Each time it blinks, I-\" -[[Sopian]] ([[DM-06]])\n| flavor2 = サイバーロードは、より好戦的なチップを搭載させることにした。The Cyber Lords decided to equip it with more aggressive chips. ([[DM-06]])\n| mana = 1\n| artist = Atsushi Kawasaki\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 43/110\n| R1 = Rare\n| set2 = DM-06 Invincible Soul\n| setnum2 = 20/110\n| R2 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Gel Fish]]\n[[Category:3000 Power Creatures]]\n[[Category:Hand Change]]\n[[Category:Come Into Play Trigger]]"
+}

@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_06_099",
+ "page": "Feather Horn, the Tracker",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Horned Beast",
+ "cost": "4",
+ "power": "4000",
+ "engtext": "",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "99/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "67/110",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "84/140"
+ },
+ "wiki": "{{Cardtable\n| image = Feather Horn, the Tracker.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|激|げき}}{{Ruby|闘|とう}}するフェザー・ホーン\n| phonetic = Gekitō Suru Fezā Hōn\n| cost = 4\n| race = Horned Beast\n| power = 4000\n| flavor = \"If it's true that you are what you eat, it looks like somebody's been chowing down on way too many flamingos.\" -[[Kyuroro]] ([[DM-06]])\n| flavor2 = 綺麗な羽は彼らの心を鎮める御守り。だが、闇の行為への怒りははるかにそれを上回った。The beautiful feathers are a charm that calms their hearts. However, their anger toward the deeds of darkness far surpassed it. ([[DM-06]], [[DM-18]])\n| mana = 1\n| artist = Katsuhiko Kojoh\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 99/110\n| R1 = Uncommon\n| set2 = DM-06 Invincible Soul\n| setnum2 = 67/110\n| R2 = Uncommon\n| set3 = DM-18 Best Challenger\n| setnum3 = 84/140\n| R3 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Nature]]\n[[Category:Horned Beast]]\n[[Category:4000 Power Creatures]]\n[[Category:No Abilities]]"
+}

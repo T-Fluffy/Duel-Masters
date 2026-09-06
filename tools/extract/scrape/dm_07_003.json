@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_07_003",
+ "page": "Battleship Mutant",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Hedrian",
+ "cost": "6",
+ "power": "5000+",
+ "engtext": "{{Tap Ability|Until the [[End Step|end of the turn]], each of your [[darkness]] [[creature]]s in the [[battle zone]] gets +4000 [[power]] and \"[[double breaker]].\" Whenever any of those [[creature]]s [[battle]]s this [[turn]], [[destroy]] it after the [[battle]].}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "3/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "3/55"
+ },
+ "wiki": "{{Cardtable\n| image = Battleship Mutant.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|戦|せん}}{{Ruby|艦|かん}}{{Ruby|男|おとこ}}\n| phonetic = Senkan Otoko\n| race = Hedrian\n| cost = 6\n| power = 5000+\n| engtext = {{Tap Ability|Until the [[End Step|end of the turn]], each of your [[darkness]] [[creature]]s in the [[battle zone]] gets +4000 [[power]] and \"[[double breaker]].\" Whenever any of those [[creature]]s [[battle]]s this [[turn]], [[destroy]] it after the [[battle]].}}\n| jptext = ■ このクリーチャーで攻撃するかわりに、タップして次の{{Tap}}能力を使ってもよい。\n:{{Tap}} このターンが終わるまで、バトルゾーンにある自分の闇のクリーチャーすべてのパワーは+4000され、「W・ブレイカー」を得る。このターンにバトルした自分の闇のクリーチャーは、バトルの後、勝っても自分の墓地に置かれる。\n| flavor = \n| mana = 1\n| artist = Masaki Hirooka\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 3/55\n| R1 = Very Rare\n| set2 = DM-07 Invincible Charge\n| setnum2 = 3/55\n| R2 = Very Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Hedrian]]\n[[Category:Tap Ability]]\n[[Category:5000 Power Creatures]]\n[[Category:Reverse Slayer]]\n[[Category:Gives \"Double Breaker\"]]\n[[Category:Conditional Double Breaker]]\n[[Category:Self Increase Power]]\n[[Category:Increase Power]]"
+}

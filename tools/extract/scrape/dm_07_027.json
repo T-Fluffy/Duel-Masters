@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_07_027",
+ "page": "Gezary, Undercover Doll",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Death Puppet",
+ "cost": "3",
+ "power": "2000",
+ "engtext": "{{Stealth|Nature}}",
+ "templates": [
+  "Stealth|Nature"
+ ],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "27/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "45/55"
+ },
+ "wiki": "{{Cardtable\n| image = Gezary, Undercover Doll.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|隠|おん}}{{Ruby|密|みつ}}{{Ruby|人|にん}}{{Ruby|形|ぎょう}}ゲザリー\n| phonetic = Onmitsu Ningyō Gezarii\n| cost = 3\n| race = Death Puppet\n| power = 2000\n| engtext = {{Stealth|Nature}}\n| jptext = ■ 自然ステルス （相手のマナゾーンに自然のカードが1枚でもあれば、このクリーチャーはブロックされない）　\n| flavor = \"The strings that make it dance come from deep within the ground. Wait... that doesn't make any sense....\" -[[Tangle Fist, the Weaver|Tangle Fist]] ([[DM-07]])\n| flavor2 = 地底から密かに伸びる操りの糸。その正体は誰も知らない。The strings of control secretly extend from the underground. Their true nature is unknown to all. ([[DM-07]]) \n| mana = 1\n| artist = Imo Kajii\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 27/55\n| R1 = Common\n| set2 = DM-07 Invincible Charge\n| setnum2 = 45/55\n| R2 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]"
+}

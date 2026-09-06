@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_03_025",
+ "page": "Eldritch Poison",
+ "type": "Spell",
+ "civilization": "Darkness",
+ "race": "",
+ "cost": "1",
+ "power": "",
+ "engtext": "{{Shield Trigger|spell}} \n\n■ You may [[destroy]] one of your [[darkness]] [[creature]]s. If you do, return a [[creature]] from your [[mana zone]] to your [[hand]].",
+ "templates": [
+  "Shield Trigger|spell"
+ ],
+ "sets": {
+  "set1": "DM-03 Rampage of the Super Warriors",
+  "setnum1": "25/55",
+  "set2": "DM-03 Master of Destruction",
+  "setnum2": "29/55",
+  "set3": "DMEX-08 Mysterious Black Box Pack",
+  "setnum3": "90/???"
+ },
+ "wiki": "{{Cardtable\n| image= Eldritch Poison.jpg\n| civilization = Darkness\n| type = Spell\n| jpname = {{Ruby|魔|ま}}{{Ruby|流|りゅう}}{{Ruby|毒|どく}}\n| phonetic = Maryuu Doku\n| cost = 1\n| engtext = {{Shield Trigger|spell}} \n\n■ You may [[destroy]] one of your [[darkness]] [[creature]]s. If you do, return a [[creature]] from your [[mana zone]] to your [[hand]].\n| jptext = {{Icon|ST}} S・トリガー (この呪文をシールドゾーンから手札に加える時、コストを支払わずにすぐ唱えてもよい)\n\n■ 自分の闇のクリーチャーを1体破壊しなければ、この呪文を唱えることはできない。\n\n■ クリーチャーを1体、自分のマナゾーンから手札に戻す。\n| flavor = \n| mana = 1\n| artist = Masaki Hirooka\n| set1 = DM-03 Rampage of the Super Warriors\n| setnum1 = 25/55\n| R1 = Uncommon\n| set2 = DM-03 Master of Destruction\n| setnum2 = 29/55\n| R2 = Uncommon\n| set3 = DMEX-08 Mysterious Black Box Pack\n| setnum3 = 90/???\n| R3 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Mana Recovery]]\n[[Category:Self Removal]]"
+}

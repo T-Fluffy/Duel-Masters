@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_07_017",
+ "page": "Aqua Fencer",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Liquid People",
+ "cost": "7",
+ "power": "3000",
+ "engtext": "{{Tap Ability|Choose a [[card]] in your [[opponent]]'s [[mana zone]] and return it to his [[hand]].}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "17/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "10/55",
+  "set3": "Promotional",
+  "setnum3": "P11/Y2"
+ },
+ "wiki": "{{Cardtable\n| image = Aqua Fencer.jpg\n| civilization = Water\n| type = Creature\n| jpname = アクア・フェンサー\n| phonetic = Akua Fensā\n| race = Liquid People\n| cost = 7\n| power = 3000\n| engtext = {{Tap Ability|Choose a [[card]] in your [[opponent]]'s [[mana zone]] and return it to his [[hand]].}}\n| jptext = ■ このクリーチャーで攻撃するかわりに、タップして次の{{Tap}}能力を使ってもよい。\n:{{Tap}} 相手のマナゾーンからカードを1枚選ぶ。相手はそれを持ち主の手札に戻す。\n| flavor = His [[opponent]]s end up beside themselves in anger. ([[DM-07]])\n| flavor2 = 無言で敵を切り刻む。Silently, they slice through the enemy. ([[DM-07]])\n| mana = 1\n| artist = Yoshio Sugiura\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 17/55\n| R1 = Rare\n| set2 = DM-07 Invincible Charge\n| setnum2 = 10/55\n| R2 = Rare\n| set3 = Promotional\n| setnum3 = P11/Y2\n| R3 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Tap Ability]]\n[[Category:Mana Bounce]]"
+}

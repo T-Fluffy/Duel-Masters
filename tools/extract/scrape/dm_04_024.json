@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_04_024",
+ "page": "Keeper of the Sunlit Abyss",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Cyber Virus",
+ "cost": "4",
+ "power": "2000",
+ "engtext": "■ [[Light]] and [[darkness]] [[creature]]s in the [[battle zone]] each get +1000 [[power]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-04 Shadowclash of Blinding Night",
+  "setnum1": "24/55",
+  "set2": "DM-04 Challenge of Black Shadow ",
+  "setnum2": "41/55",
+  "set3": "Promotional",
+  "setnum3": "24/55 (German)"
+ },
+ "wiki": "{{Cardtable\n| image = Keeper of the Sunlit Abyss.jpg\n| civilization = Water\n| type = Creature\n| jpname = チアフル・アビス\n| phonetic = Chiafuru Abisu ''(Cheerful Abyss)''\n| cost = 4\n| race = Cyber Virus\n| power = 2000\n| engtext = ■ [[Light]] and [[darkness]] [[creature]]s in the [[battle zone]] each get +1000 [[power]].\n| jptext = ■ このクリーチャーがバトルゾーンにある間、バトルゾーンにある光と闇のクリーチャーすべてのパワーはそれぞれ+1000される。\n| flavor = \"Why do [[light]] and [[darkness|dark]] fight as they do? The more friends you have, the more birthday presents you get!\" ([[DM-04]])\n| flavor2 = 光と闇は何故争うの? \"Why do light and darkness fight?\" ([[DM-04]])\n| mana = 1\n| artist = Ryoya Yuki \n| set1 = DM-04 Shadowclash of Blinding Night\n| setnum1 = 24/55\n| R1 = Common\n| set2 = DM-04 Challenge of Black Shadow \n| setnum2 = 41/55\n| R2 = Common\n| set3 = Promotional\n| setnum3 = 24/55 (German)\n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]"
+}

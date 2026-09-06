@@ -1,0 +1,30 @@
+{
+ "card_id": "dm_06_021",
+ "page": "Kanesill, the Explorer",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Gladiator",
+ "cost": "3",
+ "power": "4000",
+ "engtext": "{{Blocker}}\n\n■ This [[creature]] can't [[attack]] [[player]]s.",
+ "templates": [
+  "Blocker"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "21/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "73/110",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "92/180",
+  "set4": "DMC-05 Lightning Thunder Deck",
+  "setnum4": "43/82",
+  "set5": "DMC-10 Hakuoh's Holy Spirit Deck ",
+  "setnum5": "24/44",
+  "set6": "DMC-20 Shobu's Holy Dragon Power-Up Pack",
+  "setnum6": "53/102",
+  "set7": "DMC-27 CoroCoro Dream Pack",
+  "setnum7": "38/55"
+ },
+ "wiki": "{{Cardtable\n| image = Kanesill, the Explorer.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|宣|せん}}{{Ruby|凶|きょう}}{{Ruby|師|し}}キンゼラ\n| phonetic = Senkyoushi Kinzera\n| race = Gladiator\n| cost = 3\n| power = 4000\n| engtext = {{Blocker}}\n\n■ This [[creature]] can't [[attack]] [[player]]s.\n| jptext = {{Blocker|jp}}\n\n■ このクリーチャーは、相手プレイヤーを攻撃できない。\n| flavor = The [[Gladiator]]s' only job is to study the science of war. They like their job. ([[DM-06]])\n| flavor2 = 戦禍の疲弊を癒すため、宣凶師は地上へと降り立った。To heal the weariness of war, the Explorers descended to the earth. ([[DM-06]], [[DMC-05]], [[DMC-10]], [[DMC-20]], [[DMC-27]])\n| flavor3 = 現れたキンゼラの威容に、人々はただただ驚くのみだった。The people could only be in awe of the imposing presence of Kanesill as it appeared. ([[DM-18]])\n| mana = 1\n| artist = Akifumi Yamamoto\n| artist2 = Ken Sugawara\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 21/110\n| R1 = Common\n| set2 = DM-06 Invincible Soul\n| setnum2 = 73/110\n| R2 = Common\n| set3 = DM-18 Best Challenger\n| setnum3 = 92/180\n| R3 = Common\n| set4 = DMC-05 Lightning Thunder Deck\n| setnum4 = 43/82\n| R4 = Common\n| set5 = DMC-10 Hakuoh's Holy Spirit Deck \n| setnum5 = 24/44\n| R5 = Common\n| set6 = DMC-20 Shobu's Holy Dragon Power-Up Pack\n| setnum6 = 53/102\n| R6 = Common\n| set7 = DMC-27 CoroCoro Dream Pack\n| setnum7 = 38/55\n| R7 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Gladiator]]\n[[Category:4000 Power Creatures]]"
+}

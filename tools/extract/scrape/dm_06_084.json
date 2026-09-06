@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_06_084",
+ "page": "Picora's Wrench",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Xenoparts",
+ "cost": "2",
+ "power": "2000",
+ "engtext": "",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "84/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "100/110",
+  "set3": "DMC-05 Lightning Thunder Deck",
+  "setnum3": "70/82"
+ },
+ "wiki": "{{Cardtable\n| image = Picora&#39;s Wrench.jpg\n| civilization = Fire\n| type = Creature\n| jpname = ピコラのスパナ\n| phonetic = Pikora no Supana ''(Picora's Spanner)''\n| cost = 2\n| race = Xenoparts\n| power = 2000\n| flavor = \"The [[Machine Eater]]s are a race of inventors and mechanics. One day, bored out of their minds, they decided it would be funny to grant life to their tools-and the [[Xenoparts|XenoParts]] were born.\" ([[DM-06]])\n| flavor2 = 砕け散った大地から、マシンイーターは古代の部品を掘り起こした。From the shattered earth, the Machine Eaters unearthed ancient parts. ([[DM-06]], [[DMC-05]], [[DMS-02]])\n| mana = 1\n| artist = Dai\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 84/110\n| R1 = Common\n| set2 = DM-06 Invincible Soul\n| setnum2 = 100/110\n| R2 = Common\n| set3 = DMC-05 Lightning Thunder Deck\n| setnum3 = 70/82\n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Fire]]\n[[Category:Xenoparts]]\n[[Category:2000 Power Creatures]]\n[[Category:No Abilities]]"
+}

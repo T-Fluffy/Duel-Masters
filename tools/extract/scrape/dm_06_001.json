@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_06_001",
+ "page": "Invincible Aura",
+ "type": "Spell",
+ "civilization": "Light",
+ "race": "",
+ "cost": "13",
+ "power": "",
+ "engtext": "■ Add up to 3 [[card]]s from the top of your [[deck]] to your [[shield]]s [[face down]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "1/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "2/110"
+ },
+ "wiki": "{{Cardtable\n| image = Invincible Aura.jpg\n| civilization = Light\n| type = Spell\n| jpname = インビンシブル・オーラ\n| phonetic = Inbinshiburu Ōra\n| cost = 13\n| engtext = ■ Add up to 3 [[card]]s from the top of your [[deck]] to your [[shield]]s [[face down]].\n| jptext = ■ 自分の山札のカードを上から3枚まで、自分のシールドに加える.\n| flavor = The [[Fire]] army has enough firepower to lay waste to a planet-but even that isn't enough to bring down the wall of [[Light]]. ([[DM-06]])\n| flavor2 = 星さえも消滅させる[[Invincible Cataclysm|苛烈な火の攻撃]]。だがしかし、光の盾には通じなかった。A [[Invincible Cataclysm|fierce fire attack]] capable of extinguishing even stars. However, it failed to penetrate the shield of light. ([[DM-06]])\n| mana = 1\n| artist = Masaki Hirooka\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 1/110\n| R1 = Very Rare\n| set2 = DM-06 Invincible Soul\n| setnum2 = 2/110\n| R2 = Very Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Shield Addition]]"
+}

@@ -1,0 +1,30 @@
+{
+ "card_id": "dm_03_031",
+ "page": "Scratchclaw",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Hedrian",
+ "cost": "4",
+ "power": "1000+",
+ "engtext": "{{Slayer|old}}\n\n■ This [[creature]] gets +1000 [[power]] for each other [[darkness]] [[creature]] you have in the [[battle zone]].",
+ "templates": [
+  "Slayer|old"
+ ],
+ "sets": {
+  "set1": "DM-03 Rampage of the Super Warriors",
+  "setnum1": "31/55",
+  "set2": "Shadowclash Collector Tin",
+  "setnum2": "29/46",
+  "set3": "DM-03 Master of Destruction",
+  "setnum3": "13/55",
+  "set4": "DM-18 Best Challenger",
+  "setnum4": "33/140",
+  "set5": "DMC-02 Kokujo's Darkness Deck",
+  "setnum5": "6/43",
+  "set6": "DMC-08 Endless Black Hole Deck",
+  "setnum6": "9/82",
+  "set7": "DMC-21 Zakira's Dragon Commander Power-Up Pack",
+  "setnum7": "11/102"
+ },
+ "wiki": "{{Cardtable\n| image = Scratchclaw.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|牙|きば}}{{Ruby|男|おとこ}}\n| phonetic = Kibao Otoko\n| cost = 4\n| race = Hedrian\n| power = 1000+\n| engtext = {{Slayer|old}}\n\n■ This [[creature]] gets +1000 [[power]] for each other [[darkness]] [[creature]] you have in the [[battle zone]].\n| jptext = {{Slayer|jp}}\n\n■ このクリーチャーのパワーは、バトルゾーンにある自分の他の闇のクリーチャー1体につき＋1０００される。\n| flavor = \"Uh oh. My nose itches!\" ([[DM-03]])\n| flavor2 = ヘドロに漂うものを武器に彼らは襲いくる。\"They attack with what drifts in the sludge as their weapon.\" ([[DM-03]], [[DM-18]], [[DMC-02]], [[DMC-08]])\n| flavor3 = 奴が断れぬ要求をしてやろう。 \"Let's make a request that cannot be refused.\" ─'''Scratchlaw''' ([[DMC-21]])\n| mana = 1\n| artist = Seki\n| set1 = DM-03 Rampage of the Super Warriors\n| setnum1 = 31/55\n| R1 = Rare\n| set2 = Shadowclash Collector Tin\n| setnum2 = 29/46\n| R2 = Rare\n| set3 = DM-03 Master of Destruction\n| setnum3 = 13/55\n| R3 = Rare\n| set4 = DM-18 Best Challenger\n| setnum4 = 33/140\n| R4 = Rare\n| set5 = DMC-02 Kokujo's Darkness Deck\n| setnum5 = 6/43\n| R5 = Rare\n| set6 = DMC-08 Endless Black Hole Deck\n| setnum6 = 9/82\n| R6 = Rare\n| set7 = DMC-21 Zakira's Dragon Commander Power-Up Pack\n| setnum7 = 11/102\n| R7 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Hedrian]]\n[[Category:Slayer]]\n[[Category:1000 Power Creatures]]\n[[Category:Self Increase Power]]"
+}

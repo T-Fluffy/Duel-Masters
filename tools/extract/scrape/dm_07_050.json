@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_07_050",
+ "page": "Launch Locust",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Giant Insect",
+ "cost": "3",
+ "power": "2000+",
+ "engtext": "■ While [[attack]]ing, this [[creature]] gets +1000 [[power]] for each other [[creature]] you have in the [[battle zone]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "50/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "54/55"
+ },
+ "wiki": "{{Cardtable\n| image = Launch Locust.jpg\n| civilization = Nature\n| type = Creature\n| jpname = ランチャー・スパイダー\n| phonetic = Ranchā Supaidā ''(Launcher Spider)''\n| cost = 3\n| race = Giant Insect\n| power = 2000+\n| engtext = ■ While [[attack]]ing, this [[creature]] gets +1000 [[power]] for each other [[creature]] you have in the [[battle zone]].\n| jptext = ■ 攻撃中、このクリーチャーのパワーは、バトルゾーンにある自分の他のクリーチャー1体につき、+1000される。\n| flavor = It's great for mashing mosquitos, scaring off [[Armored Wyvern|skyterror]]s, and putting on totally awesome fireworks displays. ([[DM-07]])\n| flavor2 = こいつが居れば、空の守りは万全だ! With this guy around, the sky's defense is perfect! —[[Silver Axe]] ([[DM-07]])\n| mana = 1\n| artist = Takesi Kuno\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 50/55\n| R1 = Common\n| set2 = DM-07 Invincible Charge\n| setnum2 = 54/55\n| R2 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:2000 Power Creatures]]\n[[Category:Self Increase Power]]\n[[Category:Attack Trigger]]"
+}

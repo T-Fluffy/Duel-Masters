@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_09_036",
+ "page": "Aerodactyl Kooza",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Armorloid",
+ "cost": "3",
+ "power": "1000+",
+ "engtext": "■ While [[attack]]ing a [[creature]], this [[creature]] can't be [[block]]ed.\n\n{{Power Attacker|3000}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "36/55",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "50/55",
+  "set3": "DMC-14 Crimson Armorloids Deck ",
+  "setnum3": "69/78",
+  "set4": "DMC-18 Shobu's Holy Dragon Deck ",
+  "setnum4": "87/102"
+ },
+ "wiki": "{{Cardtable\n| image = Aerodactyl Kooza.jpg\n| civilization = Fire\n| type = Creature\n| jpname = {{Ruby|鳥|ちょう}}{{Ruby|神|しん}}{{Ruby|兵|へい}}クウザ\n| phonetic = Chō Shinhei Kuuza\n| cost = 3\n| race = Armorloid\n| power = 1000+\n| engtext = ■ While [[attack]]ing a [[creature]], this [[creature]] can't be [[block]]ed.\n\n{{Power Attacker|3000}}\n| jptext = ■ このクリーチャーは、クリーチャーを攻撃するときブロックされない。\n\n{{Power Attacker|3000|jp}}\n| flavor = Never say anything an aerodactyl is likely to agree with. Having it nod at you can be fatal. ([[DM-09]])\n| flavor2 = バトル上等! \"Battle accepted!\" ([[DM-09]], [[DMC-14]], [[DMC-18]])\n| mana = 1\n| artist = Hisashi Momose\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = 36/55\n| R1 = Common\n| set2 = DM-09 Invincible Blood\n| setnum2 = 50/55\n| R2 = Common\n| set3 = DMC-14 Crimson Armorloids Deck \n| setnum3 = 69/78\n| R3 = Common\n| set4 = DMC-18 Shobu's Holy Dragon Deck \n| setnum4 = 87/102\n| R4 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Unblockable]]\n[[Category:1000 Power Creatures]]"
+}

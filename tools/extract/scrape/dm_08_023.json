@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_08_023",
+ "page": "Prowling Elephish",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Gel Fish",
+ "cost": "4",
+ "power": "2000",
+ "engtext": "{{Blocker}}",
+ "templates": [
+  "Blocker"
+ ],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "23/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "25/55"
+ },
+ "wiki": "{{Cardtable\n| image = Prowling Elephish.jpg\n| civilization = Water\n| type = Creature\n| jpname = テンペスト・キラーホエール\n| phonetic = Tenpesuto Kirāhoēru\n| race = Gel Fish\n| cost = 4\n| power = 2000\n| engtext = {{Blocker}}\n| jptext = {{Blocker|jp}}\n| flavor = \"I knew the laws of nature could bend. I didn't know they could be twisted into a pretzel.\" —[[Mini Titan Gett]] ([[DM-08]])\n| flavor2 = 「危険になったら、戻ってね」\"If it becomes dangerous, come back.\"　—[[Shtra]] ([[DM-08]])\n| mana = 1\n| artist = Fruit Parfait\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 23/55\n| R1 = Uncommon\n| set2 = DM-08 Invincible Legend\n| setnum2 = 25/55\n| R2 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]"
+}

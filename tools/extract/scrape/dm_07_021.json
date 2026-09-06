@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_07_021",
+ "page": "Garatyano",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Sea Hacker",
+ "cost": "4",
+ "power": "2000",
+ "engtext": "{{Tap Ability|[[Look]] at the top 3 [[card]]s of your [[deck]]. Then put them back in any order.}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "21/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "42/55"
+ },
+ "wiki": "{{Cardtable\n| image = Garatyano.jpg\n| civilization = Water\n| type = Creature\n| jpname = ガラティアヌス\n| phonetic = Garatianusu ''(Galatianus)''\n| cost = 4\n| race = Sea Hacker\n| power = 2000\n| engtext = {{Tap Ability|[[Look]] at the top 3 [[card]]s of your [[deck]]. Then put them back in any order.}}\n| jptext = ■ このクリーチャーで攻撃するかわりに、タップして次の{{Tap}}能力を使ってもよい。\n:{{Tap}} 自分の山札のカードを上から3枚見る。その後、これを好きな順番で元に戻す。\n| flavor = 予想外の事態に対応するため、サイバーロードは見向きもしなかった深海の厄介者をも改造し自軍に取り込み始めた。To cope with their unexpected setbacks, the [[Cyber Lord]]s began recruiting and modifying even the most resistant inhabitants of the sea. ([[DM-07]])\n| mana = 1\n| artist = Hikaru Ikusa\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 21/55\n| R1 = Common\n| set2 = DM-07 Invincible Charge\n| setnum2 = 42/55\n| R2 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Deck Manipulation]]"
+}

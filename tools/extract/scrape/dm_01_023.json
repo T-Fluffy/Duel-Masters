@@ -1,0 +1,32 @@
+{
+ "card_id": "dm_01_023",
+ "page": "Aqua Hulcus",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Liquid People",
+ "cost": "3",
+ "power": "2000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], you may [[draw]] a [[card]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "23/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "80/110",
+  "set3": "DMD-02 Start Dash Deck: Water & Darkness",
+  "setnum3": "10/15",
+  "set4": "DMD-17 Beginning Dragon Deck: Crystal Memory Dragon",
+  "setnum4": "11/14",
+  "set5": "DMX-20 Deck Ultimate Perfection!! Due-Max 160 ~Revolution & Invasion~",
+  "setnum5": "55/68",
+  "set6": "DMR-20 Gyuujinmaru's True Identity!!",
+  "setnum6": "51/70",
+  "set8": "DMEX-08 Mysterious Black Box Pack",
+  "setnum8": "247/???",
+  "set9": "Promotional",
+  "setnum9": "M9/Y1",
+  "set10": "Promotional",
+  "setnum10": "T5 Y1"
+ },
+ "wiki": "{{Cardtable\n| image = Aqua Hulcus.jpg\n| civilization = Water\n| type = Creature\n| jpname = アクア・ハルカス\n| phonetic = Akua Harukasu \n| cost = 3\n| race = Liquid People\n| power = 2000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], you may [[draw]] a [[card]].\n| jptext = ■ このクリーチャーがバトルゾーンに出たとき、カードを1枚引いてよい。\n| flavor = リキッド・ピープルは液体を自在に操る。彼らにとって、水は鎧であり剣である。 [[Liquid People]] freely control liquid. For them, water is armor and shield. ([[DM-01]], M9/Y1, T3 Y1)\n| flavor2 = チャンスを物にしろ! それが切り札を引き当てる鍵! \"Seize the opportunity! That's the key to drawing your trump card!\" —'''Aqua Hulcus''' ([[DMD-02]])\n| flavor3 = 「龍素」はドラゴンの中だけでなく、様々なものの中に存在している。それらを抽出するための計算式が、龍程式である。'Dragment' exists not only within dragons but also within various things. The formula used to extract it is known as the Dragon Formula. ([[DMD-17]])\n| flavor4 = ドローして後続を補給して息をもつかせぬ猛攻をみせるっちゃ！さすが殿堂カードだっちゃ! Draw cards, replenish the next wave, and launch an unrelenting assault! As expected of a Hall of Fame card! ([[DMX-20]])\n| flavor5 = S級侵略者を失ったギュウジン丸は最終侵略ウイルスを持って「禁断の世界」へと向かった。しかし、そこにはふたりのドギラゴンがいるのだ! \"Having lost its [[S-Rank Invader]], [[Gyuujinmaru, Legendary Identity|Gyuujinmaru]] headed toward the 'Forbidden World' carrying the final invasion virus. However, there are two Dogiragons waiting there!\" ([[DMR-20]])\n| mana = 1\n| artist = Eiji Kaneda\n| set1 = DM-01 Base Set\n| setnum1 = 23/110\n| R1 = Common\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 80/110\n| R2 = Common\n| set3 = DMD-02 Start Dash Deck: Water & Darkness\n| setnum3 = 10/15\n| R3 = Common\n| set4 = DMD-17 Beginning Dragon Deck: Crystal Memory Dragon\n| setnum4 = 11/14\n| R4 = Common\n| set5 = DMX-20 Deck Ultimate Perfection!! Due-Max 160 ~Revolution & Invasion~\n| setnum5 = 55/68\n| R5 = Common\n| set6 = DMR-20 Gyuujinmaru's True Identity!!\n| setnum6 = 51/70\n| R6 = Common\n| set8 = DMEX-08 Mysterious Black Box Pack\n| setnum8 = 247/???\n| R8 = Common\n| set9 = Promotional\n| setnum9 = M9/Y1\n| R9 = No Rarity\n| set10 = Promotional\n| setnum10 = T5 Y1\n| R10 = Common\n}}\n{{Hulcus}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Card Draw]]\n[[Category:Come Into Play Trigger]]"
+}

@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_01_042",
+ "page": "Tropico",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Cyber Lord",
+ "cost": "5",
+ "power": "3000",
+ "engtext": "■ This [[creature]] can't be [[block]]ed while you have at least 2 other [[creature]]s in the [[battle zone]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "42/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "19/110",
+  "set3": "Promotional",
+  "setnum3": "P5/Y0"
+ },
+ "wiki": "{{Cardtable\n| image = Tropico.jpg\n| civilization = Water\n| type = Creature\n| jpname = トロピコ\n| phonetic = Toropiko\n| cost = 5\n| race = Cyber Lord\n| power = 3000\n| engtext = ■ This [[creature]] can't be [[block]]ed while you have at least 2 other [[creature]]s in the [[battle zone]].\n| jptext = ■ バトルゾーンに自分のクリーチャーが他に2体以上出ているなら、このクリーチャーはブロックされない。\n| flavor = \"I will lead you into battle.\" ([[DM-01 Base Set|DM-01]])\n| flavor2 = 「おまえたち、ボクについてこい。」 \"You guys, follow me.\" ―'''Tropico''' ([[DM-01 Base Set (OCG)|DM-01]])\n| mana = 1\n| artist = Jason\n| set1 = DM-01 Base Set\n| setnum1 = 42/110\n| R1 = Rare\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 19/110\n| R2 = Rare\n| set3 = Promotional\n| setnum3 = P5/Y0\n| R3 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Unblockable]]"
+}

@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_02_s02",
+ "page": "Crystal Paladin",
+ "type": "Evolution Creature",
+ "civilization": "Water",
+ "race": "Liquid People",
+ "cost": "4",
+ "power": "5000",
+ "engtext": "■ [[Evolution]]—Put on one of your [[Liquid People]].\n\n■ [[When you put]] this [[creature]] into the [[battle zone]], return all [[creature]]s in the [[battle zone]] that have \"[[blocker]]\" to their [[owner]]s' [[hand]]s.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "S2/S5",
+  "set2": "DM-02 Master of Evolution",
+  "setnum2": "S2/S5",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "S3/S10",
+  "set4": "DMC-42 CoroCoro Dream Pack 3: Eternal Gear",
+  "setnum4": "4/90"
+ },
+ "wiki": "{{Cardtable\n| image=Crystal Paladin.jpg\n| civilization = Water\n| type = Evolution Creature\n| jpname = クリスタル・パラディン\n| phonetic = Kurisutaru Paradin\n| cost = 4\n| race = Liquid People\n| power = 5000\n| engtext = ■ [[Evolution]]—Put on one of your [[Liquid People]].\n\n■ [[When you put]] this [[creature]] into the [[battle zone]], return all [[creature]]s in the [[battle zone]] that have \"[[blocker]]\" to their [[owner]]s' [[hand]]s.\n| jptext = ■ 進化—自分のリキッド・ピープル1体の上に置く。\n\n■ このクリーチャーをバトルゾーンに出した時、バトルゾーンにある「ブロッカー」を持つクリーチャーをすべて、持ち主の手札に戻す。\n| flavor = \n| mana = 1\n| artist = Eiji Kaneda \n| artist2 = Norikatsu Miyoshi \n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = S2/S5\n| R1 = Super Rare\n| set2 = DM-02 Master of Evolution\n| setnum2 = S2/S5\n| R2 = Super Rare\n| set3 = DM-18 Best Challenger\n| setnum3 = S3/S10\n| R3 = Super Rare\n| set4 = DMC-42 CoroCoro Dream Pack 3: Eternal Gear\n| setnum4 = 4/90\n| R4 = Super Rare\n}}\n{{Paladin}}\n[[Category:OCG]]\n[[Category:TCG]]\n[[Category:Bounce]]\n[[Category:Blocker Based Removal]]\n[[Category:Mass Removal]]\n[[Category:Self Bounce]]\n[[Category:Come Into Play Trigger]]"
+}

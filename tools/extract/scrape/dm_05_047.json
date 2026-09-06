@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_05_047",
+ "page": "Balloonshroom Q",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Survivor",
+ "cost": "4",
+ "power": "2000",
+ "engtext": "{{Survivor}} When this [[creature]] would be [[destroy]]ed, put it into your [[mana zone]] [[instead]].",
+ "templates": [
+  "Survivor"
+ ],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "47/55",
+  "set2": "DM-05 Return of the Survivor",
+  "setnum2": "34/55",
+  "set3": "DMEX-08 Mysterious Black Box Pack",
+  "setnum3": "95/???"
+ },
+ "wiki": "{{Cardtable\n| image = Balloonshroom Q.jpg\n| civilization = Nature\n| type = Creature\n| jpname = フウセンアワダケ{{Ruby|β|ベータ}} ''(Fuusenawadake Beta)''\n| kana = ベータ ''(Beta)''\n| phonetic = Fuusenawadake Beta\n| race = Survivor\n| race2 = Balloon Mushroom\n| cost = 4\n| power = 2000\n| engtext = {{Survivor}} When this [[creature]] would be [[destroy]]ed, put it into your [[mana zone]] [[instead]].\n| jptext = {{Icon|SVold}} このクリーチャーがバトルゾーンから自分の墓地に置かれたとき、自分のマナゾーンに置く。\n\n■ サバイバー （このクリーチャーがバトルゾーンにある間、自分の他のサバイバーも上の{{Icon|SVold}}能力を得る）\n| flavor = During the Megapocalypse, the only way to survive was to cooperate... and adapt. ([[DM-05]])\n| flavor2 = 遙か昔、突然の異変に一部の世界が閉ざされた。In the past, a catastrophe shut down [[Survivor|a part of the world]] from the rest. ([[DM-05]])\n| flavor3 = 自由にふるまうアウトレイジ犬とアウトレイジ猫が超GRを支配したことで、サバイバーの完全ガチャレンジ化は防ぐことができた。……だが、オラクル・アウトレイジとサバイバーの戦いは終わっていない。また、世界のどこかで新たな力が目覚めた時、新たな戦いが始まる。The free-spirited [[Outrage Wanko]] and [[Outrage Nyanko]] managed to take control of the [[Super Gacharange]], preventing the Survivors from being fully 'Gacharanged'. However, the conflict between the [[Oracle]]-[[Outrage]]s and the Survivors is far from over. Furthermore, whenever a new power awakens somewhere in the world, a new battle will begin. ([[DMEX-08]])\n| mana = 1\n| artist = Ken Sugawara\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = 47/55\n| R1 = Uncommon\n| set2 = DM-05 Return of the Survivor\n| setnum2 = 34/55\n| R2 = Uncommon\n| set3 = DMEX-08 Mysterious Black Box Pack\n| setnum3 = 95/???\n| R3 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Destruction Substitution]]\n[[Category:Mana Acceleration]]"
+}

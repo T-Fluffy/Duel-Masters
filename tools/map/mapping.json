@@ -1,0 +1,6629 @@
+[
+ {
+  "id": "dm_01_001",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "OnDestroyed_ToHand"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ When this creature would be destroyed, put it into your hand instead."
+ },
+ {
+  "id": "dm_01_002",
+  "keywords": [
+   "Blocker",
+   "CannotAttackPlayers"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Blocker|old}}\n\n■ This creature can't attack players."
+ },
+ {
+  "id": "dm_01_003",
+  "keywords": [
+   "Blocker",
+   "CannotAttackPlayers"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Blocker|old}}\n\n■ This creature can't attack players."
+ },
+ {
+  "id": "dm_01_004",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "end-step untap",
+  "src": "■ End Step|At the end of each of your turns, you may untap this creature."
+ },
+ {
+  "id": "dm_01_005",
+  "keywords": [
+   "Blocker",
+   "CannotAttackPlayers"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Blocker|old}}\n\n■ This creature can't attack players."
+ },
+ {
+  "id": "dm_01_006",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "mass tap",
+  "src": "{{Shield Trigger|spell}}\n\n■ Tap all your opponent's creatures in the battle zone."
+ },
+ {
+  "id": "dm_01_007",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": ""
+ },
+ {
+  "id": "dm_01_008",
+  "keywords": [
+   "Blocker",
+   "CannotAttackPlayers"
+  ],
+  "effects": [
+   {
+    "id": "StaticPower_AlwaysWhileHaveRace",
+    "value": 2000,
+    "data": "Angel Command"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Blocker|old}}\n\n■ While you have at least 1 Angel Command in the battle zone, this creature gets +2000 power.\n\n■ This creature can't attack players."
+ },
+ {
+  "id": "dm_01_009",
+  "keywords": [
+   "Blocker",
+   "CannotAttackPlayers"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Blocker|old}}\n\n■ This creature can't attack players."
+ },
+ {
+  "id": "dm_01_010",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": ""
+ },
+ {
+  "id": "dm_01_011",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "targeted effect",
+  "src": "■ Choose up to 2 of your creatures in the battle zone. They can't be blocked this turn."
+ },
+ {
+  "id": "dm_01_012",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": ""
+ },
+ {
+  "id": "dm_01_013",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "OnPlay_TapCreature",
+    "target": "OpponentCreature"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ When you put this creature into the battle zone, you may choose one of your opponent's creatures in the battle zone and tap it."
+ },
+ {
+  "id": "dm_01_014",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "multi-target tap",
+  "src": "■ Choose up to 2 of your opponent's creatures in the battle zone and tap them."
+ },
+ {
+  "id": "dm_01_015",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, search your deck. You may take a spell from your deck, show that spell to your opponent, and put it into your hand. Then shuffle your deck."
+ },
+ {
+  "id": "dm_01_016",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": ""
+ },
+ {
+  "id": "dm_01_017",
+  "keywords": [
+   "Blocker",
+   "CannotAttackPlayers"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "end-step untap",
+  "src": "{{Blocker|old}}\n\n■ This creature can't attack players.\n\n■ End Step|At the end of each of your turns, you may untap this creature."
+ },
+ {
+  "id": "dm_01_018",
+  "keywords": [
+   "Blocker",
+   "CannotAttackPlayers"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Blocker|old}}\n\n■ This creature can't attack players."
+ },
+ {
+  "id": "dm_01_019",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [
+   {
+    "id": "Spell_TapCreature",
+    "target": "OpponentCreature"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Shield Trigger|spell}} \n\n■ Choose one of your opponent's creatures in the battle zone and tap it."
+ },
+ {
+  "id": "dm_01_020",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "targeted effect",
+  "src": "■ Choose one of your creatures in the battle zone. It can't be blocked this turn."
+ },
+ {
+  "id": "dm_01_021",
+  "keywords": [
+   "Blocker",
+   "CannotAttackPlayers"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Blocker|old}}\n\n■ This creature can't attack players."
+ },
+ {
+  "id": "dm_01_022",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "end-step untap",
+  "src": "■ End Step|At the end of each of your turns, you may untap all your creatures in the battle zone."
+ },
+ {
+  "id": "dm_01_023",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "OnPlay_Draw",
+    "value": 1
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ When you put this creature into the battle zone, you may draw a card."
+ },
+ {
+  "id": "dm_01_024",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "OnDestroyed_ToHand"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ When this creature would be destroyed, return it to your hand instead."
+ },
+ {
+  "id": "dm_01_025",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "OnDestroyed_ToHand"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ When this creature would be destroyed, return it to your hand instead."
+ },
+ {
+  "id": "dm_01_026",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": ""
+ },
+ {
+  "id": "dm_01_027",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [
+   {
+    "id": "Spell_Draw",
+    "value": 2
+   }
+  ],
+  "evolutionOf": null,
+  "note": "'up to' drew max",
+  "src": "{{Shield Trigger|spell}} \n\n■ Draw up to 2 cards."
+ },
+ {
+  "id": "dm_01_028",
+  "keywords": [
+   "Unblockable"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ This creature can't be blocked."
+ },
+ {
+  "id": "dm_01_029",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "search effect",
+  "src": "{{Shield Trigger|spell}} \n\n■ Search your deck. You may take a card from your deck and put it into your hand. Then shuffle your deck."
+ },
+ {
+  "id": "dm_01_030",
+  "keywords": [
+   "Unblockable"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ This creature can't be blocked."
+ },
+ {
+  "id": "dm_01_031",
+  "keywords": [
+   "Blocker",
+   "CannotAttackPlayers",
+   "CannotAttackCreatures"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Blocker|old}}\n\n■ This creature can't attack."
+ },
+ {
+  "id": "dm_01_032",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, if you have a Cyber Lord in the battle zone, draw up to 3 cards."
+ },
+ {
+  "id": "dm_01_033",
+  "keywords": [
+   "Blocker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Blocker|old}}"
+ },
+ {
+  "id": "dm_01_034",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "OnPlay_Draw",
+    "value": 2
+   }
+  ],
+  "evolutionOf": null,
+  "note": "'up to' drew max",
+  "src": "■ When you put this creature into the battle zone, draw up to 2 cards."
+ },
+ {
+  "id": "dm_01_035",
+  "keywords": [
+   "Blocker",
+   "CannotAttackPlayers",
+   "CannotAttackCreatures"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Blocker|old}}\n\n■ This creature can't attack."
+ },
+ {
+  "id": "dm_01_036",
+  "keywords": [
+   "Blocker",
+   "CannotAttackPlayers",
+   "CannotAttackCreatures"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Blocker|old}}\n\n■ This creature can't attack."
+ },
+ {
+  "id": "dm_01_037",
+  "keywords": [
+   "Blocker",
+   "CannotAttackPlayers",
+   "CannotAttackCreatures"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Blocker|old}}\n\n■ This creature can't attack."
+ },
+ {
+  "id": "dm_01_038",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, return all creatures in the battle zone that have power 2000 or less to its owner's hand."
+ },
+ {
+  "id": "dm_01_039",
+  "keywords": [
+   "Blocker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Blocker|old}}"
+ },
+ {
+  "id": "dm_01_040",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [
+   {
+    "id": "Spell_ReturnToHand",
+    "target": "AnyCreature"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Shield Trigger|spell}} \n\n■ Choose a creature in the battle zone and return it to its owner's hand."
+ },
+ {
+  "id": "dm_01_041",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "Spell_ReturnUpToToHand",
+    "target": "AnyCreature",
+    "value": 2
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ Choose up to 2 creatures in the battle zone and return them to their owners' hands."
+ },
+ {
+  "id": "dm_01_042",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "creature clause",
+  "src": "■ This creature can't be blocked while you have at least 2 other creatures in the battle zone."
+ },
+ {
+  "id": "dm_01_043",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "OnPlay_ReturnToHand",
+    "target": "AnyCreature"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ When you put this creature into the battle zone, you may choose 1 creature in the battle zone and return it to its owner's hand."
+ },
+ {
+  "id": "dm_01_044",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "Spell_TapCreature",
+    "target": "OpponentCreature"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ Choose one of your opponent's creatures in the battle zone and tap it."
+ },
+ {
+  "id": "dm_01_045",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, destroy one of your creatures."
+ },
+ {
+  "id": "dm_01_046",
+  "keywords": [
+   "Blocker",
+   "CannotAttackPlayers",
+   "CannotAttackCreatures"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "destruction/battle event",
+  "src": "{{Blocker|old}}\n\n■ This creature can't attack.\n\n■ When this creature wins a battle, destroy it."
+ },
+ {
+  "id": "dm_01_047",
+  "keywords": [
+   "Slayer"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Slayer|old}}"
+ },
+ {
+  "id": "dm_01_048",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "destruction/battle event",
+  "src": "■ When this creature wins a battle, destroy it."
+ },
+ {
+  "id": "dm_01_049",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "trigger",
+  "src": "■ Whenever any of your creatures becomes blocked this turn, it gets \"slayer\" until the end of the turn. ''(When a creature that has \"slayer\" loses a battle, destroy the other creature.)''"
+ },
+ {
+  "id": "dm_01_050",
+  "keywords": [
+   "Blocker",
+   "CannotAttackPlayers",
+   "CannotAttackCreatures"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "destruction/battle event",
+  "src": "{{Blocker|old}}\n\n■ This creature can't attack.\n\n■ When this creature wins a battle, destroy it."
+ },
+ {
+  "id": "dm_01_051",
+  "keywords": [
+   "Blocker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Blocker|old}}"
+ },
+ {
+  "id": "dm_01_052",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "return effect",
+  "src": "{{Shield Trigger|spell}} \n\n■ Return a creature from your graveyard to your hand."
+ },
+ {
+  "id": "dm_01_053",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "destruction effect",
+  "src": "■ Destroy one of your opponent's untapped creatures."
+ },
+ {
+  "id": "dm_01_054",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [
+   {
+    "id": "Spell_DiscardRandom",
+    "value": 1
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Shield Trigger|spell}} \n\n■ Your opponent discards a card at random from his hand."
+ },
+ {
+  "id": "dm_01_055",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, destroy 2 of your other creatures or destroy this creature.\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_01_056",
+  "keywords": [
+   "Slayer"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Slayer|old}}"
+ },
+ {
+  "id": "dm_01_057",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, return up to 2 creatures from your graveyard to your hand."
+ },
+ {
+  "id": "dm_01_058",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, your opponent discards a card at random from his hand."
+ },
+ {
+  "id": "dm_01_059",
+  "keywords": [
+   "Blocker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Blocker|old}}"
+ },
+ {
+  "id": "dm_01_060",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": ""
+ },
+ {
+  "id": "dm_01_061",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, destroy one of your creatures."
+ },
+ {
+  "id": "dm_01_062",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, your opponent chooses one of his creatures and destroys it."
+ },
+ {
+  "id": "dm_01_063",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [
+   {
+    "id": "Spell_DestroyPowerAtMost",
+    "target": "OpponentCreature",
+    "value": 999999
+   }
+  ],
+  "evolutionOf": null,
+  "note": "no power cap",
+  "src": "{{Shield Trigger|spell}} \n\n■ Destroy one of your opponent's creatures."
+ },
+ {
+  "id": "dm_01_064",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, destroy all creatures that have power 3000 or less."
+ },
+ {
+  "id": "dm_01_065",
+  "keywords": [
+   "Blocker",
+   "CannotAttackPlayers",
+   "CannotAttackCreatures"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Blocker|old}}\n\n■ This creature can't attack."
+ },
+ {
+  "id": "dm_01_066",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": ""
+ },
+ {
+  "id": "dm_01_067",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "StaticPower_AttackWhileHaveRace",
+    "value": 2000,
+    "data": "Human"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ While you have at least 1 Human in the battle zone, this creature gets +2000 power during its attacks."
+ },
+ {
+  "id": "dm_01_068",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, put 1 card from your mana zone into your graveyard."
+ },
+ {
+  "id": "dm_01_069",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [
+   {
+    "id": "StaticPower_AttackPerGraveyardCiv",
+    "value": 1000,
+    "data": "Fire"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ While attacking, this creature gets +1000 power for each fire card in your graveyard.\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_01_070",
+  "keywords": [
+   "PowerAttacker"
+  ],
+  "effects": [
+   {
+    "id": "PowerAttacker_AttackBoost",
+    "value": 2000
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Power Attacker|2000}}"
+ },
+ {
+  "id": "dm_01_071",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "temporary ability grant",
+  "src": "■ One of your creatures gets \"power attacker +2000\" until the End Step|end of the turn. ''(While attacking, a creature that has \"power attacker +2000\" gets +2000 power.)''"
+ },
+ {
+  "id": "dm_01_072",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "targeted effect",
+  "src": "■ Choose 1 of your opponent's untapped creatures in the battle zone. Your creatures can attack it this turn as though it were tapped."
+ },
+ {
+  "id": "dm_01_073",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "Spell_DestroyPowerAtMost",
+    "target": "OpponentCreature",
+    "value": 2000
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ Destroy 1 of your opponent's creatures that has power 2000 or less."
+ },
+ {
+  "id": "dm_01_074",
+  "keywords": [
+   "AttacksEachTurn"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ This creature attacks each turn Attack if Able|if able."
+ },
+ {
+  "id": "dm_01_075",
+  "keywords": [
+   "AttacksEachTurn"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ This creature attacks each turn Attack if Able|if able."
+ },
+ {
+  "id": "dm_01_076",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, put 2 cards from your mana zone into your graveyard.\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_01_077",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "StaticPower_AttackWhileHaveRace",
+    "value": 2000,
+    "data": "Armorloid"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ While you have at least 1 Armorloid in the battle zone, this creature gets +2000 power during its attacks."
+ },
+ {
+  "id": "dm_01_078",
+  "keywords": [
+   "PowerAttacker"
+  ],
+  "effects": [
+   {
+    "id": "PowerAttacker_AttackBoost",
+    "value": 2000
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Power Attacker|2000}}"
+ },
+ {
+  "id": "dm_01_079",
+  "keywords": [
+   "CanAttackUntappedCreatures",
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ This creature can attack untapped creatures.\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_01_080",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": ""
+ },
+ {
+  "id": "dm_01_081",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "temporary ability grant",
+  "src": "■ One of your creatures gets \"power attacker +4000\" and \"double breaker\" until the End Step|end of the turn. ''(A creature that has \"power attacker +4000\" and \"double breaker\" gets +4000 power while attacking and breaks 2 shields.)''"
+ },
+ {
+  "id": "dm_01_082",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "OnPlay_DestroyPowerAtMost",
+    "target": "OpponentCreature",
+    "value": 2000
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ When you put this creature into the battle zone, destroy one of your opponent's creatures that has power 2000 or less."
+ },
+ {
+  "id": "dm_01_083",
+  "keywords": [
+   "CanAttackUntappedCreatures"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ This creature can attack untapped creatures."
+ },
+ {
+  "id": "dm_01_084",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, put 1 card from your mana zone into your graveyard."
+ },
+ {
+  "id": "dm_01_085",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, destroy one of your creatures. Then your opponent chooses one of his creatures and destroys it."
+ },
+ {
+  "id": "dm_01_086",
+  "keywords": [
+   "PowerAttacker"
+  ],
+  "effects": [
+   {
+    "id": "PowerAttacker_AttackBoost",
+    "value": 2000
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Power Attacker|2000}}"
+ },
+ {
+  "id": "dm_01_087",
+  "keywords": [
+   "PowerAttacker"
+  ],
+  "effects": [
+   {
+    "id": "PowerAttacker_AttackBoost",
+    "value": 4000
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Power Attacker|4000}}"
+ },
+ {
+  "id": "dm_01_088",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [
+   {
+    "id": "Spell_DestroyPowerAtMost",
+    "target": "OpponentCreature",
+    "value": 4000
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Shield Trigger|spell}} \n\n■ Destroy one of your opponent's creatures that has power 4000 or less."
+ },
+ {
+  "id": "dm_01_089",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "group temporary buff",
+  "src": "■ Each of your creatures in the battle zone gets \"power attacker +2000\" until the End Step|end of the turn. ''(While attacking, a creature that has \"power attacker +2000\" gets +2000 power.)''"
+ },
+ {
+  "id": "dm_01_090",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "OnPlay_ChargeMana"
+   }
+  ],
+  "evolutionOf": null,
+  "note": "may-flag ignored",
+  "src": "■ When you put this creature into the battle zone, put the top card of your deck into your mana zone."
+ },
+ {
+  "id": "dm_01_091",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": ""
+ },
+ {
+  "id": "dm_01_092",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "OnDestroyed_ToMana"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ When this creature would be destroyed, put it into your mana zone instead."
+ },
+ {
+  "id": "dm_01_093",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "search effect",
+  "src": "{{Shield Trigger|spell}} \n\n■ Search your deck. You may take a creature from your deck, show that creature to your opponent, and put it into your hand. Then shuffle your deck."
+ },
+ {
+  "id": "dm_01_094",
+  "keywords": [
+   "PowerAttacker"
+  ],
+  "effects": [
+   {
+    "id": "PowerAttacker_AttackBoost",
+    "value": 2000
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Power Attacker|2000}}"
+ },
+ {
+  "id": "dm_01_095",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": ""
+ },
+ {
+  "id": "dm_01_096",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": ""
+ },
+ {
+  "id": "dm_01_097",
+  "keywords": [
+   "PowerAttacker"
+  ],
+  "effects": [
+   {
+    "id": "PowerAttacker_AttackBoost",
+    "value": 2000
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Power Attacker|2000}}"
+ },
+ {
+  "id": "dm_01_098",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "OnDestroyed_ToMana"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ When this creature would be destroyed, put it into your mana zone instead."
+ },
+ {
+  "id": "dm_01_099",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "targeted effect",
+  "src": "{{Shield Trigger|spell}} \n\n■ Choose one of your opponent's creatures in the battle zone and put it into his mana zone."
+ },
+ {
+  "id": "dm_01_100",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "zone effect",
+  "src": "■ Put 1 of your creatures from the battle zone into your mana zone."
+ },
+ {
+  "id": "dm_01_101",
+  "keywords": [
+   "CannotAttackPlayers"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ This creature can't attack players."
+ },
+ {
+  "id": "dm_01_102",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, you may put 1 card from your hand into your mana zone."
+ },
+ {
+  "id": "dm_01_103",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "OnDestroyed_ToMana"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ When this creature would be destroyed, put it into your mana zone instead."
+ },
+ {
+  "id": "dm_01_104",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "unblockable clause",
+  "src": "■ This creature can't be blocked by any creature that has power 3000 or less."
+ },
+ {
+  "id": "dm_01_105",
+  "keywords": [
+   "CannotAttackPlayers"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ This creature can't attack players."
+ },
+ {
+  "id": "dm_01_106",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, your opponent chooses one of his creatures in the battle zone and puts it into his mana zone."
+ },
+ {
+  "id": "dm_01_107",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, you may put 1 creature from your graveyard into your mana zone."
+ },
+ {
+  "id": "dm_01_108",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "unblockable clause",
+  "src": "■ This creature can't be blocked by any creature that has power 4000 or less."
+ },
+ {
+  "id": "dm_01_109",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": ""
+ },
+ {
+  "id": "dm_01_110",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "Spell_ChargeMana"
+   },
+   {
+    "id": "Spell_ChargeMana"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ Put the top 2 cards of your deck into your mana zone."
+ },
+ {
+  "id": "dm_01_s01",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Double Breaker}}"
+ },
+ {
+  "id": "dm_01_s02",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "end-step untap",
+  "src": "{{Double Breaker}}\n\n■ End Step|At the end of each of your turns, you may untap this creature."
+ },
+ {
+  "id": "dm_01_s03",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, choose up to 2 creatures in the battle zone and return them to their owners' hands."
+ },
+ {
+  "id": "dm_01_s04",
+  "keywords": [
+   "DoubleBreaker",
+   "Unblockable"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Double Breaker}}\n\n■ This creature can't be blocked."
+ },
+ {
+  "id": "dm_01_s05",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Double Breaker}}"
+ },
+ {
+  "id": "dm_01_s06",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Double Breaker}}"
+ },
+ {
+  "id": "dm_01_s07",
+  "keywords": [
+   "PowerAttacker",
+   "DoubleBreaker"
+  ],
+  "effects": [
+   {
+    "id": "PowerAttacker_AttackBoost",
+    "value": 4000
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Power Attacker|4000}}\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_01_s08",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, destroy all creatures that have \"blocker\"."
+ },
+ {
+  "id": "dm_01_s09",
+  "keywords": [
+   "PowerAttacker",
+   "DoubleBreaker"
+  ],
+  "effects": [
+   {
+    "id": "PowerAttacker_AttackBoost",
+    "value": 4000
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Power Attacker|4000}}\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_01_s10",
+  "keywords": [
+   "PowerAttacker",
+   "DoubleBreaker"
+  ],
+  "effects": [
+   {
+    "id": "PowerAttacker_AttackBoost",
+    "value": 2000
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Power Attacker|2000}}\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_02_001",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "attack-enabler spell",
+  "src": "■ This turn, ignore any effects that would prevent your creatures from attacking your opponent. ''(For example, ignore summoning sickness and card effects that say \"This creature can't attack\" or \"This creature can't attack players\". Your creatures can't attack creatures this way.)''"
+ },
+ {
+  "id": "dm_02_002",
+  "keywords": [
+   "Unblockable"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ This creature can't be blocked."
+ },
+ {
+  "id": "dm_02_003",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "OnPlay_TapCreature",
+    "target": "OpponentCreature"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ When you put this creature into the battle zone, choose one of your opponent's creatures in the battle zone and tap it."
+ },
+ {
+  "id": "dm_02_004",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "attack trigger",
+  "src": "■ Whenever this creature attacks, search your deck. You may take a spell from your deck, show that spell to your opponent, and put it into your hand. Then shuffle your deck."
+ },
+ {
+  "id": "dm_02_005",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": "Guardian",
+  "note": "on-play effect",
+  "src": "■ Evolution—Put on one of your Guardians.\n\n■ When you put this creature into the battle zone, tap all your opponent's creatures in the battle zone that have \"blocker\"."
+ },
+ {
+  "id": "dm_02_006",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "search effect",
+  "src": "{{Shield Trigger|spell}}\n\n■ Search your deck. You may take a spell from your deck, show that spell to your opponent, and put it into your hand. Then shuffle your deck."
+ },
+ {
+  "id": "dm_02_007",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "OnPlay_Draw",
+    "value": 1
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ When you put this creature into the battle zone, you may draw a card."
+ },
+ {
+  "id": "dm_02_008",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, you may return a spell from your graveyard to your hand."
+ },
+ {
+  "id": "dm_02_009",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": ""
+ },
+ {
+  "id": "dm_02_010",
+  "keywords": [
+   "Blocker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "battle/block trigger",
+  "src": "{{Blocker}}\n\n■ Whenever this creature blocks, untap it after it battles."
+ },
+ {
+  "id": "dm_02_011",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "attack trigger",
+  "src": "■ Whenever this creature attacks, you may look at one of your opponent's shields. Then put it back where it was."
+ },
+ {
+  "id": "dm_02_012",
+  "keywords": [
+   "Blocker"
+  ],
+  "effects": [
+   {
+    "id": "OnPlay_ReturnToHand",
+    "target": "AnyCreature"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Blocker}}\n\n■ When you put this creature into the battle zone, you may choose a creature in the battle zone and return it to its owner's hand."
+ },
+ {
+  "id": "dm_02_013",
+  "keywords": [
+   "Blocker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Blocker}}"
+ },
+ {
+  "id": "dm_02_014",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, choose one of your opponent's creatures in the battle zone and put it on top of his deck."
+ },
+ {
+  "id": "dm_02_015",
+  "keywords": [
+   "Unblockable",
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": "Liquid People",
+  "note": null,
+  "src": "■ Evolution—Put on one of your Liquid People.\n\n■ This creature can't be blocked.\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_02_016",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "attack trigger",
+  "src": "■ Whenever this creature attacks, you may draw a card."
+ },
+ {
+  "id": "dm_02_017",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "aura: liquid people unblockable",
+  "src": "■ Liquid People can't be blocked.\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_02_018",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "attack trigger",
+  "src": "■ Whenever this creature attacks, you may draw a number of cards equal to the number of creatures your opponent has in the battle zone."
+ },
+ {
+  "id": "dm_02_019",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "look effect",
+  "src": "■ Look at up to 3 of your opponent's shields. Then put them back where they were."
+ },
+ {
+  "id": "dm_02_020",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": ""
+ },
+ {
+  "id": "dm_02_021",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "attack trigger",
+  "src": "■ Whenever this creature attacks, you may choose one of your opponent's fire or nature creatures in the battle zone and return it to its owner's hand."
+ },
+ {
+  "id": "dm_02_022",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "cast trigger",
+  "src": "{{Shield Trigger|spell}}\n\n■ When you cast this spell, if your opponent has 3 or more creatures in the battle zone, draw 3 cards."
+ },
+ {
+  "id": "dm_02_023",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "attack trigger",
+  "src": "■ Whenever this creature attacks, you may return a creature from your graveyard to your hand."
+ },
+ {
+  "id": "dm_02_024",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "OnPlay_DestroyPowerAtMost",
+    "target": "OpponentCreature",
+    "value": 999999
+   }
+  ],
+  "evolutionOf": "Parasite Worm",
+  "note": "no power cap",
+  "src": "■ Evolution—Put on one of your Parasite Worms.\n\n■ When you put this creature into the battle zone, you may destroy one of your opponent's creatures."
+ },
+ {
+  "id": "dm_02_025",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "destruction effect",
+  "src": "{{Shield Trigger|spell}} \n\n■ Destroy one of your opponent's creatures that has \"blocker\"."
+ },
+ {
+  "id": "dm_02_026",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "attack trigger",
+  "src": "■ Whenever this creature attacks, your opponent discards a card at random from his hand."
+ },
+ {
+  "id": "dm_02_027",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "attack trigger",
+  "src": "■ Whenever this creature attacks, choose one of your shields without looking and put it into your graveyard. You can't use the \"shield trigger\" ability of that shield.\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_02_028",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "destruction/battle event",
+  "src": "■ When this creature would be put into your graveyard from the battle zone, you may return it to your hand instead. If you do, discard a card from your hand."
+ },
+ {
+  "id": "dm_02_029",
+  "keywords": [
+   "Blocker",
+   "CannotAttackPlayers"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Blocker}}\n\n■ This creature can't attack players."
+ },
+ {
+  "id": "dm_02_030",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "attack trigger",
+  "src": "■ Whenever this creature attacks, your opponent discards a card at random from his hand."
+ },
+ {
+  "id": "dm_02_031",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "opponent discard",
+  "src": "■ Your opponent discards all cards from his hand."
+ },
+ {
+  "id": "dm_02_032",
+  "keywords": [
+   "Blocker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "destruction/battle event",
+  "src": "{{Blocker}}\n\n■ When this creature attacks a player, destroy it after the attack."
+ },
+ {
+  "id": "dm_02_033",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, destroy one of your creatures that has power 3000 or less."
+ },
+ {
+  "id": "dm_02_034",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "StaticPower_AttackPerOtherCreature",
+    "value": 2000,
+    "data": "Human"
+   }
+  ],
+  "evolutionOf": "Human",
+  "note": null,
+  "src": "■ Evolution—Put on one of your Humans.\n\n■ While attacking, this creature gets +2000 power for each other Human in the battle zone."
+ },
+ {
+  "id": "dm_02_035",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "attack trigger",
+  "src": "■ Whenever this creature attacks, choose a card in your opponent's mana zone and put it into his graveyard."
+ },
+ {
+  "id": "dm_02_036",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "destruction/battle event",
+  "src": "■ When this creature is destroyed, each player chooses 2 cards in his mana zone and puts them into his graveyard."
+ },
+ {
+  "id": "dm_02_037",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "destruction effect",
+  "src": "{{Shield Trigger|spell}} \n\n■ Destroy all creatures that have power 2000 or less."
+ },
+ {
+  "id": "dm_02_038",
+  "keywords": [
+   "CanAttackUntappedCreatures"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ This creature can attack untapped creatures."
+ },
+ {
+  "id": "dm_02_039",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "StaticPower_AttackPerOtherCreature",
+    "value": 2000,
+    "data": "tapped creature you have"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ While attacking, this creature gets +2000 power for each other tapped creature you have in the battle zone."
+ },
+ {
+  "id": "dm_02_040",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "destruction/battle event",
+  "src": "■ When this creature is destroyed, each player chooses a card in his mana zone and puts it into his graveyard."
+ },
+ {
+  "id": "dm_02_041",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "conditional static",
+  "src": "■ While you have no other creatures in the battle zone, this creature gets \"power attacker +4000\" and \"double breaker\". ''(A creature that has \"power attacker +4000\" and \"double breaker\" gets +4000 power while attacking and breaks 2 shields.)''"
+ },
+ {
+  "id": "dm_02_042",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "attack trigger",
+  "src": "■ Whenever this creature attacks, you may choose a creature in the battle zone that has \"blocker\" and destroy it.\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_02_043",
+  "keywords": [
+   "AttacksEachTurn",
+   "PowerAttacker"
+  ],
+  "effects": [
+   {
+    "id": "PowerAttacker_AttackBoost",
+    "value": 1000
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ This creature attacks each turn Attack if Able|if able.\n\n{{Power Attacker|1000}}"
+ },
+ {
+  "id": "dm_02_044",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "group temporary buff; group keyword/power aura",
+  "src": "■ Each of your creatures in the battle zone gets +1000 power until the End Step|end of the turn.\n\n■ Each of your creatures in the battle zone that can attack creatures can attack untapped creatures this turn."
+ },
+ {
+  "id": "dm_02_045",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": "Beast Folk",
+  "note": "conditional static",
+  "src": "■ Evolution—Put on one of your Beast Folk.\n\n■ While this creature is tapped, each of your other Beast Folk in the battle zone gets +2000 power."
+ },
+ {
+  "id": "dm_02_046",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "CostDecrease_Summon_All",
+    "value": 1
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ Your creatures each cost 1 less to summon. They can't cost less than 1."
+ },
+ {
+  "id": "dm_02_047",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "CostDecrease_Cast_All",
+    "value": 1
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ Your spells each cost 1 less to cast. They can't cost less than 1."
+ },
+ {
+  "id": "dm_02_048",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, choose up to 2 cards in your opponent's mana zone and put it into his graveyard."
+ },
+ {
+  "id": "dm_02_049",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "StaticPower_AttackPerOtherCreature",
+    "value": 1000
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ While attacking, this creature gets +1000 power for each other creature you have in the battle zone."
+ },
+ {
+  "id": "dm_02_050",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "targeted effect",
+  "src": "{{Shield Trigger|spell}} \n\n■ Choose a card in your opponent's mana zone and put it into his graveyard."
+ },
+ {
+  "id": "dm_02_051",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "search effect",
+  "src": "■ Search your deck. You may take a card from your deck and put it into your mana zone. Then shuffle your deck."
+ },
+ {
+  "id": "dm_02_052",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, search your deck. You may take a creature from your deck, show that creature to your opponent, and put it into your hand. Then shuffle your deck."
+ },
+ {
+  "id": "dm_02_053",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "attack trigger",
+  "src": "■ Whenever this creature attacks, you may put the top card of your deck into your mana zone."
+ },
+ {
+  "id": "dm_02_054",
+  "keywords": [
+   "PowerAttacker"
+  ],
+  "effects": [
+   {
+    "id": "PowerAttacker_AttackBoost",
+    "value": 2000
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Power Attacker|2000}}"
+ },
+ {
+  "id": "dm_02_055",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "unblockable clause",
+  "src": "■ This creature can't be blocked by any creature that has power 5000 or less.\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_02_s01",
+  "keywords": [
+   "Blocker",
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": "Guardian",
+  "note": null,
+  "src": "{{Blocker}}\n\n■ Evolution—Put on one of your Guardians.\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_02_s02",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": "Liquid People",
+  "note": "on-play effect",
+  "src": "■ Evolution—Put on one of your Liquid People.\n\n■ When you put this creature into the battle zone, return all creatures in the battle zone that have \"blocker\" to their owners' hands."
+ },
+ {
+  "id": "dm_02_s03",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": "Parasite Worm",
+  "note": null,
+  "src": "■ Evolution—Put on one of your Parasite Worms.\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_02_s04",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": "Human",
+  "note": "group keyword/power aura",
+  "src": "■ Evolution—Put on one of your Humans.\n\n■ Each of your other Humans in the battle zone gets +1000 power.\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_02_s05",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [
+   {
+    "id": "OnPlay_ChargeMana"
+   },
+   {
+    "id": "OnPlay_ChargeMana"
+   }
+  ],
+  "evolutionOf": "Beast Folk",
+  "note": "may-flag ignored",
+  "src": "■ Evolution—Put on one of your Beast Folk.\n\n■ When you put this creature into the battle zone, put the top 2 cards of your deck into your mana zone.\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_03_001",
+  "keywords": [
+   "Blocker"
+  ],
+  "effects": [
+   {
+    "id": "StaticPower_AlwaysPerOtherCreature",
+    "value": 1000,
+    "data": "light"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Blocker}}\n\n■ This creature gets +1000 power for each other light creature you have in the battle zone."
+ },
+ {
+  "id": "dm_03_002",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "destruction/battle event",
+  "src": "■ When this creature would be put into your graveyard from the battle zone, add it to your shields face down instead."
+ },
+ {
+  "id": "dm_03_003",
+  "keywords": [
+   "ShieldTrigger",
+   "Charger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "return effect",
+  "src": "{{Shield Trigger|spell}}\n\n■ Return a card from your mana zone to your hand.\n\n■ After you cast this spell, put it into your mana zone instead of your graveyard."
+ },
+ {
+  "id": "dm_03_004",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, you may return a spell from your mana zone to your hand."
+ },
+ {
+  "id": "dm_03_005",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "return effect",
+  "src": "{{Shield Trigger|spell}} \n\n■ Return a spell from your mana zone to your hand."
+ },
+ {
+  "id": "dm_03_006",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "attack trigger",
+  "src": "■ Whenever this creature attacks, you may return a light spell from your graveyard to your hand."
+ },
+ {
+  "id": "dm_03_007",
+  "keywords": [
+   "Blocker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "destruction/battle event",
+  "src": "{{Blocker}}\n\n■ When this creature would be put into your graveyard from the battle zone, add it to your shields face down instead."
+ },
+ {
+  "id": "dm_03_008",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": "Initiate",
+  "note": "group keyword/power aura",
+  "src": "■ Evolution—Put on one of your Initiates.\n\n■ Each of your other light creatures in the battle zone has \"blocker\". ''(Whenever one of your opponent's creatures attacks, you may tap a creature that has \"blocker\" to stop the attack. Then the 2 creatures battle.)''"
+ },
+ {
+  "id": "dm_03_009",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "mono-mana static",
+  "src": "■ While all the cards in your mana zone are light cards, this creature has \"Blocker ''(Whenever an opponent's creature attacks, you may tap this creature to stop the attack. Then the 2 creatures battle.)''\""
+ },
+ {
+  "id": "dm_03_010",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "shield effect",
+  "src": "■ Add a card from your hand to your shields face down."
+ },
+ {
+  "id": "dm_03_011",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "mono-mana static",
+  "src": "■ While all the cards in your mana zone are light cards, this creature gets +2000 power."
+ },
+ {
+  "id": "dm_03_012",
+  "keywords": [
+   "Blocker",
+   "CannotAttackPlayers",
+   "CannotAttackCreatures"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "mono-mana static",
+  "src": "{{Blocker}}\n\n■ This creature can't attack.\n\n■ While all the cards in your mana zone are water cards, this creature gets +3000 power."
+ },
+ {
+  "id": "dm_03_013",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, return 2 cards from your mana zone to your hand. Then your opponent chooses 2 cards in his mana zone and returns them to his hand."
+ },
+ {
+  "id": "dm_03_014",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, you may add a card from your hand to your shields face down. If you do, choose one of your shields and put it into your hand. You can't use the \"shield trigger\" ability of that shield."
+ },
+ {
+  "id": "dm_03_015",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "return effect",
+  "src": "{{Shield Trigger|spell}}\n\n■ Return a card from your mana zone to your hand."
+ },
+ {
+  "id": "dm_03_016",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "attack trigger",
+  "src": "■ Whenever this creature attacks, you may choose a creature in the battle zone that has power 2000 or less and return it to its owner's hand. ''(Return the creature to its owner's hand before your opponent can block with it.)''"
+ },
+ {
+  "id": "dm_03_017",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "attack trigger",
+  "src": "■ Whenever this creature attacks, search your deck. You may take a water card from your deck, show that card to your opponent, and put it into your hand. Then shuffle your deck."
+ },
+ {
+  "id": "dm_03_018",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": "Leviathan",
+  "note": "aura/condition",
+  "src": "■ Evolution—Put on one of your Leviathans.\n\n■ Your other water creatures in the battle zone can't be blocked.\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_03_019",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "look effect",
+  "src": "{{Shield Trigger|spell}} \n\n■ Look at your opponent's hand and shields. Then put the shields back where they were."
+ },
+ {
+  "id": "dm_03_020",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "reveal effect",
+  "src": "■ Reveal the top 4 cards of your deck. Put all water cards from among them into your hand and the rest into your graveyard."
+ },
+ {
+  "id": "dm_03_021",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, return a card from your mana zone to your hand. Then your opponent chooses a card in his mana zone and returns it to his hand."
+ },
+ {
+  "id": "dm_03_022",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "attack trigger",
+  "src": "■  Whenever this creature attacks, you may look at one of your opponent's shields. Then put it back where it was."
+ },
+ {
+  "id": "dm_03_023",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, choose one of your shields and return it to your hand. You can't use the \"shield trigger\" ability of that shield."
+ },
+ {
+  "id": "dm_03_024",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "destruction/battle event",
+  "src": "■ When this creature is put into your graveyard from the battle zone, you may return a creature from your mana zone to your hand."
+ },
+ {
+  "id": "dm_03_025",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "misc unmodelled",
+  "src": "{{Shield Trigger|spell}} \n\n■ You may destroy one of your darkness creatures. If you do, return a creature from your mana zone to your hand."
+ },
+ {
+  "id": "dm_03_026",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "attack trigger",
+  "src": "■ Whenever this creature attacks, you may return a darkness creature from your graveyard to your hand."
+ },
+ {
+  "id": "dm_03_027",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "shield manipulation",
+  "src": "■ Choose any number of your shields and put them into your hand. You can't use the \"shield trigger\" ability|abilities of those shields."
+ },
+ {
+  "id": "dm_03_028",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": ""
+ },
+ {
+  "id": "dm_03_029",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": "Ghost",
+  "note": "trigger",
+  "src": "■ Evolution—Put on one of your Ghosts.\n\n■ Whenever another of your darkness creatures would be put into your graveyard from the battle zone, you may return it to your hand instead."
+ },
+ {
+  "id": "dm_03_030",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "mono-mana static",
+  "src": "■ While all the cards in your mana zone are darkness cards, this creature gets +2000 power."
+ },
+ {
+  "id": "dm_03_031",
+  "keywords": [
+   "Slayer"
+  ],
+  "effects": [
+   {
+    "id": "StaticPower_AlwaysPerOtherCreature",
+    "value": 1000,
+    "data": "darkness"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Slayer|old}}\n\n■ This creature gets +1000 power for each other darkness creature you have in the battle zone."
+ },
+ {
+  "id": "dm_03_032",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "group temporary buff; shield manipulation",
+  "src": "■ Each of your creatures in the battle zone gets \"double breaker\" until the End Step|end of the turn. ''(A creature that has \"double breaker\" breaks 2 shields.)''\n\n■ Choose one of your shields and put it into your graveyard."
+ },
+ {
+  "id": "dm_03_033",
+  "keywords": [
+   "Slayer"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Slayer|old}}"
+ },
+ {
+  "id": "dm_03_034",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "attack trigger",
+  "src": "■ Whenever this creature attacks, put a non-fire card from your mana zone into your graveyard. Then your opponent chooses a non-fire card in his mana zone and puts it into his graveyard."
+ },
+ {
+  "id": "dm_03_035",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "mono-mana static",
+  "src": "■ While all the cards in your mana zone are fire cards, this creature gets +2000 power."
+ },
+ {
+  "id": "dm_03_036",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "cast restriction; group temporary buff",
+  "src": "■ You can cast this spell only if all the cards in your mana zone are fire cards.\n\n■ Each of your creatures in the battle zone gets \"power attacker +4000\" and \"double breaker\" until the End Step|end of the turn. ''(A creature that has \"power attacker +4000\" and \"double breaker\" gets +4000 power while attacking and breaks 2 shields.)''"
+ },
+ {
+  "id": "dm_03_037",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Double Breaker}}"
+ },
+ {
+  "id": "dm_03_038",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": ""
+ },
+ {
+  "id": "dm_03_039",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "attack trigger",
+  "src": "■ Whenever this creature attacks, you may put a card from your mana zone into your graveyard. If you do, this creature gets \"power attacker +3000\" and \"double breaker\" until the End Step|end of the turn. ''(A creature that has \"power attacker +3000\" and \"double breaker\" gets +3000 power while attacking and breaks 2 shields.)''"
+ },
+ {
+  "id": "dm_03_040",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "attack trigger",
+  "src": "■ Whenever this creature attacks, you may destroy one of your opponent's creatures that has power 2000 or less."
+ },
+ {
+  "id": "dm_03_041",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "destruction effect; shield manipulation",
+  "src": "■ Destroy all your opponent's creatures that have power 3000 or less.\n\n■ Choose one of your shields and put it into your graveyard."
+ },
+ {
+  "id": "dm_03_042",
+  "keywords": [
+   "CannotAttackOutnumbered"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ This creature can't attack while your opponent has more creatures in the battle zone than you do."
+ },
+ {
+  "id": "dm_03_043",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": "Armored Dragon",
+  "note": "group keyword/power aura",
+  "src": "■ Evolution—Put on one of your Armored Dragons.\n\n■ Each of your other fire creatures has \"power attacker +2000\". ''(While attacking, a creature that has \"power attacker +2000\" gets +2000 power.)''\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_03_044",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [
+   {
+    "id": "Spell_DestroyPowerAtMost",
+    "target": "AnyCreature",
+    "value": 6000
+   }
+  ],
+  "evolutionOf": null,
+  "note": "shield manipulation",
+  "src": "{{Shield Trigger|spell}} \n\n■ Destroy a creature that has power 6000 or less.\n\n■ Choose one of your shields and put it into your graveyard."
+ },
+ {
+  "id": "dm_03_045",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "shield manipulation",
+  "src": "■ Choose any number of your shields and put them into your mana zone."
+ },
+ {
+  "id": "dm_03_046",
+  "keywords": [
+   "CannotAttackCreatures",
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ This creature can't attack creatures.\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_03_047",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": "Giant Insect",
+  "note": "trigger",
+  "src": "■ Evolution—Put on one of your Giant Insects.\n\n■ Whenever another of your nature creatures would be put into your graveyard from the battle zone, put it into your mana zone instead."
+ },
+ {
+  "id": "dm_03_048",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "shield effect",
+  "src": "{{Shield Trigger|spell}}\n\n■ Add a card from your mana zone to your shields face down."
+ },
+ {
+  "id": "dm_03_049",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "StaticPower_AlwaysPerOtherCreature",
+    "value": 1000,
+    "data": "nature"
+   }
+  ],
+  "evolutionOf": null,
+  "note": "unblockable clause",
+  "src": "■ This creature gets +1000 power for each of your other nature creatures in the battle zone.\n\n■ This creature can't be blocked by any creature that has power 4000 or less."
+ },
+ {
+  "id": "dm_03_050",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, you may choose one of your opponent's evolution creatures in the battle zone and put the top card of that creature into your opponent's graveyard."
+ },
+ {
+  "id": "dm_03_051",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "attack trigger",
+  "src": "■ Whenever this creature attacks, you may put a nature card from your graveyard into your mana zone."
+ },
+ {
+  "id": "dm_03_052",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "mono-mana static",
+  "src": "■ While all the cards in your mana zone are nature cards, this creature gets +3000 power and has \"Double breaker ''(This creature breaks 2 shields)''.\" "
+ },
+ {
+  "id": "dm_03_053",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "return effect",
+  "src": "{{Shield Trigger|spell}} \n\n■ Return a creature that costs 6 or more from your mana zone to your hand."
+ },
+ {
+  "id": "dm_03_054",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "attack trigger",
+  "src": "■ Whenever this creature attacks, return a card from your mana zone to your hand."
+ },
+ {
+  "id": "dm_03_055",
+  "keywords": [
+   "PowerAttacker"
+  ],
+  "effects": [
+   {
+    "id": "PowerAttacker_AttackBoost",
+    "value": 3000
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Power Attacker|3000}}"
+ },
+ {
+  "id": "dm_03_s01",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Double Breaker}}"
+ },
+ {
+  "id": "dm_03_s02",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "StaticPower_AlwaysPerOtherCreature",
+    "value": 1000,
+    "data": "water"
+   }
+  ],
+  "evolutionOf": null,
+  "note": "attack trigger",
+  "src": "■ This creature gets +1000 power for each other water creature you have in the battle zone.\n\n■ Whenever this creature attacks, you may draw a card for each of your other water creatures in the battle zone."
+ },
+ {
+  "id": "dm_03_s03",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Double Breaker}}"
+ },
+ {
+  "id": "dm_03_s04",
+  "keywords": [
+   "DoubleBreaker",
+   "CanAttackUntappedCreatures"
+  ],
+  "effects": [
+   {
+    "id": "StaticPower_AlwaysPerOtherCreature",
+    "value": 1000,
+    "data": "fire"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Double Breaker}}\n\n■ This creature gets +1000 power for each other fire creature you have in the battle zone.\n\n■ This creature can attack untapped creatures."
+ },
+ {
+  "id": "dm_03_s05",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "attack trigger",
+  "src": "{{Double Breaker}}\n\n■ Whenever this creature attacks, return all creatures from your mana zone to your hand."
+ },
+ {
+  "id": "dm_04_001",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": "Angel Command",
+  "note": "rule lockdown",
+  "src": "■ Evolution—Put on one of your Angel Commands.\n\n{{Double Breaker}}\n\n■ Players can't cast spells other than light spells."
+ },
+ {
+  "id": "dm_04_002",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "OnPlay_Draw",
+    "value": 3
+   }
+  ],
+  "evolutionOf": "Cyber Virus",
+  "note": "'up to' drew max",
+  "src": "■ Evolution—Put on one of your Cyber Viruses.\n\n■ When you put this creature into the battle zone, draw up to 3 cards."
+ },
+ {
+  "id": "dm_04_003",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, your opponent discards a card at random from his hand for each other darkness creature you have in the battle zone.\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_04_004",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [
+   {
+    "id": "OnPlay_DestroyPowerAtMost",
+    "target": "OpponentCreature",
+    "value": 3000
+   }
+  ],
+  "evolutionOf": "Rock Beast",
+  "note": null,
+  "src": "■ Evolution—Put on one of your Rock Beasts.\n\n■ When you put this creature into the battle zone, you may destroy one of your opponent's creatures that has power 3000 or less.\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_04_005",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "misc unmodelled",
+  "src": "■ Each Angel Command in the battle zone gets \"power attacker +4000.\" ''(While attacking, a creature that has \"power attacker +4000\" gets +4000 power.)''"
+ },
+ {
+  "id": "dm_04_006",
+  "keywords": [
+   "CannotAttackPlayers"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "can-attack-untapped (civ-scoped)",
+  "src": "■ This creature can't attack players.\n\n■  This creature can attack untapped darkness creatures."
+ },
+ {
+  "id": "dm_04_007",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Shield Trigger|creature}}"
+ },
+ {
+  "id": "dm_04_008",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "rule lockdown",
+  "src": "■ Players can't use the \"shield trigger\" ability|abilities of darkness cards."
+ },
+ {
+  "id": "dm_04_009",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "turn-scoped effect",
+  "src": "{{Shield Trigger|spell}} \n\n■ Until the start of your next turn, each of your creatures in the battle zone gets \"Blocker ''(Whenever an opponent's creature attacks, you may tap this creature to stop the attack. Then the 2 creatures battle.)''\""
+ },
+ {
+  "id": "dm_04_010",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "protection clause; unblockable clause",
+  "src": "■ This creature can't be attacked by darkness creatures.\n\n■ This creature can't be blocked by darkness creatures."
+ },
+ {
+  "id": "dm_04_011",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [
+   {
+    "id": "OnPlay_TapCreature",
+    "target": "OpponentCreature"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Shield Trigger|creature}}\n\n■ When you put this creature into the battle zone, you may choose one of your opponent's creatures in the battle zone and tap it."
+ },
+ {
+  "id": "dm_04_012",
+  "keywords": [
+   "Blocker"
+  ],
+  "effects": [
+   {
+    "id": "CostIncrease_Summon_ByCiv",
+    "value": 2,
+    "data": "Darkness"
+   },
+   {
+    "id": "CostIncrease_Cast_ByCiv",
+    "value": 2,
+    "data": "Darkness"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Blocker}}\n\n■  Each darkness creature costs 2 more to summon, and each darkness spell costs 2 more to cast."
+ },
+ {
+  "id": "dm_04_013",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "sibling trigger",
+  "src": "■ Whenever another creature is put into the battle zone, you may draw a card."
+ },
+ {
+  "id": "dm_04_014",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "destruction/battle event",
+  "src": "■ When this creature would be destroyed, add it to your shields face down instead."
+ },
+ {
+  "id": "dm_04_015",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [
+   {
+    "id": "StaticPower_AuraRace",
+    "value": 2000,
+    "data": "light creature"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ Each other light creature in the battle zone gets +2000 power.\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_04_016",
+  "keywords": [
+   "Blocker",
+   "CannotAttackPlayers"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Blocker}}\n\n■ This creature can't attack players."
+ },
+ {
+  "id": "dm_04_017",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "mass tap",
+  "src": "■ Tap all creatures in the battle zone except light creatures. "
+ },
+ {
+  "id": "dm_04_018",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "end-step untap all",
+  "src": "■ End Step|At the end of the turn, untap all your creatures in the battle zone.  "
+ },
+ {
+  "id": "dm_04_019",
+  "keywords": [
+   "Blocker",
+   "CannotAttackPlayers",
+   "CannotAttackCreatures"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Blocker}}\n\n■ This creature can't attack."
+ },
+ {
+  "id": "dm_04_020",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Shield Trigger|creature}}"
+ },
+ {
+  "id": "dm_04_021",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "return effect",
+  "src": "■ Return up to 2 cards from your mana zone to your hand."
+ },
+ {
+  "id": "dm_04_022",
+  "keywords": [
+   "Blocker",
+   "ShieldTrigger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Blocker}} \n\n{{Shield Trigger|creature}}"
+ },
+ {
+  "id": "dm_04_023",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "per-creature effect",
+  "src": "■ For each light creature you have in the battle zone, you may choose a card in your opponent's mana zone and return it to his hand.\n\n■ For each darkness creature you have in the battle zone, you may choose one of your opponent's creatures and return it to his hand."
+ },
+ {
+  "id": "dm_04_024",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "group aura (two races)",
+  "src": "■ Light and darkness creatures in the battle zone each get +1000 power."
+ },
+ {
+  "id": "dm_04_025",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, you may reveal the top 3 cards of your deck. Put all light and darkness cards from the revealed cards into your hand, and put the rest into your graveyard."
+ },
+ {
+  "id": "dm_04_026",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "attack trigger",
+  "src": "■ Whenever this creature attacks, you may choose a card in your opponent's mana zone and return it to his hand."
+ },
+ {
+  "id": "dm_04_027",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "destruction effect",
+  "src": "■ Destroy up to 2 of your opponent's creatures.\n\n■ Destroy one of your creatures."
+ },
+ {
+  "id": "dm_04_028",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "zone effect",
+  "src": "■ Put any number of cards from your mana zone into your graveyard. Then draw that many cards."
+ },
+ {
+  "id": "dm_04_029",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "rule lockdown",
+  "src": "■ Players can't use the \"shield trigger\" Ability|abilities of light cards."
+ },
+ {
+  "id": "dm_04_030",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "misc unmodelled",
+  "src": "■ Each Demon Command in the battle zone gets +2000 power and has \"blocker\". ''(Whenever one of your opponent's creatures attacks, you may tap a creature that has \"blocker\" to stop the attack. Then the 2 creatures battle.)''"
+ },
+ {
+  "id": "dm_04_031",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Shield Trigger|creature}}"
+ },
+ {
+  "id": "dm_04_032",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "{{Shield Trigger|creature}}\n\n■ When you put this creature into the battle zone, your opponent discards a card at random from his hand."
+ },
+ {
+  "id": "dm_04_033",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "sibling trigger",
+  "src": "■ Whenever another creature is destroyed, you may draw a card."
+ },
+ {
+  "id": "dm_04_034",
+  "keywords": [
+   "CannotAttackPlayers"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "can-attack-untapped (civ-scoped)",
+  "src": "■ This creature can't attack players.\n\n■ This creature can attack untapped light creatures."
+ },
+ {
+  "id": "dm_04_035",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "protection clause; unblockable clause",
+  "src": "■ This creature can't be attacked by light creatures.\n\n■ This creature can't be blocked by light creatures."
+ },
+ {
+  "id": "dm_04_036",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "StaticPower_AuraRace",
+    "value": 2000,
+    "data": "darkness creature"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ Each other darkness creature in the battle zone gets +2000 power."
+ },
+ {
+  "id": "dm_04_037",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, you may return a Living Dead from your graveyard to your hand. "
+ },
+ {
+  "id": "dm_04_038",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "opponent choice",
+  "src": "■ Your opponent chooses and discards a card from his hand for each light creature he has in the battle zone."
+ },
+ {
+  "id": "dm_04_039",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "CostIncrease_Summon_ByCiv",
+    "value": 2,
+    "data": "Light"
+   },
+   {
+    "id": "CostIncrease_Cast_ByCiv",
+    "value": 2,
+    "data": "Light"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ Each light creature costs 2 more to summon and each light spell costs 2 more to cast."
+ },
+ {
+  "id": "dm_04_040",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "StaticPower_AlwaysWhileHaveRace",
+    "value": 2000,
+    "data": "darkness creature"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ While you have a darkness creature in the battle zone, this creature gets +2000 power."
+ },
+ {
+  "id": "dm_04_041",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "misc unmodelled",
+  "src": "■ Each Demon Command in the battle zone has \"power attacker +4000\" and \"double breaker.\" ''(A creature that has \"power attacker +4000\" and \"double breaker\" gets +4000 power while attacking and breaks 2 shields.)''"
+ },
+ {
+  "id": "dm_04_042",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Shield Trigger|creature}}"
+ },
+ {
+  "id": "dm_04_043",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "{{Shield Trigger|creature}}\n\n■ When you put this creature into the battle zone, destroy all creatures that have power 1000."
+ },
+ {
+  "id": "dm_04_044",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "scale-to-discard spell",
+  "src": "■ Discard any number of cards from your hand. Then choose the same number of your creatures in the battle zone. Each of those creatures gets \"double breaker\" until the End Step|end of the turn. ''(A creature that has \"double breaker\" breaks 2 shields.)''"
+ },
+ {
+  "id": "dm_04_045",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "CostIncrease_Summon_ByCiv",
+    "value": 1,
+    "data": "Light"
+   },
+   {
+    "id": "CostIncrease_Cast_ByCiv",
+    "value": 1,
+    "data": "Light"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ Each light creature costs 1 more to summon and each light spell costs 1 more to cast."
+ },
+ {
+  "id": "dm_04_046",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "misc unmodelled",
+  "src": "■ Each Armored Dragon in the battle zone gets +1000 power."
+ },
+ {
+  "id": "dm_04_047",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "turn-scoped effect",
+  "src": "■ Until the End Step|end of the turn, each of your creatures in the battle zone gets \"While attacking, this creature gets +1000 power for each darkness card in your mana zone.\""
+ },
+ {
+  "id": "dm_04_048",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "unblockable clause",
+  "src": "■ This creature can't be blocked by darkness creatures.\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_04_049",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "count static power",
+  "src": "{{Shield Trigger|creature}}\n\n■ This creature gets +1000 power for each shield you have."
+ },
+ {
+  "id": "dm_04_050",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "CostIncrease_Summon_ByCiv",
+    "value": 1,
+    "data": "Darkness"
+   },
+   {
+    "id": "CostIncrease_Cast_ByCiv",
+    "value": 1,
+    "data": "Darkness"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■  Each darkness creature costs 1 more to summon and each darkness spell costs 1 more to cast."
+ },
+ {
+  "id": "dm_04_051",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "StaticPower_AlwaysWhileHaveRace",
+    "value": 2000,
+    "data": "light creature"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ While you have a light creature in the battle zone, this creature gets +2000 power."
+ },
+ {
+  "id": "dm_04_052",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "shield effect",
+  "src": "■ Add the top card of your deck to your shields face down."
+ },
+ {
+  "id": "dm_04_053",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "group temporary buff",
+  "src": "■ Each of your creatures in the battle zone gets +1000 power until the End Step|end of the turn for each light creature you have in the battle zone."
+ },
+ {
+  "id": "dm_04_054",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "attack trigger",
+  "src": "■ Whenever this creature attacks, you may destroy one of your other creatures. If you do, this creature gets +2000 power and \"double breaker\" until the End Step|end of the turn. ''(A creature that has \"double breaker\" breaks 2 shields.)''"
+ },
+ {
+  "id": "dm_04_055",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Shield Trigger|creature}}"
+ },
+ {
+  "id": "dm_04_s01",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, tap one of your opponent's creatures in the battle zone for each untapped light card in your mana zone.\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_04_s02",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect; group aura (two races)",
+  "src": "■ When you put this creature into the battle zone, you may return all Angel Commands and all Demon Commands from your graveyard to your hand.\n\n■ Angel Commands and Demon Commands in the battle zone each get +2000 power."
+ },
+ {
+  "id": "dm_04_s03",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": "Demon Command",
+  "note": "on-play effect",
+  "src": "■ Evolution—Put on one of your Demon Commands.\n\n■ When you put this creature into the battle zone, destroy all creatures except darkness creatures.\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_04_s04",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, destroy all light creatures that have power 4000 or less.\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_04_s05",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": "Horned Beast",
+  "note": "on-play effect",
+  "src": "■ Evolution—Put on one of your Horned Beasts.\n\n■ When you put this creature into the battle zone, search your deck. You may take a nature creature from your deck, show that creature to your opponent, and put it into your hand. Then shuffle your deck.\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_05_001",
+  "keywords": [
+   "Blocker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "battle/block trigger",
+  "src": "{{Blocker}}\n\n■ Whenever this creature blocks, untap it after it battles."
+ },
+ {
+  "id": "dm_05_002",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [
+   {
+    "id": "OnPlay_ReturnToHand",
+    "target": "AnyCreature"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ When you put this creature into the battle zone, you may choose a creature in the battle zone and return it to its owner's hand.\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_05_003",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "destruction/battle event",
+  "src": "■ When this creature is destroyed, destroy all creatures that have power 3000 or less."
+ },
+ {
+  "id": "dm_05_004",
+  "keywords": [
+   "Survivor",
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Survivor||{{Double Breaker|dotless}}}}"
+ },
+ {
+  "id": "dm_05_005",
+  "keywords": [
+   "PowerAttacker",
+   "DoubleBreaker"
+  ],
+  "effects": [
+   {
+    "id": "PowerAttacker_AttackBoost",
+    "value": 3000
+   }
+  ],
+  "evolutionOf": null,
+  "note": "destruction/battle event",
+  "src": "{{Power Attacker|3000}}\n\n{{Double Breaker}}\n\n■ When this creature is destroyed, you may put an '''Obsidian Scarab''' from your mana zone into the battle zone."
+ },
+ {
+  "id": "dm_05_006",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "end-step untap",
+  "src": "{{Survivor}} End Step|At the end of each of your turns, untap this creature."
+ },
+ {
+  "id": "dm_05_007",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "unblockable clause",
+  "src": "■ This creature can't be blocked by creatures that have power 4000 or more."
+ },
+ {
+  "id": "dm_05_008",
+  "keywords": [
+   "Blocker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Survivor}} {{Blocker}}"
+ },
+ {
+  "id": "dm_05_009",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "conditional effect",
+  "src": "{{Shield Trigger|spell}} \n\n■ If your opponent has more cards in his mana zone than you have in yours, put the top 2 cards of your deck into your mana zone."
+ },
+ {
+  "id": "dm_05_010",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, if your opponent has more cards in his mana zone than you have in yours, put the top card of your deck into your mana zone."
+ },
+ {
+  "id": "dm_05_011",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Double Breaker}}"
+ },
+ {
+  "id": "dm_05_012",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "attack trigger",
+  "src": "■ Whenever this creature attacks, you may choose a darkness or fire creature in the battle zone and tap it. ''(First choose what this creature is attacking. Then choose a creature to tap.)''"
+ },
+ {
+  "id": "dm_05_013",
+  "keywords": [
+   "Blocker",
+   "CannotAttackPlayers"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "opponent trigger",
+  "src": "{{Blocker}}\n\n■ This creature can't attack players.\n\n■ Whenever your opponent causes a card to be put into your graveyard from your mana zone, you may return that card to your mana zone."
+ },
+ {
+  "id": "dm_05_014",
+  "keywords": [
+   "Blocker",
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "{{Blocker|s}} \n\n■ When you put this creature into the battle zone, you may return a spell from your mana zone to your hand.\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_05_015",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "per-creature effect",
+  "src": "■ For each water creature you have in the battle zone, you may choose one of your opponent's creatures in the battle zone and tap it."
+ },
+ {
+  "id": "dm_05_016",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [
+   {
+    "id": "OnPlay_ReturnToHand",
+    "target": "AnyCreature"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Shield Trigger|s}}\n\n■ When you put this creature into the battle zone, you may choose a creature in the battle zone and return it to its owner's hand."
+ },
+ {
+  "id": "dm_05_017",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "symmetric effect",
+  "src": "■ Each player returns all cards from his mana zone to his hand."
+ },
+ {
+  "id": "dm_05_018",
+  "keywords": [
+   "Blocker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "blocker limited to argued civs",
+  "src": "{{Icon|Block}} Blocker|Fire and nature blocker ''(Whenever an opponent's fire or nature creature attacks, you may tap this creature to stop the attack. Then the 2 creatures battle.)''"
+ },
+ {
+  "id": "dm_05_019",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "trigger",
+  "src": "■ Whenever any of your creatures finishes attacking this turn, you may draw 2 cards for each shield it broke."
+ },
+ {
+  "id": "dm_05_020",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "opponent trigger",
+  "src": "■ Whenever your opponent uses the \"shield trigger\" ability of a shield break|broken by this creature, you may untap this creature."
+ },
+ {
+  "id": "dm_05_021",
+  "keywords": [
+   "Blocker",
+   "Unblockable"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Blocker}}\n\n■ This creature can't be blocked."
+ },
+ {
+  "id": "dm_05_022",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, return a card from your mana zone to your hand."
+ },
+ {
+  "id": "dm_05_023",
+  "keywords": [
+   "Unblockable"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Survivor}} This creature can't be blocked."
+ },
+ {
+  "id": "dm_05_024",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "attack trigger",
+  "src": "{{Survivor}} Whenever this creature attacks, you may draw a card."
+ },
+ {
+  "id": "dm_05_025",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "creature clause",
+  "src": "■ This creature can't be attacked by fire or nature creatures."
+ },
+ {
+  "id": "dm_05_026",
+  "keywords": [
+   "Slayer"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "slayer limited to two argued civs",
+  "src": "■ Nature and light slayer ''(Whenever this creature battles a nature or light creature, destroy the other creature after the battle.)"
+ },
+ {
+  "id": "dm_05_027",
+  "keywords": [
+   "Survivor",
+   "Slayer"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Survivor||{{Slayer|dotless}}}}"
+ },
+ {
+  "id": "dm_05_028",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "conditional static",
+  "src": "■ While your opponent has no shields, this creature can't attack."
+ },
+ {
+  "id": "dm_05_029",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "CostIncrease_Summon_ByCiv",
+    "value": 1,
+    "data": "Nature"
+   },
+   {
+    "id": "CostIncrease_Cast_ByCiv",
+    "value": 1,
+    "data": "Nature"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ Each nature creature costs 1 more to summon, and each nature spell costs 1 more to cast."
+ },
+ {
+  "id": "dm_05_030",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "destruction/battle event",
+  "src": "■ When this creature is destroyed, you may choose one of your shields and put it into your hand. You can't use the \"shield trigger\" ability of that shield."
+ },
+ {
+  "id": "dm_05_031",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "look effect",
+  "src": "■ Look at your opponent's hand and choose a card from it. Your opponent discards that card."
+ },
+ {
+  "id": "dm_05_032",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "attack trigger",
+  "src": "{{Survivor}} Whenever this creature attacks, your opponent chooses and discards a card from his hand."
+ },
+ {
+  "id": "dm_05_033",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "turn-scoped effect",
+  "src": "■ During your opponent's next turn, each of his creatures attacks if able."
+ },
+ {
+  "id": "dm_05_034",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "conditional static",
+  "src": "■ While your opponent has no shields, this creature can't attack.\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_05_035",
+  "keywords": [
+   "Slayer"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "slayer limited to two argued civs",
+  "src": "■ Nature and light slayer ''(Whenever this creature battles a nature or light creature, destroy the other creature after the battle.)''"
+ },
+ {
+  "id": "dm_05_036",
+  "keywords": [
+   "PowerAttacker"
+  ],
+  "effects": [
+   {
+    "id": "PowerAttacker_AttackBoost",
+    "value": 1000
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Survivor}} Power attacker +1000 ''(While attacking, this creature gets +1000 power.)''"
+ },
+ {
+  "id": "dm_05_037",
+  "keywords": [
+   "PowerAttacker",
+   "TripleBreaker"
+  ],
+  "effects": [
+   {
+    "id": "PowerAttacker_AttackBoost",
+    "value": 8000
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Power Attacker|8000}}\n\n{{Triple Breaker}}"
+ },
+ {
+  "id": "dm_05_038",
+  "keywords": [
+   "SpeedAttacker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Speed Attacker}}"
+ },
+ {
+  "id": "dm_05_039",
+  "keywords": [
+   "ShieldTrigger",
+   "CannotAttackPlayers"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Shield Trigger|creature}}\n\n■ This creature can't attack players."
+ },
+ {
+  "id": "dm_05_040",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "per-creature effect",
+  "src": "■ For each nature creature you have in the battle zone, you may choose a card in your opponent's mana zone and put it into his graveyard."
+ },
+ {
+  "id": "dm_05_041",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "symmetric effect",
+  "src": "{{Shield Trigger|spell}} \n\n■ Each player counts the cards in his hand, shuffles those cards into his deck, then draws that many cards."
+ },
+ {
+  "id": "dm_05_042",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "event trigger",
+  "src": "■ When one of your Armored Dragons would be destroyed, you may destroy this creature instead."
+ },
+ {
+  "id": "dm_05_043",
+  "keywords": [
+   "SpeedAttacker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Speed Attacker}}"
+ },
+ {
+  "id": "dm_05_044",
+  "keywords": [
+   "CannotAttackPlayers"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "can-attack-untapped (civ-scoped)",
+  "src": "■ This creature can attack untapped water creatures.\n\n■ This creature can't attack players."
+ },
+ {
+  "id": "dm_05_045",
+  "keywords": [
+   "SpeedAttacker",
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Speed Attacker}}\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_05_046",
+  "keywords": [
+   "PowerAttacker"
+  ],
+  "effects": [
+   {
+    "id": "PowerAttacker_AttackBoost",
+    "value": 3000
+   }
+  ],
+  "evolutionOf": null,
+  "note": "destruction/battle event",
+  "src": "{{Power Attacker|3000}}\n\n■ When this creature is destroyed, you may choose an '''Ambush Scorpion''' in your mana zone and put it into the battle zone."
+ },
+ {
+  "id": "dm_05_047",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "OnDestroyed_ToMana"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Survivor}} When this creature would be destroyed, put it into your mana zone instead."
+ },
+ {
+  "id": "dm_05_048",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "attack trigger",
+  "src": "■ Whenever this creature attacks, return 2 creatures from your mana zone to your hand.\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_05_049",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "end-step search",
+  "src": "■ End Step|At the end of this turn, search your deck. For each of your opponent's shields your creatures broke this turn, you may take a creature from your deck, show it to your opponent, and put it into your hand. Then shuffle your deck."
+ },
+ {
+  "id": "dm_05_050",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "count static power",
+  "src": "■ This creature gets +1000 power for each water creature and darkness creature your opponent has in the battle zone."
+ },
+ {
+  "id": "dm_05_051",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "zone effect",
+  "src": "■ Put up to 2 creatures from your graveyard into your mana zone."
+ },
+ {
+  "id": "dm_05_052",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "count static power",
+  "src": "■ This creature gets +1000 power for each water creature and darkness creature your opponent has in the battle zone.\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_05_053",
+  "keywords": [
+   "CannotAttackCreatures",
+   "PowerAttacker",
+   "TripleBreaker"
+  ],
+  "effects": [
+   {
+    "id": "PowerAttacker_AttackBoost",
+    "value": 7000
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ This creature can't attack creatures.\n\n{{Power Attacker|7000}}\n\n{{Triple Breaker}}"
+ },
+ {
+  "id": "dm_05_054",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, search your deck. You may take a Giant Insect from your deck, show that Giant Insect to your opponent, and put it into your hand. Then shuffle your deck."
+ },
+ {
+  "id": "dm_05_055",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "flat static power",
+  "src": "{{Survivor}} This creature gets +1000 power."
+ },
+ {
+  "id": "dm_05_s01",
+  "keywords": [
+   "Blocker",
+   "TripleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Blocker}}\n\n{{Triple Breaker}}"
+ },
+ {
+  "id": "dm_05_s02",
+  "keywords": [
+   "TripleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, return all other creatures from the battle zone to their owners' hands.\n\n{{Triple Breaker}}"
+ },
+ {
+  "id": "dm_05_s03",
+  "keywords": [
+   "TripleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, destroy all your other creatures.\n\n{{Triple Breaker}}"
+ },
+ {
+  "id": "dm_05_s04",
+  "keywords": [
+   "TripleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Triple Breaker}}"
+ },
+ {
+  "id": "dm_05_s05",
+  "keywords": [
+   "CannotAttackCreatures",
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "battle/block trigger",
+  "src": "■ This creature can't attack creatures.\n\n■ Whenever this creature becomes blocked, it breaks one of your opponent's shields.\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_06_001",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "shield effect",
+  "src": "■ Add up to 3 cards from the top of your deck to your shields face down."
+ },
+ {
+  "id": "dm_06_002",
+  "keywords": [
+   "Blocker",
+   "CannotAttackPlayers"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "rules text",
+  "src": "{{Blocker}}\n\n■ Evolution creatures are put into the battle zone tapped.\n\n■ This creature can't attack players."
+ },
+ {
+  "id": "dm_06_003",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Tap Ability|Choose a creature in the battle zone and return it to its owner's hand.}}"
+ },
+ {
+  "id": "dm_06_004",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "search effect",
+  "src": "■ Search your deck. You may take any number of cards from your deck, show those cards to your opponent, and put them into your hand. Then shuffle your deck."
+ },
+ {
+  "id": "dm_06_005",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "destruction effect",
+  "src": "■ Destroy all your opponent's creatures."
+ },
+ {
+  "id": "dm_06_006",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Tap Ability|Your opponent chooses one of his creatures in the battle zone and destroys it.}}"
+ },
+ {
+  "id": "dm_06_007",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "targeted effect",
+  "src": "■ Choose up to 3 of your opponent's shields and put them into his graveyard."
+ },
+ {
+  "id": "dm_06_008",
+  "keywords": [
+   "CanAttackUntappedCreatures",
+   "PowerAttacker"
+  ],
+  "effects": [
+   {
+    "id": "PowerAttacker_AttackBoost",
+    "value": 3000
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ This creature can attack untapped creatures.\n\n{{Power Attacker|3000}}"
+ },
+ {
+  "id": "dm_06_009",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "group temporary buff",
+  "src": "■ Each of your creatures in the battle zone gets +8000 power and \"triple breaker\" until the End Step|end of the turn. ''(A creature that has \"triple breaker\" breaks 3 shields.)''"
+ },
+ {
+  "id": "dm_06_010",
+  "keywords": [
+   "PowerAttacker",
+   "DoubleBreaker"
+  ],
+  "effects": [
+   {
+    "id": "PowerAttacker_AttackBoost",
+    "value": 3000
+   }
+  ],
+  "evolutionOf": null,
+  "note": "battle/block trigger",
+  "src": "{{Power Attacker|3000}}\n\n{{Double Breaker}}\n\n■ Whenever this creature becomes blocked, it breaks one of your opponent's shields."
+ },
+ {
+  "id": "dm_06_011",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Tap Ability|Choose a shield and look at it. Then put it back where it was.}}"
+ },
+ {
+  "id": "dm_06_012",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": "Guardian",
+  "note": "tap/turbo/crew ability not modelled; tap ability",
+  "src": "■ Evolution—Put on one of your Guardians.\n\n■ Each of your light creatures may tap instead of attacking to use this creature's {{Tap}} ability.\n:{{Tap}} Choose one of your opponent's creatures in the battle zone and tap it."
+ },
+ {
+  "id": "dm_06_013",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": ""
+ },
+ {
+  "id": "dm_06_014",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "mass tap",
+  "src": "{{Shield Trigger|spell}} \n\n■ Tap all creatures in the battle zone that don't have \"blocker.\""
+ },
+ {
+  "id": "dm_06_015",
+  "keywords": [
+   "Blocker",
+   "CannotAttackPlayers",
+   "CannotAttackCreatures"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "battle/block trigger",
+  "src": "{{Blocker|s}}\n\n■ Whenever this creature blocks, no battle happens. ''(Both creatures stay tapped.)''\n\n■ This creature can't attack."
+ },
+ {
+  "id": "dm_06_016",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Tap Ability|Choose one of your opponent's creatures in the battle zone and tap it.}}"
+ },
+ {
+  "id": "dm_06_017",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Tap Ability|Return a spell from your mana zone to your hand.}}"
+ },
+ {
+  "id": "dm_06_018",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "turn-scoped effect",
+  "src": "■ During your opponent's turn, if this creature would be discarded from your hand, put it into the battle zone instead."
+ },
+ {
+  "id": "dm_06_019",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "{{Survivor}} When you put this creature into the battle zone, search your deck. You may take a spell from your deck, show that spell to your opponent, and put it into your hand. Then shuffle your deck."
+ },
+ {
+  "id": "dm_06_020",
+  "keywords": [
+   "SummonRequiresSpellCast",
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ You can summon this creature only if you have cast a spell this turn.\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_06_021",
+  "keywords": [
+   "Blocker",
+   "CannotAttackPlayers"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Blocker}}\n\n■ This creature can't attack players."
+ },
+ {
+  "id": "dm_06_022",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": ""
+ },
+ {
+  "id": "dm_06_023",
+  "keywords": [
+   "SummonRequiresSpellCast"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ You can summon this creature only if you have cast a spell this turn."
+ },
+ {
+  "id": "dm_06_024",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "blocker-scoped temp boost",
+  "src": "{{Shield Trigger|spell}} \n\n■ One of your creatures in the battle zone that has \"blocker\" gets +4000 power until the End Step|end of the turn."
+ },
+ {
+  "id": "dm_06_025",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "look effect",
+  "src": "■ Look at your opponent's hand. He discards all darkness spells from it."
+ },
+ {
+  "id": "dm_06_026",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "count static power",
+  "src": "■ This creature gets +2000 power for each shield you have."
+ },
+ {
+  "id": "dm_06_027",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "conditional effect",
+  "src": "■ If your opponent has more shields than you do, add the top card of your deck to your shields face down."
+ },
+ {
+  "id": "dm_06_028",
+  "keywords": [
+   "Blocker",
+   "CannotAttackPlayers"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "{{Blocker|s}}\n\n■ When you put this creature into the battle zone, you may look at your shields. Then put them back where they were.\n\n■ This creature can't attack players."
+ },
+ {
+  "id": "dm_06_029",
+  "keywords": [
+   "Blocker",
+   "CannotAttackPlayers"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Blocker}}\n\n■ This creature can't attack players."
+ },
+ {
+  "id": "dm_06_030",
+  "keywords": [
+   "SummonRequiresSpellCast"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ You can summon this creature only if you have cast a spell this turn."
+ },
+ {
+  "id": "dm_06_031",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "opponent trigger",
+  "src": "■ Whenever your opponent summons a creature or casts a spell, this creature gets \"blocker\" until the End Step|end of the turn. ''(Whenever an opponent's creature attacks, you may tap a creature that has \"blocker\" to stop the attack. Then the 2 creatures battle.)''"
+ },
+ {
+  "id": "dm_06_032",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "Spell_Draw",
+    "value": 2
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ Draw 2 cards."
+ },
+ {
+  "id": "dm_06_033",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": "Cyber Cluster",
+  "note": "tap/turbo/crew ability not modelled; tap ability",
+  "src": "■ Evolution—Put on one of your Cyber Clusters.\n\n■ Each of your water creatures may tap instead of attacking to use this creature's {{Tap}} ability.\n:{{Tap}} Draw a card."
+ },
+ {
+  "id": "dm_06_034",
+  "keywords": [
+   "Blocker",
+   "CannotAttackPlayers",
+   "CannotAttackCreatures"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Blocker}}\n\n■ This creature can't attack."
+ },
+ {
+  "id": "dm_06_035",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "opponent trigger",
+  "src": "■ Whenever your opponent summons a creature or casts a spell, this creature gets \"blocker\" until the End Step|end of the turn. ''(Whenever an opponent's creature attacks, you may tap a creature that has \"blocker\" to stop the attack. Then the 2 creatures battle.)''\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_06_036",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "opponent trigger",
+  "src": "■ Whenever an opponent's creature would break a shield, you choose the shield instead of your opponent."
+ },
+ {
+  "id": "dm_06_037",
+  "keywords": [
+   "Blocker",
+   "CannotAttackPlayers",
+   "CannotAttackCreatures"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Blocker}}\n\n■ This creature can't attack."
+ },
+ {
+  "id": "dm_06_038",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, choose a card in your opponent's mana zone and return it to his hand.\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_06_039",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "return effect",
+  "src": "{{Shield Trigger|spell}} \n\n■ Return up to 3 cards from your mana zone to your hand."
+ },
+ {
+  "id": "dm_06_040",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Tap Ability|Draw 2 cards.}}"
+ },
+ {
+  "id": "dm_06_041",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "opponent trigger",
+  "src": "■ Whenever your opponent summons a creature or casts a spell, this creature gets \"blocker\" until the End Step|end of the turn. ''(Whenever an opponent's creature attacks, you may tap a creature that has \"blocker\" to stop the attack. Then the 2 creatures battle.)''"
+ },
+ {
+  "id": "dm_06_042",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": ""
+ },
+ {
+  "id": "dm_06_043",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, count the cards in your hand, shuffle those cards into your deck, then draw that many cards."
+ },
+ {
+  "id": "dm_06_044",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "OnPlay_TapCreature",
+    "target": "OpponentCreature"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Survivor}} When you put this creature into the battle zone, you may choose one of your opponent's creatures in the battle zone and tap it."
+ },
+ {
+  "id": "dm_06_045",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "return effect",
+  "src": "■ Return any number of your creatures from the battle zone to your hand. Then you may choose that many of your opponent's creatures in the battle zone and return them to your opponent's hand."
+ },
+ {
+  "id": "dm_06_046",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Tap Ability|Choose one of your creatures in the battle zone. It can't be blocked this turn.}}"
+ },
+ {
+  "id": "dm_06_047",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [
+   {
+    "id": "Spell_ReturnToHand",
+    "target": "AnyCreature"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Shield Trigger|spell}} \n\n■ Choose a creature in the battle zone and return it to its owner's hand."
+ },
+ {
+  "id": "dm_06_048",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": ""
+ },
+ {
+  "id": "dm_06_049",
+  "keywords": [
+   "Blocker",
+   "CannotAttackPlayers",
+   "CannotAttackCreatures"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "{{Blocker|s}}\n\n■ When you put this creature into the battle zone, return a card from your mana zone to your hand.\n\n■ This creature can't attack."
+ },
+ {
+  "id": "dm_06_050",
+  "keywords": [
+   "Blocker",
+   "CannotAttackPlayers",
+   "CannotAttackCreatures"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Blocker}}\n\n■ This creature can't attack."
+ },
+ {
+  "id": "dm_06_051",
+  "keywords": [
+   "CannotAttackPlayers"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "attack restriction",
+  "src": "■ This creature can attack only creatures that have \"blocker.\"\n\n■ This creature can't attack players."
+ },
+ {
+  "id": "dm_06_052",
+  "keywords": [
+   "Blocker",
+   "Slayer",
+   "CannotAttackPlayers",
+   "CannotAttackCreatures"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Blocker}}\n\n{{Slayer}}\n\n■ This creature can't attack."
+ },
+ {
+  "id": "dm_06_053",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "destruction effect",
+  "src": "■ Destroy one of your opponent's untapped creatures."
+ },
+ {
+  "id": "dm_06_054",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": "Ghost",
+  "note": "group keyword/power aura",
+  "src": "■ Evolution—Put on one of your Ghosts.\n\n■ Each of your Ghosts in the battle zone has \"slayer.\" ''(Whenever a creature that has \"slayer\" battles, destroy the other creature after the battle.)''"
+ },
+ {
+  "id": "dm_06_055",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "search effect",
+  "src": "■ Search your opponent's deck. Take up to 2 cards from his deck and put them into his graveyard. Then your opponent shuffles his deck."
+ },
+ {
+  "id": "dm_06_056",
+  "keywords": [
+   "Blocker",
+   "Slayer",
+   "CannotAttackPlayers",
+   "CannotAttackCreatures"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Blocker}}\n\n{{Slayer}}\n\n■ This creature can't attack."
+ },
+ {
+  "id": "dm_06_057",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "end-step survivor destroy",
+  "src": "{{Double Breaker}}\n\n■ End Step|At the end of each of your turns, if this is your only creature in the battle zone, destroy it."
+ },
+ {
+  "id": "dm_06_058",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "{{Survivor}} When you put this creature into the battle zone, you may return a Survivor from your graveyard to your hand."
+ },
+ {
+  "id": "dm_06_059",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Tap Ability|Return a darkness creature from your graveyard to your hand.}}"
+ },
+ {
+  "id": "dm_06_060",
+  "keywords": [
+   "Slayer"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Slayer}}"
+ },
+ {
+  "id": "dm_06_061",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "destruction effect",
+  "src": "{{Shield Trigger|spell}}\n\n■ Destroy any number of your creatures. Then draw that many cards."
+ },
+ {
+  "id": "dm_06_062",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": ""
+ },
+ {
+  "id": "dm_06_063",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "end-step survivor destroy",
+  "src": "■ End Step|At the end of each of your turns, if this is your only creature in the battle zone, destroy it."
+ },
+ {
+  "id": "dm_06_064",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Tap Ability|One of your creatures in the battle zone gets \"slayer\" until the End Step|end of the turn. ''(Whenever a creature that has \"slayer\" battles, destroy the other creature after the battle.)''}}"
+ },
+ {
+  "id": "dm_06_065",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "opponent choice",
+  "src": "{{Shield Trigger|spell}}\n\n■ Your opponent chooses one of his creatures in the battle zone and destroys it."
+ },
+ {
+  "id": "dm_06_066",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "destruction/battle event",
+  "src": "■ When this creature is destroyed, each player discards his hand."
+ },
+ {
+  "id": "dm_06_067",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "end-step survivor destroy",
+  "src": "■ End Step|At the end of each of your turns, if this is your only creature in the battle zone, destroy it."
+ },
+ {
+  "id": "dm_06_068",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": ""
+ },
+ {
+  "id": "dm_06_069",
+  "keywords": [
+   "CannotAttackCreatures",
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "destruction/battle event",
+  "src": "■ This creature can't attack creatures.\n\n{{Double Breaker}}\n\n■ When this creature battles, destroy it after the battle."
+ },
+ {
+  "id": "dm_06_070",
+  "keywords": [
+   "Blocker",
+   "CannotAttackPlayers",
+   "CannotAttackCreatures"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "destruction/battle event",
+  "src": "{{Blocker}}\n\n■ This creature can't attack.\n\n■ When this creature battles, destroy it after the battle."
+ },
+ {
+  "id": "dm_06_071",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "OnPlay_DestroyPowerAtMost",
+    "target": "OpponentCreature",
+    "value": 4000
+   }
+  ],
+  "evolutionOf": "Human",
+  "note": null,
+  "src": "■ Evolution—Put on one of your Humans.\n\n■ When you put this creature into the battle zone, you may destroy one of your opponent's creatures that has power 4000 or less."
+ },
+ {
+  "id": "dm_06_072",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "conditional static",
+  "src": "■ While you have no other fire creatures in the battle zone, this creature has \"power attacker +3000\" and \"double breaker.\" ''(A creature that has \"power attacker +3000\" and \"double breaker\" gets +3000 power while attacking and breaks 2 shields.)''"
+ },
+ {
+  "id": "dm_06_073",
+  "keywords": [
+   "AttacksEachTurn"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ This creature attacks each turn if able."
+ },
+ {
+  "id": "dm_06_074",
+  "keywords": [
+   "PowerAttacker"
+  ],
+  "effects": [
+   {
+    "id": "PowerAttacker_AttackBoost",
+    "value": 3000
+   }
+  ],
+  "evolutionOf": null,
+  "note": "battle/block trigger",
+  "src": "{{Power Attacker|3000}}\n\n■ Whenever this creature becomes blocked, no battle happens. ''(Both creatures stay tapped.)''"
+ },
+ {
+  "id": "dm_06_075",
+  "keywords": [
+   "SpeedAttacker",
+   "CanAttackUntappedCreatures",
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "end-step return to hand",
+  "src": "{{Speed Attacker}}\n\n■ This creature can attack untapped creatures.\n\n{{Double Breaker|s}}\n\n■ End Step|At the end of your turn, return this creature to your hand."
+ },
+ {
+  "id": "dm_06_076",
+  "keywords": [
+   "PowerAttacker"
+  ],
+  "effects": [
+   {
+    "id": "PowerAttacker_AttackBoost",
+    "value": 1000
+   }
+  ],
+  "evolutionOf": null,
+  "note": "battle/block trigger",
+  "src": "{{Power Attacker|1000}}\n\n■ Whenever this creature becomes blocked, no battle happens. ''(Both creatures stay tapped.)''"
+ },
+ {
+  "id": "dm_06_077",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "CostDecrease_Summon_ByRace",
+    "value": 2,
+    "data": "Dragon"
+   }
+  ],
+  "evolutionOf": null,
+  "note": "exact race substring",
+  "src": "■ Your creatures that have Dragon in their race each cost 2 less to summon. ''(Dragonoids don't count.)'' They can't cost less than 2."
+ },
+ {
+  "id": "dm_06_078",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "destruction effect",
+  "src": "{{Shield Trigger|spell}} \n\n■ Destroy one of your opponent's creatures that has \"blocker\" and power 6000 or less."
+ },
+ {
+  "id": "dm_06_079",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "opponent choice",
+  "src": "{{Shield Trigger|spell}} \n\n■ Your opponent chooses one of his creatures in the battle zone or a card in his mana zone and puts it into his graveyard."
+ },
+ {
+  "id": "dm_06_080",
+  "keywords": [
+   "SpeedAttacker",
+   "CannotAttackPlayers"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "end-step return to hand",
+  "src": "{{Speed Attacker}}\n\n■ This creature can't attack players.\n\n■ End Step|At the end of your turn, return this creature to your hand."
+ },
+ {
+  "id": "dm_06_081",
+  "keywords": [
+   "SpeedAttacker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Speed Attacker}}\n\n{{Tap Ability|One of your creatures in the battle zone gets \"speed attacker\" until the End Step|end of the turn.}}"
+ },
+ {
+  "id": "dm_06_082",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Tap Ability|One of your fire creatures in the battle zone gets \"double breaker\" until the End Step|end of the turn. ''(A creature that has \"double breaker\" breaks 2 shields.)''}}"
+ },
+ {
+  "id": "dm_06_083",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [
+   {
+    "id": "Spell_DestroyPowerAtMost",
+    "target": "OpponentCreature",
+    "value": 2000
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Shield Trigger|spell}} \n\n■ Destroy one of your opponent's creatures that has power 2000 or less."
+ },
+ {
+  "id": "dm_06_084",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": ""
+ },
+ {
+  "id": "dm_06_085",
+  "keywords": [
+   "SpeedAttacker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "end-step return to hand",
+  "src": "{{Speed Attacker}}\n\n■ End Step|At the end of your turn, return this creature to your hand."
+ },
+ {
+  "id": "dm_06_086",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": "Survivor",
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "■ Evolution—Put on one of your Survivors.\n\n{{Crew Breaker|Survivor}}"
+ },
+ {
+  "id": "dm_06_087",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Tap Ability|Destroy one of your opponent’s creatures that has “blocker.”}}"
+ },
+ {
+  "id": "dm_06_088",
+  "keywords": [
+   "Survivor",
+   "SpeedAttacker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Survivor||{{Speed Attacker|dotless}}}}"
+ },
+ {
+  "id": "dm_06_089",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "Spell_DestroyPowerAtMost",
+    "target": "OpponentCreature",
+    "value": 3000
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ Destroy one of your opponent's creatures that has power 3000 or less."
+ },
+ {
+  "id": "dm_06_090",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "conditional static",
+  "src": "■ While you have at least one other fire creature in the battle zone, this creature has \"Power attacker +3000 ''(While attacking, this creature gets +3000 power)''.\""
+ },
+ {
+  "id": "dm_06_091",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Tap Ability|Put up to 3 cards from your graveyard into your mana zone.}}"
+ },
+ {
+  "id": "dm_06_092",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Double Breaker}}"
+ },
+ {
+  "id": "dm_06_093",
+  "keywords": [
+   "PowerAttacker"
+  ],
+  "effects": [
+   {
+    "id": "PowerAttacker_AttackBoost",
+    "value": 3000
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Power Attacker|3000}}"
+ },
+ {
+  "id": "dm_06_094",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Tap Ability|Search your deck. You may take a creature from your deck, show that creature to your opponent, and put it into your hand. Then shuffle your deck.}}"
+ },
+ {
+  "id": "dm_06_095",
+  "keywords": [
+   "PowerAttacker",
+   "DoubleBreaker"
+  ],
+  "effects": [
+   {
+    "id": "PowerAttacker_AttackBoost",
+    "value": 2000
+   }
+  ],
+  "evolutionOf": null,
+  "note": "unblockable clause",
+  "src": "{{Power Attacker|2000}}\n\n■ This creature can't be blocked by any creature that has power 5000 or less.\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_06_096",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "search effect",
+  "src": "{{Shield Trigger|spell}} \n\n■ Search your deck. You may take a creature from your deck, show that creature to your opponent, and put it into your hand. Then shuffle your deck."
+ },
+ {
+  "id": "dm_06_097",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "{{Survivor}} When you put this creature into the battle zone, search your deck. You may take a Survivor from your deck, show that Survivor to your opponent, and put it into your hand. Then shuffle your deck."
+ },
+ {
+  "id": "dm_06_098",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [
+   {
+    "id": "Spell_ChargeMana"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Shield Trigger|spell}} \n\n■ Put the top card of your deck into your mana zone."
+ },
+ {
+  "id": "dm_06_099",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": ""
+ },
+ {
+  "id": "dm_06_100",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "aura/condition",
+  "src": "■ Your opponent's attacking creatures attack Mystery Totems if able."
+ },
+ {
+  "id": "dm_06_101",
+  "keywords": [
+   "PowerAttacker"
+  ],
+  "effects": [
+   {
+    "id": "PowerAttacker_AttackBoost",
+    "value": 2000
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Power Attacker|2000}}"
+ },
+ {
+  "id": "dm_06_102",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": ""
+ },
+ {
+  "id": "dm_06_103",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "flex evolution host",
+  "src": "■ You can put an evolution creature of any race on this creature."
+ },
+ {
+  "id": "dm_06_104",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": "Colony Beetle",
+  "note": "tap/turbo/crew ability not modelled; tap ability",
+  "src": "■ Evolution—Put on one of your Colony Beetles.\n\n■ Each of your nature creatures may tap instead of attacking to use this creature's {{Tap}} ability.\n:{{Tap}} Put the top card of your deck into your mana zone."
+ },
+ {
+  "id": "dm_06_105",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Tap Ability|One of your creatures in the battle zone gets +5000 power until the End Step|end of the turn.}}"
+ },
+ {
+  "id": "dm_06_106",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "search effect",
+  "src": "■ Search your deck. You may take a non-nature card from your deck and put it into your mana zone. Then shuffle your deck."
+ },
+ {
+  "id": "dm_06_107",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "targeted effect",
+  "src": "{{Shield Trigger|spell}} \n\n■ Choose one of your opponent’s evolution creatures in the battle zone and put the top card of that creature into your opponent’s mana zone."
+ },
+ {
+  "id": "dm_06_108",
+  "keywords": [
+   "PowerAttacker"
+  ],
+  "effects": [
+   {
+    "id": "PowerAttacker_AttackBoost",
+    "value": 2000
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Power Attacker|2000}}"
+ },
+ {
+  "id": "dm_06_109",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": ""
+ },
+ {
+  "id": "dm_06_110",
+  "keywords": [
+   "CannotAttackPlayers",
+   "PowerAttacker"
+  ],
+  "effects": [
+   {
+    "id": "PowerAttacker_AttackBoost",
+    "value": 4000
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ This creature can't attack players.\n\n{{Power Attacker|4000}}"
+ },
+ {
+  "id": "dm_06_s01",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": "Initiate",
+  "note": "on-play effect",
+  "src": "■ Evolution—Put on one of your Initiates.\n\n■ When you put this creature into the battle zone, choose up to 2 of your opponent's creatures in the battle zone and tap them.\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_06_s02",
+  "keywords": [
+   "Blocker",
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "end-step untap",
+  "src": "{{Blocker}}\n\n■ End Step|At the end of each of your turns, you may untap this creature.\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_06_s03",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [
+   {
+    "id": "OnDestroyed_ToHand"
+   }
+  ],
+  "evolutionOf": "Liquid People",
+  "note": null,
+  "src": "■ Evolution—Put on one of your Liquid People.\n\n{{Double Breaker}}\n\n■ When this creature would be destroyed, return it to your hand instead."
+ },
+ {
+  "id": "dm_06_s04",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": "Survivor",
+  "note": "on-play effect",
+  "src": "■ Evolution—Put on one of your Survivors.\n\n■ When you put this creature into the battle zone, you may draw a card for each Survivor in the battle zone.\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_06_s05",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "attack trigger",
+  "src": "■ Whenever this creature attacks, destroy one of your creatures.\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_06_s06",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": "Chimera",
+  "note": "tap/turbo/crew ability not modelled; tap ability",
+  "src": "■ Evolution—Put on one of your Chimeras.\n\n■ Each of your darkness creatures may tap instead of attacking to use this creature's {{Tap}} ability.\n:{{Tap}} Your opponent discards a card at random from his hand."
+ },
+ {
+  "id": "dm_06_s07",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "shield-break trigger",
+  "src": "{{Double Breaker}}\n\n■ Whenever this creature would break a shield, your opponent puts that shield into his graveyard instead."
+ },
+ {
+  "id": "dm_06_s08",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": "Dragonoid",
+  "note": "tap/turbo/crew ability not modelled; tap ability",
+  "src": "■ Evolution—Put on one of your Dragonoids.\n\n■ Each of your fire creatures may tap instead of attacking to use this creature's {{Tap}} ability.\n:{{Tap}} One of your fire creatures in the battle zone gets +3000 power until the End Step|end of the turn."
+ },
+ {
+  "id": "dm_06_s09",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "conditional static",
+  "src": "■ While you have any other untapped creatures in the battle zone, this creature can't attack.\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_06_s10",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": "Giant Insect",
+  "note": "unblockable clause",
+  "src": "■ Evolution—Put on one of your Giant Insects.\n\n■ This creature can't be blocked by any creature that has power 8000 or less.\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_07_001",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Double Breaker}}\n\n{{Tap Ability|End Step|At the end of the turn, untap all your light creatures.}}"
+ },
+ {
+  "id": "dm_07_002",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Double Breaker}}\n\n{{Tap Ability|Each of your water creatures gets \"This creature can't be blocked\" until the End Step|end of the turn.}}"
+ },
+ {
+  "id": "dm_07_003",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Tap Ability|Until the End Step|end of the turn, each of your darkness creatures in the battle zone gets +4000 power and \"double breaker.\" Whenever any of those creatures battles this turn, destroy it after the battle.}}"
+ },
+ {
+  "id": "dm_07_004",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Tap Ability|Each of your fire creatures gets \"This creature can attack untapped creatures\" until the End Step|end of the turn.}}"
+ },
+ {
+  "id": "dm_07_005",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Tap Ability|This turn, whenever any of your nature creatures is attacking your opponent and becomes blocked, it breaks one of his shields. ''(If a creature has \"double breaker\" or \"triple breaker,\" it still breaks only one shield.)''}}"
+ },
+ {
+  "id": "dm_07_006",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "no-shield static",
+  "src": "■ While you have no shields, this creature has \"Blocker ''(Whenever an opponent's creature attacks, you may tap this creature to stop the attack. Then the 2 creatures battle)''.\""
+ },
+ {
+  "id": "dm_07_007",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "attack trigger",
+  "src": "■ Whenever this creature attacks, you may choose a darkness or fire creature in the battle zone and tap it. ''(First choose what this creature is attacking. Then choose a creature to tap.)''"
+ },
+ {
+  "id": "dm_07_008",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "mass tap",
+  "src": "■ Tap all darkness creatures in the battle zone, or tap all fire creatures in the battle zone."
+ },
+ {
+  "id": "dm_07_009",
+  "keywords": [
+   "Blocker",
+   "Stealth",
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": "Initiate",
+  "note": "stealth (civ-blocked) approximated as unblockable",
+  "src": "{{Blocker}}\n\n■ Evolution—Put on one of your Initiates.\n\n{{Stealth|Fire}}\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_07_010",
+  "keywords": [
+   "Charger"
+  ],
+  "effects": [
+   {
+    "id": "Spell_TapCreature",
+    "target": "OpponentCreature"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ Choose one of your opponent's creatures in the battle zone and tap it.\n\n{{Charger}}"
+ },
+ {
+  "id": "dm_07_011",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "targeted effect",
+  "src": "■ Choose one of your creatures in the battle zone. This turn, it can't be blocked and you ignore any effects that would prevent that creature from attacking your opponent. ''(For example, ignore summoning sickness and card effects that say \"This creature can't attack\" or \"This creature can't attack players.\" Your creatures can't attack creatures this way.)''"
+ },
+ {
+  "id": "dm_07_012",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "event trigger",
+  "src": "■ When one of your shields would be break|broken, you may destroy this creature instead."
+ },
+ {
+  "id": "dm_07_013",
+  "keywords": [
+   "Stealth"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "stealth (civ-blocked) approximated as unblockable",
+  "src": "{{Stealth|Darkness}}"
+ },
+ {
+  "id": "dm_07_014",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "OnPlay_TapCreature",
+    "target": "OpponentCreature"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ When you put this creature into the battle zone, you may choose one of your opponent's creatures in the battle zone and tap it."
+ },
+ {
+  "id": "dm_07_015",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Tap Ability|Add one of your creatures from the battle zone to your shields face down.}}"
+ },
+ {
+  "id": "dm_07_016",
+  "keywords": [
+   "Stealth"
+  ],
+  "effects": [
+   {
+    "id": "OnDestroyed_ToHand"
+   }
+  ],
+  "evolutionOf": null,
+  "note": "stealth (civ-blocked) approximated as unblockable; may-flag ignored",
+  "src": "{{Stealth|Water}}\n\n■ When this creature would be destroyed, you may return it to your hand instead."
+ },
+ {
+  "id": "dm_07_017",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Tap Ability|Choose a card in your opponent's mana zone and return it to his hand.}}"
+ },
+ {
+  "id": "dm_07_018",
+  "keywords": [
+   "Blocker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Blocker}}\n\n{{Tap Ability|Choose one of your creatures in the battle zone. It can't be blocked this turn.}}"
+ },
+ {
+  "id": "dm_07_019",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "OnDestroyed_Draw",
+    "value": 1
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ When this creature is destroyed, you may draw a card."
+ },
+ {
+  "id": "dm_07_020",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "attack trigger",
+  "src": "■ Whenever this creature attacks, you may look at one of your opponent's shields. Then put it back where it was."
+ },
+ {
+  "id": "dm_07_021",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Tap Ability|Look at the top 3 cards of your deck. Then put them back in any order.}}"
+ },
+ {
+  "id": "dm_07_022",
+  "keywords": [
+   "Charger"
+  ],
+  "effects": [
+   {
+    "id": "Spell_ReturnToHand",
+    "target": "AnyCreature"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ Choose a creature in the battle zone and return it to its owner's hand.\n\n{{Charger}}"
+ },
+ {
+  "id": "dm_07_023",
+  "keywords": [
+   "Unblockable"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, return a card from your mana zone to your hand.\n\n■ This creature can't be blocked."
+ },
+ {
+  "id": "dm_07_024",
+  "keywords": [
+   "Blocker",
+   "CannotBeAttacked",
+   "CannotAttackPlayers",
+   "CannotAttackCreatures"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Blocker}}\n\n■ This creature can't be attacked.\n\n■ This creature can't attack."
+ },
+ {
+  "id": "dm_07_025",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, you may add up to 2 cards from your hand to your shields face down. If you do, choose the same number of your shields and put them into your hand. You can't use the \"shield trigger\" ability of those shields."
+ },
+ {
+  "id": "dm_07_026",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "OnDestroyed_ToHand"
+   }
+  ],
+  "evolutionOf": null,
+  "note": "may-flag ignored",
+  "src": "■ When this creature would be destroyed, you may return it to your hand instead. If you do, put a card from your hand into your graveyard."
+ },
+ {
+  "id": "dm_07_027",
+  "keywords": [
+   "Stealth"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "stealth (civ-blocked) approximated as unblockable",
+  "src": "{{Stealth|Nature}}"
+ },
+ {
+  "id": "dm_07_028",
+  "keywords": [
+   "Blocker",
+   "CannotAttackPlayers",
+   "CannotAttackCreatures"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "{{Blocker}}\n\n■ When you put this creature into the battle zone, choose one of your shields and put it into your hand. You can't use the \"shield trigger\" ability of that shield.\n\n■ This creature can't attack."
+ },
+ {
+  "id": "dm_07_029",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "Spell_DestroyPowerAtMost",
+    "target": "OpponentCreature",
+    "value": 999999
+   }
+  ],
+  "evolutionOf": null,
+  "note": "no power cap",
+  "src": "■ Destroy one of your opponent's creatures."
+ },
+ {
+  "id": "dm_07_030",
+  "keywords": [
+   "Stealth",
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": "Chimera",
+  "note": "stealth (civ-blocked) approximated as unblockable",
+  "src": "■ Evolution—Put on one of your Chimeras.\n\n{{Stealth|Light}}\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_07_031",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "destruction/battle event",
+  "src": "■ When this creature is destroyed, your opponent discards a card at random from his hand."
+ },
+ {
+  "id": "dm_07_032",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "battle/block trigger",
+  "src": "■ Whenever this creature is attacked, it gets \"slayer\" until the End Step|end of the turn. ''(Whenever a creature that has \"slayer\" battles, destroy the other creature after the battle.)''"
+ },
+ {
+  "id": "dm_07_033",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, choose one of your shields and put it into your hand. You can't use the \"shield trigger\" ability of that shield."
+ },
+ {
+  "id": "dm_07_034",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "destruction effect",
+  "src": "{{Shield Trigger|spell}} \n\n■ Destroy one of your opponent's untapped light or untapped nature creatures."
+ },
+ {
+  "id": "dm_07_035",
+  "keywords": [
+   "Charger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "temporary ability grant",
+  "src": "■ One of your creatures in the battle zone gets \"slayer\" until the End Step|end of the turn. ''(Whenever a creature that has \"slayer\" battles, destroy the other creature after the battle.)''\n\n{{Charger}}"
+ },
+ {
+  "id": "dm_07_036",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "destruction effect",
+  "src": "■ Destroy any number of your opponent's creatures that have total power 8000 or less."
+ },
+ {
+  "id": "dm_07_037",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "conditional static",
+  "src": "■ While you have no other creatures in the battle zone, this creature has \"Power attacker +4000 ''(While attacking, this creature gets +4000 power)''\" and \"Double breaker ''(This creature breaks 2 shields)''.\""
+ },
+ {
+  "id": "dm_07_038",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "no-shield static",
+  "src": "■ While you have no shields, this creature can attack untapped creatures and has \"Power attacker +3000 ''(While attacking, this creature gets +3000 power)''.\""
+ },
+ {
+  "id": "dm_07_039",
+  "keywords": [
+   "Charger"
+  ],
+  "effects": [
+   {
+    "id": "Spell_BoostPower",
+    "target": "OwnCreature",
+    "value": 2000
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ One of your creatures gets +2000 power until the End Step|end of the turn.\n\n{{Charger}}"
+ },
+ {
+  "id": "dm_07_040",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "no-shield static",
+  "src": "■ While you have no shields, this creature gets +4000 power and has \"double breaker ''(This creature breaks 2 shields)''.\""
+ },
+ {
+  "id": "dm_07_041",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Tap Ability|Destroy one of your opponent's creatures that has power 2000 or less.}}"
+ },
+ {
+  "id": "dm_07_042",
+  "keywords": [
+   "CannotBeAttacked"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ This creature can't be attacked."
+ },
+ {
+  "id": "dm_07_043",
+  "keywords": [
+   "CannotBeAttacked",
+   "PowerAttacker",
+   "DoubleBreaker"
+  ],
+  "effects": [
+   {
+    "id": "PowerAttacker_AttackBoost",
+    "value": 3000
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ This creature can't be attacked.\n\n{{Power Attacker|3000}}\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_07_044",
+  "keywords": [
+   "Stealth",
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": "Rock Beast",
+  "note": "stealth (civ-blocked) approximated as unblockable",
+  "src": "■ Evolution—Put on one of your Rock Beasts.\n\n{{Stealth|Water}}\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_07_045",
+  "keywords": [
+   "PowerAttacker",
+   "Stealth"
+  ],
+  "effects": [
+   {
+    "id": "PowerAttacker_AttackBoost",
+    "value": 1000
+   }
+  ],
+  "evolutionOf": null,
+  "note": "stealth (civ-blocked) approximated as unblockable",
+  "src": "{{Power Attacker|1000}}\n\n{{Stealth|Light}}"
+ },
+ {
+  "id": "dm_07_046",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Tap Ability|Return a creature from your mana zone to your hand.}}"
+ },
+ {
+  "id": "dm_07_047",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "conditional static",
+  "src": "{{Double Breaker}}\n\n■ While this creature is tapped, your opponent can't use the \"shield trigger\" ability of his shields."
+ },
+ {
+  "id": "dm_07_048",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "targeted effect",
+  "src": "■ Choose one of your opponent's water or darkness creatures in the battle zone. Your opponent puts that creature into his mana zone."
+ },
+ {
+  "id": "dm_07_049",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "trigger",
+  "src": "{{Shield Trigger|spell}} \n\n■ Whenever any of your creatures would be destroyed this turn, put it into your mana zone instead."
+ },
+ {
+  "id": "dm_07_050",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "StaticPower_AttackPerOtherCreature",
+    "value": 1000
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ While attacking, this creature gets +1000 power for each other creature you have in the battle zone."
+ },
+ {
+  "id": "dm_07_051",
+  "keywords": [
+   "Charger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "zone effect",
+  "src": "■ Put one of your creatures from the battle zone into your mana zone.\n\n{{Charger}}"
+ },
+ {
+  "id": "dm_07_052",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Tap Ability|Put the top card of your deck into your mana zone.}}"
+ },
+ {
+  "id": "dm_07_053",
+  "keywords": [
+   "PowerAttacker",
+   "Stealth"
+  ],
+  "effects": [
+   {
+    "id": "PowerAttacker_AttackBoost",
+    "value": 1000
+   }
+  ],
+  "evolutionOf": null,
+  "note": "stealth (civ-blocked) approximated as unblockable",
+  "src": "{{Power Attacker|1000}}\n\n{{Stealth|Water}}"
+ },
+ {
+  "id": "dm_07_054",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Tap Ability|Put up to 3 cards from your hand into your mana zone.}}"
+ },
+ {
+  "id": "dm_07_055",
+  "keywords": [
+   "PowerAttacker",
+   "Stealth",
+   "DoubleBreaker"
+  ],
+  "effects": [
+   {
+    "id": "PowerAttacker_AttackBoost",
+    "value": 2000
+   }
+  ],
+  "evolutionOf": "Tree Folk",
+  "note": "stealth (civ-blocked) approximated as unblockable",
+  "src": "■ Evolution—Put on one of your Tree Folk.\n\n{{Power Attacker|2000}}\n\n{{Stealth|Darkness}}\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_07_s01",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "no-shield static",
+  "src": "{{Double Breaker}}\n\n■ While you have no shields, this creature has \"blocker\" and \"End Step|At the end of each of your turns, you may untap this creature.\""
+ },
+ {
+  "id": "dm_07_s02",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": "Cyber Virus",
+  "note": "trigger",
+  "src": "■ Evolution—Put on one of your Cyber Viruses.\n\n■ Whenever you draw the card at the Step#Step 2 (Draw)|start of your turn, you may draw an extra card."
+ },
+ {
+  "id": "dm_07_s03",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Tap Ability|Your opponent discards 2 cards at random from his hand.}}"
+ },
+ {
+  "id": "dm_07_s04",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Tap Ability|Each player puts a card from his mana zone into his graveyard.}}"
+ },
+ {
+  "id": "dm_07_s05",
+  "keywords": [
+   "TripleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "attack restriction; attack trigger; unblockable clause",
+  "src": "■ This creature can't attack if you have no cards in your hand.\n\n■ Whenever this creature attacks, discard a card from your hand.\n\n■ This creature can't be blocked by any creature that has power 4000 or less.\n\n{{Triple Breaker}}"
+ },
+ {
+  "id": "dm_08_001",
+  "keywords": [
+   "Blocker",
+   "CannotAttackPlayers"
+  ],
+  "effects": [],
+  "evolutionOf": "Mecha Thunder",
+  "note": "battle/block trigger",
+  "src": "{{Blocker}}\n\n■ Evolution—Put on one of your Mecha Thunders.\n\n■ Whenever this creature blocks, untap it after it battles.\n\n■ This creature can't attack players."
+ },
+ {
+  "id": "dm_08_002",
+  "keywords": [
+   "Unblockable"
+  ],
+  "effects": [
+   {
+    "id": "OnDestroyed_ToHand"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ This creature can't be blocked.\n\n■ When this creature would be destroyed, put it into your hand instead."
+ },
+ {
+  "id": "dm_08_003",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "misc unmodelled",
+  "src": "■ Each creature in the battle zone has \"slayer.\" ''(Whenever a creature that has \"slayer\" battles, destroy the other creature after the battle.)"
+ },
+ {
+  "id": "dm_08_004",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Double Breaker}}\n\n{{Turbo Rush|Each of your creatures in the battle zone has \"speed attacker.\" ''(A creature that has \"speed attacker\" doesn't get summoning sickness.)''}}"
+ },
+ {
+  "id": "dm_08_005",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Tap Ability|Search your deck. You may take a creature that has Dragon in its race from your deck and put it into the battle zone. Then shuffle your deck. That creature has \"speed attacker.\" At the End Step|end of the turn, destroy it.}}"
+ },
+ {
+  "id": "dm_08_006",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "targeted effect",
+  "src": "{{Shield Trigger|spell}} \n\n■ Choose one of your opponent's creatures in the battle zone and tap it. If it has Dragon in its race, add the top card of your deck to your shields face down."
+ },
+ {
+  "id": "dm_08_007",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "targeted effect",
+  "src": "■ Choose one of your opponent's creatures in the battle zone and tap it. Then you may choose one of your creatures in the battle zone. If you do, it can't be blocked this turn."
+ },
+ {
+  "id": "dm_08_008",
+  "keywords": [
+   "Charger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "targeted effect",
+  "src": "■ Choose up to 2 of your creatures in the battle zone. At the End Step|end of the turn, you may untap them.\n\n{{Charger}}"
+ },
+ {
+  "id": "dm_08_009",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Turbo Rush|Whenever this creature attacks, you may look at 2 of your opponent's shields. Then put them back where they were.}}"
+ },
+ {
+  "id": "dm_08_010",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "protection clause",
+  "src": "■ This creature can't be attacked by any creature that has Dragon in its race. "
+ },
+ {
+  "id": "dm_08_011",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "power lock",
+  "src": "■ Creatures that have power 3000 or more can't attack. ''(Creatures that have power less than 3000 and get power attacker|extra power while attacking can still attack.)'' "
+ },
+ {
+  "id": "dm_08_012",
+  "keywords": [
+   "Blocker",
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "battle static",
+  "src": "{{Blocker|dragon}}\n\n■ While battling a creature that has Dragon in its race, this creature gets +6000 power.\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_08_013",
+  "keywords": [
+   "Blocker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "trigger",
+  "src": "{{Blocker}}\n\n■ Whenever a player casts a spell, this creature gets +3000 power until the End Step|end of the turn. ''(Do what the spell says before this creature gets the extra power.)''"
+ },
+ {
+  "id": "dm_08_014",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Turbo Rush|Whenever this creature is attacking your opponent and isn't blocked, untap all your creatures in the battle zone except '''Solar Grasses'''.}}"
+ },
+ {
+  "id": "dm_08_015",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "trigger",
+  "src": "■ Whenever any of your creatures attacks, you may choose one of your opponent's creatures in the battle zone and tap it. ''(First choose what your creature is attacking. Then choose a creature to tap.)'' "
+ },
+ {
+  "id": "dm_08_016",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "attack trigger",
+  "src": "■ Whenever this creature attacks, you may draw a card for each other tapped creature you have in the battle zone."
+ },
+ {
+  "id": "dm_08_017",
+  "keywords": [
+   "Unblockable"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ This creature can't be blocked. "
+ },
+ {
+  "id": "dm_08_018",
+  "keywords": [
+   "Charger"
+  ],
+  "effects": [
+   {
+    "id": "Spell_Draw",
+    "value": 1
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ Draw a card.\n\n{{Charger}}"
+ },
+ {
+  "id": "dm_08_019",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, look at your opponent's hand."
+ },
+ {
+  "id": "dm_08_020",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Turbo Rush|This creature can't be blocked.}}"
+ },
+ {
+  "id": "dm_08_021",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "attack trigger",
+  "src": "■ Whenever this creature attacks, you may look at your opponent's hand and at the top card of his deck. "
+ },
+ {
+  "id": "dm_08_022",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "aura/condition",
+  "src": "■ Your creatures in the battle zone can't be blocked this turn. "
+ },
+ {
+  "id": "dm_08_023",
+  "keywords": [
+   "Blocker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Blocker}}"
+ },
+ {
+  "id": "dm_08_024",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Turbo Rush|When this creature attacks, search your deck. You may take a card from your deck and put it into your hand. Then shuffle your deck.}}"
+ },
+ {
+  "id": "dm_08_025",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "Spell_ReturnToHand",
+    "target": "AnyCreature"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ Choose a creature in the battle zone and return it to its owner's hand. If it has Dragon in its race, you may draw a card."
+ },
+ {
+  "id": "dm_08_026",
+  "keywords": [
+   "Charger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "zone effect",
+  "src": "■ Put a creature from your graveyard into your hand.\n\n{{Charger}}"
+ },
+ {
+  "id": "dm_08_027",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "opponent choice",
+  "src": "■ Your opponent chooses and discards 2 cards from his hand."
+ },
+ {
+  "id": "dm_08_028",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, you may return all creatures that have Dragon in their race from your graveyard to your hand."
+ },
+ {
+  "id": "dm_08_029",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Turbo Rush|Whenever this creature is attacking your opponent and isn't blocked, you may destroy a creature.}}"
+ },
+ {
+  "id": "dm_08_030",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Turbo Rush|Whenever this creature attacks, your opponent discards his hand.}}"
+ },
+ {
+  "id": "dm_08_031",
+  "keywords": [
+   "Blocker",
+   "CannotAttackPlayers",
+   "CannotAttackCreatures"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "event trigger",
+  "src": "{{Blocker}}\n\n■ This creature can't attack.\n\n■ When you put another creature into the battle zone, destroy this creature."
+ },
+ {
+  "id": "dm_08_032",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "attack trigger",
+  "src": "■ Whenever this creature attacks, choose one of your shields and put it into your graveyard.\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_08_033",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "destruction/battle event",
+  "src": "{{Double Breaker}}\n\n■ When this creature battles, destroy it after the battle."
+ },
+ {
+  "id": "dm_08_034",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "sibling trigger",
+  "src": "■ Whenever you put a Dragonoid or a creature that has Dragon in its race into the battle zone, destroy the creature that has the least power in the battle zone. If there's a tie, you choose from among the tied creatures."
+ },
+ {
+  "id": "dm_08_035",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "event trigger",
+  "src": "■ When you put another creature into the battle zone, destroy this creature."
+ },
+ {
+  "id": "dm_08_036",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "destruction/battle event",
+  "src": "■ When this creature is destroyed, choose one of your shields and put it into your graveyard. "
+ },
+ {
+  "id": "dm_08_037",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "turn-scoped effect",
+  "src": "■ Until the End Step|end of the turn, each of your Dragonoids in the battle zone is an Armored Dragon in addition to its other races, gets +4000 power, and has \"Double breaker ''(This creature breaks 2 shields)''.\" "
+ },
+ {
+  "id": "dm_08_038",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "destruction/battle event",
+  "src": "■ When this creature is destroyed, you may put a creature that has Dragon in its race from your hand into the battle zone. "
+ },
+ {
+  "id": "dm_08_039",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": ""
+ },
+ {
+  "id": "dm_08_040",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Turbo Rush|This creature can attack untapped creatures and has \"Power attacker +4000 ''(While attacking, this creature gets +4000 power)''.\"}}"
+ },
+ {
+  "id": "dm_08_041",
+  "keywords": [
+   "CannotBeAttacked",
+   "CannotAttackPlayers",
+   "PowerAttacker"
+  ],
+  "effects": [
+   {
+    "id": "PowerAttacker_AttackBoost",
+    "value": 1000
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ This creature can't be attacked.\n\n■ This creature can't attack players.\n\n{{Power Attacker|1000}}"
+ },
+ {
+  "id": "dm_08_042",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Turbo Rush|Whenever this creature attacks, you may destroy one of your opponent's creatures that has power 4000 or less.}}"
+ },
+ {
+  "id": "dm_08_043",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "StaticPower_AttackPerOtherCreature",
+    "value": 2000,
+    "data": "tapped creature you have"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■  While attacking, this creature gets +2000 power for each other tapped creature you have in the battle zone. "
+ },
+ {
+  "id": "dm_08_044",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "misc unmodelled",
+  "src": "■ Each creature in the battle zone that has Dragon in its race has \"speed attacker.\" ''(A creature that has \"speed attacker\" doesn't get summoning sickness.)'' "
+ },
+ {
+  "id": "dm_08_045",
+  "keywords": [
+   "Charger"
+  ],
+  "effects": [
+   {
+    "id": "Spell_DestroyPowerAtMost",
+    "target": "OpponentCreature",
+    "value": 2000
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ Destroy one of your opponent's creatures that has power 2000 or less.\n\n{{Charger}}"
+ },
+ {
+  "id": "dm_08_046",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "sibling trigger",
+  "src": "■ Whenever you put a Dragonoid or a creature that has Dragon in its race into the battle zone, put the top card of your deck into your mana zone."
+ },
+ {
+  "id": "dm_08_047",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Turbo Rush|Whenever this creature is attacking your opponent and becomes blocked, it breaks one of your opponent's shields.}}"
+ },
+ {
+  "id": "dm_08_048",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "battle/block trigger",
+  "src": "■ Whenever this creature becomes blocked, you may put the top card of your deck into your mana zone."
+ },
+ {
+  "id": "dm_08_049",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "destruction/battle event",
+  "src": "■ When this creature would be destroyed, if you have a creature that has Dragon in its race in your mana zone, put this creature into your mana zone instead of destroying it. Then return a creature that has Dragon in its race from your mana zone to your hand. "
+ },
+ {
+  "id": "dm_08_050",
+  "keywords": [
+   "Charger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "group temporary buff",
+  "src": "■ Each of your creatures in the battle zone gets +3000 power until the End Step|end of the turn.\n\n{{Charger}}"
+ },
+ {
+  "id": "dm_08_051",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "sibling trigger",
+  "src": "■ Whenever another creature is put into the battle zone, this creature gets +3000 power until the End Step|end of the turn."
+ },
+ {
+  "id": "dm_08_052",
+  "keywords": [
+   "Charger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "trigger",
+  "src": "■ Whenever any of your creatures would be destroyed this turn, put it into your mana zone instead.\n\n{{Charger}}"
+ },
+ {
+  "id": "dm_08_053",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Turbo Rush|This creature gets +5000 power and has \"double breaker ''(This creature breaks 2 shields)''.\"}}"
+ },
+ {
+  "id": "dm_08_054",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, your opponent may choose a creature in his hand and put it into the battle zone.\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_08_055",
+  "keywords": [
+   "PowerAttacker",
+   "DoubleBreaker"
+  ],
+  "effects": [
+   {
+    "id": "PowerAttacker_AttackBoost",
+    "value": 3000
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Power Attacker|3000}}\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_08_s01",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "event trigger",
+  "src": "{{Double Breaker}}\n\n■ When one of your shields would be break|broken, you may destroy this creature instead."
+ },
+ {
+  "id": "dm_08_s02",
+  "keywords": [
+   "Blocker"
+  ],
+  "effects": [],
+  "evolutionOf": "Cyber Lord",
+  "note": "opponent trigger",
+  "src": "{{Blocker}}\n\n■ Evolution—Put on one of your Cyber Lords.\n\n■ Whenever your opponent uses the \"shield trigger\" ability of one of his shields, draw up to 2 cards."
+ },
+ {
+  "id": "dm_08_s03",
+  "keywords": [
+   "TripleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": "Dragon",
+  "note": "count static power",
+  "src": "■ Evolution—Put on one of your creatures that has Dragon in its race.\n\n■ This creature gets +2000 power for each creature in your graveyard.\n\n{{Triple Breaker}}"
+ },
+ {
+  "id": "dm_08_s04",
+  "keywords": [
+   "TripleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": "Dragon",
+  "note": "attack trigger",
+  "src": "■ Evolution—Put on one of your creatures that has Dragon in its race. \n\n■ Whenever this creature attacks, choose up to 2 cards in your opponent's mana zone. Your opponent puts those cards into his graveyard.\n\n{{Triple Breaker}}"
+ },
+ {
+  "id": "dm_08_s05",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": "Dragon",
+  "note": "shield-trigger bonus",
+  "src": "■ Evolution—Put on one of your creatures that has Dragon in its race.\n\n■ After you cast a spell by using its \"shield trigger\" ability, put it into your hand instead of your graveyard.\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_09_001",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": "Guardian",
+  "note": "opponent trigger",
+  "src": "■ Evolution—Put on one of your Guardians.\n\n{{Double Breaker}}\n\n■ Whenever your opponent uses the \"shield trigger\" ability of one of his shields, you may add the top card of your deck to your shields face down."
+ },
+ {
+  "id": "dm_09_002",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "sibling trigger",
+  "src": "■ Whenever you put another creature that has Cyber in its race into the battle zone, you may draw a card."
+ },
+ {
+  "id": "dm_09_003",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": "Dark Lord",
+  "note": "sibling trigger",
+  "src": "■ Evolution—Put on one of your Dark Lords.\n\n■ Whenever you put a Ghost into the battle zone, you may destroy one of your opponent's untapped creatures.\n\n{{Double Breaker}}"
+ },
+ {
+  "id": "dm_09_004",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": "Armored Wyvern",
+  "note": "unblocked-attack trigger; end-step return to hand",
+  "src": "■ Evolution—Put on one of your Armored Wyverns.\n\n■ Whenever this creature is attacking your opponent and isn't blocked, take an Extra Turn|extra turn after this one.\n\n{{Double Breaker}}\n\n■ End Step|At the end of your turn, return this creature to your hand."
+ },
+ {
+  "id": "dm_09_005",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "sibling trigger",
+  "src": "■ Whenever you put another creature into the battle zone, each Beast Folk in the battle zone gets +2000 power and \"double breaker\" until the End Step|end of the turn. ''(A creature that has \"double breaker\" breaks 2 shields.)''"
+ },
+ {
+  "id": "dm_09_006",
+  "keywords": [
+   "Blocker",
+   "CannotAttackPlayers"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "end-step untap",
+  "src": "{{Blocker}}\n\n■ This creature can't attack players.\n\n■ End Step|At the end of each of your turns, you may untap this creature."
+ },
+ {
+  "id": "dm_09_007",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "targeted effect",
+  "src": "■ Choose one of your creatures in the battle zone. It can't be blocked this turn."
+ },
+ {
+  "id": "dm_09_008",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "unblocked-attack trigger",
+  "src": "■ Whenever this creature is attacking your opponent and isn't blocked, search your deck. You may take a spell from your deck, show that spell to your opponent, and put it into your hand. Then shuffle your deck."
+ },
+ {
+  "id": "dm_09_009",
+  "keywords": [
+   "Blocker",
+   "CannotAttackPlayers"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "destruction/battle event",
+  "src": "{{Blocker}}\n\n■ This creature can't attack players.\n\n■ When this creature is destroyed, choose up to 2 of your opponent's creatures in the battle zone and tap them."
+ },
+ {
+  "id": "dm_09_010",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "destruction/battle event",
+  "src": "■ When this creature would be destroyed, if another '''Kalute, Vizier of Eternity''' is in the battle zone, return this creature to your hand instead."
+ },
+ {
+  "id": "dm_09_011",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "sibling trigger",
+  "src": "■ Whenever you put a Guardian into the battle zone, you may choose one of your opponent's creatures in the battle zone and tap it."
+ },
+ {
+  "id": "dm_09_012",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "sibling trigger",
+  "src": "■ Whenever another creature would be destroyed, it stays in the battle zone instead."
+ },
+ {
+  "id": "dm_09_013",
+  "keywords": [
+   "Charger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "shield effect",
+  "src": "■ Add a card from your hand to your shields face down.\n\n{{Charger}}"
+ },
+ {
+  "id": "dm_09_014",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Tap Ability|Choose a race. At the end of this turn, untap all creatures of that race in the battle zone.}}"
+ },
+ {
+  "id": "dm_09_015",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "targeted effect",
+  "src": "{{Shield Trigger|spell}} \n\n■ Choose a race. Until the start of your next turn, each of your creatures in the battle zone of that race gets \"Blocker ''(Whenever an opponent's creature attacks, you may tap this creature to stop the attack. Then the 2 creatures battle)''.\""
+ },
+ {
+  "id": "dm_09_016",
+  "keywords": [
+   "Charger"
+  ],
+  "effects": [
+   {
+    "id": "Spell_ReturnUpToToHand",
+    "target": "AnyCreature",
+    "value": 2
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ Choose up to 2 creatures in the battle zone and return them to their owners' hands.\n\n{{Charger}}"
+ },
+ {
+  "id": "dm_09_017",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": "Cyber Lord",
+  "note": "sibling trigger; battle/block trigger",
+  "src": "■ Evolution—Put on one of your Cyber Lords.\n\n■ Whenever you put another creature into the battle zone, return this creature to your hand.\n\n■ Whenever this creature becomes blocked, return the blocking creature to its owner's hand. ''(This creature stays tapped.)''"
+ },
+ {
+  "id": "dm_09_018",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Tap Ability|Choose a race. Whenever one of your creatures of that race would be destroyed this turn, return it to your hand instead.}}"
+ },
+ {
+  "id": "dm_09_019",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "targeted effect",
+  "src": "■ Choose a race. Creatures of that race can't be blocked this turn."
+ },
+ {
+  "id": "dm_09_020",
+  "keywords": [
+   "Blocker",
+   "CannotAttackPlayers",
+   "CannotAttackCreatures"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "battle/block trigger",
+  "src": "{{Blocker}}\n\n■ This creature can't attack.\n\n■ Whenever this creature blocks, look at the top 4 cards of your deck. Put one of them into your hand, and put the rest on the bottom of your deck in any order."
+ },
+ {
+  "id": "dm_09_021",
+  "keywords": [
+   "Blocker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "sibling trigger",
+  "src": "{{Blocker}}\n\n■ Whenever you put another creature into the battle zone, return this creature from the battle zone to your hand."
+ },
+ {
+  "id": "dm_09_022",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "look effect",
+  "src": "{{Shield Trigger|spell}} \n\n■ Look at the top 4 cards of your deck. Put one of them into your hand, and put the rest on the bottom of your deck in any order."
+ },
+ {
+  "id": "dm_09_023",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, look at your opponent's shields. Then put them back where they were."
+ },
+ {
+  "id": "dm_09_024",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "unblocked-attack trigger",
+  "src": "■ Whenever this creature is attacking your opponent and isn't blocked, you may choose a creature in the battle zone and return it to its owner's hand."
+ },
+ {
+  "id": "dm_09_025",
+  "keywords": [
+   "Blocker",
+   "CannotAttackPlayers",
+   "CannotAttackCreatures"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "battle/block trigger",
+  "src": "{{Blocker}}\n\n■ This creature can't attack.\n\n■ Whenever this creature blocks, look at the top 4 cards of your deck. Put one of them into your hand, and put the rest on the bottom of your deck in any order."
+ },
+ {
+  "id": "dm_09_026",
+  "keywords": [
+   "Blocker",
+   "CannotAttackPlayers",
+   "CannotAttackCreatures",
+   "Slayer"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Blocker}}\n\n■ This creature can't attack.\n\n{{Slayer}}"
+ },
+ {
+  "id": "dm_09_027",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "destruction/battle event",
+  "src": "■ When this creature is destroyed, you may return another creature from your graveyard to your hand."
+ },
+ {
+  "id": "dm_09_028",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "global must-attack",
+  "src": "■ Each creature attacks each turn if able."
+ },
+ {
+  "id": "dm_09_029",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "opponent choice",
+  "src": "■ Your opponent chooses one of his creatures in the battle zone or one of his shields and puts it into his graveyard."
+ },
+ {
+  "id": "dm_09_030",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "opponent trigger",
+  "src": "■ Whenever your opponent casts a spell, he chooses and discards a card from his hand, then chooses a card in his mana zone and puts it into his graveyard."
+ },
+ {
+  "id": "dm_09_031",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "count static power; conditional static",
+  "src": "■ This creature gets +2000 power for each darkness creature in your graveyard. ''(A creature that has power 0 or less is destroyed.)''\n\n■ While this creature has power 6000 or more, it has \"Double breaker ''(This creature breaks 2 shields)''.\""
+ },
+ {
+  "id": "dm_09_032",
+  "keywords": [
+   "Charger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "search effect",
+  "src": "■ Search a player's deck. You may take a card from that deck and put it into that player's graveyard. Then the player shuffles his deck.\n\n{{Charger}}"
+ },
+ {
+  "id": "dm_09_033",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "unblocked-attack trigger",
+  "src": "■ Whenever this creature is attacking your opponent and isn't blocked, your opponent chooses one of his creatures and destroys it."
+ },
+ {
+  "id": "dm_09_034",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Tap Ability|Choose a race. Each creature of that race gets \"slayer\" until the End Step|end of the turn. ''(Whenever a creature that has \"slayer\" battles, destroy the other creature after the battle.)''}}"
+ },
+ {
+  "id": "dm_09_035",
+  "keywords": [
+   "ShieldTrigger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "targeted effect",
+  "src": "{{Shield Trigger|spell}} \n\n■ Choose a race. Return up to 3 creatures of that race from your graveyard to your hand."
+ },
+ {
+  "id": "dm_09_036",
+  "keywords": [
+   "PowerAttacker"
+  ],
+  "effects": [
+   {
+    "id": "PowerAttacker_AttackBoost",
+    "value": 3000
+   }
+  ],
+  "evolutionOf": null,
+  "note": "battle static",
+  "src": "■ While attacking a creature, this creature can't be blocked.\n\n{{Power Attacker|3000}}"
+ },
+ {
+  "id": "dm_09_037",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "destruction effect",
+  "src": "■ Destroy all creatures that have power 4000 or less."
+ },
+ {
+  "id": "dm_09_038",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "targeted effect",
+  "src": "■ Choose one of your creatures in the battle zone. Whenever that creature wins a battle this turn, untap it."
+ },
+ {
+  "id": "dm_09_039",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Tap Ability|Choose a race. Each creature of that race attacks this turn if able and gets \"power attacker +4000\" until the End Step|end of the turn. ''(While attacking, a creature that has \"power attacker +4000\" gets +4000 power.)''}}"
+ },
+ {
+  "id": "dm_09_040",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "unblocked-attack trigger",
+  "src": "■ Whenever this creature is attacking your opponent and isn't blocked, your opponent chooses a card in his mana zone and puts it into his graveyard."
+ },
+ {
+  "id": "dm_09_041",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "targeted effect",
+  "src": "■ Choose a race. This turn, each creature of that race can attack untapped creatures and can't be blocked while attacking a creature."
+ },
+ {
+  "id": "dm_09_042",
+  "keywords": [
+   "SpeedAttacker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "unblocked-attack trigger",
+  "src": "{{Speed Attacker}}\n\n■ Whenever this creature is attacking your opponent and isn't blocked, you may destroy one of your opponent's creatures that has power 3000 or less."
+ },
+ {
+  "id": "dm_09_043",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "trigger",
+  "src": "■ Whenever one of your Armorloids is destroyed, your opponent chooses a card in his mana zone and puts it into his graveyard."
+ },
+ {
+  "id": "dm_09_044",
+  "keywords": [
+   "PowerAttacker"
+  ],
+  "effects": [
+   {
+    "id": "PowerAttacker_AttackBoost",
+    "value": 3000
+   }
+  ],
+  "evolutionOf": null,
+  "note": "battle static",
+  "src": "■ While attacking a creature, this creature can't be blocked.\n\n{{Power Attacker|3000}}"
+ },
+ {
+  "id": "dm_09_045",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "attack trigger",
+  "src": "■ Whenever this creature attacks, choose one of your shields and put it into your graveyard."
+ },
+ {
+  "id": "dm_09_046",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "unblocked-attack trigger",
+  "src": "■ Whenever this creature is attacking your opponent and isn't blocked, search your deck. You may take a creature from your deck, show that creature to your opponent, and put it into your hand. Then shuffle your deck."
+ },
+ {
+  "id": "dm_09_047",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "targeted effect",
+  "src": "■ Choose a race. You may put any number of creatures of that race from your hand into your mana zone."
+ },
+ {
+  "id": "dm_09_048",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "per-creature effect",
+  "src": "■ For each card in your mana zone, put a card from the top of your deck into your mana zone tapped."
+ },
+ {
+  "id": "dm_09_049",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "tap/turbo/crew ability not modelled",
+  "src": "{{Tap Ability|Choose a race. Creatures of that race can't be blocked by creatures that have power 3000 or less this turn.}}"
+ },
+ {
+  "id": "dm_09_050",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "OnDestroyed_ToMana"
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "■ When this creature would be destroyed, put it into your mana zone instead."
+ },
+ {
+  "id": "dm_09_051",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": "Beast Folk",
+  "note": "attack trigger; battle/block trigger",
+  "src": "■ Evolution—Put on one of your Beast Folk.\n\n■ Whenever this creature attacks, you may choose one of your opponent's untapped creatures that has \"blocker.\" This turn, that creature blocks this creature if able and this creature can't be blocked by other creatures.\n\n■ Whenever this creature becomes blocked, it gets +3000 power until the End Step|end of the turn."
+ },
+ {
+  "id": "dm_09_052",
+  "keywords": [],
+  "effects": [
+   {
+    "id": "StaticPower_AlwaysPerOtherCreature",
+    "value": 2000,
+    "data": "nature"
+   }
+  ],
+  "evolutionOf": null,
+  "note": "conditional static",
+  "src": "■ This creature gets +2000 power for each of your other nature creatures in the battle zone. ''(A creature that has power 0 or less is destroyed.)''\n\n■ While this creature has power 6000 or more, it has \"double breaker ''(This creature breaks 2 shields)''.\""
+ },
+ {
+  "id": "dm_09_053",
+  "keywords": [
+   "Charger"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "opponent choice",
+  "src": "■ Your opponent chooses one of his creatures in the battle zone and puts it into his mana zone.\n\n{{Charger}}"
+ },
+ {
+  "id": "dm_09_054",
+  "keywords": [
+   "ShieldTrigger",
+   "PowerAttacker"
+  ],
+  "effects": [
+   {
+    "id": "PowerAttacker_AttackBoost",
+    "value": 3000
+   }
+  ],
+  "evolutionOf": null,
+  "note": null,
+  "src": "{{Shield Trigger|creature}}\n\n{{Power Attacker|3000}}"
+ },
+ {
+  "id": "dm_09_055",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, search your deck. You may take a '''Whispering Totem''' from your deck, show that creature to your opponent, and put it into your hand. Then shuffle your deck."
+ },
+ {
+  "id": "dm_09_s01",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect; opponent trigger",
+  "src": "■ When you put this creature into the battle zone, choose a race other than Mecha Del Sol. Each creature of that race gets +4000 power.\n\n■ Whenever your opponent would choose a creature in the battle zone, he Unchoosable|can't choose this one. ''(It can still be attacked and blocked.)''"
+ },
+ {
+  "id": "dm_09_s02",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "unblocked-attack trigger",
+  "src": "■ Whenever this creature is attacking your opponent and isn't blocked, choose one of your opponent's shields and play|turn it Face Up|face up. ''(It stays Face Up|face up while it's in the shield zone.)''"
+ },
+ {
+  "id": "dm_09_s03",
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "destruction/battle event",
+  "src": "{{Double Breaker}}\n\n■ When this creature is destroyed, destroy all creatures."
+ },
+ {
+  "id": "dm_09_s04",
+  "keywords": [],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "count static power; conditional static",
+  "src": "■ This creature gets +3000 power for each card in your hand. ''(A creature that has power 0 or less is destroyed.)''\n\n■ While this creature has power 6000 or more, it has \"Double breaker ''(This creature breaks 2 shields)''.\"\n\n■ While this creature has power 15000 or more, it has \"Triple breaker ''(This creature breaks 3 shields)''\" instead of \"double breaker.\""
+ },
+ {
+  "id": "dm_09_s05",
+  "keywords": [
+   "TripleBreaker"
+  ],
+  "effects": [],
+  "evolutionOf": null,
+  "note": "on-play effect",
+  "src": "■ When you put this creature into the battle zone, your opponent chooses up to 2 creatures in his hand and puts them into the battle zone.\n\n{{Triple Breaker}}"
+ }
+]

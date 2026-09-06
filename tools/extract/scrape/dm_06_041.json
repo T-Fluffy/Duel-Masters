@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_06_041",
+ "page": "Overload Cluster",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Cyber Cluster",
+ "cost": "5",
+ "power": "4000",
+ "engtext": "■ Whenever your [[opponent]] [[summon]]s a [[creature]] or [[cast]]s a [[spell]], this [[creature]] gets \"[[blocker]]\" until the [[End Step|end of the turn]]. ''(Whenever an [[opponent]]'s [[creature]] [[attack]]s, you may [[tap]] a [[creature]] that has \"[[blocker]]\" to stop the [[attack]]. Then the 2 [[creature]]s [[battle]].)''",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "41/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "49/110"
+ },
+ "wiki": "{{Cardtable\n| image = Overload Cluster.jpg\n| civilization = Water\n| type = Creature\n| jpname = デコ・クラスター\n| phonetic = Deko Kurasutā ''(Deco Cluster)''\n| race = Cyber Cluster\n| cost = 5\n| power = 4000\n| engtext = ■ Whenever your [[opponent]] [[summon]]s a [[creature]] or [[cast]]s a [[spell]], this [[creature]] gets \"[[blocker]]\" until the [[End Step|end of the turn]]. ''(Whenever an [[opponent]]'s [[creature]] [[attack]]s, you may [[tap]] a [[creature]] that has \"[[blocker]]\" to stop the [[attack]]. Then the 2 [[creature]]s [[battle]].)''\n| jptext = ■ 相手がクリーチャーを召喚するか呪文を唱えた場合、そのターンが終わるまで、このクリーチャーは「ブロッカー」を得る。(相手クリーチャーが攻撃するとき、このクリーチャーをタップして、その攻撃を阻止してよい。そのあと、その相手クリーチャーとバトルする)\n| flavor = \n| mana = 1\n| artist = Katsuya\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 41/110\n| R1 = Uncommon\n| set2 = DM-06 Invincible Soul\n| setnum2 = 49/110\n| R2 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Conditional Blocker]]"
+}

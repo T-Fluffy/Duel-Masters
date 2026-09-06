@@ -1,0 +1,26 @@
+{
+ "card_id": "dm_01_088",
+ "page": "Tornado Flame",
+ "type": "Spell",
+ "civilization": "Fire",
+ "race": "",
+ "cost": "5",
+ "power": "",
+ "engtext": "{{Shield Trigger|spell}} \n\n■ [[Destroy]] one of your [[opponent]]'s [[creature]]s that has [[power]] 4000 or less.",
+ "templates": [
+  "Shield Trigger|spell"
+ ],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "88/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "64/110",
+  "set3": "DM-25 Violence Creator",
+  "setnum3": "27/55",
+  "set4": "DMC-01 Shobu's Blaze Deck ",
+  "setnum4": "20/43",
+  "set5": "DMC-15 Eternal Dragons Deck",
+  "setnum5": "32/78"
+ },
+ "wiki": "{{Cardtable\n| image = Tornado Flame.jpg\n| civilization = Fire\n| type = Spell\n| jpname = トルネード・フレーム\n| phonetic = Torunēdo Furēmu\n| cost = 5\n| engtext = {{Shield Trigger|spell}} \n\n■ [[Destroy]] one of your [[opponent]]'s [[creature]]s that has [[power]] 4000 or less.\n| jptext = {{Icon|ST}} S・トリガー (この呪文をシールドゾーンから手札に加える時、コストを支払わずにすぐ唱えてもよい)\n\n■ バトルゾーンにある、パワー4000以下の相手のクリーチャーを1体選び、持ち主の墓地に置く。\n| flavor = な、なんでおいら達がー! \"Wh-why are we the ones?!\" — Ponpoko, Hole-digging Team ([[DM-25]])\n| mana = 1\n| artist = Soushi Hirose\n| artist2 = hippo \n| set1 = DM-01 Base Set\n| setnum1 = 88/110\n| R1 = Uncommon\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 64/110\n| R2 = Uncommon\n| set3 = DM-25 Violence Creator\n| setnum3 = 27/55\n| R3 = Uncommon\n| set4 = DMC-01 Shobu's Blaze Deck \n| setnum4 = 20/43\n| R4 = Uncommon\n| set5 = DMC-15 Eternal Dragons Deck\n| setnum5 = 32/78\n| R5 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Fire]]\n[[Category:Spell]]\n[[Category:Shield Trigger]]\n[[Category:Power Based Removal]]"
+}

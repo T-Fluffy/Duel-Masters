@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_05_003",
+ "page": "Sinister General Damudo",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Dark Lord",
+ "cost": "6",
+ "power": "5000",
+ "engtext": "■ When this [[creature]] is [[destroy]]ed, [[destroy]] all [[creature]]s that have [[power]] 3000 or less.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "3/55",
+  "set2": "DM-05 Return of the Survivor",
+  "setnum2": "3/55",
+  "set3": "DMEX-08 Mysterious Black Box Pack",
+  "setnum3": "76/???"
+ },
+ "wiki": "{{Cardtable\n| image = Sinister General Damudo.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|冥|めい}}{{Ruby|将|しょう}}ダムド\n| phonetic = Meishō Damudo\n| race = Dark Lord\n| cost = 6\n| power = 5000\n| engtext = ■ When this [[creature]] is [[destroy]]ed, [[destroy]] all [[creature]]s that have [[power]] 3000 or less.\n| jptext = ■ このクリーチャーがバトルゾーンから自分の墓地に置かれたとき、バトルゾーンにあるパワー3000以下のクリーチャーすべてを、持ち主の墓地に置く。\n| flavor = \"The [[Fiona Woods]] will sustain us only for so long. We must push deeper into the [[Nature]] realm.\" ([[DM-05]])\n| flavor2 = 自然領土への侵攻計画が、東方の冥府で始まろうとしていた。The invasion plan into the Nature territory was about to begin in the eastern underworld. ([[DM-05]])\n| flavor3 = モルトに遅れてランド大陸にたどり着いたヘルボロフが見たのは、ドキンダムに封印されたデス・ザ・ロストだった。 封印を解除したボロフにデス・ザ・ロストはお礼を申し出る。「じゃあ、久々に魔壊王様に会わせてよ」 \"What [[Hellborof, Supreme Dragon Ruler|Hellborof]] saw when he arrived late at the [[Rando Continent]] was [[Death the Lost, Demon Revolution|Death the Lost]], [[seal]]ed by [[Dokindam]]. After Borof released the seal, Death the Lost offered thanks. \"Well then, let me meet the Devil Corrupt King after a long time\". ([[DMEX-08]])\n| mana = 1\n| artist = Atsushi Kawasaki\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = 3/55\n| R1 = Very Rare\n| set2 = DM-05 Return of the Survivor\n| setnum2 = 3/55\n| R2 = Very Rare\n| set3 = DMEX-08 Mysterious Black Box Pack\n| setnum3 = 76/???\n| R3 = Very Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Mass Removal]]\n[[Category:Power Based Removal]]\n[[Category:Put Into Graveyard]]"
+}

@@ -1,0 +1,23 @@
+{
+ "card_id": "dm_06_056",
+ "page": "Gigagriff",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Chimera",
+ "cost": "6",
+ "power": "4000",
+ "engtext": "{{Blocker}}\n\n{{Slayer}}\n\n■ This [[creature]] can't [[attack]].",
+ "templates": [
+  "Blocker",
+  "Slayer"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "56/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "53/110",
+  "set3": "DMC-61 CoroCoro Dream Pack 4: Eternal Heaven",
+  "setnum3": "45/94"
+ },
+ "wiki": "{{Cardtable\n| image = Gigagriff.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = ギガボアー\n| phonetic = Gigaboā\n| race = Chimera\n| cost = 6\n| power = 4000\n| engtext = {{Blocker}}\n\n{{Slayer}}\n\n■ This [[creature]] can't [[attack]].\n| jptext = {{Blocker|jp}}\n\n{{Slayer|jp}}\n\n■ このクリーチャーは攻撃することができない。　\n| flavor = \n| mana = 1\n| artist = Eiji Kaneda\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 56/110\n| R1 = Uncommon\n| set2 = DM-06 Invincible Soul\n| setnum2 = 53/110\n| R2 = Uncommon\n| set3 = DMC-61 CoroCoro Dream Pack 4: Eternal Heaven\n| setnum3 = 45/94\n| R3 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Chimera]]\n[[Category:Slayer]]\n[[Category:4000 Power Creatures]]"
+}

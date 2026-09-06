@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_06_062",
+ "page": "Junkatz, Rabid Doll",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Death Puppet",
+ "cost": "2",
+ "power": "2000",
+ "engtext": "",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "62/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "92/110",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "115/140"
+ },
+ "wiki": "{{Cardtable\n| image = Junkatz, Rabid Doll.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|凶|きょう}}{{Ruby|犬|けん}}{{Ruby|人|にん}}{{Ruby|形|ぎょう}}ジュンカツ\n| phonetic = Kyōken Ningyō Junkatsu\n| race = Death Puppet\n| cost = 2\n| power = 2000\n| flavor = After a humiliating defeat under the hooves of the [[Nature]] hordes, [[Ballom, Master of Death|Ballom]] started to play with [[Death Puppet|Doll]]s. ([[DM-06]])\n| flavor2 = 自然の民に破れた屈辱が、[[Tyrant Black Monarch|覇王ブラック・モナーク]]に、新たな呪いの種をもたらす人形を作成させた。 After a humiliating defeat by the [[Nature Civilization]], [[Tyrant Black Monarch]] started to create [[Death Puppet|dolls]] out of a new seed of curse. ([[DM-06]], [[DM-18]])\n| mana = 1\n| artist = Eiji Kaneda\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 62/110\n| R1 = Common\n| set2 = DM-06 Invincible Soul\n| setnum2 = 92/110\n| R2 = Common\n| set3 = DM-18 Best Challenger\n| setnum3 = 115/140\n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]"
+}

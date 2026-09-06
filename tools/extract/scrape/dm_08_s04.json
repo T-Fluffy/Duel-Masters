@@ -1,0 +1,36 @@
+{
+ "card_id": "dm_08_s04",
+ "page": "Überdragon Bajula",
+ "type": "Evolution Creature",
+ "civilization": "Fire",
+ "race": "Armored Dragon",
+ "cost": "7",
+ "power": "13000",
+ "engtext": "■ [[Evolution]]—Put on one of your [[creature]]s that has [[Dragon]] in its [[race]]. \n\n■ Whenever this [[creature]] [[attack]]s, choose up to 2 [[card]]s in your [[opponent]]'s [[mana zone]]. Your [[opponent]] puts those [[card]]s into his [[graveyard]].\n\n{{Triple Breaker}}",
+ "templates": [
+  "Triple Breaker"
+ ],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "S4/S5",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "S4/S5",
+  "set3": "DMC-34 CoroCoro Dream Pack 2: Eternal Legacy",
+  "setnum3": "S3/S5",
+  "set4": "DMC-66 Duel Masters: Super Best",
+  "setnum4": "11/36",
+  "set5": "DMX-01 King of Duel Road: Strong 7",
+  "setnum5": "S1/S3",
+  "set6": "DMX-19 Super Rare 100% Pack",
+  "setnum6": "S29/???",
+  "set7": "DMPCD-01 DueMa Play's CollaboDeck: The Rise of Überdragon & The Rise of Heavenly Gate",
+  "setnum7": "竜1/17",
+  "set8": "DMEX-17 20th Anniversary Huge Thanks Memorial Pack: The Chapter of The Ultimacy Dueking MAX",
+  "setnum8": "W7/W20",
+  "set9": "DMART-06 Fabulous Art: Super Visual Shock Dragon Series",
+  "setnum9": "3/5",
+  "set10": "Promotional",
+  "setnum10": "P82/Y20"
+ },
+ "wiki": "{{Restriction|Hall}}\n{{Cardtable\n| image = Überdragon Bajula.jpg\n| civilization = Fire\n| type = Evolution Creature\n| jpname = {{Ruby|超|ちょう}}{{Ruby|竜|りゅう}}バジュラ\n| kana = ちょうりゅう ''(Chōryū)'' \n| phonetic = Chōryū Bajura\n| race = Armored Dragon\n| cost = 7\n| power = 13000\n| engtext = ■ [[Evolution]]—Put on one of your [[creature]]s that has [[Dragon]] in its [[race]]. \n\n■ Whenever this [[creature]] [[attack]]s, choose up to 2 [[card]]s in your [[opponent]]'s [[mana zone]]. Your [[opponent]] puts those [[card]]s into his [[graveyard]]. \n\n{{Triple Breaker}}\n| jptext = ■ 進化：ドラゴン1体の上に置く。\n\n{{Triple Breaker|jps}}\n\n■ このクリーチャーが攻撃する時、相手のマナゾーンからカードを2枚まで選ぶ。相手はそれらを墓地に置く。\n| flavor = 10年の歳月を経て、未だ頂点に在り。是、歓喜の極みなり。10 years have passed, he is still above all. Yes, the utmost delight.  ([[DMX-01]])\n| flavor2 = 撃滅の原点にして、頂点。The original point of destruction is the top. ([[DMX-19]])\n| flavor3 = 混迷する戦況に突如として現われた破壊の化身。 あらゆるものを焼き尽くす炎が解き放たれる。In the midst of the chaotic battlefield, a manifestation of destruction suddenly appeared. Flames that burn everything in their path are unleashed. ([[DMPCD-01]])\n| flavor4 = タイム・トリッパーで遅らせ、大地から呼び出した緑神龍でマナを破壊しつつ進化元としバジュラで決める。関東でデュエキングとなったのは、圧倒的なマナ破壊戦術であった。 -『サムライ・リーグ関東』 <br> \"Using Time Tripper to slow down the opponent, summoning the Terradragon from the earth to destroy mana while setting up evolution, and then finishing with Bajula. The player who became the Dueling in the Kanto region did so with an overwhelming mana destruction strategy.\" -Samurai League Kanto ([[DMEX-17]])\n| flavor5 = 万象を撃滅する、超越の竜。A transcendental dragon that destroys all things. ([[DMART-06]])\n| flavor6 = 頂点に立つ者は、驕らず、侮らず、ただ撃滅するのみ。Those who stand at the pinnacle neither grow arrogant nor underestimate others; they simply annihilate. (P82/Y20)\n| mana = 1\n| artist = Seki\n| artist2 = NekoshowguN\n| artist3 = IWAO\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = S4/S5\n| R1 = Super Rare\n| set2 = DM-08 Invincible Legend\n| setnum2 = S4/S5\n| R2 = Super Rare\n| set3 = DMC-34 CoroCoro Dream Pack 2: Eternal Legacy\n| setnum3 = S3/S5\n| R3 = Super Rare\n| set4 = DMC-66 Duel Masters: Super Best\n| setnum4 = 11/36\n| R4 = Super Rare\n| set5 = DMX-01 King of Duel Road: Strong 7\n| setnum5 = S1/S3\n| R5 = Super Rare\n| set6 = DMX-19 Super Rare 100% Pack\n| setnum6 = S29/???\n| R6 = Super Rare\n| set7 = DMPCD-01 DueMa Play's CollaboDeck: The Rise of Überdragon & The Rise of Heavenly Gate\n| setnum7 = 竜1/17\n| R7 = Super Rare\n| set8 = DMEX-17 20th Anniversary Huge Thanks Memorial Pack: The Chapter of The Ultimacy Dueking MAX\n| setnum8 = W7/W20\n| R8 = Super Rare\n| set9 = DMART-06 Fabulous Art: Super Visual Shock Dragon Series\n| setnum9 = 3/5\n| R9 = Super Rare\n| set10 = Promotional\n| setnum10 = P82/Y20\n| R10 = Super Rare\n}}\n\n{{Bajula}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Mana Burn]]\n[[Category:Attack Trigger]]"
+}

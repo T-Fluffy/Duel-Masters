@@ -1,0 +1,24 @@
+{
+ "card_id": "dm_01_048",
+ "page": "Bone Spider",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Living Dead",
+ "cost": "3",
+ "power": "5000",
+ "engtext": "■ When this [[creature]] wins a [[battle]], [[destroy]] it.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "48/110",
+  "set2": "Shadowclash Collector Tin",
+  "setnum2": "19/46",
+  "set3": "DM-01 Base Set (OCG)",
+  "setnum3": "56/110",
+  "set4": "DM-18 Best Challenger",
+  "setnum4": "72/140",
+  "set5": "DMC-04 Kokujo's Darkness Power-Up Pack",
+  "setnum5": "15/43"
+ },
+ "wiki": "{{Cardtable\n| image = Bone Spider.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|捕|と}}らえる{{Ruby|者|もの}}ボーン・スパイダー\n| phonetic = Toraeru Mono Bōn Supaidā ''(Seizing Bone Spider)''\n| cost = 3\n| race = Living Dead\n| power = 5000\n| engtext = ■ When this [[creature]] wins a [[battle]], [[destroy]] it.\n| jptext = ■ このクリーチャーがバトルする時、バトルの後、このクリーチャーを破壊する。\n| flavor = 彼らは永久にだって待つことができる。死ぬ時はひとりじゃないことを知っているから。They can wait forever, for they know they will not die alone. ([[DM-01]], [[DMC-04]], [[DM-18]])\n| mana = 1\n| artist = Dai\n| set1 = DM-01 Base Set\n| setnum1 = 48/110\n| R1 = Uncommon\n| set2 = Shadowclash Collector Tin\n| setnum2 = 19/46\n| R2 = Uncommon\n| set3 = DM-01 Base Set (OCG)\n| setnum3 = 56/110\n| R3 = Uncommon\n| set4 = DM-18 Best Challenger\n| setnum4 = 72/140\n| R4 = Uncommon\n| set5 = DMC-04 Kokujo's Darkness Power-Up Pack\n| setnum5 = 15/43\n| R5 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Reverse Slayer]]"
+}

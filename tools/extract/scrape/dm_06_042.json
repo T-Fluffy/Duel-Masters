@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_06_042",
+ "page": "Promephius Q",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Survivor",
+ "cost": "3",
+ "power": "2000",
+ "engtext": "",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "42/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "81/110"
+ },
+ "wiki": "{{Cardtable\n| image = Promephius Q.jpg\n| civilization = Water\n| type = Creature\n| jpname = プロメフィウス{{Ruby|α|アルファ}}\n| kana = アルファ ''(Alpha)''\n| phonetic = Puromefiusu Arufa ''(Promephius Alpha)''\n| race = Survivor\n| race2 = Sea Hacker\n| cost = 3\n| power = 2000\n| flavor = \"It is my spy into the [[Survivor]] clan. They have accepted it as one of their own, and it has learned all their secrets.\" -[[Emperor Quazla]] ([[DM-06]])\n| flavor2 = 彼らの起こす放電は、水の生物にとって時に致命的だ。漂流生活中は需要も多かったのだが。The discharge they generate is sometimes fatal to aquatic creatures. It was in high demand during their drifting life. ([[DM-06]])\n| mana = 1\n| artist = D-Suzuki\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 42/110\n| R1 = Common\n| set2 = DM-06 Invincible Soul\n| setnum2 = 81/110\n| R2 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]"
+}

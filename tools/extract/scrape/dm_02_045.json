@@ -1,0 +1,30 @@
+{
+ "card_id": "dm_02_045",
+ "page": "Barkwhip, the Smasher",
+ "type": "Evolution Creature",
+ "civilization": "Nature",
+ "race": "Beast Folk",
+ "cost": "2",
+ "power": "5000",
+ "engtext": "■ [[Evolution]]—Put on one of your [[Beast Folk]].\n\n■ While this [[creature]] is [[tap]]ped, each of your other [[Beast Folk]] in the [[battle zone]] gets +2000 [[power]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "45/55",
+  "set2": "DM-02 Master of Evolution",
+  "setnum2": "33/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "83/140",
+  "set4": "DMC-13 CoroCoro New Generation Pack",
+  "setnum4": "13/37",
+  "set5": "DMC-22 Hell Boost Half Deck",
+  "setnum5": "22/43",
+  "set6": "DMC-42 CoroCoro Dream Pack 3: Eternal Gear",
+  "setnum6": "52/90",
+  "set7": "DMX-02 Deck Builder DX: Hunter Edition",
+  "setnum7": "27/42",
+  "set8": "Promotional",
+  "setnum8": "L2/6 Y1, WINNER/Year 1, P17/Y8, P25/Y8"
+ },
+ "wiki": "{{Cardtable\n| image= Barkwhip, the Smasher.jpg\n| civilization = Nature\n| type = Evolution Creature\n| jpname = {{Ruby|大|だい}}{{Ruby|勇|ゆう}}{{Ruby|者|しゃ}} 「{{Ruby|大地の猛攻|ガイア・スマッシャー}}」 ''(Great Hero \"Onslaught of Earth\")''\n| kana = ガイア・スマッシャー ''(Gaia Smasher)''\n| phonetic = Dai Yūsha Gaia Sumasshā\n| cost = 2\n| race = Beast Folk\n| power = 5000\n| engtext = ■ [[Evolution]]—Put on one of your [[Beast Folk]].\n\n■ While this [[creature]] is [[tap]]ped, each of your other [[Beast Folk]] in the [[battle zone]] gets +2000 [[power]].\n| jptext = ■ 進化—自分のビーストフォーク1体の上に置く。\n\n■ このクリーチャーがタップされている時、バトルゾーンにある自分の他のビーストフォークすべてのパワーは+2000される。\n| flavor = \"Rage leads to war. War leads to rage. Isn't it magical?\" —[[General Dark Fiend]] ([[DM-02]])\n| flavor2 = 怒りが究極の力を呼び起こす. The ultimate power is awakened by rage. ([[DM-02]], [[DMX-02]])\n| flavor3 = 怒号と共に振り下ろされた豪腕、その早さと強さで自然文明は力と誇りを取り返した. With a mighty arm swung down alongside a thunderous roar, the Nature Civilization reclaimed its strength and pride through its speed and power. ([[DM-18]])\n| flavor4 = 怒れ偉大なる勇者よ。その拳には勝利が宿る。Great Hero of Rage. Victory lies in your fists. (P18/Y8)\n| flavor5 = 我が敵よ聞け! 我は勝利を誓いし勇者、邪悪に挑む大地の化身なり! \"Hear me, my enemy! I am the hero sworn to victory, the embodiment of the earth that challenges evil!\" －'''Barkwhip, the Smasher''' (P25/Y8)\n| mana = 1\n| artist = Tsutomu Kawade\n| artist2 = Dustmoss\n| artist3 = TSUKASA KAWASAKI\n| artist4 = HIROYUKI TADOKORO\n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = 45/55\n| R1 = Uncommon\n| set2 = DM-02 Master of Evolution\n| setnum2 = 33/55\n| R2 = Uncommon\n| set3 = DM-18 Best Challenger\n| setnum3 = 83/140\n| R3 = Uncommon\n| set4 = DMC-13 CoroCoro New Generation Pack\n| setnum4 = 13/37\n| R4 = Uncommon\n| set5 = DMC-22 Hell Boost Half Deck\n| setnum5 = 22/43\n| R5 = Uncommon\n| set6 = DMC-42 CoroCoro Dream Pack 3: Eternal Gear\n| setnum6 = 52/90\n| R6 = Uncommon\n| set7 = DMX-02 Deck Builder DX: Hunter Edition\n| setnum7 = 27/42\n| R7 = Uncommon\n| set8 = Promotional\n| setnum8 = L2/6 Y1, WINNER/Year 1, P17/Y8, P25/Y8\n| R8 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Increase Power]]\n[[Category:While Tapped]]"
+}

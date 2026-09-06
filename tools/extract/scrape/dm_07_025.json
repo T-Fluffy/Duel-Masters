@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_07_025",
+ "page": "Trenchdive Shark",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Gel Fish",
+ "cost": "7",
+ "power": "5000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], you may add up to 2 [[card]]s from your [[hand]] to your [[shield]]s [[face down]]. If you do, choose the same [[number]] of your [[shield]]s and put them into your [[hand]]. You can't use the \"[[shield trigger]]\" [[ability]] of those [[shield]]s.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "25/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "9/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "24/140",
+  "set4": "Promotional",
+  "setnum4": "E1 Y2"
+ },
+ "wiki": "{{Cardtable\n| image = Trenchdive Shark.jpg\n| civilization = Water\n| type = Creature\n| jpname = キャバリア・シャーク\n| phonetic = Kyabaria Shāku\n| cost = 7\n| race = Gel Fish\n| power = 5000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], you may add up to 2 [[card]]s from your [[hand]] to your [[shield]]s [[face down]]. If you do, choose the same [[number]] of your [[shield]]s and put them into your [[hand]]. You can't use the \"[[shield trigger]]\" [[ability]] of those [[shield]]s.\n| jptext = ■ このクリーチャーをバトルゾーンに出した時、自分の手札を2枚まで、裏向きにして自分のシールドに加える。その後、同じ枚数の自分のシールドを選び、自分の手札に加える。ただし、その「S・トリガー」は使えない。\n| flavor = \"Better.... But let's add another eye.\" -[[Emeral]] ([[DM-07]] + E1/Y2)\n| mana = 1\n| artist = Nottsuo\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 25/55\n| R1 = Rare\n| set2 = DM-07 Invincible Charge\n| setnum2 = 9/55\n| R2 = Rare\n| set3 = DM-18 Best Challenger\n| setnum3 = 24/140\n| R3 = Rare\n| set4 = Promotional\n| setnum4 = E1 Y2\n| R4 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Gel Fish]]\n[[Category:5000 Power Creatures]]\n[[Category:Shield Manipulation]]\n[[Category:Come Into Play Trigger]]"
+}

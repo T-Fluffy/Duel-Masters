@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_05_033",
+ "page": "Slime Veil",
+ "type": "Spell",
+ "civilization": "Darkness",
+ "race": "",
+ "cost": "1",
+ "power": "",
+ "engtext": "■ During your [[opponent]]'s next [[turn]], each of his [[creature]]s [[attack]]s if able.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "33/55",
+  "set2": "DM-05 Return of the Survivor",
+  "setnum2": "14/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "36/140"
+ },
+ "wiki": "{{Cardtable\n| image = Slime Veil.jpg\n| civilization = Darkness\n| type = Spell\n| jpname = ファントム・ベール\n| phonetic = Fantomu Bēru ''(Phantom Veil)''\n| cost = 1\n| engtext = ■ During your [[opponent]]'s next [[turn]], each of his [[creature]]s [[attack]]s if able.\n| jptext = ■ 次の相手のターンに、相手のクリーチャーはすべて、可能であれば攻撃する。\n| flavor = \"Hey, you're really getting the hang of that. Now make him do a little dance.\" —{{tooltip|Dark Titan Maginn}} ([[DM-05]])\n| flavor2 = 嘘であるほど、耳に優しく響くもの。 \"The more it is a lie, the more gently it resonates in the ear.\" ([[DM-05]])\n| flavor3 = 偽りの優位に踊らされた者は、すぐにその愚かさを思い知らされる事になる。\"Those who are swayed by the false sense of superiority will soon come to realize their foolishness.\" ([[DM-18]])\n| mana = 1\n| artist = Daisuke Izuka\n| artist2 = Blankas\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = 33/55\n| R1 = Rare\n| set2 = DM-05 Return of the Survivor\n| setnum2 = 14/55\n| R2 = Rare\n| set3 = DM-18 Best Challenger\n| setnum3 = 36/140\n| R3 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Spell]]\n[[Category:Force Attack]]"
+}

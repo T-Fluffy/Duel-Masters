@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_07_028",
+ "page": "Gigabuster",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Chimera",
+ "cost": "5",
+ "power": "5000",
+ "engtext": "{{Blocker}}\n\n■ [[When you put]] this [[creature]] into the [[battle zone]], choose one of your [[shield]]s and put it into your [[hand]]. You can't use the \"[[shield trigger]]\" [[ability]] of that [[shield]].\n\n■ This [[creature]] can't [[attack]].",
+ "templates": [
+  "Blocker"
+ ],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "28/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "13/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "30/140"
+ },
+ "wiki": "{{Cardtable\n| image = Gigabuster.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = ギガバスター\n| phonetic = Gigabasutā\n| cost = 5\n| race = Chimera\n| power = 5000\n| engtext = {{Blocker}}\n\n■ [[When you put]] this [[creature]] into the [[battle zone]], choose one of your [[shield]]s and put it into your [[hand]]. You can't use the \"[[shield trigger]]\" [[ability]] of that [[shield]].\n\n■ This [[creature]] can't [[attack]].\n| jptext = {{Blocker|jps}}\n\n■ このクリーチャーがバトルゾーンに出たとき、自分のシールドが1枚でもあれば、その中から1枚を裏向きのまま選び、自分の手札に加える。ただし、その「S・トリガー」は使えない。\n\n■ このクリーチャーは攻撃することができない。　\n| flavor = \n| mana = 1\n| artist = Youichi Kai\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 28/55\n| R1 = Rare\n| set2 = DM-07 Invincible Charge\n| setnum2 = 13/55\n| R2 = Rare\n| set3 = DM-18 Best Challenger\n| setnum3 = 30/140\n| R3 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Chimera]]\n[[Category:5000 Power Creatures]]\n[[Category:Shield Recovery]]\n[[Category:Come Into Play Trigger]]"
+}

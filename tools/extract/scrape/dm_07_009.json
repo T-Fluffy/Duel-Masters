@@ -1,0 +1,24 @@
+{
+ "card_id": "dm_07_009",
+ "page": "Kizar Basiku, the Outrageous",
+ "type": "Evolution Creature",
+ "civilization": "Light",
+ "race": "Initiate",
+ "cost": "5",
+ "power": "8500",
+ "engtext": "{{Blocker}}\n\n■ [[Evolution]]—Put on one of your [[Initiate]]s.\n\n{{Stealth|Fire}}\n\n{{Double Breaker}}",
+ "templates": [
+  "Blocker",
+  "Double Breaker",
+  "Stealth|Fire"
+ ],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "9/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "6/55",
+  "set3": "DMC-27 CoroCoro Dream Pack",
+  "setnum3": "6/55"
+ },
+ "wiki": "{{Cardtable\n| image = Kizar Basiku, the Outrageous.jpg\n| civilization = Light\n| type = Evolution Creature\n| jpname = {{Ruby|聖|せい}}{{Ruby|天|てん}}{{Ruby|使|し}}カイザル・バジキューラ\n| phonetic = Seitenshi Kaizaru Bajikyūra\n| race = Initiate\n| cost = 5\n| power = 8500\n| engtext = {{Blocker}}\n\n■ [[Evolution]]—Put on one of your [[Initiate]]s.\n\n{{Stealth|Fire}}\n\n{{Double Breaker}}\n| jptext = {{Blocker|jps}}\n\n■ 進化－自分のイニシエート1体の上に置く。\n\n■ 火ステルス（相手のマナゾーンに火のカードが1枚でもあれば、このクリーチャーはブロックされない）\n\n{{Double Breaker|jp}}\n| flavor = \n| mana = 1\n| artist = Ittoku\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 9/55\n| R1 = Rare\n| set2 = DM-07 Invincible Charge\n| setnum2 = 6/55\n| R2 = Rare\n| set3 = DMC-27 CoroCoro Dream Pack\n| setnum3 = 6/55\n| R3 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]"
+}

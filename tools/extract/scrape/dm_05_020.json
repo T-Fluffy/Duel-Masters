@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_05_020",
+ "page": "Pokolul",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Cyber Lord",
+ "cost": "4",
+ "power": "2000",
+ "engtext": "■ Whenever your [[opponent]] uses the \"[[shield trigger]]\" [[ability]] of a [[shield]] [[break|broken]] by this [[creature]], you may [[untap]] this [[creature]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "20/55",
+  "set2": "DM-05 Return of the Survivor",
+  "setnum2": "10/55"
+ },
+ "wiki": "{{Cardtable\n| image = Pokolul.jpg\n| civilization = Water\n| type = Creature\n| jpname = ポコルル\n| phonetic = Pokoruru\n| cost = 4\n| race = Cyber Lord\n| power = 2000\n| engtext = ■ Whenever your [[opponent]] uses the \"[[shield trigger]]\" [[ability]] of a [[shield]] [[break|broken]] by this [[creature]], you may [[untap]] this [[creature]].\n| jptext = ■ このクリーチャーがシールドをブレイクし、相手が「S・トリガー」を使った場合、このクリーチャーをアンタップしてもよい。\n| flavor = The cosmic offspring of Father Time and a motherboard. ([[DM-05]])\n| flavor2 = 「またまただましちゃった」 \"I tricked you again!\" ─'''Pokolul''' ([[DM-05]])\n| mana = 1\n| artist = Norikatsu Miyoshi\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = 20/55\n| R1 = Rare\n| set2 = DM-05 Return of the Survivor\n| setnum2 = 10/55\n| R2 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Creature Untap]]"
+}

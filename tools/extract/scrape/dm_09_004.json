@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_09_004",
+ "page": "Balesk Baj, the Timeburner",
+ "type": "Evolution Creature",
+ "civilization": "Fire",
+ "race": "Armored Wyvern",
+ "cost": "9",
+ "power": "8000",
+ "engtext": "■ [[Evolution]]—Put on one of your [[Armored Wyvern]]s.\n\n■ Whenever this [[creature]] is [[attack]]ing your [[opponent]] and isn't [[block]]ed, take an [[Extra Turn|extra turn]] after this one.\n\n{{Double Breaker}}\n\n■ [[End Step|At the end of your turn]], return this [[creature]] to your [[hand]].",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "4/55",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "4/55",
+  "set3": "DMEX-15 20th Anniversary Huge Thanks Memorial Pack: The Chapter of The Souls The BEST of Great Scenes",
+  "setnum3": "41/50"
+ },
+ "wiki": "{{Cardtable\n| image = Balesk Baj, the Timeburner.jpg\n| civilization = Fire\n| type = Evolution Creature\n| jpname = {{Ruby|聖|せい}}{{Ruby|剣|けん}}{{Ruby|炎|えん}}{{Ruby|獣|じゅう}}バーレスク ''(Burlesque, Saint Sword Flame Beast)''\n| phonetic = Sei Ken En Jū Bāresuku\n| race = Armored Wyvern\n| cost = 9\n| power = 8000\n| engtext = ■ [[Evolution]]—Put on one of your [[Armored Wyvern]]s.\n\n■ Whenever this [[creature]] is [[attack]]ing your [[opponent]] and isn't [[block]]ed, take an [[Extra Turn|extra turn]] after this one.\n\n{{Double Breaker}}\n\n■ [[End Step|At the end of your turn]], return this [[creature]] to your [[hand]].\n| jptext = ■ 進化－自分のアーマード・ワイバーン1体の上に置く。\n\n■ このクリーチャーが相手プレイヤーを攻撃してブロックされなかったとき、このターンの後にもう一度自分のターンを行う。\n\n{{Double Breaker|jps}} \n\n■ 自分のターンの終わりに、このクリーチャーを自分の手札に戻す。\n| flavor = あなたに、次のターンはない。\"You won't have a next turn.\" <br> —Dragon Mask <br> —from [[Duel Masters: Volume 15]] ([[DMEX-15]])\n| mana = 1\n| artist = Kou1\n| artist2 = Shigenobu Matsumoto\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = 4/55\n| R1 = Very Rare\n| set2 = DM-09 Invincible Blood\n| setnum2 = 4/55\n| R2 = Very Rare\n| set3 = DMEX-15 20th Anniversary Huge Thanks Memorial Pack: The Chapter of The Souls The BEST of Great Scenes\n| setnum3 = 41/50\n| R3 = Very Rare\n}}\n{{Extra Turn}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Extra Turn]]\n[[Category:Sabotage Ability]]"
+}

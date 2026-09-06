@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_09_001",
+ "page": "Glena Vuele, the Hypnotic",
+ "type": "Evolution Creature",
+ "civilization": "Light",
+ "race": "Guardian",
+ "cost": "5",
+ "power": "8500",
+ "engtext": "■ [[Evolution]]—Put on one of your [[Guardian]]s.\n\n{{Double Breaker}}\n\n■ Whenever your [[opponent]] uses the \"[[shield trigger]]\" [[ability]] of one of his [[shield]]s, you may add the top [[card]] of your [[deck]] to your [[shield]]s [[face down]].",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "1/55",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "1/55",
+  "set3": "DMC-16 Guardian Blue Deck",
+  "setnum3": "1/78"
+ },
+ "wiki": "{{Cardtable\n| image = Glena Vuele, the Hypnotic.jpg\n| civilization = Light\n| type = Evolution Creature\n| jpname = {{Ruby|守|しゅ}}{{Ruby|護|ご}}{{Ruby|聖|せい}}{{Ruby|天|てん}}グレナ・ビューレ\n| phonetic = Shugoseiten Gurena Byūre\n| cost = 5\n| race = Guardian\n| power = 8500\n| engtext = ■ [[Evolution]]—Put on one of your [[Guardian]]s.\n\n{{Double Breaker}}\n\n■ Whenever your [[opponent]] uses the \"[[shield trigger]]\" [[ability]] of one of his [[shield]]s, you may add the top [[card]] of your [[deck]] to your [[shield]]s [[face down]].\n| jptext = ■ 進化－自分のガーディアン1体の上に置く。\n\n{{Double Breaker|jps}}\n\n■ 相手が「S・トリガー」を使った時、自分の山札の上から1枚目を裏向きのまま自分のシールドに加えてもよい。\n| flavor = \"Quick! Look over there!\" ([[DM-09]])\n| flavor2 = まさに奇跡の船出だった。It was truly the embarkation of a miracle. ([[DM-09]])\n| flavor3 = 彼達が空にある限り、彼の城は常に輝き続ける。As long as they are in the sky, the castle will continue to shine forever. ([[DMC-16]])\n| mana = 1\n| artist = Nottsuo\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = 1/55\n| R1 = Very Rare\n| set2 = DM-09 Invincible Blood\n| setnum2 = 1/55\n| R2 = Very Rare\n| set3 = DMC-16 Guardian Blue Deck\n| setnum3 = 1/78\n| R3 = Very Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Guardian]]\n[[Category:Evolution Creature]]\n[[Category:8500 Power Creatures]]\n[[Category:Shield Addition]]"
+}

@@ -1,0 +1,30 @@
+{
+ "card_id": "dm_02_015",
+ "page": "Crystal Lancer",
+ "type": "Evolution Creature",
+ "civilization": "Water",
+ "race": "Liquid People",
+ "cost": "6",
+ "power": "8000",
+ "engtext": "■ [[Evolution]]—Put on one of your [[Liquid People]].\n\n■ This [[creature]] can't be [[block]]ed.\n\n{{Double Breaker}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "15/55",
+  "set2": "DM-02 Master of Evolution",
+  "setnum2": "24/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "23/140",
+  "set4": "DMC-42 CoroCoro Dream Pack 3: Eternal Gear",
+  "setnum4": "21",
+  "set5": "DMX-03 Deck Builder DX: Alien Edition",
+  "setnum5": "3/42",
+  "set6": "Promotional",
+  "setnum6": "T3/Y2, K2/Y1, P9/＊ ",
+  "set7": "Promotional",
+  "setnum7": "P33/Y4 "
+ },
+ "wiki": "{{Cardtable\n| image=Crystal Lancer.jpg\n| civilization = Water\n| type = Evolution Creature\n| jpname = クリスタル・ランサー\n| phonetic = Kurisutaru Ransā\n| cost = 6\n| race = Liquid People\n| power = 8000\n| engtext = ■ [[Evolution]]—Put on one of your [[Liquid People]].\n\n■ This [[creature]] can't be [[block]]ed.\n\n{{Double Breaker}}\n| jptext = ■ 進化—自分のリキッド・ピープル1体の上に置く。\n\n■ このクリーチャーはブロックされない。\n\n{{Double Breaker|jp}}\n| flavor = だから遅すぎると言っている! ([[DMX-03]])\n| mana = 1\n| artist = Norikatsu Miyoshi \n| artist2 = Atsushi Kawasaki \n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = 15/55\n| R1 = Uncommon\n| set2 = DM-02 Master of Evolution\n| setnum2 = 24/55\n| R2 = Rare\n| set3 = DM-18 Best Challenger\n| setnum3 = 23/140\n| R3 = Rare\n| set4 = DMC-42 CoroCoro Dream Pack 3: Eternal Gear\n| setnum4 = 21\n| R4 = Rare\n| set5 = DMX-03 Deck Builder DX: Alien Edition\n| setnum5 = 3/42\n| R5 = Rare\n| set6 = Promotional\n| setnum6 = T3/Y2, K2/Y1, P9/＊ \n| R6 = Uncommon\n| set7 = Promotional\n| setnum7 = P33/Y4 \n| R7 = Rare\n}}\n{{Lancer}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Evolution Creature]]\n[[Category:Liquid People]]\n[[Category:Unblockable]]\n[[Category:8000 Power Creatures]]"
+}

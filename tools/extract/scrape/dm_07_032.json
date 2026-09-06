@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_07_032",
+ "page": "Scalpel Spider",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Brain Jacker",
+ "cost": "3",
+ "power": "2000",
+ "engtext": "■ Whenever this [[creature]] is [[attack]]ed, it gets \"[[slayer]]\" until the [[End Step|end of the turn]]. ''(Whenever a [[creature]] that has \"[[slayer]]\" [[battle]]s, [[destroy]] the other [[creature]] after the [[battle]].)''",
+ "templates": [],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "32/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "28/55"
+ },
+ "wiki": "{{Cardtable\n| image = Scalpel Spider.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = ポイズン・ティアラ\n| phonetic = Poizun Tiara\n| race = Brain Jacker\n| cost = 3\n| power = 2000\n| engtext = ■ Whenever this [[creature]] is [[attack]]ed, it gets \"[[slayer]]\" until the [[End Step|end of the turn]]. ''(Whenever a [[creature]] that has \"[[slayer]]\" [[battle]]s, [[destroy]] the other [[creature]] after the [[battle]].)''\n| jptext = ■ 攻撃を受けたとき、このクリーチャーはこのターンが終わるまで「スレイヤー」を得る。\n| flavor = Finding a scalpel spider is easy. Just search the web. ([[DM-07]])\n| flavor2 = ビースト軍団の侵攻を察知したポイズン・ティアラは死のトラップを張り巡らした。Poison Tiara, sensing the invasion of the Beast legion, set up death traps. ([[DM-07]])\n| mana = 1\n| artist = Katsuya\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 32/55\n| R1 = Uncommon\n| set2 = DM-07 Invincible Charge\n| setnum2 = 28/55\n| R2 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Conditional Slayer]]"
+}

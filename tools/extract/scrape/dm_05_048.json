@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_05_048",
+ "page": "Bloodwing Mantis",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Giant Insect",
+ "cost": "5",
+ "power": "6000",
+ "engtext": "■ Whenever this [[creature]] [[attack]]s, return 2 [[creature]]s from your [[mana zone]] to your [[hand]].\n\n{{Double Breaker}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "48/55",
+  "set2": "DM-05 Return of the Survivor",
+  "setnum2": "19/55"
+ },
+ "wiki": "{{Cardtable\n| image = Bloodwing Mantis.jpg\n| civilization = Nature\n| type = Creature\n| jpname  =ブラッドウイング・マンティス\n| phonetic = Buraddouingu Mantisu\n| race = Giant Insect\n| cost = 5\n| power = 6000\n| engtext = ■ Whenever this [[creature]] [[attack]]s, return 2 [[creature]]s from your [[mana zone]] to your [[hand]].\n\n{{Double Breaker}}\n| jptext = {{Double Breaker|jp}}\n\n■ このクリーチャーが攻撃するとき、自分のマナゾーンからクリーチャーを2体選び、自分の手札に戻す。1体しかない場合は、その1体を自分の手札に戻す。　\n| flavor = From the moment it's born to the moment it dies, its wings never stop moving. ([[DM-05]])\n| mana = 1\n| artist = Sansyu\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = 48/55\n| R1 = Rare\n| set2 = DM-05 Return of the Survivor\n| setnum2 = 19/55\n| R2 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Mana Recovery]]\n[[Category:Attack Trigger]]"
+}

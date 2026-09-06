@@ -1,0 +1,24 @@
+{
+ "card_id": "dm_01_055",
+ "page": "Gigaberos",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Chimera",
+ "cost": "5",
+ "power": "8000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], [[destroy]] 2 of your other [[creature]]s or [[destroy]] this [[creature]].\n\n{{Double Breaker}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "55/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "24/110",
+  "set3": "DMC-02 Kokujo's Darkness Deck",
+  "setnum3": "4/43",
+  "set4": "Promotional",
+  "setnum4": "L4/6 Y1, WINNER/Y1, P1/Y0"
+ },
+ "wiki": "{{Cardtable\n| image = Gigaberos.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = ギガベロス\n| phonetic = Gigaberosu\n| race = Chimera\n| cost = 5\n| power = 8000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], [[destroy]] 2 of your other [[creature]]s or [[destroy]] this [[creature]].\n\n{{Double Breaker}}\n| jptext = ■ このクリーチャーがバトルゾーンに出たとき、バトルゾーンにある自分の他のクリーチャー2体を自分の墓地に置く。そうしなければ、このクリーチャーを自分の墓地に置く。\n\n{{Double Breaker|jp}}\n| flavor =\n| mana = 1\n| artist = Katsuya\n| set1 = DM-01 Base Set\n| setnum1 = 55/110\n| R1 = Rare\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 24/110\n| R2 = Rare\n| set3 = DMC-02 Kokujo's Darkness Deck\n| setnum3 = 4/43\n| R3 = Rare\n| set4 = Promotional\n| setnum4 = L4/6 Y1, WINNER/Y1, P1/Y0\n| R4 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Self Removal]]\n[[Category:Come Into Play Trigger]]"
+}

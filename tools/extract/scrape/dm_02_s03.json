@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_02_s03",
+ "page": "Ultracide Worm",
+ "type": "Evolution Creature",
+ "civilization": "Darkness",
+ "race": "Parasite Worm",
+ "cost": "6",
+ "power": "11000",
+ "engtext": "■ [[Evolution]]—Put on one of your [[Parasite Worm]]s.\n\n{{Double Breaker}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "S3/S5",
+  "set2": "DM-02 Master of Evolution",
+  "setnum2": "S3/S5",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "S5/S10"
+ },
+ "wiki": "{{Cardtable\n| image=Ultracide Worm.jpg\n| civilization = Darkness\n| type = Evolution Creature\n| jpname = {{Ruby|魔|ま}}{{Ruby|翼|よく}}{{Ruby|虫|ちゅう}}ジェノサイド・ワーム ''(Genocide Worm, Magical Winged Bug)''\n| phonetic = Mayoku Chū Jenosido Wāmu\n| cost = 6\n| race = Parasite Worm\n| power = 11000\n| engtext = ■ [[Evolution]]—Put on one of your [[Parasite Worm]]s.\n\n{{Double Breaker}}\n| jptext = ■ 進化—自分のパラサイトワーム1体の上に置く。\n\n{{Double Breaker|jp}}\n| flavor = \"Aww. My little [[Parasite Worm|Worm]] is all grown up.\" -[[Ballom, Master of Death]] ([[DM-02]])\n| mana = 1\n| artist = Hikaru Ikusa\n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = S3/S5\n| R1 = Super Rare\n| set2 = DM-02 Master of Evolution\n| setnum2 = S3/S5\n| R2 = Super Rare\n| set3 = DM-18 Best Challenger\n| setnum3 = S5/S10\n| R3 = Super Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]"
+}

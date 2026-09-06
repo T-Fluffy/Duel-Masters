@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_06_s10",
+ "page": "Ultra Mantis, Scourge of Fate",
+ "type": "Evolution Creature",
+ "civilization": "Nature",
+ "race": "Giant Insect",
+ "cost": "6",
+ "power": "9000",
+ "engtext": "■ [[Evolution]]—Put on one of your [[Giant Insect]]s.\n\n■ This [[creature]] can't be [[block]]ed by any [[creature]] that has [[power]] 8000 or less.\n\n{{Double Breaker}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "S10/S10",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "S9/S10"
+ },
+ "wiki": "{{Cardtable\n| image = Ultra Mantis, Scourge of Fate.jpg\n| civilization = Nature\n| type = Evolution Creature\n| jpname = {{Ruby|大|だい}}{{Ruby|昆|こん}}{{Ruby|虫|ちゅう}}ガイアマンティス ''(Gaiamantis, Giant Insect)''\n| phonetic = Dai Konchū Gaiamantis\n| race = Giant Insect\n| cost = 6\n| power = 9000\n| engtext = ■ [[Evolution]]—Put on one of your [[Giant Insect]]s.\n\n■ This [[creature]] can't be [[block]]ed by any [[creature]] that has [[power]] 8000 or less.\n\n{{Double Breaker}}\n| jptext = ■ 進化－自分のジャイアント・インセクト1体の上に置く。\n\n■ このクリーチャーは、パワー8000以下のクリーチャーにブロックされない。\n\n{{Double Breaker|jp}}\n| flavor = It doesn't need a weapon—it ''is'' a weapon. ([[DM-06]])\n| flavor2 = その刃が閃くとき、邪悪を退け魔黒を滅す。When its blade flashes, it repels evil and eradicates the Demonic darkness. ([[DM-06]])\n| mana = 1\n| artist = Seki\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = S10/S10\n| R1 = Super Rare\n| set2 = DM-06 Invincible Soul\n| setnum2 = S9/S10\n| R2 = Super Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Unblockable]]"
+}

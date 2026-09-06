@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_06_093",
+ "page": "Carrier Shell",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Colony Beetle",
+ "cost": "3",
+ "power": "2000+",
+ "engtext": "{{Power Attacker|3000}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "93/110",
+  "set2": "DM-06 Invincible Soul ",
+  "setnum2": "105/110",
+  "set3": "DMC-07 Eternal Insects Deck",
+  "setnum3": "77/82",
+  "set4": "Team Kirifuda Super King Deck 40 Card!!",
+  "setnum4": "9/11"
+ },
+ "wiki": "{{Cardtable\n| image = Carrier Shell.jpg\n| civilization = Nature\n| type = Creature\n| jpname = シェル・キャリアー\n| phonetic = Sheru Kyariā\n| cost = 3\n| race = Colony Beetle\n| power = 2000+\n| engtext = {{Power Attacker|3000}}\n| jptext = {{Power Attacker|3000|jp}}\n| flavor = コロニー・ビートルが孵化した地は、しばしの間、豊かな草花の息吹に溢れかえる。 The rocky plains where [[Colony Beetle]]s lay their eggs eventually become fertile fields covered in grass and flowers. ([[DM-06]], [[DMC-07]])\n| flavor2 = 攻撃している時だけパワーが上がる、それが「パワーアタッカー」! 相手のタップしているクリーチャーへの殴り返しにはコイツを使おう!! \"Power Attacker is when its power increases only while attacking! Let's use this one to strike back against the opponent's tapped creatures!!\" ([[SpDeck7]])\n| mana = 1\n| artist = Eiji Kaneda\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 93/110\n| R1 = Common\n| set2 = DM-06 Invincible Soul \n| setnum2 = 105/110\n| R2 = Common\n| set3 = DMC-07 Eternal Insects Deck\n| setnum3 = 77/82\n| R3 = Common\n| set4 = Team Kirifuda Super King Deck 40 Card!!\n| setnum4 = 9/11\n| R4 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:2000 Power Creatures]]"
+}

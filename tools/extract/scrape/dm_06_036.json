@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_06_036",
+ "page": "Kyuroro",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Cyber Lord",
+ "cost": "6",
+ "power": "2000",
+ "engtext": "■ Whenever an [[opponent]]'s [[creature]] would [[break]] a [[shield]], you choose the [[shield]] [[instead]] of your [[opponent]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "36/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "21/110"
+ },
+ "wiki": "{{Cardtable\n| image = Kyuroro.jpg\n| civilization = Water\n| type = Creature\n| jpname = キュロロ\n| phonetic = Kyuroro\n| race = Cyber Lord\n| cost = 6\n| power = 2000\n| engtext = ■ Whenever an [[opponent]]'s [[creature]] would [[break]] a [[shield]], you choose the [[shield]] [[instead]] of your [[opponent]].\n| jptext = このクリーチャーがバトルゾーンにある間、自分のシールドが相手のクリーチャーにブレイクされるとき、ブレイクされるシールドを裏向きのまま自分で選ぶ。\n| flavor = \"These tubes connect me to everything. That fat one there goes right into your brain.\" ([[DM-06]])\n| flavor2 = 君達の行動パターンは、既に解析済みだよ。\"Your patterns of behavior have already been analyzed.\" ─'''Kyuroro''' ([[DM-06]])\n| mana = 1\n| artist = Miho Midorikawa\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 36/110\n| R1 = Rare\n| set2 = DM-06 Invincible Soul\n| setnum2 = 21/110\n| R2 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Cyber Lord]]\n[[Category:2000 Power Creatures]]"
+}

@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_04_036",
+ "page": "Shadow Moon, Cursed Shade",
+ "type": "Creature",
+ "civilization": "Darkness ",
+ "race": "Ghost",
+ "cost": "4",
+ "power": "3000",
+ "engtext": "■ Each other [[darkness]] [[creature]] in the [[battle zone]] gets +2000 [[power]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-04 Shadowclash of Blinding Night",
+  "setnum1": "36/55",
+  "set2": "DM-04 Challenge of Black Shadow ",
+  "setnum2": "46/55",
+  "set3": "DMC-13 CoroCoro New Generation Pack",
+  "setnum3": "26/37 ",
+  "set4": "DMBD-16 20th Chronicle Deck: Battle Now!! Bolshack Duel",
+  "setnum4": "敵7/敵10"
+ },
+ "wiki": "{{Cardtable\n| image = Shadow Moon, Cursed Shade.jpg\n| civilization = Darkness \n| type = Creature\n| jpname = {{Ruby|呪|のろ}}いの{{Ruby|影|かげ}}シャドウ・ムーン\n| phonetic = Noroi no Kage Shadō Mūn\n| race = Ghost\n| cost = 4\n| power = 3000\n| engtext = ■ Each other [[darkness]] [[creature]] in the [[battle zone]] gets +2000 [[power]].\n| jptext = ■ このクリーチャーがバトルゾーンにある間、バトルゾーンにある他の闇のクリーチャーすべてのパワーはそれぞれ+2000される。\n| flavor = It spins a web of evil spells, all for its mistress, the [[Gregoria, Princess of War|Princess of War]]. ([[DM-04]])\n| flavor2 = 紡ぎ出す呪縛の言葉は邪妃様のために。The woven words of the curse are for the evil queen. ([[DM-04]], [[DMC-13]])\n| flavor3 = バトルアリーナの前日。すでにガルドの洗脳が半分解けていた白凰は、神のカードを手に入れる為に負傷していたザキラへと勝負を挑むが、Yによって阻まれる。完璧決闘同士の闘いとなった闘いをザキラは公開処刑として全決闘者に見せ、その後、全決闘者の抹消を宣言する。白凰はYが自分より高みにいる事を実感しつつ敗北してしまう。\"The day before the Battle Arena. [[Hakuoh]], whose brainwashing by GARDE was already half undone, challenges the injured [[Zakira]] to a duel to obtain the God card, but is blocked by Yesman. Zakira showcases the fight between two perfect duelists as a public execution for all duelists, afterward declaring the eradication of all duelists. Hakuoh realizes that Yesman is at a higher level than himself and ultimately faces defeat.\" —History of the battles between Shobu and GARDE, Part 7 ([[DMBD-16]])\n| mana = 1\n| artist = Takesi Kuno \n| set1 = DM-04 Shadowclash of Blinding Night\n| setnum1 = 36/55\n| R1 = Common\n| set2 = DM-04 Challenge of Black Shadow \n| setnum2 = 46/55\n| R2 = Common\n| set3 = DMC-13 CoroCoro New Generation Pack\n| setnum3 = 26/37 \n| R3 = Common\n| set4 = DMBD-16 20th Chronicle Deck: Battle Now!! Bolshack Duel\n| setnum4 = 敵7/敵10\n| R4 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Ghost]]\n[[Category:3000 Power Creatures]]\n[[Category:Increase Power]]"
+}

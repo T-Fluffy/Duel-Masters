@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_08_006",
+ "page": "Dracobarrier",
+ "type": "Spell",
+ "civilization": "Light",
+ "race": "",
+ "cost": "3",
+ "power": "",
+ "engtext": "{{Shield Trigger|spell}} \n\n■ [[Choose]] one of your [[opponent]]'s [[creature]]s in the [[battle zone]] and [[tap]] it. If it has [[Dragon]] in its [[race]], add the top [[card]] of your [[deck]] to your [[shield]]s [[face down]].",
+ "templates": [
+  "Shield Trigger|spell"
+ ],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "6/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "23/55",
+  "set3": "DMC-18 Shobu's Holy Dragon Deck ",
+  "setnum3": "21/102"
+ },
+ "wiki": "{{Cardtable\n| image = Dracobarrier.jpg\n| civilization = Light\n| type = Spell\n| jpname = ドラコ・バリアー \n| phonetic = Dorako Bariā\n| cost = 3\n| engtext = {{Shield Trigger|spell}} \n\n■ [[Choose]] one of your [[opponent]]'s [[creature]]s in the [[battle zone]] and [[tap]] it. If it has [[Dragon]] in its [[race]], add the top [[card]] of your [[deck]] to your [[shield]]s [[face down]].\n| jptext = {{Icon|ST}} S・トリガー (この呪文をシールドゾーンから手札に加える時、コストを支払わずにすぐ唱えてもよい)\n\n■ バトルゾーンにある相手のクリーチャーを1体選び、タップする。それがドラゴンであれば、自分の山札の上から1枚目を裏向きのまま自分のシールドに加える。\n| flavor = 光壁に施された結界が炸裂する。The barrier placed on the light wall explodes. ([[DM-08]])\n| mana = 1\n| artist = Jason\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 6/55\n| R1 = Uncommon\n| set2 = DM-08 Invincible Legend\n| setnum2 = 23/55\n| R2 = Uncommon\n| set3 = DMC-18 Shobu's Holy Dragon Deck \n| setnum3 = 21/102\n| R3 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Spell]]\n[[Category:Shield Trigger]]\n[[Category:Creature Tapper]]\n[[Category:Shield Addition]]"
+}

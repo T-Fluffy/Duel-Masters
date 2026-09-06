@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_04_041",
+ "page": "Chaotic Skyterror",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Armored Wyvern",
+ "cost": "5",
+ "power": "4000",
+ "engtext": "■ Each [[Demon Command]] in the [[battle zone]] has \"[[power attacker]] +4000\" and \"[[double breaker]].\" ''(A [[creature]] that has \"[[power attacker]] +4000\" and \"[[double breaker]]\" gets +4000 [[power]] while [[attack]]ing and [[break]]s 2 [[shield]]s.)''",
+ "templates": [],
+ "sets": {
+  "set1": "DM-04 Shadowclash of Blinding Night",
+  "setnum1": "41/55",
+  "set2": "DM-04 Challenge of Black Shadow ",
+  "setnum2": "15/55"
+ },
+ "wiki": "{{Cardtable\n| image = Chaotic Skyterror.jpg\n| civilization = Fire\n| type = Creature\n| jpname = カオティック・ワイバーン\n| phonetic = Kaotikku Waibān ''(Chaotic Wyvern)''\n| cost = 5\n| race = Armored Wyvern\n| power = 4000\n| engtext = ■ Each [[Demon Command]] in the [[battle zone]] has \"[[power attacker]] +4000\" and \"[[double breaker]].\" ''(A [[creature]] that has \"[[power attacker]] +4000\" and \"[[double breaker]]\" gets +4000 [[power]] while [[attack]]ing and [[break]]s 2 [[shield]]s.)''\n| jptext = ■ このクリーチャーがバトルゾーンにある間、バトルゾーンにあるすべてのデーモン・コマンドは「パワーアタッカー+4000」と「W・ブレイカー」を得る。\n| flavor = \"I taught [[Trox, General of Destruction|Trox]] and [[Ballom, Master of Death|Ballom]] a trick. Now they breathe fire.\" ([[DM-04]])\n| mana = 1\n| artist = Taro Yamazaki\n| set1 = DM-04 Shadowclash of Blinding Night\n| setnum1 = 41/55\n| R1 = Rare\n| set2 = DM-04 Challenge of Black Shadow \n| setnum2 = 15/55\n| R2 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Power Attacker +4000]]\n[[Category:4000 Power Creatures]]\n[[Category:Gives \"Double Breaker\"]]"
+}

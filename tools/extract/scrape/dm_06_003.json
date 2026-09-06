@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_06_003",
+ "page": "Aeropica",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Sea Hacker",
+ "cost": "7",
+ "power": "4000",
+ "engtext": "{{Tap Ability|[[Choose]] a [[creature]] in the [[battle zone]] and return it to its [[owner]]'s [[hand]].}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "3/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "3/110"
+ },
+ "wiki": "{{Cardtable\n| image = Aeropica.jpg\n| civilization = Water\n| type = Creature\n| jpname = エウロピカ\n| phonetic = Europika\n| race = Sea Hacker\n| cost = 7\n| power = 4000\n| engtext = {{Tap Ability|[[Choose]] a [[creature]] in the [[battle zone]] and return it to its [[owner]]'s [[hand]].}}\n| jptext = ■ このクリーチャーで攻撃するかわりに、タップして次の{{Tap}}能力を使ってもよい。\n:{{Tap}} バトルゾーンにあるクリーチャーを1体選び、持ち主の手札に戻す。\n| flavor = \"I'm the garbage collector. You're the garbage.\" ([[DM-06]])\n| flavor2 = 深海をまさぐる両腕は、全てを吸い込む魔法の扉。The arms that probe the deep sea are magical doors that consume everything. ([[DM-06]])\n| mana = 1\n| artist = Hisashi Momose\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 3/110\n| R1 = Very Rare\n| set2 = DM-06 Invincible Soul\n| setnum2 = 3/110\n| R2 = Very Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Tap Ability]]\n[[Category:Bounce]]\n[[Category:Self Bounce]]"
+}

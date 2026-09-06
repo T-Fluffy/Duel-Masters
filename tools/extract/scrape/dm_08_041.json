@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_08_041",
+ "page": "Rocketdive Skyterror",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Armored Wyvern",
+ "cost": "4",
+ "power": "5000+",
+ "engtext": "■ This [[creature]] can't be [[attack]]ed.\n\n■ This [[creature]] can't [[attack]] [[player]]s.\n\n{{Power Attacker|1000}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "41/55",
+  "set2": "DM-08 Invincible Legend  ",
+  "setnum2": "31/55"
+ },
+ "wiki": "{{Cardtable\n| image = Rocketdive Skyterror.jpg\n| civilization = Fire\n| type = Creature\n| jpname = ロケットダイブ・ワイバーン\n| phonetic = Rokettodaibu Waibān ''(Rocketdive Wyvern)''\n| race = Armored Wyvern\n| cost = 4\n| power = 5000+\n| engtext = ■ This [[creature]] can't be [[attack]]ed.\n\n■ This [[creature]] can't [[attack]] [[player]]s.\n\n{{Power Attacker|1000}}\n| jptext = ■ このクリーチャーは攻撃されない。\n\n■ このクリーチャーは、相手プレイヤーを攻撃できない。\n\n{{Power Attacker|1000|jp}}\n| flavor = \"And just when do all the different kinds of Wyverns that have been asleep in the earth for millions of years wake up? Huh?\" ([[DM-08]])\n| mana = 1\n| artist = Nottsuo\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 41/55\n| R1 = Uncommon\n| set2 = DM-08 Invincible Legend  \n| setnum2 = 31/55\n| R2 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:5000 Power Creatures]]\n[[Category:Unattackable]]"
+}

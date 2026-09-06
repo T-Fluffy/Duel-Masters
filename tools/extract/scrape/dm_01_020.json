@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_01_020",
+ "page": "Sonic Wing",
+ "type": "Spell",
+ "civilization": "Light",
+ "race": "",
+ "cost": "3",
+ "power": "",
+ "engtext": "■ Choose one of your [[creature]]s in the [[battle zone]]. It can't be [[block]]ed this [[turn]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "20/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "77/110",
+  "set3": "Promotional",
+  "setnum3": "A4/Y1"
+ },
+ "wiki": "{{Cardtable\n| image = Sonic Wing.jpg\n| civilization = Light\n| type = Spell\n| jpname = ソニック・ウイング\n| phonetic = Sonikku Uingu\n| cost = 3\n| engtext = ■ Choose one of your [[creature]]s in the [[battle zone]]. It can't be [[block]]ed this [[turn]].\n| jptext = ■ バトルゾーンにある自分のクリーチャーを1体選ぶ。 このターン、そのクリーチャーはブロックされない。\n| flavor = \"Can't catch me!\" ([[DM-01]])\n| mana = 1\n| artist = Masaki Hirooka\n| set1 = DM-01 Base Set\n| setnum1 = 20/110\n| R1 = Common\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 77/110\n| R2 = Common\n| set3 = Promotional\n| setnum3 = A4/Y1\n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Gives \"Unblockable\"]]"
+}

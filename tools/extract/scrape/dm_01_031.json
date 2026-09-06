@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_01_031",
+ "page": "Hunter Fish",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Fish",
+ "cost": "2",
+ "power": "3000",
+ "engtext": "{{Blocker|old}}\n\n■ This [[creature]] can't [[attack]].",
+ "templates": [
+  "Blocker|old"
+ ],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "31/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "82/110"
+ },
+ "wiki": "{{Cardtable\n| image = Hunter Fish.jpg\n| civilization = Water\n| type = Creature\n| jpname = {{Ruby|狩猟魚|ハンター・フィッシュ}}\n| phonetic = Hantā Fisshu\n| cost = 2\n| race = Fish\n| power = 3000\n| engtext = {{Blocker|old}}\n\n■ This [[creature]] can't [[attack]].\n| jptext = {{Blocker|jpold}}\n\n■ このクリーチャーは攻撃することができない。\n| flavor = サンゴ礁のすきまに隠れていて、餌が近づくと猛然と襲いかかる。It lies in wait, hidden in coral reefs, lashing out ferociously when it senses prey. ([[DM-01]])\n| mana = 1\n| artist = Masateru Ikeda\n| set1 = DM-01 Base Set\n| setnum1 = 31/110\n| R1 = Common\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 82/110\n| R2 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Fish]]\n[[Category:3000 Power Creatures]]"
+}

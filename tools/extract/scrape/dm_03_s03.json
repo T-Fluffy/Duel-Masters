@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_03_s03",
+ "page": "Giriel, Ghastly Warrior",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Demon Command",
+ "cost": "8",
+ "power": "11000",
+ "engtext": "{{Double Breaker}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-03 Rampage of the Super Warriors",
+  "setnum1": "S3/S5",
+  "set2": "DM-03 Master of Destruction",
+  "setnum2": "S3/S5"
+ },
+ "wiki": "{{Cardtable\n| image= Giriel, Ghastly Warrior.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|凶|きょう}}{{Ruby|闘|とう}}の{{Ruby|魔|ま}}{{Ruby|人|じん}}ギリエル\n| phonetic = Kyoutou no Majin Girieru\n| race = Demon Command\n| cost = 8\n| power = 11000\n| engtext = {{Double Breaker}}\n| jptext = {{Double Breaker|jp}}\n| flavor = Peasant or king, it cares not who its next victim is. It cares only that its victim is warm... and very, very scared. ([[DM-03]])\n| flavor2 =  すべての王とすべての王子を切り刻み、すべての使徒に復讐するのみ。 It cuts all kings and princes and sworn revenge on all [[Initiate|Apostles]]. ([[DM-03]])\n| mana = 1\n| artist = Daisuke Izuka\n| set1 = DM-03 Rampage of the Super Warriors\n| setnum1 = S3/S5\n| R1 = Super Rare\n| set2 = DM-03 Master of Destruction\n| setnum2 = S3/S5\n| R2 = Super Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]"
+}

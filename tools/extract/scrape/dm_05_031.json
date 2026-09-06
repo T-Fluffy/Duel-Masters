@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_05_031",
+ "page": "Scheming Hands",
+ "type": "Spell",
+ "civilization": "Darkness",
+ "race": "",
+ "cost": "5",
+ "power": "",
+ "engtext": "■ [[Look]] at your [[opponent]]'s [[hand]] and choose a [[card]] from it. Your [[opponent]] [[discard]]s that [[card]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "31/55",
+  "set2": "DM-05 Return of the Survivor",
+  "setnum2": "29/55",
+  "set3": "DMC-27 CoroCoro Dream Pack",
+  "setnum3": "29/55",
+  "set4": "DMC-34 CoroCoro Dream Pack 2: Eternal Legacy",
+  "setnum4": "26/55"
+ },
+ "wiki": "{{Cardtable\n| image = Scheming Hands.jpg\n| civilization = Darkness\n| type = Spell\n| jpname = {{Ruby|策|さく}}{{Ruby|略|りゃく}}の{{Ruby|手|て}}\n| phonetic = Saku Ryaku no Te\n| cost = 5\n| engtext = ■ [[Look]] at your [[opponent]]'s [[hand]] and choose a [[card]] from it. Your [[opponent]] [[discard]]s that [[card]].\n| jptext = ■ 相手の手札を見てその中から1枚選び、捨てさせる。\n| flavor = \"Everyone has secrets. Everyone but you.\" —{{tooltip|Trox, General of Destruction}} ([[DM-05]])\n| flavor2 = 貴様の心に隠された暗部を見せてもらおう」 \"Let me see the dark side hidden within your heart.\" —{{tooltip|Trox, General of Destruction}} ([[DM-05]], [[DMC-34]])\n| mana = 1\n| artist = Hikaru Ikusa\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = 31/55\n| R1 = Uncommon\n| set2 = DM-05 Return of the Survivor\n| setnum2 = 29/55\n| R2 = Uncommon\n| set3 = DMC-27 CoroCoro Dream Pack\n| setnum3 = 29/55\n| R3 = Uncommon\n| set4 = DMC-34 CoroCoro Dream Pack 2: Eternal Legacy\n| setnum4 = 26/55\n| R4 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Card Discard]]\n[[Category:Hand Peek]]"
+}

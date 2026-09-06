@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_02_033",
+ "page": "Poison Worm",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Parasite Worm",
+ "cost": "4",
+ "power": "4000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], [[destroy]] one of your [[creature]]s that has [[power]] 3000 or less.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "33/55",
+  "set2": "DM-02 Master of Evolution",
+  "setnum2": "13/55"
+ },
+ "wiki": "{{Cardtable\n| image=Poison Worm.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|毒|どく}}{{Ruby|煙|えん}}{{Ruby|虫|ちゅう}}ポイズン・ワーム ''(Poison Worm, Poison Smoke Bug)''\n| phonetic = Dokuenchū Poizun Wāmu\n| race = Parasite Worm\n| cost = 4\n| power = 4000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], [[destroy]] one of your [[creature]]s that has [[power]] 3000 or less.\n| jptext = ■ このクリーチャーがバトルゾーンに出たとき、バトルゾーンにあるパワー3000以下の自分のクリーチャーを1体選び、自分の墓地に置く。\n| flavor = \"You won't get any dessert until you finish eating your friends!\" -[[Dark Titan Maginn]] ([[DM-02]])\n| flavor2 = 地上のクリーチャーを食い荒らし、ワームたちはさらなる発達をとげた。The worms further developed by devouring creatures on the ground. ([[DM-02]])\n| mana = 1\n| artist = Masaki Hirooka\n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = 33/55\n| R1 = Rare\n| set2 = DM-02 Master of Evolution\n| setnum2 = 13/55\n| R2 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Parasite Worm]]\n[[Category:4000 Power Creatures]]\n[[Category:Self Removal]]\n[[Category:Come Into Play Trigger]]"
+}

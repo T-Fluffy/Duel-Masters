@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_01_110",
+ "page": "Ultimate Force",
+ "type": "Spell",
+ "civilization": "Nature",
+ "race": "",
+ "cost": "5",
+ "power": "",
+ "engtext": "■ Put the top 2 [[card]]s of your [[deck]] into your [[mana zone]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "110/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "109/110",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "139/140",
+  "set4": "DMC-22 Hell Boost Half Deck",
+  "setnum4": "42/43"
+ },
+ "wiki": "{{Cardtable\n| image = Ultimate Force.jpg\n| civilization = Nature\n| type = Spell\n| jpname = アルティメット・フォース\n| phonetic = Arutimetto Fōsu\n| cost = 5\n| engtext = ■ Put the top 2 [[card]]s of your [[deck]] into your [[mana zone]].\n| jptext = ■ 自分の山札の上から2枚を自分のマナゾーンに置く。\n| flavor = 偉大なる大地よ、我に力を!  \"Great Earth, give me your might!\" —{{tooltip|Fighter Dual Fang}} ([[DM-01]], [[DMC-22]])\n| flavor3 = 杖を一振りすると、地面に埋めたばかりの種は瞬く間に大樹へと成長した。With a single wave of the staff, the freshly buried seed rapidly grew into a mighty tree. ([[DM-18]])\n| mana = 1\n| artist = Sansyu\n| artist2 = Hisashi Momose \n| set1 = DM-01 Base Set\n| setnum1 = 110/110\n| R1 = Common\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 109/110\n| R2 = Common\n| set3 = DM-18 Best Challenger\n| setnum3 = 139/140\n| R3 = Common\n| set4 = DMC-22 Hell Boost Half Deck\n| setnum4 = 42/43\n| R4 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Nature]]\n[[Category:Spell]]\n[[Category:Mana Acceleration]]"
+}

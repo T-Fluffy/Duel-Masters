@@ -1,0 +1,21 @@
+{
+ "card_id": "dm_05_008",
+ "page": "Gallia Zohl, Iron Guardian Q",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Survivor",
+ "cost": "5",
+ "power": "2000",
+ "engtext": "{{Survivor}} {{Blocker}}",
+ "templates": [
+  "Blocker",
+  "Survivor"
+ ],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "8/55",
+  "set2": "DM-05 Return of the Survivor",
+  "setnum2": "36/55"
+ },
+ "wiki": "{{Cardtable\n| image = Gallia Zohl, Iron Guardian Q.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|鉄|てっ}}{{Ruby|壁|ぺき}}の{{Ruby|守|しゅ}}{{Ruby|護|ご}}{{Ruby|者|しゃ}}ガリア・ゾール{{Ruby|α|アルファ}}\n| kana = アルファ ''(Alpha)''\n| phonetic = Teppeki no Shugosha Garia Zōru Alpha\n| race = Survivor\n| race2 = Guardian\n| cost = 5\n| power = 2000\n| engtext = {{Survivor}} {{Blocker}}\n| jptext = {{Icon|SVold}} {{Blocker|jp}}\n\n■ サバイバー （このクリーチャーがバトルゾーンにある間、自分の他のサバイバーも上の{{Icon|SVold}}能力を得る）\n| flavor = \"My true home is not in the [[Light]] realm. It is with the [[Survivor]]s.\" ([[DM-05]])\n| mana = 1\n| artist = Jason\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = 8/55\n| R1 = Common\n| set2 = DM-05 Return of the Survivor\n| setnum2 = 36/55\n| R2 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]"
+}

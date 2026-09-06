@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_07_018",
+ "page": "Biancus",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Sea Hacker",
+ "cost": "6",
+ "power": "3000",
+ "engtext": "{{Blocker}}\n\n{{Tap Ability|Choose one of your [[creature]]s in the [[battle zone]]. It can't be [[block]]ed this [[turn]].}}",
+ "templates": [
+  "Blocker"
+ ],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "18/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "11/55"
+ },
+ "wiki": "{{Cardtable\n| image = Biancus.jpg\n| civilization = Water\n| type = Creature\n| jpname = ビアンカス\n| phonetic = Biankasu \n| race = Sea Hacker\n| cost = 6\n| power = 3000\n| engtext = {{Blocker}}\n\n{{Tap Ability|Choose one of your [[creature]]s in the [[battle zone]]. It can't be [[block]]ed this [[turn]].}}\n| jptext = {{Blocker|jps}}\n\n■ このクリーチャーで攻撃するかわりに、タップして次の{{Tap}}能力を使ってもよい。\n:{{Tap}} バトルゾーンにある自分のクリーチャーを1体選ぶ。このターン、そのクリーチャーはブロックされない。\n| flavor = \n| mana = 1\n| artist = Koji Watanabe\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 18/55\n| R1 = Rare\n| set2 = DM-07 Invincible Charge\n| setnum2 = 11/55\n| R2 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Sea Hacker]]\n[[Category:Tap Ability]]\n[[Category:3000 Power Creatures]]\n[[Category:Unblockable]]"
+}

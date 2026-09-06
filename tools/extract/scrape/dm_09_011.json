@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_09_011",
+ "page": "Micute, the Oracle",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Light Bringer",
+ "cost": "5",
+ "power": "4000",
+ "engtext": "■ Whenever you put a [[Guardian]] into the [[battle zone]], you may [[choose]] one of your [[opponent]]'s [[creature]]s in the [[battle zone]] and [[tap]] it.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "11/55",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "7/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "19/140"
+ },
+ "wiki": "{{Cardtable\n| image = Micute, the Oracle.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|予|よ}}{{Ruby|言|げん}}{{Ruby|者|しゃ}}ミキュート\n| phonetic = Yogensha Mikyūto\n| cost = 5\n| race = Light Bringer\n| power = 4000\n| engtext = ■ Whenever you put a [[Guardian]] into the [[battle zone]], you may [[choose]] one of your [[opponent]]'s [[creature]]s in the [[battle zone]] and [[tap]] it.\n| jptext = ■ 自分のガーディアンをバトルゾーンに出した時、バトルゾーンにある相手のクリーチャーを1体選び、タップしてもよい。\n| flavor = Whether it's an omen of doom or an omen of glory depends on which side of the battlefield you're on. ([[DM-09]])\n| flavor2 = [[Silver Glory, Invincible Fortress|シルヴァー・グローリー]]の記憶が刻まれている。The memory of [[Silver Glory, Invincible Fortress|Silver Glory]] is engraved. ([[DM-09]])\n| flavor3 = ミキュートの神託は逃れられない光の網となる。The oracle of Micute becomes an inescapable web of light. ([[DM-18]])\n| mana = 1\n| artist = Hikaru Ikusa\n| artist2 = Haccan\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = 11/55\n| R1 = Rare\n| set2 = DM-09 Invincible Blood\n| setnum2 = 7/55\n| R2 = Rare\n| set3 = DM-18 Best Challenger\n| setnum3 = 19/140\n| R3 = Rare\n}}\n[[Category:OCG]]\n[[Category:TCG]]\n[[Category:Light]]\n[[Category:Light Bringer]]\n[[Category:4000 Power Creatures]]\n[[Category:Creature Tapper]]"
+}

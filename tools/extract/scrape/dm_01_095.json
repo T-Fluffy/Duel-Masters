@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_01_095",
+ "page": "Fear Fang",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Beast Folk",
+ "cost": "3",
+ "power": "3000",
+ "engtext": "",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "95/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "103/110",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "133/140"
+ },
+ "wiki": "{{Cardtable\n| image = Fear Fang.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|白銀の牙|シルバー・ファング}} ''(Fang of Silver)''\n| phonetic = Shirubā Fangu\n| race = Beast Folk\n| cost = 3\n| power = 3000\n| flavor = 世界樹がもたらす超重力に耐えるために、ビーストフォークたちはおどろくべき筋力をそなえている。The [[Beast Folk]] are gifted with huge muscles to withstand the tremendous gravity of the [[World Tree, Root of Life|World Tree]]. ([[DM-01]], [[DM-18]])\n| mana = 1\n| artist = Norikatsu Miyoshi\n| set1 = DM-01 Base Set\n| setnum1 = 95/110\n| R1 = Common\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 103/110\n| R2 = Common\n| set3 = DM-18 Best Challenger\n| setnum3 = 133/140\n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Nature]]\n[[Category:Beast Folk]]\n[[Category:3000 Power Creatures]]\n[[Category:No Abilities]]"
+}

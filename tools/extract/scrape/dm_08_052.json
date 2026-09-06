@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_08_052",
+ "page": "Root Charger",
+ "type": "Spell",
+ "civilization": "Nature",
+ "race": "",
+ "cost": "3",
+ "power": "",
+ "engtext": "■ Whenever any of your [[creature]]s would be [[destroy]]ed this [[turn]], put it into your [[mana zone]] [[instead]].\n\n{{Charger}}",
+ "templates": [
+  "Charger"
+ ],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "52/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "20/55",
+  "set3": "DMEX-08 Mysterious Black Box Pack",
+  "setnum3": "54/???"
+ },
+ "wiki": "{{Cardtable\n| image = Root Charger.jpg\n| civilization = Nature\n| type = Spell\n| jpname = ライフ・チャージャー\n| phonetic = Raifu Chājā ''(Life Charger)''\n| cost = 3\n| engtext = ■ Whenever any of your [[creature]]s would be [[destroy]]ed this [[turn]], put it into your [[mana zone]] [[instead]].\n\n{{Charger}}\n| jptext = ■ このターン、自分のクリーチャーがバトルゾーンから自分の墓地に置かれるとき、墓地に置くかわりに自分のマナゾーンに置く。\n\n{{Charger|jp}}　\n| flavor = Life is the building block of life. ([[DM-08]])\n| flavor2 = 超人に吸われた魂は、汚れを祓われ大地へと還る。 The soul absorbed by the superhuman is purified and returns to the earth. ([[DM-08]])\n| flavor3 = デュエマクイズ Lv.11 Duel Masters Quiz Lv.11 <br> デュエマで初めて、名前にチャージャーを持つカードが登場したのは何弾? In which set did the first card with 'Charger' in its name appear in Duema? <br> 答え：DM-04『闇騎士団の逆襲(チャレンジ・オブ・ブラックシャドウ)』 (アクア・チャージャー) Answer: [[DM-04 Challenge of Black Shadow]] ([[Aqua Jolter|Aqua Charger]]) ([[DMEX-08]])\n| mana = 1\n| artist = Atsushi Kawasaki\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 52/55\n| R1 = Rare\n| set2 = DM-08 Invincible Legend\n| setnum2 = 20/55\n| R2 = Rare\n| set3 = DMEX-08 Mysterious Black Box Pack\n| setnum3 = 54/???\n| R3 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Charger]]\n[[Category:Destruction Substitution]]\n[[Category:Mana Acceleration]]"
+}

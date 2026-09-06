@@ -1,0 +1,26 @@
+{
+ "card_id": "dm_06_039",
+ "page": "Mystic Dreamscape",
+ "type": "Spell",
+ "civilization": "Water",
+ "race": "",
+ "cost": "4",
+ "power": "",
+ "engtext": "{{Shield Trigger|spell}} \n\n■ Return up to 3 [[card]]s from your [[mana zone]] to your [[hand]].",
+ "templates": [
+  "Shield Trigger|spell"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "39/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "52/110",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "66/140",
+  "set4": "DMX-14 The Greatest Strategies Perfect 12",
+  "setnum4": "69/84",
+  "set5": "DM23-BD7 Exciting Duepa Deck: False Pedant of Negotiation",
+  "setnum5": "52/60"
+ },
+ "wiki": "{{Cardtable\n| image = Mystic Dreamscape.jpg\n| civilization = Water\n| type = Spell\n| jpname = ミスティック・クリエーション\n| phonetic = Misutikku Kuriēshon ''(Mystic Creation)''\n| cost = 4\n| engtext = {{Shield Trigger|spell}} \n\n■ Return up to 3 [[card]]s from your [[mana zone]] to your [[hand]].\n| jptext = {{Icon|ST}} S・トリガー (この呪文をシールドゾーンから手札に加える時、コストを支払わずにすぐ唱えてもよい)\n\n■ カードを3枚まで、自分のマナゾーンから手札に戻す。\n| flavor = \"Don't worry! No one gets arrested for breaking the laws of nature anymore.\" ([[DM-06]])\n| flavor2 = [[Cyber Lord|サイバーロード]]は生命の禁忌をも超越する。[[Cyber Lord]]s transcend even the taboo of life. ([[DM-06]])\n| flavor3 = 運命の理にまで干渉する力は、まさに恐怖。The power to even interfere with the laws of fate is truly terrifying. ([[DM-18]], [[DM23-BD7]])\n| flavor4 = その強大な力は、時には自らを傷つける。しかし、時を誤らなければ、大いなる助けとなるだろう。\"That immense power can sometimes harm itself. However, if the timing is correct, it will become a great help.\" ─[[Amaterasu, Founder of the Blue Wolves]] ([[DMX-14]])\n| mana = 1\n| artist = Imo Kajii\n| artist2 = Miya\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 39/110\n| R1 = Uncommon\n| set2 = DM-06 Invincible Soul\n| setnum2 = 52/110\n| R2 = Uncommon\n| set3 = DM-18 Best Challenger\n| setnum3 = 66/140\n| R3 = Uncommon\n| set4 = DMX-14 The Greatest Strategies Perfect 12\n| setnum4 = 69/84\n| R4 = Uncommon\n| set5 = DM23-BD7 Exciting Duepa Deck: False Pedant of Negotiation\n| setnum5 = 52/60\n| R5 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Mana Recovery]]"
+}

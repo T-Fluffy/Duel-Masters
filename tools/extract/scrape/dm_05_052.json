@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_05_052",
+ "page": "Moon Horn",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Horned Beast",
+ "cost": "6",
+ "power": "6000+",
+ "engtext": "■ This [[creature]] gets +1000 [[power]] for each [[water]] [[creature]] and [[darkness]] [[creature]] your [[opponent]] has in the [[battle zone]].\n\n{{Double Breaker}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "52/55",
+  "set2": "DM-05 Return of the Survivor",
+  "setnum2": "33/55"
+ },
+ "wiki": "{{Cardtable\n| image = Moon Horn.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|月|げつ}}{{Ruby|浴|よく}}するムーン・ホーン\n| phonetic = Getsuyoku Suru Mūn Hōn\n| cost = 6\n| race = Horned Beast\n| power = 6000+\n| engtext = ■ This [[creature]] gets +1000 [[power]] for each [[water]] [[creature]] and [[darkness]] [[creature]] your [[opponent]] has in the [[battle zone]].\n\n{{Double Breaker}}\n| jptext = {{Double Breaker|jp}}\n\n■ バトルゾーンにある間、このクリーチャーのパワーは、バトルゾーンにある相手の水と闇のクリーチャー1体につき+1000される。\n| flavor = \"Sometimes he'll go hog wild at a party and totally pig out. But he's usually such a boar.\" -[[Fear Fang]] ([[DM-05]])\n| mana = 1\n| artist = Akifumi Yamamoto\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = 52/55\n| R1 = Uncommon\n| set2 = DM-05 Return of the Survivor\n| setnum2 = 33/55\n| R2 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:6000 Power Creatures]]\n[[Category:Self Increase Power]]"
+}

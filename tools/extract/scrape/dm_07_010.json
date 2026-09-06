@@ -1,0 +1,26 @@
+{
+ "card_id": "dm_07_010",
+ "page": "Lightning Charger",
+ "type": "Spell",
+ "civilization": "Light",
+ "race": "",
+ "cost": "4",
+ "power": "",
+ "engtext": "■ [[Choose]] one of your [[opponent]]'s [[creature]]s in the [[battle zone]] and [[tap]] it.\n\n{{Charger}}",
+ "templates": [
+  "Charger"
+ ],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "10/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "23/55",
+  "set3": "DMC-12 Hakuoh's Holy Spirit Power-Up Pack",
+  "setnum3": "13/44",
+  "set4": "DMC-20 Shobu's Holy Dragon Power-Up Pack",
+  "setnum4": "20/102",
+  "set5": "DMC-61 CoroCoro Dream Pack 4: Eternal Heaven ",
+  "setnum5": "39/94"
+ },
+ "wiki": "{{Cardtable\n| image = Lightning Charger.jpg\n| civilization = Light\n| type = Spell\n| jpname = ライトニング・チャージャー\n| phonetic = Raitoningu Chājā\n| cost = 4\n| engtext = ■ [[Choose]] one of your [[opponent]]'s [[creature]]s in the [[battle zone]] and [[tap]] it.\n\n{{Charger}}\n| jptext = ■ バトルゾーンにある相手のクリーチャーを1体選び、タップする。\n\n{{Charger|jp}}　\n| flavor = \"The more they squirm, the more it tickles.\" -[[Miele, Vizier of Lightning]] ([[DM-07]])\n| flavor2 = この時を逃すな! \"Don't let this moment slip by!\" ([[DM-07]], [[DMC-20]], [[DMC-61]])\n| mana = 1\n| artist = Imo Kajii\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 10/55\n| R1 = Uncommon\n| set2 = DM-07 Invincible Charge\n| setnum2 = 23/55\n| R2 = Uncommon\n| set3 = DMC-12 Hakuoh's Holy Spirit Power-Up Pack\n| setnum3 = 13/44\n| R3 = Uncommon\n| set4 = DMC-20 Shobu's Holy Dragon Power-Up Pack\n| setnum4 = 20/102\n| R4 = Uncommon\n| set5 = DMC-61 CoroCoro Dream Pack 4: Eternal Heaven \n| setnum5 = 39/94\n| R5 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Charger]]\n[[Category:Creature Tapper]]"
+}

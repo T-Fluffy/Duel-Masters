@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_06_109",
+ "page": "Slumber Shell",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Colony Beetle",
+ "cost": "2",
+ "power": "2000",
+ "engtext": "",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "109/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "107/110",
+  "set3": "DMC-07 Eternal Insects Deck",
+  "setnum3": "79/82"
+ },
+ "wiki": "{{Cardtable\n| image = Slumber Shell.jpg\n| civilization = Nature\n| type = Creature\n| jpname = シェル・ラック\n| phonetic = Sheru Rakku ''(Shell Rack)''\n| cost = 2\n| race = Colony Beetle\n| power = 2000\n| flavor = It hasn't moved from that spot for a hundred years. Based on the normal lifespan of a [[Colony Beetle]], it's taking a quick nap. ([[DM-06]])\n| flavor2 = 何度燃やされようと、森はまた成長を始める。No matter how many times it is burned, the forest will begin to grow again. ([[DM-06]], [[DMC-07]])\n| mana = 1\n| artist = Hikaru Ikusa\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 109/110\n| R1 = Common\n| set2 = DM-06 Invincible Soul\n| setnum2 = 107/110\n| R2 = Common\n| set3 = DMC-07 Eternal Insects Deck\n| setnum3 = 79/82\n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Nature]]\n[[Category:Colony Beetle]]\n[[Category:2000 Power Creatures]]\n[[Category:No Abilities]]"
+}

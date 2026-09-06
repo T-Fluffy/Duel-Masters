@@ -1,0 +1,24 @@
+{
+ "card_id": "dm_02_029",
+ "page": "Gray Balloon, Shadow of Greed",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Ghost",
+ "cost": "3",
+ "power": "3000",
+ "engtext": "{{Blocker}}\n\n■ This [[creature]] can't [[attack]] [[player]]s.",
+ "templates": [
+  "Blocker"
+ ],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "29/55",
+  "set2": "DM-02 Master of Evolution",
+  "setnum2": "28/55",
+  "set3": "DMC-02 Kokujo's Darkness Deck",
+  "setnum3": "14/43",
+  "set4": "DMC-13 CoroCoro New Generation Pack",
+  "setnum4": "11/37"
+ },
+ "wiki": "{{Cardtable\n| image=Gray Balloon, Shadow of Greed.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|貪|どん}}{{Ruby|欲|よく}}の{{Ruby|影|かげ}}グレイ・バルーン\n| phonetic = Donyoku no Kage Gurei Barūn\n| race = Ghost\n| cost = 3\n| power = 3000\n| engtext = {{Blocker}}\n\n■ This [[creature]] can't [[attack]] [[player]]s.\n| jptext = {{Blocker|jp}}\n\n■ このクリーチャーは、相手プレイヤーを攻撃できない。\n| flavor = It's the thing that goes squish in the night. むさぼり喰うことでは満たされない飢えがある。 ([[DM-02]], [[DMC-02]], [[DMC-13]])\n| mana = 1\n| artist = Nottsuo\n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = 29/55\n| R1 = Uncommon\n| set2 = DM-02 Master of Evolution\n| setnum2 = 28/55\n| R2 = Uncommon\n| set3 = DMC-02 Kokujo's Darkness Deck\n| setnum3 = 14/43\n| R3 = Uncommon\n| set4 = DMC-13 CoroCoro New Generation Pack\n| setnum4 = 11/37\n| R4 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Ghost]]\n[[Category:3000 Power Creatures]]"
+}

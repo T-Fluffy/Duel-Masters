@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_09_012",
+ "page": "Mihail, Celestial Elemental",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Angel Command",
+ "cost": "8",
+ "power": "4000",
+ "engtext": "■ Whenever another [[creature]] would be [[destroy]]ed, it stays in the [[battle zone]] [[instead]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "12/55",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "6/55"
+ },
+ "wiki": "{{Cardtable\n| image = Mihail, Celestial Elemental.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|天|てん}}{{Ruby|光|こう}}の{{Ruby|精|せい}}{{Ruby|霊|れい}}ミハイル ''(Mihail, Spirit of Heavenly Light)''\n| phonetic = Tenkō no Seirei Mihairu\n| cost = 8\n| race = Angel Command\n| power = 4000\n| engtext = ■ Whenever another [[creature]] would be [[destroy]]ed, it stays in the [[battle zone]] [[instead]].\n| jptext = ■  このクリーチャーがバトルゾーンにある間、他のクリーチャーがバトルゾーンから墓地に置かれるとき、そのクリーチャーは墓地に置かれるかわりにバトルゾーンにとどまる。\n| flavor = \"Time has stopped. Death is extinct. Forever is now. So I hope everyone has a good book to read, because we'll be here for a while.\" ([[DM-09]])\n| flavor2 = [[Silver Glory, Invincible Fortress|シルヴァー・グローリー]]の門から、死者の魂が肉体へと帰還する! \"From the Gate of [[Silver Glory, Invincible Fortress|Silver Glory]], the souls of the dead return to their bodies!\" ([[DM-09]]) \n| mana = 1\n| artist = D-Suzuki\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = 12/55\n| R1 = Rare\n| set2 = DM-09 Invincible Blood\n| setnum2 = 6/55\n| R2 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Destruction Substitution]]"
+}

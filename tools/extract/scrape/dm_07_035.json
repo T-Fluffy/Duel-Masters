@@ -1,0 +1,24 @@
+{
+ "card_id": "dm_07_035",
+ "page": "Venom Charger",
+ "type": "Spell",
+ "civilization": "Darkness",
+ "race": "",
+ "cost": "3",
+ "power": "",
+ "engtext": "■ One of your [[creature]]s in the [[battle zone]] gets \"[[slayer]]\" until the [[End Step|end of the turn]]. ''(Whenever a [[creature]] that has \"[[slayer]]\" [[battle]]s, [[destroy]] the other [[creature]] after the [[battle]].)''\n\n{{Charger}}",
+ "templates": [
+  "Charger"
+ ],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "35/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "29/55",
+  "set3": "DMC-21 Zakira's Dragon Commander Power-Up Pack",
+  "setnum3": "33/102",
+  "set4": "DMR-19 Forbidden Dokindam X",
+  "setnum4": "40/87"
+ },
+ "wiki": "{{Cardtable\n| image = Venom Charger.jpg\n| civilization = Darkness\n| type = Spell\n| jpname = ブラッディ・チャージャー\n| phonetic = Buraddi Chājā\n| cost = 3\n| engtext = ■ One of your [[creature]]s in the [[battle zone]] gets \"[[slayer]]\" until the [[End Step|end of the turn]]. ''(Whenever a [[creature]] that has \"[[slayer]]\" [[battle]]s, [[destroy]] the other [[creature]] after the [[battle]].)''\n\n{{Charger}}\n| jptext = ■ バトルゾーンにある自分のクリーチャーを1体選ぶ。このターンが終わるまで、そのクリーチャーは「スレイヤー」を得る。（このクリーチャーとバトルした相手クリーチャーは、勝っても持ち主の墓地に置かれる）\n\n{{Charger|jp}}　\n| flavor = 革命の力が発動するまで、マナを貯めて耐えろ! \"Until the force of [[Revolution]] is triggered, resist while accumulating mana!\" ([[DMR-19]])\n| mana = 1\n| artist = Daisuke Izuka\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 35/55\n| R1 = Uncommon\n| set2 = DM-07 Invincible Charge\n| setnum2 = 29/55\n| R2 = Uncommon\n| set3 = DMC-21 Zakira's Dragon Commander Power-Up Pack\n| setnum3 = 33/102\n| R3 = Uncommon\n| set4 = DMR-19 Forbidden Dokindam X\n| setnum4 = 40/87\n| R4 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Charger]]\n[[Category:Gives \"Slayer\"]]"
+}

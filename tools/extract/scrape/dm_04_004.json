@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_04_004",
+ "page": "Doboulgyser, Giant Rock Beast",
+ "type": "Evolution Creature",
+ "civilization": "Fire",
+ "race": "Rock Beast",
+ "cost": "6",
+ "power": "8000",
+ "engtext": "■ [[Evolution]]—Put on one of your [[Rock Beast]]s.\n\n■ [[When you put]] this [[creature]] into the [[battle zone]], you may [[destroy]] one of your [[opponent]]'s [[creature]]s that has [[power]] 3000 or less.\n\n{{Double Breaker}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-04 Shadowclash of Blinding Night",
+  "setnum1": "4/55",
+  "set2": "DM-04 Challenge of Black Shadow ",
+  "setnum2": "4/55"
+ },
+ "wiki": "{{Cardtable\n| image = Doboulgyser, Giant Rock Beast.jpg\n| civilization = Fire\n| type = Evolution Creature\n| jpname = {{Ruby|超|ちょう}}{{Ruby|巨|きょ}}{{Ruby|岩|がん}}{{Ruby|獣|じゅう}}ドボルガイザー \n| phonetic = Chō Kyogan Jū Doborugāizā\n| cost = 6\n| race = Rock Beast\n| power = 8000\n| engtext = ■ [[Evolution]]—Put on one of your [[Rock Beast]]s.\n\n■ [[When you put]] this [[creature]] into the [[battle zone]], you may [[destroy]] one of your [[opponent]]'s [[creature]]s that has [[power]] 3000 or less.\n\n{{Double Breaker}}\n| jptext = ■ 進化－自分のロック・ビースト1体の上に置く。\n\n{{Double Breaker|jp}} \n\n■ このクリーチャーがバトルゾーンに出たとき、バトルゾーンにあるパワー3000以下の相手のクリーチャーを1体選び、持ち主の墓地に置いてもよい。\n| flavor = It doesn't bleed. It erupts. ([[DM-04]])\n| mana = 1\n| artist = Masaki Hirooka\n| set1 = DM-04 Shadowclash of Blinding Night\n| setnum1 = 4/55\n| R1 = Very Rare\n| set2 = DM-04 Challenge of Black Shadow \n| setnum2 = 4/55\n| R2 = Very Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Fire]]\n[[Category:Rock Beast]]\n[[Category:Evolution Creature]]\n[[Category:8000 Power Creatures]]\n[[Category:Power Based Removal]]\n[[Category:Come Into Play Trigger]]"
+}

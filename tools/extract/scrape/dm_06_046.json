@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_06_046",
+ "page": "Sopian",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Cyber Lord",
+ "cost": "4",
+ "power": "2000",
+ "engtext": "{{Tap Ability|Choose one of your [[creature]]s in the [[battle zone]]. It can't be [[block]]ed this [[turn]].}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "46/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "79/110",
+  "set3": "DMC-13 CoroCoro New Generation Pack",
+  "setnum3": "21/37",
+  "set4": "DMC-21 Zakira's Dragon Commander Power-Up Pack",
+  "setnum4": "61/102"
+ },
+ "wiki": "{{Cardtable\n| image = Sopian.jpg\n| civilization = Water\n| type = Creature\n| jpname = ソピアン\n| phonetic = Sopian\n| cost = 4\n| race = Cyber Lord\n| power = 2000\n| engtext = {{Tap Ability|Choose one of your [[creature]]s in the [[battle zone]]. It can't be [[block]]ed this [[turn]].}}\n| jptext = ■ このクリーチャーで攻撃するかわりに、タップして次の{{Tap}}能力を使ってもよい。\n:{{Tap}} バトルゾーンにある自分のクリーチャーを1体選ぶ。このターン、そのクリーチャーはブロックされない。\n| flavor = It doesn't just live inside the Ultracomputer—it's part of the circuitry. ([[DM-06]])\n| mana = 1\n| artist = Katsuhiko Kojoh\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 46/110\n| R1 = Common\n| set2 = DM-06 Invincible Soul\n| setnum2 = 79/110\n| R2 = Common\n| set3 = DMC-13 CoroCoro New Generation Pack\n| setnum3 = 21/37\n| R3 = Common\n| set4 = DMC-21 Zakira's Dragon Commander Power-Up Pack\n| setnum4 = 61/102\n| R4 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Gives \"Unblockable\"]]"
+}

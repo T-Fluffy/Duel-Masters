@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_02_020",
+ "page": "Scissor Eye",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Gel Fish",
+ "cost": "4",
+ "power": "3000",
+ "engtext": "",
+ "templates": [],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "20/55",
+  "set2": "DM-02 Master of Evolution",
+  "setnum2": "41/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "101/140"
+ },
+ "wiki": "{{Cardtable\n| image=Scissor Eye.jpg\n| civilization = Water\n| type = Creature\n| jpname = シザー・アイ\n| phonetic = Shizā Ai\n| cost = 4\n| race = Gel Fish\n| power = 3000\n| flavor = 火の領域の海岸線は、上陸した水の軍勢で真っ青に染まった。The shores of the [[Fire]] territory turned blue as wave after wave of [[Water]] creatures landed. ([[DM-02]], [[DM-18]])\n| mana = 1\n| artist = Seki\n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = 20/55\n| R1 = Common\n| set2 = DM-02 Master of Evolution\n| setnum2 = 41/55\n| R2 = Common\n| set3 = DM-18 Best Challenger\n| setnum3 = 101/140\n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Gel Fish]]\n[[Category:3000 Power Creatures]]\n[[Category:No Abilities]]"
+}

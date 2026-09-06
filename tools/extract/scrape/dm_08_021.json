@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_08_021",
+ "page": "Lalicious",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Sea Hacker",
+ "cost": "6",
+ "power": "4000",
+ "engtext": "■ Whenever this [[creature]] [[attack]]s, you may [[look]] at your [[opponent]]'s [[hand]] and at the top [[card]] of his [[deck]]. ",
+ "templates": [],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "21/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "24/55"
+ },
+ "wiki": "{{Cardtable\n| image = Lalicious.jpg\n| civilization = Water\n| type = Creature\n| jpname = ラリシウス\n| phonetic = Rarishiusu\n| cost = 6\n| race = Sea Hacker\n| power = 4000\n| engtext = ■ Whenever this [[creature]] [[attack]]s, you may [[look]] at your [[opponent]]'s [[hand]] and at the top [[card]] of his [[deck]]. \n| jptext = ■ このクリーチャーが攻撃するとき、相手の山札の上から1枚目と手札を見てもよい。\n| flavor = Its artificial eye has X-ray vision, Y-ray vision, and Z-ray vision. ([[DM-08]])\n| flavor2 = 電影の瞳は、全ての虚飾を剥ぎ取り真実を見抜く。The eyes of the electric light strip away all falsehoods and see through to the truth. ([[DM-08]])\n| mana = 1\n| artist = Ken Sugawara\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 21/55\n| R1 = Uncommon\n| set2 = DM-08 Invincible Legend\n| setnum2 = 24/55\n| R2 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Sea Hacker]]\n[[Category:4000 Power Creatures]]\n[[Category:Hand Peek]]\n[[Category:Attack Trigger]]"
+}

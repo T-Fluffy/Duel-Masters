@@ -1,0 +1,28 @@
+{
+ "card_id": "dm_02_005",
+ "page": "Larba Geer, the Immaculate",
+ "type": "Evolution Creature",
+ "civilization": "Light",
+ "race": "Guardian",
+ "cost": "3",
+ "power": "5000",
+ "engtext": "■ [[Evolution]]—Put on one of your [[Guardian]]s.\n\n■ [[When you put]] this [[creature]] into the [[battle zone]], [[tap]] all your [[opponent]]'s [[creature]]s in the [[battle zone]] that have \"[[blocker]]\".",
+ "templates": [],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "5/55",
+  "set2": "DM-02 Master of Evolution",
+  "setnum2": "21/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "51/140",
+  "set4": "DMC-13 CoroCoro New Generation Pack",
+  "setnum4": "6/37",
+  "set5": "DMC-42 CoroCoro Dream Pack 3: Eternal Gear",
+  "setnum5": "38/90",
+  "set6": "DMC-61 CoroCoro Dream Pack 4: Eternal Heaven ",
+  "setnum6": "36/94",
+  "set7": "Promotional",
+  "setnum7": "B2/7 Y1, P41/Y7, P42/Y7"
+ },
+ "wiki": "{{Cardtable\n| image=Larba Geer, the Immaculate.jpg\n| civilization = Light\n| type = Evolution Creature\n| jpname = {{Ruby|守|しゅ}}{{Ruby|護|ご}}{{Ruby|聖|せい}}{{Ruby|天|てん}}ラルバ・ギア\n| phonetic = Shugo Seiten Raruba Gia\n| cost = 3\n| race = Guardian\n| power = 5000\n| engtext = ■ [[Evolution]]—Put on one of your [[Guardian]]s.\n\n■ [[When you put]] this [[creature]] into the [[battle zone]], [[tap]] all your [[opponent]]'s [[creature]]s in the [[battle zone]] that have \"[[blocker]]\".\n| jptext = ■ 進化－自分のガーディアン1体の上に置く。\n\n■ このクリーチャーをバトルゾーンに出した時、バトルゾーンにある相手の「ブロッカー」を持つクリーチャーをすべてタップする。\n| flavor = 大いなる守護者は蒼天の守護者の元に舞い降りる! The great guardian descends to the side of the [[La Ura Giga, Sky Guardian|guardian of the blue sky]]! (P41/Y7)\n| flavor2 = 守り手のライバルは守り手である! The rival of the guardian is also a guardian! (P42/Y7)\n| mana = 1\n| artist = Akifumi Yamamoto\n| artist2 = Haccan\n| artist3 = RYOSUKE NISHIYAMA \n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = 5/55\n| R1 = Uncommon\n| set2 = DM-02 Master of Evolution\n| setnum2 = 21/55\n| R2 = Uncommon\n| set3 = DM-18 Best Challenger\n| setnum3 = 51/140\n| R3 = Uncommon\n| set4 = DMC-13 CoroCoro New Generation Pack\n| setnum4 = 6/37\n| R4 = Uncommon\n| set5 = DMC-42 CoroCoro Dream Pack 3: Eternal Gear\n| setnum5 = 38/90\n| R5 = Uncommon\n| set6 = DMC-61 CoroCoro Dream Pack 4: Eternal Heaven \n| setnum6 = 36/94\n| R6 = Uncommon\n| set7 = Promotional\n| setnum7 = B2/7 Y1, P41/Y7, P42/Y7\n| R7 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Evolution Creature]]\n[[Category:Guardian]]\n[[Category:5000 Power Creatures]]\n[[Category:Creature Tapper]]\n[[Category:Come Into Play Trigger]]"
+}

@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_03_043",
+ "page": "Überdragon Jabaha",
+ "type": "Evolution Creature",
+ "civilization": "Fire",
+ "race": "Armored Dragon",
+ "cost": "7",
+ "power": "11000",
+ "engtext": "■ [[Evolution]]—Put on one of your [[Armored Dragon]]s.\n\n■ Each of your other [[fire]] [[creature]]s has \"[[power attacker]] +2000\". ''(While [[attack]]ing, a [[creature]] that has \"[[power attacker]] +2000\" gets +2000 [[power]].)''\n\n{{Double Breaker}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-03 Rampage of the Super Warriors",
+  "setnum1": "43/55",
+  "set2": "DM-03 Master of Destruction",
+  "setnum2": "4/55"
+ },
+ "wiki": "{{Cardtable\n| image= Überdragon Jabaha.jpg\n| civilization = Fire\n| type = Evolution Creature\n| jpname = {{Ruby|超|ちょう}}{{Ruby|竜|りゅう}}ジャバハ\n| phonetic = Chōryū Jabaha\n| kana = ちょうりゅう ''(Chōryū)'' \n| cost = 7\n| race = Armored Dragon\n| power = 11000\n| engtext = ■ [[Evolution]]—Put on one of your [[Armored Dragon]]s.\n\n■ Each of your other [[fire]] [[creature]]s has \"[[power attacker]] +2000\". ''(While [[attack]]ing, a [[creature]] that has \"[[power attacker]] +2000\" gets +2000 [[power]].)''\n\n{{Double Breaker}}\n| jptext = ■ 進化－自分のアーマード・ドラゴン1体の上に置く。\n\n■ このクリーチャーがバトルゾーンにある間、攻撃中、バトルゾーンにある自分の他の火のクリーチャーのパワーは＋2000される。　\n\n{{Double Breaker|jp}}\n| mana = 1\n| artist = Masaki Hirooka\n| set1 = DM-03 Rampage of the Super Warriors\n| setnum1 = 43/55\n| R1 = Very Rare\n| set2 = DM-03 Master of Destruction\n| setnum2 = 4/55\n| R2 = Very Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]"
+}

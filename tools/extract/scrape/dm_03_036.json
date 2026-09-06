@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_03_036",
+ "page": "Blaze Cannon",
+ "type": "Spell",
+ "civilization": "Fire",
+ "race": "",
+ "cost": "7",
+ "power": "",
+ "engtext": "■ You can [[cast]] this [[spell]] only if all the [[card]]s in your [[mana zone]] are [[fire]] [[card]]s.\n\n■ Each of your [[creature]]s in the [[battle zone]] gets \"[[power attacker]] +4000\" and \"[[double breaker]]\" until the [[End Step|end of the turn]]. ''(A [[creature]] that has \"[[power attacker]] +4000\" and \"[[double breaker]]\" gets +4000 [[power]] while [[attack]]ing and [[break]]s 2 [[shield]]s.)''",
+ "templates": [],
+ "sets": {
+  "set1": "DM-03 Rampage of the Super Warriors",
+  "setnum1": "36/55",
+  "set2": "DM-03 Master of Destruction",
+  "setnum2": "17/55"
+ },
+ "wiki": "{{Cardtable\n| image= Blaze Cannon.jpg\n| civilization = Fire\n| type = Spell\n| jpname = ブレイズ・キャノン\n| phonetic = Bureizu Kyanon\n| cost = 7\n| engtext = ■ You can [[cast]] this [[spell]] only if all the [[card]]s in your [[mana zone]] are [[fire]] [[card]]s.\n\n■ Each of your [[creature]]s in the [[battle zone]] gets \"[[power attacker]] +4000\" and \"[[double breaker]]\" until the [[End Step|end of the turn]]. ''(A [[creature]] that has \"[[power attacker]] +4000\" and \"[[double breaker]]\" gets +4000 [[power]] while [[attack]]ing and [[break]]s 2 [[shield]]s.)''\n| jptext = ■ 自分のマナゾーンのカードがすべて火のカードであれば、このターン、バトルゾーンにある自分のクリーチャーはすべて「パワーアタッカー+4000」と「W・ブレイカー」を得る。\n| flavor = \n| mana = 1\n| artist = Sansyu\n| set1 = DM-03 Rampage of the Super Warriors\n| setnum1 = 36/55\n| R1 = Rare\n| set2 = DM-03 Master of Destruction\n| setnum2 = 17/55\n| R2 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Gives \"Power Attacker\"]]\n[[Category:Gives \"Double Breaker\"]]"
+}

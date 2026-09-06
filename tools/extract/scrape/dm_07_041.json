@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_07_041",
+ "page": "Kipo's Contraption",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Xenoparts",
+ "cost": "6",
+ "power": "3000",
+ "engtext": "{{Tap Ability|[[Destroy]] one of your [[opponent]]'s [[creature]]s that has [[power]] 2000 or less.}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "41/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "16/55"
+ },
+ "wiki": "{{Cardtable\n| image = Kipo&#39;s Contraption.jpg\n| civilization = Fire\n| type = Creature\n| jpname = ピーポのバール\n| phonetic = Pīpo no Bāru\n| race = Xenoparts\n| cost = 6\n| power = 3000\n| engtext = {{Tap Ability|[[Destroy]] one of your [[opponent]]'s [[creature]]s that has [[power]] 2000 or less.}}\n| jptext = ■ このクリーチャーで攻撃するかわりに、タップして次の{{Tap}}能力を使ってもよい。\n:{{Tap}} バトルゾーンにあるパワー2000以下の相手のクリーチャーを1体選ぶ。相手はそれを持ち主の墓地に置く。\n| flavor = Safety inspector? What's that?\" -[[Engineer Kipo]] ([[DM-07]])\n| flavor2 = 早く破壊しちゃって! \"Hurry up and destroy it!\" -[[Engineer Kipo]] ([[DM-07]])\n| mana = 1\n| artist = Akifumi Yamamoto\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 41/55\n| R1 = Rare\n| set2 = DM-07 Invincible Charge\n| setnum2 = 16/55\n| R2 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Fire]]\n[[Category:Xenoparts]]\n[[Category:Tap Ability]]\n[[Category:3000 Power Creatures]]\n[[Category:Power Based Removal]]"
+}

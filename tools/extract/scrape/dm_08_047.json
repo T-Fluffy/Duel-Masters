@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_08_047",
+ "page": "Carbonite Scarab",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Giant Insect",
+ "cost": "4",
+ "power": "3000",
+ "engtext": "{{Turbo Rush|Whenever this [[creature]] is [[attack]]ing your [[opponent]] and becomes [[block]]ed, it [[break]]s one of your [[opponent]]'s [[shield]]s.}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "47/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "19/55"
+ },
+ "wiki": "{{Cardtable\n| image = Carbonite Scarab.jpg\n| civilization = Nature\n| type = Creature\n| jpname = カーボナイト・ビートル\n| phonetic = Kābonaito Bītoru ''(Carbonite Beetle)''\n| cost = 4\n| race = Giant Insect\n| power = 3000\n| engtext = {{Turbo Rush|Whenever this [[creature]] is [[attack]]ing your [[opponent]] and becomes [[block]]ed, it [[break]]s one of your [[opponent]]'s [[shield]]s.}}\n| jptext = ■ ターボラッシュ （自分の他のクリーチャーがシールドをブレイクしたあと、そのターンが終わるまで、このクリーチャーは次の{{Icon|TR}}能力を得る）\n:{{Icon|TR}} このクリーチャーが相手プレイヤーを攻撃してブロックされたとき、相手のシールドが1枚でもあれば、そのうちの1枚をブレイクする。\n| flavor = \n| mana = 1\n| artist = Kou1\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 47/55\n| R1 = Rare\n| set2 = DM-08 Invincible Legend\n| setnum2 = 19/55\n| R2 = Rare\n}}\n[[Category:OCG]]\n[[Category:TCG]]\n[[Category:Trample]]"
+}

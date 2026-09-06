@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_06_074",
+ "page": "Badlands Lizard",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Dune Gecko",
+ "cost": "5",
+ "power": "3000+",
+ "engtext": "{{Power Attacker|3000}}\n\n■ Whenever this [[creature]] becomes [[block]]ed, [[no battle happens]]. ''(Both [[creature]]s stay [[tap]]ped.)''",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "74/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "32/110"
+ },
+ "wiki": "{{Cardtable\n| image = Badlands Lizard.jpg\n| civilization = Fire\n| type = Creature\n| jpname = ピーカプ・リザード\n| phonetic = Pīkapu Rizādo ''(Rikabu Lizard)''\n| race = Dune Gecko\n| cost = 5\n| power = 3000+\n| engtext = {{Power Attacker|3000}}\n\n■ Whenever this [[creature]] becomes [[block]]ed, [[no battle happens]]. ''(Both [[creature]]s stay [[tap]]ped.)''\n| jptext = {{Power Attacker|3000|jp}}\n\n■ このクリーチャーの攻撃がブロックされた場合、バトルは行われない。ただし、両クリーチャーはタップしたままである。\n| flavor = \"I traded in my sport utility Gecko for a stretch Geckousine.\" —[[Artisan Picora]] ([[DM-06]])\n| flavor2 = こいつが居れば、百人力! \"With this one here, it's like having the strength of a hundred men!\" —[[Rikabu, the Dismantler]] ([[DM-06]])\n| mana = 1 \n| artist = Miho Midorikawa\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 74/110\n| R1 = Rare\n| set2 = DM-06 Invincible Soul\n| setnum2 = 32/110\n| R2 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:3000 Power Creatures]]"
+}

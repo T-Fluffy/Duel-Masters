@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_01_068",
+ "page": "Artisan Picora",
+ "type": "Creature",
+ "civilization": "Fire",
+ "race": "Machine Eater",
+ "cost": "1",
+ "power": "2000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], put 1 [[card]] from your [[mana zone]] into your [[graveyard]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "68/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "99/110"
+ },
+ "wiki": "{{Cardtable\n| image = Artisan Picora.jpg\n| civilization = Fire\n| type = Creature\n| jpname = {{Ruby|職|しょく}}{{Ruby|人|にん}}ピコラ\n| phonetic = Shokunin Pikora\n| race = Machine Eater\n| cost = 1\n| power = 2000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], put 1 [[card]] from your [[mana zone]] into your [[graveyard]].\n| jptext = ■ このクリーチャーがバトルゾーンに出たとき、自分のマナゾーンからカードを1枚選び、自分の墓地に置く。\n| flavor = 「簡単簡単。叩けば直るよ。」\"Fix it? That's easy. Just hit it.\"  -Legendary '''Artisan Picora''' ([[DM-01]])\n| mana = 1\n| artist = Akifumi Yamamoto\n| set1 = DM-01 Base Set\n| setnum1 = 68/110\n| R1 = Common\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 99/110\n| R2 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Fire]]\n[[Category:Machine Eater]]\n[[Category:2000 Power Creatures]]\n[[Category:Come Into Play Trigger]]"
+}

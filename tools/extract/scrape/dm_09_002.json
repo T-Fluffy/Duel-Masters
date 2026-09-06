@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_09_002",
+ "page": "Marching Motherboard",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Cyber Virus",
+ "cost": "6",
+ "power": "2000",
+ "engtext": "■ Whenever you put another [[creature]] that has [[Cyber]] in its [[race]] into the [[battle zone]], you may [[draw]] a [[card]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "2/55",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "2/55"
+ },
+ "wiki": "{{Cardtable\n| image = Marching Motherboard.jpg\n| civilization = Water\n| type = Creature\n| jpname = マーチング・スプライト\n| phonetic = Māchingu Supuraito ''(Marching Sprite)''\n| cost = 6\n| race = Cyber Virus\n| power = 2000\n| engtext = ■ Whenever you put another [[creature]] that has [[Cyber]] in its [[race]] into the [[battle zone]], you may [[draw]] a [[card]].\n| jptext = ■ このクリーチャーがバトルゾーンにある間、自分の他の「サイバー」と付く種族がバトルゾーンに出たとき、カードを1枚引いてもよい。\n| flavor = \"I can carry out 50 trillion calculations per second... about how to kick your butt!\" ([[DM-09]])\n| flavor2 = 行進の果てにあるものは、奈落か栄光か。At the end of the march, what awaits—abyss or glory? ([[DM-09]])\n| mana = 1\n| artist = Naoki Saito\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = 2/55\n| R1 = Very Rare\n| set2 = DM-09 Invincible Blood\n| setnum2 = 2/55\n| R2 = Very Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Cyber Virus]]\n[[Category:2000 Power Creatures]]\n[[Category:Card Draw]]"
+}

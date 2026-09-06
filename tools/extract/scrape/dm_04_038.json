@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_04_038",
+ "page": "Soul Gulp",
+ "type": "Spell",
+ "civilization": "Darkness",
+ "race": "",
+ "cost": "4",
+ "power": "",
+ "engtext": "■ Your [[opponent]] chooses and [[discard]]s a [[card]] from his [[hand]] for each [[light]] [[creature]] he has in the [[battle zone]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-04 Shadowclash of Blinding Night",
+  "setnum1": "38/55",
+  "set2": "Shadowclash Collector Tin",
+  "setnum2": "30/46",
+  "set3": "DM-04 Challenge of Black Shadow ",
+  "setnum3": "31/55"
+ },
+ "wiki": "{{Cardtable\n| image = Soul Gulp.jpg\n| civilization = Darkness\n| type = Spell\n| jpname = ソウル・イーター\n| phonetic = Sōru Ītā ''(Soul Eater)''\n| cost = 4\n| engtext = ■ Your [[opponent]] chooses and [[discard]]s a [[card]] from his [[hand]] for each [[light]] [[creature]] he has in the [[battle zone]].\n| jptext = ■ バトルゾーンにある相手の光のクリーチャー1体につき、相手は自分自身の手札から1枚選んで持ち主の墓地に置く。相手の手札がそれ以下の場合は、相手は自分自身の手札をすべて持ち主の墓地に置く。\n| flavor = The first victim of the war between [[light]] and [[darkness|dark]] was the sky. ([[DM-04]]) \n| flavor2 = 希望の数だけ絶望も深まる。\"The more hope there is, the deeper the despair becomes.\" ([[DM-04]])  \n| mana = 1\n| artist = Miho Midorikawa\n| set1 = DM-04 Shadowclash of Blinding Night\n| setnum1 = 38/55\n| R1 = Uncommon\n| set2 = Shadowclash Collector Tin\n| setnum2 = 30/46\n| R2 = Uncommon\n| set3 = DM-04 Challenge of Black Shadow \n| setnum3 = 31/55\n| R3 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Spell]]\n[[Category:Card Discard]]"
+}

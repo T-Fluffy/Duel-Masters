@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_08_022",
+ "page": "Marine Scramble",
+ "type": "Spell",
+ "civilization": "Water",
+ "race": "",
+ "cost": "7",
+ "power": "",
+ "engtext": "■ Your [[creature]]s in the [[battle zone]] can't be [[block]]ed this [[turn]]. ",
+ "templates": [],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "22/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "11/55"
+ },
+ "wiki": "{{Cardtable\n| image = Marine Scramble.jpg\n| civilization = Water\n| type = Spell\n| jpname = マリン・スクランブル\n| phonetic = Marin Sukuranburu\n| cost = 7\n| engtext = ■ Your [[creature]]s in the [[battle zone]] can't be [[block]]ed this [[turn]]. \n| jptext = ■ このターン、自分のクリーチャーはブロックされない。\n| flavor = \"Analysis complete. Begin the assault!\" -[[Emperor Quazla]] ([[DM-08]])\n| flavor2 = 解析完了。総攻撃を開始せよ! \"Analysis complete. Begin the full-scale attack!\" ([[DM-08]])\n| mana = 1\n| artist = Jason\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 22/55\n| R1 = Rare\n| set2 = DM-08 Invincible Legend\n| setnum2 = 11/55\n| R2 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Gives \"Unblockable\"]]"
+}

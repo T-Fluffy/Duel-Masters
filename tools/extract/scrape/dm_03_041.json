@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_03_041",
+ "page": "Searing Wave",
+ "type": "Spell",
+ "civilization": "Fire",
+ "race": "",
+ "cost": "5",
+ "power": "",
+ "engtext": "■ [[Destroy]] all your [[opponent]]'s [[creature]]s that have [[power]] 3000 or less.\n\n■ [[Choose]] one of your [[shield]]s and put it into your [[graveyard]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-03 Rampage of the Super Warriors",
+  "setnum1": "41/55",
+  "set2": "DM-03 Master of Destruction",
+  "setnum2": "32/55"
+ },
+ "wiki": "{{Cardtable\n| image= Searing Wave.jpg\n| civilization = Fire\n| type = Spell\n| jpname = {{Ruby|灼|しゃく}}{{Ruby|熱|ねつ}}{{Ruby|波|は}}\n| phonetic = Shakunetsu Ha\n| cost = 5\n| engtext = ■ [[Destroy]] all your [[opponent]]'s [[creature]]s that have [[power]] 3000 or less.\n\n■ [[Choose]] one of your [[shield]]s and put it into your [[graveyard]].\n| jptext = ■ 相手は、バトルゾーンにある自分自身のパワー3000以下のクリーチャーすべてを、持ち主の墓地に置く。\n\n■ 自分のシールドが1枚でもあれば、裏向きのまま1枚選び、自分の墓地に置く。\n| flavor = Surf's up! ([[DM-03]])\n| flavor2 = 溶岩の津波は実在する。Lava tsunamis are real. ([[DM-03]])\n| mana = 1\n| artist = Dustmoss\n| set1 = DM-03 Rampage of the Super Warriors\n| setnum1 = 41/55\n| R1 = Uncommon\n| set2 = DM-03 Master of Destruction\n| setnum2 = 32/55\n| R2 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Fire]]\n[[Category:Spell]]\n[[Category:Mass Removal]]\n[[Category:Power Based Removal]]\n[[Category:Self Shield Burn]]"
+}

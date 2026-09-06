@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_01_005",
+ "page": "Gran Gure, Space Guardian",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Guardian",
+ "cost": "6",
+ "power": "9000",
+ "engtext": "{{Blocker|old}}\n\n■ This [[creature]] can't [[attack]] [[player]]s.",
+ "templates": [
+  "Blocker|old"
+ ],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "5/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "1/110",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "2/140"
+ },
+ "wiki": "{{Cardtable\n| image = Gran Gure, Space Guardian.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|天|てん}}{{Ruby|空|くう}}の{{Ruby|守|しゅ}}{{Ruby|護|ご}}{{Ruby|者|しゃ}}グラン・ギューレ \n| phonetic = Tenkū no Shugosha Guran Gyūre\n| race = Guardian\n| cost = 6\n| power = 9000\n| engtext = {{Blocker|old}}\n\n■ This [[creature]] can't [[attack]] [[player]]s.\n| jptext = {{Blocker|jp}}\n\n■ このクリーチャーは、相手プレイヤーを攻撃できない。\n| flavor = 天空の城を汚す者は災いである。彼らは守護者の怒りを知るだろう。Those who defile the Sky Castle are doomed, for they shall know the wrath of the [[Guardian]]s. ([[DM-01]])\n| flavor2 = 空を覆う巨大な影、それはどれほど巨大だっかことか、ほとんどの者が気が付かなかった。The massive shadow that covered the sky was so immense that most people didn't even notice it. ([[DM-18]])\n| mana = 1\n| artist =  D-Suzuki\n| artist2 = Kou1\n| set1 = DM-01 Base Set\n| setnum1 = 5/110\n| R1 = Very Rare\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 1/110\n| R2 = Very Rare\n| set3 = DM-18 Best Challenger\n| setnum3 = 2/140\n| R3 = Very Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Guardian]]\n[[Category:9000 Power Creatures]]\n[[Category:Blocker]]"
+}

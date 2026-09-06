@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_06_107",
+ "page": "Pangaea's Will",
+ "type": "Spell",
+ "civilization": "Nature",
+ "race": "",
+ "cost": "3",
+ "power": "",
+ "engtext": "{{Shield Trigger|spell}} \n\n■ [[Choose]] one of your [[opponent]]’s [[evolution creature]]s in the [[battle zone]] and put the top [[card]] of that [[creature]] into your [[opponent]]’s [[mana zone]].",
+ "templates": [
+  "Shield Trigger|spell"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "107/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "70/110"
+ },
+ "wiki": "{{Cardtable\n| image = Pangaea's Will.jpg\n| civilization = Nature\n| type = Spell\n| jpname = {{Ruby|大|だい}}{{Ruby|自|し}}{{Ruby|然|ぜん}}の{{Ruby|意|い}}{{Ruby|志|いし}}\n| phonetic = Daishizen no Ishi\n| cost = 3\n| engtext = {{Shield Trigger|spell}} \n\n■ [[Choose]] one of your [[opponent]]’s [[evolution creature]]s in the [[battle zone]] and put the top [[card]] of that [[creature]] into your [[opponent]]’s [[mana zone]].\n| jptext = {{Icon|ST}} S・トリガー (この呪文をシールドゾーンから手札に加える時、コストを支払わずにすぐ唱えてもよい)\n\n■ バトルゾーンにある、相手の進化クリーチャーを1体選び、一番上のカードを持ち主のマナゾーンに置く。\n| flavor = 自然は、不自然な強さを認めない。Nature does not acknowledge unnatural strength. ([[DM-06]])\n| mana = 1\n| artist = Masaki Hirooka\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 107/110\n| R1 = Uncommon\n| set2 = DM-06 Invincible Soul\n| setnum2 = 70/110\n| R2 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Mana Feed]]"
+}

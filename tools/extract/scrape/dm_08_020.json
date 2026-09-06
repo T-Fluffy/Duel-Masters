@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_08_020",
+ "page": "Illusion Fish",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Gel Fish",
+ "cost": "4",
+ "power": "3000",
+ "engtext": "{{Turbo Rush|This [[creature]] can't be [[block]]ed.}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "20/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "40/55"
+ },
+ "wiki": "{{Cardtable\n| image = Illusion Fish.jpg\n| civilization = Water\n| type = Creature\n| jpname = イリュージョン・フィッシュ\n| phonetic = Iryūjon Fisshu\n| race = Gel Fish\n| cost = 4\n| power = 3000\n| engtext = {{Turbo Rush|This [[creature]] can't be [[block]]ed.}}\n| jptext = ■ ターボラッシュ （自分の他のクリーチャーがシールドをブレイクしたあと、そのターンが終わるまで、このクリーチャーは次の{{Icon|TR}}能力を得る）\n:{{Icon|TR}}このクリーチャーはブロックされない。\n| flavor = \"Watch closely for the end of history.\" -[[Emperor Quazla]] ([[DM-08]])\n| flavor2 = 「時代の滅びを静かに見張るんだよ。」 \"I quietly watch over the downfall of an era.\" —[[Emeral]] ([[DM-08]])\n| mana = 1\n| artist = Haccan\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 20/55\n| R1 = Common\n| set2 = DM-08 Invincible Legend\n| setnum2 = 40/55\n| R2 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Unblockable]]"
+}

@@ -1,0 +1,24 @@
+{
+ "card_id": "dm_03_027",
+ "page": "Ghastly Drain",
+ "type": "Spell",
+ "civilization": "Darkness",
+ "race": "",
+ "cost": "3",
+ "power": "",
+ "engtext": "■ Choose any [[number]] of your [[shield]]s and put them into your [[hand]]. You can't use the \"[[shield trigger]]\" [[ability|abilities]] of those [[shield]]s.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-03 Rampage of the Super Warriors",
+  "setnum1": "27/55",
+  "set2": "DM-03 Master of Destruction",
+  "setnum2": "14/55",
+  "set3": "DMX-12 Black Box Pack",
+  "setnum3": "b78/???",
+  "set4": "DMEX-08 Mysterious Black Box Pack",
+  "setnum4": "71/???",
+  "set5": "DM24-EX2 Unparalleled!! Dueking DreaM 2024",
+  "setnum5": "超32/超47"
+ },
+ "wiki": "{{Restriction|Hall}}\n{{Cardtable\n| image= Ghastly Drain.jpg\n| civilization = Darkness\n| type = Spell\n| jpname = デビル・ドレーン\n| phonetic = Debiru Dorēn ''(Devil Drain)''\n| cost = 3\n| engtext = ■ Choose any [[number]] of your [[shield]]s and put them into your [[hand]]. You can't use the \"[[shield trigger]]\" [[ability|abilities]] of those [[shield]]s.\n| jptext = ■ 自分のシールドを好きな数、手札に加える。ただし、その「S・トリガー」は使えない。\n| flavor = If you're not getting nightmares, you're not trying hard enough. ([[DM-03]])\n| flavor2 = 地獄の扉をくぐり抜けろ! \"Pass through the gates of hell!\" ([[DM-03]])\n| flavor3 = 瀕死が有利なら自ら瀕死になる! それが[[Darkness Civilization|闇文明]]の美学ですぞ! \"If being on the brink of death is advantageous, then I shall bring myself to the brink of death! That is the aesthetic of the Darkness Civilization!\" ―[[Shuu]] ([[DMX-12]])\n| flavor4 = 死を背中に感じた時、最大の力が生み出される。When you feel death at your back, the greatest power is born. ([[DMEX-08]])\n| flavor5 = 死を身近な友人とせよ。Make death a close friend. ([[DM24-EX2]])\n| mana = 1\n| artist = Katsuya\n| set1 = DM-03 Rampage of the Super Warriors\n| setnum1 = 27/55\n| R1 = Rare\n| set2 = DM-03 Master of Destruction\n| setnum2 = 14/55\n| R2 = Rare\n| set3 = DMX-12 Black Box Pack\n| setnum3 = b78/???\n| R3 = Rare\n| set4 = DMEX-08 Mysterious Black Box Pack\n| setnum4 = 71/???\n| R4 = Rare\n| set5 = DM24-EX2 Unparalleled!! Dueking DreaM 2024\n| setnum5 = 超32/超47\n| R5 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Shield Recovery]]"
+}

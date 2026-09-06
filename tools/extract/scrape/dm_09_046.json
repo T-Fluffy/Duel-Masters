@@ -1,0 +1,24 @@
+{
+ "card_id": "dm_09_046",
+ "page": "Cavern Raider",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Beast Folk",
+ "cost": "3",
+ "power": "2000",
+ "engtext": "■ Whenever this [[creature]] is [[attack]]ing your [[opponent]] and isn't [[block]]ed, [[search]] your [[deck]]. You may take a [[creature]] from your [[deck]], show that [[creature]] to your [[opponent]], and put it into your [[hand]]. Then [[shuffle]] your [[deck]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "46/55",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "54/55",
+  "set3": "DMC-34 CoroCoro Dream Pack 2: Eternal Legacy",
+  "setnum3": "53/55",
+  "set4": "DMC-39 Victory Soul",
+  "setnum4": "31/33",
+  "set5": "DMX-09 Deck Builder Oni DX Go For It! Katta Edition ",
+  "setnum5": "49/56"
+ },
+ "wiki": "{{Cardtable\n| image = Cavern Raider.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|誕生の祈|バース・アイ}} ''(Prayer of Birth)''\n| phonetic = Bāsu Ai\n| kana = バース・アイ ''(Birth Eye)''\n| cost = 3\n| race = Beast Folk\n| power = 2000\n| engtext = ■ Whenever this [[creature]] is [[attack]]ing your [[opponent]] and isn't [[block]]ed, [[search]] your [[deck]]. You may take a [[creature]] from your [[deck]], show that [[creature]] to your [[opponent]], and put it into your [[hand]]. Then [[shuffle]] your [[deck]].\n| jptext = ■ このクリーチャーが相手プレイヤーを攻撃してブロックされなかった時、自分の山札を見る。その中からクリーチャーを1体選び、相手に見せてから自分の手札に加えてもよい。その後、山札をシャッフルする。\n| flavor = \"My guidance counselor always told me I should be an action hero. She was right!\" ([[DM-09]])\n| flavor2 = 死ごときで、我らの鼓動を止められるものか! \"With death, we can stop the heartbeat!\" ─'''Cavern Raider''' ([[DM-09]], [[DMC-34]])\n| flavor3 = おらおら進め! 破壊の狼煙が援軍を呼ぶと心得よ \"Well forward! Let's understand that the wanderer of destruction calls reinforcements.\" ─'''Cavern Raider''' ([[DMC-39]])\n| flavor4 = いいのかね？わたしを止めないと、戦況は悪化する一方だぞっ!! \"Is not it okay? If you do not stop me, the war situation will worsen, but it will go!\"　─'''Cavern Raider''' ([[DMX-09]])\n| mana = 1\n| artist = Syuichi Obata\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = 46/55\n| R1 = Common\n| set2 = DM-09 Invincible Blood\n| setnum2 = 54/55\n| R2 = Common\n| set3 = DMC-34 CoroCoro Dream Pack 2: Eternal Legacy\n| setnum3 = 53/55\n| R3 = Common\n| set4 = DMC-39 Victory Soul\n| setnum4 = 31/33\n| R4 = Common\n| set5 = DMX-09 Deck Builder Oni DX Go For It! Katta Edition \n| setnum5 = 49/56\n| R5 = Common\n}}\n[[Category:OCG]]\n[[Category:TCG]]\n[[Category:Deck Search]]\n[[Category:Sabotage Ability]]"
+}

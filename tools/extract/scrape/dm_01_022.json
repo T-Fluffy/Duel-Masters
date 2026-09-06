@@ -1,0 +1,26 @@
+{
+ "card_id": "dm_01_022",
+ "page": "Toel, Vizier of Hope",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Initiate",
+ "cost": "5",
+ "power": "2000",
+ "engtext": "■ [[End Step|At the end of each of your turns]], you may [[untap]] all your [[creature]]s in the [[battle zone]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "22/110",
+  "set3": "DM-01 Base Set (OCG)",
+  "setnum3": "41/110",
+  "set2": "Shadowclash Collector Tin",
+  "setnum2": "16/46",
+  "set4": "DM-18 Best Challenger",
+  "setnum4": "52/140",
+  "set5": "DMC-26 Hakuoh's Angel Kingdom Deck",
+  "setnum5": "12/45",
+  "set6": "Promotional",
+  "setnum6": "M7/Y1"
+ },
+ "wiki": "{{Cardtable\n| image = Toel, Vizier of Hope.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|希|き}}{{Ruby|望|ぼう}}の{{Ruby|使|し}}{{Ruby|徒|と}}トール \n| phonetic = Kibō no Shito Tōru ''(Toel, Apostle of Hope)''\n| race = Initiate\n| cost = 5\n| power = 2000\n| engtext = ■ [[End Step|At the end of each of your turns]], you may [[untap]] all your [[creature]]s in the [[battle zone]].\n| jptext = ■ 自分のターンの終わりに、バトルゾーンにある自分のクリーチャーをすべてアンタップしてもよい。\n| flavor = 希望の使徒よ、覚醒せよ。汝の歌は夜明けの風なり。\"Vizier of Hope, arise. Your singing voice is a breeze of dawn.\" —{{tooltip|Hanusa, Radiance Elemental}} ([[DM-01]], M7/Y1, [[DMC-26]])\n| flavor2 = 希望の使徒よ、我等が敵を圧倒せよ。闇を照らす光の如く。The [[Initiate|Apostle]] of Hope, we will overwhelm the enemy. Like the light that shines through the darkness. ([[DM-18]])\n| mana = 1\n| artist = Masaki Hirooka\n| artist2 = Katsuya\n| set1 = DM-01 Base Set\n| setnum1 = 22/110\n| R1 = Uncommon \n| set3 = DM-01 Base Set (OCG)\n| setnum3 = 41/110\n| R3 = Uncommon\n| set2 = Shadowclash Collector Tin\n| setnum2 = 16/46\n| R2 = Uncommon\n| set4 = DM-18 Best Challenger\n| setnum4 = 52/140\n| R4 = Uncommon \n| set5 = DMC-26 Hakuoh's Angel Kingdom Deck\n| setnum5 = 12/45\n| R5 = Uncommon \n| set6 = Promotional\n| setnum6 = M7/Y1\n| R6 = No Rarity\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Creature Untap]]"
+}

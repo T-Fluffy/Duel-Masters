@@ -1,0 +1,24 @@
+{
+ "card_id": "dm_06_066",
+ "page": "Schuka, Duke of Amnesia",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Dark Lord",
+ "cost": "6",
+ "power": "5000",
+ "engtext": "■ When this [[creature]] is [[destroy]]ed, each [[player]] [[discard]]s his [[hand]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "66/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "25/110",
+  "set3": "Disruptive Forces Deck",
+  "setnum3": "66a/110",
+  "set4": "DMEX-08 Mysterious Black Box Pack",
+  "setnum4": "196/???",
+  "set5": "Promotional",
+  "setnum5": "P1/Y2"
+ },
+ "wiki": "{{Cardtable\n| image = Schuka, Duke of Amnesia.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|闇|やみ}}{{Ruby|侯|こう}}{{Ruby|爵|しゃく}}ハウクス ''(Hawkes, Dark Marquis)''\n| phonetic = Yamikōshaku Haukusu\n| cost = 6\n| race = Dark Lord\n| power = 5000\n| engtext = ■ When this [[creature]] is [[destroy]]ed, each [[player]] [[discard]]s his [[hand]].\n| jptext = ■ このクリーチャーが破壊された時、各プレイヤーは自身の手札をすべて、それぞれの墓地に置く。\n| flavor = \"All the mysteries of the universe-the eternal questions of past, present, and future-pretty much boil down to this: how do you like my spiffy new cape?\" ([[DM-06]])\n| flavor2 = 火の国との密約を思い浮かべ、邪悪に微笑む。Thinking of the secret pact with the Kingdom of Fire, they smile wickedly. ([[DM-06]])\n| flavor3 = ボロフの前に現れたのは二人の魔壊王。ひとりはかつて別れた記憶を持つ魔壊王。そして、ひとりは初めて会った時と同じくボロフを罰しようとする魔壊王。古の革命の力は歪んだ選択を経なければ、復活させられない。Before [[Borof, Final Dragon Ruler|Borof]] stood two [[Deathshiraz Infinity, Super Devil Corrupt King|Devil Corrupt Kings]]. One was a Devil Corrupt King with [[Deathgoros, Supreme Devil Corrupt King|memories of a past parting]]. The other was a Devil Corrupt King who sought to punish Borof just as they did [[Deathshiraz, Devil Corrupt King|when they first met]]. The power of the [[Death the Lost, Demon Revolution|ancient revolution]] can't be revived without going through a distorted choice. ([[DMEX-08]])\n| flavor4 = 闘いの波動を感じろ。目も眩む光を見つめろ。闇の闘魂が今立ち上がる!! Feel the wave of battle. Gaze into the blinding light. The fighting spirit of darkness rises now!! (P1/Y2)\n| mana = 1\n| artist = Daisuke Izuka\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 66/110\n| R1 = Rare\n| set2 = DM-06 Invincible Soul\n| setnum2 = 25/110\n| R2 = Rare\n| set3 = Disruptive Forces Deck\n| setnum3 = 66a/110\n| R3 = Rare\n| set4 = DMEX-08 Mysterious Black Box Pack\n| setnum4 = 196/???\n| R4 = Rare\n| set5 = Promotional\n| setnum5 = P1/Y2\n| R5 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Dark Lord]]\n[[Category:5000 Power Creatures]]\n[[Category:Card Discard]]\n[[Category:Self Discard]]\n[[Category:Put Into Graveyard]]"
+}

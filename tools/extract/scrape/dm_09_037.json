@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_09_037",
+ "page": "Blizzard of Spears",
+ "type": "Spell",
+ "civilization": "Fire",
+ "race": "",
+ "cost": "6",
+ "power": "",
+ "engtext": "■ [[Destroy]] all [[creature]]s that have [[power]] 4000 or less.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "37/55",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "17/55",
+  "set3": "DMC-18 Shobu's Holy Dragon Deck ",
+  "setnum3": "16/102"
+ },
+ "wiki": "{{Cardtable\n| image = Blizzard of Spears.jpg\n| civilization = Fire\n| type = Spell\n| jpname = サウザンド・スピア\n| phonetic = Sauzando Supia ''(Thousand Spear)''\n| cost = 6\n| engtext = ■ [[Destroy]] all [[creature]]s that have [[power]] 4000 or less.\n| jptext = ■ パワー4000以下のクリーチャーをすべて破壊する。\n| flavor = \"That's my kind of winter wonderland.\" ─[[Bazagazeal Dragon]] ([[DM-09]])\n| flavor2 = 空が真っ赤に燃え尽きる! \"The sky burns bright red!\" ([[DM-09]])\n| flavor3 = 空は紅蓮の断頭台、優しく等しく遠慮なく。\"The sky is a crimson guillotine, gentle, equal, and without reserve.\" ([[DMC-18]])\n| mana = 1\n| artist = Taro Yamazaki\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = 37/55\n| R1 = Rare\n| set2 = DM-09 Invincible Blood\n| setnum2 = 17/55\n| R2 = Rare\n| set3 = DMC-18 Shobu's Holy Dragon Deck \n| setnum3 = 16/102\n| R3 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Fire]]\n[[Category:Spell]]\n[[Category:Mass Removal]]\n[[Category:Power Based Removal]]"
+}

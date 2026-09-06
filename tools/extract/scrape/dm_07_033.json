@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_07_033",
+ "page": "Three-Faced Ashura Fang",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Devil Mask",
+ "cost": "4",
+ "power": "4000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], choose one of your [[shield]]s and put it into your [[hand]]. You can't use the \"[[shield trigger]]\" [[ability]] of that [[shield]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "33/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "27/55",
+  "set3": "Promotional",
+  "setnum3": "P1 Y2"
+ },
+ "wiki": "{{Cardtable\n| image = Three-Faced Ashura Fang.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|三|さん}}{{Ruby|面|めん}}{{Ruby|怪|かい}}{{Ruby|人|じん}}アシュラファング\n| phonetic = Sanmen Kaijin Ashura Fangu\n| race = Devil Mask\n| cost = 4\n| power = 4000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], choose one of your [[shield]]s and put it into your [[hand]]. You can't use the \"[[shield trigger]]\" [[ability]] of that [[shield]].\n| jptext = ■ このクリーチャーがバトルゾーンに出たとき、自分のシールドが1枚でもあれば、その中から1枚を裏向きのまま選び、自分の手札に加える。ただし、その「S・トリガー」は使えない。\n| flavor = It'll never turn its back on you. It can't. ([[DM-07]])\n| flavor2 = 三面、全てが凶暴フェイス。Three faces, all of them are vicious. ([[DM-07]])\n| mana = 1\n| artist = Koji Watanabe\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 33/55\n| R1 = Uncommon\n| set2 = DM-07 Invincible Charge\n| setnum2 = 27/55\n| R2 = Uncommon\n| set3 = Promotional\n| setnum3 = P1 Y2\n| R3 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Devil Mask]]\n[[Category:4000 Power Creatures]]\n[[Category:Shield Recovery]]\n[[Category:Come Into Play Trigger]]"
+}

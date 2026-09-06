@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_04_017",
+ "page": "Screaming Sunburst",
+ "type": "Spell",
+ "civilization": "Light ",
+ "race": "",
+ "cost": "3",
+ "power": "",
+ "engtext": "■ [[Tap]] all [[creature]]s in the [[battle zone]] except [[light]] [[creature]]s. ",
+ "templates": [],
+ "sets": {
+  "set1": "DM-04 Shadowclash of Blinding Night",
+  "setnum1": "17/55",
+  "set2": "Shadowclash Collector Tin",
+  "setnum2": "13/46",
+  "set3": "DM-04 Challenge of Black Shadow ",
+  "setnum3": "25/55"
+ },
+ "wiki": "{{Cardtable\n| image = Screaming Sunburst.jpg\n| civilization = Light \n| type = Spell\n| jpname = エンジェル・ソング\n| phonetic = Enjeru Songu ''(Angel Song)''\n| cost = 3\n| engtext = ■ [[Tap]] all [[creature]]s in the [[battle zone]] except [[light]] [[creature]]s. \n| jptext = ■ バトルゾーンにある、光以外のクリーチャーをすべてタップする。\n| flavor = Forty megatons of happiness. ([[DM-04]])\n| flavor2 = さぁ、眠りなさい。\"Now, sleep.\" ([[DM-04]])\n| mana = 1\n| artist = Yusaku Nakaaki \n| set1 = DM-04 Shadowclash of Blinding Night\n| setnum1 = 17/55\n| R1 = Uncommon\n| set2 = Shadowclash Collector Tin\n| setnum2 = 13/46\n| R2 = Uncommon\n| set3 = DM-04 Challenge of Black Shadow \n| setnum3 = 25/55\n| R3 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Spell]]\n[[Category:Creature Tapper]]"
+}

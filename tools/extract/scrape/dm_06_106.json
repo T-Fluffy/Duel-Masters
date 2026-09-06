@@ -1,0 +1,26 @@
+{
+ "card_id": "dm_06_106",
+ "page": "Mystic Treasure Chest",
+ "type": "Spell",
+ "civilization": "Nature",
+ "race": "",
+ "cost": "3",
+ "power": "",
+ "engtext": "■ [[Search]] your [[deck]]. You may take a non-[[nature]] [[card]] from your [[deck]] and put it into your [[mana zone]]. Then [[shuffle]] your [[deck]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "106/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "40/110",
+  "set3": "DMX-08 Burn up to the Max! Gachinko BEST",
+  "setnum3": "13/37",
+  "set4": "DMX-14 The Greatest Strategies Perfect 12",
+  "setnum4": "67/84",
+  "set5": "DMEX-01 Duel Masters: Golden Best",
+  "setnum5": "G5/G10",
+  "set6": "Promotional",
+  "setnum6": "P55/Y9"
+ },
+ "wiki": "{{Cardtable\n| image = Mystic Treasure Chest.jpg\n| civilization = Nature\n| type = Spell\n| jpname = {{Ruby|神|しん}}{{Ruby|秘|ぴ}}の{{Ruby|宝|たから}}{{Ruby|箱|ばこ}} ''(Mysterious Treasure Chest)''\n| phonetic = Shinpi no Takarabako\n| cost = 3\n| engtext = ■ [[Search]] your [[deck]]. You may take a non-[[nature]] [[card]] from your [[deck]] and put it into your [[mana zone]]. Then [[shuffle]] your [[deck]].\n| jptext = ■ 自分の山札を見る。その中から自然以外のカードを1枚選び、自分のマナゾーンに置いてもよい。その後、山札をシャッフルする.\n| flavor = {{tooltip|Mighty Bandit, Ace of Thieves|Mighty Bandit}} didn't earn his name by robbing piggy banks. Well, not just piggy banks. ([[DM-06]])\n| flavor2 = ひーふーみーよー。ん、一つ足りないぞ。\"One, two, three, four. Hmm, one is missing.\" —{{tooltip|Fear Fang}} ([[DM-06]])\n| flavor3 = 苦難の航海を続けるパーロックの次の狙いは、伝説の島国に眠る「神秘の宝箱」。その地は東方にあり、黄金の島と呼ばれるほど、財宝が豊かなところらしい。次こそお宝にありつけるか!? The aim of {{tooltip|Parlock|Parlock's}} next voyage is the legendary island where the \"mysterious treasure chest\" sleeps. The land is located to the east, a so-called country of gold, an area rich with treasure. This time will he find the treasure!? (P55/Y9)\n| mana = 1\n| artist = Norikatsu Miyoshi\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 106/110\n| R1 = Rare\n| set2 = DM-06 Invincible Soul\n| setnum2 = 40/110\n| R2 = Rare\n| set3 = DMX-08 Burn up to the Max! Gachinko BEST\n| setnum3 = 13/37\n| R3 = Rare\n| set4 = DMX-14 The Greatest Strategies Perfect 12\n| setnum4 = 67/84\n| R4 = Rare\n| set5 = DMEX-01 Duel Masters: Golden Best\n| setnum5 = G5/G10\n| R5 = Rare\n| set6 = Promotional\n| setnum6 = P55/Y9\n| R6 = Rare\n}}\n{{Parlock}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Nature]]\n[[Category:Spell]]\n[[Category:Mana Acceleration]]\n[[Category:Deck Search]]"
+}

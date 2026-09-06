@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_09_029",
+ "page": "Grinning Hunger",
+ "type": "Spell",
+ "civilization": "Darkness",
+ "race": "",
+ "cost": "4",
+ "power": "",
+ "engtext": "■ Your [[opponent]] chooses one of his [[creature]]s in the [[battle zone]] or one of his [[shield]]s and puts it into his [[graveyard]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "29/55",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "29/55"
+ },
+ "wiki": "{{Cardtable\n| image = Grinning Hunger.jpg\n| civilization = Darkness\n| type = Spell\n| jpname = {{Ruby|生|せい}}{{Ruby|命|めい}}{{Ruby|剥|はく}}{{Ruby|奪|だつ}}\n| phonetic = Seimei Hakudatsu\n| cost = 4\n| engtext = ■ Your [[opponent]] chooses one of his [[creature]]s in the [[battle zone]] or one of his [[shield]]s and puts it into his [[graveyard]].\n| jptext = ■ 相手は、バトルゾーンにある自分自身のクリーチャー1体か、自分自身のシールドを1枚選び、それを持ち主の墓地に置く。ただし、その「S・トリガー」は使えない。\n| flavor = \"Evil has a healthy appetite. Death never stops stuffing its face. But nothing-nothing-is hungrier than hunger itself.\" -[[Stallob, the Lifequasher]] ([[DM-09]])\n| flavor2 = 選んだ犠牲に対して、何と言葉をかければ良いのだろうか。\"I wonder what words should be said to the chosen sacrifice.\" ([[DM-09]])\n| mana = 1\n| artist = Katsuya\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = 29/55\n| R1 = Uncommon\n| set2 = DM-09 Invincible Blood\n| setnum2 = 29/55\n| R2 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Spell]]\n[[Category:Shield Burn]]\n[[Category:Choice Removal]]"
+}

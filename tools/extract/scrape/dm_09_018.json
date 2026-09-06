@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_09_018",
+ "page": "Hokira",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Cyber Lord",
+ "cost": "4",
+ "power": "3000",
+ "engtext": "{{Tap Ability|[[Choose a race]]. Whenever one of your [[creature]]s of that [[race]] would be [[destroy]]ed this [[turn]], return it to your [[hand]] [[instead]].}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "18/55",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "25/55",
+  "set3": "DMEX-08 Mysterious Black Box Pack",
+  "setnum3": "300/???"
+ },
+ "wiki": "{{Cardtable\n| image = Hokira.jpg\n| civilization = Water\n| type = Creature\n| jpname = ポキラ\n| phonetic = Pokira\n| race = Cyber Lord\n| cost = 4\n| power = 3000\n| engtext = {{Tap Ability|[[Choose a race]]. Whenever one of your [[creature]]s of that [[race]] would be [[destroy]]ed this [[turn]], return it to your [[hand]] [[instead]].}}\n| jptext = ■ このクリーチャーで攻撃するかわりに、タップして次の{{Tap}}能力を使ってもよい。\n:{{Tap}} 種族を1つ選ぶ。このターン、その種族のクリーチャーがバトルゾーンから自分の墓地に置かれるとき、墓地に置くかわりに自分の手札に戻す。\n| flavor = \"Change my diaper?! Dude, I'm 47 years old.\" ([[DM-09]])\n| flavor2 = デュエマクイズ Lv.2 Duel Masters Quiz Lv.2 <br> ポキラのカード名は3文字ですが、デュエマで登場したカードで最も短いカード名を持つカードは? The card name of Pokira is 3 characters long, but what is the card with the shortest name ever to appear in Duel Masters? <br> 答え：《零》(1文字) Answer: [[Zero (card)|Zero]] (1 character) ([[DMEX-08]])\n| mana = 1\n| artist = Sansyu\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = 18/55\n| R1 = Uncommon\n| set2 = DM-09 Invincible Blood\n| setnum2 = 25/55\n| R2 = Uncommon\n| set3 = DMEX-08 Mysterious Black Box Pack\n| setnum3 = 300/???\n| R3 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Cyber Lord]]\n[[Category:Tap Ability]]\n[[Category:3000 Power Creatures]]\n[[Category:Destruction Substitution]]\n[[Category:Self Bounce]]"
+}

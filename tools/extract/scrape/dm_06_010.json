@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_06_010",
+ "page": "Splinterclaw Wasp",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Giant Insect",
+ "cost": "7",
+ "power": "4000+",
+ "engtext": "{{Power Attacker|3000}}\n\n{{Double Breaker}}\n\n■ Whenever this [[creature]] becomes [[block]]ed, it [[break]]s one of your [[opponent]]'s [[shield]]s.",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "10/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "9/110"
+ },
+ "wiki": "{{Cardtable\n| image = Splinterclaw Wasp.jpg\n| civilization = Nature\n| type = Creature\n| jpname = ガイアクロウ・ワスプ ''(Gaiaclaw Wasp)''\n| phonetic = Gaiakurou Wasupu\n| race = Giant Insect\n| cost = 7\n| power = 4000+\n| engtext = {{Power Attacker|3000}}\n\n{{Double Breaker}}\n\n■ Whenever this [[creature]] becomes [[block]]ed, it [[break]]s one of your [[opponent]]'s [[shield]]s.\n| jptext = {{Power Attacker|3000|jp}}\n\n{{Double Breaker|jps}}\n\n■ このクリーチャーがブロックされるとき、相手のシールドが1枚でもあれば、そのうちの1枚をブレイクする。　\n| flavor = \"Buzz off.\" ([[DM-08]])\n| mana = 1\n| artist = Nottsuo\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 10/110\n| R1 = Very Rare\n| set2 = DM-06 Invincible Soul\n| setnum2 = 9/110\n| R2 = Very Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Trample]]\n[[Category:Shield Break]]"
+}

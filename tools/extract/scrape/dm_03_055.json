@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_03_055",
+ "page": "Sword Butterfly",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Giant Insect",
+ "cost": "3",
+ "power": "2000+",
+ "engtext": "{{Power Attacker|3000}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-03 Rampage of the Super Warriors",
+  "setnum1": "55/55",
+  "set2": "DM-03 Master of Destruction",
+  "setnum2": "53/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "134/140",
+  "set4": "DMC-07 Eternal Insects Deck",
+  "setnum4": "76/82"
+ },
+ "wiki": "{{Cardtable\n| image = Sword Butterfly.jpg\n| civilization = Nature\n| type = Creature\n| jpname = ソード・バタフライ\n| phonetic = Sōdo Batafurai\n| cost = 3\n| race = Giant Insect\n| power = 2000+\n| engtext = {{Power Attacker|3000}}\n| jptext = {{Power Attacker|3000|jp}}　\n| flavor = One snoutful of its pollen can knock out a [[Horned Beast]] for a week. ([[DM-03]])\n| flavor2 = その鱗粉を吸うとホーン・ビーストさえ眠る。When you inhale that pollen, even the Horned Beast falls asleep. ([[DM-03]], [[DM-18]], [[DMC-07]])\n| mana = 1\n| artist = Hikaru Ikusa\n| set1 = DM-03 Rampage of the Super Warriors\n| setnum1 = 55/55\n| R1 = Common\n| set2 = DM-03 Master of Destruction\n| setnum2 = 53/55\n| R2 = Common\n| set3 = DM-18 Best Challenger\n| setnum3 = 134/140\n| R3 = Common\n| set4 = DMC-07 Eternal Insects Deck\n| setnum4 = 76/82\n| R4 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:2000 Power Creatures]]"
+}

@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_01_034",
+ "page": "King Ripped-Hide",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Leviathan",
+ "cost": "7",
+ "power": "5000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], [[draw]] up to 2 [[card]]s.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "34/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "3/110",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "4/140"
+ },
+ "wiki": "{{Cardtable\n| image = King Ripped-Hide.jpg\n| civilization = Water\n| type = Creature\n| jpname = キング・ポセイドン\n| phonetic = Kingu Poseidon ''(King Poseidon)''\n| race = Leviathan\n| cost = 7\n| power = 5000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], [[draw]] up to 2 [[card]]s.\n| jptext = ■ このクリーチャーをバトルゾーンに出した時、カードを2枚引いてもよい。\n| flavor = はるか昔、サイバーロードは彼の背中に都市を築いた。 Long ago, the [[Cyber Lord]]s built a city on his back. ([[DM-01]])\n| flavor2 = その巨大な姿は海の偉大さを体現しているかのようだ。 Its huge body embodies the greatness of the sea. ([[DM-18]])\n| mana = 1\n| artist = Miho Midorikawa\n| artist2 = Koji Harada\n| set1 = DM-01 Base Set\n| setnum1 = 34/110\n| R1 = Very Rare\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 3/110\n| R2 = Very Rare\n| set3 = DM-18 Best Challenger\n| setnum3 = 4/140\n| R3 = Very Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Leviathan]]\n[[Category:5000 Power Creatures]]\n[[Category:Card Draw]]\n[[Category:Come Into Play Trigger]]"
+}

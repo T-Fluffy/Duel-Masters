@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_06_051",
+ "page": "Bazooka Mutant",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Hedrian",
+ "cost": "4",
+ "power": "8000",
+ "engtext": "■ This [[creature]] can [[attack]] only [[creature]]s that have \"[[blocker]].\"\n\n■ This [[creature]] can't [[attack]] [[player]]s.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "51/110",
+  "set2": "DM-06 Invincible Soul ",
+  "setnum2": "54/110"
+ },
+ "wiki": "{{Cardtable\n| image = Bazooka Mutant.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|戦|いくさ}}{{Ruby|男|おとこ}}\n| phonetic = Ikusa Otoko\n| race = Hedrian\n| cost = 4\n| power = 8000\n| engtext = ■ This [[creature]] can [[attack]] only [[creature]]s that have \"[[blocker]].\"\n\n■ This [[creature]] can't [[attack]] [[player]]s.\n| jptext = ■ このクリーチャーは、「ブロッカー」を持つクリーチャーだけを攻撃できる。\n\n■ このクリーチャーは、相手プレイヤーを攻撃できない。\n| flavor = The cannon is covered in slime. It runs on slime. It's fired by slime. Guess what it shoots? ([[DM-06]])\n| flavor2 = どろりとした砲身から飛ぶのはやはり[[Mudman|泥男]]。 What flies from the viscous barrel is indeed [[Mudman]]. ([[DM-06]])\n| mana = 1\n| artist = Naoki Saito\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 51/110\n| R1 = Uncommon\n| set2 = DM-06 Invincible Soul \n| setnum2 = 54/110\n| R2 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Hedrian]]\n[[Category:8000 Power Creatures]]"
+}

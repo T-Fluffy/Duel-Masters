@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_08_009",
+ "page": "Migalo, Vizier of Spycraft",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Initiate",
+ "cost": "2",
+ "power": "1500",
+ "engtext": "{{Turbo Rush|Whenever this [[creature]] [[attack]]s, you may [[look]] at 2 of your [[opponent]]'s [[shield]]s. Then put them back where they were.}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "9/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "37/55",
+  "set3": "DMC-12 Hakuoh's Holy Spirit Power-Up Pack",
+  "setnum3": "28/44"
+ },
+ "wiki": "{{Cardtable\n| image = Migalo, Vizier of Spycraft.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|乱撃|らんげき}}の{{Ruby|使|し}}{{Ruby|徒|と}}ミガロ\n| phonetic = Rangeki no Shito Migaro\n| cost = 2\n| race = Initiate\n| power = 1500\n| engtext = {{Turbo Rush|Whenever this [[creature]] [[attack]]s, you may [[look]] at 2 of your [[opponent]]'s [[shield]]s. Then put them back where they were.}}\n| jptext = ■ ターボラッシュ （自分の他のクリーチャーがシールドをブレイクしたあと、そのターンが終わるまで、このクリーチャーは次の{{Icon|TR}}能力を得る）\n:{{Icon|TR}}このクリーチャーが攻撃するとき、相手のシールドを2枚見てもよい。その後そのシールドを元の場所に戻す。\n| flavor2 = 乱撃の使徒よ、覚醒せよ。汝の誓いは未来への架け橋なり。Vizier of the Wild Strikes, awaken. Your oath is the bridge to the future. ([[DM-08]])\n| flavor = どんな過ちも修復は可能だ。光には絶望という感情はない。Any mistake can be repaired. There is no such thing as despair in light. ([[DMC-12]])\n| mana = 1\n| artist = Jason\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 9/55\n| R1 = Common\n| set2 = DM-08 Invincible Legend\n| setnum2 = 37/55\n| R2 = Common\n| set3 = DMC-12 Hakuoh's Holy Spirit Power-Up Pack\n| setnum3 = 28/44\n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Shield Peek]]\n[[Category:Attack Trigger]]"
+}

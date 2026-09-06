@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_01_010",
+ "page": "Lah, Purification Enforcer",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Berserker",
+ "cost": "5",
+ "power": "5500",
+ "engtext": "",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "10/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "12/110",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "18/140"
+ },
+ "wiki": "{{Cardtable\n| image = Lah, Purification Enforcer.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|粛|しゅく}}{{Ruby|清|せい}}の{{Ruby|伝|でん}}{{Ruby|道|どう}}{{Ruby|師|し}}ラー\n| phonetic = Shukusei no Dendōshi Rā\n| cost = 5\n| race = Berserker\n| power = 5500\n| flavor = 伝道師を見た者たちは、日食は災害の前ぶれだと信じるようになった。 Those who have seen this [[Berserker|Enforcer]] believe that eclipses are omens of disaster. ([[DM-01]], [[DM-18]])\n| mana = 1\n| artist = Hideaki Takamura\n| set1 = DM-01 Base Set\n| setnum1 = 10/110\n| R1 = Rare\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 12/110\n| R2 = Rare\n| set3 = DM-18 Best Challenger\n| setnum3 = 18/140\n| R3 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Light]]\n[[Category:Berserker]]\n[[Category:5500 Power Creatures]]\n[[Category:No Abilities]]"
+}

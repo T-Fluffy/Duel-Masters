@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_09_019",
+ "page": "Impossible Tunnel",
+ "type": "Spell",
+ "civilization": "Water",
+ "race": "",
+ "cost": "5",
+ "power": "",
+ "engtext": "■ [[Choose a race]]. [[Creature]]s of that [[race]] can't be [[block]]ed this [[turn]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "19/55",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "43/55"
+ },
+ "wiki": "{{Cardtable\n| image = Impossible Tunnel.jpg\n| civilization = Water\n| type = Spell\n| jpname = サイバー・トンネル\n| phonetic = Saibā Tonneru ''(Cyber Tunnel)''\n| cost = 5\n| engtext = ■ [[Choose a race]]. [[Creature]]s of that [[race]] can't be [[block]]ed this [[turn]].\n| jptext = ■ 種族を1つ選ぶ。このターン、その種族のクリーチャーはブロックされない。\n| flavor = \"The transdimensional warp portals are operational! I'll never have to drive to the laundromat again!\" -[[Sopian]] ([[DM-09]])\n| flavor2 = 歪んだ空間を抜け、静かに刺客は訪れる。Through the distorted space, the assassin quietly arrives. ([[DM-09]])\n| mana = 1\n| artist = Sansyu\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = 19/55\n| R1 = Common\n| set2 = DM-09 Invincible Blood\n| setnum2 = 43/55\n| R2 = Common\n}}\n[[Category:OCG]]\n[[Category:TCG]]\n[[Category:Gives \"Unblockable\"]]"
+}

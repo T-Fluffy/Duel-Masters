@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_06_044",
+ "page": "Ripple Lotus Q",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Survivor",
+ "cost": "6",
+ "power": "2000",
+ "engtext": "{{Survivor}} [[When you put]] this [[creature]] into the [[battle zone]], you may [[choose]] one of your [[opponent]]'s [[creature]]s in the [[battle zone]] and [[tap]] it.",
+ "templates": [
+  "Survivor"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "44/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "22/110"
+ },
+ "wiki": "{{Cardtable\n| image = Ripple Lotus Q.jpg\n| civilization = Water\n| type = Creature\n| jpname = ロータス・ミント{{Ruby|γ|ガンマ}} \n| kana = ガンマ ''(Gamma)''\n| phonetic = Rōtasu Minto Ganma ''(Lotus Mint Gamma)''\n| race = Survivor\n| race2 = Cyber Virus\n| cost = 6\n| power = 2000\n| engtext = {{Survivor}} [[When you put]] this [[creature]] into the [[battle zone]], you may [[choose]] one of your [[opponent]]'s [[creature]]s in the [[battle zone]] and [[tap]] it.\n| jptext = {{Icon|SVold}} このクリーチャーがバトルゾーンに出たとき、バトルゾーンにある相手のクリーチャーを1体選び、タップしてもよい。\n\n■ サバイバー （このクリーチャーがバトルゾーンにある間、自分の他のサバイバーも上の{{Icon|SVold}}能力を得る）\n| flavor = Its petals wave gently in the current, tempting prey to come closer to its poisonous tendrils. ([[DM-06]])\n| flavor2 = 海流にゆらめく花びらは、敵を誘う魔性の踊り子。The petals swaying in the ocean currents are a seductive dancer, luring in enemies with their demonic charm. ([[DM-06]]) \n| mana = 1\n| artist = Katsuhiko Kojoh\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 44/110\n| R1 = Rare\n| set2 = DM-06 Invincible Soul\n| setnum2 = 22/110\n| R2 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Creature Tapper]]\n[[Category:Come Into Play Trigger]]"
+}

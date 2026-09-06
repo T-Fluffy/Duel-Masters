@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_04_054",
+ "page": "Three-Eyed Dragonfly",
+ "type": "Creature",
+ "civilization": "Nature ",
+ "race": "Giant Insect",
+ "cost": "5",
+ "power": "4000+",
+ "engtext": "■ Whenever this [[creature]] [[attack]]s, you may [[destroy]] one of your other [[creature]]s. If you do, this [[creature]] gets +2000 [[power]] and \"[[double breaker]]\" until the [[End Step|end of the turn]]. ''(A [[creature]] that has \"[[double breaker]]\" [[break]]s 2 [[shield]]s.)''",
+ "templates": [],
+ "sets": {
+  "set1": "DM-04 Shadowclash of Blinding Night",
+  "setnum1": "54/55",
+  "set2": "DM-04 Challenge of Black Shadow ",
+  "setnum2": "34/55",
+  "set3": "DMC-07 Eternal Insects Deck ",
+  "setnum3": "36/82"
+ },
+ "wiki": "{{Cardtable\n| image = Three-Eyed Dragonfly.jpg\n| civilization = Nature \n| type = Creature\n| jpname = スリーアイズ・ドラゴンフライ\n| phonetic = Surīaizu Doragonfurai\n| race = Giant Insect\n| cost = 5\n| power = 4000+\n| engtext = ■ Whenever this [[creature]] [[attack]]s, you may [[destroy]] one of your other [[creature]]s. If you do, this [[creature]] gets +2000 [[power]] and \"[[double breaker]]\" until the [[End Step|end of the turn]]. ''(A [[creature]] that has \"[[double breaker]]\" [[break]]s 2 [[shield]]s.)''\n| jptext = ■ このクリーチャーが攻撃するとき、相手がブロックする前に、バトルゾーンにある自分の他のクリーチャーを1体選び、墓地に置いてもよい。そうした場合、このターン、このクリーチャーのパワーは+2000され、「W(ダブル)・ブレイカー」を得る。(シールドを攻撃したとき、シールドを2枚ブレイクする) \n| flavor = The third eye sees a few seconds into the future. ([[DM-05]])\n| mana = 1\n| artist =Youichi Kai \n| set1 = DM-04 Shadowclash of Blinding Night\n| setnum1 = 54/55\n| R1 = Uncommon\n| set2 = DM-04 Challenge of Black Shadow \n| setnum2 = 34/55\n| R2 = Uncommon\n| set3 = DMC-07 Eternal Insects Deck \n| setnum3 = 36/82\n| R3 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:4000 Power Creatures]]\n[[Category:Self Removal]]\n[[Category:Self Increase Power]]\n[[Category:Conditional Double Breaker]]\n[[Category:Attack Trigger]]"
+}

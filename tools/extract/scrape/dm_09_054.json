@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_09_054",
+ "page": "Whip Scorpion",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Giant Insect",
+ "cost": "5",
+ "power": "2000+",
+ "engtext": "{{Shield Trigger|creature}}\n\n{{Power Attacker|3000}}",
+ "templates": [
+  "Shield Trigger|creature"
+ ],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "54/55",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "53/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "132/140"
+ },
+ "wiki": "{{Cardtable\n| image = Whip Scorpion.jpg\n| civilization = Nature\n| type = Creature\n| jpname = ウィップ・スコーピオン\n| phonetic = U~ippu Sukōpion\n| race = Giant Insect\n| cost = 5\n| power = 2000+\n| engtext = {{Shield Trigger|creature}}\n\n{{Power Attacker|3000}}\n| jptext = {{Icon|ST}} S・トリガー （このクリーチャーをシールドゾーンから手札に加えるとき、コストを支払わずにすぐ召喚してよい）。\n\n{{Power Attacker|3000|jp}}　\n| flavor = \"I hate it when my pets fill up on junk food.\" —[[Storm Wrangler, the Furious]] ([[DM-09]])\n| flavor2 = 静寂に満ちた森林は、こいつが飛び出す絶好の場所。The forest, filled with silence, is the perfect place for it to leap out. ([[DM-09]], [[DM-18]])\n| mana = 1\n| artist = Atsushi Kawasaki\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = 54/55\n| R1 = Common\n| set2 = DM-09 Invincible Blood\n| setnum2 = 53/55\n| R2 = Common\n| set3 = DM-18 Best Challenger\n| setnum3 = 132/140\n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:2000 Power Creatures]]"
+}

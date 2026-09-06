@@ -1,0 +1,30 @@
+{
+ "card_id": "dm_01_013",
+ "page": "Miele, Vizier of Lightning",
+ "type": "Creature",
+ "civilization": "Light",
+ "race": "Initiate",
+ "cost": "3",
+ "power": "1000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], you may [[choose]] one of your [[opponent]]'s [[creature]]s in the [[battle zone]] and [[tap]] it.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "13/110",
+  "set2": "Shadowclash Collector Tin",
+  "setnum2": "8/46",
+  "set3": "DM-01 Base Set (OCG)",
+  "setnum3": "73/110",
+  "set4": "DM-18 Best Challenger",
+  "setnum4": "94/140",
+  "set5": "DMC-42 CoroCoro Dream Pack 3: Eternal Gear",
+  "setnum5": "60/90",
+  "set6": "DMC-61 CoroCoro Dream Pack 4: Eternal Heaven",
+  "setnum6": "62/94",
+  "set7": "DMX-10 Deck Builder Oni DX Bright Star! Leo Edition",
+  "setnum7": "41/56",
+  "set8": "Promotional",
+  "setnum8": "P12/Y8, P20/Y8, P73/Y12"
+ },
+ "wiki": "{{Cardtable\n| image = Miele, Vizier of Lightning.jpg\n| civilization = Light\n| type = Creature\n| jpname = {{Ruby|雷|らい}}{{Ruby|光|こう}}の{{Ruby|使|し}}{{Ruby|徒|と}}ミール\n| phonetic = Raikō no Shito Mīru\n| race = Initiate\n| cost = 3\n| power = 1000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], you may [[choose]] one of your [[opponent]]'s [[creature]]s in the [[battle zone]] and [[tap]] it.\n| jptext = ■ このクリーチャーをバトルゾーンに出した時、バトルゾーンにある相手のクリーチャーを1体選び、タップしてもよい。\n| flavor = 雷光の使徒よ、覚醒せよ。汝の目は審判の弓なり。\"Vizier of Lightning, arise. Your eyes are a bow of judgment.\"  —{{tooltip|Hanusa, Radiance Elemental}} ([[DM-01]], [[DMC-61]])\n| flavor2 = 雷光の使徒よ、我等が敵を迎撃せよ。闇を切り裂く刃の如く。 The [[Initiate|Apostle]] of lighting intercepts the enemy as a blade cutting through the darkness. ([[DM-18]], [[DMC-42]])\n| flavor3 = 雷光が屈強な敵をもひるませる。 Lightning makes for a strong enemy. ([[DMX-10]])\n| flavor4 = 超回転による電光は100万ボルト! 光の使徒よ、敵をしびれさせろ! Super-circulating lightning generates a million volts! [[Initiate|Apostle]] of Lightning, numb the enemy! (P12/Y8)\n| flavor5 = 雷光の使徒よ、電光まといて覚醒し、敵をまどわす罠となれ。 The [[Initiate|messenger]] of lightning, awakened by the very same, become a stumbling block to the enemy. (P20/Y8)\n| flavor6 = ミールからあふれるまぶしい光で、相手はタジタジだ!  Dazzling lightning overflows, overwhelming the opponent! (P73/Y12)\n| mana = 1\n| artist = Dai\n| artist2 = KAIRI SHOYAMA\n| artist3 = RYOSUKE NISHIYAMA\n| artist4 = YUSUKE TAKITA\n| set1 = DM-01 Base Set\n| setnum1 = 13/110\n| R1 = Common\n| set2 = Shadowclash Collector Tin\n| setnum2 = 8/46\n| R2 = Common\n| set3 = DM-01 Base Set (OCG)\n| setnum3 = 73/110\n| R3 = Common\n| set4 = DM-18 Best Challenger\n| setnum4 = 94/140\n| R4 = Common\n| set5 = DMC-42 CoroCoro Dream Pack 3: Eternal Gear\n| setnum5 = 60/90\n| R5 = Common\n| set6 = DMC-61 CoroCoro Dream Pack 4: Eternal Heaven\n| setnum6 = 62/94\n| R6 = Common\n| set7 = DMX-10 Deck Builder Oni DX Bright Star! Leo Edition\n| setnum7 = 41/56\n| R7 = Common\n| set8 = Promotional\n| setnum8 = P12/Y8, P20/Y8, P73/Y12\n| R8 = Common\n}}\n{{Miele}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Creature Tapper]]\n[[Category:Come Into Play Trigger]]"
+}

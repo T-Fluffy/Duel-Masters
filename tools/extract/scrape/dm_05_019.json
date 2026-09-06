@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_05_019",
+ "page": "Miracle Quest",
+ "type": "Spell",
+ "civilization": "Water",
+ "race": "",
+ "cost": "3",
+ "power": "",
+ "engtext": "■ Whenever any of your [[creature]]s finishes [[attack]]ing this [[turn]], you may [[draw]] 2 [[card]]s for each [[shield]] it broke.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "19/55",
+  "set2": "DM-05 Return of the Survivor",
+  "setnum2": "26/55"
+ },
+ "wiki": "{{Cardtable\n| image = Miracle Quest.jpg\n| civilization = Water\n| type = Spell\n| jpname = ミラクル・サーチャー\n| phonetic = Mirakuru Sāchā ''(Miracle Searcher)''\n| cost = 3\n| engtext = ■ Whenever any of your [[creature]]s finishes [[attack]]ing this [[turn]], you may [[draw]] 2 [[card]]s for each [[shield]] it broke.\n| jptext = ■ このターン、自分のクリーチャーがシールドをブレイクするたびに、カードを2枚引いてもよい。\n| flavor = \"Search high and low! We must find the jade idol! And while you're at it, see if you can find my car keys.\" -[[Tropico]] ([[DM-05]])\n| flavor2 = 「またまた儲かっちゃった」\"I've made a profit again!\" —[[Aquan]] ([[DM-05]])\n| mana = 1\n| artist = Takesi Kuno\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = 19/55\n| R1 = Uncommon\n| set2 = DM-05 Return of the Survivor\n| setnum2 = 26/55\n| R2 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Card Draw]]\n[[Category:Gives \"Attack Trigger\"]]"
+}

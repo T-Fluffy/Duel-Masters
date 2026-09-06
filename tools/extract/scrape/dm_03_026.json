@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_03_026",
+ "page": "Gamil, Knight of Hatred",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Demon Command",
+ "cost": "6",
+ "power": "4000",
+ "engtext": "■ Whenever this [[creature]] [[attack]]s, you may return a [[darkness]] [[creature]] from your [[graveyard]] to your [[hand]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-03 Rampage of the Super Warriors",
+  "setnum1": "26/55",
+  "set2": "Shadowclash Collector Tin",
+  "setnum2": "23/46",
+  "set3": "DM-03 Master of Destruction",
+  "setnum3": "12/55",
+  "set4": "DMC-02 Kokujo's Darkness Deck",
+  "setnum4": "3/43"
+ },
+ "wiki": "{{Cardtable\n| image = Gamil, Knight of Hatred.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|憎|ぞう}}{{Ruby|悪|お}}の{{Ruby|騎|き}}{{Ruby|士|し}}ガミル\n| phonetic = Zouaku no Kishi Gamil\n| race = Demon Command\n| cost = 6\n| power = 4000\n| engtext = ■ Whenever this [[creature]] [[attack]]s, you may return a [[darkness]] [[creature]] from your [[graveyard]] to your [[hand]].\n| jptext = ■ このクリーチャーが攻撃するとき、自分の墓地から闇のクリーチャーを1体選び、自分の手札に戻してよい。\n| flavor = The holes it digs its friends out of are the holes it buries its enemies in. ([[DM-03]])\n| flavor2 = 「どんな攻撃も、どんな作戦も奴の前では意味がないんだ!」 \"No attack or strategy means anything before him!\" -[[Bronze-Arm Tribe]] ([[DM-03]], [[DMC-02]])\n| mana = 1\n| artist = Eiji Kaneda\n| set1 = DM-03 Rampage of the Super Warriors\n| setnum1 = 26/55\n| R1 = Rare\n| set2 = Shadowclash Collector Tin\n| setnum2 = 23/46\n| R2 = Rare\n| set3 = DM-03 Master of Destruction\n| setnum3 = 12/55\n| R3 = Rare\n| set4 = DMC-02 Kokujo's Darkness Deck\n| setnum4 = 3/43\n| R4 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Creature Recovery]]\n[[Category:Attack Trigger]]"
+}

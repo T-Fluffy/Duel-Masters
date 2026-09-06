@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_05_018",
+ "page": "Lurking Eel",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Gel Fish",
+ "cost": "6",
+ "power": "4000",
+ "engtext": "{{Icon|Block}} [[Blocker|Fire and nature blocker]] ''(Whenever an [[opponent]]'s [[fire]] or [[nature]] [[creature]] [[attack]]s, you may [[tap]] this [[creature]] to stop the [[attack]]. Then the 2 [[creature]]s [[battle]].)''",
+ "templates": [
+  "Icon|Block"
+ ],
+ "sets": {
+  "set1": "DM-05 Survivors of the Megapocalypse",
+  "setnum1": "18/55",
+  "set2": "DM-05 Return of the Survivor",
+  "setnum2": "40/55"
+ },
+ "wiki": "{{Cardtable\n| image = Lurking Eel.jpg\n| civilization = Water\n| type = Creature\n| jpname = バウンサー・イール\n| phonetic = Baunsā Iru ''(Bouncer Eel)''\n| race = Gel Fish\n| cost = 6\n| power = 4000\n| engtext = {{Icon|Block}} [[Blocker|Fire and nature blocker]] ''(Whenever an [[opponent]]'s [[fire]] or [[nature]] [[creature]] [[attack]]s, you may [[tap]] this [[creature]] to stop the [[attack]]. Then the 2 [[creature]]s [[battle]].)''\n| jptext = {{Icon|Block}} 火・自然ブロッカー（相手の火または自然のクリーチャーが攻撃するとき、このクリーチャーをタップして、その攻撃を阻止してよい。その後、その相手クリーチャーとバトルする）\n| flavor = The safest place can conceal the greatest danger. ([[DM-05]])\n| flavor2 = 安全な場所にこそ、危険な罠は待ち受ける。It is in safe places where dangerous traps lie in wait. ([[DM-05]])\n| mana = 1\n| artist = Taro Yamazaki\n| set1 = DM-05 Survivors of the Megapocalypse\n| setnum1 = 18/55\n| R1 = Common\n| set2 = DM-05 Return of the Survivor\n| setnum2 = 40/55\n| R2 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Fire blocker]]\n[[Category:Nature blocker]]"
+}

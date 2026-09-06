@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_08_002",
+ "page": "Aqua Ranger",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Liquid People",
+ "cost": "6",
+ "power": "3000",
+ "engtext": "■ This [[creature]] can't be [[block]]ed.\n\n■ When this [[creature]] would be [[destroy]]ed, put it into your [[hand]] [[instead]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "2/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "2/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "6/140"
+ },
+ "wiki": "{{Cardtable\n| image = Aqua Ranger.jpg\n| civilization = Water\n| type = Creature\n| jpname = アクア・レンジャー\n| phonetic = Akua Renjā\n| cost = 6\n| race = Liquid People\n| power = 3000\n| engtext = ■ This [[creature]] can't be [[block]]ed.\n\n■ When this [[creature]] would be [[destroy]]ed, put it into your [[hand]] [[instead]].\n| jptext = ■ このクリーチャーはブロックされない。\n\n■ このクリーチャーが破壊される時、墓地に置くかわりに自分の手札に戻す。\n| flavor = \"I'm on a special mission to the surface to bring back secret computer codes, enemy troop movements, and a case of metal polish.\" ([[DM-08]])\n| flavor2 = 「コード[[Aqua Grappler|AG]]はまだか! 早くしないと完成する!」 \"Is Code [[Aqua Grappler|AG]] ready yet? Hurry, or it will be completed!\" ─'''Aqua Ranger''' ([[DM-08]], [[DM-18]])\n| mana = 1\n| artist = Atsushi Kawasaki\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 2/55\n| R1 = Very Rare\n| set2 = DM-08 Invincible Legend\n| setnum2 = 2/55\n| R2 = Very Rare\n| set3 = DM-18 Best Challenger\n| setnum3 = 6/140\n| R3 = Very Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Unblockable]]\n[[Category:Destruction Substitution]]\n[[Category:Self Bounce]]"
+}

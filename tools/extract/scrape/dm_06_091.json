@@ -1,0 +1,24 @@
+{
+ "card_id": "dm_06_091",
+ "page": "Bliss Totem, Avatar of Luck",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Mystery Totem",
+ "cost": "6",
+ "power": "5000",
+ "engtext": "{{Tap Ability|Put up to 3 [[card]]s from your [[graveyard]] into your [[mana zone]].}}",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "91/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "66/110",
+  "set3": "DMC-15 Eternal Dragons Deck",
+  "setnum3": "35/78",
+  "set4": "DMC-27 CoroCoro Dream Pack",
+  "setnum4": "33/55",
+  "set5": "Promotional",
+  "setnum5": "K5/Y1, 91/110 (German), 91/110 (Italian)"
+ },
+ "wiki": "{{Cardtable\n| image = Bliss Totem, Avatar of Luck.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|恵みの化身|ブレッシング・トーテム}} ''(Avatar of Grace)''\n| phonetic = Buresshingu Tōtemu\n| kana = ブレッシング・トーテム ''(Blessing Totem)''\n| cost = 6\n| race = Mystery Totem\n| power = 5000\n| engtext = {{Tap Ability|Put up to 3 [[card]]s from your [[graveyard]] into your [[mana zone]].}}\n| jptext = ■ このクリーチャーで攻撃する代わりに、タップして次の{{Tap}}能力を使ってもよい。\n:{{Tap}} 自分の墓地からカードを3枚まで選び、自分のマナゾーンに置く。\n| flavor = \"Someone call a doctor-I've got bongo fever!\" ([[DM-06]])\n| flavor2 = 世界樹の光を利用して、孤高の願はフィオナの森の古木に魂を吹き込んだ。Using the light of the [[World Tree, Root of Life|World Tree]], [[Torcon]] breathed life into the ancient trees of [[Fiona Woods|Fiona Forest]]. ([[DM-06]], [[DMC-27]])\n| mana = 1\n| artist = Katsuya\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 91/110\n| R1 = Uncommon\n| set2 = DM-06 Invincible Soul\n| setnum2 = 66/110\n| R2 = Uncommon\n| set3 = DMC-15 Eternal Dragons Deck\n| setnum3 = 35/78\n| R3 = Uncommon\n| set4 = DMC-27 CoroCoro Dream Pack\n| setnum4 = 33/55\n| R4 = Uncommon\n| set5 = Promotional\n| setnum5 = K5/Y1, 91/110 (German), 91/110 (Italian)\n| R5 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Mana Acceleration]]"
+}

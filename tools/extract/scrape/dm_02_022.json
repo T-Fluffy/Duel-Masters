@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_02_022",
+ "page": "Thought Probe",
+ "type": "Spell",
+ "civilization": "Water",
+ "race": "",
+ "cost": "4",
+ "power": "",
+ "engtext": "{{Shield Trigger|spell}}\n\n■ When you [[cast]] this [[spell]], if your [[opponent]] has 3 or more [[creature]]s in the [[battle zone]], [[draw]] 3 [[card]]s.",
+ "templates": [
+  "Shield Trigger|spell"
+ ],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "22/55"
+ },
+ "wiki": "{{TCGCardtable\n| image=Thought Probe.jpg\n| civilization = Water\n| type = Spell\n| cost = 4\n| engtext = {{Shield Trigger|spell}}\n\n■ When you [[cast]] this [[spell]], if your [[opponent]] has 3 or more [[creature]]s in the [[battle zone]], [[draw]] 3 [[card]]s.\n| artist = Dreamwave\n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = 22/55\n| R1 = Uncommon\n}}\n[[Category:Card Draw]]"
+}

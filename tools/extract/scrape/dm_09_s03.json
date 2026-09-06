@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_09_s03",
+ "page": "Stallob, the Lifequasher",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Demon Command",
+ "cost": "8",
+ "power": "6000",
+ "engtext": "{{Double Breaker}}\n\n■ When this [[creature]] is [[destroy]]ed, [[destroy]] all [[creature]]s.",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "S3/S5",
+  "set2": "DM-09 Invincible Blood ",
+  "setnum2": "S3/S5",
+  "set3": "DMEX-08 Mysterious Black Box Pack",
+  "setnum3": "220/???"
+ },
+ "wiki": "{{Cardtable\n| image = Stallob, the Lifequasher.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|呪|じゅ}}{{Ruby|縛|ばく}}の{{Ruby|剣|けん}}{{Ruby|豪|ごう}}バロスト ''(Ballost, Cursed Swordmaster)''\n| phonetic = Jubaku no Kengō Barosuto\n| cost = 8\n| race = Demon Command\n| power = 6000\n| engtext = {{Double Breaker}}\n\n■ When this [[creature]] is [[destroy]]ed, [[destroy]] all [[creature]]s.\n| jptext = {{Double Breaker|jp}}\n\n■ このクリーチャーがバトルゾーンから自分の墓地に置かれたとき、バトルゾーンにあるクリーチャーをすべて持ち主の墓地に置く。\n| flavor = \"You fools. I wasn't called the [[Ballom, Master of Death|Master of Death]] for nothing! Your victory is your defeat. Your triumph is your coffin. I have voided my own demise, and from the abyss I am reborn....\" ([[DM-09]])\n| flavor2 = 死の千年後、バロムが蘇る。 After a thousand years of death, [[Ballom]] is revived. ([[DM-09]])\n| flavor3 = 闇文明の復活の力は、必ず犠牲を強いる。かつて、バロム復活の礎にバロストがなったように。そして、古の革命ゼロの力もまた、犠牲によって復活を求める力なのだ。The power of the revival of the Darkness Civilization always demands a sacrifice. Just as Ballost became the foundation for the revival of Ballom in the past. And the power of the ancient revolution, Zero, also seeks revival through sacrifice. ([[DMEX-08]])\n| mana = 1\n| artist = Ittoku\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = S3/S5\n| R1 = Super Rare\n| set2 = DM-09 Invincible Blood \n| setnum2 = S3/S5\n| R2 = Super Rare\n| set3 = DMEX-08 Mysterious Black Box Pack\n| setnum3 = 220/???\n| R3 = Super Rare\n}}{{Ballom}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Mass Removal]]\n[[Category:Put Into Graveyard]]"
+}

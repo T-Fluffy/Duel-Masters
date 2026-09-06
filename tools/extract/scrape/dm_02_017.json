@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_02_017",
+ "page": "King Nautilus",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Leviathan",
+ "cost": "8",
+ "power": "6000",
+ "engtext": "■ [[Liquid People]] can't be [[block]]ed.\n\n{{Double Breaker}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "17/55",
+  "set2": "DM-02 Master of Evolution",
+  "setnum2": "9/55"
+ },
+ "wiki": "{{Cardtable\n| image=King Nautilus.jpg\n| type = Creature\n| jpname = キング・ノーチラス\n| phonetic = Kingu Nōchirasu\n| civilization = Water\n| cost = 8\n| race = Leviathan\n| power = 6000\n| engtext = ■ [[Liquid People]] can't be [[block]]ed.\n\n{{Double Breaker}}\n| jptext = ■ このクリーチャーがバトルゾーンにある間、すべてのリキッド・ピープルはブロックされない。\n\n{{Double Breaker|jp}}\n| flavor = Stopping at nothing in their quest for victory, the [[Cyber Lord]]s transformed even the largest sea creatures into weapons. サイバーロードは水の領域最大の生物をも兵器に変えた。 ([[DM-02]])\n| mana = 1\n| artist = Tomofumi Ogasawara\n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = 17/55\n| R1 = Rare\n| set2 = DM-02 Master of Evolution\n| setnum2 = 9/55\n| R2 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Leviathan]]\n[[Category:6000 Power Creatures]]\n[[Category:Gives \"Unblockable\"]]"
+}

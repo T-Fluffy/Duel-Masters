@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_01_066",
+ "page": "Writhing Bone Ghoul",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Living Dead",
+ "cost": "2",
+ "power": "2000",
+ "engtext": "",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "66/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "90/110",
+  "set3": "DMC-02 Kokujo's Darkness Deck",
+  "setnum3": "26/43"
+ },
+ "wiki": "{{Cardtable\n| image = Writhing Bone Ghoul.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = うごめく{{Ruby|者|もの}}ボーン・グール\n| phonetic = Ugomeku Mono Bōn Gūru\n| race = Living Dead\n| cost = 2\n| power = 2000\n| flavor = Seeking power, they gave up their intelligence. What they found was pain. ([[DM-01]])\n| flavor2 = 彼らは知性を捨て、永遠の命を求めた。そして、永遠の苦しみを受け取った。They abandoned their intellect in the pursuit of eternal life. What they found was eternal suffering. ([[DM-01]], [[DMC-02]])\n| mana = 1\n| artist = Eiji Kaneda\n| set1 = DM-01 Base Set\n| setnum1 = 66/110\n| R1 = Common\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 90/110\n| R2 = Common\n| set3 = DMC-02 Kokujo's Darkness Deck\n| setnum3 = 26/43\n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Living Dead]]\n[[Category:2000 Power Creatures]]\n[[Category:No Abilities]]"
+}

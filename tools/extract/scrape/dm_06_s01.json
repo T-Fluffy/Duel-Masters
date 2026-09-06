@@ -1,0 +1,24 @@
+{
+ "card_id": "dm_06_s01",
+ "page": "Craze Valkyrie, the Drastic",
+ "type": "Evolution Creature",
+ "civilization": "Light",
+ "race": "Initiate",
+ "cost": "6",
+ "power": "7500",
+ "engtext": "■ [[Evolution]]—Put on one of your [[Initiate]]s.\n\n■ [[When you put]] this [[creature]] into the [[battle zone]], [[choose]] up to 2 of your [[opponent]]'s [[creature]]s in the [[battle zone]] and [[tap]] them.\n\n{{Double Breaker}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "S1/S10",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "S1/S10",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "S1/S10",
+  "set4": "DMC-42 CoroCoro Dream Pack 3: Eternal Gear",
+  "setnum4": "3/90"
+ },
+ "wiki": "{{Cardtable\n| image = Craze Valkyrie, the Drastic.jpg\n| civilization = Light\n| type = Evolution Creature\n| jpname = {{Ruby|聖|せい}}{{Ruby|天|てん}}{{Ruby|使|し}}クラウゼ・バルキューラ\n| phonetic = Sei Ten Shi Kurauze Barukyūra\n| cost = 6\n| race = Initiate\n| power = 7500\n| engtext = ■ [[Evolution]]—Put on one of your [[Initiate]]s.\n\n■ [[When you put]] this [[creature]] into the [[battle zone]], [[choose]] up to 2 of your [[opponent]]'s [[creature]]s in the [[battle zone]] and [[tap]] them.\n\n{{Double Breaker}}\n| jptext = ■ 進化－自分のイニシエート1体の上に置く。\n\n■ このクリーチャーをバトルゾーンに出した時、バトルゾーンにある相手のクリーチャーを2体まで選び、タップする。\n\n{{Double Breaker|jp}}\n| flavor = \"Time to get Drastic!\" ([[DM-06]])\n| mana = 1\n| artist = Kou1 \n| artist2 = Atsushi Kawasaki \n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = S1/S10\n| R1 = Super Rare\n| set2 = DM-06 Invincible Soul\n| setnum2 = S1/S10\n| R2 = Super Rare\n| set3 = DM-18 Best Challenger\n| setnum3 = S1/S10\n| R3 = Super Rare\n| set4 = DMC-42 CoroCoro Dream Pack 3: Eternal Gear\n| setnum4 = 3/90\n| R4 = Super Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Creature Tapper]]\n[[Category:Come Into Play Trigger]]"
+}

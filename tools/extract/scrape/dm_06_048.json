@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_06_048",
+ "page": "Steam Star",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Cyber Virus",
+ "cost": "2",
+ "power": "1000",
+ "engtext": "",
+ "templates": [],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "48/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "83/110",
+  "set3": "DMC-13 CoroCoro New Generation Pack",
+  "setnum3": "23/37"
+ },
+ "wiki": "{{Cardtable\n| image = Steam Star.jpg\n| civilization = Water\n| type = Creature\n| jpname = エレガント・ランプ\n| phonetic = Ereganto Ranpu ''(Elegant Lamp)''\n| cost = 2\n| race = Cyber Virus\n| power = 1000\n| flavor = The [[Cyber Lord]]s deploy them at volcanic vents on the bottom of the ocean. They monitor the superheated steam, collect it, and—when necessary—use it as a weapon. ([[DM-06]])\n| flavor2 = 小さな灯りがゆらゆら揺れる。A small light flickers gently. ([[DM-06]], [[DMC-13]])\n| mana = 1\n| artist = D-Suzuki\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 48/110\n| R1 = Common\n| set2 = DM-06 Invincible Soul\n| setnum2 = 83/110\n| R2 = Common\n| set3 = DMC-13 CoroCoro New Generation Pack\n| setnum3 = 23/37\n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]"
+}

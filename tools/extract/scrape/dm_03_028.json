@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_03_028",
+ "page": "Hang Worm, Fetid Larva",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Parasite Worm",
+ "cost": "5",
+ "power": "4000",
+ "engtext": "",
+ "templates": [],
+ "sets": {
+  "set1": "DM-03 Rampage of the Super Warriors",
+  "setnum1": "28/55",
+  "set2": "DM-03 Master of Destruction",
+  "setnum2": "27/55",
+  "set3": "DMC-02 Kokujo's Darkness Deck",
+  "setnum3": "13/43"
+ },
+ "wiki": "{{Cardtable\n| image= Hang Worm, Fetid Larva.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|腐|ふ}}{{Ruby|卵|らん}}{{Ruby|虫|ちゅう}}ハングワーム\n| phonetic = Furanchū Hanguwāmu\n| race = Parasite Worm\n| cost = 5\n| power = 4000\n| flavor = フィアナの森の枯れ木から新たな悪夢が生まれる。 From the rotting trees of the [[Fiona Woods]], a new horror oozes forth. ([[DM-03]], [[DMC-02]])\n| mana = 1\n| artist = D-Suzuki\n| set1 = DM-03 Rampage of the Super Warriors\n| setnum1 = 28/55\n| R1 = Uncommon\n| set2 = DM-03 Master of Destruction\n| setnum2 = 27/55\n| R2 = Uncommon\n| set3 = DMC-02 Kokujo's Darkness Deck\n| setnum3 = 13/43\n| R3 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]"
+}

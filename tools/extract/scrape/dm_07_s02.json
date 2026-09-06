@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_07_s02",
+ "page": "Cosmic Nebula",
+ "type": "Evolution Creature",
+ "civilization": "Water",
+ "race": "Cyber Virus",
+ "cost": "5",
+ "power": "3000",
+ "engtext": "■ [[Evolution]]—Put on one of your [[Cyber Virus]]es.\n\n■ Whenever you [[draw]] the [[card]] at the [[Step#Step 2 (Draw)|start of your turn]], you may [[draw]] an extra [[card]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "S2/S5",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "S2/S5"
+ },
+ "wiki": "{{Cardtable\n| image = Cosmic Nebula.jpg\n| civilization = Water\n| type = Evolution Creature\n| jpname = アストラル・メデューサ\n| phonetic = Asutoraru Mede~yūsa\n| cost = 5\n| race = Cyber Virus\n| power = 3000\n| engtext = ■ [[Evolution]]—Put on one of your [[Cyber Virus]]es.\n\n■ Whenever you [[draw]] the [[card]] at the [[Step#Step 2 (Draw)|start of your turn]], you may [[draw]] an extra [[card]].\n| jptext = ■ 進化－自分のサイバー・ウイルス1体の上に置く。\n\n■ このクリーチャーがバトルゾーンにある間、自分のターンのはじめにカードを1枚引くとき、もう1枚余分に引いてもよい。\n| flavor = \"Time is circular. Yesterday is tomorrow. Last month is a week from Thursday. I have a headache.\" -[[Shtra]] ([[DM-07]])\n| flavor2 = 海面に瞳まばたく時、宇宙は巨大な海原となり嵐が世界を支配する。When the eyes blink on the sea surface, the universe becomes a vast ocean, and a storm will rule the world. ([[DM-07]])\n| mana = 1\n| artist = Taro Yamazaki\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = S2/S5\n| R1 = Super Rare\n| set2 = DM-07 Invincible Charge\n| setnum2 = S2/S5\n| R2 = Super Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Card Draw]]"
+}

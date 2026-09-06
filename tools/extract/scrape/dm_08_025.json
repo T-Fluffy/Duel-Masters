@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_08_025",
+ "page": "Wave Lance",
+ "type": "Spell",
+ "civilization": "Water",
+ "race": "",
+ "cost": "3",
+ "power": "",
+ "engtext": "■ [[Choose]] a [[creature]] in the [[battle zone]] and return it to its [[owner]]'s [[hand]]. If it has [[Dragon]] in its [[race]], you may [[draw]] a [[card]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "25/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "26/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "110/140",
+  "set4": "DMC-16 Guardian Blue Deck",
+  "setnum4": "22/78"
+ },
+ "wiki": "{{Cardtable\n| image = Wave Lance.jpg\n| civilization = Water\n| type = Spell\n| jpname = ウェーブ・ランス\n| phonetic = U~ēbu Ransu\n| cost = 3\n| engtext = ■ [[Choose]] a [[creature]] in the [[battle zone]] and return it to its [[owner]]'s [[hand]]. If it has [[Dragon]] in its [[race]], you may [[draw]] a [[card]].\n| jptext = ■ バトルゾーンにあるクリーチャーを1体選び、持ち主の手札に戻す。それがドラゴンであれば、カードを1枚引いてもよい。\n| flavor = Even the ruler of the skies cannot best the waters. ([[DM-08]])\n| flavor2 = 空の王者も海には勝てぬ。 The king of the sky cannot defeat the sea. ([[DM-08]], [[DM-18]], [[DMC-16]])\n| mana = 1\n| artist = Taro Yamazaki\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 25/55\n| R1 = Uncommon\n| set2 = DM-08 Invincible Legend\n| setnum2 = 26/55\n| R2 = Uncommon\n| set3 = DM-18 Best Challenger\n| setnum3 = 110/140\n| R3 = Common\n| set4 = DMC-16 Guardian Blue Deck\n| setnum4 = 22/78\n| R4 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Bounce]]\n[[Category:Card Draw]]\n[[Category:Self Bounce]]"
+}

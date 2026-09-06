@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_04_021",
+ "page": "Clone Factory",
+ "type": "Spell",
+ "civilization": "Water ",
+ "race": "",
+ "cost": "3",
+ "power": "",
+ "engtext": "■ Return up to 2 [[card]]s from your [[mana zone]] to your [[hand]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-04 Shadowclash of Blinding Night",
+  "setnum1": "21/55",
+  "set2": "DM-04 Challenge of Black Shadow ",
+  "setnum2": "44/55",
+  "set3": "DMC-34 CoroCoro Dream Pack 2: Eternal Legacy",
+  "setnum3": "42/55"
+ },
+ "wiki": "{{Cardtable\n| image = Clone Factory.jpg\n| civilization = Water \n| type = Spell\n| jpname = クローン・ファクトリー\n| phonetic = Kurōn Fakutorī\n| cost = 3\n| engtext = ■ Return up to 2 [[card]]s from your [[mana zone]] to your [[hand]].\n| jptext = ■ 禁忌に触れる研究が昼夜を問わず行われている。 \n| flavor = The factory works day and night, laboring at endeavors best left unknown. ([[DM-04]])\n| flavor2 = 禁忌に触れる研究が昼夜を問わず行われている。Research that touches on taboos is being conducted day and night. ([[DM-04]], [[DMC-34]])\n| mana = 1\n| artist = Naoki Saito\n| set1 = DM-04 Shadowclash of Blinding Night\n| setnum1 = 21/55\n| R1 = Common \n| set2 = DM-04 Challenge of Black Shadow \n| setnum2 = 44/55\n| R2 = Common \n| set3 = DMC-34 CoroCoro Dream Pack 2: Eternal Legacy\n| setnum3 = 42/55\n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Mana Recovery]]"
+}

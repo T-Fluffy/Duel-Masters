@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_08_017",
+ "page": "Candy Cluster",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Cyber Cluster",
+ "cost": "3",
+ "power": "1000",
+ "engtext": "■ This [[creature]] can't be [[block]]ed. ",
+ "templates": [],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "17/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "41/55",
+  "set3": "DMC-13 CoroCoro New Generation Pack",
+  "setnum3": "22/37"
+ },
+ "wiki": "{{Cardtable\n| image = Candy Cluster.jpg\n| civilization = Water\n| type = Creature\n| jpname = キャンディ・クラスター\n| phonetic = Kyandi Kurasutā \n| cost = 3\n| race = Cyber Cluster\n| power = 1000\n| engtext = ■ This [[creature]] can't be [[block]]ed. \n| jptext = ■ このクリーチャーはブロックされない。\n| flavor = Its crunchy outer shell protects a creamy caramel center. ([[DM-08]])\n| flavor2 = 大きさや強さは一つの指針に過ぎない。Size and strength are merely one guideline. ([[DM-08]])\n| mana = 1\n| artist = Shishizaru\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 17/55\n| R1 = Common\n| set2 = DM-08 Invincible Legend\n| setnum2 = 41/55\n| R2 = Common\n| set3 = DMC-13 CoroCoro New Generation Pack\n| setnum3 = 22/37\n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Cyber Cluster]]\n[[Category:1000 Power Creatures]]\n[[Category:Unblockable]]"
+}

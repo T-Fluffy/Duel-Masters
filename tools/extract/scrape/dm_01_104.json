@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_01_104",
+ "page": "Stampeding Longhorn",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Horned Beast",
+ "cost": "5",
+ "power": "4000",
+ "engtext": "■ This [[creature]] can't be [[block]]ed by any [[creature]] that has [[power]] 3000 or less.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "104/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "38/110",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "46/140",
+  "set4": "Promotional",
+  "setnum4": "T1 Y1, P4/Y0"
+ },
+ "wiki": "{{Cardtable\n| image = Stampeding Longhorn.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|暴|ぼう}}{{Ruby|走|そう}}するロング・ホーン\n| phonetic = Bōsō Suru Rongu H\n| cost = 5\n| race = Horned Beast\n| power = 4000\n| engtext = ■ This [[creature]] can't be [[block]]ed by any [[creature]] that has [[power]] 3000 or less.\n| jptext = ■ このクリーチャーは、パワー3000以下のクリーチャーにブロックされない。\n| flavor = 暴走するロング・ホーンが通り過ぎると、土ぼこりだけしか残らない。A stampeding longhorn leaves nothing but dust in its wake. ([[DM-01]], [[DM-18]])\n| mana = 1\n| artist = Norikatsu Miyoshi\n| set1 = DM-01 Base Set\n| setnum1 = 104/110\n| R1 = Rare\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 38/110\n| R2 = Rare\n| set3 = DM-18 Best Challenger\n| setnum3 = 46/140\n| R3 = Rare\n| set4 = Promotional\n| setnum4 = T1 Y1, P4/Y0\n| R4 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Nature]]\n[[Category:Horned Beast]]\n[[Category:Unblockable]]\n[[Category:4000 Power Creatures]]"
+}

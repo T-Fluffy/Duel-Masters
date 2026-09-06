@@ -1,0 +1,28 @@
+{
+ "card_id": "dm_09_035",
+ "page": "Zombie Carnival",
+ "type": "Spell",
+ "civilization": "Darkness",
+ "race": "",
+ "cost": "5",
+ "power": "",
+ "engtext": "{{Shield Trigger|spell}} \n\n■ [[Choose a race]]. Return up to 3 [[creature]]s of that [[race]] from your [[graveyard]] to your [[hand]].",
+ "templates": [
+  "Shield Trigger|spell"
+ ],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "35/55",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "47/55",
+  "set3": "DMC-14 Crimson Armorloids Deck",
+  "setnum3": "62/78",
+  "set4": "DMC-21 Zakira's Dragon Commander Power-Up Pack",
+  "setnum4": "74/102",
+  "set5": "DMC-34 CoroCoro Dream Pack 2: Eternal Legacy ",
+  "setnum5": "47/55",
+  "set6": "Promotional",
+  "setnum6": "P27/Y2"
+ },
+ "wiki": "{{Cardtable\n| image = Zombie Carnival.jpg\n| civilization = Darkness\n| type = Spell\n| jpname = ゾンビ・カーニバル\n| phonetic = Zonbi Kānibaru\n| cost = 5\n| engtext = {{Shield Trigger|spell}} \n\n■ [[Choose a race]]. Return up to 3 [[creature]]s of that [[race]] from your [[graveyard]] to your [[hand]].\n| jptext = {{Icon|ST}} S・トリガー (この呪文をシールドゾーンから手札に加える時、コストを支払わずにすぐ唱えてもよい)\n\n■ 種族を1つ選ぶ。自分の墓地から、その種族のクリーチャーを3体まで選び、自分の手札に加える。\n| flavor = \"Don't just sit there like a corpse-get up and dance!\" —{{tooltip|Bat Doctor, Shadow of Undeath|Bat Doctor}} ([[DM-09]])\n| flavor2 = 死んでる暇があったら踊れ! \"If you have time to be dead, then dance!\" ([[DM-09]], [[DMC-14]], [[DMC-21]], [[DMC-34]]) \n| flavor3 = 墓場で寝ている場合じゃねぇ! \"This isn't the time to be sleeping in the grave!\" (P27/Y2)\n| mana = 1\n| artist = Norikatsu Miyoshi\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = 35/55\n| R1 = Common\n| set2 = DM-09 Invincible Blood\n| setnum2 = 47/55\n| R2 = Common\n| set3 = DMC-14 Crimson Armorloids Deck\n| setnum3 = 62/78\n| R3 = Common\n| set4 = DMC-21 Zakira's Dragon Commander Power-Up Pack\n| setnum4 = 74/102\n| R4 = Common\n| set5 = DMC-34 CoroCoro Dream Pack 2: Eternal Legacy \n| setnum5 = 47/55\n| R5 = Common\n| set6 = Promotional\n| setnum6 = P27/Y2\n| R6 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Spell]]\n[[Category:Shield Trigger]]\n[[Category:Creature Recovery]]"
+}

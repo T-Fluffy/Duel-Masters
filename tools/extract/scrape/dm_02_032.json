@@ -1,0 +1,34 @@
+{
+ "card_id": "dm_02_032",
+ "page": "Marrow Ooze, the Twister",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Living Dead",
+ "cost": "1",
+ "power": "1000",
+ "engtext": "{{Blocker}}\n\n■ When this [[creature]] [[attack]]s a [[player]], [[destroy]] it after the [[attack]].",
+ "templates": [
+  "Blocker"
+ ],
+ "sets": {
+  "set1": "DM-02 Evo-Crushinators of Doom",
+  "setnum1": "32/55",
+  "set2": "Shadowclash Collector Tin",
+  "setnum2": "25/46",
+  "set3": "DM-02 Master of Evolution",
+  "setnum3": "47/55",
+  "set4": "DMC-04 Kokujo's Darkness Power-Up Pack",
+  "setnum4": "30/43",
+  "set5": "DMC-17 Dark Warriors Deck",
+  "setnum5": "60/78",
+  "set6": "DMC-27 CoroCoro Dream Pack",
+  "setnum6": "47/55",
+  "set7": "DMC-42 CoroCoro Dream Pack 3: Eternal Gear",
+  "setnum7": "73/90",
+  "set8": "DMX-22 Super Black Box Pack",
+  "setnum8": "b140/???",
+  "set9": "DMSD-16 King Master Start Deck: Zero Jr.'s Mugen Climb",
+  "setnum9": "14/14"
+ },
+ "wiki": "{{Cardtable\n| image = Marrow Ooze, the Twister.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = ねじれる{{Ruby|者|もの}}ボーン・スライム ''(Twisting Bone Slime)''\n| phonetic = Nejireru Mono Bōn Suraimu\n| cost = 1\n| race = Living Dead\n| power = 1000\n| engtext = {{Blocker}}\n\n■ When this [[creature]] [[attack]]s a [[player]], [[destroy]] it after the [[attack]].\n| jptext = {{Blocker|jp}} \n\n■ このクリーチャーが相手プレイヤーを攻撃する時、攻撃の後、このクリーチャーを破壊する。\n| flavor = 大災害が闇の住人にすら耐えられない闇をもたらした。A great disaster brought a darkness that even the inhabitants of darkness couldn't  bear. ([[DM-02]], [[DMC-04]], [[DMC-17]], [[DMC-27]], [[DMC-42]])\n| flavor2 = あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛ -ゾンビーくん <br> \"Ah, ah, ah, ah, ah, ah, ah, ah, ah, ah, ah, ah, ah, ah, ah, ah, ah, ah, ah, ah, ah, ah, ah, ah, ah, ah, ah, ah, ah, ah, ah, ah, ah, ah, ah, ah, ah, ah, ah, ah.\" -Zombiekun ([[DMX-22]])\n| flavor3 = ムゲンクライム、それはクリーチャーとマナをタップすることで、やられても無限に召喚し続けれるというチーム零の必殺技だ! \"Mugen Climb, the finishing move of [[Team Zero]], allows you to continue summoning infinitely by tapping creatures and mana, even if destroyed!\" ([[DMSD-16]])\n| mana = 1\n| artist = Katsuya\n| artist2 = ながとしやすなり\n| set1 = DM-02 Evo-Crushinators of Doom\n| setnum1 = 32/55\n| R1 = Common\n| set2 = Shadowclash Collector Tin\n| setnum2 = 25/46\n| R2 = Common\n| set3 = DM-02 Master of Evolution\n| setnum3 = 47/55\n| R3 = Common\n| set4 = DMC-04 Kokujo's Darkness Power-Up Pack\n| setnum4 = 30/43\n| R4 = Common\n| set5 = DMC-17 Dark Warriors Deck\n| setnum5 = 60/78\n| R5 = Common\n| set6 = DMC-27 CoroCoro Dream Pack\n| setnum6 = 47/55\n| R6 = Common\n| set7 = DMC-42 CoroCoro Dream Pack 3: Eternal Gear\n| setnum7 = 73/90\n| R7 = Common\n| set8 = DMX-22 Super Black Box Pack\n| setnum8 = b140/???\n| R8 = Common\n| set9 = DMSD-16 King Master Start Deck: Zero Jr.'s Mugen Climb\n| setnum9 = 14/14\n| R9 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Self Removal]]"
+}

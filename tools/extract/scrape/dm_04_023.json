@@ -1,0 +1,22 @@
+{
+ "card_id": "dm_04_023",
+ "page": "Hydro Hurricane",
+ "type": "Spell",
+ "civilization": "Water",
+ "race": "",
+ "cost": "6",
+ "power": "",
+ "engtext": "■ For each [[light]] [[creature]] you have in the [[battle zone]], you may [[choose]] a [[card]] in your [[opponent]]'s [[mana zone]] and return it to his [[hand]].\n\n■ For each [[darkness]] [[creature]] you have in the [[battle zone]], you may [[choose]] one of your [[opponent]]'s [[creature]]s and return it to his [[hand]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-04 Shadowclash of Blinding Night",
+  "setnum1": "23/55",
+  "set2": "DM-04 Challenge of Black Shadow ",
+  "setnum2": "11/55",
+  "set3": "DMC-27 CoroCoro Dream Pack",
+  "setnum3": "10/55",
+  "set4": "DMEX-08 Mysterious Black Box Pack",
+  "setnum4": "131/???"
+ },
+ "wiki": "{{Restriction|Hall}}\n{{Cardtable\n| image = Hydro Hurricane.jpg\n| civilization = Water\n| type = Spell\n| jpname = ハイドロ・ハリケーン\n| phonetic = Haidoro Harikēn\n| cost = 6\n| engtext = ■ For each [[light]] [[creature]] you have in the [[battle zone]], you may [[choose]] a [[card]] in your [[opponent]]'s [[mana zone]] and return it to his [[hand]].\n\n■ For each [[darkness]] [[creature]] you have in the [[battle zone]], you may [[choose]] one of your [[opponent]]'s [[creature]]s and return it to his [[hand]]. \n| jptext = ■ バトルゾーンにある自分の光のクリーチャー1体につきカードを1枚、相手のマナゾーンから選び、持ち主の手札に戻してもよい。\n\n■ バトルゾーンにある自分の闇のクリーチャー1体につき、バトルゾーンにある相手のクリーチャーを1体選び、持ち主の手札に戻してもよい。\n| flavor = 聖邪の力がすべてを洗い流す。The power of holy and evil will wash everything away. ([[DMEX-08]])\n| mana = 1\n| artist = Youichi Kai \n| set1 = DM-04 Shadowclash of Blinding Night\n| setnum1 = 23/55\n| R1 = Rare\n| set2 = DM-04 Challenge of Black Shadow \n| setnum2 = 11/55\n| R2 = Rare\n| set3 = DMC-27 CoroCoro Dream Pack\n| setnum3 = 10/55\n| R3 = Rare\n| set4 = DMEX-08 Mysterious Black Box Pack\n| setnum4 = 131/???\n| R4 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Bounce]]\n[[Category:Mana Bounce]]"
+}

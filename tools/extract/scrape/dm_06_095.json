@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_06_095",
+ "page": "Clobber Totem",
+ "type": "Creature",
+ "civilization": "Nature",
+ "race": "Mystery Totem",
+ "cost": "6",
+ "power": "4000+",
+ "engtext": "{{Power Attacker|2000}}\n\n■ This [[creature]] can't be [[block]]ed by any [[creature]] that has [[power]] 5000 or less.\n\n{{Double Breaker}}",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "95/110",
+  "set2": "DM-06 Invincible Soul ",
+  "setnum2": "36/110"
+ },
+ "wiki": "{{Cardtable\n| image = Clobber Totem.jpg\n| civilization = Nature\n| type = Creature\n| jpname = {{Ruby|殺戮の化身|スマッシュ・トーテム}} ''(Avatar of Slaughter)''\n| phonetic = Sumasshu Tōtemu\n| kana = スマッシュ・トーテム ''(Smash Totem)''\n| race = Mystery Totem\n| cost = 6\n| power = 4000+\n| engtext = {{Power Attacker|2000}}\n\n■ This [[creature]] can't be [[block]]ed by any [[creature]] that has [[power]] 5000 or less.\n\n{{Double Breaker}}\n| jptext = {{Power Attacker|2000|jp}}\n\n■ このクリーチャーは、パワー5000以下のクリーチャーにブロックされない。\n\n{{Double Breaker|jp}}\n| flavor = \n| mana = 1\n| artist = Youichi Kai\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 95/110\n| R1 = Rare\n| set2 = DM-06 Invincible Soul \n| setnum2 = 36/110\n| R2 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Unblockable]]\n[[Category:4000 Power Creatures]]"
+}

@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_03_020",
+ "page": "Psychic Shaper",
+ "type": "Spell",
+ "civilization": "Water",
+ "race": "",
+ "cost": "6",
+ "power": "",
+ "engtext": "■ [[Reveal]] the top 4 [[card]]s of your [[deck]]. Put all [[water]] [[card]]s from among them into your [[hand]] and the rest into your [[graveyard]].",
+ "templates": [],
+ "sets": {
+  "set1": "DM-03 Rampage of the Super Warriors",
+  "setnum1": "20/55",
+  "set2": "Promotional",
+  "setnum2": "P17/Y3"
+ },
+ "wiki": "{{Cardtable\n| image= Psychic Shaper.jpg\n| civilization = Water\n| type = Spell\n| jpname = サイキック・ビジョン\n| phonetic = Saikikku Bijon ''(Psychic Vision)''\n| cost = 6\n| engtext = ■ [[Reveal]] the top 4 [[card]]s of your [[deck]]. Put all [[water]] [[card]]s from among them into your [[hand]] and the rest into your [[graveyard]].\n| jptext = ■ 自分の山札のカードを、上から4枚表向きにする。その中の水のカードをすべて自分の手札に加え、それ以外のカードを自分の墓地に置く。\n| flavor = Think. Think harder. No, not ''that'' hard. ([[DM-03]])\n| flavor2 = 勝利は常に魂の中心を指している! Victory is always pointing to the center of the soul! (P17/Y3)\n| mana = 1\n| artist = Dreamwave\n| set1 = DM-03 Rampage of the Super Warriors\n| setnum1 = 20/55\n| R1 = Rare\n| set2 = Promotional\n| setnum2 = P17/Y3\n| R2 = Rare\n}}\n{{Shaper}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Spell]]\n[[Category:Hand Addition]]\n[[Category:Self Mill]]"
+}

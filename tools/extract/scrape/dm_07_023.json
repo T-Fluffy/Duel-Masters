@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_07_023",
+ "page": "Splash Zebrafish",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Gel Fish",
+ "cost": "4",
+ "power": "3000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], return a [[card]] from your [[mana zone]] to your [[hand]].\n\n■ This [[creature]] can't be [[block]]ed.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "23/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "24/55"
+ },
+ "wiki": "{{Cardtable\n| image = Splash Zebrafish.jpg\n| civilization = Water\n| type = Creature\n| jpname = スプラッシュ・ゼブラフィッシュ \n| phonetic = Supurasshu Zeburafisshu\n| cost = 4\n| race = Gel Fish\n| power = 3000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], return a [[card]] from your [[mana zone]] to your [[hand]].\n\n■ This [[creature]] can't be [[block]]ed.\n| jptext = ■ このクリーチャーがバトルゾーンに出たとき、自分のマナゾーンからカードを1枚選び、自分の手札に戻す。\n\n■ このクリーチャーはブロックされない。\n| flavor = \"That's the only thing I've ever seen come out of a whirlpool.\" -[[Iere, Vizier of Bullets]] ([[DM-07]])\n| flavor2 = 予想外の事態に、非常用採掘プログラムが搭載された。In response to the unexpected situation, an emergency mining program was installed. ([[DM-07]])\n| mana = 1\n| artist = Norikatsu Miyoshi\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 23/55\n| R1 = Uncommon\n| set2 = DM-07 Invincible Charge\n| setnum2 = 24/55\n| R2 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Unblockable]]\n[[Category:Mana Recovery]]\n[[Category:Come Into Play Trigger]]"
+}

@@ -1,0 +1,18 @@
+{
+ "card_id": "dm_01_032",
+ "page": "Illusionary Merfolk",
+ "type": "Creature",
+ "civilization": "Water",
+ "race": "Gel Fish",
+ "cost": "5",
+ "power": "4000",
+ "engtext": "■ [[When you put]] this [[creature]] into the [[battle zone]], if you have a [[Cyber Lord]] in the [[battle zone]], [[draw]] up to 3 [[card]]s.",
+ "templates": [],
+ "sets": {
+  "set1": "DM-01 Base Set",
+  "setnum1": "32/110",
+  "set2": "DM-01 Base Set (OCG)",
+  "setnum2": "47/110"
+ },
+ "wiki": "{{Cardtable\n| image = Illusionary Merfolk.jpg\n| civilization = Water\n| type = Creature\n| jpname = ミラージュ・マーメイド\n| phonetic = Mirāju Māmeido ''(Mirage Mermaid)''\n| race = Gel Fish\n| cost = 5\n| power = 4000\n| engtext = ■ [[When you put]] this [[creature]] into the [[battle zone]], if you have a [[Cyber Lord]] in the [[battle zone]], [[draw]] up to 3 [[card]]s.\n| jptext = ■ このクリーチャーがバトルゾーンに出たとき、バトルゾーンに自分のサイバーロードがあれば、カードを3枚引いてよい。\n| flavor = サイバーロードは、戦闘用の種族を作る時にも美しい外見にこだわった。 The [[Cyber Lord]]s' devotion to beauty is so extreme, they even designed their warrior race to have a pleasant appearance. ([[DM-01]]) \n| mana = 1\n| artist = Kou1\n| set1 = DM-01 Base Set\n| setnum1 = 32/110\n| R1 = Uncommon\n| set2 = DM-01 Base Set (OCG)\n| setnum2 = 47/110\n| R2 = Uncommon\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Water]]\n[[Category:Gel Fish]]\n[[Category:4000 Power Creatures]]\n[[Category:Card Draw]]\n[[Category:Come Into Play Trigger]]"
+}

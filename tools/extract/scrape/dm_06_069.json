@@ -1,0 +1,26 @@
+{
+ "card_id": "dm_06_069",
+ "page": "Vile Mulder, Wing of the Void",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Demon Command",
+ "cost": "4",
+ "power": "7000",
+ "engtext": "■ This [[creature]] can't [[attack]] [[creature]]s.\n\n{{Double Breaker}}\n\n■ When this [[creature]] [[battle]]s, [[destroy]] it after the [[battle]].",
+ "templates": [
+  "Double Breaker"
+ ],
+ "sets": {
+  "set1": "DM-06 Stomp-A-Trons of Invincible Wrath",
+  "setnum1": "69/110",
+  "set2": "DM-06 Invincible Soul",
+  "setnum2": "27/110",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "31/140",
+  "set4": "DMC-08 Endless Black Hole Deck",
+  "setnum4": "7/82",
+  "set5": "DMD-02 Start Dash Deck: Water & Darkness",
+  "setnum5": "4/15"
+ },
+ "wiki": "{{Cardtable\n| image = Vile Mulder, Wing of the Void.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|虚|こ}}{{Ruby|空|くう}}の{{Ruby|翼|つばさ}}ダークモルダー ''(Darkmulder, Wings of Void)''\n| phonetic = Kokū no Tsubasa Dākumorudā\n| cost = 4\n| race = Demon Command\n| power = 7000\n| engtext = ■ This [[creature]] can't [[attack]] [[creature]]s.\n\n{{Double Breaker}}\n\n■ When this [[creature]] [[battle]]s, [[destroy]] it after the [[battle]].\n| jptext = ■ このクリーチャーは、クリーチャーを攻撃できない。\n\n{{Double Breaker|jp}}\n\n■ このクリーチャーはバトルする時、バトルの後、このクリーチャーを破壊する。\n| flavor = Its heart cries for conquest. Its blood sings a dirge of doom. ([[DM-06]])\n| flavor2 = 黒い翼の悪魔は軽い身のこなしで、強固な壁を打ち破る。The black-winged demon swiftly breaks through even the sturdiest walls. ([[DMD-02]])\n| mana = 1\n| artist = D-Suzuki\n| artist2 = Yocky\n| set1 = DM-06 Stomp-A-Trons of Invincible Wrath\n| setnum1 = 69/110\n| R1 = Rare\n| set2 = DM-06 Invincible Soul\n| setnum2 = 27/110\n| R2 = Rare\n| set3 = DM-18 Best Challenger\n| setnum3 = 31/140\n| R3 = Rare\n| set4 = DMC-08 Endless Black Hole Deck\n| setnum4 = 7/82\n| R4 = Rare\n| set5 = DMD-02 Start Dash Deck: Water & Darkness\n| setnum5 = 4/15\n| R5 = Rare\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Reverse Slayer]]"
+}

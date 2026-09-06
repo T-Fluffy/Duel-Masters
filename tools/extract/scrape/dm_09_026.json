@@ -1,0 +1,23 @@
+{
+ "card_id": "dm_09_026",
+ "page": "Acid Reflux, the Fleshboiler",
+ "type": "Creature",
+ "civilization": "Darkness",
+ "race": "Devil Mask",
+ "cost": "5",
+ "power": "3000",
+ "engtext": "{{Blocker}}\n\n■ This [[creature]] can't [[attack]].\n\n{{Slayer}}",
+ "templates": [
+  "Blocker",
+  "Slayer"
+ ],
+ "sets": {
+  "set1": "DM-09 Fatal Brood of Infinite Ruin",
+  "setnum1": "26/55",
+  "set2": "DM-09 Invincible Blood",
+  "setnum2": "44/55",
+  "set3": "DM-18 Best Challenger",
+  "setnum3": "69/140"
+ },
+ "wiki": "{{Cardtable\n| image = Acid Reflux, the Fleshboiler.jpg\n| civilization = Darkness\n| type = Creature\n| jpname = {{Ruby|墓|はか}}{{Ruby|堀|ほり}}{{Ruby|怪|かい}}{{Ruby|人|じん}}アシッドフィスト\n| phonetic = Hakahori Kaijin Ashiddofisuto\n| race = Devil Mask\n| cost = 5\n| power = 3000\n| engtext = {{Blocker}}\n\n■ This [[creature]] can't [[attack]].\n\n{{Slayer}}\n| jptext = {{Blocker|jps}} \n\n■ このクリーチャーは攻撃することができない。\n\n{{Slayer|jp}} \n| flavor = 爪に備わる猛毒は、小さな傷でも命を奪う。The venom in its claws can take a life with even the smallest wound. ([[DM-09]], [[DM-18]])\n| mana = 1\n| artist = Takesi Kuno\n| set1 = DM-09 Fatal Brood of Infinite Ruin\n| setnum1 = 26/55\n| R1 = Common\n| set2 = DM-09 Invincible Blood\n| setnum2 = 44/55\n| R2 = Common\n| set3 = DM-18 Best Challenger\n| setnum3 = 69/140\n| R3 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Devil Mask]]\n[[Category:Slayer]]\n[[Category:3000 Power Creatures]]"
+}

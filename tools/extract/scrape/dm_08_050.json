@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_08_050",
+ "page": "Muscle Charger",
+ "type": "Spell",
+ "civilization": "Nature",
+ "race": "",
+ "cost": "3",
+ "power": "",
+ "engtext": "■ Each of your [[creature]]s in the [[battle zone]] gets +3000 [[power]] until the [[End Step|end of the turn]].\n\n{{Charger}}",
+ "templates": [
+  "Charger"
+ ],
+ "sets": {
+  "set1": "DM-08 Epic Dragons of Hyperchaos",
+  "setnum1": "50/55",
+  "set2": "DM-08 Invincible Legend",
+  "setnum2": "35/55"
+ },
+ "wiki": "{{Cardtable\n| image = Muscle Charger.jpg\n| civilization = Nature\n| type = Spell\n| jpname = パワー・チャージャー\n| phonetic = Pawā Chājā ''(Power Charger)''\n| cost = 3\n| engtext = ■ Each of your [[creature]]s in the [[battle zone]] gets +3000 [[power]] until the [[End Step|end of the turn]].\n\n{{Charger}}\n| jptext = ■ このターンが終わるまで、バトルゾーンにある自分のクリーチャーすべてのパワーは+3000される。\n\n{{Charger|jp}}　 \n| flavor = \"Step 1: Prepare for adventures. Step 2: Have adventures. Wha-hai!!!\" -[[Quixotic Hero Swine Snout]] ([[DM-08]])\n| flavor2 = 戦士たるもの努力を怠るな! \"As a warrior, don't slack off in your efforts!\" ([[DM-08]]) \n| mana = 1\n| artist = Syuichi Obata\n| set1 = DM-08 Epic Dragons of Hyperchaos\n| setnum1 = 50/55\n| R1 = Uncommon\n| set2 = DM-08 Invincible Legend\n| setnum2 = 35/55\n| R2 = Uncommon\n}}\n\n\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Charger]]\n[[Category:Increase Power]]"
+}

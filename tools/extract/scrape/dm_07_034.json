@@ -1,0 +1,20 @@
+{
+ "card_id": "dm_07_034",
+ "page": "Vacuum Gel",
+ "type": "Spell",
+ "civilization": "Darkness",
+ "race": "",
+ "cost": "4",
+ "power": "",
+ "engtext": "{{Shield Trigger|spell}} \n\n■ [[Destroy]] one of your [[opponent]]'s [[untap]]ped [[light]] or [[untap]]ped [[nature]] [[creature]]s.",
+ "templates": [
+  "Shield Trigger|spell"
+ ],
+ "sets": {
+  "set1": "DM-07 Thundercharge of Ultra Destruction",
+  "setnum1": "34/55",
+  "set2": "DM-07 Invincible Charge",
+  "setnum2": "47/55"
+ },
+ "wiki": "{{Cardtable\n| image = Vacuum Gel.jpg\n| civilization = Darkness\n| type = Spell\n| jpname = バキューム・ジェル\n| phonetic = Bakyūmu Jeru\n| cost = 4\n| engtext = {{Shield Trigger|spell}} \n\n■ [[Destroy]] one of your [[opponent]]'s [[untap]]ped [[light]] or [[untap]]ped [[nature]] [[creature]]s.\n| jptext = {{Icon|ST}} S・トリガー (この呪文をシールドゾーンから手札に加える時、コストを支払わずにすぐ唱えてもよい)\n\n■ バトルゾーンにある、相手のタップされていない光または自然のクリーチャーを1体選ぶ。相手はそれを持ち主の墓地に置く。\n| flavor = \"I hope you're not allergic to slime. Nah, I'm just kidding.\" —{{tooltip|Mongrel Man}} ([[DM-07]])\n| flavor2 = 骨の世界へようこそ! \"Welcome to the world of bones!\" ([[DM-07]])\n| mana = 1\n| artist = Akifumi Yamamoto\n| set1 = DM-07 Thundercharge of Ultra Destruction\n| setnum1 = 34/55\n| R1 = Common\n| set2 = DM-07 Invincible Charge\n| setnum2 = 47/55\n| R2 = Common\n}}\n[[Category:TCG]]\n[[Category:OCG]]\n[[Category:Darkness]]\n[[Category:Shield Trigger]]\n[[Category:Spell]]\n[[Category:Untapped Removal]]"
+}
