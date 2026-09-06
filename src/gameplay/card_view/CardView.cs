@@ -11,8 +11,9 @@ namespace DuelMasters.Gameplay.CardView;
 /// A single interactive card on the 2.5D board. Renders either a face-down card
 /// back or the card front (artwork only by default, or a full frame for the
 /// "artOnly=false" callers), and scales smoothly toward its hover/selection target
-/// via exponential smoothing in <see cref="_Process"/>. Tapped cards stay upright
-/// and are gently dimmed so their layout rect doubles as their click rect.
+/// via exponential smoothing in <see cref="_Process"/>. Tapped cards rotate 90°
+/// around their center (anime-style) and are gently dimmed so the layout rect and
+/// the click rect follow exactly what the player sees.
 ///
 /// Input model: the card root keeps <see cref="Control.MouseFilter"/> = Stop and
 /// EVERY visual child is mouse-transparent (Ignore), so a click always lands on the
@@ -376,10 +377,12 @@ public partial class CardView : Control
     }
 
     /// <summary>
-    /// Instantly snap the tap pose (no lerp). Tapped cards stay upright - they are
-    /// gently dimmed so their layout rect doubles as their click rect. (Rotating the
-    /// whole view shifted get_global_rect by the card height when pivot tracking was
-    /// incomplete, breaking hit-testing.)
+    /// Instantly snap the tap pose (no lerp). Tapped cards rotate 90° around their
+    /// center (like the anime: rotated creatures and used mana stay that way until
+    /// this turn's end) and are gently dimmed. The pivot is kept exactly centered
+    /// (see <see cref="SetCardSize"/>) so the rotated card stays over its layout
+    /// rect and the click rect (= rotated visual, Godot transforms input into local
+    /// control space) lines up with what the player sees.
     /// </summary>
     public void SnapTapped(bool tapped)
     {
@@ -396,6 +399,7 @@ public partial class CardView : Control
 
     private void RefreshTapPose()
     {
+        RotationDegrees = Tapped ? 90f : 0f;
         _frame.SelfModulate = Tapped ? TappedDim : Colors.White;
     }
 

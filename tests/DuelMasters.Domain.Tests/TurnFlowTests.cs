@@ -81,7 +81,7 @@ public class TurnFlowTests
 
         h.Game.PlayManaToManaZone(0);
         Assert.Single(h.P1.ManaZone);
-        Assert.True(h.P1.ManaZone[0].IsTapped);
+        Assert.False(h.P1.ManaZone[0].IsTapped); // charged mana is available immediately
 
         Assert.Throws<RuleViolationException>(() => h.Game.PlayManaToManaZone(0));
     }

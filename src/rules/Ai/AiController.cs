@@ -13,6 +13,10 @@ public enum AiStepKind
     /// the Blocker keyword could intercept - the caller must resolve the
     /// defender's block choice (interactive UI) and then call <see cref="Step"/> again.</summary>
     NeedsBlockChoice,
+    /// <summary>The AI broke shields and the DEFENDER (the other player) now owns a
+    /// shield-trigger window. The attacker's turn is paused until that side resolves
+    /// it; call <see cref="Step"/> again afterwards.</summary>
+    WaitingOnShieldTriggers,
     /// <summary>The AI has no more actions; the caller should end its turn.</summary>
     TurnEnded,
 }
@@ -55,6 +59,16 @@ public sealed class AiController
         if (game.Phase != GamePhase.Main)
             throw new InvalidOperationException($"AI step called during {game.Phase}, expected {GamePhase.Main}.");
 
+        // A shield-trigger window interrupts the attacker's turn. Resolve the AI's
+        // own windows here; otherwise report the pause to the caller.
+        if (game.ShieldTriggerWindowActive)
+        {
+            if (ReferenceEquals(game.ShieldTriggerOwner, Self))
+                ResolveShieldTriggers(game);
+            else
+                return new AiStep(AiStepKind.WaitingOnShieldTriggers, -1);
+        }
+
         // 1) Charge one mana card if the turn allows it. A smart charge keeps the
         //    turn's best plays playable and dumps dead / duplicate / uncastable cards.
         if (!game.ManaChargedThisTurn && TryChooseManaCharge(out var manaIndex))
@@ -64,11 +78,13 @@ public sealed class AiController
         }
 
         // 2) Develop the battlefield before attacking (attacks lock summons/casts).
-        if (!game.HasAttackedThisTurn && TryChoosePlay(game, out var playIndex))
+        if (!game.HasAttackedThisTurn && TryChoosePlay(game, out var playIndex, out var spellOwner, out var spellTarget))
         {
             var card = Self.Hand[playIndex].Card;
             if (card.IsCreature)
                 game.SummonCreature(playIndex);
+            else if (spellOwner is not null)
+                game.CastSpell(playIndex, spellOwner, spellTarget);
             else
                 game.CastSpell(playIndex);
             return new AiStep(AiStepKind.ActionTaken, -1);
@@ -77,9 +93,18 @@ public sealed class AiController
         // 3) Attack with a ready creature.
         if (TryChooseAttack(game, out var attackerIndex, out var needsBlockChoice))
         {
-            return needsBlockChoice
-                ? new AiStep(AiStepKind.NeedsBlockChoice, attackerIndex)
-                : new AiStep(AiStepKind.ActionTaken, -1);
+            if (needsBlockChoice)
+                return new AiStep(AiStepKind.NeedsBlockChoice, attackerIndex);
+            if (game.ShieldTriggerWindowActive)
+            {
+                // The hit broke shields: resolve our own triggers right here, or pause
+                // the turn so the defender (interactive UI or the other AI) can decide.
+                if (ReferenceEquals(game.ShieldTriggerOwner, Self))
+                    ResolveShieldTriggers(game);
+                else
+                    return new AiStep(AiStepKind.WaitingOnShieldTriggers, -1);
+            }
+            return new AiStep(AiStepKind.ActionTaken, -1);
         }
 
         return new AiStep(AiStepKind.TurnEnded, -1);
@@ -88,15 +113,26 @@ public sealed class AiController
     /// <summary>
     /// Convenience driver for tests / zero-UI hosts: plays the AI's full turn
     /// (mana, plays, attacks, end). When a Blocker could intercept, the AI decides
-    /// for itself via <see cref="DecideBlock"/>.
+    /// for itself via <see cref="DecideBlock"/>. If the AI attacks and the DEFENDER
+    /// ends up owning a shield-trigger window, the turn stops there so the caller
+    /// can resolve it (a later <see cref="PlayTurn"/> call resumes the attacks).
     /// </summary>
     public void PlayTurn(DuelGame game)
     {
         var steps = 0;
         while (!game.IsGameOver && game.Phase == GamePhase.Main && steps++ < 200)
         {
+            if (game.ShieldTriggerWindowActive)
+            {
+                if (ReferenceEquals(game.ShieldTriggerOwner, Self))
+                    ResolveShieldTriggers(game);
+                else
+                    break; // the defender must resolve before this turn can continue
+                continue;
+            }
+
             var step = Step(game);
-            if (step.Kind == AiStepKind.TurnEnded)
+            if (step.Kind is AiStepKind.TurnEnded or AiStepKind.WaitingOnShieldTriggers)
                 break;
             if (step.Kind != AiStepKind.NeedsBlockChoice)
                 continue;
@@ -107,7 +143,7 @@ public sealed class AiController
                 game.AttackPlayer(step.AttackerIndex);
         }
 
-        if (!game.IsGameOver && game.Phase == GamePhase.Main)
+        if (!game.IsGameOver && game.Phase == GamePhase.Main && !game.ShieldTriggerWindowActive)
         {
             game.EndMainPhase();
             game.EndTurn();
@@ -201,10 +237,17 @@ public sealed class AiController
         return index >= 0;
     }
 
-    /// <summary>Pick the best playable card: creatures preferred, spells only when idle mana is surplus.</summary>
-    private bool TryChoosePlay(DuelGame game, out int index)
+    /// <summary>
+    /// Pick the best playable card. Creatures are preferred; spells are only played
+    /// when they carry a real effect (removal, tap, untap, boost, draw) and the mana
+    /// budget survives it. For a targeted spell, <paramref name="spellOwner"/> /
+    /// <paramref name="spellTarget"/> give the chosen legal target (null/-1 otherwise).
+    /// </summary>
+    private bool TryChoosePlay(DuelGame game, out int playIndex, out Player? spellOwner, out int spellTarget)
     {
-        index = -1;
+        playIndex = -1;
+        spellOwner = null;
+        spellTarget = -1;
 
         var bestScore = float.NegativeInfinity;
         for (var i = 0; i < Self.Hand.Count; i++)
@@ -216,32 +259,204 @@ public sealed class AiController
             var score = card.ManaCost * Profile.ValueTempo + (card.Power / 1000f) * (1f - Profile.ValueTempo);
             if (card.HasKeyword(Keyword.Blocker))
                 score += 2f;
+            if (card.Effects.Any(e => e.Id == EffectId.OnPlay_Draw))
+                score += 2.5f;
+            if (card.Effects.Any(e => e.Id == EffectId.OnDestroyed_Draw))
+                score += 1f;
             if (score > bestScore)
             {
                 bestScore = score;
-                index = i;
+                playIndex = i;
             }
         }
-
-        if (index >= 0)
+        if (playIndex >= 0)
             return true;
 
-        // Spells resolve no effects in this milestone; only spend surplus mana on
-        // them so the upcoming turn's summons are never jeopardised.
-        var openMana = Self.ManaZone.Count(m => !m.IsTapped);
         for (var i = 0; i < Self.Hand.Count; i++)
         {
             var card = Self.Hand[i].Card;
             if (card.CardType != CardType.Spell || !game.CanPlay(Self, card))
                 continue;
-            if (openMana - card.ManaCost >= 2)
+            if (TryChooseSpellPlay(game, i, out var owner, out var target))
             {
-                index = i;
+                playIndex = i;
+                spellOwner = owner;
+                spellTarget = target;
                 return true;
             }
         }
 
         return false;
+    }
+
+    /// <summary>
+    /// Decide whether to cast spell <paramref name="handIndex"/> this turn and, for
+    /// targeted spells, which legal target to hit. Removal denies the opponent's
+    /// biggest creature within the power cap; tap/untap/boost enable tempo; draw
+    /// spells burn spare mana only.
+    /// </summary>
+    private bool TryChooseSpellPlay(DuelGame game, int handIndex, out Player? targetOwner, out int targetIndex)
+    {
+        targetOwner = null;
+        targetIndex = -1;
+        var card = Self.Hand[handIndex].Card;
+        var openMana = Self.ManaZone.Count(m => !m.IsTapped);
+        var surplus = openMana - card.ManaCost;
+
+        var needsTarget = card.Effects.Any(e => e.NeedsTarget);
+        if (needsTarget)
+        {
+            if (!TryChooseSpellTarget(game, card, out var owner, out var index))
+                return false;
+            targetOwner = owner;
+            targetIndex = index;
+
+            if (!ReferenceEquals(owner, Self))
+            {
+                // Cards aimed at the opponent: removal/tap are combat pressure.
+                var foePower = owner.BattleZone[index].Card.Power / 1000f;
+                var isRemoval = card.Effects.Any(e =>
+                    e.Id is EffectId.Spell_DestroyPowerAtMost or EffectId.Spell_ReturnToHand);
+                var isTap = card.Effects.Any(e => e.Id == EffectId.Spell_TapCreature);
+                if (isRemoval && (surplus >= 1 || foePower >= 3f))
+                    return true;
+                if (isTap && surplus >= 1)
+                    return true;
+                return false;
+            }
+
+            // Self-targeted (untap / boost): only with spare mana.
+            return surplus >= 1;
+        }
+
+        // No-target spells (draw, ...): worth it when mana is spare.
+        return surplus >= 1;
+    }
+
+    /// <summary>
+    /// Pick the best legal target for <paramref name="spell"/> among both battle
+    /// zones, scored per effect (destroy/return want the strongest foe creature
+    /// within range, tap wants a ready threat, untap/boost aim at own battle zone).
+    /// The engine's own <see cref="DuelGame.IsLegalSpellTarget"/> keeps every choice
+    /// rule-legal, so the AI can never target illegally.
+    /// </summary>
+    private bool TryChooseSpellTarget(DuelGame game, Card spell, out Player targetOwner, out int targetIndex)
+    {
+        targetOwner = Self;
+        targetIndex = -1;
+        var bestValue = float.NegativeInfinity;
+        var bestOwner = Self;
+        var bestIndex = -1;
+        // During a normal Main phase the AI is the active player (foe = Opponent);
+        // while resolving our own shield triggers the ATTACKER is the foe instead.
+        var foe = ReferenceEquals(game.ActivePlayer, Self) ? game.Opponent : game.ActivePlayer;
+
+        void Consider(Player owner, int index, float value)
+        {
+            if (value > bestValue)
+            {
+                bestValue = value;
+                bestOwner = owner;
+                bestIndex = index;
+            }
+        }
+
+        foreach (var effect in spell.Effects.Where(e => e.NeedsTarget))
+        {
+            switch (effect.Id)
+            {
+                case EffectId.Spell_DestroyPowerAtMost:
+                    for (var i = 0; i < foe.BattleZone.Count; i++)
+                    {
+                        var c = foe.BattleZone[i];
+                        if (game.IsLegalSpellTarget(spell, Self, foe, i))
+                            Consider(foe, i, 1.5f + c.Card.Power / 1000f + (c.IsTapped ? 0f : 0.5f));
+                    }
+                    break;
+
+                case EffectId.Spell_ReturnToHand:
+                    for (var i = 0; i < foe.BattleZone.Count; i++)
+                    {
+                        var c = foe.BattleZone[i];
+                        if (game.IsLegalSpellTarget(spell, Self, foe, i))
+                            Consider(foe, i, 1f + c.Card.Power / 1000f + (c.IsTapped ? 0f : 0.5f));
+                    }
+                    break;
+
+                case EffectId.Spell_TapCreature:
+                    for (var i = 0; i < foe.BattleZone.Count; i++)
+                    {
+                        var c = foe.BattleZone[i];
+                        if (game.IsLegalSpellTarget(spell, Self, foe, i) && !c.IsTapped)
+                            Consider(foe, i, 0.75f + c.Card.Power / 2000f);
+                    }
+                    break;
+
+                case EffectId.Spell_UntapOwnCreature:
+                    for (var i = 0; i < Self.BattleZone.Count; i++)
+                    {
+                        var c = Self.BattleZone[i];
+                        if (game.IsLegalSpellTarget(spell, Self, Self, i) && c.IsTapped)
+                            Consider(Self, i, 0.5f + c.Card.Power / 2000f);
+                    }
+                    break;
+
+                case EffectId.Spell_BoostPower:
+                    for (var i = 0; i < Self.BattleZone.Count; i++)
+                    {
+                        var c = Self.BattleZone[i];
+                        if (game.IsLegalSpellTarget(spell, Self, Self, i) && !c.IsTapped)
+                            Consider(Self, i, 0.4f + c.Card.Power / 5000f);
+                    }
+                    break;
+            }
+        }
+
+        if (bestIndex < 0)
+            return false;
+        targetOwner = bestOwner;
+        targetIndex = bestIndex;
+        return true;
+    }
+
+    /// <summary>
+    /// The AI, as DEFENDER, resolves an open shield-trigger window it owns: plays
+    /// every pending card that is useful (creatures are always free value, spells
+    /// only when they have a legal target / a real effect) and declines the rest.
+    /// </summary>
+    public void ResolveShieldTriggers(DuelGame game)
+    {
+        if (!game.ShieldTriggerWindowActive)
+            return;
+        if (!ReferenceEquals(game.ShieldTriggerOwner, Self))
+            throw new InvalidOperationException("ResolveShieldTriggers requires the AI to own the open shield-trigger window.");
+
+        foreach (var instance in game.PendingShieldTriggers.ToList())
+        {
+            if (!game.ShieldTriggerWindowActive)
+                break;
+            var handIndex = Self.Hand.IndexOf(instance);
+            if (handIndex < 0)
+                continue;
+            var card = instance.Card;
+
+            if (card.IsCreature)
+            {
+                game.PlayShieldTrigger(handIndex);
+                continue;
+            }
+            if (card.Effects.All(e => !e.NeedsTarget) && card.Effects.Any())
+            {
+                game.PlayShieldTrigger(handIndex);
+                continue;
+            }
+            if (TryChooseSpellTarget(game, card, out var owner, out var index))
+                game.PlayShieldTrigger(handIndex, owner, index);
+            // No legal target -> the card is left in hand (declined below).
+        }
+
+        if (game.ShieldTriggerWindowActive)
+            game.DeclineShieldTriggers();
     }
 
     /// <summary>

@@ -75,6 +75,12 @@
     "race": "Spell",
     "imagePath": "res://assets/art/cards/DM-01/Cards/DM01_007.jpg",
     "keywords": [],
+    "effects": [
+      {
+        "id": "Spell_UntapOwnCreature",
+        "target": "OwnCreature"
+      }
+    ],
     "scriptEffectId": "VANILLA"
   },
   {
@@ -517,6 +523,12 @@
     "race": "Spell",
     "imagePath": "res://assets/art/cards/DM-01/Cards/DM01_081.jpg",
     "keywords": [],
+    "effects": [
+      {
+        "id": "Spell_ReturnToHand",
+        "target": "OpponentCreature"
+      }
+    ],
     "scriptEffectId": "VANILLA"
   },
   {
@@ -686,6 +698,13 @@
     "race": "Spell",
     "imagePath": "res://assets/art/cards/DM-01/Cards/DM01_102.jpg",
     "keywords": [],
+    "effects": [
+      {
+        "id": "Spell_DestroyPowerAtMost",
+        "target": "OpponentCreature",
+        "value": 3000
+      }
+    ],
     "scriptEffectId": "VANILLA"
   },
   {
@@ -699,6 +718,12 @@
     "race": "Spell",
     "imagePath": "res://assets/art/cards/DM-01/Cards/DM01_075.jpg",
     "keywords": [],
+    "effects": [
+      {
+        "id": "Spell_TapCreature",
+        "target": "OpponentCreature"
+      }
+    ],
     "scriptEffectId": "VANILLA"
   },
   {
@@ -815,7 +840,14 @@
     "power": null,
     "race": "Spell",
     "imagePath": "res://assets/art/cards/DM-01/Cards/DM01_039.jpg",
-    "keywords": [],
+    "keywords": ["ShieldTrigger"],
+    "effects": [
+      {
+        "id": "Spell_DestroyPowerAtMost",
+        "target": "OpponentCreature",
+        "value": 100000
+      }
+    ],
     "scriptEffectId": "VANILLA"
   },
   {
@@ -893,7 +925,7 @@
     "power": 6000,
     "race": "Armored Dragon",
     "imagePath": "res://assets/art/cards/DM-01/Cards/DM01_008.jpg",
-    "keywords": [],
+    "keywords": ["DoubleBreaker"],
     "scriptEffectId": "VANILLA"
   },
   {
@@ -997,7 +1029,13 @@
     "power": 2000,
     "race": "Human",
     "imagePath": "res://assets/art/cards/DM-01/Cards/DM01_110.jpg",
-    "keywords": [],
+    "keywords": ["PowerAttacker"],
+    "effects": [
+      {
+        "id": "PowerAttacker_AttackBoost",
+        "value": 2000
+      }
+    ],
     "scriptEffectId": "VANILLA"
   },
   {
@@ -1140,7 +1178,14 @@
     "power": null,
     "race": "Spell",
     "imagePath": "res://assets/art/cards/DM-01/Cards/DM01_032.jpg",
-    "keywords": [],
+    "keywords": ["ShieldTrigger"],
+    "effects": [
+      {
+        "id": "Spell_DestroyPowerAtMost",
+        "target": "OpponentCreature",
+        "value": 3000
+      }
+    ],
     "scriptEffectId": "VANILLA"
   },
   {
@@ -1570,6 +1615,13 @@
     "race": "Spell",
     "imagePath": "res://assets/art/cards/DM-02/Cards/DM02_039.jpg",
     "keywords": [],
+    "effects": [
+      {
+        "id": "Spell_DestroyPowerAtMost",
+        "target": "OpponentCreature",
+        "value": 3000
+      }
+    ],
     "scriptEffectId": "VANILLA"
   },
   {
@@ -2909,6 +2961,13 @@
     "race": "Spell",
     "imagePath": "res://assets/art/cards/DM-03/Cards/DM03_002.jpg",
     "keywords": [],
+    "effects": [
+      {
+        "id": "Spell_DestroyPowerAtMost",
+        "target": "OpponentCreature",
+        "value": 2000
+      }
+    ],
     "scriptEffectId": "VANILLA"
   },
   {
@@ -3363,7 +3422,7 @@
     "power": 2000,
     "race": "Liquid People",
     "imagePath": "res://assets/art/cards/DM-04/Cards/DM04_037.jpg",
-    "keywords": [],
+    "keywords": ["Blocker"],
     "scriptEffectId": "VANILLA"
   },
   {
@@ -3416,6 +3475,12 @@
     "race": "Spell",
     "imagePath": "res://assets/art/cards/DM-04/Cards/DM04_032.jpg",
     "keywords": [],
+    "effects": [
+      {
+        "id": "Spell_ReturnToHand",
+        "target": "OpponentCreature"
+      }
+    ],
     "scriptEffectId": "VANILLA"
   },
   {
@@ -3922,7 +3987,7 @@
     "power": 7000,
     "race": "Leviathan",
     "imagePath": "res://assets/art/cards/DM-05/Cards/DM05_042.jpg",
-    "keywords": [],
+    "keywords": ["DoubleBreaker"],
     "scriptEffectId": "VANILLA"
   },
   {
@@ -5093,6 +5158,11 @@
     "race": "Spell",
     "imagePath": "res://assets/art/cards/DM-06/Cards/DM06_081.jpg",
     "keywords": [],
+    "effects": [
+      {
+        "id": "Spell_Draw"
+      }
+    ],
     "scriptEffectId": "VANILLA"
   },
   {
@@ -5288,6 +5358,12 @@
     "race": "Spell",
     "imagePath": "res://assets/art/cards/DM-06/Cards/DM06_014.jpg",
     "keywords": [],
+    "effects": [
+      {
+        "id": "Spell_ReturnToHand",
+        "target": "OpponentCreature"
+      }
+    ],
     "scriptEffectId": "VANILLA"
   },
   {
@@ -5366,6 +5442,13 @@
     "race": "Spell",
     "imagePath": "res://assets/art/cards/DM-06/Cards/DM06_085.jpg",
     "keywords": [],
+    "effects": [
+      {
+        "id": "Spell_DestroyPowerAtMost",
+        "target": "OpponentCreature",
+        "value": 3000
+      }
+    ],
     "scriptEffectId": "VANILLA"
   },
   {
@@ -7251,6 +7334,11 @@
     "race": "Spell",
     "imagePath": "res://assets/art/cards/DM-08/Cards/DM08_025.jpg",
     "keywords": [],
+    "effects": [
+      {
+        "id": "Spell_Draw"
+      }
+    ],
     "scriptEffectId": "VANILLA"
   },
   {
@@ -7498,6 +7586,13 @@
     "race": "Spell",
     "imagePath": "res://assets/art/cards/DM-08/Cards/DM08_001.jpg",
     "keywords": [],
+    "effects": [
+      {
+        "id": "Spell_BoostPower",
+        "target": "OwnCreature",
+        "value": 1000
+      }
+    ],
     "scriptEffectId": "VANILLA"
   },
   {
@@ -7796,7 +7891,7 @@
     "power": 9000,
     "race": "Earth Dragon",
     "imagePath": "res://assets/art/cards/DM-08/Cards/DM08_016.jpg",
-    "keywords": [],
+    "keywords": ["DoubleBreaker"],
     "scriptEffectId": "VANILLA"
   },
   {

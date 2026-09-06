@@ -44,6 +44,15 @@ public static class CardCatalog
         public string ImagePath { get; set; } = "";
         public List<string> Keywords { get; set; } = new();
         public string ScriptEffectId { get; set; } = "";
+        public List<EffectJson> Effects { get; set; } = new();
+    }
+
+    /// <summary>A single rule effect written in the catalog (id, scope, optional value).</summary>
+    private sealed class EffectJson
+    {
+        public string? Id { get; set; }
+        public string? Target { get; set; }
+        public int Value { get; set; }
     }
 
     /// <summary>All named cards in the catalog, sorted by name.</summary>
@@ -68,8 +77,9 @@ public static class CardCatalog
             var civ = ParseCivilization(c.Civilization!);
             var type = ParseCardType(c.CardType);
             var keywords = ParseKeywords(c.Keywords);
+            var effects = ParseEffects(c.Effects);
 
-            var card = new Card(c.Id, c.Name!, civ, type, c.ManaCost, c.Power ?? 0, c.Race ?? "", keywords);
+            var card = new Card(c.Id, c.Name!, civ, type, c.ManaCost, c.Power ?? 0, c.Race ?? "", keywords, effects);
             records.Add(new CardRecord(card, c.ImagePath, c.ScriptEffectId));
         }
 
@@ -133,6 +143,19 @@ public static class CardCatalog
         {
             if (Enum.TryParse<Keyword>(k, true, out var parsed) && parsed != Keyword.None)
                 yield return parsed;
+        }
+    }
+
+    private static IEnumerable<CardEffect> ParseEffects(IEnumerable<EffectJson> raw)
+    {
+        foreach (var e in raw)
+        {
+            if (e.Id is null || !Enum.TryParse<EffectId>(e.Id, true, out var id) || id == EffectId.None)
+                continue;
+            var target = EffectTargetScope.None;
+            if (!string.IsNullOrEmpty(e.Target))
+                Enum.TryParse<EffectTargetScope>(e.Target, true, out target);
+            yield return new CardEffect(id, target, e.Value);
         }
     }
 }

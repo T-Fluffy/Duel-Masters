@@ -25,11 +25,39 @@ internal static class CardFactory
         return new Card($"c{++_serial}", n, civ, CardType.Creature, cost, power, "R", keywords);
     }
 
+    public static Card Creature(
+        int cost,
+        int power,
+        Civilization civ,
+        string name,
+        CardEffect effect,
+        params Keyword[] keywords)
+    {
+        var n = string.IsNullOrWhiteSpace(name) ? $"Creature-{++_serial}" : name;
+        return new Card($"c{++_serial}", n, civ, CardType.Creature, cost, power, "R", keywords, new[] { effect });
+    }
+
     public static Card Spell(int cost, Civilization civ = Civilization.Water, string name = "")
     {
         var n = string.IsNullOrWhiteSpace(name) ? $"Spell-{++_serial}" : name;
         return new Card($"s{++_serial}", n, civ, CardType.Spell, cost, 0, "", System.Array.Empty<Keyword>());
     }
+
+    public static Card Spell(int cost, Civilization civ, string name, CardEffect effect)
+    {
+        var n = string.IsNullOrWhiteSpace(name) ? $"Spell-{++_serial}" : name;
+        return new Card($"s{++_serial}", n, civ, CardType.Spell, cost, 0, "", System.Array.Empty<Keyword>(), new[] { effect });
+    }
+
+    public static Card Spell(int cost, Civilization civ, string name, CardEffect effect, params Keyword[] keywords)
+    {
+        var n = string.IsNullOrWhiteSpace(name) ? $"Spell-{++_serial}" : name;
+        return new Card($"s{++_serial}", n, civ, CardType.Spell, cost, 0, "", keywords, new[] { effect });
+    }
+
+    /// <summary>Shorthand for authoring <see cref="CardEffect"/> in tests.</summary>
+    public static CardEffect Eff(EffectId id, EffectTargetScope target = EffectTargetScope.None, int value = 0)
+        => new(id, target, value);
 
     /// <summary>Build a player with <paramref name="size"/> cards in the deck.</summary>
     public static Player PlayerWithDeck(string name, int size, params Card[] fixedTop)

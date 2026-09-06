@@ -30,7 +30,7 @@ namespace DuelMasters.Scenes.Arena;
 /// </summary>
 public partial class Arena : Control
 {
-    private enum Mode { Idle, SelectHand, SelectTarget, SelectBlock }
+    private enum Mode { Idle, SelectHand, SelectTarget, SelectBlock, SelectSpellTarget, SelectShieldTarget }
 
     private enum CardSizeKind { Full, Mana, Stack }
 
@@ -114,11 +114,20 @@ public partial class Arena : Control
     private bool _selectedHandSide;
     private int _selectedHandIndex = -1;
 
+    // Targeting state for spells cast from hand / from a shield trigger.
+    private int _spellHandIndex = -1;
+    private int _triggerHandIndex = -1;
+
     // Hand card popup ("Look at card" / "Play card") shown above the selected card.
     private PanelContainer _handPopup = null!;
     private VBoxContainer _handPopupBox = null!;
     private PanelContainer _lookPopup = null!;
     private VBoxContainer _lookPopupBox = null!;
+
+    // Shield-trigger decision popup (interrupts the attacker's turn).
+    private PanelContainer _triggerPopup = null!;
+    private VBoxContainer _triggerPopupBox = null!;
+    private string _triggerFingerprint = "";
 
     // Centered pure-artwork card inspector overlay.
     private Control _inspectOverlay = null!;
@@ -305,6 +314,10 @@ public partial class Arena : Control
         _newDuelBtn.Pressed += ShowDeckSelection;
         header.AddChild(_newDuelBtn);
 
+        // Reserve the top-right corner occupied by the SceneOptionsMenu gear (44x44
+        // inset 16px from the edge) so the button never slides underneath it.
+        header.AddChild(new Control { CustomMinimumSize = new Vector2(60, 0) });
+
         // =====================================================================
         // DM board architecture (top → bottom), mirrored for each player.
         //   Opponent (outer→inner): hand, shields+deck/grave, mana, BATTLE
@@ -458,6 +471,7 @@ public partial class Arena : Control
 
         BuildHandPopup();
         BuildLookPopup();
+        BuildShieldTriggerPopup();
         BuildInspectOverlay();
 
         BuildDeckSelection();
@@ -605,6 +619,161 @@ public partial class Arena : Control
         _lookPopup.Visible = false;
     }
 
+    // ------------------------------------------------------- shield trigger popup
+    // An interrupt popup shown while the engine holds a shield-trigger window open
+    // (an attacker just broke the defender's shields). The defender decides for each
+    // pending card: play it for free, or leave it in hand. In AI duels the AI owns
+    // the window for itself; only human-owned windows surface as a popup here.
+
+    private void BuildShieldTriggerPopup()
+    {
+        _triggerPopup = new PanelContainer();
+        _triggerPopup.AddThemeStyleboxOverride("panel", UiStyles.ModalCard());
+        _triggerPopup.Visible = false;
+        AddChild(_triggerPopup);
+
+        _triggerPopupBox = new VBoxContainer();
+        _triggerPopupBox.AddThemeConstantOverride("separation", 6);
+        _triggerPopupBox.CustomMinimumSize = new Vector2(240, 0);
+        _triggerPopup.AddChild(_triggerPopupBox);
+    }
+
+    private bool TriggerPopupNeedsDecision =>
+        !_vsAi || ReferenceEquals(_game.ShieldTriggerOwner, _game.Player1);
+
+    private void SyncShieldTriggerPopup()
+    {
+        if (_game is null || !_game.ShieldTriggerWindowActive || !TriggerPopupNeedsDecision)
+        {
+            HideTriggerPopup();
+            return;
+        }
+
+        // The window interrupts the attacker's turn; while the human resolves it the
+        // AI drive must pause (the engine rejects every action until it closes).
+        _aiDriving = false;
+
+        var fingerprint = string.Join("|", _game.PendingShieldTriggers
+            .Select(x => x.Card.Id + "@" + _game!.ShieldTriggerOwner!.Hand.IndexOf(x)));
+        ShowShieldTriggerPopup(fingerprint);
+    }
+
+    private void ShowShieldTriggerPopup(string fingerprint)
+    {
+        if (fingerprint == _triggerFingerprint && _triggerPopup.Visible)
+            return;
+        _triggerFingerprint = fingerprint;
+
+        HideHandPopup();
+        HideLookPopup();
+
+        foreach (var child in _triggerPopupBox.GetChildren().OfType<Control>().ToList())
+            child.QueueFree();
+
+        var owner = _game.ShieldTriggerOwner;
+        if (owner is null)
+        {
+            HideTriggerPopup();
+            return;
+        }
+        var title = new Label
+        {
+            Text = $"Shield Trigger!\n{owner.Name}'s shields broke",
+            AutowrapMode = TextServer.AutowrapMode.WordSmart,
+            HorizontalAlignment = HorizontalAlignment.Center,
+        };
+        title.CustomMinimumSize = new Vector2(240, 0);
+        title.AddThemeFontSizeOverride("font_size", 14);
+        title.AddThemeColorOverride("font_color", UiStyles.AccentText);
+        _triggerPopupBox.AddChild(title);
+
+        var hasPlayable = false;
+        foreach (var instance in _game.PendingShieldTriggers.ToList())
+        {
+            var handIndex = owner.Hand.IndexOf(instance);
+            if (handIndex < 0)
+                continue;
+            var card = instance.Card;
+            var playable = !card.Effects.Any(e => e.NeedsTarget) || AnyLegalTriggerTarget(card);
+            hasPlayable |= playable;
+            var idx = handIndex;
+            var btn = new Button { Text = $"Play {card.Name}", Disabled = !playable };
+            btn.Pressed += () => PlayPendingTrigger(idx);
+            _triggerPopupBox.AddChild(btn);
+        }
+
+        if (!hasPlayable)
+        {
+            var note = new Label
+            {
+                Text = "No effect can target anything right now - only \"leave in hand\" is available.",
+                AutowrapMode = TextServer.AutowrapMode.WordSmart,
+                HorizontalAlignment = HorizontalAlignment.Center,
+            };
+            note.AddThemeFontSizeOverride("font_size", 11);
+            note.AddThemeColorOverride("font_color", UiStyles.MutedText);
+            _triggerPopupBox.AddChild(note);
+        }
+
+        var leave = new Button { Text = "Leave them in hand" };
+        leave.Pressed += () => DeclineShieldTriggers();
+        _triggerPopupBox.AddChild(leave);
+
+        _triggerPopup.Visible = true;
+        CallDeferred(nameof(PositionTriggerPopup));
+    }
+
+    private void HideTriggerPopup()
+    {
+        _triggerPopup.Visible = false;
+        if (_game is null || !_game.ShieldTriggerWindowActive)
+            _triggerFingerprint = "";
+    }
+
+    private void PositionTriggerPopup()
+    {
+        if (_triggerPopup is null || !_triggerPopup.Visible)
+            return;
+        PositionPopupAtLeftSide(_triggerPopup);
+    }
+
+    private void PlayPendingTrigger(int handIndex)
+    {
+        var owner = _game!.ShieldTriggerOwner!;
+        if (handIndex < 0 || handIndex >= owner.Hand.Count)
+            return;
+        var card = owner.Hand[handIndex].Card;
+        if (!card.Effects.Any(e => e.NeedsTarget))
+        {
+            Safe(() => _game.PlayShieldTrigger(handIndex));
+            return;
+        }
+        _mode = Mode.SelectShieldTarget;
+        _triggerHandIndex = handIndex;
+        HideTriggerPopup();
+        Prompt($"Shield Trigger: choose a target for {card.Name}. Click a legal creature (either side), or press Esc to leave it in hand.");
+        Refresh();
+    }
+
+    private void DeclineShieldTriggers() => Safe(() => _game.DeclineShieldTriggers());
+
+    private bool AnyLegalTriggerTarget(Card spell)
+    {
+        if (_game is null || !_game.ShieldTriggerWindowActive)
+            return false;
+        var owner = _game.ShieldTriggerOwner;
+        if (owner is null)
+            return false;
+        var foe = _game.Opponent;
+        for (var i = 0; i < owner.BattleZone.Count; i++)
+            if (_game.IsLegalSpellTarget(spell, owner, owner, i))
+                return true;
+        for (var i = 0; i < foe.BattleZone.Count; i++)
+            if (_game.IsLegalSpellTarget(spell, owner, foe, i))
+                return true;
+        return false;
+    }
+
     // --------------------------------------------------------- card inspector
 
     private void BuildInspectOverlay()
@@ -692,6 +861,12 @@ public partial class Arena : Control
                 CloseInspect();
                 GetViewport().SetInputAsHandled();
             }
+            else if (_mode is Mode.SelectSpellTarget or Mode.SelectShieldTarget)
+            {
+                ResetInteraction();
+                Refresh();
+                GetViewport().SetInputAsHandled();
+            }
             else if (_handPopup.Visible || _lookPopup.Visible)
             {
                 ResetInteraction();
@@ -725,10 +900,44 @@ public partial class Arena : Control
 
     private static string DescribeCard(Card card)
     {
-        if (card.IsCreature)
-            return $"Creature  -  {card.ManaCost} mana  -  {card.Power} power\nCivilization: {card.Civilization}";
-        return $"Spell  -  {card.ManaCost} mana\nCivilization: {card.Civilization}";
+        var lines = new List<string>
+        {
+            card.IsCreature
+                ? $"Creature  -  {card.ManaCost} mana  -  {card.Power} power"
+                : $"Spell  -  {card.ManaCost} mana",
+            $"Civilization: {card.Civilization}",
+        };
+        if (!string.IsNullOrEmpty(card.Race))
+            lines.Add($"Race: {card.Race}");
+
+        var keywords = new List<string>();
+        if (card.HasKeyword(Keyword.Blocker)) keywords.Add("Blocker");
+        if (card.HasKeyword(Keyword.ShieldTrigger)) keywords.Add("Shield trigger");
+        if (card.HasKeyword(Keyword.SpeedAttacker)) keywords.Add("Speed attacker");
+        if (card.HasKeyword(Keyword.Slayer)) keywords.Add("Slayer");
+        if (card.HasKeyword(Keyword.PowerAttacker)) keywords.Add("Power attacker");
+        if (card.HasKeyword(Keyword.DoubleBreaker)) keywords.Add("Double breaker");
+        if (card.HasKeyword(Keyword.TripleBreaker)) keywords.Add("Triple breaker");
+        if (keywords.Count > 0)
+            lines.Add(string.Join("  ·  ", keywords));
+
+        lines.AddRange(card.Effects.Select(EffectText).Where(t => t.Length > 0));
+        return string.Join("\n", lines);
     }
+
+    private static string EffectText(CardEffect effect) => effect.Id switch
+    {
+        EffectId.OnPlay_Draw => "When you put this creature into the battle zone, draw a card.",
+        EffectId.OnDestroyed_Draw => "When this creature is destroyed, draw a card.",
+        EffectId.Spell_DestroyPowerAtMost => $"Destroy one of your opponent's creatures that has power {effect.Value} or less.",
+        EffectId.Spell_ReturnToHand => "Return one of your opponent's creatures to its owner's hand.",
+        EffectId.Spell_TapCreature => "Tap one of your opponent's creatures.",
+        EffectId.Spell_UntapOwnCreature => "Untap one of your creatures.",
+        EffectId.Spell_Draw => "Draw a card.",
+        EffectId.Spell_BoostPower => $"Until the end of the turn, one of your creatures gets +{effect.Value} power.",
+        EffectId.PowerAttacker_AttackBoost => $"Power attacker +{effect.Value} (while attacking, this creature has +{effect.Value} power).",
+        _ => "",
+    };
 
     private VBoxContainer BuildZone(Civilization tint, string caption, out Label titleLabel)
     {
@@ -1108,6 +1317,23 @@ public partial class Arena : Control
             return;
         if (_mode == Mode.SelectBlock)
             return;
+        if (_game!.ShieldTriggerWindowActive)
+        {
+            // Trigger interrupts resolve through the popup; hand clicks only inspect.
+            ShowLookPopup(_game.ActivePlayer.Hand[index].Card);
+            return;
+        }
+        if (_mode is Mode.SelectSpellTarget or Mode.SelectShieldTarget)
+        {
+            var cancelled = _mode == Mode.SelectSpellTarget
+                && _selectedHandSide == isBottomSide && _selectedHandIndex == index;
+            ResetInteraction();
+            if (cancelled)
+            {
+                Refresh();
+                return;
+            }
+        }
 
         // Clicking the already-selected card again deselects it (and dismisses the popup).
         if (_mode == Mode.SelectHand && _selectedHandSide == isBottomSide && _selectedHandIndex == index)
@@ -1137,7 +1363,22 @@ public partial class Arena : Control
         });
     }
 
-    private void DoCast(int index) => Safe(() => _game.CastSpell(index));
+    private void DoCast(int index)
+    {
+        var spell = _game!.ActivePlayer.Hand[index].Card;
+        if (spell.Effects.Any(e => e.NeedsTarget))
+        {
+            _selectedHandSide = _game.ActivePlayer == _game.Player1;
+            _selectedHandIndex = index;
+            _spellHandIndex = index;
+            _mode = Mode.SelectSpellTarget;
+            HideHandPopup();
+            Prompt($"Choose a target for {spell.Name}: click a legal creature (either side), or click the card again to cancel.");
+            Refresh();
+            return;
+        }
+        Safe(() => _game.CastSpell(index));
+    }
 
     private void OnBattleClicked(bool isBottomSide, int index)
     {
@@ -1216,6 +1457,41 @@ public partial class Arena : Control
                 }
                 break;
 
+            case Mode.SelectSpellTarget when _spellHandIndex >= 0:
+            {
+                var targetOwner = isBottomSide ? _game.Player1 : _game.Player2;
+                var spell = _game.ActivePlayer.Hand[_spellHandIndex].Card;
+                if (index >= 0 && index < targetOwner.BattleZone.Count
+                    && _game.IsLegalSpellTarget(spell, _game.ActivePlayer, targetOwner, index))
+                {
+                    var hand = _spellHandIndex;
+                    Safe(() => _game.CastSpell(hand, targetOwner, index));
+                }
+                else if (BoardCardAt(isBottomSide, index) is { } spellLook)
+                {
+                    ShowLookPopup(spellLook);
+                }
+                break;
+            }
+
+            case Mode.SelectShieldTarget when _triggerHandIndex >= 0:
+            {
+                var triggerOwner = _game.ShieldTriggerOwner!;
+                var targetOwner = isBottomSide ? _game.Player1 : _game.Player2;
+                var spell = triggerOwner.Hand[_triggerHandIndex].Card;
+                if (index >= 0 && index < targetOwner.BattleZone.Count
+                    && _game.IsLegalSpellTarget(spell, triggerOwner, targetOwner, index))
+                {
+                    var hand = _triggerHandIndex;
+                    Safe(() => _game.PlayShieldTrigger(hand, targetOwner, index));
+                }
+                else if (BoardCardAt(isBottomSide, index) is { } triggerLook)
+                {
+                    ShowLookPopup(triggerLook);
+                }
+                break;
+            }
+
             case Mode.SelectBlock:
                 if (!SideIsActive(isBottomSide) && IsDefenderBlocker(index))
                 {
@@ -1241,6 +1517,14 @@ public partial class Arena : Control
             return;
         if (_awaitingBlockChoice)
             return;
+        if (_game!.ShieldTriggerWindowActive || _mode is Mode.SelectSpellTarget or Mode.SelectShieldTarget)
+        {
+            // Targeting (spell targets / trigger decisions) and trigger interrupts
+            // only allow inspecting mana cards, never toggling them.
+            if (ManaCardAt(isBottomSide, index) is { } idleMana)
+                ShowLookPopup(idleMana);
+            return;
+        }
         if (!CanAct || !SideIsActive(isBottomSide))
         {
             // Clicking mana with no action available (enemy mana, opponent's turn)
@@ -1277,6 +1561,8 @@ public partial class Arena : Control
     private void OnShieldsClicked(bool isBottomSide)
     {
         if (_game is null || _game.IsGameOver)
+            return;
+        if (_game.ShieldTriggerWindowActive)
             return;
 
         if (_awaitingBlockChoice)
@@ -1395,6 +1681,8 @@ public partial class Arena : Control
             Refresh();
             return;
         }
+        if (_game.ShieldTriggerWindowActive)
+            return; // paused while a defender resolves shield triggers
         if (_game.Phase != GamePhase.Main)
             return;
 
@@ -1475,8 +1763,11 @@ public partial class Arena : Control
         _attackerIndex = -1;
         _selectedHandSide = false;
         _selectedHandIndex = -1;
+        _spellHandIndex = -1;
+        _triggerHandIndex = -1;
         HideHandPopup();
         HideLookPopup();
+        HideTriggerPopup();
     }
 
     private void Prompt(string message)
@@ -1499,6 +1790,15 @@ public partial class Arena : Control
             _endTurn.Disabled = true;
             _newDuelBtn.Disabled = false;
             return;
+        }
+
+        // Shield-trigger windows owned by the AI resolve instantly (no popup);
+        // human-owned windows are handled by the decision popup after the zones
+        // are rebuilt below.
+        if (_game.ShieldTriggerWindowActive && _vsAi && _ai is not null
+            && ReferenceEquals(_game.ShieldTriggerOwner, _game.Player2))
+        {
+            _ai.ResolveShieldTriggers(_game);
         }
 
         RecomputeCardSize();
@@ -1533,6 +1833,13 @@ public partial class Arena : Control
         _takeHitBtn.Visible = _awaitingBlockChoice;
 
         WireInteraction();
+        SyncShieldTriggerPopup();
+
+        // After a human-owned trigger window closes mid-AI-turn, hand the drive back.
+        if (!_game.ShieldTriggerWindowActive && !_aiDriving && _vsAi && _ai is not null
+            && ReferenceEquals(_game.ActivePlayer, _ai.Self)
+            && !_game.IsGameOver && _game.Phase == GamePhase.Main)
+            ResumeAi();
     }
 
     private void BuildZoneInto(VBoxContainer box, IReadOnlyList<CardInstance> zone, bool backs, bool artOnly, Label title, CardSizeKind kind)
@@ -1625,7 +1932,8 @@ public partial class Arena : Control
             var side = isBottom;
             if (isHand)
             {
-                var isSelected = _mode == Mode.SelectHand && side == _selectedHandSide && idx == _selectedHandIndex;
+                var isSelected = (_mode == Mode.SelectHand || _mode == Mode.SelectSpellTarget)
+                    && side == _selectedHandSide && idx == _selectedHandIndex;
                 views[i].SetSelected(isSelected);
                 views[i].Clicked += _ => OnHandClicked(side, idx);
             }
@@ -1634,7 +1942,10 @@ public partial class Arena : Control
             else if (isMana)
                 views[i].Clicked += _ => OnManaClicked(side, idx);
             else
+            {
                 views[i].Clicked += _ => OnBattleClicked(side, idx);
+                views[i].SetSelected(IsTargetCandidate(side, idx));
+            }
         }
     }
 
@@ -1644,6 +1955,42 @@ public partial class Arena : Control
             return null;
         var zone = (isBottomSide ? _game.Player1 : _game.Player2).BattleZone;
         return index >= 0 && index < zone.Count ? zone[index].Card : null;
+    }
+
+    /// <summary>
+    /// True while a spell-targeting state is active and the clicked battle-zone card
+    /// is a legal target for the spell being aimed. Highlights make the board read
+    /// as "clickable" instead of forcing the player to remember the targeting rules.
+    /// </summary>
+    private bool IsTargetCandidate(bool isBottomSide, int index)
+    {
+        if (_game is null || index < 0)
+            return false;
+        if (_mode != Mode.SelectSpellTarget && _mode != Mode.SelectShieldTarget)
+            return false;
+
+        Card? spell;
+        Player owner;
+        if (_mode == Mode.SelectShieldTarget)
+        {
+            owner = _game.ShieldTriggerOwner!;
+            spell = _triggerHandIndex >= 0 && _triggerHandIndex < owner.Hand.Count
+                ? owner.Hand[_triggerHandIndex].Card
+                : null;
+        }
+        else
+        {
+            owner = _game.ActivePlayer;
+            spell = _spellHandIndex >= 0 && _spellHandIndex < owner.Hand.Count
+                ? owner.Hand[_spellHandIndex].Card
+                : null;
+        }
+        if (spell is null)
+            return false;
+
+        var targetOwner = isBottomSide ? _game.Player1 : _game.Player2;
+        return index < targetOwner.BattleZone.Count
+            && _game.IsLegalSpellTarget(spell, owner, targetOwner, index);
     }
 
     private Card? ManaCardAt(bool isBottomSide, int index)

@@ -112,6 +112,40 @@ public class ManaAndSummonTests
     }
 
     [Fact]
+    public void ChargeThenSummon_WithSameTurnMana_IsLegal()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        h.PutInHand(h.P1, CardFactory.Creature(1, 1000, Civilization.Fire, "FireMana"));
+        h.PutInHand(h.P1, CardFactory.Creature(1, 2000, Civilization.Fire, "FireBeast"));
+
+        // The very first mana charge of the game is usable for a summon right away.
+        h.Game.PlayManaToManaZone(0);
+        var instance = h.Game.SummonCreature(0);
+
+        Assert.Single(h.P1.BattleZone);
+        Assert.Same(instance, h.P1.BattleZone[0]);
+        Assert.True(instance.IsSummoningSick);
+        Assert.True(h.P1.ManaZone[0].IsTapped); // the just-charged mana was tapped to pay
+    }
+
+    [Fact]
+    public void ChargeThenCastSpell_WithSameTurnMana_IsLegal()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        h.PutInHand(h.P1, CardFactory.Creature(1, 1000, Civilization.Water, "WaterMana"));
+        h.PutInHand(h.P1, CardFactory.Spell(1, Civilization.Water, "WaterSpell"));
+
+        h.Game.PlayManaToManaZone(0);
+        var instance = h.Game.CastSpell(0);
+
+        Assert.Single(h.P1.Graveyard);
+        Assert.Same(instance, h.P1.Graveyard[0]);
+        Assert.True(h.P1.ManaZone[0].IsTapped);
+    }
+
+    [Fact]
     public void ManuallyTappingMana_ReducesAvailableMana_AndUntapsNextTurn()
     {
         var h = GameHarness.AtMainPhase();

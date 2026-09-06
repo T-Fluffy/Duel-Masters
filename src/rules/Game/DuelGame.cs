@@ -16,6 +16,8 @@ public sealed class DuelGame
     private int _activeIndex;
     private bool _manaChargedThisTurn;
     private bool _hasAttackedThisTurn;
+    private readonly List<CardInstance> _pendingShieldTriggers = new();
+    private Player? _shieldTriggerOwner;
 
     public DuelGame(Player player1, Player player2, Random? rng = null)
     {
@@ -47,6 +49,19 @@ public sealed class DuelGame
     public Player? Winner { get; private set; }
 
     public bool IsGameOver => Winner is not null;
+
+    /// <summary>
+    /// True while a broken shield with the Shield Trigger keyword waits to be played
+    /// for free (or declined) by <see cref="ShieldTriggerOwner"/>. No other action may
+    /// take place until the window is resolved.
+    /// </summary>
+    public bool ShieldTriggerWindowActive => _pendingShieldTriggers.Count > 0;
+
+    /// <summary>The player allowed to play the pending shield triggers (the defender).</summary>
+    public Player? ShieldTriggerOwner => _shieldTriggerOwner;
+
+    /// <summary>The broken Shield Trigger cards awaiting a free-play decision, in break order.</summary>
+    public IReadOnlyList<CardInstance> PendingShieldTriggers => _pendingShieldTriggers;
 
     // ------------------------------------------------------------------ setup
 
@@ -100,6 +115,7 @@ public sealed class DuelGame
         foreach (var c in active.BattleZone) c.IsTapped = false;
         // Creatures become ready at the start of their owner's turn.
         foreach (var c in active.BattleZone) c.IsSummoningSick = false;
+        foreach (var c in active.BattleZone) c.TempPower = 0;
         _manaChargedThisTurn = false;
         _hasAttackedThisTurn = false;
 
@@ -134,18 +150,21 @@ public sealed class DuelGame
     // -------------------------------------------------- main phase actions
 
     /// <summary>
-    /// Deposit one hand card into the mana zone (tapped). A player may charge at
-    /// most one card per turn by default; extra charges only come from card effects
-    /// (Mana Acceleration) during a later phase.
+    /// Deposit one hand card into the mana zone. Charged mana is available
+    /// immediately (Duel Masters rule: only multicolored cards enter the mana zone
+    /// tapped), so the freshly charged card can pay for a summon or spell in this
+    /// same main phase - including the very first mana charge of the game. A player
+    /// may charge at most one card per turn by default; extra charges only come from
+    /// card effects (Mana Acceleration) during a later phase.
     /// </summary>
     public void PlayManaToManaZone(int handIndex)
     {
         EnsureTurnPhase(GamePhase.Main);
+        EnsureTriggerWindowClosed();
         if (_manaChargedThisTurn)
             throw new RuleViolationException("You may only charge one mana card per turn.");
         RequireHandCard(ActivePlayer, handIndex);
         var card = TakeFromHand(ActivePlayer.Hand, handIndex);
-        card.IsTapped = true;
         card.Zone = Zone.ManaZone;
         ActivePlayer.ManaZone.Add(card);
         _manaChargedThisTurn = true;
@@ -176,6 +195,7 @@ public sealed class DuelGame
     public CardInstance SummonCreature(int handIndex)
     {
         EnsureTurnPhase(GamePhase.Main);
+        EnsureTriggerWindowClosed();
         if (_hasAttackedThisTurn)
             throw new RuleViolationException("You cannot summon a creature after a creature has attacked.");
         var active = ActivePlayer;
@@ -190,30 +210,56 @@ public sealed class DuelGame
         instance.IsSummoningSick = !card.Card.HasKeyword(Keyword.SpeedAttacker);
         active.Hand.RemoveAt(handIndex);
         active.BattleZone.Add(instance);
+        ResolveBattleZoneEntry(instance);
         return instance;
     }
 
     /// <summary>
     /// Cast a spell from the active player's hand (paid and then sent to the
-    /// graveyard). This offline milestone resolves no named effects; that is the
-    /// seam where scriptEffectId handlers plug in during a later phase.
+    /// graveyard), resolving its effects. Effects that need a creature target fizzle
+    /// when the caller supplies none (the spell still resolves); use
+    /// <see cref="CastSpell(int, Player, int)"/> to name a target.
     /// </summary>
     public CardInstance CastSpell(int handIndex)
     {
+        return CastSpellInternal(ActivePlayer, handIndex, targetOwner: null, targetIndex: null);
+    }
+
+    /// <summary>
+    /// Cast a targeted spell, resolving its first targeting effect against the given
+    /// battle-zone creature. Throws if that creature is not a legal target.
+    /// </summary>
+    public CardInstance CastSpell(int handIndex, Player targetOwner, int targetIndex)
+    {
+        return CastSpellInternal(ActivePlayer, handIndex, targetOwner, targetIndex);
+    }
+
+    private CardInstance CastSpellInternal(
+        Player actor,
+        int handIndex,
+        Player? targetOwner,
+        int? targetIndex)
+    {
         EnsureTurnPhase(GamePhase.Main);
+        EnsureTriggerWindowClosed();
         if (_hasAttackedThisTurn)
             throw new RuleViolationException("You cannot cast a spell after a creature has attacked.");
-        var active = ActivePlayer;
-        RequireHandCard(active, handIndex);
-        var card = active.Hand[handIndex];
+        if (!ReferenceEquals(actor, ActivePlayer))
+            throw new RuleViolationException("Only the active player may cast a spell.");
+        RequireHandCard(actor, handIndex);
+        var card = actor.Hand[handIndex];
         if (card.Card.CardType != CardType.Spell)
             throw new RuleViolationException($"'{card.Card.Name}' is not a spell.");
 
-        PayManaFor(active, card.Card);
-        var instance = active.Hand[handIndex];
+        if (targetOwner is not null && targetIndex is int idx
+            && !IsLegalSpellTarget(card.Card, actor, targetOwner, idx))
+            throw new RuleViolationException($"'{card.Card.Name}' cannot target that creature.");
+
+        PayManaFor(actor, card.Card);
+        var instance = TakeFromHand(actor.Hand, handIndex);
         instance.Zone = Zone.Graveyard;
-        active.Hand.RemoveAt(handIndex);
-        active.Graveyard.Add(instance);
+        actor.Graveyard.Add(instance);
+        ResolveSpellEffects(actor, instance, targetOwner, targetIndex);
         return instance;
     }
 
@@ -235,6 +281,7 @@ public sealed class DuelGame
     public void AttackPlayer(int attackerIndex, Player? blockerOwner = null, int? blockerIndex = null)
     {
         EnsureMain();
+        EnsureTriggerWindowClosed();
         var active = ActivePlayer;
         var defender = Opponent;
         var attacker = RequireReadyAttacker(active, attackerIndex);
@@ -270,6 +317,7 @@ public sealed class DuelGame
     public void AttackCreature(int attackerIndex, int targetIndex)
     {
         EnsureMain();
+        EnsureTriggerWindowClosed();
         var active = ActivePlayer;
         var defender = Opponent;
         var attacker = RequireReadyAttacker(active, attackerIndex);
@@ -287,16 +335,20 @@ public sealed class DuelGame
 
         Battle(attacker, target);
     }
-
-    /// <summary>
+/// <summary>
     /// Resolve a battle between two creatures: the higher power survives and the
     /// loser is sent to its owner's graveyard; equal power destroys both. The
     /// attacking creature is tapped, and a blocker used to intercept is tapped.
+    ///
+    /// A defender with the Slayer keyword destroys the attacker even when it loses
+    /// the battle (both die). While attacking, Power Attacker modifiers add to the
+    /// attacker's power.
     /// </summary>
     private void Battle(CardInstance attacker, CardInstance defender)
     {
-        var aPower = attacker.Card.Power;
-        var dPower = defender.Card.Power;
+        var aPower = CurrentPower(attacker) + AttackPowerBoost(attacker);
+        var dPower = CurrentPower(defender);
+
         if (aPower > dPower)
             DestroyCreature(defender);
         else if (dPower > aPower)
@@ -306,6 +358,11 @@ public sealed class DuelGame
             DestroyCreature(defender);
             DestroyCreature(attacker);
         }
+
+        // Slayer: a creature that blocks (or is attacked directly) with Slayer takes
+        // the attacker down with it, even when it would lose the power battle.
+        if (defender.Card.HasKeyword(Keyword.Slayer))
+            DestroyCreature(attacker);
     }
 
     // ------------------------------------------------------------ shields
@@ -320,20 +377,88 @@ public sealed class DuelGame
             defender.Shields.RemoveAt(0);
             broken.Add(shield);
         }
-        ResolveShieldTriggers(defender, broken);
+        OpenShieldTriggerWindow(defender, broken);
         return broken;
     }
 
     /// <summary>
-    /// Every broken shield is added to the defender's hand. If it carries
-    /// ShieldTrigger, its owner may instead play it for free immediately (the
-    /// interrupt window) - modelled in this milestone by simply keeping it in hand
-    /// for the player to play at no cost; executing the named effect is a later phase.
+    /// Every broken shield is added to the defender's hand. Shields carrying the
+    /// Shield Trigger keyword additionally open the free-play interrupt window:
+    /// their owner may play them immediately at no cost (see
+    /// <see cref="PlayShieldTrigger(int)"/>) or let them stay in hand.
     /// </summary>
-    private void ResolveShieldTriggers(Player defender, List<Card> broken)
+    private void OpenShieldTriggerWindow(Player defender, List<Card> broken)
     {
         foreach (var shield in broken)
-            defender.Hand.Add(new CardInstance(shield, defender) { Zone = Zone.Hand });
+        {
+            var instance = new CardInstance(shield, defender) { Zone = Zone.Hand };
+            defender.Hand.Add(instance);
+            if (shield.HasKeyword(Keyword.ShieldTrigger))
+                _pendingShieldTriggers.Add(instance);
+        }
+        _shieldTriggerOwner = _pendingShieldTriggers.Count > 0 ? defender : null;
+    }
+
+    /// <summary>
+    /// Play one pending Shield Trigger card for free as its owner. If it is a
+    /// creature it enters the battle zone (summoning-sick unless it has Speed
+    /// Attacker); a spell resolves its effects (targeted effects fizzle with no
+    /// target - use <see cref="PlayShieldTrigger(int, Player, int)"/> to name one).
+    /// </summary>
+    public CardInstance PlayShieldTrigger(int handIndex)
+    {
+        return PlayShieldTriggerInternal(handIndex, targetOwner: null, targetIndex: null);
+    }
+
+    /// <summary>Play a pending Shield Trigger spell targeting a specific creature.</summary>
+    public CardInstance PlayShieldTrigger(int handIndex, Player targetOwner, int targetIndex)
+    {
+        return PlayShieldTriggerInternal(handIndex, targetOwner, targetIndex);
+    }
+
+    private CardInstance PlayShieldTriggerInternal(int handIndex, Player? targetOwner, int? targetIndex)
+    {
+        if (!ShieldTriggerWindowActive)
+            throw new RuleViolationException("There are no Shield Trigger cards waiting to be played.");
+        var owner = _shieldTriggerOwner!;
+        if (handIndex < 0 || handIndex >= owner.Hand.Count)
+            throw new RuleViolationException("The hand index is out of range.");
+        var instance = owner.Hand[handIndex];
+        if (!_pendingShieldTriggers.Contains(instance))
+            throw new RuleViolationException("Only a broken Shield Trigger card may be played for free.");
+
+        if (instance.Card.CardType == CardType.Spell
+            && targetOwner is not null && targetIndex is int idx
+            && !IsLegalSpellTarget(instance.Card, owner, targetOwner, idx))
+            throw new RuleViolationException($"'{instance.Card.Name}' cannot target that creature.");
+
+        _pendingShieldTriggers.Remove(instance);
+        if (_pendingShieldTriggers.Count == 0)
+            _shieldTriggerOwner = null;
+
+        if (instance.Card.IsCreature)
+        {
+            owner.Hand.Remove(instance);
+            instance.Zone = Zone.BattleZone;
+            instance.IsTapped = false;
+            instance.IsSummoningSick = !instance.Card.HasKeyword(Keyword.SpeedAttacker);
+            owner.BattleZone.Add(instance);
+            ResolveBattleZoneEntry(instance);
+            return instance;
+        }
+
+        owner.Hand.Remove(instance);
+        instance.Zone = Zone.Graveyard;
+        owner.Graveyard.Add(instance);
+        ResolveSpellEffects(owner, instance, targetOwner, targetIndex);
+        return instance;
+    }
+
+    /// <summary>Leave the remaining pending Shield Trigger cards in hand and close the window.</summary>
+    public void DeclineShieldTriggers()
+    {
+        _pendingShieldTriggers.Clear();
+        _shieldTriggerOwner = null;
     }
 
     // ------------------------------------------------------------ helpers
@@ -400,13 +525,159 @@ public sealed class DuelGame
 
     private void DestroyCreature(CardInstance c)
     {
-        var owner = c.Owner
-            ?? throw new RuleViolationException($"'{c.Card.Name}' has no recorded owner.");
+        var owner = c.Owner;
+        if (owner is null || !owner.BattleZone.Contains(c))
+            return; // already destroyed this resolution (e.g. a Slayer double-kill)
         owner.Graveyard.Add(c);
         c.Zone = Zone.Graveyard;
         c.IsTapped = false;
         c.IsSummoningSick = false;
         owner.BattleZone.Remove(c);
+        ResolveDestroyedTriggers(c);
+    }
+
+    private void ResolveDestroyedTriggers(CardInstance c)
+    {
+        if (c.Card.EffectOf(EffectId.OnDestroyed_Draw) is { } e)
+            DrawToHand(c.Owner!, e.Value);
+    }
+
+    private void ResolveBattleZoneEntry(CardInstance instance)
+    {
+        if (instance.Card.EffectOf(EffectId.OnPlay_Draw) is { } e)
+            DrawToHand(instance.Owner!, e.Value);
+    }
+
+    /// <summary>
+    /// Run a spell's effects for <paramref name="actor"/> (the player playing the
+    /// spell - the active player normally, the trigger owner inside a trigger
+    /// window). Targeting effects resolve against <paramref name="targetOwner"/>'s
+    /// battle zone; with no target supplied they fizzle harmlessly.
+    /// </summary>
+    private void ResolveSpellEffects(Player actor, CardInstance spell, Player? targetOwner, int? targetIndex)
+    {
+        foreach (var effect in spell.Card.Effects)
+        {
+            switch (effect.Id)
+            {
+                case EffectId.Spell_Draw:
+                    DrawToHand(actor, effect.Value);
+                    break;
+
+                case EffectId.Spell_DestroyPowerAtMost:
+                case EffectId.Spell_ReturnToHand:
+                case EffectId.Spell_TapCreature:
+                case EffectId.Spell_UntapOwnCreature:
+                case EffectId.Spell_BoostPower:
+                {
+                    var target = ResolveSpellTarget(effect, actor, targetOwner, targetIndex);
+                    if (target is null)
+                        break;
+                    ApplyTargetedEffect(effect, target);
+                    break;
+                }
+            }
+        }
+    }
+
+    private CardInstance? ResolveSpellTarget(CardEffect effect, Player actor, Player? targetOwner, int? targetIndex)
+    {
+        if (!effect.NeedsTarget)
+            return null;
+        if (targetOwner is null || targetIndex is not int index)
+            return null; // no target supplied -> the spell resolves without effect
+        if (index < 0 || index >= targetOwner.BattleZone.Count)
+            throw new RuleViolationException("The target index is out of range of the battle zone.");
+        var target = targetOwner.BattleZone[index];
+        if (!target.Card.IsCreature)
+            throw new RuleViolationException($"'{target.Card.Name}' is not a creature and cannot be targeted.");
+
+        switch (effect.Target)
+        {
+            case EffectTargetScope.OwnCreature:
+                if (!ReferenceEquals(targetOwner, actor))
+                    throw new RuleViolationException("You may only target one of your own creatures.");
+                break;
+            case EffectTargetScope.OpponentCreature:
+                if (ReferenceEquals(targetOwner, actor))
+                    throw new RuleViolationException("You may only target one of your opponent's creatures.");
+                break;
+        }
+
+        if (effect.Id == EffectId.Spell_DestroyPowerAtMost && CurrentPower(target) > effect.Value)
+            throw new RuleViolationException(
+                $"'{target.Card.Name}' has power greater than {effect.Value} and cannot be destroyed.");
+        return target;
+    }
+
+    /// <summary>True when this creature is a legal target for the card's first targeting effect (normal cast).</summary>
+    public bool IsLegalSpellTarget(Card spell, Player targetOwner, int targetIndex)
+        => IsLegalSpellTarget(spell, ActivePlayer, targetOwner, targetIndex);
+
+    /// <summary>
+    /// True when this creature is a legal target for the card's first targeting
+    /// effect, relative to <paramref name="actor"/> (the player playing the card).
+    /// </summary>
+    public bool IsLegalSpellTarget(Card spell, Player actor, Player targetOwner, int targetIndex)
+    {
+        var effect = spell.Effects.FirstOrDefault(e => e.NeedsTarget);
+        if (effect is null)
+            return false;
+        if (targetIndex < 0 || targetIndex >= targetOwner.BattleZone.Count)
+            return false;
+        var target = targetOwner.BattleZone[targetIndex];
+        if (!target.Card.IsCreature)
+            return false;
+        if (effect.Id == EffectId.Spell_DestroyPowerAtMost && CurrentPower(target) > effect.Value)
+            return false;
+        return effect.Target switch
+        {
+            EffectTargetScope.OwnCreature => ReferenceEquals(targetOwner, actor),
+            EffectTargetScope.OpponentCreature => ReferenceEquals(targetOwner, OpponentOf(actor)),
+            _ => true,
+        };
+    }
+
+    private Player OpponentOf(Player p) => ReferenceEquals(p, Player1) ? Player2 : Player1;
+
+    private void ApplyTargetedEffect(CardEffect effect, CardInstance target)
+    {
+        switch (effect.Id)
+        {
+            case EffectId.Spell_DestroyPowerAtMost:
+                DestroyCreature(target);
+                break;
+            case EffectId.Spell_ReturnToHand:
+            {
+                var owner = target.Owner!;
+                owner.BattleZone.Remove(target);
+                target.Zone = Zone.Hand;
+                target.IsTapped = false;
+                target.IsSummoningSick = false;
+                owner.Hand.Add(target);
+                break;
+            }
+            case EffectId.Spell_TapCreature:
+                target.Tap();
+                break;
+            case EffectId.Spell_UntapOwnCreature:
+                target.Untap();
+                break;
+            case EffectId.Spell_BoostPower:
+                target.TempPower += effect.Value;
+                break;
+        }
+    }
+
+    private static int CurrentPower(CardInstance c) => c.Card.Power + c.TempPower;
+
+    private static int AttackPowerBoost(CardInstance instance)
+    {
+        var sum = 0;
+        foreach (var e in instance.Card.Effects)
+            if (e.Id == EffectId.PowerAttacker_AttackBoost)
+                sum += e.Value;
+        return sum;
     }
 
     private static void RequireHandCard(Player player, int index)
@@ -441,6 +712,12 @@ public sealed class DuelGame
     }
 
     private void EnsureMain() => EnsureTurnPhase(GamePhase.Main);
+
+    private void EnsureTriggerWindowClosed()
+    {
+        if (ShieldTriggerWindowActive)
+            throw new RuleViolationException("Resolve the pending Shield Trigger cards (or decline them) before taking another action.");
+    }
 
     private void EnsureTurnPhase(GamePhase required)
     {

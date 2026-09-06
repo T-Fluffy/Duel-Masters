@@ -27,6 +27,12 @@ public sealed class CardInstance
     /// <summary>True if this creature was summoned this turn and is still sick (can't attack).</summary>
     public bool IsSummoningSick { get; internal set; }
 
+    /// <summary>
+    /// Temporary power modifier applied by card effects, cleared at the start of its
+    /// owner's turn. Not part of the printed power (used in combat resolution).
+    /// </summary>
+    public int TempPower { get; internal set; }
+
     public void Tap() => IsTapped = true;
     public void Untap() => IsTapped = false;
 

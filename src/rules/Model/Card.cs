@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace DuelMasters.Domain;
 
@@ -18,7 +19,8 @@ public sealed class Card
         int manaCost,
         int power = 0,
         string race = "",
-        IEnumerable<Keyword> keywords = null!)
+        IEnumerable<Keyword> keywords = null!,
+        IEnumerable<CardEffect> effects = null!)
     {
         Id = id ?? throw new ArgumentNullException(nameof(id));
         Name = name ?? throw new ArgumentNullException(nameof(name));
@@ -28,6 +30,7 @@ public sealed class Card
         Power = power;
         Race = race ?? "";
         Keywords = keywords as IReadOnlySet<Keyword> ?? new HashSet<Keyword>(keywords ?? Array.Empty<Keyword>());
+        Effects = effects as IReadOnlyList<CardEffect> ?? (effects ?? Array.Empty<CardEffect>()).ToArray();
     }
 
     public string Id { get; }
@@ -41,7 +44,12 @@ public sealed class Card
     /// <summary>Keyword flags (blocker, shield trigger, breakers, ...).</summary>
     public IReadOnlySet<Keyword> Keywords { get; }
 
+    /// <summary>Named game-rule effects this card resolves (empty for vanilla cards).</summary>
+    public IReadOnlyList<CardEffect> Effects { get; }
+
     public bool HasKeyword(Keyword k) => Keywords.Contains(k);
+
+    public CardEffect? EffectOf(EffectId id) => Effects.FirstOrDefault(e => e.Id == id);
 
     public bool IsCreature => CardType == CardType.Creature || CardType == CardType.EvolutionCreature;
 
