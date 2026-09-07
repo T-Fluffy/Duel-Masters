@@ -52,7 +52,10 @@ game, built with:
 - **Skilled AI opponent** — evolutions, effect activations, direct attacks and
   blocks via trigger handling; played in hotseat or guest-vs-AI.
 - **Online duels** — server-authoritative SignalR matches; the status panel now
-  shows real player names and the winner.
+  shows real player names and the winner. Hosts and joiners can each bring one of
+  their **saved decks** from the deck builder (or fall back to a random deck),
+  and the live board supports evolution, blocking and shield triggers exactly like
+  the hotseat arena.
 
 Game rules and architecture are specified in the design documents bundled in the
 repo root (`Duel_Masters_TCG_Engine_GDD.md`, `Duel_Masters_Strategy_and_Codebase.md`).

@@ -31,6 +31,10 @@ public sealed class PlayerState
     [JsonPropertyName("graveyardCount")]
     public int GraveyardCount { get; set; }
 
+    /// <summary>The player's graveyard cards (public knowledge, shown face-up).</summary>
+    [JsonPropertyName("graveyard")]
+    public List<CardState> Graveyard { get; set; } = new();
+
     [JsonPropertyName("shieldCount")]
     public int ShieldCount { get; set; }
 
@@ -69,6 +73,9 @@ public sealed class PlayerState
 
         for (var i = 0; i < player.BattleZone.Count; i++)
             state.BattleZone.Add(CardState.FromInstance(player.BattleZone[i], BuildId(side, "B", i)));
+
+        for (var i = 0; i < player.Graveyard.Count; i++)
+            state.Graveyard.Add(CardState.FromInstance(player.Graveyard[i], BuildId(side, "G", i)));
 
         return state;
     }

@@ -1,10 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using DuelMasters.Domain;
 using DuelMasters.Domain.Networking;
 using DuelMasters.Gameplay.CardView;
 using DuelMasters.Networking;
 using DuelMasters.Resources;
+using DuelMasters.UI;
 using DuelMasters.UI.Settings;
 using Godot;
 
@@ -13,18 +15,35 @@ namespace DuelMasters.Scenes.NetworkArena;
 /// <summary>
 /// Phase 4: rendered view of the server-authoritative duel. The rules engine runs
 /// only on the backend; this scene draws the viewer-relative <see cref="DuelGameState"/>
-/// pushed by the hub and forwards player intents (mana, summon, cast, attacks, turns)
-/// via <see cref="NetworkClient"/>. No local <c>DuelGame</c> exists here.
+/// pushed by the hub and forwards player intents (mana, summon, cast, evolve, attacks,
+/// blocking, shield triggers, turn flow) via <see cref="NetworkClient"/>. No local
+/// <c>DuelGame</c> exists here - legality hints are recomputed from the card catalog.
 /// </summary>
 public partial class NetworkArena : Control
 {
-    private enum Mode { Idle, SelectHand, SelectAttacker }
+    private enum Mode
+    {
+        Idle,
+        SelectAttacker,
+        SelectBlock,
+        SelectSpellTarget,
+        SelectShieldTarget,
+        SelectSummonTarget,
+        SelectEvolveTarget,
+        EvolveBase,
+    }
 
     private DuelGameState _state = null!;
     private readonly Dictionary<string, string> _artByCardId = new();
-    private readonly Dictionary<string, DuelMasters.Domain.Card> _cardsByCardId = new();
+    private readonly Dictionary<string, Card> _cardsByCardId = new();
     private Mode _mode = Mode.Idle;
     private int _attackerIndex = -1;
+    private int _spellHandIndex = -1;
+    private int _triggerHandIndex = -1;
+    private int _summonHandIndex = -1;
+    private int _evolveHandIndex = -1;
+    private string? _pendingEvolveTargetSide;
+    private int _pendingEvolveTargetIndex = -1;
 
     private VBoxContainer _oppHand = null!;
     private VBoxContainer _oppShields = null!;
@@ -34,12 +53,21 @@ public partial class NetworkArena : Control
     private VBoxContainer _myBattle = null!;
     private VBoxContainer _myMana = null!;
     private VBoxContainer _myHand = null!;
+    private Button _oppGrave = null!;
+    private Button _myGrave = null!;
 
     private Label _status = null!;
-    private Label _grave = null!;
     private Label _prompt = null!;
     private HBoxContainer _actionBar = null!;
     private Button _endTurn = null!;
+
+    private Control _overlay = null!;
+    private ColorRect _overlayDim = null!;
+    private CenterContainer _overlayCenter = null!;
+    private PanelContainer _overlayPanel = null!;
+    private VBoxContainer _overlayBox = null!;
+    private enum OverlayKind { None, Look, Trigger }
+    private OverlayKind _overlayKind = OverlayKind.None;
 
     public override void _Ready()
     {
@@ -76,6 +104,26 @@ public partial class NetworkArena : Control
                 NetworkClient.StartTurn();
             else if (IsPhase("Draw"))
                 NetworkClient.Draw();
+        }
+    }
+
+    public override void _UnhandledInput(InputEvent @event)
+    {
+        if (@event is InputEventKey { Pressed: true, Keycode: Key.Escape }
+            or InputEventMouseButton { ButtonIndex: MouseButton.Right, Pressed: true })
+        {
+            // The defender must actively choose a blocker or press Pass - Esc would
+            // strand the pending attack with no way back to that choice.
+            if (_state is { AttackPending: true } && !_state.YourTurn)
+                return;
+            // Choosing a Shield Trigger target: cancelling leaves the triggers in hand.
+            if (_mode == Mode.SelectShieldTarget)
+            {
+                NetworkClient.DeclineShieldTriggers();
+                ResetInteraction();
+                return;
+            }
+            CancelInteraction();
         }
     }
 
@@ -123,8 +171,16 @@ public partial class NetworkArena : Control
         myRow.AddChild(_myHand);
         root.AddChild(myRow);
 
-        _grave = new Label { Text = "" };
-        root.AddChild(_grave);
+        var graveRow = new HBoxContainer();
+        graveRow.AddThemeConstantOverride("separation", 12);
+        _myGrave = new Button { Text = "My graveyard (0)" };
+        _myGrave.Pressed += () => ShowGrave(Me());
+        _oppGrave = new Button { Text = "Opponent's graveyard (0)" };
+        _oppGrave.Pressed += () => ShowGrave(Opp());
+        graveRow.AddChild(_myGrave);
+        graveRow.AddChild(_oppGrave);
+        graveRow.AddChild(new Control { SizeFlagsHorizontal = SizeFlags.ExpandFill });
+        root.AddChild(graveRow);
 
         _prompt = new Label { Text = "", HorizontalAlignment = HorizontalAlignment.Center };
         _prompt.AddThemeFontSizeOverride("font_size", 16);
@@ -144,6 +200,7 @@ public partial class NetworkArena : Control
         footer.AddChild(leave);
         root.AddChild(footer);
 
+        BuildOverlay();
         AddChild(new SceneOptionsMenu { ShowBackToMenu = true });
     }
 
@@ -160,6 +217,64 @@ public partial class NetworkArena : Control
         flow.AddThemeConstantOverride("v_separation", 8);
         box.AddChild(flow);
         return box;
+    }
+
+    private void BuildOverlay()
+    {
+        _overlay = new Control { Visible = false };
+        _overlay.SetAnchorsPreset(LayoutPreset.FullRect);
+        AddChild(_overlay);
+
+        _overlayDim = new ColorRect { Color = new Color(0.01f, 0.02f, 0.04f, 0.88f) };
+        _overlayDim.SetAnchorsPreset(LayoutPreset.FullRect);
+        _overlay.AddChild(_overlayDim);
+
+        var catcher = new Control { MouseFilter = MouseFilterEnum.Stop };
+        catcher.SetAnchorsPreset(LayoutPreset.FullRect);
+        catcher.GuiInput += @event =>
+        {
+            if (@event is InputEventMouseButton { ButtonIndex: MouseButton.Left, Pressed: true }
+                && _overlayKind == OverlayKind.Look)
+                HideOverlay();
+        };
+        _overlay.AddChild(catcher);
+
+        _overlayCenter = new CenterContainer { MouseFilter = MouseFilterEnum.Ignore };
+        _overlayCenter.SetAnchorsPreset(LayoutPreset.FullRect);
+        _overlay.AddChild(_overlayCenter);
+
+        _overlayPanel = new PanelContainer();
+        _overlayPanel.AddThemeStyleboxOverride("panel", UiStyles.ModalCard());
+        _overlayCenter.AddChild(_overlayPanel);
+
+        _overlayBox = new VBoxContainer();
+        _overlayBox.AddThemeConstantOverride("separation", 8);
+        _overlayBox.CustomMinimumSize = new Vector2(260, 0);
+        _overlayPanel.AddChild(_overlayBox);
+    }
+
+    private void HideOverlay()
+    {
+        _overlayKind = OverlayKind.None;
+        _overlay.Visible = false;
+    }
+
+    private void SetOverlayBoxTitle(string text)
+    {
+        var title = new Label { Text = text, AutowrapMode = TextServer.AutowrapMode.WordSmart };
+        title.AddThemeFontSizeOverride("font_size", 16);
+        title.AddThemeColorOverride("font_color", UiStyles.AccentText);
+        title.HorizontalAlignment = HorizontalAlignment.Center;
+        _overlayBox.AddChild(title);
+    }
+
+    private void SetOverlayBoxNote(string text)
+    {
+        var note = new Label { Text = text, AutowrapMode = TextServer.AutowrapMode.WordSmart };
+        note.AddThemeFontSizeOverride("font_size", 12);
+        note.AddThemeColorOverride("font_color", UiStyles.MutedText);
+        note.HorizontalAlignment = HorizontalAlignment.Center;
+        _overlayBox.AddChild(note);
     }
 
     // --------------------------------------------------------------- actions
@@ -182,12 +297,24 @@ public partial class NetworkArena : Control
 
     private void OnHandClicked(int index)
     {
-        if (_state is null || !_state.YourTurn || !IsPhase("Main") || _state.IsGameOver)
+        if (_state is null || _state.IsGameOver)
+            return;
+
+        // Shield-trigger window interrupts everything: clicking a hand card only inspects.
+        if (TriggerWindowIsMine)
         {
-            Notice("You can only play cards during your Main phase.");
+            ShowLookAt(MyHandCard(index));
             return;
         }
-        _mode = Mode.SelectHand;
+
+        if (!_state.YourTurn || !IsPhase("Main"))
+        {
+            if (MyHandCard(index) is { } handCard)
+                ShowLookAt(handCard);
+            return;
+        }
+
+        _mode = Mode.Idle;
         BuildHandActions(index);
     }
 
@@ -197,67 +324,323 @@ public partial class NetworkArena : Control
         var hand = Me().Hand;
         if (handIndex < 0 || handIndex >= hand.Count)
             return;
-        var card = hand[handIndex];
+        var cardState = hand[handIndex];
+        var card = CardFor(cardState);
 
-        if (_state.CanPlayMana)
+        AddAction($"Look: {card?.Name ?? cardState.Name}", () => ShowLookAt(cardState));
+
+        if (_state.CanPlayMana && card is { IsEvolution: false })
             AddAction($"Charge Mana: {card.Name}", () => NetworkClient.PlayMana(handIndex));
 
-        if (card.CardType == "Creature" && _state.CanSummonOrCast)
+        if (!_state.CanSummonOrCast)
+            return;
+
+        if (card is null)
+        {
+            if (cardState.CardType == "Creature")
+                AddAction("Summon", () => NetworkClient.SummonCreature(handIndex));
+            else if (cardState.CardType == "Spell")
+                AddAction("Cast spell", () => NetworkClient.CastSpell(handIndex));
+            return;
+        }
+
+        if (card.IsEvolution)
+        {
+            if (HasMatchingBase(card))
+                AddAction($"Evolve onto a {card.EvolutionOf} creature", () => SelectEvolveBase(handIndex));
+            if (DuelGame.HasOnPlayTargetChoice(card) && AnyLegalOnPlayTarget(card))
+                AddAction("Evolve & use ability", () => SelectEvolveTarget(handIndex));
+            SetOverlayAdhocNote(cardState, $"Free - place it on top of one of your {card.EvolutionOf} creatures.");
+        }
+        else if (card.IsCreature)
+        {
             AddAction($"Summon: {card.Name}", () => NetworkClient.SummonCreature(handIndex));
-        else if (card.CardType == "Spell" && _state.CanSummonOrCast)
-            AddAction($"Cast: {card.Name}", () => NetworkClient.CastSpell(handIndex));
+            if (DuelGame.HasOnPlayTargetChoice(card) && AnyLegalOnPlayTarget(card))
+                AddAction("Summon & use ability", () => SelectSummonTarget(handIndex));
+        }
+        else if (card.CardType == CardType.Spell)
+        {
+            if (card.Effects.Any(e => e.NeedsTarget) && AnyLegalSpellTarget(card))
+                AddAction($"Cast & choose target: {card.Name}", () => SelectSpellTarget(handIndex));
+            else
+                AddAction($"Cast: {card.Name}", () => NetworkClient.CastSpell(handIndex));
+        }
+    }
+
+    private void SetOverlayAdhocNote(CardState _, string text)
+    {
+        // Keep a compact hint inside the action bar area via the prompt label.
+        var note = new Label { Text = text, AutowrapMode = TextServer.AutowrapMode.WordSmart };
+        note.AddThemeFontSizeOverride("font_size", 11);
+        note.AddThemeColorOverride("font_color", UiStyles.MutedText);
+        note.CustomMinimumSize = new Vector2(180, 0);
+        _actionBar.AddChild(note);
+    }
+
+    private void SelectEvolveBase(int handIndex)
+    {
+        _mode = Mode.EvolveBase;
+        _evolveHandIndex = handIndex;
+        _pendingEvolveTargetSide = null;
+        _pendingEvolveTargetIndex = -1;
+        ClearActions();
+        Prompt($"Evolve onto a matching-race creature: click one of your creatures, or press Esc to cancel.");
+    }
+
+    private void SelectEvolveTarget(int handIndex)
+    {
+        _mode = Mode.SelectEvolveTarget;
+        _evolveHandIndex = handIndex;
+        ClearActions();
+        Prompt("Choose an on-play target for the evolution: click a legal creature, or press Esc to cancel.");
+    }
+
+    private void SelectSummonTarget(int handIndex)
+    {
+        _mode = Mode.SelectSummonTarget;
+        _summonHandIndex = handIndex;
+        ClearActions();
+        Prompt("Choose an on-play target for the creature: click a legal creature, or press Esc to cancel.");
+    }
+
+    private void SelectSpellTarget(int handIndex)
+    {
+        _mode = Mode.SelectSpellTarget;
+        _spellHandIndex = handIndex;
+        ClearActions();
+        Prompt("Choose a target for the spell: click a legal creature, or press Esc to cancel.");
     }
 
     private void OnBattleClicked(bool mine, int index)
     {
-        if (_state is null || !_state.YourTurn || _state.IsGameOver)
+        if (_state is null || _state.IsGameOver)
             return;
 
-        if (mine && !_state.CanAttack)
+        var zone = mine ? Me().BattleZone : Opp().BattleZone;
+        if (index < 0 || index >= zone.Count)
+            return;
+        var target = zone[index];
+
+        if (_state.AttackPending && !_state.YourTurn)
         {
-            Notice("You cannot attack right now.");
+            // I am the defender: reply to the pending attack.
+            if (!mine)
+            {
+                ShowLookAt(target);
+                return;
+            }
+            if (CanBlockWith(target))
+            {
+                ClearActions();
+                NetworkClient.BlockAttack(index);
+                ResetInteraction();
+            }
+            else
+            {
+                Notice(target.CountOnly ? "That creature cannot block." : $"{target.Name} cannot block (needs the Blocker keyword and to be untapped).");
+            }
             return;
         }
 
-        if (mine)
+        switch (_mode)
         {
-            var battle = Me().BattleZone;
-            if (index < 0 || index >= battle.Count)
-                return;
-            var candidate = battle[index];
-            if (candidate.IsTapped || candidate.IsSummoningSick)
-            {
-                Notice($"{candidate.Name} cannot attack yet.");
-                return;
-            }
-            _attackerIndex = index;
-            _mode = Mode.SelectAttacker;
-            Prompt("Choose a target: a tapped enemy creature, or the enemy shields.");
-            return;
-        }
+            case Mode.Idle:
+                if (mine && _state.YourTurn && _state.CanAttack && IsReadyAttacker(target))
+                {
+                    _attackerIndex = index;
+                    _mode = Mode.SelectAttacker;
+                    ClearActions();
+                    Prompt("Pick a target: a tapped enemy creature, or the enemy shields. Esc to cancel.");
+                }
+                else
+                {
+                    ShowLookAt(target);
+                }
+                break;
 
-        // Opponent battle clicked while selecting an attacker -> attack that creature.
-        if (_mode == Mode.SelectAttacker)
-        {
-            var target = Opp().BattleZone[index];
-            if (!target.IsTapped)
-            {
-                Notice("You may only attack a tapped creature.");
-                return;
-            }
-            NetworkClient.AttackCreature(_attackerIndex, index);
-            ResetInteraction();
+            case Mode.SelectAttacker:
+                if (mine)
+                {
+                    CancelInteraction();
+                    break;
+                }
+                if (IsAttackableByMe(target))
+                {
+                    NetworkClient.AttackCreature(_attackerIndex, index);
+                    ResetInteraction();
+                }
+                else
+                {
+                    Notice("Under normal rules you may only attack a tapped creature.");
+                }
+                break;
+
+            case Mode.SelectSpellTarget when _spellHandIndex >= 0:
+                if (ForHandCard(_spellHandIndex) is { } spell
+                    && IsCreature(target)
+                    && IsLegalSpellTarget(spell, target, mine))
+                {
+                    var hand = _spellHandIndex;
+                    NetworkClient.CastSpellTargeted(hand, SideFor(mine), index);
+                    ResetInteraction();
+                }
+                else
+                {
+                    ShowLookAt(target);
+                }
+                break;
+
+            case Mode.SelectShieldTarget when _triggerHandIndex >= 0:
+                if (ForHandCard(_triggerHandIndex) is { } triggerCard
+                    && IsCreature(target)
+                    && IsLegalSpellTarget(triggerCard, target, mine))
+                {
+                    var hand = _triggerHandIndex;
+                    NetworkClient.PlayShieldTriggerTargeted(hand, SideFor(mine), index);
+                    ResetInteraction();
+                }
+                else
+                {
+                    ShowLookAt(target);
+                }
+                break;
+
+            case Mode.SelectSummonTarget when _summonHandIndex >= 0:
+                if (ForHandCard(_summonHandIndex) is { } summonCard
+                    && IsCreature(target)
+                    && IsLegalOnPlayTarget(summonCard, target, mine))
+                {
+                    var hand = _summonHandIndex;
+                    NetworkClient.SummonCreatureTargeted(hand, SideFor(mine), index);
+                    ResetInteraction();
+                }
+                else
+                {
+                    ShowLookAt(target);
+                }
+                break;
+
+            case Mode.SelectEvolveTarget when _evolveHandIndex >= 0:
+                if (ForHandCard(_evolveHandIndex) is { } evolveCard
+                    && IsCreature(target)
+                    && IsLegalOnPlayTarget(evolveCard, target, mine))
+                {
+                    _pendingEvolveTargetSide = SideFor(mine);
+                    _pendingEvolveTargetIndex = index;
+                    _mode = Mode.EvolveBase;
+                    ClearActions();
+                    Prompt("Choose the evolution base: click one of your matching-race creatures, or press Esc to cancel.");
+                }
+                else
+                {
+                    ShowLookAt(target);
+                }
+                break;
+
+            case Mode.EvolveBase when _evolveHandIndex >= 0:
+                if (mine && IsCreature(target) && CardFor(target) is { } baseCard
+                    && ForHandCard(_evolveHandIndex) is { } evolution
+                    && DuelGame.IsEvolutionBase(evolution, baseCard))
+                {
+                    var hand = _evolveHandIndex;
+                    if (_pendingEvolveTargetSide is { } side && _pendingEvolveTargetIndex >= 0)
+                        NetworkClient.EvolveCreatureTargeted(hand, index, side, _pendingEvolveTargetIndex);
+                    else
+                        NetworkClient.EvolveCreature(hand, index);
+                    ResetInteraction();
+                }
+                else
+                {
+                    Notice("You can only evolve onto one of your own matching-race creatures.");
+                }
+                break;
+
+            case Mode.SelectBlock:
+                break;
         }
     }
 
     private void OnOppShieldsClicked()
     {
+        if (_state is null || _state.IsGameOver)
+            return;
         if (_mode == Mode.SelectAttacker && _attackerIndex >= 0)
         {
             NetworkClient.AttackPlayer(_attackerIndex);
             ResetInteraction();
         }
     }
+
+    private void ShowGrave(PlayerState player)
+    {
+        for (var i = _overlayBox.GetChildCount() - 1; i >= 0; i--)
+            _overlayBox.GetChild(i).QueueFree();
+
+        _overlayKind = OverlayKind.Look;
+        _overlay.Visible = true;
+        SetOverlayBoxTitle($"{player.Name}'s graveyard");
+
+        if (player.Graveyard.Count == 0)
+        {
+            SetOverlayBoxNote("Nothing here yet.");
+        }
+        else
+        {
+            var flow = new HFlowContainer();
+            flow.AddThemeConstantOverride("h_separation", 8);
+            flow.AddThemeConstantOverride("v_separation", 8);
+            foreach (var c in player.Graveyard)
+            {
+                var view = new CardView(CardFor(c), ArtFor(c.CardId));
+                if (c.IsTapped)
+                    view.SnapTapped(true);
+                var cc = c;
+                view.Clicked += _ => ShowLookAt(cc);
+                flow.AddChild(view);
+            }
+            _overlayBox.AddChild(flow);
+        }
+
+        var close = new Button { Text = "Close" };
+        close.Pressed += HideOverlay;
+        _overlayBox.AddChild(close);
+    }
+
+    private void ShowLookAt(CardState? cardState)
+    {
+        if (cardState is null || cardState.CountOnly)
+            return;
+
+        for (var i = _overlayBox.GetChildCount() - 1; i >= 0; i--)
+            _overlayBox.GetChild(i).QueueFree();
+
+        _overlayKind = OverlayKind.Look;
+        _overlay.Visible = true;
+
+        var card = CardFor(cardState);
+        var view = new CardView(card, ArtFor(cardState.CardId));
+        view.CustomMinimumSize = new Vector2(240, 335);
+        _overlayBox.AddChild(view);
+
+        SetOverlayBoxNote("Click anywhere or press Esc to close.");
+    }
+
+    private bool CanBlockWith(CardState candidate)
+        => !candidate.CountOnly
+        && CardFor(candidate) is { } card
+        && card.IsCreature
+        && card.HasKeyword(Keyword.Blocker)
+        && !candidate.IsTapped;
+
+    private bool IsReadyAttacker(CardState candidate)
+        => !candidate.IsTapped && !candidate.IsSummoningSick && CardFor(candidate)?.IsCreature == true;
+
+    private bool IsAttackableByMe(CardState target)
+        => target.IsTapped || For(target)?.HasKeyword(Keyword.CanAttackUntappedCreatures) == true;
+
+    private bool IsCreature(CardState c) => CardFor(c)?.IsCreature == true;
+
+    private Card? For(CardState c) => CardFor(c);
 
     // --------------------------------------------------------------- render
 
@@ -276,8 +659,8 @@ public partial class NetworkArena : Control
         BuildZone(_myMana, Me().ManaZone);
         BuildHand(_myHand, Me().Hand, faceDown: false);
 
-        _grave.Text =
-            $"GRAVEYARDS   Me: {Me().GraveyardCount}   |   Opponent: {Opp().GraveyardCount}";
+        _myGrave.Text = $"My graveyard ({Me().Graveyard.Count})";
+        _oppGrave.Text = $"Opponent's graveyard ({Opp().Graveyard.Count})";
 
         if (_state.IsGameOver)
         {
@@ -287,6 +670,10 @@ public partial class NetworkArena : Control
             _status.Text = winnerName is { Length: > 0 }
                 ? $"Game over - {winnerName} wins!"
                 : "Game over.";
+        }
+        else if (_state.AttackPending)
+        {
+            _status.Text = $"{Me().Name} vs {Opp().Name}  |  {(IsPhase("Main") ? "an attack awaits a blocking decision" : _state.Phase)}  |  Turn {_state.TurnNumber}";
         }
         else
         {
@@ -301,6 +688,121 @@ public partial class NetworkArena : Control
         WireBattle(_myBattle, mine: true);
         WireBattle(_oppBattle, mine: false);
         WireZone(_oppShields, OnOppShieldsClicked);
+
+        SyncContextualUi();
+        SyncShieldTriggerPopup();
+    }
+
+    private void SyncContextualUi()
+    {
+        if (_state.IsGameOver)
+            return;
+
+        if (_state.AttackPending)
+        {
+            if (!_state.YourTurn)
+            {
+                // I am the defender and must choose a blocker or pass.
+                _mode = Mode.SelectBlock;
+                _attackerIndex = -1;
+                ClearActions();
+                Prompt($"Choose a blocker ({_state.BlocksAvailable} available), or pass. Esc to cancel.");
+                AddAction("Pass (no block)", () =>
+                {
+                    NetworkClient.PassBlock();
+                    ResetInteraction();
+                });
+            }
+            else
+            {
+                // I am the attacker, waiting for the defender.
+                if (_mode is Mode.SelectAttacker)
+                    _mode = Mode.Idle;
+                ClearActions();
+                Prompt("Waiting for the opponent's blocking decision...");
+            }
+            return;
+        }
+
+        if (TriggerWindowIsMine)
+        {
+            CancelInteraction();
+        }
+    }
+
+    private bool TriggerWindowIsMine =>
+        _state is not null
+        && _state.ShieldTriggerWindowActive
+        && string.Equals(_state.ShieldTriggerOwnerSide, _state.YourSide, StringComparison.Ordinal);
+
+    private void SyncShieldTriggerPopup()
+    {
+        if (!TriggerWindowIsMine)
+        {
+            if (_overlayKind == OverlayKind.Trigger)
+                HideOverlay();
+            return;
+        }
+
+        for (var i = _overlayBox.GetChildCount() - 1; i >= 0; i--)
+            _overlayBox.GetChild(i).QueueFree();
+
+        _overlayKind = OverlayKind.Trigger;
+        _overlay.Visible = true;
+        SetOverlayBoxTitle("Shield Trigger!\nYour shields broke");
+
+        var me = Me();
+        var hasPlayable = false;
+        foreach (var handIndex in _state.PendingTriggerHandIndices)
+        {
+            if (handIndex < 0 || handIndex >= me.Hand.Count)
+                continue;
+            var cardState = me.Hand[handIndex];
+            var card = CardFor(cardState);
+            if (card is null)
+                continue;
+            if (card.IsEvolution)
+            {
+                SetOverlayBoxNote($"{card.Name} is an Evolution creature and stays in hand (it can only be evolved onto a creature).");
+                continue;
+            }
+            var playable = !card.Effects.Any(e => e.NeedsTarget) || AnyLegalSpellTarget(card);
+            hasPlayable |= playable;
+            var idx = handIndex;
+            var btn = new Button
+            {
+                Text = card.Effects.Any(e => e.NeedsTarget) ? $"Play & choose target: {card.Name}" : $"Play {card.Name}",
+                Disabled = !playable,
+            };
+            btn.Pressed += () => PlayPendingTrigger(idx, card);
+            _overlayBox.AddChild(btn);
+        }
+
+        if (!hasPlayable)
+            SetOverlayBoxNote("No effect can target anything right now - only \"leave in hand\" is available.");
+
+        var leave = new Button { Text = "Leave them in hand" };
+        leave.Pressed += () =>
+        {
+            NetworkClient.DeclineShieldTriggers();
+            HideOverlay();
+            Prompt("Shield triggers left in hand.");
+        };
+        _overlayBox.AddChild(leave);
+    }
+
+    private void PlayPendingTrigger(int handIndex, Card card)
+    {
+        if (!card.Effects.Any(e => e.NeedsTarget))
+        {
+            NetworkClient.PlayShieldTrigger(handIndex);
+            HideOverlay();
+            return;
+        }
+        _triggerHandIndex = handIndex;
+        _mode = Mode.SelectShieldTarget;
+        ClearActions();
+        Prompt($"Shield Trigger: choose a target for {card.Name}, or press Esc to leave it in hand.");
     }
 
     private void BuildZone(VBoxContainer box, List<CardState> zone)
@@ -372,13 +874,105 @@ public partial class NetworkArena : Control
             view.Clicked += _ => onClick();
     }
 
+    // --------------------------------------------------------------- target helpers
+
+    private bool AnyLegalSpellTarget(Card spell)
+    {
+        foreach (var mine in new[] { false, true })
+        {
+            var zone = mine ? Me().BattleZone : Opp().BattleZone;
+            foreach (var c in zone)
+            {
+                if (IsCreature(c) && IsLegalSpellTarget(spell, c, mine))
+                    return true;
+            }
+        }
+        return false;
+    }
+
+    private bool AnyLegalOnPlayTarget(Card creature)
+    {
+        foreach (var mine in new[] { false, true })
+        {
+            var zone = mine ? Me().BattleZone : Opp().BattleZone;
+            foreach (var c in zone)
+            {
+                if (IsCreature(c) && IsLegalOnPlayTarget(creature, c, mine))
+                    return true;
+            }
+        }
+        return false;
+    }
+
+    private bool IsLegalSpellTarget(Card spell, CardState target, bool targetIsMine)
+    {
+        var effect = spell.Effects.FirstOrDefault(e => e.NeedsTarget);
+        if (effect is null)
+            return false;
+        var card = CardFor(target);
+        if (card is null || !card.IsCreature)
+            return false;
+        if ((effect.Id is EffectId.Spell_DestroyPowerAtMost or EffectId.OnPlay_DestroyPowerAtMost)
+            && target.Power > effect.Value)
+            return false;
+        return effect.Target switch
+        {
+            EffectTargetScope.OwnCreature => targetIsMine,
+            EffectTargetScope.OpponentCreature => !targetIsMine,
+            _ => true,
+        };
+    }
+
+    private bool IsLegalOnPlayTarget(Card creature, CardState target, bool targetIsMine)
+    {
+        var effect = creature.Effects.FirstOrDefault(IsOnPlayTargetedEffect);
+        if (effect is null || effect.Target == EffectTargetScope.None)
+            return false;
+        var card = CardFor(target);
+        if (card is null || !card.IsCreature)
+            return false;
+        if ((effect.Id is EffectId.Spell_DestroyPowerAtMost or EffectId.OnPlay_DestroyPowerAtMost)
+            && target.Power > effect.Value)
+            return false;
+        return effect.Target switch
+        {
+            EffectTargetScope.OwnCreature => targetIsMine,
+            EffectTargetScope.OpponentCreature => !targetIsMine,
+            _ => true,
+        };
+    }
+
+    private static bool IsOnPlayTargetedEffect(CardEffect e) => e.Id is
+        EffectId.OnPlay_TapCreature or
+        EffectId.OnPlay_ReturnToHand or
+        EffectId.OnPlay_DestroyPowerAtMost or
+        EffectId.OnPlay_UntapOwnCreature;
+
+    private bool HasMatchingBase(Card evolution)
+    {
+        return Me().BattleZone.Any(c =>
+            CardFor(c) is { } baseCard && DuelGame.IsEvolutionBase(evolution, baseCard));
+    }
+
+    private string SideFor(bool mine) => mine ? Me().Side : Opp().Side;
+
     // --------------------------------------------------------------- helpers
 
     private PlayerState Me() => _state.Players.First(p => p.Side == _state.YourSide);
     private PlayerState Opp() => _state.Players.First(p => p.Side != _state.YourSide);
     private bool IsPhase(string phase) => string.Equals(_state.Phase, phase, System.StringComparison.Ordinal);
 
-    private DuelMasters.Domain.Card? CardFor(CardState c) =>
+    private CardState? MyHandCard(int index)
+    {
+        if (index < 0 || index >= Me().Hand.Count)
+            return null;
+        return Me().Hand[index];
+    }
+
+    private CardState? HandCardAt(int index) => index < 0 || index >= Me().Hand.Count ? null : Me().Hand[index];
+    private Card? ForHandCard(int index) => HandCardAt(index) is { } c ? CardFor(c) : null;
+
+    private Card? CardFor(CardState c) =>
         _cardsByCardId.TryGetValue(c.CardId, out var card) ? card : null;
 
     private string? ArtFor(string cardId) => _artByCardId.TryGetValue(cardId, out var p) ? p : null;
@@ -388,8 +982,9 @@ public partial class NetworkArena : Control
         var b = new Button { Text = label };
         b.Pressed += () =>
         {
+            ClearActions();
+            _prompt.Text = "";
             onClick();
-            ResetInteraction();
         };
         _actionBar.AddChild(b);
     }
@@ -400,10 +995,25 @@ public partial class NetworkArena : Control
             child.QueueFree();
     }
 
+    private void CancelInteraction()
+    {
+        if (_mode == Mode.Idle && _overlayKind == OverlayKind.None)
+            return;
+        ResetInteraction();
+        if (_overlayKind == OverlayKind.Look)
+            HideOverlay();
+    }
+
     private void ResetInteraction()
     {
         _mode = Mode.Idle;
         _attackerIndex = -1;
+        _spellHandIndex = -1;
+        _triggerHandIndex = -1;
+        _summonHandIndex = -1;
+        _evolveHandIndex = -1;
+        _pendingEvolveTargetSide = null;
+        _pendingEvolveTargetIndex = -1;
         ClearActions();
         _prompt.Text = "";
     }

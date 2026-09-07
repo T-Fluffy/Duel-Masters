@@ -39,6 +39,29 @@ public sealed class DuelGameState
     [JsonPropertyName("canAttack")]
     public bool CanAttack { get; set; }
 
+    [JsonPropertyName("shieldTriggerWindowActive")]
+    public bool ShieldTriggerWindowActive { get; set; }
+
+    /// <summary>Side that owns the pending Shield Trigger cards ("Player1"/"Player2"), when a window is open.</summary>
+    [JsonPropertyName("shieldTriggerOwnerSide")]
+    public string? ShieldTriggerOwnerSide { get; set; }
+
+    /// <summary>Hand indices (into the trigger owner's hand) of the pending Shield Trigger cards. Only visible to that owner.</summary>
+    [JsonPropertyName("pendingTriggerHandIndices")]
+    public List<int> PendingTriggerHandIndices { get; set; } = new();
+
+    /// <summary>True while an attack is declared and the defender may choose to block or pass.</summary>
+    [JsonPropertyName("attackPending")]
+    public bool AttackPending { get; set; }
+
+    /// <summary>The battling attacker's battle-zone index, while <see cref="AttackPending"/> is true.</summary>
+    [JsonPropertyName("attackPendingAttackerIndex")]
+    public int AttackPendingAttackerIndex { get; set; }
+
+    /// <summary>Number of ready Blocker creatures the defender may choose, while <see cref="AttackPending"/> is true.</summary>
+    [JsonPropertyName("blocksAvailable")]
+    public int BlocksAvailable { get; set; }
+
     [JsonPropertyName("isGameOver")]
     public bool IsGameOver { get; set; }
 
@@ -61,6 +84,19 @@ public sealed class DuelGameState
         var p1 = DuelSide.FromIndex(0);
         var p2 = DuelSide.FromIndex(1);
 
+        var triggerOwner = game.ShieldTriggerOwner;
+        var triggerSide = triggerOwner is null ? null : DuelSide.FromIndex(triggerOwner == game.Player1 ? 0 : 1);
+        var pendingIndices = new List<int>();
+        if (triggerOwner is not null && triggerSide == viewerSide)
+        {
+            foreach (var pending in game.PendingShieldTriggers)
+            {
+                var handIndex = triggerOwner.Hand.IndexOf(pending);
+                if (handIndex >= 0)
+                    pendingIndices.Add(handIndex);
+            }
+        }
+
         return new DuelGameState
         {
             MatchCode = matchCode,
@@ -72,6 +108,9 @@ public sealed class DuelGameState
             CanPlayMana = canPlayMana,
             CanSummonOrCast = canSummonOrCast,
             CanAttack = canAttack,
+            ShieldTriggerWindowActive = game.ShieldTriggerWindowActive,
+            ShieldTriggerOwnerSide = triggerSide,
+            PendingTriggerHandIndices = pendingIndices,
             IsGameOver = game.IsGameOver,
             WinnerId = game.Winner is null ? null : DuelSide.FromIndex(game.Winner == game.Player1 ? 0 : 1),
             Players =

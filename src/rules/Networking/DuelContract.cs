@@ -16,9 +16,18 @@ public static class DuelContract
         public const string Draw = "Draw";
         public const string PlayMana = "PlayMana";
         public const string SummonCreature = "SummonCreature";
+        public const string SummonCreatureTargeted = "SummonCreatureTargeted";
         public const string CastSpell = "CastSpell";
+        public const string CastSpellTargeted = "CastSpellTargeted";
         public const string AttackPlayer = "AttackPlayer";
         public const string AttackCreature = "AttackCreature";
+        public const string BlockAttack = "BlockAttack";
+        public const string PassBlock = "PassBlock";
+        public const string EvolveCreature = "EvolveCreature";
+        public const string EvolveCreatureTargeted = "EvolveCreatureTargeted";
+        public const string PlayShieldTrigger = "PlayShieldTrigger";
+        public const string PlayShieldTriggerTargeted = "PlayShieldTriggerTargeted";
+        public const string DeclineShieldTriggers = "DeclineShieldTriggers";
         public const string EndMainPhase = "EndMainPhase";
         public const string EndTurn = "EndTurn";
     }

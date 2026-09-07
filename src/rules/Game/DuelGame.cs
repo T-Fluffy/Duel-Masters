@@ -431,13 +431,10 @@ public sealed class DuelGame
     /// </summary>
     public void AttackPlayer(int attackerIndex, Player? blockerOwner = null, int? blockerIndex = null)
     {
-        EnsureMain();
-        EnsureTriggerWindowClosed();
+        ValidatePlayerAttack(attackerIndex);
         var active = ActivePlayer;
         var defender = Opponent;
-        var attacker = RequireReadyAttacker(active, attackerIndex);
-        if (attacker.Card.HasKeyword(Keyword.CannotAttackPlayers))
-            throw new RuleViolationException($"'{attacker.Card.Name}' can't attack players.");
+        var attacker = active.BattleZone[attackerIndex];
 
         attacker.IsTapped = true;
         attacker.AttackedThisTurn = true;
@@ -530,6 +527,52 @@ public sealed class DuelGame
     public static bool CanBeBlocked(Card attacker)
     {
         return !attacker.HasKeyword(Keyword.Unblockable) && !attacker.HasKeyword(Keyword.Stealth);
+    }
+
+    /// <summary>
+    /// Validate that the active player's creature at <paramref name="attackerIndex"/>
+    /// may attack the defending player right now, without mutating the game. Throws a
+    /// <see cref="RuleViolationException"/> when the attack is not legal.
+    /// </summary>
+    public void ValidatePlayerAttack(int attackerIndex)
+    {
+        EnsureMain();
+        EnsureTriggerWindowClosed();
+        var active = ActivePlayer;
+        var attacker = RequireReadyAttacker(active, attackerIndex);
+        RequireCanAttackPlayers(attacker);
+    }
+
+    /// <summary>
+    /// The number of untapped enemy creatures with the Blocker keyword that could
+    /// currently intercept the active player's attack at <paramref name="attackerIndex"/>,
+    /// or 0 when the attacker itself cannot be blocked.
+    /// </summary>
+    public int ReadyBlockerChoices(int attackerIndex)
+    {
+        EnsureMain();
+        EnsureTriggerWindowClosed();
+        var active = ActivePlayer;
+        var attacker = RequireReadyAttacker(active, attackerIndex);
+        RequireCanAttackPlayers(attacker);
+        if (!CanBeBlocked(attacker.Card))
+            return 0;
+
+        var count = 0;
+        foreach (var candidate in Opponent.BattleZone)
+        {
+            if (candidate.Card.IsCreature
+                && candidate.Card.HasKeyword(Keyword.Blocker)
+                && !candidate.IsTapped)
+                count++;
+        }
+        return count;
+    }
+
+    private static void RequireCanAttackPlayers(CardInstance attacker)
+    {
+        if (attacker.Card.HasKeyword(Keyword.CannotAttackPlayers))
+            throw new RuleViolationException($"'{attacker.Card.Name}' can't attack players.");
     }
 
     // ------------------------------------------------------------ shields

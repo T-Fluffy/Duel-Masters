@@ -15,11 +15,13 @@ namespace DuelMasters.Server.Hubs;
 /// </summary>
 public sealed class MatchRoom
 {
-    public MatchRoom(string code, string hostConnectionId, string hostName)
+    public MatchRoom(string code, string hostConnectionId, string hostName, Guid? hostDeckId, Func<Guid, List<Card>?>? deckLoader)
     {
         Code = code;
         SideConnections[DuelSide.Player1] = hostConnectionId;
         SideNames[DuelSide.Player1] = hostName;
+        _hostDeckId = hostDeckId;
+        _deckLoader = deckLoader;
     }
 
     public string Code { get; }
@@ -31,6 +33,11 @@ public sealed class MatchRoom
 
     private readonly object _gate = new();
     private DuelGame? _game;
+    private int? _pendingAttackerIndex;
+    private int _pendingBlocksAvailable;
+    private readonly Guid? _hostDeckId;
+    private Guid? _joinerDeckId;
+    private readonly Func<Guid, List<Card>?>? _deckLoader;
 
     public bool Started => _game is not null;
     public bool HasSecondPlayer => SideConnections.ContainsKey(DuelSide.Player2);
@@ -63,8 +70,21 @@ public sealed class MatchRoom
         return DuelSide.FromIndex(game.ActivePlayer == game.Player1 ? 0 : 1);
     }
 
+    /// <summary>The side that must answer a pending blocking decision, or null.</summary>
+    public string? BlockDecisionSide()
+    {
+        DuelGame? game;
+        lock (_gate)
+        {
+            game = _game;
+        }
+        if (game is null || game.IsGameOver)
+            return null;
+        return DuelSide.FromIndex(game.Opponent == game.Player1 ? 0 : 1);
+    }
+
     /// <summary>Register the second participant; returns false if already full.</summary>
-    public bool TryAddSecond(string connectionId, string name)
+    public bool TryAddSecond(string connectionId, string name, Guid? joinerDeckId = null)
     {
         lock (_gate)
         {
@@ -72,22 +92,33 @@ public sealed class MatchRoom
                 return false;
             SideConnections[DuelSide.Player2] = connectionId;
             SideNames[DuelSide.Player2] = name;
+            _joinerDeckId = joinerDeckId;
             return true;
         }
     }
 
-    /// <summary>Build random starter decks and start the authoritative engine.</summary>
+    /// <summary>
+    /// Start the authoritative engine. Each side uses its selected saved deck when
+    /// one was passed (and still loads/validates), otherwise a random deck is built.
+    /// </summary>
     public void StartGame()
     {
         lock (_gate)
         {
             var rng = new Random();
-            var p1 = new Player(SideNames[DuelSide.Player1], MatchCardCatalog.BuildRandomDeck(rng));
-            var p2 = new Player(SideNames[DuelSide.Player2], MatchCardCatalog.BuildRandomDeck(rng));
+            var p1 = new Player(SideNames[DuelSide.Player1], BuildDeck(_hostDeckId, rng));
+            var p2 = new Player(SideNames[DuelSide.Player2], BuildDeck(_joinerDeckId, rng));
             var game = new DuelGame(p1, p2, rng);
             game.StartGame(shuffle: true);
             _game = game;
         }
+    }
+
+    private List<Card> BuildDeck(Guid? deckId, Random rng)
+    {
+        if (deckId is { } id && _deckLoader is not null && _deckLoader(id) is { Count: 40 } saved)
+            return saved;
+        return MatchCardCatalog.BuildRandomDeck(rng);
     }
 
     /// <summary>
@@ -117,16 +148,189 @@ public sealed class MatchRoom
         }
     }
 
-    /// <summary>Build a viewer-relative state snapshot for the given side.</summary>
-    public DuelGameState StateFor(string side)
+    /// <summary>
+    /// True while an attack is declared on a player and the defender may choose a
+    /// Blocker creature or pass. The attack itself is not resolved until then.
+    /// </summary>
+    public bool HasPendingBlock
+    {
+        get
+        {
+            lock (_gate)
+            {
+                return _pendingAttackerIndex is not null;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Declare a direct player attack. When the defender has at least one legal
+    /// Blocker, the attack pauses for <see cref="BlockAttack"/>/<see cref="PassBlock"/>
+    /// instead of resolving immediately. Returns true when the action was accepted.
+    /// </summary>
+    public (bool Ok, int BlocksAvailable, string? Error) DeclarePlayerAttack(int attackerIndex)
+    {
+        lock (_gate)
+        {
+            if (_game is null)
+                return (false, 0, "The match has not started yet.");
+            if (_game.IsGameOver)
+                return (false, 0, "The match has already ended.");
+            if (_pendingAttackerIndex is not null)
+                return (false, 0, "An attack is already awaiting a blocking decision.");
+            if (HasPendingShieldTriggers(_game))
+                return (false, 0, "Resolve the pending Shield Trigger cards first.");
+
+            try
+            {
+                _game.ValidatePlayerAttack(attackerIndex);
+            }
+            catch (RuleViolationException ex)
+            {
+                return (false, 0, ex.Message);
+            }
+
+            var blocks = _game.ReadyBlockerChoices(attackerIndex);
+            if (blocks > 0)
+            {
+                _pendingAttackerIndex = attackerIndex;
+                _pendingBlocksAvailable = blocks;
+                return (true, blocks, null);
+            }
+
+            _game.AttackPlayer(attackerIndex);
+            return (true, 0, null);
+        }
+    }
+
+    /// <summary>Resolve a pending player attack by blocking it with the defender's creature.</summary>
+    public (bool Ok, string? Error) BlockPendingAttack(int blockerIndex)
+    {
+        lock (_gate)
+        {
+            if (_game is null)
+                return (false, "The match has not started yet.");
+            if (_game.IsGameOver)
+                return (false, "The match has already ended.");
+            if (_pendingAttackerIndex is not int attackerIndex)
+                return (false, "There is no attack awaiting a blocker.");
+            if (HasPendingShieldTriggers(_game))
+                return (false, "Resolve the pending Shield Trigger cards first.");
+
+            try
+            {
+                _game.AttackPlayer(attackerIndex, _game.Opponent, blockerIndex);
+            }
+            catch (RuleViolationException ex)
+            {
+                return (false, ex.Message);
+            }
+
+            _pendingAttackerIndex = null;
+            return (true, null);
+        }
+    }
+
+    /// <summary>Pass on blocking a pending player attack, resolving it unblocked.</summary>
+    public (bool Ok, string? Error) PassPendingAttack()
+    {
+        lock (_gate)
+        {
+            if (_game is null)
+                return (false, "The match has not started yet.");
+            if (_game.IsGameOver)
+                return (false, "The match has already ended.");
+            if (_pendingAttackerIndex is not int attackerIndex)
+                return (false, "There is no attack awaiting a blocker.");
+            if (HasPendingShieldTriggers(_game))
+                return (false, "Resolve the pending Shield Trigger cards first.");
+
+            try
+            {
+                _game.AttackPlayer(attackerIndex);
+            }
+            catch (RuleViolationException ex)
+            {
+                return (false, ex.Message);
+            }
+
+            _pendingAttackerIndex = null;
+            return (true, null);
+        }
+    }
+
+    private static bool HasPendingShieldTriggers(DuelGame game) => game.ShieldTriggerWindowActive;
+
+    // ------------------------------------------------------------ targeting helpers
+
+    /// <summary>Maps a DuelSide string to the authoritative player in this match.</summary>
+    public Player? PlayerForSide(string? side)
     {
         DuelGame? game;
         lock (_gate)
         {
             game = _game;
         }
-        return game is null
-            ? new DuelGameState { MatchCode = Code, YourSide = side }
-            : DuelGameState.From(game, Code, side);
+        if (game is null)
+            return null;
+        return side == DuelSide.Player1 ? game.Player1 : game.Player2;
+    }
+
+    /// <summary>The player whose pending Shield Trigger cards may be played right now.</summary>
+    public Player? ShieldTriggerOwnerOf(Player? simpleGuardUnused = null)
+    {
+        DuelGame? game;
+        lock (_gate)
+        {
+            game = _game;
+        }
+        return game?.ShieldTriggerOwner;
+    }
+
+    /// <summary>True when the given side's player may currently play their Shield Trigger cards.</summary>
+    public bool IsShieldTriggerOwnerSide(string side)
+    {
+        var owner = ShieldTriggerOwnerOf();
+        if (owner is null)
+            return false;
+        DuelGame? game;
+        lock (_gate)
+        {
+            game = _game;
+        }
+        if (game is null)
+            return false;
+        return side == DuelSide.Player1 ? ReferenceEquals(owner, game.Player1) : ReferenceEquals(owner, game.Player2);
+    }
+
+    /// <summary>Build a viewer-relative state snapshot for the given side.</summary>
+    public DuelGameState StateFor(string side)
+    {
+        DuelGame? game;
+        int? pendingAttacker;
+        int blocksAvailable;
+        lock (_gate)
+        {
+            game = _game;
+            pendingAttacker = _pendingAttackerIndex;
+            blocksAvailable = _pendingBlocksAvailable;
+        }
+        DuelGameState state;
+        if (game is null)
+        {
+            state = new DuelGameState { MatchCode = Code, YourSide = side };
+        }
+        else
+        {
+            state = DuelGameState.From(game, Code, side);
+            if (pendingAttacker is int attackerIndex)
+            {
+                // The active player's attacking creature is awaiting a block decision.
+                state.AttackPending = true;
+                state.AttackPendingAttackerIndex = attackerIndex;
+                state.BlocksAvailable = blocksAvailable;
+            }
+        }
+        return state;
     }
 }

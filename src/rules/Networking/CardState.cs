@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using System.Text.Json.Serialization;
 using DuelMasters.Domain;
 
@@ -33,6 +35,20 @@ public sealed class CardState
     [JsonPropertyName("power")]
     public int Power { get; set; }
 
+    [JsonPropertyName("race")]
+    public string Race { get; set; } = "";
+
+    [JsonPropertyName("keywords")]
+    public List<string> Keywords { get; set; } = new();
+
+    /// <summary>True when this entry is an Evolution creature.</summary>
+    [JsonPropertyName("isEvolution")]
+    public bool IsEvolution { get; set; }
+
+    /// <summary>The race an Evolution creature must be placed on (empty otherwise).</summary>
+    [JsonPropertyName("evolutionOf")]
+    public string EvolutionOf { get; set; } = "";
+
     [JsonPropertyName("isTapped")]
     public bool IsTapped { get; set; }
 
@@ -62,6 +78,10 @@ public sealed class CardState
             CardType = card.CardType.ToString(),
             ManaCost = card.ManaCost,
             Power = card.Power,
+            Race = card.Race,
+            Keywords = card.Keywords.Select(k => k.ToString()).OrderBy(k => k).ToList(),
+            IsEvolution = card.IsEvolution,
+            EvolutionOf = card.EvolutionOf,
             IsTapped = instance.IsTapped,
             IsSummoningSick = instance.IsSummoningSick,
         };

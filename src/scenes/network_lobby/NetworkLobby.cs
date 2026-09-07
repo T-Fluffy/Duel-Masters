@@ -1,4 +1,9 @@
+using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Text.Json;
+using DuelMasters.Core.Autoload;
 using DuelMasters.Networking;
 using DuelMasters.UI.Settings;
 using Godot;
@@ -7,9 +12,10 @@ namespace DuelMasters.Scenes.NetworkLobby;
 
 /// <summary>
 /// Phase 4 lobby: connects the client to the authoritative SignalR hub and lets a
-/// player host a match or join one by code. The board (NetworkArena) is entered once
-/// the first authoritative <see cref="DuelGameState"/> arrives (i.e. both sides are
-/// seated and the engine has started).
+/// player host a match or join one by code. Each side may bring a saved deck (fetched
+/// from <c>GET /api/decks</c> with the shared JWT); without one, the server builds a
+/// random deck. The board (NetworkArena) is entered once the first authoritative
+/// <see cref="DuelGameState"/> arrives (i.e. both sides are seated and the engine started).
 /// </summary>
 public partial class NetworkLobby : Control
 {
@@ -19,14 +25,28 @@ public partial class NetworkLobby : Control
     private LineEdit _serverUrl = null!;
     private LineEdit _name = null!;
     private LineEdit _code = null!;
+    private OptionButton _deckPicker = null!;
     private Label _status = null!;
     private Button _host = null!;
     private Button _join = null!;
     private bool _connecting;
 
+    private HttpRequest _http = null!;
+    private string _token = "";
+
+    /// <summary>Deck ids aligned 1:1 with the picker items; "" means "random deck".</summary>
+    private readonly List<string> _deckIds = new();
+
     public override void _Ready()
     {
         BuildUi();
+
+        _token = Global.Instance.Token;
+        _http = new HttpRequest { Timeout = 15 };
+        AddChild(_http);
+        _http.RequestCompleted += OnRequestCompleted;
+
+        LoadDecks();
     }
 
     public override void _Process(double delta)
@@ -87,6 +107,16 @@ public partial class NetworkLobby : Control
         _name.Text = System.Environment.UserName;
         center.AddChild(_name);
 
+        var deckRow = new HBoxContainer();
+        deckRow.AddThemeConstantOverride("separation", 8);
+        var deckLabel = new Label { Text = "Your deck:" };
+        _deckPicker = new OptionButton { SizeFlagsHorizontal = SizeFlags.ExpandFill };
+        _deckPicker.AddItem("Random deck (built from catalog)");
+        _deckIds.Add("");
+        deckRow.AddChild(deckLabel);
+        deckRow.AddChild(_deckPicker);
+        center.AddChild(deckRow);
+
         _host = new Button { Text = "Host Match" };
         _host.Pressed += OnHost;
         center.AddChild(_host);
@@ -121,7 +151,7 @@ public partial class NetworkLobby : Control
 
     private async void OnHost()
     {
-        await ConnectAndRun(() => NetworkClient.HostMatch(PlayerName()));
+        await ConnectAndRun(() => NetworkClient.HostMatch(PlayerName(), SelectedDeckGuid()));
     }
 
     private async void OnJoin()
@@ -132,7 +162,7 @@ public partial class NetworkLobby : Control
             SetStatus("Please enter a match code.", isError: true);
             return;
         }
-        await ConnectAndRun(() => NetworkClient.JoinMatch(code, PlayerName()));
+        await ConnectAndRun(() => NetworkClient.JoinMatch(code, PlayerName(), SelectedDeckGuid()));
     }
 
     private async System.Threading.Tasks.Task ConnectAndRun(System.Action afterConnect)
@@ -172,5 +202,84 @@ public partial class NetworkLobby : Control
     {
         _host.Disabled = !enabled;
         _join.Disabled = !enabled;
+    }
+
+    // --------------------------------------------------------------- decks
+
+    private void LoadDecks()
+    {
+        if (_token.Length == 0)
+        {
+            SetStatus("Not logged in - you will play with a random deck. Log in from the deck builder to use a saved deck.", isError: false);
+            return;
+        }
+        var error = _http.Request(ApiBase() + "/api/decks",
+            new[] { "Content-Type: application/json", $"Authorization: Bearer {_token}" },
+            HttpClient.Method.Get, "");
+        if (error != Error.Ok)
+            SetStatus("Could not start the decks request; you will play with a random deck.", isError: true);
+    }
+
+    private void OnRequestCompleted(long result, long responseCode, string[] headers, byte[] body)
+    {
+        if (result != (long)HttpRequest.Result.Success || responseCode is < 200 or >= 300)
+        {
+            if (!_connecting)
+                SetStatus($"Could not load your decks ({responseCode}) - you will play with a random deck.", isError: true);
+            return;
+        }
+
+        try
+        {
+            using var doc = JsonDocument.Parse(Encoding.UTF8.GetString(body));
+            var decks = doc.RootElement;
+            _deckIds.Clear();
+            _deckPicker.Clear();
+
+            _deckPicker.AddItem("Random deck (built from catalog)");
+            _deckIds.Add("");
+
+            foreach (var d in decks.EnumerateArray())
+            {
+                var id = d.GetProperty("id").GetString() ?? "";
+                var name = d.GetProperty("name").GetString() ?? "";
+                _deckPicker.AddItem($"{name} ({CardsOf(d)})");
+                _deckIds.Add(id);
+            }
+
+            _deckPicker.Selected = 0;
+            if (decks.GetArrayLength() == 0)
+                SetStatus("No saved decks yet - you will play with a random deck.", isError: false);
+        }
+        catch (JsonException)
+        {
+            SetStatus("Could not parse the decks list - you will play with a random deck.", isError: true);
+        }
+    }
+
+    private static int CardsOf(JsonElement deck)
+        => deck.TryGetProperty("cardCount", out var cc) && cc.TryGetInt32(out var n) ? n : 0;
+
+    private Guid? SelectedDeckGuid()
+    {
+        var idx = _deckPicker.Selected;
+        if (idx < 0 || idx >= _deckIds.Count)
+            return null;
+        var id = _deckIds[idx];
+        return Guid.TryParse(id, out var guid) ? guid : null;
+    }
+
+    /// <summary>The HTTP API origin derived from the hub URL (strip the "/duel" path).</summary>
+    private string ApiBase()
+    {
+        try
+        {
+            var u = new Uri(_serverUrl.Text.Trim());
+            return $"{u.Scheme}://{u.Authority}";
+        }
+        catch (UriFormatException)
+        {
+            return "http://127.0.0.1:8080";
+        }
     }
 }

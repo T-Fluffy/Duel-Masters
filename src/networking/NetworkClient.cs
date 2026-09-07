@@ -91,19 +91,19 @@ public static class NetworkClient
 
     // ------------------------------------------------------------- actions
 
-    public static void HostMatch(string name) =>
+    public static void HostMatch(string name, Guid? deckId = null) =>
         FireAndForget(async () =>
         {
-            var info = await _connection!.InvokeAsync<MatchInfo>(DuelContract.Hub.HostMatch, name);
+            var info = await _connection!.InvokeAsync<MatchInfo>(DuelContract.Hub.HostMatch, name, deckId);
             MatchCode = info.MatchCode;
             YourSide = info.YourSide;
             JoinedQueue.Enqueue(info);
         });
 
-    public static void JoinMatch(string code, string name) =>
+    public static void JoinMatch(string code, string name, Guid? deckId = null) =>
         FireAndForget(async () =>
         {
-            var info = await _connection!.InvokeAsync<MatchInfo>(DuelContract.Hub.JoinMatch, code, name);
+            var info = await _connection!.InvokeAsync<MatchInfo>(DuelContract.Hub.JoinMatch, code, name, deckId);
             MatchCode = info.MatchCode;
             YourSide = info.YourSide;
             JoinedQueue.Enqueue(info);
@@ -113,10 +113,24 @@ public static class NetworkClient
     public static void Draw() => Invoke(DuelContract.Hub.Draw);
     public static void PlayMana(int handIndex) => Invoke(DuelContract.Hub.PlayMana, handIndex);
     public static void SummonCreature(int handIndex) => Invoke(DuelContract.Hub.SummonCreature, handIndex);
+    public static void SummonCreatureTargeted(int handIndex, string targetOwnerSide, int targetIndex) =>
+        Invoke(DuelContract.Hub.SummonCreatureTargeted, handIndex, targetOwnerSide, targetIndex);
     public static void CastSpell(int handIndex) => Invoke(DuelContract.Hub.CastSpell, handIndex);
+    public static void CastSpellTargeted(int handIndex, string targetOwnerSide, int targetIndex) =>
+        Invoke(DuelContract.Hub.CastSpellTargeted, handIndex, targetOwnerSide, targetIndex);
     public static void AttackPlayer(int attackerIndex) => Invoke(DuelContract.Hub.AttackPlayer, attackerIndex);
     public static void AttackCreature(int attackerIndex, int targetIndex) =>
         Invoke(DuelContract.Hub.AttackCreature, attackerIndex, targetIndex);
+    public static void BlockAttack(int blockerIndex) => Invoke(DuelContract.Hub.BlockAttack, blockerIndex);
+    public static void PassBlock() => Invoke(DuelContract.Hub.PassBlock);
+    public static void EvolveCreature(int handIndex, int baseIndex) =>
+        Invoke(DuelContract.Hub.EvolveCreature, handIndex, baseIndex);
+    public static void EvolveCreatureTargeted(int handIndex, int baseIndex, string targetOwnerSide, int targetIndex) =>
+        Invoke(DuelContract.Hub.EvolveCreatureTargeted, handIndex, baseIndex, targetOwnerSide, targetIndex);
+    public static void PlayShieldTrigger(int handIndex) => Invoke(DuelContract.Hub.PlayShieldTrigger, handIndex);
+    public static void PlayShieldTriggerTargeted(int handIndex, string targetOwnerSide, int targetIndex) =>
+        Invoke(DuelContract.Hub.PlayShieldTriggerTargeted, handIndex, targetOwnerSide, targetIndex);
+    public static void DeclineShieldTriggers() => Invoke(DuelContract.Hub.DeclineShieldTriggers);
     public static void EndMainPhase() => Invoke(DuelContract.Hub.EndMainPhase);
     public static void EndTurn() => Invoke(DuelContract.Hub.EndTurn);
 
