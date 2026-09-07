@@ -71,7 +71,7 @@ public sealed class AiController
 
         // 1) Charge one mana card if the turn allows it. A smart charge keeps the
         //    turn's best plays playable and dumps dead / duplicate / uncastable cards.
-        if (!game.ManaChargedThisTurn && TryChooseManaCharge(out var manaIndex))
+        if (!game.ManaChargedThisTurn && TryChooseManaCharge(game, out var manaIndex))
         {
             game.PlayManaToManaZone(manaIndex);
             return new AiStep(AiStepKind.ActionTaken, -1);
@@ -215,7 +215,7 @@ public sealed class AiController
     // ---------------------------------------------------------- heuristics
 
     /// <summary>Pick the least useful hand card to charge as mana.</summary>
-    private bool TryChooseManaCharge(out int index)
+    private bool TryChooseManaCharge(DuelGame game, out int index)
     {
         var hand = Self.Hand;
         var openMana = Self.ManaZone.Count(m => !m.IsTapped);
@@ -225,8 +225,8 @@ public sealed class AiController
         for (var i = 0; i < hand.Count; i++)
         {
             var card = hand[i].Card;
-            if (card.IsEvolution)
-                continue; // evolution creatures can never be charged to the mana zone
+            if (card.IsEvolution && game.CanEvolve(Self, card))
+                continue; // an evolution that can be played onto a base now beats charging it
             var score = 0f;
 
             var copies = hand.Count(h => h.Card.Name == card.Name);

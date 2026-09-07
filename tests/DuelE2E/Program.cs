@@ -403,9 +403,9 @@ internal static class Program
                     .OrderBy(g => untappedByCiv.TryGetValue(g.Key, out var n) ? n : 0)
                     .ThenByDescending(g => g.Count())
                     .Select(g => g.Key).FirstOrDefault();
-            var i = me.Hand.FindIndex(c => !c.CountOnly && !c.IsEvolution &&
+            var i = me.Hand.FindIndex(c => !c.CountOnly &&
                 (cheapestCiv == null || string.Equals(c.Civilization, cheapestCiv, StringComparison.OrdinalIgnoreCase)));
-            if (i < 0) i = me.Hand.FindIndex(c => !c.CountOnly && !c.IsEvolution);
+            if (i < 0) i = me.Hand.FindIndex(c => !c.CountOnly);
             if (i >= 0) { await TryInvoke(b, DuelContract.Hub.PlayMana, i); return true; }
         }
 

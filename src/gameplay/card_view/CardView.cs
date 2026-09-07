@@ -416,6 +416,36 @@ public partial class CardView : Control
         RotationDegrees = wasTapped ? TappedAngle : 0f;
         _frame.SelfModulate = wasTapped ? TappedDim : Colors.White;
 
+        RunTapTween(tapped);
+    }
+
+    /// <summary>
+    /// Like <see cref="AnimateFromTapped"/>, but delays the actual transition by
+    /// <paramref name="delaySeconds"/> (the card stays posed at its OLD tapped state
+    /// until then). Used to stagger several tap/untap animations so the arena flips
+    /// mana cards one after another instead of all at once.
+    /// </summary>
+    public void AnimateFromTappedAfter(float delaySeconds, bool wasTapped, bool tapped)
+    {
+        Tapped = tapped;
+        if (_frame is null)
+            return;
+        RotationDegrees = wasTapped ? TappedAngle : 0f;
+        _frame.SelfModulate = wasTapped ? TappedDim : Colors.White;
+        if (delaySeconds <= 0f)
+        {
+            RunTapTween(tapped);
+            return;
+        }
+        GetTree().CreateTimer(delaySeconds).Timeout += () =>
+        {
+            if (GodotObject.IsInstanceValid(this))
+                RunTapTween(tapped);
+        };
+    }
+
+    private void RunTapTween(bool tapped)
+    {
         var tw = CreateTween();
         tw.SetParallel();
         tw.TweenProperty(this, "rotation_degrees", tapped ? TappedAngle : 0f, TapAnimSeconds)

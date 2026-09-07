@@ -6,10 +6,11 @@ using Xunit;
 namespace DuelMasters.Domain.Tests;
 
 /// <summary>
-/// Evolution creatures: they cannot be summoned or charged to mana, instead they
-/// are placed on top of one of their owner's creatures of a matching race. The
-/// whole stack counts as the top card; when the top leaves the battle zone
-/// everything underneath is destroyed to the graveyard (without triggering).
+/// Evolution creatures: they cannot be summoned normally and instead are placed on
+/// top of one of their owner's creatures of a matching race (they CAN still be
+/// charged to the mana zone like any other hand card). The whole stack counts as
+/// the top card; when the top leaves the battle zone everything underneath is
+/// destroyed to the graveyard (without triggering).
 /// </summary>
 public class EvolutionTests
 {
@@ -104,7 +105,7 @@ public class EvolutionTests
     }
 
     [Fact]
-    public void Evolution_CannotBeSummonedOrChargedToMana()
+    public void Evolution_CannotBeSummoned_ButCanBeChargedToMana()
     {
         var h = GameHarness.AtMainPhase();
         h.ResetBoard();
@@ -113,8 +114,12 @@ public class EvolutionTests
 
         Assert.False(h.Game.CanSummon(h.P1, evoCard));
         Assert.Throws<RuleViolationException>(() => h.Game.SummonCreature(0));
-        Assert.Throws<RuleViolationException>(() => h.Game.PlayManaToManaZone(0));
-        Assert.Contains(evoInst, h.P1.Hand);
+
+        h.Game.PlayManaToManaZone(0);
+
+        Assert.Contains(evoInst, h.P1.ManaZone);
+        Assert.Empty(h.P1.Hand);
+        Assert.True(h.Game.ManaChargedThisTurn);
     }
 
     [Fact]

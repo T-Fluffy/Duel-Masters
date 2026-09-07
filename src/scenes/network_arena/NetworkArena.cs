@@ -36,6 +36,17 @@ public partial class NetworkArena : Control
     private DuelGameState _state = null!;
     private readonly Dictionary<string, string> _artByCardId = new();
     private readonly Dictionary<string, Card> _cardsByCardId = new();
+
+    // When a rule action taps several mana cards at once (summon / spell costs and
+    // the start-of-turn untap), animate each card's tap pose one-by-one with this
+    // pause between cards so the player can follow the mana being spent. Tunable in
+    // the NetworkArena scene inspector.
+    [Export] private float ManaTapStaggerSeconds = 2.0f;
+
+    // Tapped flags of each mana slot from the previous broadcast, so tap changes are
+    // animated instead of snapping (mana is append-only, so slots stay stable).
+    private readonly List<bool> _prevOppManaTapped = new();
+    private readonly List<bool> _prevMyManaTapped = new();
     private Mode _mode = Mode.Idle;
     private int _attackerIndex = -1;
     private int _spellHandIndex = -1;
@@ -121,6 +132,13 @@ public partial class NetworkArena : Control
             {
                 NetworkClient.DeclineShieldTriggers();
                 ResetInteraction();
+                return;
+            }
+            // Just close an open card-inspector; keep the current selection/mode
+            // (e.g. the attacker menu stays usable after looking at the monster).
+            if (_overlayKind == OverlayKind.Look)
+            {
+                HideOverlay();
                 return;
             }
             CancelInteraction();
@@ -329,8 +347,8 @@ public partial class NetworkArena : Control
 
         AddAction($"Look: {card?.Name ?? cardState.Name}", () => ShowLookAt(cardState));
 
-        if (_state.CanPlayMana && card is { IsEvolution: false })
-            AddAction($"Charge Mana: {card.Name}", () => NetworkClient.PlayMana(handIndex));
+        if (_state.CanPlayMana)
+            AddAction($"Charge Mana: {card?.Name ?? cardState.Name}", () => NetworkClient.PlayMana(handIndex));
 
         if (!_state.CanSummonOrCast)
             return;
@@ -375,6 +393,22 @@ public partial class NetworkArena : Control
         note.AddThemeColorOverride("font_color", UiStyles.MutedText);
         note.CustomMinimumSize = new Vector2(180, 0);
         _actionBar.AddChild(note);
+    }
+
+    /// <summary>
+    /// Action-bar menu shown right after picking a battle-zone creature as the
+    /// attacker: inspect the monster or confirm and pick an enemy target. Clicking
+    /// the selected attacker again re-opens it; Esc / another selection cancels.
+    /// </summary>
+    private void BuildAttackerActions(CardState attacker)
+    {
+        ClearActions();
+        var name = attacker.Name;
+        AddAction($"Look: {name}", () => ShowLookAt(attacker));
+        AddAction("Attack", () =>
+        {
+            Prompt($"Pick a target for {name}: a tapped enemy creature, or the enemy shields. Esc to cancel.");
+        });
     }
 
     private void SelectEvolveBase(int handIndex)
@@ -449,8 +483,8 @@ public partial class NetworkArena : Control
                 {
                     _attackerIndex = index;
                     _mode = Mode.SelectAttacker;
-                    ClearActions();
-                    Prompt("Pick a target: a tapped enemy creature, or the enemy shields. Esc to cancel.");
+                    BuildAttackerActions(target);
+                    Prompt("Attack selected: look at the monster or press Attack, then click a tapped enemy creature or the enemy shields.");
                 }
                 else
                 {
@@ -461,7 +495,24 @@ public partial class NetworkArena : Control
             case Mode.SelectAttacker:
                 if (mine)
                 {
-                    CancelInteraction();
+                    if (index == _attackerIndex)
+                    {
+                        // Re-clicking the selected attacker re-opens (or dismisses) its menu.
+                        if (_actionBar.GetChildCount() > 0)
+                            ClearActions();
+                        else
+                            BuildAttackerActions(target);
+                    }
+                    else if (_state.CanAttack && IsReadyAttacker(target))
+                    {
+                        _attackerIndex = index;
+                        BuildAttackerActions(target);
+                        Prompt($"Picked {target.Name} as the attacker: look at it or press Attack, then click a tapped enemy creature or the enemy shields.");
+                    }
+                    else
+                    {
+                        CancelInteraction();
+                    }
                     break;
                 }
                 if (IsAttackableByMe(target))
@@ -651,12 +702,12 @@ public partial class NetworkArena : Control
 
         BuildHand(_oppHand, Opp().Hand, faceDown: true);
         BuildShields(_oppShields, Opp().ShieldCount);
-        BuildZone(_oppMana, Opp().ManaZone);
+        BuildZone(_oppMana, Opp().ManaZone, _prevOppManaTapped, ManaTapStaggerSeconds);
         BuildZone(_oppBattle, Opp().BattleZone);
 
         BuildShields(_myShields, Me().ShieldCount);
         BuildZone(_myBattle, Me().BattleZone);
-        BuildZone(_myMana, Me().ManaZone);
+        BuildZone(_myMana, Me().ManaZone, _prevMyManaTapped, ManaTapStaggerSeconds);
         BuildHand(_myHand, Me().Hand, faceDown: false);
 
         _myGrave.Text = $"My graveyard ({Me().Graveyard.Count})";
@@ -805,20 +856,36 @@ public partial class NetworkArena : Control
         Prompt($"Shield Trigger: choose a target for {card.Name}, or press Esc to leave it in hand.");
     }
 
-    private void BuildZone(VBoxContainer box, List<CardState> zone)
+    private void BuildZone(VBoxContainer box, List<CardState> zone, List<bool>? prevTappedFlags = null, float staggerSeconds = 0f)
     {
         var flow = GetFlow(box);
         Clear(flow);
-        foreach (var c in zone)
+        for (var i = 0; i < zone.Count; i++)
         {
+            var c = zone[i];
             var view = c.CountOnly
                 ? new CardView(null, faceDown: true)
                 : new CardView(CardFor(c), ArtFor(c.CardId));
-            if (c.IsTapped)
-                view.SnapTapped(true);
+            var wasTapped = prevTappedFlags is not null && i < prevTappedFlags.Count && prevTappedFlags[i];
+            if (c.IsTapped != wasTapped)
+            {
+                // Pose at the old state, then stagger the tap/untap transition so
+                // several cards flip visibly one after another (mainly the mana zone).
+                if (staggerSeconds > 0f)
+                    view.AnimateFromTappedAfter(staggerSeconds * i, wasTapped, c.IsTapped);
+                else
+                    view.AnimateFromTapped(wasTapped, c.IsTapped);
+            }
+            else
+                view.SnapTapped(c.IsTapped);
             flow.AddChild(view);
         }
         UpdateTitle(box, zone.Count);
+        if (prevTappedFlags is not null)
+        {
+            prevTappedFlags.Clear();
+            prevTappedFlags.AddRange(zone.Select(c => c.IsTapped));
+        }
     }
 
     private void BuildHand(VBoxContainer box, List<CardState> hand, bool faceDown)

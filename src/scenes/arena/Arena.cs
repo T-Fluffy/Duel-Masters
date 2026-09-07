@@ -39,6 +39,12 @@ public partial class Arena : Control
     private const string MainMenuPath = "res://src/ui/main_menu/MainMenu.tscn";
     private const float AiStepDelay = 0.55f;
 
+    // When a rule action taps several mana cards at once (summon / spell costs and
+    // the start-of-turn untap), animate each card's tap pose one-by-one with this
+    // pause between cards so the player can follow the mana being spent. Tunable in
+    // the Arena scene inspector.
+    [Export] private float ManaTapStaggerSeconds = 2.0f;
+
     // Card sizing: cards keep a fixed 140x195 aspect, but the on-screen size adapts
     // to the window so nothing ever clips. Widely-adopted "battlefield reflow" like
     // MTG Arena recomputes a base card size from the available board area.
@@ -175,6 +181,12 @@ public partial class Arena : Control
     private VBoxContainer _handPopupBox = null!;
     private PanelContainer _lookPopup = null!;
     private VBoxContainer _lookPopupBox = null!;
+
+    // Attack menu ("Look at card" / "Attack" / "Cancel") shown while an attacker is
+    // selected in Mode.SelectTarget so the player can inspect the monster or commit
+    // to target-picking before swinging.
+    private PanelContainer _attackMenu = null!;
+    private VBoxContainer _attackMenuBox = null!;
 
     // Shield-trigger decision popup (interrupts the attacker's turn).
     private PanelContainer _triggerPopup = null!;
@@ -532,6 +544,7 @@ public partial class Arena : Control
 
         BuildHandPopup();
         BuildLookPopup();
+        BuildAttackMenu();
         BuildShieldTriggerPopup();
         BuildGraveyardOverlay();
         BuildInspectOverlay();
@@ -576,7 +589,7 @@ public partial class Arena : Control
         look.Pressed += () => ShowInspect(card);
         _handPopupBox.AddChild(look);
 
-        if (!_game.ManaChargedThisTurn && !card.IsEvolution)
+        if (!_game.ManaChargedThisTurn)
         {
             var charge = new Button { Text = "Charge Mana" };
             charge.Pressed += () => DoCharge(index);
@@ -756,6 +769,7 @@ public partial class Arena : Control
         if (card is null)
             return;
         HideHandPopup();
+        HideAttackMenu();
 
         foreach (var child in _lookPopupBox.GetChildren().OfType<Control>().ToList())
             child.QueueFree();
@@ -785,6 +799,82 @@ public partial class Arena : Control
     private void HideLookPopup()
     {
         _lookPopup.Visible = false;
+    }
+
+    // ----------------------------------------------------------- attack menu
+    // Shown as soon as the player selects a battle-zone creature to attack with,
+    // and re-opened by clicking it again. Offers: inspect the monster, start
+    // picking an enemy target, or drop the selection.
+
+    private void BuildAttackMenu()
+    {
+        _attackMenu = new PanelContainer();
+        _attackMenu.AddThemeStyleboxOverride("panel", UiStyles.ModalCard());
+        _attackMenu.Visible = false;
+        AddChild(_attackMenu);
+
+        _attackMenuBox = new VBoxContainer();
+        _attackMenuBox.AddThemeConstantOverride("separation", 6);
+        _attackMenuBox.CustomMinimumSize = new Vector2(230, 0);
+        _attackMenu.AddChild(_attackMenuBox);
+    }
+
+    private void ShowAttackMenu(Card card)
+    {
+        if (card is null)
+            return;
+        HideHandPopup();
+        HideLookPopup();
+
+        foreach (var child in _attackMenuBox.GetChildren().OfType<Control>().ToList())
+            child.QueueFree();
+
+        var title = new Label { Text = $"{card.Name}\nChoose how to proceed", AutowrapMode = TextServer.AutowrapMode.WordSmart };
+        title.CustomMinimumSize = new Vector2(230, 0);
+        title.AddThemeFontSizeOverride("font_size", 14);
+        title.AddThemeColorOverride("font_color", CivilizationPalette.Color(card.Civilization).Lightened(0.25f));
+        title.HorizontalAlignment = HorizontalAlignment.Center;
+        _attackMenuBox.AddChild(title);
+
+        var look = new Button { Text = "Look at card" };
+        look.Pressed += () => ShowInspect(card);
+        _attackMenuBox.AddChild(look);
+
+        var attack = new Button { Text = "Attack" };
+        attack.Pressed += () =>
+        {
+            HideAttackMenu();
+            var name = _game is not null && _attackerIndex >= 0 && _attackerIndex < _game.ActivePlayer.BattleZone.Count
+                ? _game.ActivePlayer.BattleZone[_attackerIndex].Card.Name
+                : card.Name;
+            Prompt($"Pick a target for {name}: a tapped enemy creature, or the enemy shields.");
+        };
+        _attackMenuBox.AddChild(attack);
+
+        var cancel = new Button { Text = "Cancel" };
+        cancel.Pressed += () =>
+        {
+            ResetInteraction();
+            Prompt("Attack cancelled - pick a creature to attack when ready.");
+            Refresh();
+        };
+        _attackMenuBox.AddChild(cancel);
+
+        _attackMenu.Visible = true;
+        CallDeferred(nameof(PositionAttackMenu));
+    }
+
+    private void PositionAttackMenu()
+    {
+        if (_attackMenu is null || !_attackMenu.Visible)
+            return;
+        PositionPopupAtLeftSide(_attackMenu);
+    }
+
+    private void HideAttackMenu()
+    {
+        if (_attackMenu is not null)
+            _attackMenu.Visible = false;
     }
 
     // ------------------------------------------------------- shield trigger popup
@@ -994,6 +1084,7 @@ public partial class Arena : Control
         }
         HideHandPopup();
         HideLookPopup();
+        HideAttackMenu();
         // The "Look at card" view is just the raw card artwork: no frame, no text,
         // no numbers - big and clean so the player can read the card.
         var viewport = GetViewportRect().Size;
@@ -1178,6 +1269,12 @@ public partial class Arena : Control
             else if (_inspectOverlay.Visible)
             {
                 CloseInspect();
+                GetViewport().SetInputAsHandled();
+            }
+            else if (_attackMenu.Visible)
+            {
+                // Close the attacker's menu but keep the selection; a second Esc cancels.
+                HideAttackMenu();
                 GetViewport().SetInputAsHandled();
             }
             else if (_mode == Mode.SelectBlock && _attackerIndex >= 0)
@@ -1883,10 +1980,12 @@ public partial class Arena : Control
                     _mode = Mode.SelectTarget;
                     HideHandPopup();
                     HideLookPopup();
+                    HideAttackMenu();
+                    ShowAttackMenu(_game.ActivePlayer.BattleZone[index].Card);
                     var finale = _game.Opponent.ShieldCount == 0
                         ? " The enemy has NO shields left: click the enemy shields zone to land the final attack and win!"
                         : "";
-                    Prompt($"{_game.ActivePlayer.BattleZone[index].Card.Name} is attacking! Choose a target: a tapped enemy creature, or the enemy shields. Click the enemy zone to attack.{finale}");
+                    Prompt($"{_game.ActivePlayer.BattleZone[index].Card.Name} is attacking! Use the menu to look at it or attack. Choose a target: a tapped enemy creature, or the enemy shields. Click the enemy zone to attack.{finale}");
                 }
                 else
                 {
@@ -1901,14 +2000,18 @@ public partial class Arena : Control
                 {
                     if (index == _attackerIndex)
                     {
-                        ResetInteraction();
-                        Prompt("Attack cancelled - pick a creature to attack when ready.");
+                        // Re-clicking the selected attacker re-opens (or dismisses) its menu.
+                        if (_attackMenu.Visible)
+                            HideAttackMenu();
+                        else
+                            ShowAttackMenu(_game.ActivePlayer.BattleZone[index].Card);
                         break;
                     }
                     var candidate = _game.ActivePlayer.BattleZone[index];
                     if (!candidate.IsTapped && !candidate.IsSummoningSick)
                     {
                         _attackerIndex = index;
+                        ShowAttackMenu(candidate.Card);
                         var finale = _game.Opponent.ShieldCount == 0
                             ? " (The enemy has no shields - the next direct hit wins!)"
                             : "";
@@ -2364,6 +2467,7 @@ _mode = Mode.SelectBlock;
         _spellTargetPicks.Clear();
         HideHandPopup();
         HideLookPopup();
+        HideAttackMenu();
         HideTriggerPopup();
     }
 
@@ -2409,8 +2513,8 @@ _mode = Mode.SelectBlock;
         BuildZoneInto(_topHand, _game.Player2.Hand, backs: !revealOpponent, artOnly: revealOpponent, _topHandTitle, revealOpponent ? CardSizeKind.Mana : CardSizeKind.Stack);
         BuildZoneInto(_bottomBattle, _game.Player1.BattleZone, backs: false, artOnly: true, _bottomBattleTitle, CardSizeKind.Full);
         BuildZoneInto(_topBattle, _game.Player2.BattleZone, backs: false, artOnly: true, _topBattleTitle, CardSizeKind.Full);
-        BuildZoneInto(_bottomMana, _game.Player1.ManaZone, backs: false, artOnly: true, _bottomManaTitle, CardSizeKind.Mana);
-        BuildZoneInto(_topMana, _game.Player2.ManaZone, backs: false, artOnly: true, _topManaTitle, CardSizeKind.Mana);
+        BuildZoneInto(_bottomMana, _game.Player1.ManaZone, backs: false, artOnly: true, _bottomManaTitle, CardSizeKind.Mana, ManaTapStaggerSeconds);
+        BuildZoneInto(_topMana, _game.Player2.ManaZone, backs: false, artOnly: true, _topManaTitle, CardSizeKind.Mana, ManaTapStaggerSeconds);
         BuildShields(_bottomShields, _game.Player1.ShieldCount, _bottomShieldsTitle);
         BuildShields(_topShields, _game.Player2.ShieldCount, _topShieldsTitle);
 
@@ -2454,7 +2558,7 @@ _mode = Mode.SelectBlock;
             ResumeAi();
     }
 
-    private void BuildZoneInto(VBoxContainer box, IReadOnlyList<CardInstance> zone, bool backs, bool artOnly, Label title, CardSizeKind kind)
+    private void BuildZoneInto(VBoxContainer box, IReadOnlyList<CardInstance> zone, bool backs, bool artOnly, Label title, CardSizeKind kind, float tapStaggerSeconds = 0f)
     {
         var flow = GetFlow(box);
         ClearFlow(flow);
@@ -2466,7 +2570,14 @@ _mode = Mode.SelectBlock;
             view.SizeFlagsVertical = SizeFlags.ShrinkCenter;
             flow.AddChild(view);
             if (_prevTapped.TryGetValue(inst, out var wasTapped) && wasTapped != inst.IsTapped)
-                view.AnimateFromTapped(wasTapped, inst.IsTapped); // pose at old state, then tween to the new one
+            {
+                // Pose at the old state, then stagger the tap/untap transition so
+                // several cards flip visibly one after another (mainly the mana zone).
+                if (tapStaggerSeconds > 0f)
+                    view.AnimateFromTappedAfter(tapStaggerSeconds * i, wasTapped, inst.IsTapped);
+                else
+                    view.AnimateFromTapped(wasTapped, inst.IsTapped);
+            }
             else
                 view.SnapTapped(inst.IsTapped);
         }

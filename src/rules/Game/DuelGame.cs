@@ -191,11 +191,7 @@ public sealed class DuelGame
         if (_manaChargedThisTurn)
             throw new RuleViolationException("You may only charge one mana card per turn.");
         RequireHandCard(ActivePlayer, handIndex);
-        var card = ActivePlayer.Hand[handIndex];
-        if (card.Card.IsEvolution)
-            throw new RuleViolationException(
-                $"'{card.Card.Name}' is an Evolution creature and cannot be charged to the mana zone.");
-        card = TakeFromHand(ActivePlayer.Hand, handIndex);
+        var card = TakeFromHand(ActivePlayer.Hand, handIndex);
         card.Zone = Zone.ManaZone;
         ActivePlayer.ManaZone.Add(card);
         _manaChargedThisTurn = true;

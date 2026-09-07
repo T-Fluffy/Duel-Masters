@@ -57,9 +57,10 @@ public sealed class Card
 
     /// <summary>
     /// The race an Evolution creature must be placed on top of (empty for everything
-    /// else). Evolution creatures cannot be summoned for mana or charged to the mana
-    /// zone - per the official rules they enter the battle zone only by evolving onto
-    /// one of your creatures whose race matches this value.
+    /// else). Evolution creatures cannot be summoned normally - per the official
+    /// rules they enter the battle zone only by evolving onto one of your creatures
+    /// whose race matches this value - but they can still be charged to the mana
+    /// zone like any other hand card.
     /// </summary>
     public string EvolutionOf { get; }
 
