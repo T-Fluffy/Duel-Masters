@@ -1,5 +1,13 @@
 # Duel Masters TCG Engine
 
+![Godot 4](https://img.shields.io/badge/Godot-4.7-%23478cbf?logo=godotengine&logoColor=white&style=for-the-badge)
+![C#](https://img.shields.io/badge/C%23-.NET%208-%23512bd4?logo=csharp&logoColor=white&style=for-the-badge)
+![ASP.NET Core (SignalR)](https://img.shields.io/badge/ASP.NET%20Core-10-%235b0fb5?logo=dotnet&logoColor=white&style=for-the-badge)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-%234169e1?logo=postgresql&logoColor=white&style=for-the-badge)
+![xUnit](https://img.shields.io/badge/xUnit-tests-%23c21325?style=for-the-badge)
+![Python](https://img.shields.io/badge/Python-3-%233776ab?logo=python&logoColor=white&style=for-the-badge)
+![Docker Compose](https://img.shields.io/badge/Docker-Compose-%232496ed?logo=docker&logoColor=white&style=for-the-badge)
+
 A modern, real-time digital recreation of the classic **Duel Masters** trading card
 game, built with:
 
@@ -8,10 +16,11 @@ game, built with:
 - A **pure C# rules library** (`DuelMasters.Domain`) shared by the client, the
   tests, the AI, and (later) the authoritative backend — zero engine dependencies.
 - A **protocol-neutral JSON WebSocket contract** so the backend can run on
-  **.NET 9 (SignalR)** today and be swapped to **NestJS (Socket.io)** or
+  **.NET 10 (SignalR)** today and be swapped to **NestJS (Socket.io)** or
   **Spring Boot (STOMP)** later without touching the client.
 - A **Python ingestion pipeline** that turns raw card PNG/JPEG images into a
-  structured `cards.json` database.
+  structured `cards.json` database (OCR + web-scrape → keyword/effect mapping for
+  **DM01–09**, including evolution creatures).
 
 ## Status
 
@@ -23,8 +32,27 @@ game, built with:
 | 2 | Domain rules engine (turn machine, combat, shield triggers) + xUnit tests | ✅ Done |
 | 3 | Godot 2.5D board UI + local hotseat sandbox | ✅ Done |
 | 4 | Authoritative .NET / SignalR backend + client transport | ✅ Done |
-| 5 | AI opponent | ⏳ |
+| 5 | AI opponent | ✅ Done |
 | 6 | Shaders, VFX, sound polish | ⏳ |
+
+## Implemented features
+
+- **Full turn machine** — mana charging (one card per turn), summoning, spell
+  casting, creature attacks + blocks (sick/tapped rules), shield triggers, and
+  the 0-shields ⇒ win condition.
+- **Attack UX** — tap-tiles on the arena highlight attackable targets, attacker
+  selection cancels by clicking the attacker again or pressing **Esc**, and a
+  prompt hints when another untapped creature can still attack.
+- **Shield VFX** — shield breaks animate the card flying to the owner's hand
+  (face-up for player 1 / hotseat, face-down for the AI).
+- **Evolution mechanic** — evolution creatures can be played onto an
+  `evolutionOf`-matching base creature (GUI + AI), sit on top of the base, and
+  the whole stack goes to the graveyard together. Full model/engine/AI/UI
+  support with dedicated tests.
+- **Skilled AI opponent** — evolutions, effect activations, direct attacks and
+  blocks via trigger handling; played in hotseat or guest-vs-AI.
+- **Online duels** — server-authoritative SignalR matches; the status panel now
+  shows real player names and the winner.
 
 Game rules and architecture are specified in the design documents bundled in the
 repo root (`Duel_Masters_TCG_Engine_GDD.md`, `Duel_Masters_Strategy_and_Codebase.md`).
@@ -93,33 +121,38 @@ duel_masters/
 │  ├─ core/                  Global autoload, MainGame entry point
 │  ├─ rules/                 DuelMasters.Domain — pure C# rules library
 │  │   ├─ Model/             cards, players, zones, game state, enums
-│  │   ├─ Engine/            deterministic turn/duel state machine
-│  │   ├─ Commands/          play, summon, cast, attack, block, end turn…
-│  │   ├─ Effects/           keyword + scripted effect registry
-│  │   └─ Net/               protocol-neutral JSON DTOs
+│  │   ├─ Game/              deterministic turn/duel state machine
+│  │   ├─ Ai/                AI controller + profiles (evolutions, attacks, triggers)
+│  │   └─ Networking/        protocol-neutral JSON DTOs
 │  ├─ gameplay/              board, card view, player, AI
 │  ├─ ui/                    menus, deck builder, HUD
+│  ├─ scenes/                arena, deck builder, lobby, network arena, auth
 │  ├─ resources/             cards.json + card data loaders
 │  ├─ debug/                 FPS/version overlay
 │  └─ shaders/               VFX shaders
 ├─ tests/DuelMasters.Domain.Tests/   xUnit tests for the rules engine
 └─ tools/
-   ├─ editor/                ApplyProjectSettings editor script
-   └─ card_ingestion/        ingest_cards.py (PNG/JPG → cards.json)
+   ├─ extract/               OCR + web-scraping pipeline (per-card JSON)
+   └─ map/                   keyword/effect mapping → spliced cards.json
 ```
 
 ## Card data pipeline
 
-1. Drop raw card images (PNG/JPEG) into `assets/cards_raw/`.
-2. Run `python tools/card_ingestion/ingest_cards.py`.
-3. The tool produces `src/resources/data/cards.json`, consumed by the domain
+1. Extract card text from raw card images (PNG/JPEG) via OCR
+   (`tools/extract/01_ocr.py`, per-card output in `tools/extract/ocr/`).
+2. Web-scrape card pages to cross-check the data (`tools/extract/02_scrape.py`,
+   output in `tools/extract/scrape/`), then prepare + categorize the combined
+   text (`03_prepare.py`, `04_categorize.py`).
+3. Build keyword/effect mappings (`tools/map/01_build_mapping.py`) which produce
+   `mapping.json`, then splice it onto the card DB (`tools/map/02_splice.py`).
+4. The tool produces `src/resources/data/cards.json`, consumed by the domain
    library and the Godot client.
 
 ## Networking
 
 The client talks to the backend over a neutral JSON message schema
 (`action` / `sessionId` / `playerId` / `payload`), so the transport is
-interchangeable. The authoritative .NET 9 SignalR hub is Phase 4.
+interchangeable. The authoritative .NET 10 SignalR hub is Phase 4.
 
 ## Architecture docs
 
