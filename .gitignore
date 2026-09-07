@@ -23,6 +23,9 @@ mono_crash.*.json
 # Editor-local configuration
 .vscode/
 
+# opencode local tooling and scratch plans (machine-local; not part of the repo)
+.opencode/
+
 # Card asset archives (extracted set images + cards-index.json are kept, zips are not)
 assets/**/*.zip
 
