@@ -31,7 +31,17 @@ public sealed class DuelGame
     /// </summary>
     private readonly List<PendingTurnEffect> _pendingTurnEffects = new();
 
-    private sealed record PendingTurnEffect(EffectId Id, Player Owner, string Race);
+    /// <summary>
+    /// Creatures that "whenever it battles this turn, destroy it after the battle"
+    /// (Battleship Mutant's rider). A survivor of a battle it takes part in is
+    /// destroyed once the battle is resolved; the marking lives for the turn only.
+    /// </summary>
+    private readonly HashSet<CardInstance> _pendingDestroyAfterBattle = new();
+
+    /// <summary>Races whose creatures must attack this turn if able (Gigio's Hammer).</summary>
+    private readonly HashSet<string> _pendingMustAttackRaces = new(StringComparer.OrdinalIgnoreCase);
+
+    private sealed record PendingTurnEffect(EffectId Id, Player Owner, string Race, int Value = 0);
 
     public DuelGame(Player player1, Player player2, Random? rng = null)
     {
@@ -189,9 +199,12 @@ public sealed class DuelGame
             {
                 c.ClearEndOfTurnKeywords();
                 c.TempPower = 0;
+                c.TempAttackPower = 0;
             }
         }
         _pendingTurnEffects.Clear();
+        _pendingDestroyAfterBattle.Clear();
+        _pendingMustAttackRaces.Clear();
 
         _activeIndex = 1 - _activeIndex;
         TurnNumber++;
@@ -368,6 +381,35 @@ public sealed class DuelGame
             case EffectId.Tap_ManaToGrave:
                 MoveManaToGrave(Player1);
                 MoveManaToGrave(Player2);
+                break;
+
+            // Battleship Mutant: each of the owner's {Data} creatures gets +{Value} power
+            // and Double Breaker until the end of the turn, and is destroyed after
+            // any battle it fights this turn.
+            case EffectId.Tap_GrantOwnCivPowerDoubleBreakerDestroyEot:
+                foreach (var c in actor.BattleZone.Where(c => CivMatches(c.Card.Civilization, eff.Data)))
+                {
+                    c.TempPower += Math.Max(0, eff.Value);
+                    c.GainKeywordUntilEndOfTurn(Keyword.DoubleBreaker);
+                    _pendingDestroyAfterBattle.Add(c);
+                }
+                break;
+
+            // Gigio's Hammer: each creature of the chosen race attacks this turn if
+            // able and gains "Power Attacker +{Value}" until the end of the turn
+            // (the attack-power bonus only counts while attacking).
+            case EffectId.Tap_ChooseRaceMustAttackPowerAttackerEot:
+                foreach (var p in new[] { actor, OpponentOf(actor) })
+                    foreach (var c in p.BattleZone.Where(c => RaceEquals(c.Card.Race, race)))
+                        c.TempAttackPower += Math.Max(0, eff.Value);
+                foreach (var c in actor.BattleZone.Where(c => RaceEquals(c.Card.Race, race)))
+                    _pendingMustAttackRaces.Add(c.Card.Race);
+                break;
+
+            // Silvermoon Trailblazer: creatures of the chosen race can't be blocked
+            // by creatures that have power {Value} or less this turn.
+            case EffectId.Tap_ChooseRaceUnblockableByPowerEot:
+                _pendingTurnEffects.Add(new PendingTurnEffect(EffectId.Tap_ChooseRaceUnblockableByPowerEot, actor, race!, Math.Max(0, eff.Value)));
                 break;
         }
     }
@@ -869,6 +911,14 @@ public sealed class DuelGame
             DestroyCreature(attacker);
         if (attacker.HasKeywordNow(Keyword.Slayer))
             DestroyCreature(defender);
+
+        // "Whenever any of those creatures battles this turn, destroy it after the
+        // battle" (Battleship Mutant): a marked survivor is destroyed once the
+        // battle is fully resolved.
+        if (_pendingDestroyAfterBattle.Contains(attacker) && attacker.Zone == Zone.BattleZone)
+            DestroyCreature(attacker);
+        if (_pendingDestroyAfterBattle.Contains(defender) && defender.Zone == Zone.BattleZone)
+            DestroyCreature(defender);
     }
 
     /// <summary>True when the opponent may block this attacking creature.</summary>
@@ -897,31 +947,42 @@ public sealed class DuelGame
         RequireCanAttackPlayers(attacker);
     }
 
-    /// <summary>
-    /// The number of untapped enemy creatures with the Blocker keyword that could
-    /// currently intercept the active player's attack at <paramref name="attackerIndex"/>,
-    /// or 0 when the attacker itself cannot be blocked.
-    /// </summary>
-    public int ReadyBlockerChoices(int attackerIndex)
-    {
-        EnsureMain();
-        EnsureTriggerWindowClosed();
-        var active = ActivePlayer;
-        var attacker = RequireReadyAttacker(active, attackerIndex);
-        RequireCanAttackPlayers(attacker);
-        if (!CanBeBlocked(attacker))
-            return 0;
+/// <summary>
+/// The battle-zone indices of the opponent's ready Blocker creatures that may
+/// legally intercept the active player's attack at <paramref name="attackerIndex"/>.
+/// Respects unblockable attackers and temporary power-gated blocking restrictions.
+/// Empty when the attacker itself cannot be blocked.
+/// </summary>
+public IReadOnlyList<int> ReadyBlockerIndices(int attackerIndex)
+{
+    EnsureMain();
+    EnsureTriggerWindowClosed();
+    var active = ActivePlayer;
+    var attacker = RequireReadyAttacker(active, attackerIndex);
+    RequireCanAttackPlayers(attacker);
+    if (!CanBeBlocked(attacker))
+        return Array.Empty<int>();
 
-        var count = 0;
-        foreach (var candidate in Opponent.BattleZone)
-        {
-            if (candidate.Card.IsCreature
-                && candidate.Card.HasKeyword(Keyword.Blocker)
-                && !candidate.IsTapped)
-                count++;
-        }
-        return count;
+    var result = new List<int>();
+    for (var i = 0; i < Opponent.BattleZone.Count; i++)
+    {
+        var candidate = Opponent.BattleZone[i];
+        if (candidate.Card.IsCreature
+            && candidate.Card.HasKeyword(Keyword.Blocker)
+            && !candidate.IsTapped
+            && CanBeBlockedByPower(attacker, candidate))
+            result.Add(i);
     }
+    return result;
+}
+
+/// <summary>
+/// The number of untapped enemy creatures with the Blocker keyword that could
+/// currently intercept the active player's attack at <paramref name="attackerIndex"/>,
+/// or 0 when the attacker itself cannot be blocked.
+/// </summary>
+public int ReadyBlockerChoices(int attackerIndex)
+    => ReadyBlockerIndices(attackerIndex).Count;
 
     private static void RequireCanAttackPlayers(CardInstance attacker)
     {
@@ -1075,8 +1136,33 @@ public sealed class DuelGame
             throw new RuleViolationException($"'{blocker.Card.Name}' is tapped and cannot block.");
         if (!CanBeBlocked(attacker))
             throw new RuleViolationException($"'{attacker.Card.Name}' cannot be blocked.");
+        if (!CanBeBlockedByPower(attacker, blocker))
+            throw new RuleViolationException(
+                $"'{attacker.Card.Name}' cannot be blocked by creatures with power {BlockPowerRestriction(attacker)} or less.");
         // A blocker assigned summoning sickness may still block (it only stops attacks).
         return blocker;
+    }
+
+    /// <summary>
+    /// True when <paramref name="blocker"/> is a legal blocker for this attacker,
+    /// including temporary power-gated blocking restrictions (Silvermoon Trailblazer).
+    /// </summary>
+    private bool CanBeBlockedByPower(CardInstance attacker, CardInstance blocker)
+    {
+        var cap = BlockPowerRestriction(attacker);
+        return cap is null || CurrentPower(blocker) > cap.Value;
+    }
+
+    /// <summary>The power cap below which the attacker may not be blocked, or null.</summary>
+    private int? BlockPowerRestriction(CardInstance attacker)
+    {
+        foreach (var pending in _pendingTurnEffects)
+        {
+            if (pending.Id == EffectId.Tap_ChooseRaceUnblockableByPowerEot
+                && RaceEquals(attacker.Card.Race, pending.Race))
+                return pending.Value;
+        }
+        return null;
     }
 
     private void PayManaFor(Player player, Card card)
@@ -1624,7 +1710,7 @@ public sealed class DuelGame
     /// <summary>Extra power granted only while attacking (Power Attacker and attack-time effects).</summary>
     private int AttackPowerBoost(CardInstance instance)
     {
-        var sum = 0;
+        var sum = instance.TempAttackPower;
         foreach (var e in instance.Card.Effects)
         {
             switch (e.Id)
@@ -1703,7 +1789,9 @@ public sealed class DuelGame
     private static bool IsRaceChoosingEffect(EffectId id) => id is
         EffectId.Tap_ChooseRaceUntapEot or
         EffectId.Tap_ChooseRaceGrantSlayerEot or
-        EffectId.Tap_ChooseRaceToHandEot;
+        EffectId.Tap_ChooseRaceToHandEot or
+        EffectId.Tap_ChooseRaceMustAttackPowerAttackerEot or
+        EffectId.Tap_ChooseRaceUnblockableByPowerEot;
 
     /// <summary>
     /// The distinct creature races currently present in either battle zone - the
@@ -1733,7 +1821,8 @@ public sealed class DuelGame
         var defender = Opponent;
         foreach (var c in active.BattleZone)
         {
-            if (!c.Card.HasKeyword(Keyword.AttacksEachTurn))
+            if (!c.Card.HasKeyword(Keyword.AttacksEachTurn)
+                && !_pendingMustAttackRaces.Contains(c.Card.Race))
                 continue;
             if (c.IsTapped || c.IsSummoningSick || c.AttackedThisTurn)
                 continue;

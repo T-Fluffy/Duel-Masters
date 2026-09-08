@@ -621,6 +621,203 @@ public class TapAbilityTests
         Assert.Contains("Angel Knight", choices);
     }
 
+    // -------------------------------------- Slice A2: combat-hook effects
+
+    [Fact]
+    public void GrantOwnCivPowerDoubleBreakerDestroy_BoostsAndDoublesOnlyOwnCivCreatures()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        var mutant = h.PutCreature(h.P1, TapCard("Mutant", CardFactory.Eff(EffectId.Tap_GrantOwnCivPowerDoubleBreakerDestroyEot, data: "Darkness", value: 4000), civ: Civilization.Darkness));
+        var dark = h.PutCreature(h.P1, CardFactory.Creature(1, 1000, Civilization.Darkness, "DarkFriend"));
+        var light = h.PutCreature(h.P1, CardFactory.Creature(1, 1000, Civilization.Light, "LightFriend"));
+        var foe = h.PutCreature(h.P2, CardFactory.Creature(1, 1000, Civilization.Darkness, "FoeDark"));
+
+        h.Game.ActivateTapAbility(h.P1.BattleZone.IndexOf(mutant));
+
+        Assert.True(mutant.IsTapped);
+        Assert.Equal(4000, dark.TempPower);
+        Assert.True(dark.HasKeywordNow(Keyword.DoubleBreaker));
+        Assert.Equal(0, light.TempPower);
+        Assert.False(light.HasKeywordNow(Keyword.DoubleBreaker));
+        Assert.Equal(0, foe.TempPower); // the gift is for the owner's darkness creatures only
+    }
+
+    [Fact]
+    public void GrantOwnCivPowerDoubleBreakerDestroy_DestroysMarkedSurvivorAfterBattle()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        var mutant = h.PutCreature(h.P1, TapCard("Mutant", CardFactory.Eff(EffectId.Tap_GrantOwnCivPowerDoubleBreakerDestroyEot, data: "Darkness", value: 4000), civ: Civilization.Darkness));
+        var dark = h.PutCreature(h.P1, CardFactory.Creature(1, 2000, Civilization.Darkness, "DarkFriend"));
+        var foe = h.PutCreature(h.P2, CardFactory.Creature(1, 1000, Civilization.Nature, "Foe"), tapped: true);
+
+        h.Game.ActivateTapAbility(h.P1.BattleZone.IndexOf(mutant));
+        h.Game.AttackCreature(h.P1.BattleZone.IndexOf(dark), h.P2.BattleZone.IndexOf(foe));
+
+        // +4000 lets the 2000-power creature win the battle, but the rider destroys
+        // the survivor right after.
+        Assert.Contains(foe, h.P2.Graveyard);
+        Assert.Contains(dark, h.P1.Graveyard);
+    }
+
+    [Fact]
+    public void GrantOwnCivPowerDoubleBreakerDestroy_UnmarkedCreaturesSurviveTheirBattles()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        var mutant = h.PutCreature(h.P1, TapCard("Mutant", CardFactory.Eff(EffectId.Tap_GrantOwnCivPowerDoubleBreakerDestroyEot, data: "Darkness", value: 4000), civ: Civilization.Darkness));
+        var light = h.PutCreature(h.P1, CardFactory.Creature(1, 2000, Civilization.Light, "LightFriend"));
+        var foe = h.PutCreature(h.P2, CardFactory.Creature(1, 1000, Civilization.Nature, "Foe"), tapped: true);
+
+        h.Game.ActivateTapAbility(h.P1.BattleZone.IndexOf(mutant));
+        h.Game.AttackCreature(h.P1.BattleZone.IndexOf(light), h.P2.BattleZone.IndexOf(foe));
+
+        Assert.Contains(foe, h.P2.Graveyard);
+        Assert.Contains(light, h.P1.BattleZone); // not marked -> no destroy-after-battle
+    }
+
+    [Fact]
+    public void GrantOwnCivPowerDoubleBreakerDestroy_GrantExpiresAtEndOfTurn()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        var mutant = h.PutCreature(h.P1, TapCard("Mutant", CardFactory.Eff(EffectId.Tap_GrantOwnCivPowerDoubleBreakerDestroyEot, data: "Darkness", value: 4000), civ: Civilization.Darkness));
+        var dark = h.PutCreature(h.P1, CardFactory.Creature(1, 1000, Civilization.Darkness, "DarkFriend"));
+
+        h.Game.ActivateTapAbility(h.P1.BattleZone.IndexOf(mutant));
+        Assert.True(dark.HasKeywordNow(Keyword.DoubleBreaker));
+
+        h.Game.EndMainPhase();
+        h.Game.EndTurn();
+
+        Assert.Equal(0, dark.TempPower);
+        Assert.False(dark.HasKeywordNow(Keyword.DoubleBreaker));
+    }
+
+    [Fact]
+    public void ChooseRaceMustAttackPowerAttacker_ForcesTheRaceToAttackBeforeEndingTurn()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        var hammer = h.PutCreature(h.P1, TapCard("Hammer", CardFactory.Eff(EffectId.Tap_ChooseRaceMustAttackPowerAttackerEot, value: 4000)));
+        var dragon = h.PutCreature(h.P1, CardFactory.CreatureWithRace(1, 2000, Civilization.Fire, "DragonA", "Dragon"));
+        var angel = h.PutCreature(h.P1, CardFactory.CreatureWithRace(1, 2000, Civilization.Fire, "AngelA", "Angel"));
+        h.SetShields(h.P2, CardFactory.Creature(1, 1000, Civilization.Light, "S1"),
+                             CardFactory.Creature(1, 1000, Civilization.Light, "S2"));
+
+        h.Game.ActivateTapAbility(h.P1.BattleZone.IndexOf(hammer), null, "Dragon");
+
+        Assert.Equal(4000, dragon.TempAttackPower);
+        Assert.Equal(0, angel.TempAttackPower);
+
+        var ex = Assert.Throws<RuleViolationException>(() => h.Game.EndMainPhase());
+        Assert.Contains("must attack", ex.Message);
+
+        h.Game.AttackPlayer(h.P1.BattleZone.IndexOf(dragon));
+        h.Game.EndMainPhase(); // the obligation is discharged
+        h.Game.EndTurn();
+
+        Assert.Equal(0, dragon.TempAttackPower); // the bonus expires with the turn
+    }
+
+    [Fact]
+    public void ChooseRaceMustAttackPowerAttacker_AttackTimeBoostAppliesDuringBattle()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        var hammer = h.PutCreature(h.P1, TapCard("Hammer", CardFactory.Eff(EffectId.Tap_ChooseRaceMustAttackPowerAttackerEot, value: 4000)));
+        var dragon = h.PutCreature(h.P1, CardFactory.CreatureWithRace(1, 2000, Civilization.Fire, "DragonA", "Dragon"));
+        var foe = h.PutCreature(h.P2, CardFactory.Creature(1, 5000, Civilization.Nature, "Foe"), tapped: true);
+
+        h.Game.ActivateTapAbility(h.P1.BattleZone.IndexOf(hammer), null, "Dragon");
+
+        // 2000 printed + 4000 attack-time = 6000 beats the 5000-power defender;
+        // without the boost the 2000-power dragon would lose.
+        h.Game.AttackCreature(h.P1.BattleZone.IndexOf(dragon), h.P2.BattleZone.IndexOf(foe));
+
+        Assert.Contains(foe, h.P2.Graveyard);
+        Assert.Contains(dragon, h.P1.BattleZone);
+    }
+
+    [Fact]
+    public void ChooseRaceUnblockableByPower_SmallBlockerCannotInterceptTheChosenRace()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        var moon = h.PutCreature(h.P1, TapCard("Moon", CardFactory.Eff(EffectId.Tap_ChooseRaceUnblockableByPowerEot, value: 3000)));
+        var dragon = h.PutCreature(h.P1, CardFactory.CreatureWithRace(1, 2000, Civilization.Water, "DragonA", "Dragon"));
+        var angel = h.PutCreature(h.P1, CardFactory.CreatureWithRace(1, 2000, Civilization.Water, "AngelA", "Angel"));
+        var smallGuard = h.PutCreature(h.P2, CardFactory.Creature(1, 1000, Civilization.Light, "SmallGuard", Keyword.Blocker));
+        var bigGuard = h.PutCreature(h.P2, CardFactory.Creature(1, 6000, Civilization.Light, "BigGuard", Keyword.Blocker));
+
+        h.Game.ActivateTapAbility(h.P1.BattleZone.IndexOf(moon), null, "Dragon");
+
+        // Only the 6000-power blocker may legally intercept the dragon; the angel is
+        // of an unaffected race and can be blocked by both.
+        Assert.Equal(1, h.Game.ReadyBlockerChoices(h.P1.BattleZone.IndexOf(dragon)));
+        Assert.Equal(2, h.Game.ReadyBlockerChoices(h.P1.BattleZone.IndexOf(angel)));
+
+        var ex = Assert.Throws<RuleViolationException>(() =>
+            h.Game.AttackPlayer(h.P1.BattleZone.IndexOf(dragon), h.P2, h.P2.BattleZone.IndexOf(smallGuard)));
+        Assert.Contains("cannot be blocked by creatures with power 3000 or less", ex.Message);
+    }
+
+    [Fact]
+    public void ChooseRaceUnblockableByPower_BigBlockerMayStillIntercept()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        var moon = h.PutCreature(h.P1, TapCard("Moon", CardFactory.Eff(EffectId.Tap_ChooseRaceUnblockableByPowerEot, value: 3000)));
+        var dragon = h.PutCreature(h.P1, CardFactory.CreatureWithRace(1, 2000, Civilization.Water, "DragonA", "Dragon"));
+        var bigGuard = h.PutCreature(h.P2, CardFactory.Creature(1, 6000, Civilization.Light, "BigGuard", Keyword.Blocker));
+
+        h.Game.ActivateTapAbility(h.P1.BattleZone.IndexOf(moon), null, "Dragon");
+
+        h.Game.AttackPlayer(h.P1.BattleZone.IndexOf(dragon), h.P2, h.P2.BattleZone.IndexOf(bigGuard));
+
+        // 6000 beats the 2000-power dragon; the blocker survives the battle tapped.
+        Assert.True(bigGuard.IsTapped);
+        Assert.Contains(bigGuard, h.P2.BattleZone);
+        Assert.Contains(dragon, h.P1.Graveyard);
+    }
+
+    [Fact]
+    public void ChooseRaceUnblockableByPower_RestrictionClearsAtEndOfTurn()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        var moon = h.PutCreature(h.P1, TapCard("Moon", CardFactory.Eff(EffectId.Tap_ChooseRaceUnblockableByPowerEot, value: 3000)));
+        var foeDragon = h.PutCreature(h.P2, CardFactory.CreatureWithRace(1, 2000, Civilization.Fire, "FoeDragon", "Dragon"));
+        var smallGuard = h.PutCreature(h.P1, CardFactory.Creature(1, 1000, Civilization.Light, "SmallGuard", Keyword.Blocker));
+
+        h.Game.ActivateTapAbility(h.P1.BattleZone.IndexOf(moon), null, "Dragon");
+        h.Game.EndMainPhase();
+        h.Game.EndTurn(); // the pending restriction is cleared here
+
+        h.Game.StartTurn();
+        h.Game.Draw();
+        var foeIdx = h.Game.ActivePlayer.BattleZone.IndexOf(foeDragon);
+
+        // With the restriction gone, the defender's small blocker may intercept again.
+        h.Game.AttackPlayer(foeIdx, h.P1, h.P1.BattleZone.IndexOf(smallGuard));
+        Assert.Contains(smallGuard, h.P1.Graveyard); // the battle happened (no throw)
+    }
+
+    [Theory]
+    [InlineData(EffectId.Tap_ChooseRaceMustAttackPowerAttackerEot)]
+    [InlineData(EffectId.Tap_ChooseRaceUnblockableByPowerEot)]
+    public void NewRaceChoosingAbilities_RejectRaceOutsideTheChoicePool(EffectId id)
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        var cre = h.PutCreature(h.P1, TapCard(CardFactory.Eff(id, value: 3000)));
+
+        var ex = Assert.Throws<RuleViolationException>(() => h.Game.ActivateTapAbility(h.P1.BattleZone.IndexOf(cre), null, "Angel"));
+        Assert.Contains("needs a race in the battle zone", ex.Message);
+        Assert.False(cre.IsTapped); // the tap was not paid
+    }
+
     // --------------------------------------------------- networked state / AI
 
     [Fact]
@@ -848,5 +1045,66 @@ public class TapAbilityTests
         // The AI pays the tap to ramp into mana: one charged + up to three from hand.
         Assert.True(tangle.IsTapped);
         Assert.True(h.P1.ManaZone.Count >= 2);
+    }
+
+    // ---------------------------------- Slice A2: networked state + AI
+
+    [Fact]
+    public void DuelGameState_AnnotatesTapRacesForUnblockableByPower()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        h.PutCreature(h.P1, CardFactory.CreatureWithRace(1, 1000, Civilization.Fire, "D", "Dragon"));
+        var moon = h.PutCreature(h.P1, CardFactory.TapCreatureWithRace(3, 3000, Civilization.Water, "Moon", "Hydra",
+            CardFactory.Eff(EffectId.Tap_ChooseRaceUnblockableByPowerEot, value: 3000)));
+
+        var state = DuelGameState.From(h.Game, "AAAAAA", DuelSide.Player1);
+
+        var cs = state.Players.Single(p => p.Side == DuelSide.Player1).BattleZone.Single(c => c.InstanceId == "Player1:B:1");
+        Assert.True(cs.HasTapAbility);
+        Assert.True(cs.CanUseTapAbility);
+        Assert.Contains("Dragon", cs.TapAbilityRaces!);
+    }
+
+    [Fact]
+    public void AiController_UsesOwnCivPowerDoubleBreakerDestroyWhenItHasDarknessCreatures()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        var mutant = h.PutCreature(h.P1, TapCard("Mutant-AI", CardFactory.Eff(EffectId.Tap_GrantOwnCivPowerDoubleBreakerDestroyEot, data: "Darkness", value: 4000), civ: Civilization.Darkness));
+        h.PutCreature(h.P1, CardFactory.Creature(1, 1000, Civilization.Darkness, "DarkFriend"));
+
+        new AiController(h.P1).PlayTurn(h.Game);
+
+        Assert.True(mutant.IsTapped);
+    }
+
+    [Fact]
+    public void AiController_PicksRaceForMustAttackPowerAttacker()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        var hammer = h.PutCreature(h.P1, TapCard("Hammer-AI", CardFactory.Eff(EffectId.Tap_ChooseRaceMustAttackPowerAttackerEot, value: 4000)));
+        h.PutCreature(h.P1, CardFactory.CreatureWithRace(1, 2000, Civilization.Fire, "DragonA", "Dragon"));
+        h.PutCreature(h.P1, CardFactory.CreatureWithRace(1, 2000, Civilization.Fire, "DragonB", "Dragon"));
+
+        // The race is forced to attack, and the AI attacks before ending the turn.
+        new AiController(h.P1).PlayTurn(h.Game);
+
+        Assert.True(hammer.IsTapped);
+    }
+
+    [Fact]
+    public void AiController_PicksRaceForUnblockableByPower()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        var moon = h.PutCreature(h.P1, TapCard("Moon-AI", CardFactory.Eff(EffectId.Tap_ChooseRaceUnblockableByPowerEot, value: 3000)));
+        h.PutCreature(h.P1, CardFactory.CreatureWithRace(1, 2000, Civilization.Water, "DragonA", "Dragon"));
+        h.PutCreature(h.P2, CardFactory.Creature(1, 1000, Civilization.Light, "SmallGuard", Keyword.Blocker));
+
+        new AiController(h.P1).PlayTurn(h.Game);
+
+        Assert.True(moon.IsTapped);
     }
 }

@@ -923,7 +923,9 @@ public partial class Arena : Control
         var raceEffect = creature.Card.TapAbilities.FirstOrDefault(e => e.Id is
             EffectId.Tap_ChooseRaceUntapEot or
             EffectId.Tap_ChooseRaceGrantSlayerEot or
-            EffectId.Tap_ChooseRaceToHandEot);
+            EffectId.Tap_ChooseRaceToHandEot or
+            EffectId.Tap_ChooseRaceMustAttackPowerAttackerEot or
+            EffectId.Tap_ChooseRaceUnblockableByPowerEot);
         if (raceEffect is not null)
         {
             ShowTapRaceMenu(creatureIndex, raceEffect);

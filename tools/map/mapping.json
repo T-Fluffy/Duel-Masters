@@ -5470,12 +5470,13 @@
   "effects": [],
   "tapAbilities": [
    {
-    "id": "Tap_NotModelled",
-    "data": "Until the End Step|end of the turn, each of your darkness creatu"
+    "id": "Tap_GrantOwnCivPowerDoubleBreakerDestroyEot",
+    "value": 4000,
+    "data": "Darkness"
    }
   ],
   "evolutionOf": null,
-  "note": "tap ability not modelled",
+  "note": null,
   "src": "{{Tap Ability|Until the End Step|end of the turn, each of your darkness creatures in the battle zone gets +4000 power and \"double breaker.\" Whenever any of those creatures battles this turn, destroy it after the battle.}}"
  },
  {
@@ -7231,12 +7232,12 @@
   "effects": [],
   "tapAbilities": [
    {
-    "id": "Tap_NotModelled",
-    "data": "Choose a race. Each creature of that race attacks this turn if a"
+    "id": "Tap_ChooseRaceMustAttackPowerAttackerEot",
+    "value": 4000
    }
   ],
   "evolutionOf": null,
-  "note": "tap ability not modelled",
+  "note": null,
   "src": "{{Tap Ability|Choose a race. Each creature of that race attacks this turn if able and gets \"power attacker +4000\" until the End Step|end of the turn. ''(While attacking, a creature that has \"power attacker +4000\" gets +4000 power.)''}}"
  },
  {
@@ -7335,12 +7336,12 @@
   "effects": [],
   "tapAbilities": [
    {
-    "id": "Tap_NotModelled",
-    "data": "Choose a race. Creatures of that race can't be blocked by creatu"
+    "id": "Tap_ChooseRaceUnblockableByPowerEot",
+    "value": 3000
    }
   ],
   "evolutionOf": null,
-  "note": "tap ability not modelled",
+  "note": null,
   "src": "{{Tap Ability|Choose a race. Creatures of that race can't be blocked by creatures that have power 3000 or less this turn.}}"
  },
  {

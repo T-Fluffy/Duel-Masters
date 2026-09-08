@@ -201,6 +201,10 @@ public class CatalogDataTests
             ["Bliss Totem, Avatar of Luck"] = "Tap_GraveToMana",
             ["Tangle Fist, the Weaver"] = "Tap_HandToMana",
             ["Sky Crusher, the Agitator"] = "Tap_ManaToGrave",
+            // Slice A2: combat-hook effects (power/breaker riders, must-attack, blocking gates).
+            ["Battleship Mutant"] = "Tap_GrantOwnCivPowerDoubleBreakerDestroyEot",
+            ["Gigio's Hammer"] = "Tap_ChooseRaceMustAttackPowerAttackerEot",
+            ["Silvermoon Trailblazer"] = "Tap_ChooseRaceUnblockableByPowerEot",
         };
 
         foreach (var (name, effId) in modelled)

@@ -7566,8 +7566,9 @@
     "scriptEffectId": "VANILLA",
     "tapAbilities": [
       {
-        "id": "Tap_NotModelled",
-        "data": "Until the End Step|end of the turn, each of your darkness creatu"
+        "id": "Tap_GrantOwnCivPowerDoubleBreakerDestroyEot",
+        "value": 4000,
+        "data": "Darkness"
       }
     ]
   },
@@ -10005,8 +10006,8 @@
     "scriptEffectId": "VANILLA",
     "tapAbilities": [
       {
-        "id": "Tap_NotModelled",
-        "data": "Choose a race. Each creature of that race attacks this turn if a"
+        "id": "Tap_ChooseRaceMustAttackPowerAttackerEot",
+        "value": 4000
       }
     ]
   },
@@ -10151,8 +10152,8 @@
     "scriptEffectId": "VANILLA",
     "tapAbilities": [
       {
-        "id": "Tap_NotModelled",
-        "data": "Choose a race. Creatures of that race can't be blocked by creatu"
+        "id": "Tap_ChooseRaceUnblockableByPowerEot",
+        "value": 3000
       }
     ]
   },

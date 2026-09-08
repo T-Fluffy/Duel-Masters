@@ -158,8 +158,11 @@ public sealed class AiController
             if (step.Kind != AiStepKind.NeedsBlockChoice)
                 continue;
 
-            if (DecideBlock(game, step.AttackerIndex, out var blockerIndex))
-                game.AttackPlayer(step.AttackerIndex, Self, blockerIndex);
+            // A ready Blocker could intercept the swing: decide the defence on the
+            // opponent's behalf so the solo turn ends up on a sensible board state.
+            // (DecideBlock is the mirror side and only valid while the AI defends.)
+            if (DecideOpponentBlock(game, step.AttackerIndex, out var blockerIndex))
+                game.AttackPlayer(step.AttackerIndex, game.Opponent, blockerIndex);
             else
                 game.AttackPlayer(step.AttackerIndex);
         }
@@ -218,6 +221,35 @@ public sealed class AiController
             return true;
         }
 
+        return false;
+    }
+
+    /// <summary>
+    /// Zero-UI host only: decide the AI's opponent's defence against a direct swing
+    /// that a ready Blocker could legally intercept, using the strongest body that
+    /// beats the attacker (or a risky chump when shields are almost gone).
+    /// </summary>
+    private bool DecideOpponentBlock(DuelGame game, int attackerIndex, out int blockerIndex)
+    {
+        blockerIndex = -1;
+        var attacker = game.ActivePlayer.BattleZone.ElementAtOrDefault(attackerIndex);
+        if (attacker is null || attacker.IsTapped || !DuelGame.CanBeBlocked(attacker.Card))
+            return false;
+
+        var legal = game.ReadyBlockerIndices(attackerIndex);
+        foreach (var idx in legal)
+        {
+            if (game.Opponent.BattleZone[idx].Card.Power > attacker.Card.Power)
+            {
+                blockerIndex = idx;
+                return true;
+            }
+        }
+        if (legal.Count > 0 && game.Opponent.ShieldCount <= 1 && Profile.BlockCourage >= 0.8f)
+        {
+            blockerIndex = legal[0];
+            return true;
+        }
         return false;
     }
 
@@ -695,6 +727,10 @@ private bool TryChooseSpellPlay(DuelGame game, int handIndex, out IReadOnlyList<
                         when eff.Value > 0 && Self.Graveyard.Count > 0:
                         creatureIndex = i;
                         return true;
+                    case EffectId.Tap_GrantOwnCivPowerDoubleBreakerDestroyEot
+                        when Self.BattleZone.Any(c => CivOf(c.Card, eff.Data)):
+                        creatureIndex = i;
+                        return true;
                     case EffectId.Tap_DiscardRandom when foe.Hand.Count >= 2:
                         creatureIndex = i;
                         return true;
@@ -728,6 +764,14 @@ private bool TryChooseSpellPlay(DuelGame game, int handIndex, out IReadOnlyList<
                     case EffectId.Tap_ChooseRaceToHandEot when TryPickProtectRace(game, out var protectRace):
                         creatureIndex = i;
                         race = protectRace;
+                        return true;
+                    case EffectId.Tap_ChooseRaceMustAttackPowerAttackerEot when TryPickAttackRace(game, out var attackRace):
+                        creatureIndex = i;
+                        race = attackRace;
+                        return true;
+                    case EffectId.Tap_ChooseRaceUnblockableByPowerEot when TryPickAttackRace(game, out var evasionRace):
+                        creatureIndex = i;
+                        race = evasionRace;
                         return true;
                 }
             }
@@ -917,6 +961,27 @@ private bool TryChooseSpellPlay(DuelGame game, int handIndex, out IReadOnlyList<
         foreach (var (r, (own, _)) in RaceBoardStats(game).OrderByDescending(kv => kv.Value.Own))
         {
             if (own >= 2)
+            {
+                race = r;
+                return true;
+            }
+        }
+        race = "";
+        return false;
+    }
+
+    /// <summary>
+    /// Pick the race for an attack-oriented "choose a race" grant (Gigio's Hammer,
+    /// Silvermoon Trailblazer): our races with ready creatures are ranked by board
+    /// presence so the bonus lands where we can actually attack this turn.
+    /// </summary>
+    private bool TryPickAttackRace(DuelGame game, out string race)
+    {
+        foreach (var (r, (own, _)) in RaceBoardStats(game).OrderByDescending(kv => kv.Value.Own))
+        {
+            if (own > 0 && Self.BattleZone.Any(c =>
+                    string.Equals(c.Card.Race, r, System.StringComparison.OrdinalIgnoreCase)
+                    && !c.IsTapped && !c.IsSummoningSick))
             {
                 race = r;
                 return true;

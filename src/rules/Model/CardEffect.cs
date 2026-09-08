@@ -197,6 +197,15 @@ public enum EffectId
     /// <summary>Tap ability: each player puts a card from their mana zone into their graveyard.</summary>
     Tap_ManaToGrave = 924,
 
+    /// <summary>Tap ability: each of your {Data} creatures gets +{Value} power and Double Breaker until end of turn, and is destroyed after any battle it fights this turn.</summary>
+    Tap_GrantOwnCivPowerDoubleBreakerDestroyEot = 925,
+
+    /// <summary>Tap ability: choose a race. Each creature of that race attacks this turn if able and gets "Power Attacker +{Value}" until end of turn.</summary>
+    Tap_ChooseRaceMustAttackPowerAttackerEot = 926,
+
+    /// <summary>Tap ability: choose a race. Creatures of that race can't be blocked by creatures that have power {Value} or less this turn.</summary>
+    Tap_ChooseRaceUnblockableByPowerEot = 927,
+
     /// <summary>
     /// Tap Ability placeholder for cards whose activated ability is not yet
     /// representable in the engine. The card still carries the ability in the

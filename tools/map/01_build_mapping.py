@@ -332,6 +332,12 @@ def _tap_rules():
         lambda m, t: E("Tap_HandToMana", v=int(m.group(1))))
     tap("ManaToGrave", r"^each player puts? a card from (?:his|her|their) mana zone into (?:his|her|their) graveyard\.?$",
         lambda m, t: E("Tap_ManaToGrave", v=1))
+    tap("OwnCivPowerDoubleBreakerDestroy", r"^until the (?:End Step\|)?end of the turn, each of your ([a-z]+) creatures in the battle zone gets \+(\d+) power and \"?double breaker\.\"? whenever any of those creatures battles this turn,? destroy it after the battle\.?(?:\s+\{\{[^}]*\}\})?$",
+        lambda m, t: E("Tap_GrantOwnCivPowerDoubleBreakerDestroyEot", d=m.group(1).title(), v=int(m.group(2))))
+    tap("ChooseRaceMustAttackPowerAttacker", r"^choose a race\. each creature of that race attacks this turn if able and gets \"?power attacker \+(\d+)\"? until the (?:End Step\|)?end of the turn\.?(?:\s+while attacking, a creature that has \"?power attacker \+(\d+)\"? gets \+(\d+) power\.)?$",
+        lambda m, t: E("Tap_ChooseRaceMustAttackPowerAttackerEot", v=int(m.group(1))))
+    tap("ChooseRaceUnblockableByPower", r"^choose a race\. creatures of that race can'?t be blocked by creatures that have power (\d+) or less this turn\.?$",
+        lambda m, t: E("Tap_ChooseRaceUnblockableByPowerEot", v=int(m.group(1))))
 
     return T
 

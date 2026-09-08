@@ -159,7 +159,9 @@ public sealed class DuelGameState
                 }
 
                 var races = creature.Card.TapAbilities.FirstOrDefault(e => e.Target == EffectTargetScope.None
-                    && e.Id is EffectId.Tap_ChooseRaceUntapEot or EffectId.Tap_ChooseRaceGrantSlayerEot or EffectId.Tap_ChooseRaceToHandEot);
+                    && e.Id is EffectId.Tap_ChooseRaceUntapEot or EffectId.Tap_ChooseRaceGrantSlayerEot
+                        or EffectId.Tap_ChooseRaceToHandEot or EffectId.Tap_ChooseRaceMustAttackPowerAttackerEot
+                        or EffectId.Tap_ChooseRaceUnblockableByPowerEot);
                 if (races is not null)
                     cardState.TapAbilityRaces = game.LegalRaceChoices(active).ToList();
             }

@@ -39,6 +39,12 @@ public sealed class CardInstance
     public int TempPower { get; internal set; }
 
     /// <summary>
+    /// Temporary power that only applies while this creature is attacking (granted by
+    /// "Power Attacker" style tap abilities), cleared at the end step with TempPower.
+    /// </summary>
+    public int TempAttackPower { get; internal set; }
+
+    /// <summary>
     /// Keywords granted to this copy until the end of the current turn (e.g. by tap
     /// abilities). Stacked with the printed keywords; cleared during the end step.
     /// </summary>
