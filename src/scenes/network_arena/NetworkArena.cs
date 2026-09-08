@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using DuelMasters.Domain;
 using DuelMasters.Domain.Networking;
+using DuelMasters.Gameplay.Audio;
 using DuelMasters.Gameplay.CardView;
+using DuelMasters.Gameplay.Fx;
 using DuelMasters.Networking;
 using DuelMasters.Resources;
 using DuelMasters.UI;
@@ -82,6 +84,12 @@ public partial class NetworkArena : Control
     private enum OverlayKind { None, Look, Trigger }
     private OverlayKind _overlayKind = OverlayKind.None;
 
+    // Phase 5: VFX + SFX overlay and the shield-count deltas that trigger shatters.
+    private FxManager _fxManager = null!;
+    private bool _winnerShown;
+    private int _prevOppShieldCount = -1;
+    private int _prevMyShieldCount = -1;
+
     public override void _Ready()
     {
         foreach (var r in CardCatalog.Load())
@@ -90,6 +98,8 @@ public partial class NetworkArena : Control
             _cardsByCardId[r.Card.Id] = r.Card;
         }
         BuildLayout();
+        _fxManager = new FxManager();
+        AddChild(_fxManager);
         if (NetworkClient.CurrentState is { } st)
             _state = st;
         Refresh();
@@ -797,6 +807,43 @@ public partial class NetworkArena : Control
 
         SyncContextualUi();
         SyncShieldTriggerPopup();
+        RefreshFx();
+    }
+
+    /// <summary>
+    /// Minimal Phase 5 hooks for the state-driven view: a single fanfare when the
+    /// game ends and a shatter whenever a player's shield count drops this refresh.
+    /// </summary>
+    private void RefreshFx()
+    {
+        if (_state is null)
+            return;
+
+        if (_state.IsGameOver)
+        {
+            if (!_winnerShown)
+            {
+                _winnerShown = true;
+                _fxManager?.BigWin();
+                Sfx.Play(SfxId.Win);
+            }
+            _prevOppShieldCount = Opp().ShieldCount;
+            _prevMyShieldCount = Me().ShieldCount;
+            return;
+        }
+
+        if (_prevOppShieldCount >= 0 && Opp().ShieldCount < _prevOppShieldCount)
+        {
+            _fxManager?.ShieldShatter(_oppShields.GetGlobalRect().GetCenter(), new Color("ffd25a"));
+            Sfx.Play(SfxId.ShieldBreak);
+        }
+        if (_prevMyShieldCount >= 0 && Me().ShieldCount < _prevMyShieldCount)
+        {
+            _fxManager?.ShieldShatter(_myShields.GetGlobalRect().GetCenter(), new Color("ffd25a"));
+            Sfx.Play(SfxId.ShieldBreak);
+        }
+        _prevOppShieldCount = Opp().ShieldCount;
+        _prevMyShieldCount = Me().ShieldCount;
     }
 
     private void SyncContextualUi()

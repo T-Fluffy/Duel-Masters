@@ -4,7 +4,9 @@ using System.Linq;
 using DuelMasters.Core;
 using DuelMasters.Domain;
 using DuelMasters.Domain.Ai;
+using DuelMasters.Gameplay.Audio;
 using DuelMasters.Gameplay.CardView;
+using DuelMasters.Gameplay.Fx;
 using DuelMasters.Resources;
 using DuelMasters.UI;
 using DuelMasters.UI.Settings;
@@ -110,6 +112,13 @@ public partial class Arena : Control
     // Topmost animation layer: transient "ghost" cards fly deck->hand (draw) or
     // battle->graveyard (destroy). Mouse-transparent so it never eats clicks.
     private Control _fxLayer = null!;
+
+    // Phase 5: the VFX overlay owns flashes, shockwaves, beams, bursts and shake.
+    private FxManager _fxManager = null!;
+
+    // Centered "winner" banner shown once when a duel ends.
+    private Label _winnerBanner = null!;
+    private bool _winnerShown;
 
     // Pre-action UI state needed to animate a transition after Refresh rebuilds
     // every zone. Battle positions are keyed by CardInstance reference (the engine
@@ -287,6 +296,9 @@ public partial class Arena : Control
         _ai = null;
         _fx = null;
         _prevTapped.Clear();
+        _winnerShown = false;
+        if (_winnerBanner != null)
+            _winnerBanner.Visible = false;
         _selectRoot.Visible = true;
         _turnLabel.Text = "";
         _promptLabel.Text = "";
@@ -373,6 +385,25 @@ public partial class Arena : Control
         _fxLayer = new Control { Name = "FxLayer", MouseFilter = Control.MouseFilterEnum.Ignore };
         _fxLayer.SetAnchorsPreset(LayoutPreset.FullRect);
         AddChild(_fxLayer);
+
+        // Phase 5: VFX + SFX overlay (flashes, shockwaves, beams, bursts, shake).
+        _fxManager = new FxManager();
+        _fxLayer.AddChild(_fxManager);
+
+        // Centered winner banner, faded in when the duel ends.
+        _winnerBanner = new Label
+        {
+            Visible = false,
+            HorizontalAlignment = HorizontalAlignment.Center,
+            VerticalAlignment = VerticalAlignment.Center,
+            Text = "",
+        };
+        _winnerBanner.SetAnchorsPreset(LayoutPreset.Center);
+        _winnerBanner.AddThemeFontSizeOverride("font_size", 46);
+        _winnerBanner.AddThemeColorOverride("font_color", new Color("ffd25a"));
+        _winnerBanner.AddThemeColorOverride("font_outline_color", new Color(0f, 0f, 0f, 0.85f));
+        _winnerBanner.AddThemeConstantOverride("outline_size", 10);
+        _fxLayer.AddChild(_winnerBanner);
 
         // Header.
         var header = new HBoxContainer();
@@ -751,7 +782,12 @@ public partial class Arena : Control
             return;
         var hand = _spellHandIndex;
         var picks = new List<SpellTarget>(_spellTargetPicks);
-        Safe(() => _game.CastSpell(hand, picks));
+        Safe(() =>
+        {
+            var spell = _game.ActivePlayer.Hand[hand].Card;
+            _game.CastSpell(hand, picks);
+            PlayCastFx(spell);
+        });
     }
 
     // --------------------------------------------------------- look popup
@@ -934,7 +970,11 @@ public partial class Arena : Control
         var targeted = creature.Card.TapAbilities.FirstOrDefault(e => e.Target != EffectTargetScope.None);
         if (targeted is null)
         {
-            Safe(() => _game.ActivateTapAbility(creatureIndex));
+            Safe(() =>
+            {
+                _game.ActivateTapAbility(creatureIndex);
+                PlayTapFx(creature);
+            });
             Prompt($"{creature.Card.Name} used its tap ability.");
             return;
         }
@@ -967,7 +1007,11 @@ public partial class Arena : Control
             var pick = new Button { Text = race };
             pick.Pressed += () =>
             {
-                Safe(() => _game.ActivateTapAbility(creatureIndex, null, race));
+                Safe(() =>
+                {
+                    _game.ActivateTapAbility(creatureIndex, null, race);
+                    PlayTapFx(creature);
+                });
                 Prompt($"{creature.Card.Name} used its tap ability ({race}).");
             };
             _tapMenuBox.AddChild(pick);
@@ -1021,7 +1065,11 @@ public partial class Arena : Control
             var tapIdx = creatureIndex;
             pick.Pressed += () =>
             {
-                Safe(() => _game.ActivateTapAbility(tapIdx, new[] { new SpellTarget(owner, index) }));
+                Safe(() =>
+                {
+                    _game.ActivateTapAbility(tapIdx, new[] { new SpellTarget(owner, index) });
+                    PlayTapFx(creature);
+                });
                 Prompt($"{creature.Card.Name} used its tap ability.");
             };
             _tapMenuBox.AddChild(pick);
@@ -1485,7 +1533,11 @@ public partial class Arena : Control
             else if (_mode == Mode.SelectBlock && _attackerIndex >= 0)
             {
                 // The defender declines to block: the pending attack hits the shields.
-                Safe(() => _game.AttackPlayer(_attackerIndex));
+                Safe(() =>
+                {
+                    PlayAttackFx(_attackerIndex);
+                    _game.AttackPlayer(_attackerIndex);
+                });
                 GetViewport().SetInputAsHandled();
             }
             else if (_mode == Mode.SelectTarget)
@@ -1526,6 +1578,7 @@ public partial class Arena : Control
             return;
         Safe(() =>
         {
+            PlayAttackFx(_pendingAiAttackerIndex);
             _game.AttackPlayer(_pendingAiAttackerIndex);
             _awaitingBlockChoice = false;
             ResumeAi();
@@ -1984,6 +2037,7 @@ public partial class Arena : Control
         {
             _game.EndMainPhase();
             _game.EndTurn();
+            Sfx.Play(SfxId.Turn);
             if (!_game.IsGameOver)
             {
                 _game.StartTurn();
@@ -2046,13 +2100,21 @@ public partial class Arena : Control
         ShowHandPopup(isBottomSide, index);
     }
 
-    private void DoCharge(int index) => Safe(() => _game.PlayManaToManaZone(index));
+    private void DoCharge(int index)
+    {
+        Safe(() =>
+        {
+            _game.PlayManaToManaZone(index);
+            Sfx.Play(SfxId.Mana);
+        });
+    }
 
     private void DoSummon(int index)
     {
         Safe(() =>
         {
             var summoned = _game.SummonCreature(index);
+            PlaySummonFx(summoned.Card);
             if (_game.IsGameOver || _game.Winner is not null)
                 Notice($"{summoned.Card.Name} summoned.");
         });
@@ -2096,7 +2158,11 @@ public partial class Arena : Control
             Refresh();
             return;
         }
-        Safe(() => _game.CastSpell(index));
+        Safe(() =>
+        {
+            _game.CastSpell(index);
+            PlayCastFx(spell);
+        });
     }
 
     private void DoEvolve(int index)
@@ -2149,6 +2215,7 @@ public partial class Arena : Control
             {
                 Safe(() =>
                 {
+                    PlayAttackFx(_pendingAiAttackerIndex, BattleInstanceCenter(_game.Opponent.BattleZone[index]));
                     _game.AttackPlayer(_pendingAiAttackerIndex, _game.Opponent, index);
                     _awaitingBlockChoice = false;
                     ResumeAi();
@@ -2233,7 +2300,11 @@ public partial class Arena : Control
                 var target = _game.Opponent.BattleZone[index];
                 if (target.IsTapped)
                 {
-                    Safe(() => _game.AttackCreature(_attackerIndex, index));
+                    Safe(() =>
+                    {
+                        PlayAttackFx(_attackerIndex, BattleInstanceCenter(target));
+                        _game.AttackCreature(_attackerIndex, index);
+                    });
                     ResetInteraction();
                 }
                 else
@@ -2262,7 +2333,12 @@ public partial class Arena : Control
                     else
                     {
                         var hand = _spellHandIndex;
-                        Safe(() => _game.CastSpell(hand, targetOwner, index));
+                        Safe(() =>
+                        {
+                            var spell = _game.ActivePlayer.Hand[hand].Card;
+                            _game.CastSpell(hand, targetOwner, index);
+                            PlayCastFx(spell);
+                        });
                     }
                 }
                 else if (BoardCardAt(isBottomSide, index) is { } spellLook)
@@ -2280,7 +2356,11 @@ public partial class Arena : Control
                     && _game.IsLegalOnPlayTarget(creature, _game.ActivePlayer, summonOwner, index))
                 {
                     var hand = _summonHandIndex;
-                    Safe(() => _game.SummonCreature(hand, summonOwner, index));
+                    Safe(() =>
+                    {
+                        _game.SummonCreature(hand, summonOwner, index);
+                        PlaySummonFx(creature);
+                    });
                 }
                 else if (BoardCardAt(isBottomSide, index) is { } summonLook)
                 {
@@ -2321,6 +2401,7 @@ public partial class Arena : Control
                             _game.EvolveCreature(hand, index, t.Owner, t.Index);
                         else
                             _game.EvolveCreature(hand, index);
+                        PlaySummonFx(evolveCard);
                     });
                 }
                 else if (BoardCardAt(isBottomSide, index) is { } evolveBaseLook)
@@ -2351,7 +2432,11 @@ public partial class Arena : Control
             case Mode.SelectBlock:
                 if (!SideIsActive(isBottomSide) && IsDefenderBlocker(index))
                 {
-                    Safe(() => _game.AttackPlayer(_attackerIndex, _game.Opponent, index));
+                    Safe(() =>
+                    {
+                        PlayAttackFx(_attackerIndex, BattleInstanceCenter(_game.Opponent.BattleZone[index]));
+                        _game.AttackPlayer(_attackerIndex, _game.Opponent, index);
+                    });
                     ResetInteraction();
                 }
                 break;
@@ -2450,6 +2535,7 @@ public partial class Arena : Control
             {
                 Safe(() =>
                 {
+                    PlayAttackFx(_pendingAiAttackerIndex);
                     _game.AttackPlayer(_pendingAiAttackerIndex);
                     _awaitingBlockChoice = false;
                     ResumeAi();
@@ -2493,9 +2579,15 @@ public partial class Arena : Control
                         Safe(() =>
                         {
                             if (chosen)
+                            {
+                                PlayAttackFx(_attackerIndex, BattleInstanceCenter(_game.Opponent.BattleZone[blockerIdx]));
                                 _game.AttackPlayer(_attackerIndex, _game.Opponent, blockerIdx);
+                            }
                             else
+                            {
+                                PlayAttackFx(_attackerIndex);
                                 _game.AttackPlayer(_attackerIndex);
+                            }
                         });
                         ResetInteraction();
                         Refresh();
@@ -2509,14 +2601,22 @@ _mode = Mode.SelectBlock;
                     return;
                 }
 
-                Safe(() => _game.AttackPlayer(_attackerIndex));
+                Safe(() =>
+                {
+                    PlayAttackFx(_attackerIndex);
+                    _game.AttackPlayer(_attackerIndex);
+                });
                 Refresh();
                 return;
             }
 
             if (_mode == Mode.SelectBlock && _attackerIndex >= 0)
             {
-                Safe(() => _game.AttackPlayer(_attackerIndex));
+                Safe(() =>
+                {
+                    PlayAttackFx(_attackerIndex);
+                    _game.AttackPlayer(_attackerIndex);
+                });
                 Refresh();
             }
         }
@@ -2746,6 +2846,14 @@ _mode = Mode.SelectBlock;
         _turnLabel.Text = _game.IsGameOver
             ? $"Game over - {_game.Winner!.Name} wins!"
             : $"{turnText}  |  Turn {_game.TurnNumber}  |  {_game.Phase}" + (_aiDriving ? "  [AI thinking...]" : "") + noShields;
+
+        if (_game.IsGameOver && !_winnerShown)
+        {
+            _winnerShown = true;
+            _fxManager?.BigWin();
+            Sfx.Play(SfxId.Win);
+            ShowWinnerBanner(_game.Winner!.Name);
+        }
 
         _endTurn.Disabled = _game.IsGameOver || !CanAct || _game.Phase == GamePhase.End;
         if (!_game.IsGameOver && _game.Phase == GamePhase.End)
@@ -3054,20 +3162,35 @@ _mode = Mode.SelectBlock;
 
     private void PlayDestroyFx(FxSnapshot fx)
     {
-        PlayGraveFx(fx, _bottomGravePile, _game.Player1);
-        PlayGraveFx(fx, _topGravePile, _game.Player2);
+        var any = false;
+        if (PlayGraveFx(fx, _bottomGravePile, _game.Player1, out var at0))
+        {
+            any = true;
+            _fxManager?.Burst(at0, new Color(0.62f, 0.55f, 0.78f, 1f), 14, 0.5f);
+        }
+        if (PlayGraveFx(fx, _topGravePile, _game.Player2, out var at1))
+        {
+            any = true;
+            _fxManager?.Burst(at1, new Color(0.62f, 0.55f, 0.78f, 1f), 14, 0.5f);
+        }
+        if (any)
+            Sfx.Play(SfxId.Destroy);
     }
 
-    private void PlayGraveFx(FxSnapshot fx, VBoxContainer pile, Player p)
+    private bool PlayGraveFx(FxSnapshot fx, VBoxContainer pile, Player p, out Vector2 at)
     {
         var to = PileFaceCenter(pile);
+        var any = false;
         for (var i = 0; i < p.Graveyard.Count; i++)
         {
             var inst = p.Graveyard[i];
             if (!fx.BattlePos.TryGetValue(inst, out var from))
                 continue; // not a battle->grave transition we witnessed
             SpawnFly(inst.Card, faceUp: true, from, to, delay: 0f, fadeOut: true, swell: true);
+            any = true;
         }
+        at = to;
+        return any;
     }
 
     private void PlayDrawFx(FxSnapshot fx)
@@ -3088,6 +3211,7 @@ _mode = Mode.SelectBlock;
         var handGain = p.Hand.Count - preHand;
         if (deckLoss <= 0 || deckLoss != handGain)
             return;
+        Sfx.Play(SfxId.Draw);
 
         var from = PileFaceCenter(deckPile);
         var to = HandFlowCenter(handBox);
@@ -3121,6 +3245,8 @@ _mode = Mode.SelectBlock;
         var broken = preShieldPos.Count - p.ShieldCount;
         if (broken <= 0)
             return;
+        _fxManager?.ShieldShatter(ShieldZoneCenter(p), new Color("ffd25a"));
+        Sfx.Play(SfxId.ShieldBreak);
         var preHand = fx.HandCounts.GetValueOrDefault(playerNo);
         var to = HandFlowCenter(handBox);
         var faceUp = playerNo == 0 || !_vsAi || GameSettings.RevealAiHand;
@@ -3132,6 +3258,97 @@ _mode = Mode.SelectBlock;
                 continue;
             SpawnFly(p.Hand[idx].Card, faceUp, from, to, delay: k * 0.11f, fadeOut: false, swell: true);
         }
+    }
+
+    // ------------------------------------------------------------- Phase 5 (FX)
+
+    /// <summary>
+    /// The attack beat: a civilization-colored beam from the attacker's lane to its
+    /// target (a tapped enemy creature, or the defender's shield zone for a direct
+    /// attack) plus the metallic "shing". Runs against the pre-action layout.
+    /// </summary>
+    private void PlayAttackFx(int attackerIndex, Vector2? target = null)
+    {
+        if (_game is null || attackerIndex < 0 || attackerIndex >= _game.ActivePlayer.BattleZone.Count)
+            return;
+        var attacker = _game.ActivePlayer.BattleZone[attackerIndex];
+        var from = BattleInstanceCenter(attacker);
+        var to = target ?? ShieldZoneCenter(_game.Opponent);
+        _fxManager?.Beam(from, to, CivilizationPalette.Color(attacker.Card.Civilization));
+        Sfx.Play(SfxId.Attack);
+    }
+
+    private void PlayCastFx(Card spell)
+    {
+        if (_game is null)
+            return;
+        Sfx.Play(SfxId.Cast);
+        _fxManager?.Ping(BattleZoneFlowCenter(_game.ActivePlayer), CivilizationPalette.Color(spell.Civilization), 0.35f);
+    }
+
+    private void PlaySummonFx(Card creature)
+    {
+        if (_game is null)
+            return;
+        Sfx.Play(SfxId.Summon);
+        _fxManager?.Ping(BattleZoneFlowCenter(_game.ActivePlayer), CivilizationPalette.Color(creature.Civilization));
+    }
+
+    private void PlayTapFx(CardInstance inst)
+    {
+        if (_game is null)
+            return;
+        Sfx.Play(SfxId.Tap);
+        _fxManager?.Ping(BattleInstanceCenter(inst), CivilizationPalette.Color(inst.Card.Civilization), 0.28f);
+    }
+
+    /// <summary>Center of a creature's lane card, or the battle zone's flow centre fallback.</summary>
+    private Vector2 BattleInstanceCenter(CardInstance inst)
+    {
+        if (_game is null)
+            return Vector2.Zero;
+        var (player, box) = ReferenceEquals(inst.Owner, _game.Player1)
+            ? (_game.Player1, _bottomBattle)
+            : (_game.Player2, _topBattle);
+        var views = GetFlow(box).GetChildren().OfType<CardView>().ToList();
+        var i = player.BattleZone.IndexOf(inst);
+        return i >= 0 && i < views.Count ? views[i].GetGlobalRect().GetCenter() : box.GetGlobalRect().GetCenter();
+    }
+
+    private Vector2 ShieldZoneCenter(Player p)
+    {
+        if (_game is null)
+            return Vector2.Zero;
+        return (ReferenceEquals(p, _game.Player1) ? _bottomShields : _topShields).GetGlobalRect().GetCenter();
+    }
+
+    private Vector2 BattleZoneFlowCenter(Player p)
+    {
+        if (_game is null)
+            return Vector2.Zero;
+        return (ReferenceEquals(p, _game.Player1) ? _bottomBattle : _topBattle).GetGlobalRect().GetCenter();
+    }
+
+    /// <summary>One-shot golden "X wins!" banner, eased in and auto-hidden.</summary>
+    private void ShowWinnerBanner(string winnerName)
+    {
+        _winnerBanner.Text = $"{winnerName} wins!";
+        _winnerBanner.Visible = true;
+        _winnerBanner.Modulate = new Color(1f, 1f, 1f, 0f);
+        _winnerBanner.Scale = Vector2.One * 0.6f;
+        var tween = _winnerBanner.CreateTween();
+        tween.Parallel().TweenProperty(_winnerBanner, "modulate:a", 1f, 0.45d);
+        tween.Parallel()
+            .TweenProperty(_winnerBanner, "scale", Vector2.One, 0.55d)
+            .SetTrans(Tween.TransitionType.Back)
+            .SetEase(Tween.EaseType.Out);
+        tween.Finished += () =>
+        {
+            var t2 = _winnerBanner.CreateTween();
+            t2.TweenInterval(2.4d);
+            t2.TweenProperty(_winnerBanner, "modulate:a", 0f, 0.6d);
+            t2.Finished += () => _winnerBanner.Visible = false;
+        };
     }
 
     private static Vector2 PileFaceCenter(VBoxContainer pile)
