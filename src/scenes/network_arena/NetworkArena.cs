@@ -413,12 +413,15 @@ public partial class NetworkArena : Control
         });
 
         // A ready creature may pay a tap to resolve its Tap Ability. The server has
-        // already pre-validated whether it is usable and lists its legal targets.
+        // already pre-validated whether it is usable and lists its legal targets and
+        // race choices, so the client only ever offers valid options.
         if (attacker.HasTapAbility && attacker.CanUseTapAbility)
         {
             AddAction("Use tap ability", () =>
             {
-                if (attacker.TapAbilityTargets is { Count: > 0 })
+                if (attacker.TapAbilityRaces is { Count: > 0 })
+                    SelectTapRace(attackerIndex, attacker);
+                else if (attacker.TapAbilityTargets is { Count: > 0 })
                     SelectTapTarget(attackerIndex, attacker);
                 else
                 {
@@ -427,6 +430,23 @@ public partial class NetworkArena : Control
                 }
             });
         }
+    }
+
+    private void SelectTapRace(int creatureIndex, CardState attacker)
+    {
+        _mode = Mode.SelectTapTarget;
+        _tapCreatureIndex = creatureIndex;
+        ClearActions();
+        Prompt($"Choose a race for {attacker.Name}'s tap ability, or press Esc to cancel.");
+        foreach (var race in attacker.TapAbilityRaces ?? new List<string>())
+        {
+            AddAction(race, () => NetworkClient.ActivateTapAbilityRace(creatureIndex, race));
+        }
+        AddAction("Cancel", () =>
+        {
+            ResetInteraction();
+            Prompt("");
+        });
     }
 
     private void SelectTapTarget(int creatureIndex, CardState attacker)

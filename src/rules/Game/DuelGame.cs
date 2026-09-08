@@ -24,6 +24,15 @@ public sealed class DuelGame
     private readonly List<CardInstance> _pendingShieldTriggers = new();
     private Player? _shieldTriggerOwner;
 
+    /// <summary>
+    /// Effects granted by a tap ability that persist until the end of the current
+    /// turn ("at the end of this turn ...", "whenever ... this turn, ..."). Resolved
+    /// during the end step and cleared when the turn ends.
+    /// </summary>
+    private readonly List<PendingTurnEffect> _pendingTurnEffects = new();
+
+    private sealed record PendingTurnEffect(EffectId Id, Player Owner, string Race);
+
     public DuelGame(Player player1, Player player2, Random? rng = null)
     {
         Player1 = player1 ?? throw new ArgumentNullException(nameof(player1));
@@ -169,6 +178,9 @@ public sealed class DuelGame
             }
         }
 
+        // Tap-ability "at the end of this turn" effects resolve here.
+        ResolvePendingTurnEffects();
+
         // "Until end of turn" effects (tap-ability grants, temporary power boosts,
         // etc.) expire here.
         foreach (var p in new[] { Player1, Player2 })
@@ -179,6 +191,7 @@ public sealed class DuelGame
                 c.TempPower = 0;
             }
         }
+        _pendingTurnEffects.Clear();
 
         _activeIndex = 1 - _activeIndex;
         TurnNumber++;
@@ -219,8 +232,8 @@ public sealed class DuelGame
     /// <summary>Activate one of the active player's tap-ability creatures with no target.</summary>
     public void ActivateTapAbility(int creatureIndex) => ActivateTapAbility(creatureIndex, null);
 
-    /// <summary>Activate one of the active player's tap-ability creatures, naming its targets.</summary>
-    public void ActivateTapAbility(int creatureIndex, IReadOnlyList<SpellTarget>? targets)
+    /// <summary>Activate one of the active player's tap-ability creatures, naming its targets and race.</summary>
+    public void ActivateTapAbility(int creatureIndex, IReadOnlyList<SpellTarget>? targets, string? race = null)
     {
         EnsureMain();
         EnsureTriggerWindowClosed();
@@ -238,19 +251,28 @@ public sealed class DuelGame
         if (creature.Card.TapAbilities.All(e => e.Id == EffectId.Tap_NotModelled))
             throw new RuleViolationException($"'{creature.Card.Name}' has a tap ability that is not modelled yet.");
 
+        // An ability that says "choose a race" needs the caller to name one of the
+        // races currently present in either battle zone (the engine-computed pool).
+        if (creature.Card.TapAbilities.Any(e => IsRaceChoosingEffect(e.Id)))
+        {
+            var choices = LegalRaceChoices(ActivePlayer);
+            if (string.IsNullOrWhiteSpace(race) || !choices.Contains(race, StringComparer.OrdinalIgnoreCase))
+                throw new RuleViolationException($"'{creature.Card.Name}' needs a race in the battle zone for its tap ability.");
+        }
+
         // Tapping the creature pays the activation cost. Because it is now tapped it
         // can no longer attack this turn, but the other creatures may still attack,
         // so this deliberately does NOT flip the "has attacked" lock.
         creature.Tap();
-        ResolveTapAbilities(creature, targets);
+        ResolveTapAbilities(creature, targets, race);
     }
 
     /// <summary>Activate one of <paramref name="actor"/>'s tap-ability creatures (used by the AI and tests).</summary>
-    public void ActivateTapAbility(int creatureIndex, Player actor, IReadOnlyList<SpellTarget>? targets)
+    public void ActivateTapAbility(int creatureIndex, Player actor, IReadOnlyList<SpellTarget>? targets, string? race = null)
     {
         if (!ReferenceEquals(actor, ActivePlayer))
             throw new RuleViolationException("You may only use your own creatures' tap abilities.");
-        ActivateTapAbility(creatureIndex, targets);
+        ActivateTapAbility(creatureIndex, targets, race);
     }
 
     /// <summary>
@@ -258,14 +280,14 @@ public sealed class DuelGame
     /// need a target consume the caller-supplied targets in order; each must name a
     /// legal card in the zone the effect targets.
     /// </summary>
-    private void ResolveTapAbilities(CardInstance creature, IReadOnlyList<SpellTarget>? targets)
+    private void ResolveTapAbilities(CardInstance creature, IReadOnlyList<SpellTarget>? targets, string? race)
     {
         var cursor = 0;
         foreach (var eff in creature.Card.TapAbilities)
         {
             if (eff.Target == EffectTargetScope.None)
             {
-                ResolveTapEffect(ActivePlayer, eff);
+                ResolveTapEffect(ActivePlayer, eff, race);
                 continue;
             }
 
@@ -277,7 +299,7 @@ public sealed class DuelGame
         }
     }
 
-    private void ResolveTapEffect(Player actor, CardEffect eff)
+    private void ResolveTapEffect(Player actor, CardEffect eff, string? race)
     {
         switch (eff.Id)
         {
@@ -301,6 +323,32 @@ public sealed class DuelGame
             case EffectId.Tap_GrantCanAttackUntappedCivEot:
                 foreach (var c in actor.BattleZone.Where(c => CivMatches(c.Card.Civilization, eff.Data)))
                     c.GainKeywordUntilEndOfTurn(Keyword.CanAttackUntappedCreatures);
+                break;
+
+            // Gandar, Seeker of Explosions: untap all of the owner's {civ} creatures
+            // at the end of this turn.
+            case EffectId.Tap_UntapOwnCivEot:
+                _pendingTurnEffects.Add(new PendingTurnEffect(EffectId.Tap_UntapOwnCivEot, actor, eff.Data));
+                break;
+
+            // Tra Rion, Penumbra Guardian: at the end of this turn, untap all
+            // creatures of the chosen race in the battle zone.
+            case EffectId.Tap_ChooseRaceUntapEot:
+                _pendingTurnEffects.Add(new PendingTurnEffect(EffectId.Tap_ChooseRaceUntapEot, actor, race!));
+                break;
+
+            // Venom Worm: each creature of the chosen race gets Slayer until the
+            // end of the turn (the normal end-of-turn keyword expiry cleans up).
+            case EffectId.Tap_ChooseRaceGrantSlayerEot:
+                foreach (var p in new[] { actor, OpponentOf(actor) })
+                    foreach (var c in p.BattleZone.Where(c => RaceEquals(c.Card.Race, race)))
+                        c.GainKeywordUntilEndOfTurn(Keyword.Slayer);
+                break;
+
+            // Hokira: whenever one of the owner's creatures of the chosen race would
+            // be destroyed this turn, return it to hand instead (checked on destroy).
+            case EffectId.Tap_ChooseRaceToHandEot:
+                _pendingTurnEffects.Add(new PendingTurnEffect(EffectId.Tap_ChooseRaceToHandEot, actor, race!));
                 break;
         }
     }
@@ -348,6 +396,31 @@ public sealed class DuelGame
             case EffectId.Tap_GrantDoubleBreakerEot:
                 target.GainKeywordUntilEndOfTurn(Keyword.DoubleBreaker);
                 break;
+        }
+    }
+
+    /// <summary>
+    /// Resolve every tap-ability effect deferred to the end of the current turn
+    /// (Gandar untaps Light, Tra Rion untaps the chosen race). Runs during the end
+    /// step, before temporary keywords and power boosts expire.
+    /// </summary>
+    private void ResolvePendingTurnEffects()
+    {
+        foreach (var pending in _pendingTurnEffects)
+        {
+            switch (pending.Id)
+            {
+                case EffectId.Tap_UntapOwnCivEot:
+                    foreach (var c in pending.Owner.BattleZone.Where(c => CivMatches(c.Card.Civilization, pending.Race)))
+                        c.Untap();
+                    break;
+
+                case EffectId.Tap_ChooseRaceUntapEot:
+                    foreach (var p in new[] { pending.Owner, OpponentOf(pending.Owner) })
+                        foreach (var c in p.BattleZone.Where(c => RaceEquals(c.Card.Race, pending.Race)))
+                            c.Untap();
+                    break;
+            }
         }
     }
 
@@ -1091,6 +1164,18 @@ public sealed class DuelGame
         }
         c.Underneath.Clear();
 
+        // Hokira's persistent race effect: "Whenever one of your creatures of that
+        // race would be destroyed this turn, return it to your hand instead."
+        if (_pendingTurnEffects.Any(e =>
+                e.Id == EffectId.Tap_ChooseRaceToHandEot
+                && ReferenceEquals(e.Owner, owner)
+                && RaceEquals(c.Card.Race, e.Race)))
+        {
+            c.Zone = Zone.Hand;
+            owner.Hand.Add(c);
+            return;
+        }
+
         // "If this creature would be destroyed, put it into your hand/mana instead."
         if (c.Card.EffectOf(EffectId.OnDestroyed_ToHand) is not null)
         {
@@ -1553,6 +1638,30 @@ public sealed class DuelGame
     {
         return string.IsNullOrWhiteSpace(data)
             || (Enum.TryParse<Civilization>(data, true, out var parsed) && parsed == civ);
+    }
+
+    private static bool RaceEquals(string race, string? data) =>
+        string.Equals(race, data, StringComparison.OrdinalIgnoreCase);
+
+    private static bool IsRaceChoosingEffect(EffectId id) => id is
+        EffectId.Tap_ChooseRaceUntapEot or
+        EffectId.Tap_ChooseRaceGrantSlayerEot or
+        EffectId.Tap_ChooseRaceToHandEot;
+
+    /// <summary>
+    /// The distinct creature races currently present in either battle zone - the
+    /// legal choices for a tap ability that says "choose a race". Non-empty while
+    /// the active player controls at least one creature (its own race is always a
+    /// member of the pool).
+    /// </summary>
+    public IReadOnlyList<string> LegalRaceChoices(Player actor)
+    {
+        return Player1.BattleZone.Concat(Player2.BattleZone)
+            .Select(c => c.Card.Race)
+            .Where(r => !string.IsNullOrWhiteSpace(r))
+            .Distinct(StringComparer.OrdinalIgnoreCase)
+            .OrderBy(r => r, StringComparer.OrdinalIgnoreCase)
+            .ToList();
     }
 
     /// <summary>

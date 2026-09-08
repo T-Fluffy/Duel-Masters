@@ -318,6 +318,14 @@ def _tap_rules():
         lambda m, t: E("Tap_ChargeMana"))
     tap("DiscardRandom", r"^your opponent discards (\d+) cards? at random from his hand\.?$",
         lambda m, t: E("Tap_DiscardRandom", v=int(m.group(1))))
+    tap("UntapOwnCiv", r"^end step\|at the end of (?:this |the )?turn,? untap all your ([a-z]+) creatures\.?$",
+        lambda m, t: E("Tap_UntapOwnCivEot", d=m.group(1).title()))
+    tap("ChooseRaceUntap", r"^choose a race\. at the end of this turn,? untap all creatures of that race in the battle zone\.?$",
+        lambda m, t: E("Tap_ChooseRaceUntapEot"))
+    tap("ChooseRaceSlayer", r"^choose a race\. each creature of that race gets \"?slayer\"? until the (?:End Step\|)?end of the turn\.?$",
+        lambda m, t: E("Tap_ChooseRaceGrantSlayerEot"))
+    tap("ChooseRaceToHand", r"^choose a race\. whenever one of your creatures of that race would be destroyed this turn,? return it to your hand instead\.?$",
+        lambda m, t: E("Tap_ChooseRaceToHandEot"))
 
     return T
 

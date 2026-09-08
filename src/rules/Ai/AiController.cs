@@ -105,9 +105,9 @@ public sealed class AiController
         // 3) Use tap abilities before attacking: deck keeps flowing (draw/charge),
         //    removal softens the foe, and grants set up the attack wave. The engine
         //    forbids using them after the first attack this turn.
-        if (!game.HasAttackedThisTurn && TryChooseTapAbility(game, out var tapCreatureIndex, out var tapTargets))
+        if (!game.HasAttackedThisTurn && TryChooseTapAbility(game, out var tapCreatureIndex, out var tapTargets, out var tapRace))
         {
-            game.ActivateTapAbility(tapCreatureIndex, Self, tapTargets);
+            game.ActivateTapAbility(tapCreatureIndex, Self, tapTargets, tapRace);
             return new AiStep(AiStepKind.ActionTaken, -1);
         }
 
@@ -660,15 +660,17 @@ private bool TryChooseSpellPlay(DuelGame game, int handIndex, out IReadOnlyList<
 
     /// <summary>
     /// Pick a tap-ability creature to activate this turn, if any activation is
-    /// useful. Global abilities (draw, charge, discard, civ-wide grants) are valued
-    /// directly; targeted ones aim at the best legal card from the engine's own
-    /// target pool. Never touches <see cref="EffectId.Tap_NotModelled"/> or an
-    /// activation the engine would reject.
+    /// useful. Global abilities (draw, charge, discard, civ-wide grants, end-of-turn
+    /// untaps, race grants) are valued directly; targeted ones aim at the best legal
+    /// card from the engine's own target pool. Race-choosing abilities select a race
+    /// via <paramref name="race"/>. Never touches <see cref="EffectId.Tap_NotModelled"/>
+    /// or an activation the engine would reject.
     /// </summary>
-    private bool TryChooseTapAbility(DuelGame game, out int creatureIndex, out IReadOnlyList<SpellTarget>? targets)
+    private bool TryChooseTapAbility(DuelGame game, out int creatureIndex, out IReadOnlyList<SpellTarget>? targets, out string? race)
     {
         creatureIndex = -1;
         targets = null;
+        race = null;
         var foe = game.Opponent;
 
         // Untargeted abilities first: cheap, always positive-value tempo.
@@ -696,6 +698,28 @@ private bool TryChooseSpellPlay(DuelGame game, int handIndex, out IReadOnlyList<
                         when Self.BattleZone.Any(c => CivOf(c.Card, eff.Data))
                              && foe.BattleZone.Any(c => !c.IsTapped):
                         creatureIndex = i;
+                        return true;
+
+                    // Gandar: worth it when some of our creatures of that civ are
+                    // tapped now (they untap at the end of this turn to block).
+                    case EffectId.Tap_UntapOwnCivEot
+                        when Self.BattleZone.Any(c => CivOf(c.Card, eff.Data) && c.IsTapped):
+                        creatureIndex = i;
+                        return true;
+
+                    // Race-choosing abilities need a race picked out of the battle-zone
+                    // pool; they only fire when a beneficial race exists.
+                    case EffectId.Tap_ChooseRaceUntapEot when TryPickUntapRace(game, out var untapRace):
+                        creatureIndex = i;
+                        race = untapRace;
+                        return true;
+                    case EffectId.Tap_ChooseRaceGrantSlayerEot when TryPickSlayerRace(game, out var slayerRace):
+                        creatureIndex = i;
+                        race = slayerRace;
+                        return true;
+                    case EffectId.Tap_ChooseRaceToHandEot when TryPickProtectRace(game, out var protectRace):
+                        creatureIndex = i;
+                        race = protectRace;
                         return true;
                 }
             }
@@ -816,6 +840,83 @@ private bool TryChooseSpellPlay(DuelGame game, int handIndex, out IReadOnlyList<
 
     private static bool CivOf(Card card, string data) =>
         string.Equals(card.Civilization.ToString(), data, System.StringComparison.OrdinalIgnoreCase);
+
+    /// <summary>Own and foe battle-zone creature counts for every race in the pool.</summary>
+    private Dictionary<string, (int Own, int Foe)> RaceBoardStats(DuelGame game)
+    {
+        var stats = new Dictionary<string, (int, int)>(System.StringComparer.OrdinalIgnoreCase);
+        foreach (var c in Self.BattleZone)
+            if (!string.IsNullOrWhiteSpace(c.Card.Race))
+                stats.TryAdd(c.Card.Race, (0, 0));
+        foreach (var c in game.Opponent.BattleZone)
+            if (!string.IsNullOrWhiteSpace(c.Card.Race) && !stats.ContainsKey(c.Card.Race))
+                stats[c.Card.Race] = (0, 0);
+        foreach (var r in stats.Keys.ToList())
+        {
+            var own = Self.BattleZone.Count(c => string.Equals(c.Card.Race, r, System.StringComparison.OrdinalIgnoreCase));
+            var foe = game.Opponent.BattleZone.Count(c => string.Equals(c.Card.Race, r, System.StringComparison.OrdinalIgnoreCase));
+            stats[r] = (own, foe);
+        }
+        return stats;
+    }
+
+    /// <summary>
+    /// Pick the race for an end-of-turn untap (Tra Rion): our tapped creatures are
+    /// untapped so they can block on the foe's turn; prefer races where the foe has
+    /// few creatures so we are not forced to also ready their board.
+    /// </summary>
+    private bool TryPickUntapRace(DuelGame game, out string race)
+    {
+        foreach (var (r, (own, foe)) in RaceBoardStats(game)
+                     .OrderByDescending(kv => kv.Value.Own - kv.Value.Foe))
+        {
+            var tappedOwn = Self.BattleZone.Count(c =>
+                string.Equals(c.Card.Race, r, System.StringComparison.OrdinalIgnoreCase) && c.IsTapped);
+            if (tappedOwn > 0 && own - foe > 0)
+            {
+                race = r;
+                return true;
+            }
+        }
+        race = "";
+        return false;
+    }
+
+    /// <summary>
+    /// Pick the race for a Slayer grant (Venom Worm): boosts our attackers, but also
+    /// arms the foe's creatures of the same race, so only races we clearly dominate.
+    /// </summary>
+    private bool TryPickSlayerRace(DuelGame game, out string race)
+    {
+        foreach (var (r, (own, foe)) in RaceBoardStats(game).OrderByDescending(kv => kv.Value.Own))
+        {
+            if (own >= 2 && own >= foe)
+            {
+                race = r;
+                return true;
+            }
+        }
+        race = "";
+        return false;
+    }
+
+    /// <summary>
+    /// Pick the race to protect against destruction (Hokira): our creatures of a
+    /// race with real board presence - the more, the better.
+    /// </summary>
+    private bool TryPickProtectRace(DuelGame game, out string race)
+    {
+        foreach (var (r, (own, _)) in RaceBoardStats(game).OrderByDescending(kv => kv.Value.Own))
+        {
+            if (own >= 2)
+            {
+                race = r;
+                return true;
+            }
+        }
+        race = "";
+        return false;
+    }
 
     /// <summary>
     /// Pick one attack. Prefers killing tapped creatures it can overpower for free,

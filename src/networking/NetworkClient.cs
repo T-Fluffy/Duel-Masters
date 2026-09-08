@@ -135,6 +135,9 @@ public static class NetworkClient
         Invoke(DuelContract.Hub.ActivateTapAbility, creatureIndex);
     public static void ActivateTapAbilityTargeted(int creatureIndex, string targetSide, int targetIndex) =>
         Invoke(DuelContract.Hub.ActivateTapAbilityTargeted, creatureIndex, targetSide, targetIndex);
+
+    public static void ActivateTapAbilityRace(int creatureIndex, string race) =>
+        Invoke(DuelContract.Hub.ActivateTapAbilityRace, creatureIndex, race);
     public static void EndMainPhase() => Invoke(DuelContract.Hub.EndMainPhase);
     public static void EndTurn() => Invoke(DuelContract.Hub.EndTurn);
 

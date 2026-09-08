@@ -7526,8 +7526,8 @@
     "scriptEffectId": "VANILLA",
     "tapAbilities": [
       {
-        "id": "Tap_NotModelled",
-        "data": "End Step|At the end of the turn, untap all your light creatures."
+        "id": "Tap_UntapOwnCivEot",
+        "data": "Light"
       }
     ]
   },
@@ -9624,8 +9624,7 @@
     "scriptEffectId": "VANILLA",
     "tapAbilities": [
       {
-        "id": "Tap_NotModelled",
-        "data": "Choose a race. At the end of this turn, untap all creatures of t"
+        "id": "Tap_ChooseRaceUntapEot"
       }
     ]
   },
@@ -9694,8 +9693,7 @@
     "scriptEffectId": "VANILLA",
     "tapAbilities": [
       {
-        "id": "Tap_NotModelled",
-        "data": "Choose a race. Whenever one of your creatures of that race would"
+        "id": "Tap_ChooseRaceToHandEot"
       }
     ]
   },
@@ -9927,8 +9925,7 @@
     "scriptEffectId": "VANILLA",
     "tapAbilities": [
       {
-        "id": "Tap_NotModelled",
-        "data": "Choose a race. Each creature of that race gets \"slayer\" until th"
+        "id": "Tap_ChooseRaceGrantSlayerEot"
       }
     ]
   },

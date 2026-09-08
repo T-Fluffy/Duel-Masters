@@ -101,6 +101,22 @@ internal static class CardFactory
             System.Array.Empty<CardEffect>(), "", ability);
     }
 
+    /// <summary>Creature with a custom race and one activated Tap Ability.</summary>
+    public static Card TapCreatureWithRace(
+        int cost,
+        int power,
+        Civilization civ,
+        string name,
+        string race,
+        CardEffect? tapAbility = null)
+    {
+        var n = string.IsNullOrWhiteSpace(name) ? $"TapRace-{++_serial}" : name;
+        var ability = tapAbility is null ? new[] { new CardEffect(EffectId.Tap_NotModelled, EffectTargetScope.None) }
+                                         : new[] { tapAbility };
+        return new Card($"c{++_serial}", n, civ, CardType.Creature, cost, power, race, System.Array.Empty<Keyword>(),
+            System.Array.Empty<CardEffect>(), "", ability);
+    }
+
     /// <summary>Shorthand for authoring <see cref="CardEffect"/> in tests.</summary>
     public static CardEffect Eff(EffectId id, EffectTargetScope target = EffectTargetScope.None, int value = 0, string data = "")
         => new(id, target, value, data);

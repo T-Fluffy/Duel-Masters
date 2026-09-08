@@ -360,6 +360,27 @@ public sealed class DuelHub : Hub<IDuelClientContract>
         await MaybeAnnounceWinner(room);
     }
 
+    public async Task ActivateTapAbilityRace(int creatureIndex, string race)
+    {
+        var mySide = ResolveSide(out var room);
+        if (room is null || mySide is null)
+        {
+            await Clients.Caller.ReceiveActionError("You are not in an active match.");
+            return;
+        }
+        if (!await RequireActiveSide(room, mySide))
+            return;
+
+        if (!room.Execute(game => game.ActivateTapAbility(creatureIndex, null, race), out var error))
+        {
+            await Clients.Caller.ReceiveActionError(error ?? "That tap ability cannot be used right now.");
+            return;
+        }
+
+        await BroadcastState(room);
+        await MaybeAnnounceWinner(room);
+    }
+
     public async Task EndMainPhase() => await RunGameAction(room => room.EndMainPhase());
 
     public async Task EndTurn() => await RunGameAction(room => room.EndTurn());

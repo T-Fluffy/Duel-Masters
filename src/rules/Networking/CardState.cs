@@ -69,6 +69,12 @@ public sealed class CardState
     [JsonPropertyName("tapAbilityTargets")]
     public List<TapTargetState>? TapAbilityTargets { get; set; }
 
+    /// <summary>Server-computed "choose a race" pool for a Tap Ability that needs a
+    /// race choice (non-empty only while the viewer's creature can use such an
+    /// ability; it lists the distinct races currently in either battle zone).</summary>
+    [JsonPropertyName("tapAbilityRaces")]
+    public List<string>? TapAbilityRaces { get; set; }
+
     /// <summary>True when this entry only represents a face-down card (no details).</summary>
     [JsonPropertyName("countOnly")]
     public bool CountOnly { get; set; }

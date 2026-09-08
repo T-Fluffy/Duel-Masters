@@ -176,6 +176,18 @@ public enum EffectId
     /// <summary>Tap ability: your opponent discards {Value} random card(s) from hand.</summary>
     Tap_DiscardRandom = 917,
 
+    /// <summary>Tap ability: at the end of this turn, untap all of your {Data} creatures.</summary>
+    Tap_UntapOwnCivEot = 918,
+
+    /// <summary>Tap ability: choose a race. At the end of this turn, untap all creatures of that race.</summary>
+    Tap_ChooseRaceUntapEot = 919,
+
+    /// <summary>Tap ability: choose a race. Each creature of that race gets Slayer until end of turn.</summary>
+    Tap_ChooseRaceGrantSlayerEot = 920,
+
+    /// <summary>Tap ability: choose a race. Whenever one of your creatures of that race would be destroyed this turn, return it to your hand instead.</summary>
+    Tap_ChooseRaceToHandEot = 921,
+
     /// <summary>
     /// Tap Ability placeholder for cards whose activated ability is not yet
     /// representable in the engine. The card still carries the ability in the

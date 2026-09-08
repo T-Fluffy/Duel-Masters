@@ -192,6 +192,11 @@ public class CatalogDataTests
             ["Brood Shell"] = "Tap_ReturnCreatureFromManaToHand",
             ["Popple, Flowerpetal Dancer"] = "Tap_ChargeMana",
             ["Crath Lade, Merciless King"] = "Tap_DiscardRandom",
+            // Slice A: end-of-turn untap / race-choosing effects.
+            ["Gandar, Seeker of Explosions"] = "Tap_UntapOwnCivEot",
+            ["Tra Rion, Penumbra Guardian"] = "Tap_ChooseRaceUntapEot",
+            ["Hokira"] = "Tap_ChooseRaceToHandEot",
+            ["Venom Worm"] = "Tap_ChooseRaceGrantSlayerEot",
         };
 
         foreach (var (name, effId) in modelled)

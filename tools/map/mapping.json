@@ -5440,12 +5440,12 @@
   "effects": [],
   "tapAbilities": [
    {
-    "id": "Tap_NotModelled",
-    "data": "End Step|At the end of the turn, untap all your light creatures."
+    "id": "Tap_UntapOwnCivEot",
+    "data": "Light"
    }
   ],
   "evolutionOf": null,
-  "note": "tap ability not modelled",
+  "note": null,
   "src": "{{Double Breaker}}\n\n{{Tap Ability|End Step|At the end of the turn, untap all your light creatures.}}"
  },
  {
@@ -6956,12 +6956,11 @@
   "effects": [],
   "tapAbilities": [
    {
-    "id": "Tap_NotModelled",
-    "data": "Choose a race. At the end of this turn, untap all creatures of t"
+    "id": "Tap_ChooseRaceUntapEot"
    }
   ],
   "evolutionOf": null,
-  "note": "tap ability not modelled",
+  "note": null,
   "src": "{{Tap Ability|Choose a race. At the end of this turn, untap all creatures of that race in the battle zone.}}"
  },
  {
@@ -7007,12 +7006,11 @@
   "effects": [],
   "tapAbilities": [
    {
-    "id": "Tap_NotModelled",
-    "data": "Choose a race. Whenever one of your creatures of that race would"
+    "id": "Tap_ChooseRaceToHandEot"
    }
   ],
   "evolutionOf": null,
-  "note": "tap ability not modelled",
+  "note": null,
   "src": "{{Tap Ability|Choose a race. Whenever one of your creatures of that race would be destroyed this turn, return it to your hand instead.}}"
  },
  {
@@ -7175,12 +7173,11 @@
   "effects": [],
   "tapAbilities": [
    {
-    "id": "Tap_NotModelled",
-    "data": "Choose a race. Each creature of that race gets \"slayer\" until th"
+    "id": "Tap_ChooseRaceGrantSlayerEot"
    }
   ],
   "evolutionOf": null,
-  "note": "tap ability not modelled",
+  "note": null,
   "src": "{{Tap Ability|Choose a race. Each creature of that race gets \"slayer\" until the End Step|end of the turn. ''(Whenever a creature that has \"slayer\" battles, destroy the other creature after the battle.)''}}"
  },
  {

@@ -920,6 +920,15 @@ public partial class Arena : Control
         if (_game is null || creatureIndex < 0 || creatureIndex >= _game.ActivePlayer.BattleZone.Count)
             return;
         var creature = _game.ActivePlayer.BattleZone[creatureIndex];
+        var raceEffect = creature.Card.TapAbilities.FirstOrDefault(e => e.Id is
+            EffectId.Tap_ChooseRaceUntapEot or
+            EffectId.Tap_ChooseRaceGrantSlayerEot or
+            EffectId.Tap_ChooseRaceToHandEot);
+        if (raceEffect is not null)
+        {
+            ShowTapRaceMenu(creatureIndex, raceEffect);
+            return;
+        }
         var targeted = creature.Card.TapAbilities.FirstOrDefault(e => e.Target != EffectTargetScope.None);
         if (targeted is null)
         {
@@ -928,6 +937,52 @@ public partial class Arena : Control
             return;
         }
         ShowTapTargetMenu(creatureIndex, targeted);
+    }
+
+    private void ShowTapRaceMenu(int creatureIndex, CardEffect eff)
+    {
+        HideAttackMenu();
+        HideHandPopup();
+        HideLookPopup();
+
+        foreach (var child in _tapMenuBox.GetChildren().OfType<Control>().ToList())
+            child.QueueFree();
+
+        var creature = _game!.ActivePlayer.BattleZone[creatureIndex];
+        var title = new Label
+        {
+            Text = $"{creature.Card.Name}: choose a race",
+            AutowrapMode = TextServer.AutowrapMode.WordSmart,
+        };
+        title.CustomMinimumSize = new Vector2(300, 0);
+        title.AddThemeFontSizeOverride("font_size", 14);
+        title.AddThemeColorOverride("font_color", CivilizationPalette.Color(creature.Card.Civilization).Lightened(0.25f));
+        title.HorizontalAlignment = HorizontalAlignment.Center;
+        _tapMenuBox.AddChild(title);
+
+        foreach (var race in _game.LegalRaceChoices(_game.ActivePlayer))
+        {
+            var pick = new Button { Text = race };
+            pick.Pressed += () =>
+            {
+                Safe(() => _game.ActivateTapAbility(creatureIndex, null, race));
+                Prompt($"{creature.Card.Name} used its tap ability ({race}).");
+            };
+            _tapMenuBox.AddChild(pick);
+        }
+
+        var cancel = new Button { Text = "Cancel" };
+        cancel.Pressed += () =>
+        {
+            HideTapTargetMenu();
+            ResetInteraction();
+            Prompt("Tap ability cancelled - pick a creature to attack when ready.");
+            Refresh();
+        };
+        _tapMenuBox.AddChild(cancel);
+
+        _tapMenu.Visible = true;
+        CallDeferred(nameof(PositionTapMenu));
     }
 
     private void ShowTapTargetMenu(int creatureIndex, CardEffect eff)

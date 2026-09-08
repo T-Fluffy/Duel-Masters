@@ -473,7 +473,175 @@ public class TapAbilityTests
         Assert.False(cre.IsTapped);
     }
 
+    // -------------------------------------- Slice A: end-of-turn + race effects
+
+    [Fact]
+    public void UntapOwnCivEot_UntapsOwnCreaturesOfThatCivAtEndOfTurn()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        var light = h.PutCreature(h.P1, CardFactory.Creature(2, 2000, Civilization.Light, "Lantern"), tapped: true);
+        var shade = h.PutCreature(h.P1, CardFactory.Creature(2, 2000, Civilization.Darkness, "Shade"), tapped: true);
+        var gandar = h.PutCreature(h.P1, TapCard(CardFactory.Eff(EffectId.Tap_UntapOwnCivEot, data: "Light"), civ: Civilization.Light));
+
+        h.Game.ActivateTapAbility(h.P1.BattleZone.IndexOf(gandar));
+        Assert.True(gandar.IsTapped); // tapping Gandar pays the cost
+
+        h.Game.EndMainPhase();
+        h.Game.EndTurn();
+
+        Assert.False(light.IsTapped);
+        Assert.False(gandar.IsTapped); // the Light creature itself rewakes too
+        Assert.True(shade.IsTapped);   // other civilisations stay tapped
+    }
+
+    [Fact]
+    public void ChooseRaceUntapEot_UntapsThatRaceForBothPlayers()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        var myDragon = h.PutCreature(h.P1, CardFactory.CreatureWithRace(2, 2000, Civilization.Water, "MyDragon", "Dragon"), tapped: true);
+        var foeDragon = h.PutCreature(h.P2, CardFactory.CreatureWithRace(2, 2000, Civilization.Fire, "FoeDragon", "Dragon"), tapped: true);
+        var myAngel = h.PutCreature(h.P1, CardFactory.CreatureWithRace(2, 2000, Civilization.Water, "MyAngel", "Angel"), tapped: true);
+        var traRion = h.PutCreature(h.P1, TapCard("TraRion", CardFactory.Eff(EffectId.Tap_ChooseRaceUntapEot)));
+
+        h.Game.ActivateTapAbility(h.P1.BattleZone.IndexOf(traRion), null, "Dragon");
+
+        h.Game.EndMainPhase();
+        h.Game.EndTurn();
+
+        Assert.False(myDragon.IsTapped);
+        Assert.False(foeDragon.IsTapped);
+        Assert.True(myAngel.IsTapped); // races outside the choice stay tapped
+    }
+
+    [Fact]
+    public void ChooseRaceGrantSlayerEot_GrantsSlayerToThatRaceUntilEndOfTurn()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        var myWorm = h.PutCreature(h.P1, CardFactory.CreatureWithRace(2, 2000, Civilization.Darkness, "MyWorm", "ParasiteWorm"));
+        var foeWorm = h.PutCreature(h.P2, CardFactory.CreatureWithRace(2, 2000, Civilization.Darkness, "FoeWorm", "ParasiteWorm"));
+        var other = h.PutCreature(h.P1, CardFactory.CreatureWithRace(2, 2000, Civilization.Fire, "Other", "Hedrian"));
+        var venom = h.PutCreature(h.P1, TapCard("Venom", CardFactory.Eff(EffectId.Tap_ChooseRaceGrantSlayerEot), civ: Civilization.Darkness));
+
+        h.Game.ActivateTapAbility(h.P1.BattleZone.IndexOf(venom), null, "ParasiteWorm");
+
+        Assert.True(myWorm.HasKeywordNow(Keyword.Slayer));
+        Assert.True(foeWorm.HasKeywordNow(Keyword.Slayer));
+        Assert.False(other.HasKeywordNow(Keyword.Slayer));
+
+        h.Game.EndMainPhase();
+        h.Game.EndTurn();
+        Assert.False(myWorm.HasKeywordNow(Keyword.Slayer)); // grant expires at end of turn
+    }
+
+    [Fact]
+    public void ChooseRaceToHandEot_RedirectsOwnDestructionOfThatRaceThisTurn()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        var protectedDragon = h.PutCreature(h.P1, CardFactory.CreatureWithRace(2, 2000, Civilization.Water, "Protected", "Dragon"));
+        var unprotectedAngel = h.PutCreature(h.P1, CardFactory.CreatureWithRace(2, 2000, Civilization.Water, "Unprotected", "Angel"));
+        var hokira = h.PutCreature(h.P1, TapCard("Hokira", CardFactory.Eff(EffectId.Tap_ChooseRaceToHandEot)));
+        for (var i = 0; i < 8; i++)
+            h.PutMana(h.P1, CardFactory.Spell(1, Civilization.Darkness));
+
+        h.Game.ActivateTapAbility(h.P1.BattleZone.IndexOf(hokira), null, "Dragon");
+
+        var wipe = CardFactory.Spell(7, Civilization.Darkness, "Wipe", CardFactory.Eff(EffectId.Spell_DestroyAllCreatures));
+        h.PutInHand(h.P1, wipe);
+        h.Game.CastSpell(h.P1.Hand.Count - 1);
+
+        Assert.DoesNotContain(protectedDragon, h.P1.BattleZone);
+        Assert.Contains(protectedDragon, h.P1.Hand);
+        Assert.DoesNotContain(unprotectedAngel, h.P1.BattleZone);
+        Assert.Contains(unprotectedAngel, h.P1.Graveyard);
+    }
+
+    [Fact]
+    public void ChooseRaceToHandEot_DoesNotProtectOpponentsCreatures()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        var foeDragon = h.PutCreature(h.P2, CardFactory.CreatureWithRace(2, 2000, Civilization.Fire, "FoeDragon", "Dragon"));
+        var hokira = h.PutCreature(h.P1, TapCard("Hokira", CardFactory.Eff(EffectId.Tap_ChooseRaceToHandEot)));
+        for (var i = 0; i < 8; i++)
+            h.PutMana(h.P1, CardFactory.Spell(1, Civilization.Darkness));
+
+        h.Game.ActivateTapAbility(h.P1.BattleZone.IndexOf(hokira), null, "Dragon");
+        h.PutInHand(h.P1, CardFactory.Spell(7, Civilization.Darkness, "Wipe", CardFactory.Eff(EffectId.Spell_DestroyAllCreatures)));
+        h.Game.CastSpell(h.P1.Hand.Count - 1);
+
+        Assert.Contains(foeDragon, h.P2.Graveyard);
+        Assert.DoesNotContain(foeDragon, h.P1.Hand);
+    }
+
+    [Fact]
+    public void RaceChoosingAbility_RejectsRaceOutsideTheChoicePool()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        h.PutCreature(h.P1, CardFactory.CreatureWithRace(1, 1000, Civilization.Fire, "D", "Dragon"));
+        var rion = h.PutCreature(h.P1, TapCard("Rion", CardFactory.Eff(EffectId.Tap_ChooseRaceUntapEot)));
+
+        var ex = Assert.Throws<RuleViolationException>(() => h.Game.ActivateTapAbility(h.P1.BattleZone.IndexOf(rion), null, "Angel"));
+        Assert.Contains("needs a race in the battle zone", ex.Message);
+        Assert.False(rion.IsTapped); // the tap was not paid
+    }
+
+    [Fact]
+    public void RaceChoosingAbility_RejectsMissingOrEmptyPoolRace()
+    {
+        foreach (var race in new[] { (string?)null, "", "   ", "Dragon" })
+        {
+            var h = GameHarness.AtMainPhase();
+            h.ResetBoard();
+            var rion = h.PutCreature(h.P1, TapCard("Rion", CardFactory.Eff(EffectId.Tap_ChooseRaceUntapEot)));
+
+            // No creatures at all -> the pool is empty, so any race fails validation.
+            var ex = Assert.Throws<RuleViolationException>(() => h.Game.ActivateTapAbility(h.P1.BattleZone.IndexOf(rion), null, race));
+            Assert.Contains("needs a race in the battle zone", ex.Message);
+        }
+    }
+
+    [Fact]
+    public void LegalRaceChoices_AreDistinctRacesAcrossBothBattleZones()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        h.PutCreature(h.P1, CardFactory.CreatureWithRace(1, 1000, Civilization.Fire, "A", "Dragon"));
+        h.PutCreature(h.P1, CardFactory.CreatureWithRace(1, 1000, Civilization.Water, "B", "Dragon"));
+        h.PutCreature(h.P2, CardFactory.CreatureWithRace(1, 1000, Civilization.Darkness, "C", "Angel Knight"));
+
+        var choices = h.Game.LegalRaceChoices(h.P1);
+
+        Assert.Equal(2, choices.Count);
+        Assert.Contains("Dragon", choices);
+        Assert.Contains("Angel Knight", choices);
+    }
+
     // --------------------------------------------------- networked state / AI
+
+    [Fact]
+    public void DuelGameState_AnnotatesTapRacesForRaceChoosingAbility()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        h.PutCreature(h.P1, CardFactory.CreatureWithRace(1, 1000, Civilization.Fire, "D", "Dragon"));
+        h.PutCreature(h.P2, CardFactory.CreatureWithRace(1, 1000, Civilization.Darkness, "W", "ParasiteWorm"));
+        var venom = h.PutCreature(h.P1, CardFactory.TapCreatureWithRace(3, 3000, Civilization.Darkness, "Venom", "ParasiteWorm",
+            CardFactory.Eff(EffectId.Tap_ChooseRaceGrantSlayerEot)));
+
+        var state = DuelGameState.From(h.Game, "AAAAAA", DuelSide.Player1);
+
+        var cs = state.Players.Single(p => p.Side == DuelSide.Player1).BattleZone.Single(c => c.InstanceId == "Player1:B:1");
+        Assert.True(cs.HasTapAbility);
+        Assert.True(cs.CanUseTapAbility);
+        Assert.Contains("Dragon", cs.TapAbilityRaces!);
+        Assert.Contains("ParasiteWorm", cs.TapAbilityRaces!);
+        Assert.Equal(2, cs.TapAbilityRaces!.Count);
+    }
 
     [Fact]
     public void DuelGameState_AnnotatesGlobalTapAbilityForViewer()
@@ -523,5 +691,51 @@ public class TapAbilityTests
         Assert.True(neo.IsTapped);
         Assert.True(h.P1.Hand.Count >= handBefore);
         Assert.True(h.P1.ManaZone.Count >= 1);
+    }
+
+    [Fact]
+    public void AiController_PicksRaceToUntapForChooseRaceUntapEot()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        var traRion = h.PutCreature(h.P1, TapCard("TraRion-AI", CardFactory.Eff(EffectId.Tap_ChooseRaceUntapEot)));
+        var dragon = h.PutCreature(h.P1, CardFactory.CreatureWithRace(2, 2000, Civilization.Fire, "DragonAlly", "Dragon"), tapped: true);
+
+        new AiController(h.P1).PlayTurn(h.Game);
+
+        // The only race with own tapped members and no foe presence is "Dragon";
+        // the AI picks it and ends the turn with the price paid and the dragon ready.
+        Assert.True(traRion.IsTapped);
+        Assert.False(dragon.IsTapped);
+    }
+
+    [Fact]
+    public void AiController_PicksRaceToProtectForChooseRaceToHandEot()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        var hokira = h.PutCreature(h.P1, TapCard("Hokira-AI", CardFactory.Eff(EffectId.Tap_ChooseRaceToHandEot)));
+        h.PutCreature(h.P1, CardFactory.CreatureWithRace(2, 2000, Civilization.Water, "DrakeA", "Dragon"));
+        h.PutCreature(h.P1, CardFactory.CreatureWithRace(2, 2000, Civilization.Water, "DrakeB", "Dragon"));
+
+        new AiController(h.P1).PlayTurn(h.Game);
+
+        Assert.True(hokira.IsTapped);
+    }
+
+    [Fact]
+    public void AiController_GrantsSlayerToRaceItDominates()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        var venom = h.PutCreature(h.P1, TapCard("Venom-AI", CardFactory.Eff(EffectId.Tap_ChooseRaceGrantSlayerEot), civ: Civilization.Darkness));
+        var wormA = h.PutCreature(h.P1, CardFactory.CreatureWithRace(2, 2000, Civilization.Darkness, "WormA", "ParasiteWorm"));
+        var wormB = h.PutCreature(h.P1, CardFactory.CreatureWithRace(2, 2000, Civilization.Darkness, "WormB", "ParasiteWorm"));
+
+        new AiController(h.P1).PlayTurn(h.Game);
+
+        Assert.True(venom.IsTapped);
+        Assert.True(wormA.HasKeywordNow(Keyword.Slayer));
+        Assert.True(wormB.HasKeywordNow(Keyword.Slayer));
     }
 }

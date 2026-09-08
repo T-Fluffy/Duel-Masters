@@ -142,21 +142,26 @@ public sealed class DuelGameState
                 cardState.CanUseTapAbility = true;
 
                 var targeted = creature.Card.TapAbilities.FirstOrDefault(e => e.Target != EffectTargetScope.None);
-                if (targeted is null)
-                    continue;
-
-                var targets = new List<TapTargetState>();
-                foreach (var item in game.TapTargetPool(active, targeted))
+                if (targeted is not null)
                 {
-                    if (Locate(item, game, out var owner, out var index))
+                    var targets = new List<TapTargetState>();
+                    foreach (var item in game.TapTargetPool(active, targeted))
                     {
-                        var side = ReferenceEquals(owner, game.Player1) ? p1 : p2;
-                        var own = ReferenceEquals(owner, active);
-                        targets.Add(new TapTargetState(side, index, TapTargetLabel(own, item.Card)));
+                        if (Locate(item, game, out var owner, out var index))
+                        {
+                            var side = ReferenceEquals(owner, game.Player1) ? p1 : p2;
+                            var own = ReferenceEquals(owner, active);
+                            targets.Add(new TapTargetState(side, index, TapTargetLabel(own, item.Card)));
+                        }
                     }
+                    if (targets.Count > 0)
+                        cardState.TapAbilityTargets = targets;
                 }
-                if (targets.Count > 0)
-                    cardState.TapAbilityTargets = targets;
+
+                var races = creature.Card.TapAbilities.FirstOrDefault(e => e.Target == EffectTargetScope.None
+                    && e.Id is EffectId.Tap_ChooseRaceUntapEot or EffectId.Tap_ChooseRaceGrantSlayerEot or EffectId.Tap_ChooseRaceToHandEot);
+                if (races is not null)
+                    cardState.TapAbilityRaces = game.LegalRaceChoices(active).ToList();
             }
         }
 
