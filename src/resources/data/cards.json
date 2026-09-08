@@ -7031,8 +7031,8 @@
     "scriptEffectId": "VANILLA",
     "tapAbilities": [
       {
-        "id": "Tap_NotModelled",
-        "data": "Put up to 3 cards from your graveyard into your mana zone."
+        "id": "Tap_GraveToMana",
+        "value": 3
       }
     ]
   },
@@ -8421,8 +8421,8 @@
     "scriptEffectId": "VANILLA",
     "tapAbilities": [
       {
-        "id": "Tap_NotModelled",
-        "data": "Put up to 3 cards from your hand into your mana zone."
+        "id": "Tap_HandToMana",
+        "value": 3
       }
     ]
   },
@@ -8512,8 +8512,8 @@
     "scriptEffectId": "VANILLA",
     "tapAbilities": [
       {
-        "id": "Tap_NotModelled",
-        "data": "Each player puts a card from his mana zone into his graveyard."
+        "id": "Tap_ManaToGrave",
+        "value": 1
       }
     ]
   },

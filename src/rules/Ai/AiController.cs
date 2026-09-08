@@ -687,6 +687,14 @@ private bool TryChooseSpellPlay(DuelGame game, int handIndex, out IReadOnlyList<
                     case EffectId.Tap_ChargeMana:
                         creatureIndex = i;
                         return true;
+                    case EffectId.Tap_HandToMana
+                        when eff.Value > 0 && Self.Hand.Count > 0:
+                        creatureIndex = i;
+                        return true;
+                    case EffectId.Tap_GraveToMana
+                        when eff.Value > 0 && Self.Graveyard.Count > 0:
+                        creatureIndex = i;
+                        return true;
                     case EffectId.Tap_DiscardRandom when foe.Hand.Count >= 2:
                         creatureIndex = i;
                         return true;

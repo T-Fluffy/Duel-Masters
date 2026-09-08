@@ -326,6 +326,12 @@ def _tap_rules():
         lambda m, t: E("Tap_ChooseRaceGrantSlayerEot"))
     tap("ChooseRaceToHand", r"^choose a race\. whenever one of your creatures of that race would be destroyed this turn,? return it to your hand instead\.?$",
         lambda m, t: E("Tap_ChooseRaceToHandEot"))
+    tap("GraveToMana", r"^put up to (\d+) cards? from your graveyard into your mana zone\.?$",
+        lambda m, t: E("Tap_GraveToMana", v=int(m.group(1))))
+    tap("HandToMana", r"^put up to (\d+) cards? from your hand into your mana zone\.?$",
+        lambda m, t: E("Tap_HandToMana", v=int(m.group(1))))
+    tap("ManaToGrave", r"^each player puts? a card from (?:his|her|their) mana zone into (?:his|her|their) graveyard\.?$",
+        lambda m, t: E("Tap_ManaToGrave", v=1))
 
     return T
 

@@ -188,6 +188,15 @@ public enum EffectId
     /// <summary>Tap ability: choose a race. Whenever one of your creatures of that race would be destroyed this turn, return it to your hand instead.</summary>
     Tap_ChooseRaceToHandEot = 921,
 
+    /// <summary>Tap ability: put up to {Value} cards from your graveyard into your mana zone.</summary>
+    Tap_GraveToMana = 922,
+
+    /// <summary>Tap ability: put up to {Value} cards from your hand into your mana zone.</summary>
+    Tap_HandToMana = 923,
+
+    /// <summary>Tap ability: each player puts a card from their mana zone into their graveyard.</summary>
+    Tap_ManaToGrave = 924,
+
     /// <summary>
     /// Tap Ability placeholder for cards whose activated ability is not yet
     /// representable in the engine. The card still carries the ability in the

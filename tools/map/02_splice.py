@@ -42,7 +42,8 @@ VALID_EFF = {
     "Tap_GrantSlayerEot", "Tap_GrantSpeedAttackerEot", "Tap_GrantDoubleBreakerEot",
     "Tap_GrantUnblockableCivEot", "Tap_GrantCanAttackUntappedCivEot", "Tap_ChargeMana",
     "Tap_DiscardRandom", "Tap_UntapOwnCivEot", "Tap_ChooseRaceUntapEot",
-    "Tap_ChooseRaceGrantSlayerEot", "Tap_ChooseRaceToHandEot", "Tap_NotModelled",
+    "Tap_ChooseRaceGrantSlayerEot", "Tap_ChooseRaceToHandEot", "Tap_GraveToMana", "Tap_HandToMana",
+    "Tap_ManaToGrave", "Tap_NotModelled",
 }
 
 EFFECT_FIELD_ORDER = ("id", "target", "value", "data")

@@ -350,6 +350,25 @@ public sealed class DuelGame
             case EffectId.Tap_ChooseRaceToHandEot:
                 _pendingTurnEffects.Add(new PendingTurnEffect(EffectId.Tap_ChooseRaceToHandEot, actor, race!));
                 break;
+
+            // Bliss Totem: move up to {Value} cards from your graveyard into your
+            // mana zone ("up to" is simplified to "all present up to the cap").
+            case EffectId.Tap_GraveToMana:
+                MoveGraveToMana(actor, Math.Max(0, eff.Value));
+                break;
+
+            // Tangle Fist: move up to {Value} cards from your hand into your mana
+            // zone (simplified the same way as Bliss Totem).
+            case EffectId.Tap_HandToMana:
+                MoveHandToMana(actor, Math.Max(0, eff.Value));
+                break;
+
+            // Sky Crusher: each player puts a card from his mana zone into his
+            // graveyard. The card is chosen deterministically (the top of the zone).
+            case EffectId.Tap_ManaToGrave:
+                MoveManaToGrave(Player1);
+                MoveManaToGrave(Player2);
+                break;
         }
     }
 
@@ -1512,6 +1531,44 @@ public sealed class DuelGame
         var card = p.Deck[0];
         p.Deck.RemoveAt(0);
         p.ManaZone.Add(new CardInstance(card, p) { Zone = Zone.ManaZone });
+    }
+
+    /// <summary>Move up to <paramref name="count"/> cards from the player's graveyard
+    /// into their mana zone (Bliss Totem), taking the most recently added cards.</summary>
+    private void MoveGraveToMana(Player p, int count)
+    {
+        for (var i = 0; i < count && p.Graveyard.Count > 0; i++)
+        {
+            var card = p.Graveyard[^1];
+            p.Graveyard.RemoveAt(p.Graveyard.Count - 1);
+            card.Zone = Zone.ManaZone;
+            p.ManaZone.Add(card);
+        }
+    }
+
+    /// <summary>Move up to <paramref name="count"/> cards from the player's hand into
+    /// their mana zone (Tangle Fist), taking cards from the top of the hand.</summary>
+    private void MoveHandToMana(Player p, int count)
+    {
+        for (var i = 0; i < count && p.Hand.Count > 0; i++)
+        {
+            var card = p.Hand[0];
+            p.Hand.RemoveAt(0);
+            card.Zone = Zone.ManaZone;
+            p.ManaZone.Add(card);
+        }
+    }
+
+    /// <summary>Each player puts one card from their mana zone into their graveyard
+    /// (Sky Crusher); the top of the zone is sacrificed.</summary>
+    private void MoveManaToGrave(Player p)
+    {
+        if (p.ManaZone.Count == 0)
+            return;
+        var card = p.ManaZone[0];
+        p.ManaZone.RemoveAt(0);
+        card.Zone = Zone.Graveyard;
+        p.Graveyard.Add(card);
     }
 
     private void DiscardRandom(Player p, int count)

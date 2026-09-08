@@ -197,6 +197,10 @@ public class CatalogDataTests
             ["Tra Rion, Penumbra Guardian"] = "Tap_ChooseRaceUntapEot",
             ["Hokira"] = "Tap_ChooseRaceToHandEot",
             ["Venom Worm"] = "Tap_ChooseRaceGrantSlayerEot",
+            // Slice B: multi-target mana moves (untargeted global effects).
+            ["Bliss Totem, Avatar of Luck"] = "Tap_GraveToMana",
+            ["Tangle Fist, the Weaver"] = "Tap_HandToMana",
+            ["Sky Crusher, the Agitator"] = "Tap_ManaToGrave",
         };
 
         foreach (var (name, effId) in modelled)

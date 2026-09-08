@@ -738,4 +738,115 @@ public class TapAbilityTests
         Assert.True(wormA.HasKeywordNow(Keyword.Slayer));
         Assert.True(wormB.HasKeywordNow(Keyword.Slayer));
     }
+
+    // -------------------------------------- Slice B: multi-target mana moves
+
+    [Fact]
+    public void GraveToMana_MovesUpToValueGraveCardsIntoMana()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        for (var i = 0; i < 5; i++)
+            h.P1.Graveyard.Add(new CardInstance(CardFactory.Spell(1), h.P1) { Zone = Zone.Graveyard });
+        var totem = h.PutCreature(h.P1, TapCard("Bliss", CardFactory.Eff(EffectId.Tap_GraveToMana, value: 3)));
+
+        h.Game.ActivateTapAbility(h.P1.BattleZone.IndexOf(totem));
+
+        Assert.True(totem.IsTapped);
+        Assert.Equal(2, h.P1.Graveyard.Count);
+        Assert.Equal(3, h.P1.ManaZone.Count);
+        Assert.All(h.P1.ManaZone, m => Assert.Equal(Zone.ManaZone, m.Zone));
+    }
+
+    [Fact]
+    public void HandToMana_MovesUpToValueHandCardsIntoMana()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        for (var i = 0; i < 5; i++)
+            h.PutInHand(h.P1, CardFactory.Spell(1));
+        var tangle = h.PutCreature(h.P1, TapCard("Tangle", CardFactory.Eff(EffectId.Tap_HandToMana, value: 3)));
+
+        h.Game.ActivateTapAbility(h.P1.BattleZone.IndexOf(tangle));
+
+        Assert.True(tangle.IsTapped);
+        Assert.Equal(2, h.P1.Hand.Count);
+        Assert.Equal(3, h.P1.ManaZone.Count);
+    }
+
+    [Fact]
+    public void HandToMana_WithEmptyHand_MovesNothing()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        var tangle = h.PutCreature(h.P1, TapCard("Tangle", CardFactory.Eff(EffectId.Tap_HandToMana, value: 3)));
+
+        h.Game.ActivateTapAbility(h.P1.BattleZone.IndexOf(tangle));
+
+        Assert.True(tangle.IsTapped);
+        Assert.Empty(h.P1.ManaZone);
+    }
+
+    [Fact]
+    public void ManaToGrave_SacrificesOneManaCardForEachPlayer()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        h.PutMana(h.P1, CardFactory.Spell(1));
+        h.PutMana(h.P1, CardFactory.Spell(1));
+        h.PutMana(h.P2, CardFactory.Spell(1));
+        var crusher = h.PutCreature(h.P1, TapCard("Sky", CardFactory.Eff(EffectId.Tap_ManaToGrave, value: 1)));
+
+        h.Game.ActivateTapAbility(h.P1.BattleZone.IndexOf(crusher));
+
+        Assert.True(crusher.IsTapped);
+        Assert.Single(h.P1.ManaZone);
+        Assert.Single(h.P1.Graveyard);
+        Assert.Empty(h.P2.ManaZone);
+        Assert.Single(h.P2.Graveyard);
+    }
+
+    [Fact]
+    public void ManaToGrave_SkipsPlayersWithoutMana()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        h.PutMana(h.P1, CardFactory.Spell(1));
+        var crusher = h.PutCreature(h.P1, TapCard("Sky", CardFactory.Eff(EffectId.Tap_ManaToGrave, value: 1)));
+
+        h.Game.ActivateTapAbility(h.P1.BattleZone.IndexOf(crusher));
+
+        Assert.Single(h.P1.Graveyard);
+        Assert.Empty(h.P1.ManaZone);
+        Assert.Empty(h.P2.Graveyard); // no mana zone to sacrifice
+    }
+
+    [Fact]
+    public void AiController_DoesNotUseHandToManaWithoutHandCards()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        h.PutCreature(h.P1, TapCard("Tangle-AI", CardFactory.Eff(EffectId.Tap_HandToMana, value: 3)));
+
+        // The guard blocks a pointless tap, so no mana is produced on the turn.
+        new AiController(h.P1).PlayTurn(h.Game);
+
+        Assert.Empty(h.P1.ManaZone);
+    }
+
+    [Fact]
+    public void AiController_RampsManaWithHandToMana()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        var tangle = h.PutCreature(h.P1, TapCard("Tangle-AI", CardFactory.Eff(EffectId.Tap_HandToMana, value: 3)));
+        for (var i = 0; i < 5; i++)
+            h.PutInHand(h.P1, CardFactory.Spell(1));
+
+        new AiController(h.P1).PlayTurn(h.Game);
+
+        // The AI pays the tap to ramp into mana: one charged + up to three from hand.
+        Assert.True(tangle.IsTapped);
+        Assert.True(h.P1.ManaZone.Count >= 2);
+    }
 }
