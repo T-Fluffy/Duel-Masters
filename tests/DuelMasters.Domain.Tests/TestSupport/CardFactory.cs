@@ -85,6 +85,22 @@ internal static class CardFactory
         return new Card($"s{++_serial}", n, civ, CardType.Spell, cost, 0, "", keywords, new[] { effect });
     }
 
+    /// <summary>Creature with one activated Tap Ability, no other effects.</summary>
+    public static Card TapCreature(
+        int cost,
+        int power,
+        Civilization civ = Civilization.Fire,
+        string name = "",
+        CardEffect? tapAbility = null,
+        params Keyword[] keywords)
+    {
+        var n = string.IsNullOrWhiteSpace(name) ? $"TapCreature-{++_serial}" : name;
+        var ability = tapAbility is null ? new[] { new CardEffect(EffectId.Tap_NotModelled, EffectTargetScope.None) }
+                                         : new[] { tapAbility };
+        return new Card($"c{++_serial}", n, civ, CardType.Creature, cost, power, "R", keywords,
+            System.Array.Empty<CardEffect>(), "", ability);
+    }
+
     /// <summary>Shorthand for authoring <see cref="CardEffect"/> in tests.</summary>
     public static CardEffect Eff(EffectId id, EffectTargetScope target = EffectTargetScope.None, int value = 0, string data = "")
         => new(id, target, value, data);

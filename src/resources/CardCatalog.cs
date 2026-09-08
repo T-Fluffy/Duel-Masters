@@ -46,6 +46,7 @@ public static class CardCatalog
         public string ScriptEffectId { get; set; } = "";
         public string EvolutionOf { get; set; } = "";
         public List<EffectJson> Effects { get; set; } = new();
+        public List<EffectJson> TapAbilities { get; set; } = new();
     }
 
     /// <summary>A single rule effect written in the catalog (id, scope, optional value).</summary>
@@ -80,8 +81,9 @@ public static class CardCatalog
             var type = ParseCardType(c.CardType);
             var keywords = ParseKeywords(c.Keywords);
             var effects = ParseEffects(c.Effects);
+            var tapAbilities = ParseEffects(c.TapAbilities);
 
-            var card = new Card(c.Id, c.Name!, civ, type, c.ManaCost, c.Power ?? 0, c.Race ?? "", keywords, effects, c.EvolutionOf ?? "");
+            var card = new Card(c.Id, c.Name!, civ, type, c.ManaCost, c.Power ?? 0, c.Race ?? "", keywords, effects, c.EvolutionOf ?? "", tapAbilities);
             records.Add(new CardRecord(card, c.ImagePath, c.ScriptEffectId));
         }
 

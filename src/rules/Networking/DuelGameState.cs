@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.Json.Serialization;
 using DuelMasters.Domain;
 
@@ -97,7 +98,7 @@ public sealed class DuelGameState
             }
         }
 
-        return new DuelGameState
+        var state = new DuelGameState
         {
             MatchCode = matchCode,
             YourSide = viewerSide,
@@ -119,5 +120,94 @@ public sealed class DuelGameState
                 PlayerState.From(game.Player2, p2, viewerSide),
             },
         };
+
+        // Annotate the active player's own battle-zone creatures with tap-ability
+        // data: which can be used right now, and the legal targets each targeted
+        // ability may choose from (server-computed from the engine's pool).
+        var viewerState = state.Players.FirstOrDefault(p => p.Side == viewerSide);
+        if (viewerState is not null && yourTurn && game.Phase == GamePhase.Main
+            && !game.HasAttackedThisTurn && !game.ShieldTriggerWindowActive && !game.IsGameOver)
+        {
+            var active = game.ActivePlayer;
+            for (var i = 0; i < active.BattleZone.Count && i < viewerState.BattleZone.Count; i++)
+            {
+                var creature = active.BattleZone[i];
+                if (!creature.Card.HasTapAbility)
+                    continue;
+
+                var cardState = viewerState.BattleZone[i];
+                cardState.HasTapAbility = true;
+                if (!game.CanUseTapAbility(active, i))
+                    continue;
+                cardState.CanUseTapAbility = true;
+
+                var targeted = creature.Card.TapAbilities.FirstOrDefault(e => e.Target != EffectTargetScope.None);
+                if (targeted is null)
+                    continue;
+
+                var targets = new List<TapTargetState>();
+                foreach (var item in game.TapTargetPool(active, targeted))
+                {
+                    if (Locate(item, game, out var owner, out var index))
+                    {
+                        var side = ReferenceEquals(owner, game.Player1) ? p1 : p2;
+                        var own = ReferenceEquals(owner, active);
+                        targets.Add(new TapTargetState(side, index, TapTargetLabel(own, item.Card)));
+                    }
+                }
+                if (targets.Count > 0)
+                    cardState.TapAbilityTargets = targets;
+            }
+        }
+
+        return state;
+    }
+
+    /// <summary>Find which zone list of which player a tap-ability pool card lives in.</summary>
+    private static bool Locate(CardInstance instance, DuelGame game, out Player owner, out int index)
+    {
+        var active = game.ActivePlayer;
+        var opponent = game.Opponent;
+        if (active.BattleZone.Contains(instance))
+        {
+            owner = active;
+            index = active.BattleZone.IndexOf(instance);
+            return true;
+        }
+        if (opponent.BattleZone.Contains(instance))
+        {
+            owner = opponent;
+            index = opponent.BattleZone.IndexOf(instance);
+            return true;
+        }
+        if (active.ManaZone.Contains(instance))
+        {
+            owner = active;
+            index = active.ManaZone.IndexOf(instance);
+            return true;
+        }
+        if (opponent.ManaZone.Contains(instance))
+        {
+            owner = opponent;
+            index = opponent.ManaZone.IndexOf(instance);
+            return true;
+        }
+        if (active.Graveyard.Contains(instance))
+        {
+            owner = active;
+            index = active.Graveyard.IndexOf(instance);
+            return true;
+        }
+        owner = active;
+        index = -1;
+        return false;
+    }
+
+    private static string TapTargetLabel(bool own, Card card)
+    {
+        var ownerWord = own ? "Your" : "Their";
+        return card.IsCreature
+            ? $"{ownerWord} creature - {card.Name} ({card.Power} power)"
+            : $"{ownerWord} card - {card.Name}";
     }
 }

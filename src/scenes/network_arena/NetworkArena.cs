@@ -31,6 +31,7 @@ public partial class NetworkArena : Control
         SelectSummonTarget,
         SelectEvolveTarget,
         EvolveBase,
+        SelectTapTarget,
     }
 
     private DuelGameState _state = null!;
@@ -53,6 +54,7 @@ public partial class NetworkArena : Control
     private int _triggerHandIndex = -1;
     private int _summonHandIndex = -1;
     private int _evolveHandIndex = -1;
+    private int _tapCreatureIndex = -1;
     private string? _pendingEvolveTargetSide;
     private int _pendingEvolveTargetIndex = -1;
 
@@ -400,7 +402,7 @@ public partial class NetworkArena : Control
     /// attacker: inspect the monster or confirm and pick an enemy target. Clicking
     /// the selected attacker again re-opens it; Esc / another selection cancels.
     /// </summary>
-    private void BuildAttackerActions(CardState attacker)
+    private void BuildAttackerActions(CardState attacker, int attackerIndex)
     {
         ClearActions();
         var name = attacker.Name;
@@ -408,6 +410,39 @@ public partial class NetworkArena : Control
         AddAction("Attack", () =>
         {
             Prompt($"Pick a target for {name}: a tapped enemy creature, or the enemy shields. Esc to cancel.");
+        });
+
+        // A ready creature may pay a tap to resolve its Tap Ability. The server has
+        // already pre-validated whether it is usable and lists its legal targets.
+        if (attacker.HasTapAbility && attacker.CanUseTapAbility)
+        {
+            AddAction("Use tap ability", () =>
+            {
+                if (attacker.TapAbilityTargets is { Count: > 0 })
+                    SelectTapTarget(attackerIndex, attacker);
+                else
+                {
+                    NetworkClient.ActivateTapAbility(attackerIndex);
+                    ResetInteraction();
+                }
+            });
+        }
+    }
+
+    private void SelectTapTarget(int creatureIndex, CardState attacker)
+    {
+        _mode = Mode.SelectTapTarget;
+        _tapCreatureIndex = creatureIndex;
+        ClearActions();
+        Prompt($"Choose the target for {attacker.Name}'s tap ability, or press Esc to cancel.");
+        foreach (var target in attacker.TapAbilityTargets ?? new List<TapTargetState>())
+        {
+            AddAction(target.Label, () => NetworkClient.ActivateTapAbilityTargeted(creatureIndex, target.Side, target.Index));
+        }
+        AddAction("Cancel", () =>
+        {
+            ResetInteraction();
+            Prompt("");
         });
     }
 
@@ -483,7 +518,7 @@ public partial class NetworkArena : Control
                 {
                     _attackerIndex = index;
                     _mode = Mode.SelectAttacker;
-                    BuildAttackerActions(target);
+                    BuildAttackerActions(target, index);
                     Prompt("Attack selected: look at the monster or press Attack, then click a tapped enemy creature or the enemy shields.");
                 }
                 else
@@ -501,12 +536,12 @@ public partial class NetworkArena : Control
                         if (_actionBar.GetChildCount() > 0)
                             ClearActions();
                         else
-                            BuildAttackerActions(target);
+                            BuildAttackerActions(target, index);
                     }
                     else if (_state.CanAttack && IsReadyAttacker(target))
                     {
                         _attackerIndex = index;
-                        BuildAttackerActions(target);
+                        BuildAttackerActions(target, index);
                         Prompt($"Picked {target.Name} as the attacker: look at it or press Attack, then click a tapped enemy creature or the enemy shields.");
                     }
                     else
@@ -1079,6 +1114,7 @@ public partial class NetworkArena : Control
         _triggerHandIndex = -1;
         _summonHandIndex = -1;
         _evolveHandIndex = -1;
+        _tapCreatureIndex = -1;
         _pendingEvolveTargetSide = null;
         _pendingEvolveTargetIndex = -1;
         ClearActions();

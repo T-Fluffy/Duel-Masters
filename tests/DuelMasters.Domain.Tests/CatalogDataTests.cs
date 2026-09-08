@@ -136,22 +136,83 @@ public class CatalogDataTests
 
         foreach (var c in cards.EnumerateArray())
         {
-            if (!c.TryGetProperty("effects", out var effEl))
-                continue;
-            foreach (var e in effEl.EnumerateArray())
+            foreach (var effEl in new[] { "effects", "tapAbilities" })
+            {
+                if (!c.TryGetProperty(effEl, out var prop) || prop.ValueKind != JsonValueKind.Array)
+                    continue;
+                foreach (var e in prop.EnumerateArray())
+                {
+                    var id = e.GetProperty("id").GetString()!;
+                    if (seenIds.Add(id))
+                        Assert.True(Enum.TryParse<EffectId>(id, true, out var parsed) && parsed != EffectId.None,
+                            $"Catalog effect id '{id}' is not a known EffectId enum member.");
+
+                    if (e.TryGetProperty("target", out var targetEl))
+                    {
+                        var target = targetEl.GetString()!;
+                        if (seenTargets.Add(target))
+                            Assert.True(Enum.TryParse<EffectTargetScope>(target, true, out var scope) && scope != EffectTargetScope.None,
+                                $"Catalog effect target '{target}' is not a known EffectTargetScope enum member.");
+                    }
+                }
+            }
+        }
+    }
+
+    [Fact]
+    public void TapAbilityCards_CarryModelledOrDeferredAbilities()
+    {
+        var byName = LoadCards();
+
+        // Exactly the known Tap Ability set is present in the catalog.
+        var tapCards = byName.Values
+            .SelectMany(list => list)
+            .Where(c => c.TryGetProperty("tapAbilities", out var ta) && ta.ValueKind == JsonValueKind.Array && ta.GetArrayLength() > 0)
+            .ToList();
+
+        // Phase 1: modelled tap abilities (resolvable by the engine).
+        var modelled = new Dictionary<string, string>
+        {
+            ["Aeropica"] = "Tap_ReturnToHand",
+            ["Chen Treg, Vizier of Blades"] = "Tap_TapOpponentCreature",
+            ["Cosmogold, Spectral Knight"] = "Tap_ReturnSpellFromManaToHand",
+            ["Neon Cluster"] = "Tap_Draw",
+            ["Sopian"] = "Tap_GrantUnblockableEot",
+            ["Grim Soul, Shadow of Reversal"] = "Tap_ReturnGraveCreatureToHand",
+            ["Lupa, Poison-Tipped Doll"] = "Tap_GrantSlayerEot",
+            ["Legionnaire Lizard"] = "Tap_GrantSpeedAttackerEot",
+            ["Migasa, Adept of Chaos"] = "Tap_GrantDoubleBreakerEot",
+            ["Rikabu's Screwdriver"] = "Tap_DestroyBlocker",
+            ["Mighty Bandit, Ace of Thieves"] = "Tap_BoostPowerEot",
+            ["King Benthos"] = "Tap_GrantUnblockableCivEot",
+            ["Armored Transport Galiacruse"] = "Tap_GrantCanAttackUntappedCivEot",
+            ["Aqua Fencer"] = "Tap_ReturnManaCardToHand",
+            ["Biancus"] = "Tap_GrantUnblockableEot",
+            ["Kipo's Contraption"] = "Tap_DestroyPowerAtMost",
+            ["Brood Shell"] = "Tap_ReturnCreatureFromManaToHand",
+            ["Popple, Flowerpetal Dancer"] = "Tap_ChargeMana",
+            ["Crath Lade, Merciless King"] = "Tap_DiscardRandom",
+        };
+
+        foreach (var (name, effId) in modelled)
+            Assert.True(byName.TryGetValue(name, out var list) && list.Any(c =>
+                    c.TryGetProperty("tapAbilities", out var ta)
+                    && ta.EnumerateArray().Any(e => e.GetProperty("id").GetString() == effId)),
+                $"Modelled tap ability missing: {name} ({effId}).");
+
+        // Deferred tap abilities must be explicitly marked with the placeholder
+        // effect; every other tap ability must be one of the modelled set.
+        var modelledIds = new HashSet<string>(modelled.Values, StringComparer.Ordinal)
+        {
+            EffectId.Tap_NotModelled.ToString(),
+        };
+        foreach (var c in tapCards)
+        {
+            foreach (var e in c.GetProperty("tapAbilities").EnumerateArray())
             {
                 var id = e.GetProperty("id").GetString()!;
-                if (seenIds.Add(id))
-                    Assert.True(Enum.TryParse<EffectId>(id, true, out var parsed) && parsed != EffectId.None,
-                        $"Catalog effect id '{id}' is not a known EffectId enum member.");
-
-                if (e.TryGetProperty("target", out var targetEl))
-                {
-                    var target = targetEl.GetString()!;
-                    if (seenTargets.Add(target))
-                        Assert.True(Enum.TryParse<EffectTargetScope>(target, true, out var scope) && scope != EffectTargetScope.None,
-                            $"Catalog effect target '{target}' is not a known EffectTargetScope enum member.");
-                }
+                Assert.True(modelledIds.Contains(id),
+                    $"Tap ability '{id}' on '{c.GetProperty("id").GetString()}' is neither modelled nor deferred.");
             }
         }
     }

@@ -131,6 +131,10 @@ public static class NetworkClient
     public static void PlayShieldTriggerTargeted(int handIndex, string targetOwnerSide, int targetIndex) =>
         Invoke(DuelContract.Hub.PlayShieldTriggerTargeted, handIndex, targetOwnerSide, targetIndex);
     public static void DeclineShieldTriggers() => Invoke(DuelContract.Hub.DeclineShieldTriggers);
+    public static void ActivateTapAbility(int creatureIndex) =>
+        Invoke(DuelContract.Hub.ActivateTapAbility, creatureIndex);
+    public static void ActivateTapAbilityTargeted(int creatureIndex, string targetSide, int targetIndex) =>
+        Invoke(DuelContract.Hub.ActivateTapAbilityTargeted, creatureIndex, targetSide, targetIndex);
     public static void EndMainPhase() => Invoke(DuelContract.Hub.EndMainPhase);
     public static void EndTurn() => Invoke(DuelContract.Hub.EndTurn);
 

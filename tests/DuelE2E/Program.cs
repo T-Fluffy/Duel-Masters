@@ -13,6 +13,9 @@
 //   E2E_BASE_URL    backend base URL  (default http://127.0.0.1:8080)
 //   E2E_DURATION    match runtime in seconds (default 150)
 //   E2E_CARDS_JSON  path to cards.json (default: located up the repo tree)
+//   E2E_PASSWORD    test-user password (default: random per run; the harness
+//                   always registers a brand-new account, so no static value
+//                   is needed or committed)
 //
 // Exit code 0 on PASS, 1 on FAIL.
 using System;
@@ -86,6 +89,7 @@ internal static class Program
     private static readonly HashSet<string> HostDeckSeenIds = new();
     private static bool _handRedactionOk = true;
     private static string _handRedactionDetail = "";
+    private static readonly string E2ePassword = ResolveE2ePassword();
 
     public static async Task<int> Main()
     {
@@ -582,16 +586,25 @@ internal static class Program
 
     // ---------- auth / deck API helpers ----------
 
+    private static string ResolveE2ePassword()
+    {
+        var env = Environment.GetEnvironmentVariable("E2E_PASSWORD");
+        if (!string.IsNullOrEmpty(env)) return env;
+        // Fresh account per run and never reused elsewhere, so the value is
+        // generated at runtime instead of being committed as a literal.
+        return "E2E" + Guid.NewGuid().ToString("N")[..12] + "b#A1";
+    }
+
     private static async Task RegisterAsync(HttpClient http, string user)
     {
-        var body = Json(new { username = user, email = user + "@e2e.local", password = "e2epass123!" });
+        var body = Json(new { username = user, email = user + "@e2e.local", password = E2ePassword });
         var resp = await http.PostAsync("/api/auth/register", body);
         if (!resp.IsSuccessStatusCode) throw new InvalidOperationException($"register {resp.StatusCode}: {await resp.Content.ReadAsStringAsync()}");
     }
 
     private static async Task<string> LoginAsync(HttpClient http, string user)
     {
-        var resp = await http.PostAsync("/api/auth/login", Json(new { username = user, password = "e2epass123!" }));
+        var resp = await http.PostAsync("/api/auth/login", Json(new { username = user, password = E2ePassword }));
         var txt = await resp.Content.ReadAsStringAsync();
         if (!resp.IsSuccessStatusCode) throw new InvalidOperationException($"login {resp.StatusCode}: {txt}");
         using var doc = JsonDocument.Parse(txt);

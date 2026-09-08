@@ -35,6 +35,13 @@ VALID_EFF = {
     "StaticPower_AlwaysPerOtherCreature", "StaticPower_AuraRace", "CostIncrease_Summon_ByCiv",
     "CostIncrease_Cast_ByCiv", "CostDecrease_Summon_All", "CostDecrease_Cast_All",
     "CostDecrease_Summon_ByRace",
+    # Activated tap abilities (Tap Ability card family)
+    "Tap_Draw", "Tap_ReturnToHand", "Tap_TapOpponentCreature", "Tap_ReturnSpellFromManaToHand",
+    "Tap_ReturnCreatureFromManaToHand", "Tap_ReturnManaCardToHand", "Tap_ReturnGraveCreatureToHand",
+    "Tap_DestroyPowerAtMost", "Tap_DestroyBlocker", "Tap_BoostPowerEot", "Tap_GrantUnblockableEot",
+    "Tap_GrantSlayerEot", "Tap_GrantSpeedAttackerEot", "Tap_GrantDoubleBreakerEot",
+    "Tap_GrantUnblockableCivEot", "Tap_GrantCanAttackUntappedCivEot", "Tap_ChargeMana",
+    "Tap_DiscardRandom", "Tap_NotModelled",
 }
 
 EFFECT_FIELD_ORDER = ("id", "target", "value", "data")
@@ -77,7 +84,7 @@ def main():
 
     races = {c["race"] for c in cards if c.get("race")}
     errors = []
-    changed = replaced = dropped = mut_kw = mut_eff = mut_evo = 0
+    changed = replaced = dropped = mut_kw = mut_eff = mut_evo = mut_tap = 0
     mojibake = []
 
     for card in cards:
@@ -93,8 +100,9 @@ def main():
         # ---- validate mapping
         bad_kw = [k for k in m["keywords"] if k not in VALID_KW]
         bad_eff = [e["id"] for e in m["effects"] if e["id"] not in VALID_EFF]
-        if bad_kw or bad_eff:
-            errors.append(f"{card['id']}: bad kw {bad_kw} / eff {bad_eff}")
+        bad_tap = [e["id"] for e in (m.get("tapAbilities") or []) if e["id"] not in VALID_EFF]
+        if bad_kw or bad_eff or bad_tap:
+            errors.append(f"{card['id']}: bad kw {bad_kw} / eff {bad_eff} / tap {bad_tap}")
 
         # ---- keywords: union, existing first
         merged_kw = list(card.get("keywords") or [])
@@ -120,6 +128,13 @@ def main():
                 dropped += 1
             else:
                 mut_eff += 1  # kept existing (documented approximation)
+
+        # ---- tapAbilities: mapped wins; otherwise keep existing (so the splice
+        # preserves whatever the catalog already shipped).
+        mapped_tap = [canonical_effect(e) for e in (m.get("tapAbilities") or [])]
+        if mapped_tap:
+            card["tapAbilities"] = mapped_tap
+            mut_tap += 1
 
         # ---- evolutionOf on EvolutionCreatures only
         evo = m.get("evolutionOf")
@@ -156,9 +171,10 @@ def main():
     n_kw = sum(1 for c in cards if c.get("keywords"))
     n_eff = sum(1 for c in cards if c.get("effects"))
     n_evo = sum(1 for c in cards if c.get("evolutionOf"))
+    n_tap = sum(1 for c in cards if c.get("tapAbilities"))
     print(f"mapped cards touched: {changed}")
-    print(f"keywords mutated: {mut_kw} | effects set: {mut_eff} (replaced {replaced}, dropped {dropped}) | evo set: {mut_evo}")
-    print(f"final: cards {len(cards)} | with keywords {n_kw} | with effects {n_eff} | evolutionOf {n_evo}")
+    print(f"keywords mutated: {mut_kw} | effects set: {mut_eff} (replaced {replaced}, dropped {dropped}) | evo set: {mut_evo} | tapAbilities set: {mut_tap}")
+    print(f"final: cards {len(cards)} | with keywords {n_kw} | with effects {n_eff} | evolutionOf {n_evo} | tapAbilities {n_tap}")
     print(f"mojibake name fixes: {len(mojibake)} -> {[n for _, n in mojibake]}")
 
 

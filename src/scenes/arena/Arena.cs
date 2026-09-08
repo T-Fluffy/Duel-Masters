@@ -30,7 +30,7 @@ namespace DuelMasters.Scenes.Arena;
 /// </summary>
 public partial class Arena : Control
 {
-    private enum Mode { Idle, SelectHand, SelectTarget, SelectBlock, SelectSpellTarget, SelectShieldTarget, SelectSummonTarget, SelectEvolveTarget, EvolveBase }
+    private enum Mode { Idle, SelectHand, SelectTarget, SelectBlock, SelectSpellTarget, SelectShieldTarget, SelectSummonTarget, SelectEvolveTarget, EvolveBase, SelectTapTarget }
 
     private enum CardSizeKind { Full, Mana, Stack }
 
@@ -171,6 +171,10 @@ public partial class Arena : Control
     private int _evolveHandIndex = -1;
     private SpellTarget? _pendingEvolveTarget;
 
+    // Targeting state for a creature's Tap Ability. The popup lists the engine's
+    // legal target pool, so this only remembers which creature is paying the tap.
+    private int _tapCreatureIndex = -1;
+
     // Multi-target spell selection ("return up to N creatures"): picked targets and
     // the remaining capacity. _maxTargets 0 = the normal single-target flow.
     private int _maxTargets;
@@ -187,6 +191,10 @@ public partial class Arena : Control
     // to target-picking before swinging.
     private PanelContainer _attackMenu = null!;
     private VBoxContainer _attackMenuBox = null!;
+
+    // Tap-ability target picker popup (lists the engine's legal target pool).
+    private PanelContainer _tapMenu = null!;
+    private VBoxContainer _tapMenuBox = null!;
 
     // Shield-trigger decision popup (interrupts the attacker's turn).
     private PanelContainer _triggerPopup = null!;
@@ -545,6 +553,7 @@ public partial class Arena : Control
         BuildHandPopup();
         BuildLookPopup();
         BuildAttackMenu();
+        BuildTapMenu();
         BuildShieldTriggerPopup();
         BuildGraveyardOverlay();
         BuildInspectOverlay();
@@ -851,6 +860,15 @@ public partial class Arena : Control
         };
         _attackMenuBox.AddChild(attack);
 
+        // A ready creature that has not attacked yet may pay a tap to resolve one of
+        // its Tap Abilities instead of (or before) attacking.
+        if (_game is not null && _game.CanUseTapAbility(_game.ActivePlayer, _attackerIndex))
+        {
+            var use = new Button { Text = "Use tap ability" };
+            use.Pressed += () => UseTapAbility(_attackerIndex);
+            _attackMenuBox.AddChild(use);
+        }
+
         var cancel = new Button { Text = "Cancel" };
         cancel.Pressed += () =>
         {
@@ -875,6 +893,128 @@ public partial class Arena : Control
     {
         if (_attackMenu is not null)
             _attackMenu.Visible = false;
+    }
+
+    // ---------------------------------------------------------- tap ability menu
+    // "Use tap ability" resolves a ready creature's (first) Tap Ability. Global
+    // abilities (draw, charge, discard, civ-wide grants) fire immediately; targeted
+    // ones open a popup listing the engine's legal target pool, so the player never
+    // has to remember power caps / civilization / type filters to aim correctly.
+
+    private void BuildTapMenu()
+    {
+        _tapMenu = new PanelContainer();
+        _tapMenu.AddThemeStyleboxOverride("panel", UiStyles.ModalCard());
+        _tapMenu.Visible = false;
+        AddChild(_tapMenu);
+
+        _tapMenuBox = new VBoxContainer();
+        _tapMenuBox.AddThemeConstantOverride("separation", 6);
+        _tapMenuBox.CustomMinimumSize = new Vector2(300, 0);
+        _tapMenu.AddChild(_tapMenuBox);
+    }
+
+    private void UseTapAbility(int creatureIndex)
+    {
+        HideAttackMenu();
+        if (_game is null || creatureIndex < 0 || creatureIndex >= _game.ActivePlayer.BattleZone.Count)
+            return;
+        var creature = _game.ActivePlayer.BattleZone[creatureIndex];
+        var targeted = creature.Card.TapAbilities.FirstOrDefault(e => e.Target != EffectTargetScope.None);
+        if (targeted is null)
+        {
+            Safe(() => _game.ActivateTapAbility(creatureIndex));
+            Prompt($"{creature.Card.Name} used its tap ability.");
+            return;
+        }
+        ShowTapTargetMenu(creatureIndex, targeted);
+    }
+
+    private void ShowTapTargetMenu(int creatureIndex, CardEffect eff)
+    {
+        HideAttackMenu();
+        HideHandPopup();
+        HideLookPopup();
+
+        foreach (var child in _tapMenuBox.GetChildren().OfType<Control>().ToList())
+            child.QueueFree();
+
+        var creature = _game!.ActivePlayer.BattleZone[creatureIndex];
+        var title = new Label
+        {
+            Text = $"{creature.Card.Name}: choose the tap-ability target",
+            AutowrapMode = TextServer.AutowrapMode.WordSmart,
+        };
+        title.CustomMinimumSize = new Vector2(300, 0);
+        title.AddThemeFontSizeOverride("font_size", 14);
+        title.AddThemeColorOverride("font_color", CivilizationPalette.Color(creature.Card.Civilization).Lightened(0.25f));
+        title.HorizontalAlignment = HorizontalAlignment.Center;
+        _tapMenuBox.AddChild(title);
+
+        foreach (var item in _game.TapTargetPool(_game.ActivePlayer, eff))
+        {
+            var location = TapTargetLocation(_game, item);
+            if (location is not (var owner, var zone, var index))
+                continue;
+            var pick = new Button
+            {
+                Text = $"{zone} - {item.Card.Name} ({item.Card.Power} power)...",
+                TooltipText = DescribeCard(item.Card),
+            };
+            var tapIdx = creatureIndex;
+            pick.Pressed += () =>
+            {
+                Safe(() => _game.ActivateTapAbility(tapIdx, new[] { new SpellTarget(owner, index) }));
+                Prompt($"{creature.Card.Name} used its tap ability.");
+            };
+            _tapMenuBox.AddChild(pick);
+        }
+
+        var cancel = new Button { Text = "Cancel" };
+        cancel.Pressed += () =>
+        {
+            HideTapTargetMenu();
+            ResetInteraction();
+            Prompt("Tap ability cancelled - pick a creature to attack when ready.");
+            Refresh();
+        };
+        _tapMenuBox.AddChild(cancel);
+
+        _tapMenu.Visible = true;
+        CallDeferred(nameof(PositionTapMenu));
+    }
+
+    private void PositionTapMenu()
+    {
+        if (_tapMenu is null || !_tapMenu.Visible)
+            return;
+        PositionPopupAtLeftSide(_tapMenu);
+    }
+
+    private void HideTapTargetMenu()
+    {
+        if (_tapMenu is not null)
+            _tapMenu.Visible = false;
+    }
+
+    /// <summary>
+    /// Map a tap-ability pool card back to the player and engine-zone index the
+    /// engine expects when activating the ability (battle zone / mana zone /
+    /// graveyard of either player). Returns null when the card left its zone.
+    /// </summary>
+    private static (Player Owner, string Zone, int Index)? TapTargetLocation(DuelGame game, CardInstance instance)
+    {
+        if (game.ActivePlayer.BattleZone.Contains(instance))
+            return (game.ActivePlayer, "Your creature", game.ActivePlayer.BattleZone.IndexOf(instance));
+        if (game.Opponent.BattleZone.Contains(instance))
+            return (game.Opponent, "Their creature", game.Opponent.BattleZone.IndexOf(instance));
+        if (game.ActivePlayer.ManaZone.Contains(instance))
+            return (game.ActivePlayer, "Your mana card", game.ActivePlayer.ManaZone.IndexOf(instance));
+        if (game.Opponent.ManaZone.Contains(instance))
+            return (game.Opponent, "Their mana card", game.Opponent.ManaZone.IndexOf(instance));
+        if (game.ActivePlayer.Graveyard.Contains(instance))
+            return (game.ActivePlayer, "Your graveyard card", game.ActivePlayer.Graveyard.IndexOf(instance));
+        return null;
     }
 
     // ------------------------------------------------------- shield trigger popup
@@ -1275,6 +1415,14 @@ public partial class Arena : Control
             {
                 // Close the attacker's menu but keep the selection; a second Esc cancels.
                 HideAttackMenu();
+                GetViewport().SetInputAsHandled();
+            }
+            else if (_tapMenu.Visible)
+            {
+                HideTapTargetMenu();
+                ResetInteraction();
+                Prompt("Tap ability cancelled - pick a creature to attack when ready.");
+                Refresh();
                 GetViewport().SetInputAsHandled();
             }
             else if (_mode == Mode.SelectBlock && _attackerIndex >= 0)
@@ -2463,11 +2611,13 @@ _mode = Mode.SelectBlock;
         _summonHandIndex = -1;
         _evolveHandIndex = -1;
         _pendingEvolveTarget = null;
+        _tapCreatureIndex = -1;
         _maxTargets = 0;
         _spellTargetPicks.Clear();
         HideHandPopup();
         HideLookPopup();
         HideAttackMenu();
+        HideTapTargetMenu();
         HideTriggerPopup();
     }
 

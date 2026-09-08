@@ -115,6 +115,73 @@ public enum EffectId
 
     /// <summary>Your creatures that have race {Data} cost {Value} less to summon (min 1).</summary>
     CostDecrease_Summon_ByRace = 804,
+
+    // ------------------------------------------------ activated tap abilities
+    // A creature with one of these effects may be tapped during its owner's main
+    // phase on that owner's turn (while untapped and not summoning-sick, and only
+    // before any creature has attacked) to use it instead of attacking - the
+    // Duel Masters "Tap Ability" card family.
+
+    /// <summary>Tap ability: draw {Value} card(s).</summary>
+    Tap_Draw = 900,
+
+    /// <summary>Tap ability: return target creature to its owner's hand.</summary>
+    Tap_ReturnToHand = 901,
+
+    /// <summary>Tap ability: tap one of your opponent's creatures.</summary>
+    Tap_TapOpponentCreature = 902,
+
+    /// <summary>Tap ability: return a spell from your mana zone to your hand.</summary>
+    Tap_ReturnSpellFromManaToHand = 903,
+
+    /// <summary>Tap ability: return a creature from your mana zone to your hand.</summary>
+    Tap_ReturnCreatureFromManaToHand = 904,
+
+    /// <summary>Tap ability: return a card in your opponent's mana zone to his hand.</summary>
+    Tap_ReturnManaCardToHand = 905,
+
+    /// <summary>Tap ability: return a {Data} creature from your graveyard to your hand.</summary>
+    Tap_ReturnGraveCreatureToHand = 906,
+
+    /// <summary>Tap ability: destroy opponent's creature with power &lt;= {Value}.</summary>
+    Tap_DestroyPowerAtMost = 907,
+
+    /// <summary>Tap ability: destroy one of your opponent's creatures that has Blocker.</summary>
+    Tap_DestroyBlocker = 908,
+
+    /// <summary>Tap ability: one of your creatures gets +{Value} power until end of turn.</summary>
+    Tap_BoostPowerEot = 909,
+
+    /// <summary>Tap ability: one of your creatures can't be blocked until end of turn.</summary>
+    Tap_GrantUnblockableEot = 910,
+
+    /// <summary>Tap ability: one of your creatures gets Slayer until end of turn.</summary>
+    Tap_GrantSlayerEot = 911,
+
+    /// <summary>Tap ability: one of your creatures gets Speed Attacker until end of turn.</summary>
+    Tap_GrantSpeedAttackerEot = 912,
+
+    /// <summary>Tap ability: one {Data} creature of yours gets Double Breaker until end of turn.</summary>
+    Tap_GrantDoubleBreakerEot = 913,
+
+    /// <summary>Tap ability: each {Data} creature of yours can't be blocked until end of turn.</summary>
+    Tap_GrantUnblockableCivEot = 914,
+
+    /// <summary>Tap ability: each {Data} creature of yours can attack untapped creatures until end of turn.</summary>
+    Tap_GrantCanAttackUntappedCivEot = 915,
+
+    /// <summary>Tap ability: put the top card of your deck into your mana zone.</summary>
+    Tap_ChargeMana = 916,
+
+    /// <summary>Tap ability: your opponent discards {Value} random card(s) from hand.</summary>
+    Tap_DiscardRandom = 917,
+
+    /// <summary>
+    /// Tap Ability placeholder for cards whose activated ability is not yet
+    /// representable in the engine. The card still carries the ability in the
+    /// catalog (data preserved), but the engine refuses to activate it.
+    /// </summary>
+    Tap_NotModelled = 998,
 }
 
 /// <summary>
@@ -133,6 +200,15 @@ public enum EffectTargetScope
 
     /// <summary>Only the opponent's battle-zone creatures.</summary>
     OpponentCreature = 3,
+
+    /// <summary>One of the caster's mana-zone cards.</summary>
+    OwnManaZone = 4,
+
+    /// <summary>One of the opponent's mana-zone cards.</summary>
+    OpponentManaZone = 5,
+
+    /// <summary>One of the caster's graveyard cards.</summary>
+    OwnGraveyard = 6,
 }
 
 /// <summary>

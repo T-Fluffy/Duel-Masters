@@ -169,9 +169,267 @@ public sealed class DuelGame
             }
         }
 
+        // "Until end of turn" effects (tap-ability grants, temporary power boosts,
+        // etc.) expire here.
+        foreach (var p in new[] { Player1, Player2 })
+        {
+            foreach (var c in p.BattleZone)
+            {
+                c.ClearEndOfTurnKeywords();
+                c.TempPower = 0;
+            }
+        }
+
         _activeIndex = 1 - _activeIndex;
         TurnNumber++;
         Phase = GamePhase.Untap;
+    }
+
+    // ------------------------------------------------------- tap abilities
+
+    /// <summary>
+    /// True if the battle-zone creature at <paramref name="index"/> may use one of
+    /// its Tap Abilities right now. A Tap Ability can only be used on its owner's
+    /// turn, during the Main phase, before any creature has attacked, while the
+    /// creature is untapped and not summoning-sick, and never during a Shield Trigger
+    /// window or after the game is over. Some abilities additionally need a legal
+    /// target to exist before they can be activated.
+    /// </summary>
+    public bool CanUseTapAbility(Player player, int index)
+    {
+        if (IsGameOver || Phase != GamePhase.Main || ShieldTriggerWindowActive)
+            return false;
+        if (!ReferenceEquals(player, ActivePlayer) || _hasAttackedThisTurn)
+            return false;
+        if (index < 0 || index >= player.BattleZone.Count)
+            return false;
+        var c = player.BattleZone[index];
+        if (!c.Card.HasTapAbility || c.IsTapped || c.IsSummoningSick)
+            return false;
+        foreach (var eff in c.Card.TapAbilities)
+        {
+            if (eff.Id == EffectId.Tap_NotModelled)
+                continue;
+            if (eff.Target == EffectTargetScope.None || TapTargetPool(player, eff).Count > 0)
+                return true;
+        }
+        return false;
+    }
+
+    /// <summary>Activate one of the active player's tap-ability creatures with no target.</summary>
+    public void ActivateTapAbility(int creatureIndex) => ActivateTapAbility(creatureIndex, null);
+
+    /// <summary>Activate one of the active player's tap-ability creatures, naming its targets.</summary>
+    public void ActivateTapAbility(int creatureIndex, IReadOnlyList<SpellTarget>? targets)
+    {
+        EnsureMain();
+        EnsureTriggerWindowClosed();
+        if (_hasAttackedThisTurn)
+            throw new RuleViolationException("You cannot use a tap ability after a creature has attacked.");
+        if (creatureIndex < 0 || creatureIndex >= ActivePlayer.BattleZone.Count)
+            throw new RuleViolationException("The creature index is out of range of the battle zone.");
+        var creature = ActivePlayer.BattleZone[creatureIndex];
+        if (!creature.Card.HasTapAbility)
+            throw new RuleViolationException($"'{creature.Card.Name}' has no tap ability.");
+        if (creature.IsTapped)
+            throw new RuleViolationException($"'{creature.Card.Name}' is already tapped.");
+        if (creature.IsSummoningSick)
+            throw new RuleViolationException($"'{creature.Card.Name}' has summoning sickness and cannot use its tap ability.");
+        if (creature.Card.TapAbilities.All(e => e.Id == EffectId.Tap_NotModelled))
+            throw new RuleViolationException($"'{creature.Card.Name}' has a tap ability that is not modelled yet.");
+
+        // Tapping the creature pays the activation cost. Because it is now tapped it
+        // can no longer attack this turn, but the other creatures may still attack,
+        // so this deliberately does NOT flip the "has attacked" lock.
+        creature.Tap();
+        ResolveTapAbilities(creature, targets);
+    }
+
+    /// <summary>Activate one of <paramref name="actor"/>'s tap-ability creatures (used by the AI and tests).</summary>
+    public void ActivateTapAbility(int creatureIndex, Player actor, IReadOnlyList<SpellTarget>? targets)
+    {
+        if (!ReferenceEquals(actor, ActivePlayer))
+            throw new RuleViolationException("You may only use your own creatures' tap abilities.");
+        ActivateTapAbility(creatureIndex, targets);
+    }
+
+    /// <summary>
+    /// Resolve every Tap Ability on the creature in the order printed. Effects that
+    /// need a target consume the caller-supplied targets in order; each must name a
+    /// legal card in the zone the effect targets.
+    /// </summary>
+    private void ResolveTapAbilities(CardInstance creature, IReadOnlyList<SpellTarget>? targets)
+    {
+        var cursor = 0;
+        foreach (var eff in creature.Card.TapAbilities)
+        {
+            if (eff.Target == EffectTargetScope.None)
+            {
+                ResolveTapEffect(ActivePlayer, eff);
+                continue;
+            }
+
+            if (targets is null || cursor >= targets.Count)
+                throw new RuleViolationException($"'{creature.Card.Name}' needs a target for its tap ability.");
+            var t = targets[cursor++];
+            var target = ResolveTapTarget(eff, t.Owner, t.Index);
+            ResolveTapTargetedEffect(eff, target);
+        }
+    }
+
+    private void ResolveTapEffect(Player actor, CardEffect eff)
+    {
+        switch (eff.Id)
+        {
+            case EffectId.Tap_Draw:
+                DrawToHand(actor, Math.Max(0, eff.Value));
+                break;
+
+            case EffectId.Tap_ChargeMana:
+                ChargeTopOfDeck(actor);
+                break;
+
+            case EffectId.Tap_DiscardRandom:
+                DiscardRandom(OpponentOf(actor), Math.Max(0, eff.Value));
+                break;
+
+            case EffectId.Tap_GrantUnblockableCivEot:
+                foreach (var c in actor.BattleZone.Where(c => CivMatches(c.Card.Civilization, eff.Data)))
+                    c.GainKeywordUntilEndOfTurn(Keyword.Unblockable);
+                break;
+
+            case EffectId.Tap_GrantCanAttackUntappedCivEot:
+                foreach (var c in actor.BattleZone.Where(c => CivMatches(c.Card.Civilization, eff.Data)))
+                    c.GainKeywordUntilEndOfTurn(Keyword.CanAttackUntappedCreatures);
+                break;
+        }
+    }
+
+    private void ResolveTapTargetedEffect(CardEffect eff, CardInstance target)
+    {
+        switch (eff.Id)
+        {
+            case EffectId.Tap_ReturnToHand:
+                ReturnToHand(target);
+                break;
+
+            case EffectId.Tap_TapOpponentCreature:
+                target.Tap();
+                break;
+
+            case EffectId.Tap_ReturnSpellFromManaToHand:
+            case EffectId.Tap_ReturnCreatureFromManaToHand:
+            case EffectId.Tap_ReturnManaCardToHand:
+            case EffectId.Tap_ReturnGraveCreatureToHand:
+                ReturnToHand(target);
+                break;
+
+            case EffectId.Tap_DestroyPowerAtMost:
+            case EffectId.Tap_DestroyBlocker:
+                DestroyCreature(target);
+                break;
+
+            case EffectId.Tap_BoostPowerEot:
+                target.TempPower += eff.Value;
+                break;
+
+            case EffectId.Tap_GrantUnblockableEot:
+                target.GainKeywordUntilEndOfTurn(Keyword.Unblockable);
+                break;
+
+            case EffectId.Tap_GrantSlayerEot:
+                target.GainKeywordUntilEndOfTurn(Keyword.Slayer);
+                break;
+
+            case EffectId.Tap_GrantSpeedAttackerEot:
+                target.GainKeywordUntilEndOfTurn(Keyword.SpeedAttacker);
+                break;
+
+            case EffectId.Tap_GrantDoubleBreakerEot:
+                target.GainKeywordUntilEndOfTurn(Keyword.DoubleBreaker);
+                break;
+        }
+    }
+
+    /// <summary>The separate zone list the effect's target is chosen from.</summary>
+    private static List<CardInstance> TapTargetZone(Player owner, EffectTargetScope scope) => scope switch
+    {
+        EffectTargetScope.OwnManaZone or EffectTargetScope.OpponentManaZone => owner.ManaZone,
+        EffectTargetScope.OwnGraveyard => owner.Graveyard,
+        _ => owner.BattleZone,
+    };
+
+    private CardInstance ResolveTapTarget(CardEffect eff, Player targetOwner, int targetIndex)
+    {
+        if (targetIndex < 0 || targetIndex >= TapTargetZone(targetOwner, eff.Target).Count)
+            throw new RuleViolationException("The tap-ability target index is out of range.");
+        var target = TapTargetZone(targetOwner, eff.Target)[targetIndex];
+
+        switch (eff.Target)
+        {
+            case EffectTargetScope.OwnCreature:
+            case EffectTargetScope.OwnManaZone:
+            case EffectTargetScope.OwnGraveyard:
+                if (!ReferenceEquals(targetOwner, ActivePlayer))
+                    throw new RuleViolationException("You may only target one of your own cards.");
+                break;
+            case EffectTargetScope.OpponentCreature:
+            case EffectTargetScope.OpponentManaZone:
+                if (ReferenceEquals(targetOwner, ActivePlayer))
+                    throw new RuleViolationException("You must target one of your opponent's cards.");
+                break;
+            case EffectTargetScope.AnyCreature:
+                if (!ReferenceEquals(targetOwner, ActivePlayer) && !ReferenceEquals(targetOwner, Opponent))
+                    throw new RuleViolationException("That target is not in this game.");
+                break;
+        }
+
+        if (!IsLegalTapTarget(eff, target))
+            throw new RuleViolationException($"'{target.Card.Name}' cannot be targeted by this tap ability.");
+        return target;
+    }
+
+    /// <summary>True when <paramref name="target"/> is in the effect's legal target pool.</summary>
+    public bool IsLegalTapTarget(CardEffect eff, CardInstance target)
+        => TapTargetPool(ActivePlayer, eff).Contains(target);
+
+    /// <summary>
+    /// The cards a tap-ability effect may choose from: the effect's zone (battle
+    /// zone, mana zone, or graveyard) restricted to the owner the effect names,
+    /// filtered by any power / type / keyword / civilization requirement.
+    /// </summary>
+    public IReadOnlyList<CardInstance> TapTargetPool(Player player, CardEffect eff)
+    {
+        IEnumerable<CardInstance> pool = eff.Target switch
+        {
+            EffectTargetScope.OwnCreature => player.BattleZone,
+            EffectTargetScope.OpponentCreature => OpponentOf(player).BattleZone,
+            EffectTargetScope.AnyCreature => player.BattleZone.Concat(OpponentOf(player).BattleZone),
+            EffectTargetScope.OwnManaZone => player.ManaZone,
+            EffectTargetScope.OpponentManaZone => OpponentOf(player).ManaZone,
+            EffectTargetScope.OwnGraveyard => player.Graveyard,
+            _ => Array.Empty<CardInstance>(),
+        };
+
+        switch (eff.Id)
+        {
+            case EffectId.Tap_DestroyPowerAtMost:
+                return pool.Where(t => CurrentPower(t) <= eff.Value).ToList();
+            case EffectId.Tap_DestroyBlocker:
+                return pool.Where(t => t.Card.HasKeyword(Keyword.Blocker)).ToList();
+            case EffectId.Tap_ReturnSpellFromManaToHand:
+                return pool.Where(t => t.Card.CardType == CardType.Spell).ToList();
+            case EffectId.Tap_ReturnCreatureFromManaToHand:
+                return pool.Where(t => t.Card.IsCreature).ToList();
+            case EffectId.Tap_ReturnGraveCreatureToHand:
+                return pool.Where(t => t.Card.IsCreature && CivMatches(t.Card.Civilization, eff.Data)).ToList();
+            case EffectId.Tap_GrantDoubleBreakerEot:
+                return pool.Where(t => CivMatches(t.Card.Civilization, eff.Data)).ToList();
+            case EffectId.Tap_TapOpponentCreature:
+                return pool.Where(t => !t.IsTapped).ToList();
+            default:
+                return pool.ToList();
+        }
     }
 
     // -------------------------------------------------- main phase actions
@@ -440,7 +698,7 @@ public sealed class DuelGame
         {
             if (!ReferenceEquals(blockerOwner, defender))
                 throw new RuleViolationException("Only the defending player may block this attack.");
-            var blocker = RequireReadyBlocker(defender, bIdx, attacker.Card);
+            var blocker = RequireReadyBlocker(defender, bIdx, attacker);
             blocker.IsTapped = true;
             Battle(attacker, blocker);
             return;
@@ -452,7 +710,7 @@ public sealed class DuelGame
             return;
         }
 
-        BreakShields(defender, attacker.Card.BreakerCount);
+        BreakShields(defender, BreakerCount(attacker));
     }
 
     /// <summary>
@@ -469,7 +727,7 @@ public sealed class DuelGame
         var active = ActivePlayer;
         var defender = Opponent;
         var attacker = RequireReadyAttacker(active, attackerIndex);
-        if (attacker.Card.HasKeyword(Keyword.CannotAttackCreatures))
+        if (attacker.HasKeywordNow(Keyword.CannotAttackCreatures))
             throw new RuleViolationException($"'{attacker.Card.Name}' can't attack creatures.");
 
         if (targetIndex < 0 || targetIndex >= defender.BattleZone.Count)
@@ -477,9 +735,9 @@ public sealed class DuelGame
         var target = defender.BattleZone[targetIndex];
         if (!target.Card.IsCreature)
             throw new RuleViolationException($"'{target.Card.Name}' is not a creature and cannot be attacked.");
-        if (target.Card.HasKeyword(Keyword.CannotBeAttacked))
+        if (target.HasKeywordNow(Keyword.CannotBeAttacked))
             throw new RuleViolationException($"'{target.Card.Name}' can't be attacked.");
-        if (!target.IsTapped && !attacker.Card.HasKeyword(Keyword.CanAttackUntappedCreatures))
+        if (!target.IsTapped && !attacker.HasKeywordNow(Keyword.CanAttackUntappedCreatures))
             throw new RuleViolationException("Under normal rules you may only attack a tapped creature.");
 
         attacker.IsTapped = true;
@@ -513,16 +771,24 @@ public sealed class DuelGame
             DestroyCreature(attacker);
         }
 
-        // Slayer: a creature that blocks (or is attacked directly) with Slayer takes
-        // the attacker down with it, even when it would lose the power battle.
-        if (defender.Card.HasKeyword(Keyword.Slayer))
+        // Slayer: a creature that has Slayer destroys the other creature in the
+        // battle even when it loses the power battle (both sides can kill each other).
+        if (defender.HasKeywordNow(Keyword.Slayer))
             DestroyCreature(attacker);
+        if (attacker.HasKeywordNow(Keyword.Slayer))
+            DestroyCreature(defender);
     }
 
     /// <summary>True when the opponent may block this attacking creature.</summary>
     public static bool CanBeBlocked(Card attacker)
     {
         return !attacker.HasKeyword(Keyword.Unblockable) && !attacker.HasKeyword(Keyword.Stealth);
+    }
+
+    /// <summary>True when the opponent may block this creature (including temporary keywords).</summary>
+    public static bool CanBeBlocked(CardInstance attacker)
+    {
+        return !attacker.HasKeywordNow(Keyword.Unblockable) && !attacker.HasKeywordNow(Keyword.Stealth);
     }
 
     /// <summary>
@@ -551,7 +817,7 @@ public sealed class DuelGame
         var active = ActivePlayer;
         var attacker = RequireReadyAttacker(active, attackerIndex);
         RequireCanAttackPlayers(attacker);
-        if (!CanBeBlocked(attacker.Card))
+        if (!CanBeBlocked(attacker))
             return 0;
 
         var count = 0;
@@ -567,7 +833,7 @@ public sealed class DuelGame
 
     private static void RequireCanAttackPlayers(CardInstance attacker)
     {
-        if (attacker.Card.HasKeyword(Keyword.CannotAttackPlayers))
+        if (attacker.HasKeywordNow(Keyword.CannotAttackPlayers))
             throw new RuleViolationException($"'{attacker.Card.Name}' can't attack players.");
     }
 
@@ -586,6 +852,11 @@ public sealed class DuelGame
         OpenShieldTriggerWindow(defender, broken);
         return broken;
     }
+
+    /// <summary>How many shields one hit from this creature breaks (printed plus temporary keywords).</summary>
+    private static int BreakerCount(CardInstance attacker) =>
+        attacker.HasKeywordNow(Keyword.TripleBreaker) ? 3 :
+        attacker.HasKeywordNow(Keyword.DoubleBreaker) ? 2 : 1;
 
     /// <summary>
     /// Every broken shield is added to the defender's hand. Shields carrying the
@@ -694,24 +965,24 @@ public sealed class DuelGame
             throw new RuleViolationException($"'{attacker.Card.Name}' is tapped.");
         if (attacker.IsSummoningSick)
             throw new RuleViolationException($"'{attacker.Card.Name}' has summoning sickness and cannot attack yet.");
-        if (attacker.Card.HasKeyword(Keyword.CannotAttackOutnumbered) && Opponent.BattleZone.Count > active.BattleZone.Count)
+        if (attacker.HasKeywordNow(Keyword.CannotAttackOutnumbered) && Opponent.BattleZone.Count > active.BattleZone.Count)
             throw new RuleViolationException($"'{attacker.Card.Name}' can't attack while the opponent has more creatures.");
         return attacker;
     }
 
-    private CardInstance RequireReadyBlocker(Player defender, int index, Card attackerCard)
+    private CardInstance RequireReadyBlocker(Player defender, int index, CardInstance attacker)
     {
         if (index < 0 || index >= defender.BattleZone.Count)
             throw new RuleViolationException("The blocker index is out of range of the defender's battle zone.");
         var blocker = defender.BattleZone[index];
         if (!blocker.Card.IsCreature)
             throw new RuleViolationException($"'{blocker.Card.Name}' is not a creature and cannot block.");
-        if (!blocker.Card.HasKeyword(Keyword.Blocker))
+        if (!blocker.HasKeywordNow(Keyword.Blocker))
             throw new RuleViolationException($"'{blocker.Card.Name}' does not have the Blocker keyword and cannot block.");
         if (blocker.IsTapped)
             throw new RuleViolationException($"'{blocker.Card.Name}' is tapped and cannot block.");
-        if (!CanBeBlocked(attackerCard))
-            throw new RuleViolationException($"'{attackerCard.Name}' cannot be blocked.");
+        if (!CanBeBlocked(attacker))
+            throw new RuleViolationException($"'{attacker.Card.Name}' cannot be blocked.");
         // A blocker assigned summoning sickness may still block (it only stops attacks).
         return blocker;
     }
@@ -1112,20 +1383,28 @@ public sealed class DuelGame
     private void ReturnToHand(CardInstance target)
     {
         var owner = target.Owner!;
-        owner.BattleZone.Remove(target);
-        if (target.Zone == Zone.BattleZone)
+        switch (target.Zone)
         {
-            // Whatever was under the creature stays behind in the graveyard when the
-            // top of an evolution stack is returned to hand.
-            foreach (var under in target.Underneath)
-            {
-                if (under.Owner is { } uo && under.Zone == Zone.Underneath)
+            case Zone.BattleZone:
+                owner.BattleZone.Remove(target);
+                // Whatever was under the creature stays behind in the graveyard when the
+                // top of an evolution stack is returned to hand.
+                foreach (var under in target.Underneath)
                 {
-                    under.Zone = Zone.Graveyard;
-                    uo.Graveyard.Add(under);
+                    if (under.Owner is { } uo && under.Zone == Zone.Underneath)
+                    {
+                        under.Zone = Zone.Graveyard;
+                        uo.Graveyard.Add(under);
+                    }
                 }
-            }
-            target.Underneath.Clear();
+                target.Underneath.Clear();
+                break;
+            case Zone.ManaZone:
+                owner.ManaZone.Remove(target);
+                break;
+            case Zone.Graveyard:
+                owner.Graveyard.Remove(target);
+                break;
         }
         target.Zone = Zone.Hand;
         target.IsTapped = false;
@@ -1295,16 +1574,16 @@ public sealed class DuelGame
             // "Can't attack while the opponent has more creatures" blocks every
             // attack form, so it also cancels the must-attack obligation.
             var outnumbered = defender.BattleZone.Count > active.BattleZone.Count;
-            if (outnumbered && c.Card.HasKeyword(Keyword.CannotAttackOutnumbered))
+            if (outnumbered && c.HasKeywordNow(Keyword.CannotAttackOutnumbered))
                 continue;
             // With no shields left a direct attack wins the game, so it is always a
             // legal (in fact the winning) way to satisfy the must-attack obligation.
-            var canAttackPlayer = !c.Card.HasKeyword(Keyword.CannotAttackPlayers);
-            var canAttackCreature = !c.Card.HasKeyword(Keyword.CannotAttackCreatures)
+            var canAttackPlayer = !c.HasKeywordNow(Keyword.CannotAttackPlayers);
+            var canAttackCreature = !c.HasKeywordNow(Keyword.CannotAttackCreatures)
                 && defender.BattleZone.Any(t =>
                     t.Card.IsCreature
-                    && !t.Card.HasKeyword(Keyword.CannotBeAttacked)
-                    && (t.IsTapped || c.Card.HasKeyword(Keyword.CanAttackUntappedCreatures)));
+                    && !t.HasKeywordNow(Keyword.CannotBeAttacked)
+                    && (t.IsTapped || c.HasKeywordNow(Keyword.CanAttackUntappedCreatures)));
             if (canAttackPlayer || canAttackCreature)
                 result.Add(c);
         }

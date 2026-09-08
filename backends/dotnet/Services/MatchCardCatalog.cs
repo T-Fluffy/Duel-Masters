@@ -32,6 +32,7 @@ public static class MatchCardCatalog
         public List<string> Keywords { get; set; } = new();
         public string EvolutionOf { get; set; } = "";
         public List<EffectJson> Effects { get; set; } = new();
+        public List<EffectJson> TapAbilities { get; set; } = new();
     }
 
     private sealed class EffectJson
@@ -65,6 +66,7 @@ public static class MatchCardCatalog
 
             var keywords = ParseKeywords(c.Keywords);
             var effects = ParseEffects(c.Effects);
+            var tapAbilities = ParseEffects(c.TapAbilities);
 
             cards.Add(new Card(
                 c.Id,
@@ -76,7 +78,8 @@ public static class MatchCardCatalog
                 c.Race ?? "",
                 keywords,
                 effects,
-                c.EvolutionOf ?? ""));
+                c.EvolutionOf ?? "",
+                tapAbilities));
         }
 
         cards.Sort((a, b) => string.CompareOrdinal(a.Name, b.Name));

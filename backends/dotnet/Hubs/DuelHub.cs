@@ -311,6 +311,55 @@ public sealed class DuelHub : Hub<IDuelClientContract>
     public async Task AttackCreature(int attackerIndex, int targetIndex) =>
         await RunGameAction(room => room.AttackCreature(attackerIndex, targetIndex));
 
+    public async Task ActivateTapAbility(int creatureIndex)
+    {
+        var mySide = ResolveSide(out var room);
+        if (room is null || mySide is null)
+        {
+            await Clients.Caller.ReceiveActionError("You are not in an active match.");
+            return;
+        }
+        if (!await RequireActiveSide(room, mySide))
+            return;
+
+        if (!room.Execute(game => game.ActivateTapAbility(creatureIndex), out var error))
+        {
+            await Clients.Caller.ReceiveActionError(error ?? "That tap ability cannot be used right now.");
+            return;
+        }
+
+        await BroadcastState(room);
+        await MaybeAnnounceWinner(room);
+    }
+
+    public async Task ActivateTapAbilityTargeted(int creatureIndex, string targetSide, int targetIndex)
+    {
+        var mySide = ResolveSide(out var room);
+        if (room is null || mySide is null)
+        {
+            await Clients.Caller.ReceiveActionError("You are not in an active match.");
+            return;
+        }
+        if (!await RequireActiveSide(room, mySide))
+            return;
+
+        var player = room.PlayerForSide(targetSide);
+        if (player is null)
+        {
+            await Clients.Caller.ReceiveActionError("That target is not available.");
+            return;
+        }
+
+        if (!room.Execute(game => game.ActivateTapAbility(creatureIndex, new[] { new SpellTarget(player, targetIndex) }), out var error))
+        {
+            await Clients.Caller.ReceiveActionError(error ?? "That tap ability cannot be used right now.");
+            return;
+        }
+
+        await BroadcastState(room);
+        await MaybeAnnounceWinner(room);
+    }
+
     public async Task EndMainPhase() => await RunGameAction(room => room.EndMainPhase());
 
     public async Task EndTurn() => await RunGameAction(room => room.EndTurn());

@@ -102,7 +102,16 @@ public sealed class AiController
             return new AiStep(AiStepKind.ActionTaken, -1);
         }
 
-        // 3) Attack with a ready creature.
+        // 3) Use tap abilities before attacking: deck keeps flowing (draw/charge),
+        //    removal softens the foe, and grants set up the attack wave. The engine
+        //    forbids using them after the first attack this turn.
+        if (!game.HasAttackedThisTurn && TryChooseTapAbility(game, out var tapCreatureIndex, out var tapTargets))
+        {
+            game.ActivateTapAbility(tapCreatureIndex, Self, tapTargets);
+            return new AiStep(AiStepKind.ActionTaken, -1);
+        }
+
+        // 4) Attack with a ready creature.
         if (TryChooseAttack(game, out var attackerIndex, out var needsBlockChoice))
         {
             if (needsBlockChoice)
@@ -648,6 +657,165 @@ private bool TryChooseSpellPlay(DuelGame game, int handIndex, out IReadOnlyList<
         if (game.ShieldTriggerWindowActive)
             game.DeclineShieldTriggers();
     }
+
+    /// <summary>
+    /// Pick a tap-ability creature to activate this turn, if any activation is
+    /// useful. Global abilities (draw, charge, discard, civ-wide grants) are valued
+    /// directly; targeted ones aim at the best legal card from the engine's own
+    /// target pool. Never touches <see cref="EffectId.Tap_NotModelled"/> or an
+    /// activation the engine would reject.
+    /// </summary>
+    private bool TryChooseTapAbility(DuelGame game, out int creatureIndex, out IReadOnlyList<SpellTarget>? targets)
+    {
+        creatureIndex = -1;
+        targets = null;
+        var foe = game.Opponent;
+
+        // Untargeted abilities first: cheap, always positive-value tempo.
+        for (var i = 0; i < Self.BattleZone.Count; i++)
+        {
+            var creature = Self.BattleZone[i];
+            if (!game.CanUseTapAbility(Self, i))
+                continue;
+            foreach (var eff in creature.Card.TapAbilities.Where(e => e.Target == EffectTargetScope.None))
+            {
+                switch (eff.Id)
+                {
+                    case EffectId.Tap_Draw:
+                    case EffectId.Tap_ChargeMana:
+                        creatureIndex = i;
+                        return true;
+                    case EffectId.Tap_DiscardRandom when foe.Hand.Count >= 2:
+                        creatureIndex = i;
+                        return true;
+                    case EffectId.Tap_GrantUnblockableCivEot
+                        when Self.BattleZone.Any(c => CivOf(c.Card, eff.Data)):
+                        creatureIndex = i;
+                        return true;
+                    case EffectId.Tap_GrantCanAttackUntappedCivEot
+                        when Self.BattleZone.Any(c => CivOf(c.Card, eff.Data))
+                             && foe.BattleZone.Any(c => !c.IsTapped):
+                        creatureIndex = i;
+                        return true;
+                }
+            }
+        }
+
+        // Targeted abilities: only when a genuinely useful legal target exists.
+        for (var i = 0; i < Self.BattleZone.Count; i++)
+        {
+            var creature = Self.BattleZone[i];
+            if (!game.CanUseTapAbility(Self, i))
+                continue;
+            foreach (var eff in creature.Card.TapAbilities.Where(e => e.Target != EffectTargetScope.None))
+            {
+                if (TryChooseTapTarget(game, eff, out var owner, out var index))
+                {
+                    creatureIndex = i;
+                    targets = new[] { new SpellTarget(owner, index) };
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+    /// <summary>
+    /// Pick the best legal card for tap-ability <paramref name="eff"/> out of the
+    /// engine's own target pool: removal aims at the foe's biggest creature within
+    /// the effect's filters, breather / grant abilities at the strongest own
+    /// creature. Returning a mana card always costs tempo, so it is declined.
+    /// </summary>
+    private bool TryChooseTapTarget(DuelGame game, CardEffect eff, out Player owner, out int index)
+    {
+        owner = Self;
+        index = -1;
+        var foe = game.Opponent;
+        var bestValue = float.NegativeInfinity;
+        Player? bestOwner = null;
+        var bestIndex = -1;
+
+        void Consider(Player player, System.Collections.Generic.List<CardInstance> zone, float baseValue, float tapPenalty, float powerScale)
+        {
+            foreach (var item in game.TapTargetPool(Self, eff))
+            {
+                if (!zone.Contains(item))
+                    continue;
+                var c = zone.IndexOf(item);
+                var value = baseValue + item.Card.Power / powerScale + (item.IsTapped ? tapPenalty : 0.5f);
+                if (value > bestValue)
+                {
+                    bestValue = value;
+                    bestOwner = player;
+                    bestIndex = c;
+                }
+            }
+        }
+
+        switch (eff.Id)
+        {
+            case EffectId.Tap_ReturnToHand:
+                Consider(foe, foe.BattleZone, 1f, -0.2f, 1000f);
+                if (bestIndex < 0)
+                {
+                    // Bouncing an own creature is a last resort (e.g. the only move).
+                    bestValue = float.NegativeInfinity;
+                    Consider(Self, Self.BattleZone, 0f, -0.5f, 4000f);
+                }
+                break;
+
+            case EffectId.Tap_DestroyPowerAtMost:
+            case EffectId.Tap_DestroyBlocker:
+                Consider(foe, foe.BattleZone, 1f, 0f, 1000f);
+                break;
+
+            case EffectId.Tap_TapOpponentCreature:
+                foreach (var item in game.TapTargetPool(Self, eff))
+                {
+                    if (!foe.BattleZone.Contains(item) || item.IsTapped)
+                        continue;
+                    var c = foe.BattleZone.IndexOf(item);
+                    var value = 0.5f + item.Card.Power / 2000f;
+                    if (value > bestValue)
+                    {
+                        bestValue = value;
+                        bestOwner = foe;
+                        bestIndex = c;
+                    }
+                }
+                break;
+
+            case EffectId.Tap_BoostPowerEot:
+            case EffectId.Tap_GrantUnblockableEot:
+            case EffectId.Tap_GrantSlayerEot:
+            case EffectId.Tap_GrantSpeedAttackerEot:
+            case EffectId.Tap_GrantDoubleBreakerEot:
+                Consider(Self, Self.BattleZone, 0.2f, -0.5f, 3000f);
+                break;
+
+            case EffectId.Tap_ReturnGraveCreatureToHand:
+                Consider(Self, Self.Graveyard, 0.2f, 0f, 2000f);
+                break;
+
+            // Returning a mana card costs a land; only worth it in specific
+            // decks - keep it conservative and never self-un-mana.
+            case EffectId.Tap_ReturnCreatureFromManaToHand:
+            case EffectId.Tap_ReturnManaCardToHand:
+            case EffectId.Tap_ReturnSpellFromManaToHand:
+            default:
+                return false;
+        }
+
+        if (bestIndex < 0)
+            return false;
+        owner = bestOwner!;
+        index = bestIndex;
+        return true;
+    }
+
+    private static bool CivOf(Card card, string data) =>
+        string.Equals(card.Civilization.ToString(), data, System.StringComparison.OrdinalIgnoreCase);
 
     /// <summary>
     /// Pick one attack. Prefers killing tapped creatures it can overpower for free,

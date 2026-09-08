@@ -5621,7 +5621,13 @@
     "race": "Sea Hacker",
     "imagePath": "res://assets/art/cards/DM-06/Cards/DM06_109.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "tapAbilities": [
+      {
+        "id": "Tap_ReturnToHand",
+        "target": "AnyCreature"
+      }
+    ]
   },
   {
     "id": "dm_06_004",
@@ -5660,7 +5666,13 @@
     "race": "Hedrian",
     "imagePath": "res://assets/art/cards/DM-06/Cards/DM06_083.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "tapAbilities": [
+      {
+        "id": "Tap_NotModelled",
+        "data": "Your opponent chooses one of his creatures in the battle zone an"
+      }
+    ]
   },
   {
     "id": "dm_06_007",
@@ -5743,7 +5755,13 @@
     "race": "Light Bringer",
     "imagePath": "res://assets/art/cards/DM-06/Cards/DM06_089.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "tapAbilities": [
+      {
+        "id": "Tap_NotModelled",
+        "data": "Choose a shield and look at it. Then put it back where it was."
+      }
+    ]
   },
   {
     "id": "dm_06_012",
@@ -5815,7 +5833,13 @@
     "race": "Initiate",
     "imagePath": "res://assets/art/cards/DM-06/Cards/DM06_027.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "tapAbilities": [
+      {
+        "id": "Tap_TapOpponentCreature",
+        "target": "OpponentCreature"
+      }
+    ]
   },
   {
     "id": "dm_06_017",
@@ -5828,7 +5852,13 @@
     "race": "Rainbow Phantom",
     "imagePath": "res://assets/art/cards/DM-06/Cards/DM06_120.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "tapAbilities": [
+      {
+        "id": "Tap_ReturnSpellFromManaToHand",
+        "target": "OwnManaZone"
+      }
+    ]
   },
   {
     "id": "dm_06_018",
@@ -6166,7 +6196,13 @@
     "race": "Cyber Cluster",
     "imagePath": "res://assets/art/cards/DM-06/Cards/DM06_022.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "tapAbilities": [
+      {
+        "id": "Tap_Draw",
+        "value": 2
+      }
+    ]
   },
   {
     "id": "dm_06_041",
@@ -6250,7 +6286,13 @@
     "race": "Cyber Lord",
     "imagePath": "res://assets/art/cards/DM-06/Cards/DM06_049.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "tapAbilities": [
+      {
+        "id": "Tap_GrantUnblockableEot",
+        "target": "OwnCreature"
+      }
+    ]
   },
   {
     "id": "dm_06_047",
@@ -6457,7 +6499,14 @@
     "race": "Ghost",
     "imagePath": "res://assets/art/cards/DM-06/Cards/DM06_111.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "tapAbilities": [
+      {
+        "id": "Tap_ReturnGraveCreatureToHand",
+        "target": "OwnGraveyard",
+        "data": "Darkness"
+      }
+    ]
   },
   {
     "id": "dm_06_060",
@@ -6526,7 +6575,13 @@
     "race": "Death Puppet",
     "imagePath": "res://assets/art/cards/DM-06/Cards/DM06_028.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "tapAbilities": [
+      {
+        "id": "Tap_GrantSlayerEot",
+        "target": "OwnCreature"
+      }
+    ]
   },
   {
     "id": "dm_06_065",
@@ -6802,7 +6857,13 @@
     "keywords": [
       "SpeedAttacker"
     ],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "tapAbilities": [
+      {
+        "id": "Tap_GrantSpeedAttackerEot",
+        "target": "OwnCreature"
+      }
+    ]
   },
   {
     "id": "dm_06_082",
@@ -6815,7 +6876,14 @@
     "race": "Human",
     "imagePath": "res://assets/art/cards/DM-06/Cards/DM06_055.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "tapAbilities": [
+      {
+        "id": "Tap_GrantDoubleBreakerEot",
+        "target": "OwnCreature",
+        "data": "Fire"
+      }
+    ]
   },
   {
     "id": "dm_06_083",
@@ -6892,7 +6960,13 @@
     "race": "Xenoparts",
     "imagePath": "res://assets/art/cards/DM-06/Cards/DM06_012.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "tapAbilities": [
+      {
+        "id": "Tap_DestroyBlocker",
+        "target": "OpponentCreature"
+      }
+    ]
   },
   {
     "id": "dm_06_088",
@@ -6954,7 +7028,13 @@
     "race": "Mystery Totem",
     "imagePath": "res://assets/art/cards/DM-06/Cards/DM06_092.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "tapAbilities": [
+      {
+        "id": "Tap_NotModelled",
+        "data": "Put up to 3 cards from your graveyard into your mana zone."
+      }
+    ]
   },
   {
     "id": "dm_06_092",
@@ -7003,7 +7083,13 @@
     "race": "Snow Faerie",
     "imagePath": "res://assets/art/cards/DM-06/Cards/DM06_033.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "tapAbilities": [
+      {
+        "id": "Tap_NotModelled",
+        "data": "Search your deck. You may take a creature from your deck, show t"
+      }
+    ]
   },
   {
     "id": "dm_06_095",
@@ -7173,7 +7259,14 @@
     "race": "Beast Folk",
     "imagePath": "res://assets/art/cards/DM-06/Cards/DM06_010.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "tapAbilities": [
+      {
+        "id": "Tap_BoostPowerEot",
+        "target": "OwnCreature",
+        "value": 5000
+      }
+    ]
   },
   {
     "id": "dm_06_106",
@@ -7430,7 +7523,13 @@
     "keywords": [
       "DoubleBreaker"
     ],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "tapAbilities": [
+      {
+        "id": "Tap_NotModelled",
+        "data": "End Step|At the end of the turn, untap all your light creatures."
+      }
+    ]
   },
   {
     "id": "dm_07_002",
@@ -7445,7 +7544,13 @@
     "keywords": [
       "DoubleBreaker"
     ],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "tapAbilities": [
+      {
+        "id": "Tap_GrantUnblockableCivEot",
+        "data": "Water"
+      }
+    ]
   },
   {
     "id": "dm_07_003",
@@ -7458,7 +7563,13 @@
     "race": "Hedrian",
     "imagePath": "res://assets/art/cards/DM-07/Cards/DM07_038.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "tapAbilities": [
+      {
+        "id": "Tap_NotModelled",
+        "data": "Until the End Step|end of the turn, each of your darkness creatu"
+      }
+    ]
   },
   {
     "id": "dm_07_004",
@@ -7471,7 +7582,13 @@
     "race": "Armorloid",
     "imagePath": "res://assets/art/cards/DM-07/Cards/DM07_019.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "tapAbilities": [
+      {
+        "id": "Tap_GrantCanAttackUntappedCivEot",
+        "data": "Fire"
+      }
+    ]
   },
   {
     "id": "dm_07_005",
@@ -7484,7 +7601,13 @@
     "race": "Mystery Totem",
     "imagePath": "res://assets/art/cards/DM-07/Cards/DM07_015.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "tapAbilities": [
+      {
+        "id": "Tap_NotModelled",
+        "data": "This turn, whenever any of your nature creatures is attacking yo"
+      }
+    ]
   },
   {
     "id": "dm_07_006",
@@ -7635,7 +7758,13 @@
     "race": "Gladiator",
     "imagePath": "res://assets/art/cards/DM-07/Cards/DM07_054.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "tapAbilities": [
+      {
+        "id": "Tap_NotModelled",
+        "data": "Add one of your creatures from the battle zone to your shields f"
+      }
+    ]
   },
   {
     "id": "dm_07_016",
@@ -7668,7 +7797,13 @@
     "race": "Liquid People",
     "imagePath": "res://assets/art/cards/DM-07/Cards/DM07_028.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "tapAbilities": [
+      {
+        "id": "Tap_ReturnManaCardToHand",
+        "target": "OpponentManaZone"
+      }
+    ]
   },
   {
     "id": "dm_07_018",
@@ -7683,7 +7818,13 @@
     "keywords": [
       "Blocker"
     ],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "tapAbilities": [
+      {
+        "id": "Tap_GrantUnblockableEot",
+        "target": "OwnCreature"
+      }
+    ]
   },
   {
     "id": "dm_07_019",
@@ -7728,7 +7869,13 @@
     "race": "Sea Hacker",
     "imagePath": "res://assets/art/cards/DM-07/Cards/DM07_004.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "tapAbilities": [
+      {
+        "id": "Tap_NotModelled",
+        "data": "Look at the top 3 cards of your deck. Then put them back in any "
+      }
+    ]
   },
   {
     "id": "dm_07_022",
@@ -8038,7 +8185,14 @@
     "race": "Xenoparts",
     "imagePath": "res://assets/art/cards/DM-07/Cards/DM07_036.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "tapAbilities": [
+      {
+        "id": "Tap_DestroyPowerAtMost",
+        "target": "OpponentCreature",
+        "value": 2000
+      }
+    ]
   },
   {
     "id": "dm_07_042",
@@ -8128,7 +8282,13 @@
     "race": "Colony Beetle",
     "imagePath": "res://assets/art/cards/DM-07/Cards/DM07_060.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "tapAbilities": [
+      {
+        "id": "Tap_ReturnCreatureFromManaToHand",
+        "target": "OwnManaZone"
+      }
+    ]
   },
   {
     "id": "dm_07_047",
@@ -8218,7 +8378,12 @@
     "race": "Snow Faerie",
     "imagePath": "res://assets/art/cards/DM-07/Cards/DM07_042.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "tapAbilities": [
+      {
+        "id": "Tap_ChargeMana"
+      }
+    ]
   },
   {
     "id": "dm_07_053",
@@ -8253,7 +8418,13 @@
     "race": "Beast Folk",
     "imagePath": "res://assets/art/cards/DM-07/Cards/DM07_034.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "tapAbilities": [
+      {
+        "id": "Tap_NotModelled",
+        "data": "Put up to 3 cards from your hand into your mana zone."
+      }
+    ]
   },
   {
     "id": "dm_07_055",
@@ -8319,7 +8490,13 @@
     "race": "Dark Lord",
     "imagePath": "res://assets/art/cards/DM-07/Cards/DM07_022.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "tapAbilities": [
+      {
+        "id": "Tap_DiscardRandom",
+        "value": 2
+      }
+    ]
   },
   {
     "id": "dm_07_s04",
@@ -8332,7 +8509,13 @@
     "race": "Dragonoid",
     "imagePath": "res://assets/art/cards/DM-07/Cards/DM07_009.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "tapAbilities": [
+      {
+        "id": "Tap_NotModelled",
+        "data": "Each player puts a card from his mana zone into his graveyard."
+      }
+    ]
   },
   {
     "id": "dm_07_s05",
@@ -8425,7 +8608,13 @@
     "race": "Snow Faerie",
     "imagePath": "res://assets/art/cards/DM-08/Cards/DM08_032.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "tapAbilities": [
+      {
+        "id": "Tap_NotModelled",
+        "data": "Search your deck. You may take a creature that has Dragon in its"
+      }
+    ]
   },
   {
     "id": "dm_08_006",
@@ -9432,7 +9621,13 @@
     "race": "Guardian",
     "imagePath": "res://assets/art/cards/DM-09/Cards/DM09_003.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "tapAbilities": [
+      {
+        "id": "Tap_NotModelled",
+        "data": "Choose a race. At the end of this turn, untap all creatures of t"
+      }
+    ]
   },
   {
     "id": "dm_09_015",
@@ -9496,7 +9691,13 @@
     "race": "Cyber Lord",
     "imagePath": "res://assets/art/cards/DM-09/Cards/DM09_024.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "tapAbilities": [
+      {
+        "id": "Tap_NotModelled",
+        "data": "Choose a race. Whenever one of your creatures of that race would"
+      }
+    ]
   },
   {
     "id": "dm_09_019",
@@ -9723,7 +9924,13 @@
     "race": "Parasite Worm",
     "imagePath": "res://assets/art/cards/DM-09/Cards/DM09_033.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "tapAbilities": [
+      {
+        "id": "Tap_NotModelled",
+        "data": "Choose a race. Each creature of that race gets \"slayer\" until th"
+      }
+    ]
   },
   {
     "id": "dm_09_035",
@@ -9798,7 +10005,13 @@
     "race": "Xenoparts",
     "imagePath": "res://assets/art/cards/DM-09/Cards/DM09_045.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "tapAbilities": [
+      {
+        "id": "Tap_NotModelled",
+        "data": "Choose a race. Each creature of that race attacks this turn if a"
+      }
+    ]
   },
   {
     "id": "dm_09_040",
@@ -9938,7 +10151,13 @@
     "race": "Beast Folk",
     "imagePath": "res://assets/art/cards/DM-09/Cards/DM09_040.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "tapAbilities": [
+      {
+        "id": "Tap_NotModelled",
+        "data": "Choose a race. Creatures of that race can't be blocked by creatu"
+      }
+    ]
   },
   {
     "id": "dm_09_050",

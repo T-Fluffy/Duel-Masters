@@ -21,7 +21,8 @@ public sealed class Card
         string race = "",
         IEnumerable<Keyword> keywords = null!,
         IEnumerable<CardEffect> effects = null!,
-        string evolutionOf = "")
+        string evolutionOf = "",
+        IEnumerable<CardEffect> tapAbilities = null!)
     {
         Id = id ?? throw new ArgumentNullException(nameof(id));
         Name = name ?? throw new ArgumentNullException(nameof(name));
@@ -32,6 +33,7 @@ public sealed class Card
         Race = race ?? "";
         Keywords = keywords as IReadOnlySet<Keyword> ?? new HashSet<Keyword>(keywords ?? Array.Empty<Keyword>());
         Effects = effects as IReadOnlyList<CardEffect> ?? (effects ?? Array.Empty<CardEffect>()).ToArray();
+        TapAbilities = tapAbilities as IReadOnlyList<CardEffect> ?? (tapAbilities ?? Array.Empty<CardEffect>()).ToArray();
         EvolutionOf = evolutionOf ?? "";
     }
 
@@ -48,6 +50,11 @@ public sealed class Card
 
     /// <summary>Named game-rule effects this card resolves (empty for vanilla cards).</summary>
     public IReadOnlyList<CardEffect> Effects { get; }
+
+    /// <summary>Activated tap abilities (the Duel Masters "Tap Ability" family).</summary>
+    public IReadOnlyList<CardEffect> TapAbilities { get; }
+
+    public bool HasTapAbility => TapAbilities.Count > 0;
 
     public bool HasKeyword(Keyword k) => Keywords.Contains(k);
 

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace DuelMasters.Domain;
 
@@ -36,6 +37,20 @@ public sealed class CardInstance
     /// owner's turn. Not part of the printed power (used in combat resolution).
     /// </summary>
     public int TempPower { get; internal set; }
+
+    /// <summary>
+    /// Keywords granted to this copy until the end of the current turn (e.g. by tap
+    /// abilities). Stacked with the printed keywords; cleared during the end step.
+    /// </summary>
+    public HashSet<Keyword> TempKeywords { get; internal set; } = new();
+
+    /// <summary>Printed plus temporary keywords active on this copy right now.</summary>
+    public bool HasKeywordNow(Keyword k) => Card.Keywords.Contains(k) || TempKeywords.Contains(k);
+
+    /// <summary>Grant a keyword to this copy until the end of the current turn.</summary>
+    public void GainKeywordUntilEndOfTurn(Keyword k) => TempKeywords.Add(k);
+
+    public void ClearEndOfTurnKeywords() => TempKeywords.Clear();
 
     /// <summary>
     /// For a creature that has creatures evolved on top of it, this stack holds the

@@ -46,6 +46,16 @@ def strip_reminders(text: str) -> str:
     return re.sub(r"\s+", " ", re.sub(r"''.*?''", " ", text)).strip()
 
 
+def flatten_templates(text: str) -> str:
+    """Unwrap nested {{Name|...}} templates, keeping their inner text (e.g.
+    {{End Step|end of the turn}} keeps the pipe). Used on Tap Ability bodies."""
+    return re.sub(r"\{\{[^{}]*\}\}", lambda m: m.group(0)[2:-2], text)
+
+
+# Tap Ability lines are the whole {{Tap Ability|<body>}} template on one line.
+TAP_LINE = re.compile(r"^\{\{Tap Ability\|(?P<body>.*)\}\}$")
+
+
 def scope_of(text: str, default="AnyCreature"):
     low = text.lower()
     if "your opponent" in low or "opponent's creatures" in low:
@@ -261,6 +271,69 @@ def _rules():
 RULES = _rules()
 
 
+# ------------------------------------------------ tap-ability rule table
+# The body of a {{Tap Ability|...}} line is mapped onto one activated effect.
+# Unmatched bodies become Tap_NotModelled (data is kept, the engine refuses to
+# use them until their subsystem lands). Each entry is (name, regex, fn).
+
+def _tap_rules():
+    T = []
+
+    def tap(name, pattern, fn):
+        T.append((name, re.compile(pattern, re.I), fn))
+        return fn
+
+    tap("DrawN", r"^draw (\d+) cards?\.?$", lambda m, t: E("Tap_Draw", v=int(m.group(1))))
+    tap("ReturnAny", r"^choose a creature in the battle zone and return it to its owner's hand\.?$",
+        lambda m, t: E("Tap_ReturnToHand", t="AnyCreature"))
+    tap("TapOpp", r"^choose one of your opponent's creatures in the battle zone and tap it\.?$",
+        lambda m, t: E("Tap_TapOpponentCreature", t="OpponentCreature"))
+    tap("ReturnSpellFromMana", r"^return a spell from your mana zone to your hand\.?$",
+        lambda m, t: E("Tap_ReturnSpellFromManaToHand", t="OwnManaZone"))
+    tap("ReturnCreatureFromMana", r"^return a creature from your mana zone to your hand\.?$",
+        lambda m, t: E("Tap_ReturnCreatureFromManaToHand", t="OwnManaZone"))
+    tap("ReturnOppMana", r"^choose a card in your opponent's mana zone and return it to his hand\.?$",
+        lambda m, t: E("Tap_ReturnManaCardToHand", t="OpponentManaZone"))
+    tap("ReturnGraveCiv", r"^return a ([a-z]+) creature from your graveyard to your hand\.?$",
+        lambda m, t: E("Tap_ReturnGraveCreatureToHand", t="OwnGraveyard", d=m.group(1).title()))
+    tap("DestroyBlocker", r"^destroy one of your opponent's creatures that has \"?blocker\.\"?$",
+        lambda m, t: E("Tap_DestroyBlocker", t="OpponentCreature"))
+    tap("DestroyPowerAtMost", r"^destroy one of your opponent's creatures that has power (\d+)[ ,]*or less\.?$",
+        lambda m, t: E("Tap_DestroyPowerAtMost", t="OpponentCreature", v=int(m.group(1))))
+    tap("GrantUnblockable", r"^choose one of your creatures in the battle zone\. it can'?t be blocked this turn\.?$",
+        lambda m, t: E("Tap_GrantUnblockableEot", t="OwnCreature"))
+    tap("GrantSlayer", r"^one of your creatures in the battle zone gets \"?slayer\"? until the (?:End Step\|)?end of the turn\.?$",
+        lambda m, t: E("Tap_GrantSlayerEot", t="OwnCreature"))
+    tap("GrantSpeedAttacker", r"^one of your creatures in the battle zone gets \"?speed attacker\"? until the (?:End Step\|)?end of the turn\.?$",
+        lambda m, t: E("Tap_GrantSpeedAttackerEot", t="OwnCreature"))
+    tap("GrantDoubleBreaker", r"^one of your ([a-z]+) creatures in the battle zone gets \"?double breaker\"? until the (?:End Step\|)?end of the turn\.?$",
+        lambda m, t: E("Tap_GrantDoubleBreakerEot", t="OwnCreature", d=m.group(1).title()))
+    tap("BoostPowerEot", r"^one of your creatures in the battle zone gets \+(\d+) power until the (?:End Step\|)?end of the turn\.?$",
+        lambda m, t: E("Tap_BoostPowerEot", t="OwnCreature", v=int(m.group(1))))
+    tap("GrantUnblockableCiv", r"^each of your ([a-z]+) creatures gets \"?this creature can'?t be blocked\"? until the (?:End Step\|)?end of the turn\.?$",
+        lambda m, t: E("Tap_GrantUnblockableCivEot", d=m.group(1).title()))
+    tap("GrantCanAttackUntappedCiv", r"^each of your ([a-z]+) creatures gets \"?this creature can attack untapped creatures\"? until the (?:End Step\|)?end of the turn\.?$",
+        lambda m, t: E("Tap_GrantCanAttackUntappedCivEot", d=m.group(1).title()))
+    tap("ChargeMana", r"^put the top card of your deck into your mana zone\.?$",
+        lambda m, t: E("Tap_ChargeMana"))
+    tap("DiscardRandom", r"^your opponent discards (\d+) cards? at random from his hand\.?$",
+        lambda m, t: E("Tap_DiscardRandom", v=int(m.group(1))))
+
+    return T
+
+
+TAP_RULES = _tap_rules()
+
+
+def map_tap_body(body: str):
+    """Map a flattened {{Tap Ability|...}} body onto a tap-effect dict (or None)."""
+    for name, rx, fn in TAP_RULES:
+        m = rx.match(body)
+        if m:
+            return fn(m, body)
+    return None
+
+
 # ---------------------------------------------- documented approximations table
 # Patterns that describe effects the engine cannot model. Matching one attaches
 # a documented note to the card instead of leaving the line in triage.
@@ -379,13 +452,27 @@ def main():
 
     for card in report:
         raw = card.get("engtext") or ""
-        keywords, effects, notes = [], [], []
+        keywords, effects, tap_abilities, notes = [], [], [], []
         evo = None
         handled_lines = 0
 
         for line in (norm_line(x) for x in raw.split("\n")):
             if not line:
                 continue
+
+            # Tap abilities: the whole line is the {{Tap Ability|...}} template.
+            m = TAP_LINE.match(line)
+            if m:
+                handled_lines += 1
+                body = flatten_templates(strip_reminders(m.group("body")))
+                eff = map_tap_body(body)
+                if eff is None:
+                    add_note(notes, "tap ability not modelled")
+                    tap_abilities.append(E("Tap_NotModelled", d=body[:64]))
+                else:
+                    tap_abilities.append(eff)
+                continue
+
             for templ_note in ("{{Tap Ability", "{{Turbo Rush", "{{Crew Breaker", "use this creature's {{Tap}} ability",
                                "use this creature's ability"):
                 if templ_note in line:
@@ -442,6 +529,7 @@ def main():
                 evo = "Dragon"
 
         mapping.append({"id": card["id"], "keywords": keywords, "effects": effects,
+                        "tapAbilities": tap_abilities,
                         "evolutionOf": evo, "note": "; ".join(notes) if notes else None,
                         "src": raw})
 
@@ -452,7 +540,8 @@ def main():
     n_kw = sum(1 for m in mapping if m["keywords"])
     n_note = sum(1 for m in mapping if m["note"])
     n_evo = sum(1 for m in mapping if m["evolutionOf"])
-    print(f"cards {len(mapping)} | effects {n_eff} | keywords {n_kw} | notes {n_note} | evo {n_evo}")
+    n_tap = sum(1 for m in mapping if m["tapAbilities"])
+    print(f"cards {len(mapping)} | effects {n_eff} | keywords {n_kw} | notes {n_note} | evo {n_evo} | tapAbilities {n_tap}")
     print(f"rule hits: {sum(used_rules.values())} across {len(used_rules)} rules")
     print(f"note hits: {sum(used_notes.values())} across {len(used_notes)} patterns")
     print(f"unmapped lines: {len(triage)}  -> {TRIAGE}")

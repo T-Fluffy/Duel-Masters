@@ -55,6 +55,20 @@ public sealed class CardState
     [JsonPropertyName("isSummoningSick")]
     public bool IsSummoningSick { get; set; }
 
+    /// <summary>True when the underlying card carries a Tap Ability.</summary>
+    [JsonPropertyName("hasTapAbility")]
+    public bool HasTapAbility { get; set; }
+
+    /// <summary>Server-computed, only set for the viewer's own creatures: the viewer
+    /// may activate one of this creature's tap abilities right now.</summary>
+    [JsonPropertyName("canUseTapAbility")]
+    public bool CanUseTapAbility { get; set; }
+
+    /// <summary>Server-computed legal Tap-Ability targets for the viewer (null/empty
+    /// when the ability resolves globally without a target choice).</summary>
+    [JsonPropertyName("tapAbilityTargets")]
+    public List<TapTargetState>? TapAbilityTargets { get; set; }
+
     /// <summary>True when this entry only represents a face-down card (no details).</summary>
     [JsonPropertyName("countOnly")]
     public bool CountOnly { get; set; }

@@ -28,6 +28,8 @@ public static class DuelContract
         public const string PlayShieldTrigger = "PlayShieldTrigger";
         public const string PlayShieldTriggerTargeted = "PlayShieldTriggerTargeted";
         public const string DeclineShieldTriggers = "DeclineShieldTriggers";
+        public const string ActivateTapAbility = "ActivateTapAbility";
+        public const string ActivateTapAbilityTargeted = "ActivateTapAbilityTargeted";
         public const string EndMainPhase = "EndMainPhase";
         public const string EndTurn = "EndTurn";
     }
