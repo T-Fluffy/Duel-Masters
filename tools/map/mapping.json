@@ -4094,12 +4094,11 @@
   "effects": [],
   "tapAbilities": [
    {
-    "id": "Tap_NotModelled",
-    "data": "Your opponent chooses one of his creatures in the battle zone an"
+    "id": "Tap_OpponentDestroysOwnCreature"
    }
   ],
   "evolutionOf": null,
-  "note": "tap ability not modelled",
+  "note": null,
   "src": "{{Tap Ability|Your opponent chooses one of his creatures in the battle zone and destroys it.}}"
  },
  {
@@ -5123,12 +5122,11 @@
   "effects": [],
   "tapAbilities": [
    {
-    "id": "Tap_NotModelled",
-    "data": "Search your deck. You may take a creature from your deck, show t"
+    "id": "Tap_DeckSearchCreatureToHand"
    }
   ],
   "evolutionOf": null,
-  "note": "tap ability not modelled",
+  "note": null,
   "src": "{{Tap Ability|Search your deck. You may take a creature from your deck, show that creature to your opponent, and put it into your hand. Then shuffle your deck.}}"
  },
  {
@@ -5499,12 +5497,12 @@
   "effects": [],
   "tapAbilities": [
    {
-    "id": "Tap_NotModelled",
-    "data": "This turn, whenever any of your nature creatures is attacking yo"
+    "id": "Tap_BlockBreaksShieldEot",
+    "data": "Nature"
    }
   ],
   "evolutionOf": null,
-  "note": "tap ability not modelled",
+  "note": null,
   "src": "{{Tap Ability|This turn, whenever any of your nature creatures is attacking your opponent and becomes blocked, it breaks one of his shields. ''(If a creature has \"double breaker\" or \"triple breaker,\" it still breaks only one shield.)''}}"
  },
  {
@@ -5612,12 +5610,12 @@
   "effects": [],
   "tapAbilities": [
    {
-    "id": "Tap_NotModelled",
-    "data": "Add one of your creatures from the battle zone to your shields f"
+    "id": "Tap_AddOwnCreatureToShields",
+    "target": "OwnCreature"
    }
   ],
   "evolutionOf": null,
-  "note": "tap ability not modelled",
+  "note": null,
   "src": "{{Tap Ability|Add one of your creatures from the battle zone to your shields face down.}}"
  },
  {
@@ -6235,12 +6233,12 @@
   "effects": [],
   "tapAbilities": [
    {
-    "id": "Tap_NotModelled",
-    "data": "Search your deck. You may take a creature that has Dragon in its"
+    "id": "Tap_DeckSearchDragonSummonEotDestroy",
+    "data": "Dragon"
    }
   ],
   "evolutionOf": null,
-  "note": "tap ability not modelled",
+  "note": null,
   "src": "{{Tap Ability|Search your deck. You may take a creature that has Dragon in its race from your deck and put it into the battle zone. Then shuffle your deck. That creature has \"speed attacker.\" At the End Step|end of the turn, destroy it.}}"
  },
  {

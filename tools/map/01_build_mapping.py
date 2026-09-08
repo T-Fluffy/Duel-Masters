@@ -338,6 +338,16 @@ def _tap_rules():
         lambda m, t: E("Tap_ChooseRaceMustAttackPowerAttackerEot", v=int(m.group(1))))
     tap("ChooseRaceUnblockableByPower", r"^choose a race\. creatures of that race can'?t be blocked by creatures that have power (\d+) or less this turn\.?$",
         lambda m, t: E("Tap_ChooseRaceUnblockableByPowerEot", v=int(m.group(1))))
+    tap("OpponentDestroysOwnCreature", r"^your opponent chooses one of (?:his|her) creatures in the battle zone and destroys it\.?$",
+        lambda m, t: E("Tap_OpponentDestroysOwnCreature"))
+    tap("AddOwnCreatureToShields", r"^add one of your creatures from the battle zone to your shields face down\.?$",
+        lambda m, t: E("Tap_AddOwnCreatureToShields", t="OwnCreature"))
+    tap("BlockBreaksShield", r"^this turn, whenever any of your ([a-z]+) creatures is attacking your opponent and becomes blocked,? it breaks one of his shields\.?",
+        lambda m, t: E("Tap_BlockBreaksShieldEot", d=m.group(1).title()))
+    tap("DeckSearchCreatureToHand", r"^search your deck\. you may take a creature from your deck, show that creature to your opponent, and put it into your hand\. then shuffle your deck\.?$",
+        lambda m, t: E("Tap_DeckSearchCreatureToHand"))
+    tap("DeckSearchDragonSummonDestroy", r"^search your deck\. you may take a creature that has ([a-z]+) in its race from your deck and put it into the battle zone\. then shuffle your deck\. that creature has \"?speed attacker\.\"? at the (?:End Step\|)?end of the turn, destroy it\.?$",
+        lambda m, t: E("Tap_DeckSearchDragonSummonEotDestroy", d=m.group(1).title()))
 
     return T
 

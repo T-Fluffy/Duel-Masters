@@ -41,6 +41,12 @@ public sealed class DuelGame
     /// <summary>Races whose creatures must attack this turn if able (Gigio's Hammer).</summary>
     private readonly HashSet<string> _pendingMustAttackRaces = new(StringComparer.OrdinalIgnoreCase);
 
+    /// <summary>
+    /// Creatures summoned "at the end of the turn, destroy it" (Kachua), destroyed
+    /// when the end step resolves and cleared with the other temporary state.
+    /// </summary>
+    private readonly HashSet<CardInstance> _pendingDestroyAtEot = new();
+
     private sealed record PendingTurnEffect(EffectId Id, Player Owner, string Race, int Value = 0);
 
     public DuelGame(Player player1, Player player2, Random? rng = null)
@@ -205,6 +211,7 @@ public sealed class DuelGame
         _pendingTurnEffects.Clear();
         _pendingDestroyAfterBattle.Clear();
         _pendingMustAttackRaces.Clear();
+        _pendingDestroyAtEot.Clear();
 
         _activeIndex = 1 - _activeIndex;
         TurnNumber++;
@@ -411,7 +418,77 @@ public sealed class DuelGame
             case EffectId.Tap_ChooseRaceUnblockableByPowerEot:
                 _pendingTurnEffects.Add(new PendingTurnEffect(EffectId.Tap_ChooseRaceUnblockableByPowerEot, actor, race!, Math.Max(0, eff.Value)));
                 break;
+
+            // Tank Mutant: your opponent chooses one of his creatures in the battle
+            // zone and destroys it. The game has no opponent-input channel at this
+            // point, so the choice is resolved deterministically as an opponent would
+            // play: it sacrifices its lowest-power body (ties: first on the zone list).
+            case EffectId.Tap_OpponentDestroysOwnCreature:
+                {
+                    var victim = OpponentOf(actor).BattleZone
+                        .OrderBy(c => CurrentPower(c))
+                        .FirstOrDefault();
+                    if (victim is not null)
+                        DestroyCreature(victim);
+                }
+                break;
+
+            // Spinning Totem: this turn, whenever any of the owner's {Data} creatures
+            // attacks the opponent and becomes blocked, it breaks one of his shields.
+            case EffectId.Tap_BlockBreaksShieldEot:
+                _pendingTurnEffects.Add(new PendingTurnEffect(EffectId.Tap_BlockBreaksShieldEot, actor, eff.Data));
+                break;
+
+            // Charmilia: search the deck for a creature, put it into hand (shown to
+            // the opponent - open information), then shuffle. "You may take" resolves
+            // to the strongest creature found.
+            case EffectId.Tap_DeckSearchCreatureToHand:
+                SearchAndPut(actor, c => c.IsCreature, summon: false);
+                break;
+
+            // Kachua: search for a creature with {Data} in its race, put it into the
+            // battle zone with "speed attacker" (so it may swing immediately),
+            // destroyed at the end of the turn, then shuffle.
+            case EffectId.Tap_DeckSearchDragonSummonEotDestroy:
+                SearchAndPut(actor,
+                    c => c.IsCreature && c.Race.Contains(eff.Data, StringComparison.OrdinalIgnoreCase),
+                    summon: true);
+                break;
         }
+    }
+
+    /// <summary>
+    /// Search <paramref name="actor"/>'s deck for the strongest card matching
+    /// <paramref name="match"/> and move it to the hand, then shuffle. When
+    /// <paramref name="summon"/> is set the card is instead put into the battle zone
+    /// with "speed attacker" and a destroy at the end of the turn (Kachua).
+    /// </summary>
+    private void SearchAndPut(Player actor, Func<Card, bool> match, bool summon)
+    {
+        var card = actor.Deck.Where(match).OrderByDescending(c => c.Power).FirstOrDefault();
+        if (card is not null)
+        {
+            actor.Deck.Remove(card);
+            if (summon)
+            {
+                var instance = new CardInstance(card, actor) { Zone = Zone.BattleZone, IsSummoningSick = false };
+                instance.GainKeywordUntilEndOfTurn(Keyword.SpeedAttacker);
+                actor.BattleZone.Add(instance);
+                _pendingDestroyAtEot.Add(instance);
+            }
+            else
+            {
+                actor.Hand.Add(new CardInstance(card, actor) { Zone = Zone.Hand });
+            }
+        }
+        ShuffleDeck(actor);
+    }
+
+    private void ShuffleDeck(Player p)
+    {
+        var shuffled = p.Deck.OrderBy(_ => Rng.Next()).ToList();
+        p.Deck.Clear();
+        p.Deck.AddRange(shuffled);
     }
 
     private void ResolveTapTargetedEffect(CardEffect eff, CardInstance target)
@@ -457,6 +534,14 @@ public sealed class DuelGame
             case EffectId.Tap_GrantDoubleBreakerEot:
                 target.GainKeywordUntilEndOfTurn(Keyword.DoubleBreaker);
                 break;
+
+            // Rondobil: add one of your creatures from the battle zone to your
+            // shields face down. The elevated body is covered and becomes a shield.
+            case EffectId.Tap_AddOwnCreatureToShields:
+                target.Owner!.BattleZone.Remove(target);
+                target.Zone = Zone.Shields;
+                target.Owner!.Shields.Add(target.Card);
+                break;
         }
     }
 
@@ -482,6 +567,13 @@ public sealed class DuelGame
                             c.Untap();
                     break;
             }
+        }
+
+        // "At the end of the turn, destroy it" (Kachua's summoned body).
+        foreach (var c in _pendingDestroyAtEot)
+        {
+            if (c.Zone == Zone.BattleZone)
+                DestroyCreature(c);
         }
     }
 
@@ -835,6 +927,20 @@ public sealed class DuelGame
             var blocker = RequireReadyBlocker(defender, bIdx, attacker);
             blocker.IsTapped = true;
             Battle(attacker, blocker);
+
+            // Spinning Totem: whenever a nature creature attacks the opponent and
+            // becomes blocked this turn, it breaks one more shield as well.
+            foreach (var pending in _pendingTurnEffects)
+            {
+                if (pending.Id == EffectId.Tap_BlockBreaksShieldEot
+                    && ReferenceEquals(pending.Owner, active)
+                    && CivMatches(attacker.Card.Civilization, pending.Race)
+                    && defender.ShieldCount > 0)
+                {
+                    BreakShields(defender, 1);
+                    break;
+                }
+            }
             return;
         }
 

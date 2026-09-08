@@ -45,6 +45,8 @@ VALID_EFF = {
     "Tap_ChooseRaceGrantSlayerEot", "Tap_ChooseRaceToHandEot", "Tap_GraveToMana", "Tap_HandToMana",
     "Tap_ManaToGrave", "Tap_GrantOwnCivPowerDoubleBreakerDestroyEot",
     "Tap_ChooseRaceMustAttackPowerAttackerEot", "Tap_ChooseRaceUnblockableByPowerEot",
+    "Tap_OpponentDestroysOwnCreature", "Tap_BlockBreaksShieldEot", "Tap_AddOwnCreatureToShields",
+    "Tap_DeckSearchCreatureToHand", "Tap_DeckSearchDragonSummonEotDestroy",
     "Tap_NotModelled",
 }
 

@@ -5669,8 +5669,7 @@
     "scriptEffectId": "VANILLA",
     "tapAbilities": [
       {
-        "id": "Tap_NotModelled",
-        "data": "Your opponent chooses one of his creatures in the battle zone an"
+        "id": "Tap_OpponentDestroysOwnCreature"
       }
     ]
   },
@@ -7086,8 +7085,7 @@
     "scriptEffectId": "VANILLA",
     "tapAbilities": [
       {
-        "id": "Tap_NotModelled",
-        "data": "Search your deck. You may take a creature from your deck, show t"
+        "id": "Tap_DeckSearchCreatureToHand"
       }
     ]
   },
@@ -7605,8 +7603,8 @@
     "scriptEffectId": "VANILLA",
     "tapAbilities": [
       {
-        "id": "Tap_NotModelled",
-        "data": "This turn, whenever any of your nature creatures is attacking yo"
+        "id": "Tap_BlockBreaksShieldEot",
+        "data": "Nature"
       }
     ]
   },
@@ -7762,8 +7760,8 @@
     "scriptEffectId": "VANILLA",
     "tapAbilities": [
       {
-        "id": "Tap_NotModelled",
-        "data": "Add one of your creatures from the battle zone to your shields f"
+        "id": "Tap_AddOwnCreatureToShields",
+        "target": "OwnCreature"
       }
     ]
   },
@@ -8612,8 +8610,8 @@
     "scriptEffectId": "VANILLA",
     "tapAbilities": [
       {
-        "id": "Tap_NotModelled",
-        "data": "Search your deck. You may take a creature that has Dragon in its"
+        "id": "Tap_DeckSearchDragonSummonEotDestroy",
+        "data": "Dragon"
       }
     ]
   },

@@ -206,6 +206,21 @@ public enum EffectId
     /// <summary>Tap ability: choose a race. Creatures of that race can't be blocked by creatures that have power {Value} or less this turn.</summary>
     Tap_ChooseRaceUnblockableByPowerEot = 927,
 
+    /// <summary>Tap ability: your opponent chooses one of his creatures in the battle zone and destroys it.</summary>
+    Tap_OpponentDestroysOwnCreature = 928,
+
+    /// <summary>Tap ability: this turn, whenever any of your {Data} creatures attacks the opponent and is blocked, it breaks one of his shields.</summary>
+    Tap_BlockBreaksShieldEot = 929,
+
+    /// <summary>Tap ability: add one of your creatures from the battle zone to your shields face down.</summary>
+    Tap_AddOwnCreatureToShields = 930,
+
+    /// <summary>Tap ability: search your deck, put a creature into your hand, then shuffle.</summary>
+    Tap_DeckSearchCreatureToHand = 931,
+
+    /// <summary>Tap ability: search your deck for a creature with {Data} in its race, put it into the battle zone with "speed attacker", destroyed at the end of the turn; shuffle.</summary>
+    Tap_DeckSearchDragonSummonEotDestroy = 932,
+
     /// <summary>
     /// Tap Ability placeholder for cards whose activated ability is not yet
     /// representable in the engine. The card still carries the ability in the

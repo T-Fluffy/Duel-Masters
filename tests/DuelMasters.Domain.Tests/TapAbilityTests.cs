@@ -818,6 +818,204 @@ public class TapAbilityTests
         Assert.False(cre.IsTapped); // the tap was not paid
     }
 
+    // -------------------------------------- Slice C: opponent choice / shields / search
+
+    [Fact]
+    public void OpponentDestroysOwnCreature_RemovesTheOpponentsWeakestBody()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        var tank = h.PutCreature(h.P1, TapCard("Tank", CardFactory.Eff(EffectId.Tap_OpponentDestroysOwnCreature), civ: Civilization.Darkness));
+        var weak = h.PutCreature(h.P2, CardFactory.Creature(1, 1000, Civilization.Nature, "Weakling"));
+        var strong = h.PutCreature(h.P2, CardFactory.Creature(1, 6000, Civilization.Nature, "Titan"));
+
+        h.Game.ActivateTapAbility(h.P1.BattleZone.IndexOf(tank));
+
+        // The opponent sacrifices its least valuable body (deterministically weakest).
+        Assert.True(tank.IsTapped);
+        Assert.Contains(weak, h.P2.Graveyard);
+        Assert.Contains(strong, h.P2.BattleZone);
+    }
+
+    [Fact]
+    public void OpponentDestroysOwnCreature_WithEmptyOpponentBoard_ResolvesHarmlessly()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        var tank = h.PutCreature(h.P1, TapCard("Tank", CardFactory.Eff(EffectId.Tap_OpponentDestroysOwnCreature), civ: Civilization.Darkness));
+
+        h.Game.ActivateTapAbility(h.P1.BattleZone.IndexOf(tank));
+
+        Assert.True(tank.IsTapped);
+        Assert.Empty(h.P2.Graveyard);
+    }
+
+    [Fact]
+    public void BlockBreaksShield_NatureAttacker_BlockedBreaksAnExtraShield()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        var totem = h.PutCreature(h.P1, TapCard("Totem", CardFactory.Eff(EffectId.Tap_BlockBreaksShieldEot, data: "Nature"), civ: Civilization.Nature));
+        var brawler = h.PutCreature(h.P1, CardFactory.Creature(1, 8000, Civilization.Nature, "Brawler"));
+        var guard = h.PutCreature(h.P2, CardFactory.Creature(1, 2000, Civilization.Light, "Guard", Keyword.Blocker));
+        h.SetShields(h.P2, CardFactory.Creature(1, 1000, Civilization.Light, "S1"),
+                             CardFactory.Creature(1, 1000, Civilization.Light, "S2"),
+                             CardFactory.Creature(1, 1000, Civilization.Light, "S3"));
+
+        h.Game.ActivateTapAbility(h.P1.BattleZone.IndexOf(totem));
+        h.Game.AttackPlayer(h.P1.BattleZone.IndexOf(brawler), h.P2, h.P2.BattleZone.IndexOf(guard));
+
+        // The battle kills the 2000-power guard, and being blocked also breaks a shield.
+        Assert.Contains(guard, h.P2.Graveyard);
+        Assert.Equal(2, h.P2.ShieldCount);
+    }
+
+    [Fact]
+    public void BlockBreaksShield_NonNatureAttacker_DoesNotBreakAnExtraShield()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        var totem = h.PutCreature(h.P1, TapCard("Totem", CardFactory.Eff(EffectId.Tap_BlockBreaksShieldEot, data: "Nature"), civ: Civilization.Nature));
+        var fire = h.PutCreature(h.P1, CardFactory.Creature(1, 8000, Civilization.Fire, "FireBrawler"));
+        var guard = h.PutCreature(h.P2, CardFactory.Creature(1, 2000, Civilization.Light, "Guard", Keyword.Blocker));
+        h.SetShields(h.P2, CardFactory.Creature(1, 1000, Civilization.Light, "S1"),
+                             CardFactory.Creature(1, 1000, Civilization.Light, "S2"),
+                             CardFactory.Creature(1, 1000, Civilization.Light, "S3"));
+
+        h.Game.ActivateTapAbility(h.P1.BattleZone.IndexOf(totem));
+        h.Game.AttackPlayer(h.P1.BattleZone.IndexOf(fire), h.P2, h.P2.BattleZone.IndexOf(guard));
+
+        Assert.Contains(guard, h.P2.Graveyard);
+        Assert.Equal(3, h.P2.ShieldCount); // blocked, but not a nature attacker
+    }
+
+    [Fact]
+    public void BlockBreaksShield_UnblockedDirectAttack_DoesNotBreakAnExtraShield()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        var totem = h.PutCreature(h.P1, TapCard("Totem", CardFactory.Eff(EffectId.Tap_BlockBreaksShieldEot, data: "Nature"), civ: Civilization.Nature));
+        var brawler = h.PutCreature(h.P1, CardFactory.Creature(1, 8000, Civilization.Nature, "Brawler"));
+        h.SetShields(h.P2, CardFactory.Creature(1, 1000, Civilization.Light, "S1"),
+                             CardFactory.Creature(1, 1000, Civilization.Light, "S2"),
+                             CardFactory.Creature(1, 1000, Civilization.Light, "S3"));
+
+        h.Game.ActivateTapAbility(h.P1.BattleZone.IndexOf(totem));
+        h.Game.AttackPlayer(h.P1.BattleZone.IndexOf(brawler));
+
+        Assert.Equal(2, h.P2.ShieldCount); // only the usual break, not the rider
+    }
+
+    [Fact]
+    public void AddOwnCreatureToShields_MovesCreatureFromBattleZoneToShields()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        var rondobil = h.PutCreature(h.P1, TapCard("Rondobil", CardFactory.Eff(EffectId.Tap_AddOwnCreatureToShields, EffectTargetScope.OwnCreature)));
+        var friend = h.PutCreature(h.P1, CardFactory.Creature(1, 2000, Civilization.Water, "Friend"));
+        h.SetShields(h.P1, CardFactory.Creature(1, 1000, Civilization.Light, "S1"));
+
+        var eff = rondobil.Card.TapAbilities[0];
+        Assert.Contains(friend, h.Game.TapTargetPool(h.P1, eff));
+
+        h.Game.ActivateTapAbility(h.P1.BattleZone.IndexOf(rondobil), new[] { new SpellTarget(h.P1, h.P1.BattleZone.IndexOf(friend)) });
+
+        Assert.True(rondobil.IsTapped);
+        Assert.DoesNotContain(friend, h.P1.BattleZone);
+        Assert.Equal(2, h.P1.ShieldCount); // one original + the covered creature
+    }
+
+    [Fact]
+    public void DeckSearchCreatureToHand_FetchesTheStrongestCreatureAndShuffles()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        var charm = h.PutCreature(h.P1, TapCard("Charm", CardFactory.Eff(EffectId.Tap_DeckSearchCreatureToHand)));
+        h.P1.Deck.Clear();
+        h.P1.Deck.Add(CardFactory.Spell(1));
+        h.P1.Deck.Add(CardFactory.Creature(1, 2000, Civilization.Water, "SmallFish"));
+        h.P1.Deck.Add(CardFactory.Creature(2, 5000, Civilization.Water, "BigFish"));
+
+        h.Game.ActivateTapAbility(h.P1.BattleZone.IndexOf(charm));
+
+        Assert.True(charm.IsTapped);
+        Assert.DoesNotContain(h.P1.Deck, c => c.Name == "BigFish");
+        Assert.Contains(h.P1.Hand, c => c.Card.Name == "BigFish");
+        Assert.DoesNotContain(h.P1.Hand, c => c.Card.Name == "SmallFish");
+        Assert.Equal(2, h.P1.Deck.Count); // the search removed exactly one card
+    }
+
+    [Fact]
+    public void DeckSearchCreatureToHand_WithoutACreatureInDeck_MovesNothing()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        var charm = h.PutCreature(h.P1, TapCard("Charm", CardFactory.Eff(EffectId.Tap_DeckSearchCreatureToHand)));
+        h.P1.Deck.Clear();
+        h.P1.Deck.Add(CardFactory.Spell(1));
+        h.P1.Deck.Add(CardFactory.Spell(2));
+
+        h.Game.ActivateTapAbility(h.P1.BattleZone.IndexOf(charm));
+
+        Assert.Equal(2, h.P1.Deck.Count);
+        Assert.DoesNotContain(h.P1.Deck, c => c.IsCreature);
+    }
+
+    [Fact]
+    public void DeckSearchDragonSummonEotDestroy_SummonsTheStrongestDragonWithSpeedAttacker()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        var kachua = h.PutCreature(h.P1, TapCard("Kachua", CardFactory.Eff(EffectId.Tap_DeckSearchDragonSummonEotDestroy, data: "Dragon"), civ: Civilization.Water));
+        h.P1.Deck.Clear();
+        h.P1.Deck.Add(CardFactory.CreatureWithRace(1, 2000, Civilization.Fire, "Angel", "Angel"));
+        h.P1.Deck.Add(CardFactory.Spell(1));
+        h.P1.Deck.Add(CardFactory.CreatureWithRace(1, 3000, Civilization.Fire, "SmallDragon", "Dragon"));
+        h.P1.Deck.Add(CardFactory.CreatureWithRace(2, 6000, Civilization.Fire, "BigDragon", "Dragon"));
+
+        h.Game.ActivateTapAbility(h.P1.BattleZone.IndexOf(kachua));
+
+        var summoned = h.P1.BattleZone.SingleOrDefault(c => c.Card.Name == "BigDragon");
+        Assert.NotNull(summoned);
+        Assert.False(summoned!.IsSummoningSick);
+        Assert.True(summoned.HasKeywordNow(Keyword.SpeedAttacker));
+        Assert.DoesNotContain(h.P1.Deck, c => c.Name == "BigDragon");
+    }
+
+    [Fact]
+    public void DeckSearchDragonSummonEotDestroy_IgnoresNonDragonCreatures()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        var kachua = h.PutCreature(h.P1, TapCard("Kachua", CardFactory.Eff(EffectId.Tap_DeckSearchDragonSummonEotDestroy, data: "Dragon"), civ: Civilization.Water));
+        h.P1.Deck.Clear();
+        h.P1.Deck.Add(CardFactory.CreatureWithRace(1, 2000, Civilization.Fire, "Angel", "Angel"));
+        h.P1.Deck.Add(CardFactory.Spell(1));
+
+        h.Game.ActivateTapAbility(h.P1.BattleZone.IndexOf(kachua));
+
+        Assert.Equal(2, h.P1.Deck.Count);
+        Assert.DoesNotContain(h.P1.BattleZone, c => c.Card.Name == "Angel");
+    }
+
+    [Fact]
+    public void DeckSearchDragonSummonEotDestroy_SummonedDragonIsDestroyedAtEndOfTurn()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        var kachua = h.PutCreature(h.P1, TapCard("Kachua", CardFactory.Eff(EffectId.Tap_DeckSearchDragonSummonEotDestroy, data: "Dragon"), civ: Civilization.Water));
+        h.P1.Deck.Clear();
+        h.P1.Deck.Add(CardFactory.CreatureWithRace(1, 3000, Civilization.Fire, "DeckDragon", "Dragon"));
+
+        h.Game.ActivateTapAbility(h.P1.BattleZone.IndexOf(kachua));
+        Assert.Single(h.P1.BattleZone, c => c.Card.Name == "DeckDragon");
+
+        h.Game.EndMainPhase();
+        h.Game.EndTurn();
+
+        Assert.Contains(h.P1.Graveyard, c => c.Card.Name == "DeckDragon");
+    }
+
     // --------------------------------------------------- networked state / AI
 
     [Fact]
@@ -1106,5 +1304,79 @@ public class TapAbilityTests
         new AiController(h.P1).PlayTurn(h.Game);
 
         Assert.True(moon.IsTapped);
+    }
+
+    [Fact]
+    public void AiController_DestroysOpponentCreatureWithTankMutant()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        var tank = h.PutCreature(h.P1, TapCard("Tank-AI", CardFactory.Eff(EffectId.Tap_OpponentDestroysOwnCreature)));
+        h.PutCreature(h.P2, CardFactory.Creature(1, 2000, Civilization.Light, "Guard"));
+
+        new AiController(h.P1).PlayTurn(h.Game);
+
+        Assert.True(tank.IsTapped);
+    }
+
+    [Fact]
+    public void AiController_UsesBlockBreaksShieldWithANatureAttacker()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        var totem = h.PutCreature(h.P1, TapCard("Totem-AI", CardFactory.Eff(EffectId.Tap_BlockBreaksShieldEot, data: "Nature"), civ: Civilization.Nature));
+        h.PutCreature(h.P1, CardFactory.Creature(1, 8000, Civilization.Nature, "Brawler"));
+
+        new AiController(h.P1).PlayTurn(h.Game);
+
+        Assert.True(totem.IsTapped);
+    }
+
+    [Fact]
+    public void AiController_SearchesCreatureIntoHandWithCharmilia()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        var charm = h.PutCreature(h.P1, TapCard("Charm-AI", CardFactory.Eff(EffectId.Tap_DeckSearchCreatureToHand)));
+        h.P1.Deck.Clear();
+        h.P1.Deck.Add(CardFactory.Spell(1));
+        h.P1.Deck.Add(CardFactory.Creature(1, 3000, Civilization.Water, "DeckFish"));
+
+        new AiController(h.P1).PlayTurn(h.Game);
+
+        Assert.True(charm.IsTapped);
+        Assert.DoesNotContain(h.P1.Deck, c => c.Name == "DeckFish");
+    }
+
+    [Fact]
+    public void AiController_SearchesDragonCreatureWithKachua()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        var kachua = h.PutCreature(h.P1, TapCard("Kachua-AI", CardFactory.Eff(EffectId.Tap_DeckSearchDragonSummonEotDestroy, data: "Dragon"), civ: Civilization.Water));
+        h.P1.Deck.Clear();
+        h.P1.Deck.Add(CardFactory.Spell(1));
+        h.P1.Deck.Add(CardFactory.CreatureWithRace(1, 3000, Civilization.Fire, "DeckDragon", "Dragon"));
+
+        new AiController(h.P1).PlayTurn(h.Game);
+
+        Assert.True(kachua.IsTapped);
+        Assert.Contains(h.P1.BattleZone, c => c.Card.Name == "DeckDragon");
+    }
+
+    [Fact]
+    public void AiController_DeclinesAddingCreatureToShields()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+        var rondobil = h.PutCreature(h.P1, TapCard("Rondobil-AI", CardFactory.Eff(EffectId.Tap_AddOwnCreatureToShields, EffectTargetScope.OwnCreature)));
+        h.PutCreature(h.P1, CardFactory.Creature(1, 2000, Civilization.Water, "Friend"));
+
+        new AiController(h.P1).PlayTurn(h.Game);
+
+        // Rondobil is never chosen by the AI: the friend must stay in the battle
+        // zone instead of being buried face-down under a shield.
+        Assert.Contains(h.P1.BattleZone, c => c.Card.Name == "Friend");
+        Assert.DoesNotContain(h.P1.Shields, c => c.Name == "Friend");
     }
 }

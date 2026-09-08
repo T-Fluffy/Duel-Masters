@@ -773,6 +773,22 @@ private bool TryChooseSpellPlay(DuelGame game, int handIndex, out IReadOnlyList<
                         creatureIndex = i;
                         race = evasionRace;
                         return true;
+                    case EffectId.Tap_OpponentDestroysOwnCreature when foe.BattleZone.Count > 0:
+                        creatureIndex = i;
+                        return true;
+                    case EffectId.Tap_BlockBreaksShieldEot
+                        when Self.BattleZone.Any(c => CivOf(c.Card, eff.Data)):
+                        creatureIndex = i;
+                        return true;
+                    case EffectId.Tap_DeckSearchCreatureToHand
+                        when Self.Deck.Any(c => c.IsCreature):
+                        creatureIndex = i;
+                        return true;
+                    case EffectId.Tap_DeckSearchDragonSummonEotDestroy
+                        when Self.Deck.Any(c => c.IsCreature
+                            && c.Race.Contains(eff.Data, System.StringComparison.OrdinalIgnoreCase)):
+                        creatureIndex = i;
+                        return true;
                 }
             }
         }

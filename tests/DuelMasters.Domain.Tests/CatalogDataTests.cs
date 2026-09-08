@@ -205,6 +205,12 @@ public class CatalogDataTests
             ["Battleship Mutant"] = "Tap_GrantOwnCivPowerDoubleBreakerDestroyEot",
             ["Gigio's Hammer"] = "Tap_ChooseRaceMustAttackPowerAttackerEot",
             ["Silvermoon Trailblazer"] = "Tap_ChooseRaceUnblockableByPowerEot",
+            // Slice C: opponent-sacrifice / shield riders / deck searches.
+            ["Tank Mutant"] = "Tap_OpponentDestroysOwnCreature",
+            ["Spinning Totem"] = "Tap_BlockBreaksShieldEot",
+            ["Rondobil, the Explorer"] = "Tap_AddOwnCreatureToShields",
+            ["Charmilia, the Enticer"] = "Tap_DeckSearchCreatureToHand",
+            ["Kachua, Keeper of the Icegate"] = "Tap_DeckSearchDragonSummonEotDestroy",
         };
 
         foreach (var (name, effId) in modelled)
