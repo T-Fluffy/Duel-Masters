@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using DuelMasters.Domain.Networking;
 using Microsoft.AspNetCore.SignalR.Client;
@@ -21,6 +22,7 @@ public static class NetworkClient
     private static readonly ConcurrentQueue<string> ErrorQueue = new();
     private static readonly ConcurrentQueue<string> WinnerQueue = new();
     private static readonly ConcurrentQueue<MatchInfo> JoinedQueue = new();
+    private static readonly ConcurrentQueue<CardState> PeekQueue = new();
 
     public static bool IsConnected { get; private set; }
 
@@ -141,12 +143,35 @@ public static class NetworkClient
     public static void EndMainPhase() => Invoke(DuelContract.Hub.EndMainPhase);
     public static void EndTurn() => Invoke(DuelContract.Hub.EndTurn);
 
+    /// <summary>
+    /// Tap ability "choose a shield and look at it": the server taps the creature,
+    /// validates the shield, and returns the inspected card to the caller only.
+    /// </summary>
+    public static void ActivateTapAbilityShield(int creatureIndex, int shieldIndex)
+    {
+        FireAndForget(async () =>
+        {
+            var peeked = await _connection!.InvokeAsync<CardState?>(DuelContract.Hub.ActivateTapAbilityShield, creatureIndex, shieldIndex);
+            if (peeked is not null)
+                PeekQueue.Enqueue(peeked);
+        });
+    }
+
+    /// <summary>Tap ability "look at the top N cards of your deck": opens the scry window.</summary>
+    public static void ActivateTapAbilityScry(int creatureIndex) =>
+        Invoke(DuelContract.Hub.ActivateTapAbilityScry, creatureIndex);
+
+    /// <summary>Put the looked-at deck cards back in the given order (top-to-bottom).</summary>
+    public static void SubmitScryOrder(List<string> orderedScryIds) =>
+        Invoke(DuelContract.Hub.SubmitScryOrder, orderedScryIds);
+
     // ------------------------------------------------------------- polling
 
     public static bool TryDequeueState(out DuelGameState state) => StateQueue.TryDequeue(out state!);
     public static bool TryDequeueError(out string error) => ErrorQueue.TryDequeue(out error!);
     public static bool TryDequeueWinner(out string winner) => WinnerQueue.TryDequeue(out winner!);
     public static bool TryDequeueJoined(out MatchInfo info) => JoinedQueue.TryDequeue(out info!);
+    public static bool TryDequeuePeeked(out CardState state) => PeekQueue.TryDequeue(out state!);
 
     // ------------------------------------------------------------- helpers
 

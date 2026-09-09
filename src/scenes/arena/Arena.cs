@@ -32,7 +32,7 @@ namespace DuelMasters.Scenes.Arena;
 /// </summary>
 public partial class Arena : Control
 {
-    private enum Mode { Idle, SelectHand, SelectTarget, SelectBlock, SelectSpellTarget, SelectShieldTarget, SelectSummonTarget, SelectEvolveTarget, EvolveBase, SelectTapTarget }
+    private enum Mode { Idle, SelectHand, SelectTarget, SelectBlock, SelectSpellTarget, SelectShieldTarget, SelectSummonTarget, SelectEvolveTarget, EvolveBase, SelectTapTarget, SelectShieldPeek }
 
     private enum CardSizeKind { Full, Mana, Stack }
 
@@ -209,6 +209,15 @@ public partial class Arena : Control
     private PanelContainer _triggerPopup = null!;
     private VBoxContainer _triggerPopupBox = null!;
     private string _triggerFingerprint = "";
+
+    // Scry tray (a "look at the top N cards and put them back in any order" tap
+    // ability): a popup listing the engine's exposed top-deck cards, each with a
+    // move-up / move-down button, plus confirm (submit the new order) and cancel
+    // (put them back exactly as they were).
+    private PanelContainer _scryPopup = null!;
+    private VBoxContainer _scryPopupBox = null!;
+    private string _scryFingerprint = "";
+    private readonly List<Card> _scryOrder = new();
 
     // Centered pure-artwork card inspector overlay.
     private Control _inspectOverlay = null!;
@@ -586,6 +595,7 @@ public partial class Arena : Control
         BuildAttackMenu();
         BuildTapMenu();
         BuildShieldTriggerPopup();
+        BuildScryPopup();
         BuildGraveyardOverlay();
         BuildInspectOverlay();
 
@@ -956,6 +966,34 @@ public partial class Arena : Control
         if (_game is null || creatureIndex < 0 || creatureIndex >= _game.ActivePlayer.BattleZone.Count)
             return;
         var creature = _game.ActivePlayer.BattleZone[creatureIndex];
+        if (creature.Card.TapAbilities.Any(e => e.Id == EffectId.Tap_ChooseShieldLook))
+        {
+            // "Choose a shield and look at it, then put it back where it was": enter
+            // a pick mode where the next click on the player's own shield cards
+            // peeks at the chosen shield (the shield itself never moves).
+            _tapCreatureIndex = creatureIndex;
+            _mode = Mode.SelectShieldPeek;
+            HideHandPopup();
+            HideLookPopup();
+            HideTapTargetMenu();
+            Prompt($"Choose a shield to look at: click one of YOUR face-down shields. It stays exactly where it was.");
+            Refresh();
+            return;
+        }
+        if (creature.Card.TapAbilities.Any(e => e.Id == EffectId.Tap_ScryTopCards))
+        {
+            ResetInteraction();
+            Safe(() =>
+            {
+                _game.ActivateTapAbilityScry(creatureIndex);
+                PlayTapFx(creature);
+            });
+            // The engine now holds the scry window open; the tray popup comes back
+            // through SyncScryPopup on the next Refresh.
+            Prompt("Look at the top cards of your deck, order them, then confirm the order.");
+            Refresh();
+            return;
+        }
         var raceEffect = creature.Card.TapAbilities.FirstOrDefault(e => e.Id is
             EffectId.Tap_ChooseRaceUntapEot or
             EffectId.Tap_ChooseRaceGrantSlayerEot or
@@ -1274,6 +1312,160 @@ public partial class Arena : Control
 
     private void DeclineShieldTriggers() => Safe(() => _game.DeclineShieldTriggers());
 
+    // ---------------------------------------------------------- scry tray popup
+    // A "look at the top N cards of your deck, then put them back in any order" tap
+    // ability (e.g. Garatyano) opens a short window in the engine. While it is open
+    // the active player orders the exposed top-deck cards here: each row has the
+    // face-up card plus move-up / move-down buttons, and Confirm submits the order.
+    // Cancel (or Esc) puts the cards back in exactly the order they were drawn in.
+
+    private void BuildScryPopup()
+    {
+        _scryPopup = new PanelContainer();
+        _scryPopup.AddThemeStyleboxOverride("panel", UiStyles.ModalCard());
+        _scryPopup.Visible = false;
+        AddChild(_scryPopup);
+
+        _scryPopupBox = new VBoxContainer();
+        _scryPopupBox.AddThemeConstantOverride("separation", 6);
+        _scryPopupBox.CustomMinimumSize = new Vector2(320, 0);
+        _scryPopup.AddChild(_scryPopupBox);
+    }
+
+    private void SyncScryPopup()
+    {
+        if (_game is null || !_game.IsScryWindowActive)
+        {
+            HideScryPopup();
+            return;
+        }
+
+        // The scry decision interrupts the active player's turn; the AI drive must
+        // pause while the human reorders the deck (the engine rejects every other
+        // action until the order is submitted).
+        _aiDriving = false;
+
+        var engineIds = string.Join("|", _game.ScryCards.Select(c => c.Id));
+        if (engineIds != _scryFingerprint)
+        {
+            // A fresh window: adopt the engine's draw order as the starting order.
+            _scryFingerprint = engineIds;
+            _scryOrder.Clear();
+            _scryOrder.AddRange(_game.ScryCards);
+        }
+
+        RebuildScryPopup();
+    }
+
+    private void RebuildScryPopup()
+    {
+        foreach (var child in _scryPopupBox.GetChildren().OfType<Control>().ToList())
+            child.QueueFree();
+
+        var owner = _game.ScryOwner;
+        var title = new Label
+        {
+            Text = owner is null
+                ? "Look at the top cards"
+                : $"{owner.Name}: look at the top {_scryOrder.Count} card{(_scryOrder.Count == 1 ? "" : "s")},\nthen put them back in any order",
+            AutowrapMode = TextServer.AutowrapMode.WordSmart,
+            HorizontalAlignment = HorizontalAlignment.Center,
+        };
+        title.CustomMinimumSize = new Vector2(320, 0);
+        title.AddThemeFontSizeOverride("font_size", 14);
+        title.AddThemeColorOverride("font_color", UiStyles.AccentText);
+        _scryPopupBox.AddChild(title);
+
+        if (_scryOrder.Count > 1)
+        {
+            var hint = new Label
+            {
+                Text = "Cards are listed top-down:\nuse the buttons to reorder, then Confirm.",
+                AutowrapMode = TextServer.AutowrapMode.WordSmart,
+                HorizontalAlignment = HorizontalAlignment.Center,
+            };
+            hint.AddThemeFontSizeOverride("font_size", 11);
+            hint.AddThemeColorOverride("font_color", UiStyles.MutedText);
+            _scryPopupBox.AddChild(hint);
+        }
+
+        for (var i = 0; i < _scryOrder.Count; i++)
+        {
+            var row = new HBoxContainer();
+            row.AddThemeConstantOverride("separation", 6);
+
+            var view = new CardView(_scryOrder[i], ArtFor(_scryOrder[i]));
+            view.SetCardSize(96, 134);
+            view.SizeFlagsVertical = SizeFlags.ShrinkCenter;
+            row.AddChild(view);
+
+            if (_scryOrder.Count > 1)
+            {
+                var idx = i;
+                var up = new Button { Text = "Move up", Disabled = i == 0 };
+                up.Pressed += () => SwapScryOrder(idx, idx - 1);
+                row.AddChild(up);
+
+                var down = new Button { Text = "Move down", Disabled = i == _scryOrder.Count - 1 };
+                down.Pressed += () => SwapScryOrder(idx, idx + 1);
+                row.AddChild(down);
+            }
+
+            _scryPopupBox.AddChild(row);
+        }
+
+        var confirm = new Button { Text = "Confirm order" };
+        confirm.Pressed += SubmitScryOrder;
+        _scryPopupBox.AddChild(confirm);
+
+        // The engine's cancel semantics: put them back exactly as they were.
+        var cancel = new Button { Text = "Cancel (keep draw order)" };
+        cancel.Pressed += () => { _scryOrder.Clear(); _scryOrder.AddRange(_game.ScryCards); SubmitScryOrder(); };
+        _scryPopupBox.AddChild(cancel);
+
+        _scryPopup.Visible = true;
+        CallDeferred(nameof(PositionScryPopup));
+    }
+
+    private void SwapScryOrder(int a, int b)
+    {
+        if (_game is null || !_game.IsScryWindowActive)
+            return;
+        if (a < 0 || b < 0 || a >= _scryOrder.Count || b >= _scryOrder.Count || a == b)
+            return;
+        (_scryOrder[a], _scryOrder[b]) = (_scryOrder[b], _scryOrder[a]);
+        SyncScryPopup(); // rebuild with the updated order
+    }
+
+    private void SubmitScryOrder()
+    {
+        if (_game is null || !_game.IsScryWindowActive)
+        {
+            HideScryPopup();
+            return;
+        }
+        Safe(() =>
+        {
+            _game.SubmitScryOrder(_scryOrder);
+            HideScryPopup();
+        });
+        Refresh();
+    }
+
+    private void HideScryPopup()
+    {
+        _scryPopup.Visible = false;
+        if (_game is null || !_game.IsScryWindowActive)
+            _scryFingerprint = "";
+    }
+
+    private void PositionScryPopup()
+    {
+        if (_scryPopup is null || !_scryPopup.Visible)
+            return;
+        PositionPopupAtLeftSide(_scryPopup);
+    }
+
     private bool AnyLegalTriggerTarget(Card spell)
     {
         if (_game is null || !_game.ShieldTriggerWindowActive)
@@ -1550,6 +1742,22 @@ public partial class Arena : Control
             else if (_mode is Mode.SelectSpellTarget or Mode.SelectShieldTarget or Mode.SelectSummonTarget or Mode.SelectEvolveTarget or Mode.EvolveBase)
             {
                 ResetInteraction();
+                Refresh();
+                GetViewport().SetInputAsHandled();
+            }
+            else if (_game is not null && _game.IsScryWindowActive)
+            {
+                // Esc cancels a pending deck-order decision: the engine puts the
+                // looked-at cards back in exactly the order they were drawn in.
+                Safe(() => _game.SubmitScryOrder(_game.ScryCards.ToList()));
+                ResetInteraction();
+                Refresh();
+                GetViewport().SetInputAsHandled();
+            }
+            else if (_mode == Mode.SelectShieldPeek)
+            {
+                ResetInteraction();
+                Prompt("Shield peek cancelled.");
                 Refresh();
                 GetViewport().SetInputAsHandled();
             }
@@ -2521,12 +2729,46 @@ public partial class Arena : Control
         return DuelGame.CanBeBlocked(attackerCard);
     }
 
-    private void OnShieldsClicked(bool isBottomSide)
+    private void OnShieldsClicked(bool isBottomSide, int shieldIndex = -1)
     {
         if (_game is null || _game.IsGameOver)
             return;
         if (_game.ShieldTriggerWindowActive)
             return;
+
+        // "Choose a shield and look at it" tap ability: the next click on the
+        // active player's own shield cards peeks at that shield (it stays put).
+        if (_mode == Mode.SelectShieldPeek)
+        {
+            if (!SideIsActive(isBottomSide))
+            {
+                Notice("The tap ability needs one of YOUR OWN shields - click the shields you keep.");
+                return;
+            }
+            if (shieldIndex < 0 || shieldIndex >= _game.ActivePlayer.Shields.Count)
+            {
+                Notice("Click one of your shield cards to look at it.");
+                return;
+            }
+            var creature = _game.ActivePlayer.BattleZone.ElementAtOrDefault(_tapCreatureIndex);
+            if (creature is null)
+            {
+                ResetInteraction();
+                Refresh();
+                return;
+            }
+            var peeked = _game.ActivePlayer.Shields[shieldIndex];
+            Safe(() =>
+            {
+                _game.ActivateTapAbilityShield(_tapCreatureIndex, shieldIndex);
+                PlayTapFx(creature);
+            });
+            ResetInteraction();
+            ShowLookPopup(peeked);
+            Prompt($"You looked at shield #{shieldIndex + 1}: {peeked.Name} ({peeked.Civilization}). It stays exactly where it was.");
+            Refresh();
+            return;
+        }
 
         if (_awaitingBlockChoice)
         {
@@ -2776,6 +3018,7 @@ _mode = Mode.SelectBlock;
         HideAttackMenu();
         HideTapTargetMenu();
         HideTriggerPopup();
+        HideScryPopup();
     }
 
     private void Prompt(string message)
@@ -2862,6 +3105,7 @@ _mode = Mode.SelectBlock;
 
         WireInteraction();
         SyncShieldTriggerPopup();
+        SyncScryPopup();
 
         CapturePrevTapped();
         CallDeferred(nameof(PlayFx));
@@ -3026,7 +3270,7 @@ _mode = Mode.SelectBlock;
                 views[i].Clicked += _ => OnHandClicked(side, idx);
             }
             else if (isShields)
-                views[i].Clicked += _ => OnShieldsClicked(side);
+                views[i].Clicked += _ => OnShieldsClicked(side, idx);
             else if (isMana)
                 views[i].Clicked += _ => OnManaClicked(side, idx);
             else

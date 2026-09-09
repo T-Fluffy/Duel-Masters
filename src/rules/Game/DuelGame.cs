@@ -25,6 +25,14 @@ public sealed class DuelGame
     private Player? _shieldTriggerOwner;
 
     /// <summary>
+    /// Owner + top-of-deck cards while a "look at the top N cards, put them back in
+    /// any order" tap ability is awaiting the player's reorder decision. The deck is
+    /// not touched until <see cref="SubmitScryOrder"/> is called.
+    /// </summary>
+    private Player? _scryOwner;
+    private readonly List<Card> _scryCards = new();
+
+    /// <summary>
     /// Effects granted by a tap ability that persist until the end of the current
     /// turn ("at the end of this turn ...", "whenever ... this turn, ..."). Resolved
     /// during the end step and cleared when the turn ends.
@@ -89,6 +97,15 @@ public sealed class DuelGame
 
     /// <summary>The player allowed to play the pending shield triggers (the defender).</summary>
     public Player? ShieldTriggerOwner => _shieldTriggerOwner;
+
+    /// <summary>True while a "put the looked-at deck cards back in order" decision is pending.</summary>
+    public bool IsScryWindowActive => _scryOwner is not null;
+
+    /// <summary>Owner of the pending deck-order decision, while a scry window is open.</summary>
+    public Player? ScryOwner => _scryOwner;
+
+    /// <summary>The top-of-deck cards currently being ordered, while a scry window is open.</summary>
+    public IReadOnlyList<Card> ScryCards => _scryCards;
 
     /// <summary>The broken Shield Trigger cards awaiting a free-play decision, in break order.</summary>
     public IReadOnlyList<CardInstance> PendingShieldTriggers => _pendingShieldTriggers;
@@ -170,6 +187,7 @@ public sealed class DuelGame
     public void EndMainPhase()
     {
         EnsureTurnPhase(GamePhase.Main);
+        EnsureScryWindowClosed();
         var mustAttack = MustAttackList();
         if (mustAttack.Count > 0)
             throw new RuleViolationException(
@@ -230,7 +248,7 @@ public sealed class DuelGame
     /// </summary>
     public bool CanUseTapAbility(Player player, int index)
     {
-        if (IsGameOver || Phase != GamePhase.Main || ShieldTriggerWindowActive)
+        if (IsGameOver || Phase != GamePhase.Main || ShieldTriggerWindowActive || IsScryWindowActive)
             return false;
         if (!ReferenceEquals(player, ActivePlayer) || _hasAttackedThisTurn)
             return false;
@@ -242,6 +260,10 @@ public sealed class DuelGame
         foreach (var eff in c.Card.TapAbilities)
         {
             if (eff.Id == EffectId.Tap_NotModelled)
+                continue;
+            if (eff.Id == EffectId.Tap_ChooseShieldLook && player.ShieldCount == 0)
+                continue;
+            if (eff.Id == EffectId.Tap_ScryTopCards && player.Deck.Count < Math.Max(1, eff.Value))
                 continue;
             if (eff.Target == EffectTargetScope.None || TapTargetPool(player, eff).Count > 0)
                 return true;
@@ -257,6 +279,7 @@ public sealed class DuelGame
     {
         EnsureMain();
         EnsureTriggerWindowClosed();
+        EnsureScryWindowClosed();
         if (_hasAttackedThisTurn)
             throw new RuleViolationException("You cannot use a tap ability after a creature has attacked.");
         if (creatureIndex < 0 || creatureIndex >= ActivePlayer.BattleZone.Count)
@@ -270,6 +293,17 @@ public sealed class DuelGame
             throw new RuleViolationException($"'{creature.Card.Name}' has summoning sickness and cannot use its tap ability.");
         if (creature.Card.TapAbilities.All(e => e.Id == EffectId.Tap_NotModelled))
             throw new RuleViolationException($"'{creature.Card.Name}' has a tap ability that is not modelled yet.");
+
+        // Decision-based abilities cannot resolve through this generic path; refuse
+        // before the tap is paid so a client that chose the wrong activation does
+        // not burn the creature's tap. They have dedicated activation methods.
+        foreach (var e in creature.Card.TapAbilities)
+        {
+            if (e.Id == EffectId.Tap_ChooseShieldLook)
+                throw new RuleViolationException($"'{creature.Card.Name}' needs a shield choice for its tap ability.");
+            if (e.Id == EffectId.Tap_ScryTopCards)
+                throw new RuleViolationException($"'{creature.Card.Name}' needs a deck-order decision for its tap ability.");
+        }
 
         // An ability that says "choose a race" needs the caller to name one of the
         // races currently present in either battle zone (the engine-computed pool).
@@ -296,6 +330,121 @@ public sealed class DuelGame
     }
 
     /// <summary>
+    /// Activate a "choose one of your shields and look at it" Tap Ability on the
+    /// active player's creature, naming the shield the owner inspected (an index
+    /// into <see cref="Player.Shields"/>). Tapping the creature is the entire
+    /// resolution - the looked-at shield stays exactly where it was.
+    /// </summary>
+    public void ActivateTapAbilityShield(int creatureIndex, int shieldIndex)
+        => ActivateTapAbilityShield(creatureIndex, ActivePlayer, shieldIndex);
+
+    /// <summary>Activate one of <paramref name="actor"/>'s shield-look tap-ability creatures (used by the AI and tests).</summary>
+    public void ActivateTapAbilityShield(int creatureIndex, Player actor, int shieldIndex)
+    {
+        EnsureMain();
+        EnsureTriggerWindowClosed();
+        EnsureScryWindowClosed();
+        if (_hasAttackedThisTurn)
+            throw new RuleViolationException("You cannot use a tap ability after a creature has attacked.");
+        if (!ReferenceEquals(actor, ActivePlayer))
+            throw new RuleViolationException("You may only use your own creatures' tap abilities.");
+        var creature = RequireTapCreature(actor, creatureIndex);
+        RequireTapEffect(creature, EffectId.Tap_ChooseShieldLook);
+        RequireOwnShield(actor, shieldIndex);
+        creature.Tap();
+    }
+
+    /// <summary>
+    /// Activate a "look at the top N cards of your deck, then put them back in any
+    /// order" Tap Ability on the active player's creature. Tapping pays the cost,
+    /// then the scry window opens: <see cref="ScryCards"/> exposes the top N and no
+    /// further action is allowed until <see cref="SubmitScryOrder"/> replaces them.
+    /// </summary>
+    public void ActivateTapAbilityScry(int creatureIndex)
+        => ActivateTapAbilityScry(creatureIndex, ActivePlayer);
+
+    /// <summary>Activate one of <paramref name="actor"/>'s scry tap-ability creatures (used by the AI and tests).</summary>
+    public void ActivateTapAbilityScry(int creatureIndex, Player actor)
+    {
+        EnsureMain();
+        EnsureTriggerWindowClosed();
+        EnsureScryWindowClosed();
+        if (_hasAttackedThisTurn)
+            throw new RuleViolationException("You cannot use a tap ability after a creature has attacked.");
+        if (!ReferenceEquals(actor, ActivePlayer))
+            throw new RuleViolationException("You may only use your own creatures' tap abilities.");
+        var creature = RequireTapCreature(actor, creatureIndex);
+        var eff = RequireTapEffect(creature, EffectId.Tap_ScryTopCards);
+        var count = Math.Max(1, eff.Value);
+        if (actor.Deck.Count < count)
+            throw new RuleViolationException("Your deck does not have enough cards to look at.");
+        creature.Tap();
+        OpenScryWindow(actor, count);
+    }
+
+    /// <summary>
+    /// Put the looked-at deck cards back in the given order (the top of the deck is
+    /// rewritten so the first card is drawn next). The order must be an exact
+    /// permutation of the top cards the player inspected.
+    /// </summary>
+    public void SubmitScryOrder(IReadOnlyList<Card> order)
+    {
+        if (!IsScryWindowActive)
+            throw new RuleViolationException("There is no pending deck-order decision.");
+        if (order is null || order.Count != _scryCards.Count
+            || order.Distinct().Count() != _scryCards.Count
+            || order.Any(c => !_scryCards.Contains(c)))
+            throw new RuleViolationException("The returned deck order does not match the cards that were looked at.");
+        for (var i = 0; i < order.Count; i++)
+            _scryOwner!.Deck[i] = order[i];
+        _scryOwner = null;
+        _scryCards.Clear();
+    }
+
+    private void OpenScryWindow(Player owner, int count)
+    {
+        _scryOwner = owner;
+        _scryCards.Clear();
+        for (var i = 0; i < count && i < owner.Deck.Count; i++)
+            _scryCards.Add(owner.Deck[i]);
+    }
+
+    private void ClearScryWindow()
+    {
+        _scryOwner = null;
+        _scryCards.Clear();
+    }
+
+    /// <summary>Common tap-creature validations shared by the decision-based activations.</summary>
+    private static CardInstance RequireTapCreature(Player actor, int creatureIndex)
+    {
+        if (creatureIndex < 0 || creatureIndex >= actor.BattleZone.Count)
+            throw new RuleViolationException("The creature index is out of range of the battle zone.");
+        var creature = actor.BattleZone[creatureIndex];
+        if (!creature.Card.HasTapAbility)
+            throw new RuleViolationException($"'{creature.Card.Name}' has no tap ability.");
+        if (creature.IsTapped)
+            throw new RuleViolationException($"'{creature.Card.Name}' is already tapped.");
+        if (creature.IsSummoningSick)
+            throw new RuleViolationException($"'{creature.Card.Name}' has summoning sickness and cannot use its tap ability.");
+        return creature;
+    }
+
+    private static CardEffect RequireTapEffect(CardInstance creature, EffectId id)
+    {
+        var eff = creature.Card.TapAbilities.FirstOrDefault(e => e.Id == id);
+        if (eff is null)
+            throw new RuleViolationException($"'{creature.Card.Name}' has no '{id}' tap ability.");
+        return eff;
+    }
+
+    private void RequireOwnShield(Player actor, int shieldIndex)
+    {
+        if (shieldIndex < 0 || shieldIndex >= actor.Shields.Count)
+            throw new RuleViolationException("That shield is not in the player's shield zone.");
+    }
+
+    /// <summary>
     /// Resolve every Tap Ability on the creature in the order printed. Effects that
     /// need a target consume the caller-supplied targets in order; each must name a
     /// legal card in the zone the effect targets.
@@ -307,6 +456,10 @@ public sealed class DuelGame
         {
             if (eff.Target == EffectTargetScope.None)
             {
+                if (eff.Id == EffectId.Tap_ChooseShieldLook)
+                    throw new RuleViolationException($"'{creature.Card.Name}' needs a shield choice for its tap ability.");
+                if (eff.Id == EffectId.Tap_ScryTopCards)
+                    throw new RuleViolationException($"'{creature.Card.Name}' needs a deck-order decision for its tap ability.");
                 ResolveTapEffect(ActivePlayer, eff, race);
                 continue;
             }
@@ -672,6 +825,7 @@ public sealed class DuelGame
     {
         EnsureTurnPhase(GamePhase.Main);
         EnsureTriggerWindowClosed();
+        EnsureScryWindowClosed();
         if (_manaChargedThisTurn)
             throw new RuleViolationException("You may only charge one mana card per turn.");
         RequireHandCard(ActivePlayer, handIndex);
@@ -735,6 +889,7 @@ public sealed class DuelGame
     {
         EnsureTurnPhase(GamePhase.Main);
         EnsureTriggerWindowClosed();
+        EnsureScryWindowClosed();
         if (_hasAttackedThisTurn)
             throw new RuleViolationException("You cannot summon a creature after a creature has attacked.");
         RequireHandCard(actor, handIndex);
@@ -812,6 +967,7 @@ public sealed class DuelGame
     {
         EnsureTurnPhase(GamePhase.Main);
         EnsureTriggerWindowClosed();
+        EnsureScryWindowClosed();
         if (_hasAttackedThisTurn)
             throw new RuleViolationException("You cannot place an evolution creature after a creature has attacked.");
         RequireHandCard(actor, handIndex);
@@ -871,6 +1027,7 @@ public sealed class DuelGame
     {
         EnsureTurnPhase(GamePhase.Main);
         EnsureTriggerWindowClosed();
+        EnsureScryWindowClosed();
         if (_hasAttackedThisTurn)
             throw new RuleViolationException("You cannot cast a spell after a creature has attacked.");
         if (!ReferenceEquals(actor, ActivePlayer))
@@ -946,6 +1103,7 @@ public sealed class DuelGame
 
         if (defender.ShieldCount == 0)
         {
+            ClearScryWindow();
             Winner = active;
             return;
         }
@@ -964,6 +1122,7 @@ public sealed class DuelGame
     {
         EnsureMain();
         EnsureTriggerWindowClosed();
+        EnsureScryWindowClosed();
         var active = ActivePlayer;
         var defender = Opponent;
         var attacker = RequireReadyAttacker(active, attackerIndex);
@@ -1048,6 +1207,7 @@ public sealed class DuelGame
     {
         EnsureMain();
         EnsureTriggerWindowClosed();
+        EnsureScryWindowClosed();
         var active = ActivePlayer;
         var attacker = RequireReadyAttacker(active, attackerIndex);
         RequireCanAttackPlayers(attacker);
@@ -1063,6 +1223,7 @@ public IReadOnlyList<int> ReadyBlockerIndices(int attackerIndex)
 {
     EnsureMain();
     EnsureTriggerWindowClosed();
+    EnsureScryWindowClosed();
     var active = ActivePlayer;
     var attacker = RequireReadyAttacker(active, attackerIndex);
     RequireCanAttackPlayers(attacker);
@@ -1964,7 +2125,10 @@ public int ReadyBlockerChoices(int attackerIndex)
     private void CheckDeckOut(Player p)
     {
         if (p.Deck.Count == 0 && Winner is null)
+        {
+            ClearScryWindow();
             Winner = p == Player1 ? Player2 : Player1;
+        }
     }
 
     private static void RequireHandCard(Player player, int index)
@@ -1986,6 +2150,12 @@ public int ReadyBlockerChoices(int attackerIndex)
     {
         if (ShieldTriggerWindowActive)
             throw new RuleViolationException("Resolve the pending Shield Trigger cards (or decline them) before taking another action.");
+    }
+
+    private void EnsureScryWindowClosed()
+    {
+        if (IsScryWindowActive)
+            throw new RuleViolationException("Choose the deck order for the tap ability before taking another action.");
     }
 
     private void EnsureTurnPhase(GamePhase required)

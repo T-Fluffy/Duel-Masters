@@ -221,6 +221,12 @@ public enum EffectId
     /// <summary>Tap ability: search your deck for a creature with {Data} in its race, put it into the battle zone with "speed attacker", destroyed at the end of the turn; shuffle.</summary>
     Tap_DeckSearchDragonSummonEotDestroy = 932,
 
+    /// <summary>Tap ability: choose one of your shields and look at it, then put it back where it was.</summary>
+    Tap_ChooseShieldLook = 933,
+
+    /// <summary>Tap ability: look at the top {Value} cards of your deck, then put them back in any order.</summary>
+    Tap_ScryTopCards = 934,
+
     /// <summary>
     /// Tap Ability placeholder for cards whose activated ability is not yet
     /// representable in the engine. The card still carries the ability in the

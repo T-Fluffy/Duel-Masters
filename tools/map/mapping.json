@@ -4159,12 +4159,11 @@
   "effects": [],
   "tapAbilities": [
    {
-    "id": "Tap_NotModelled",
-    "data": "Choose a shield and look at it. Then put it back where it was."
+    "id": "Tap_ChooseShieldLook"
    }
   ],
   "evolutionOf": null,
-  "note": "tap ability not modelled",
+  "note": null,
   "src": "{{Tap Ability|Choose a shield and look at it. Then put it back where it was.}}"
  },
  {
@@ -5692,12 +5691,12 @@
   "effects": [],
   "tapAbilities": [
    {
-    "id": "Tap_NotModelled",
-    "data": "Look at the top 3 cards of your deck. Then put them back in any "
+    "id": "Tap_ScryTopCards",
+    "value": 3
    }
   ],
   "evolutionOf": null,
-  "note": "tap ability not modelled",
+  "note": null,
   "src": "{{Tap Ability|Look at the top 3 cards of your deck. Then put them back in any order.}}"
  },
  {

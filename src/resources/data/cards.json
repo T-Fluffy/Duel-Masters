@@ -5757,8 +5757,7 @@
     "scriptEffectId": "VANILLA",
     "tapAbilities": [
       {
-        "id": "Tap_NotModelled",
-        "data": "Choose a shield and look at it. Then put it back where it was."
+        "id": "Tap_ChooseShieldLook"
       }
     ]
   },
@@ -7871,8 +7870,8 @@
     "scriptEffectId": "VANILLA",
     "tapAbilities": [
       {
-        "id": "Tap_NotModelled",
-        "data": "Look at the top 3 cards of your deck. Then put them back in any "
+        "id": "Tap_ScryTopCards",
+        "value": 3
       }
     ]
   },

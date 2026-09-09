@@ -47,6 +47,20 @@ public sealed class DuelGameState
     [JsonPropertyName("shieldTriggerOwnerSide")]
     public string? ShieldTriggerOwnerSide { get; set; }
 
+    /// <summary>True while a "put the looked-at deck cards back in order" decision is pending.</summary>
+    [JsonPropertyName("scryWindowActive")]
+    public bool ScryWindowActive { get; set; }
+
+    /// <summary>Side whose deck is being ordered ("Player1"/"Player2"), while a scry window is open.</summary>
+    [JsonPropertyName("scryOwnerSide")]
+    public string? ScryOwnerSide { get; set; }
+
+    /// <summary>The top-of-deck cards exposed by the pending scry window, in draw
+    /// order (the engine's order, not the player's in-progress reordering). Only
+    /// visible to the scry owner.</summary>
+    [JsonPropertyName("scryCards")]
+    public List<CardState> ScryCards { get; set; } = new();
+
     /// <summary>Hand indices (into the trigger owner's hand) of the pending Shield Trigger cards. Only visible to that owner.</summary>
     [JsonPropertyName("pendingTriggerHandIndices")]
     public List<int> PendingTriggerHandIndices { get; set; } = new();
@@ -98,6 +112,15 @@ public sealed class DuelGameState
             }
         }
 
+        var scryOwner = game.ScryOwner;
+        var scrySide = scryOwner is null ? null : DuelSide.FromIndex(scryOwner == game.Player1 ? 0 : 1);
+        var scryCards = new List<CardState>();
+        if (scryOwner is not null && scrySide == viewerSide)
+        {
+            for (var i = 0; i < game.ScryCards.Count; i++)
+                scryCards.Add(CardState.FromCard(game.ScryCards[i], $"Scry:{i}"));
+        }
+
         var state = new DuelGameState
         {
             MatchCode = matchCode,
@@ -112,6 +135,9 @@ public sealed class DuelGameState
             ShieldTriggerWindowActive = game.ShieldTriggerWindowActive,
             ShieldTriggerOwnerSide = triggerSide,
             PendingTriggerHandIndices = pendingIndices,
+            ScryWindowActive = game.IsScryWindowActive,
+            ScryOwnerSide = scrySide,
+            ScryCards = scryCards,
             IsGameOver = game.IsGameOver,
             WinnerId = game.Winner is null ? null : DuelSide.FromIndex(game.Winner == game.Player1 ? 0 : 1),
             Players =
@@ -164,6 +190,11 @@ public sealed class DuelGameState
                         or EffectId.Tap_ChooseRaceUnblockableByPowerEot);
                 if (races is not null)
                     cardState.TapAbilityRaces = game.LegalRaceChoices(active).ToList();
+
+                var decision = creature.Card.TapAbilities.FirstOrDefault(e => e.Target == EffectTargetScope.None
+                    && e.Id is EffectId.Tap_ChooseShieldLook or EffectId.Tap_ScryTopCards);
+                if (decision is not null)
+                    cardState.TapDecisionKind = decision.Id == EffectId.Tap_ChooseShieldLook ? "shield" : "scry";
             }
         }
 

@@ -75,6 +75,12 @@ public sealed class CardState
     [JsonPropertyName("tapAbilityRaces")]
     public List<string>? TapAbilityRaces { get; set; }
 
+    /// <summary>How a decision-only Tap Ability on this creature resolves: "shield"
+    /// (the viewer must click one of their own shields to look at it), "scry" (the
+    /// viewer must order the top deck cards), or null for any other ability.</summary>
+    [JsonPropertyName("tapDecisionKind")]
+    public string? TapDecisionKind { get; set; }
+
     /// <summary>True when this entry only represents a face-down card (no details).</summary>
     [JsonPropertyName("countOnly")]
     public bool CountOnly { get; set; }
@@ -106,4 +112,22 @@ public sealed class CardState
             IsSummoningSick = instance.IsSummoningSick,
         };
     }
+
+    /// <summary>Serialize a raw catalog <paramref name="card"/> (no instance) for
+    /// zones that only hold Cards - e.g. the face-down shields being peeked or the
+    /// top-of-deck cards exposed by a scry tap ability.</summary>
+    public static CardState FromCard(Card card, string instanceId) => new()
+    {
+        InstanceId = instanceId,
+        CardId = card.Id,
+        Name = card.Name,
+        Civilization = card.Civilization.ToString(),
+        CardType = card.CardType.ToString(),
+        ManaCost = card.ManaCost,
+        Power = card.Power,
+        Race = card.Race,
+        Keywords = card.Keywords.Select(k => k.ToString()).OrderBy(k => k).ToList(),
+        IsEvolution = card.IsEvolution,
+        EvolutionOf = card.EvolutionOf,
+    };
 }

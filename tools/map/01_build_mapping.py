@@ -348,6 +348,10 @@ def _tap_rules():
         lambda m, t: E("Tap_DeckSearchCreatureToHand"))
     tap("DeckSearchDragonSummonDestroy", r"^search your deck\. you may take a creature that has ([a-z]+) in its race from your deck and put it into the battle zone\. then shuffle your deck\. that creature has \"?speed attacker\.\"? at the (?:End Step\|)?end of the turn, destroy it\.?$",
         lambda m, t: E("Tap_DeckSearchDragonSummonEotDestroy", d=m.group(1).title()))
+    tap("ChooseShieldLook", r"^choose a shield and look at it[,.]? then put it back where it was\.?$",
+        lambda m, t: E("Tap_ChooseShieldLook"))
+    tap("ScryTopCards", r"^look at the top (\d+) cards? of your deck[,.]? then put them back in any order\.?$",
+        lambda m, t: E("Tap_ScryTopCards", v=int(m.group(1))))
 
     return T
 

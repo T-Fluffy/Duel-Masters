@@ -381,6 +381,120 @@ public sealed class DuelHub : Hub<IDuelClientContract>
         await MaybeAnnounceWinner(room);
     }
 
+    /// <summary>
+    /// "Choose a shield and look at it" tap ability (e.g. Adomis). The engine taps
+    /// the creature and validates everything; the resolved peek - the inspected
+    /// shield's card, which stays exactly where it was - is returned to the caller
+    /// so only the shield's owner ever sees its face.
+    /// </summary>
+    public async Task<CardState?> ActivateTapAbilityShield(int creatureIndex, int shieldIndex)
+    {
+        var mySide = ResolveSide(out var room);
+        if (room is null || mySide is null)
+        {
+            await Clients.Caller.ReceiveActionError("You are not in an active match.");
+            return null;
+        }
+        if (!await RequireActiveSide(room, mySide))
+            return null;
+
+        var player = room.PlayerForSide(mySide);
+        if (player is null)
+        {
+            await Clients.Caller.ReceiveActionError("Your player could not be resolved.");
+            return null;
+        }
+        CardState? peeked = null;
+        if (!room.Execute(game =>
+        {
+            game.ActivateTapAbilityShield(creatureIndex, player, shieldIndex);
+            peeked = shieldIndex >= 0 && shieldIndex < player.Shields.Count
+                ? CardState.FromCard(player.Shields[shieldIndex], $"Shield:{shieldIndex}")
+                : null;
+        }, out var error))
+        {
+            await Clients.Caller.ReceiveActionError(error ?? "That shield cannot be looked at right now.");
+            return null;
+        }
+
+        await BroadcastState(room);
+        await MaybeAnnounceWinner(room);
+        return peeked;
+    }
+
+    /// <summary>
+    /// "Look at the top N cards of the deck, then put them back in any order" tap
+    /// ability (e.g. Garatyano): tapping pays the cost and opens the scry window.
+    /// The exposed top-of-deck cards arrive through the next state broadcast
+    /// (<see cref="DuelGameState.ScryCards"/>, owner-visible only), and the player
+    /// resolves the window with <see cref="SubmitScryOrder"/>.
+    /// </summary>
+    public async Task ActivateTapAbilityScry(int creatureIndex)
+    {
+        var mySide = ResolveSide(out var room);
+        if (room is null || mySide is null)
+        {
+            await Clients.Caller.ReceiveActionError("You are not in an active match.");
+            return;
+        }
+        if (!await RequireActiveSide(room, mySide))
+            return;
+
+        var player = room.PlayerForSide(mySide);
+        if (player is null)
+        {
+            await Clients.Caller.ReceiveActionError("Your player could not be resolved.");
+            return;
+        }
+        if (!room.Execute(game => game.ActivateTapAbilityScry(creatureIndex, player), out var error))
+        {
+            await Clients.Caller.ReceiveActionError(error ?? "That tap ability cannot be used right now.");
+            return;
+        }
+
+        await BroadcastState(room);
+        await MaybeAnnounceWinner(room);
+    }
+
+    /// <summary>Put the looked-at deck cards back in the given order (scry window).</summary>
+    public async Task SubmitScryOrder(List<string> orderedScryIds)
+    {
+        var mySide = ResolveSide(out var room);
+        if (room is null || mySide is null)
+        {
+            await Clients.Caller.ReceiveActionError("You are not in an active match.");
+            return;
+        }
+        if (!await RequireActiveSide(room, mySide))
+            return;
+
+        var player = room.PlayerForSide(mySide);
+        if (!room.Execute(game =>
+        {
+            var window = game.ScryCards.ToList();
+            if (orderedScryIds is null || orderedScryIds.Count != window.Count)
+                throw new RuleViolationException("The returned deck order does not match the cards that were looked at.");
+            var order = new List<Card>();
+            foreach (var token in orderedScryIds)
+            {
+                // Tokens are the "Scry:{i}" instance ids from the state snapshot; the
+                // index names the exact position in the exposed window so duplicate
+                // catalog cards stay distinguishable.
+                if (!int.TryParse(token, out var i) || i < 0 || i >= window.Count)
+                    throw new RuleViolationException("The returned deck order does not match the cards that were looked at.");
+                order.Add(window[i]);
+            }
+            game.SubmitScryOrder(order);
+        }, out var error))
+        {
+            await Clients.Caller.ReceiveActionError(error ?? "The deck order could not be submitted right now.");
+            return;
+        }
+
+        await BroadcastState(room);
+        await MaybeAnnounceWinner(room);
+    }
+
     public async Task EndMainPhase() => await RunGameAction(room => room.EndMainPhase());
 
     public async Task EndTurn() => await RunGameAction(room => room.EndTurn());

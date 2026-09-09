@@ -211,6 +211,9 @@ public class CatalogDataTests
             ["Rondobil, the Explorer"] = "Tap_AddOwnCreatureToShields",
             ["Charmilia, the Enticer"] = "Tap_DeckSearchCreatureToHand",
             ["Kachua, Keeper of the Icegate"] = "Tap_DeckSearchDragonSummonEotDestroy",
+            // Final slice: decision effects (shield-look and scry reorder).
+            ["Adomis, the Oracle"] = "Tap_ChooseShieldLook",
+            ["Garatyano"] = "Tap_ScryTopCards",
         };
 
         foreach (var (name, effId) in modelled)

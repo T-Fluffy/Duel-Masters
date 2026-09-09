@@ -33,7 +33,7 @@ game, built with:
 | 3 | Godot 2.5D board UI + local hotseat sandbox | ✅ Done |
 | 4 | Authoritative .NET / SignalR backend + client transport | ✅ Done |
 | 5 | AI opponent | ✅ Done |
-| 6 | Shaders, VFX, sound polish | ⏳ |
+| 6 | Shaders, VFX, sound polish | ✅ Done |
 
 ## Implemented features
 
@@ -56,6 +56,9 @@ game, built with:
   their **saved decks** from the deck builder (or fall back to a random deck),
   and the live board supports evolution, blocking and shield triggers exactly like
   the hotseat arena.
+- **100% tap-ability coverage** — the last two modelled tap abilities, shield-look
+  (Adomis) and deck scry/reorder (Garatyano), work in the engine, AI, hotseat and
+  online matches; `Tap_NotModelled` no longer appears in the shipped catalog.
 
 Game rules and architecture are specified in the design documents bundled in the
 repo root (`Duel_Masters_TCG_Engine_GDD.md`, `Duel_Masters_Strategy_and_Codebase.md`).

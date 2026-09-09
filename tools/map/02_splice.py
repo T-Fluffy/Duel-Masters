@@ -47,6 +47,7 @@ VALID_EFF = {
     "Tap_ChooseRaceMustAttackPowerAttackerEot", "Tap_ChooseRaceUnblockableByPowerEot",
     "Tap_OpponentDestroysOwnCreature", "Tap_BlockBreaksShieldEot", "Tap_AddOwnCreatureToShields",
     "Tap_DeckSearchCreatureToHand", "Tap_DeckSearchDragonSummonEotDestroy",
+    "Tap_ChooseShieldLook", "Tap_ScryTopCards",
     "Tap_NotModelled",
 }
 

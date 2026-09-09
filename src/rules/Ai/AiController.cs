@@ -143,6 +143,15 @@ public sealed class AiController
         var steps = 0;
         while (!game.IsGameOver && game.Phase == GamePhase.Main && steps++ < 200)
         {
+            if (game.IsScryWindowActive)
+            {
+                // The AI never opens a scry window (its owner's "look at top N"
+                // abilities are declined below), but if one somehow appears on its
+                // own watch it is resolved deterministically in draw order.
+                game.SubmitScryOrder(game.ScryCards.ToList());
+                continue;
+            }
+
             if (game.ShieldTriggerWindowActive)
             {
                 if (ReferenceEquals(game.ShieldTriggerOwner, Self))
@@ -696,7 +705,9 @@ private bool TryChooseSpellPlay(DuelGame game, int handIndex, out IReadOnlyList<
     /// untaps, race grants) are valued directly; targeted ones aim at the best legal
     /// card from the engine's own target pool. Race-choosing abilities select a race
     /// via <paramref name="race"/>. Never touches <see cref="EffectId.Tap_NotModelled"/>
-    /// or an activation the engine would reject.
+    /// or an activation the engine would reject; the decision-only "look at a shield"
+    /// and "look at the top N of the deck" abilities are deliberately never chosen
+    /// because they give the AI no tempo.
     /// </summary>
     private bool TryChooseTapAbility(DuelGame game, out int creatureIndex, out IReadOnlyList<SpellTarget>? targets, out string? race)
     {
