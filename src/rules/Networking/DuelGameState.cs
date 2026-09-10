@@ -65,6 +65,30 @@ public sealed class DuelGameState
     [JsonPropertyName("pendingTriggerHandIndices")]
     public List<int> PendingTriggerHandIndices { get; set; } = new();
 
+    /// <summary>True while an attacking creature's "you may ..." trigger awaits an answer.</summary>
+    [JsonPropertyName("attackDecisionWindowActive")]
+    public bool AttackDecisionWindowActive { get; set; }
+
+    /// <summary>Side that owns the pending "may" choice ("Player1"/"Player2"), while a window is open.</summary>
+    [JsonPropertyName("attackDecisionOwnerSide")]
+    public string? AttackDecisionOwnerSide { get; set; }
+
+    /// <summary>The pending "may" choice kind: "lookAtShields", "searchToHand", "destroyCreature", "destroyPowerAtMost".</summary>
+    [JsonPropertyName("attackDecisionKind")]
+    public string? AttackDecisionKind { get; set; }
+
+    /// <summary>Number of shields a pending shield-look may name (0 otherwise).</summary>
+    [JsonPropertyName("attackDecisionShieldCount")]
+    public int AttackDecisionShieldCount { get; set; }
+
+    /// <summary>The power cap of a pending "destroy power N or less" choice (0 otherwise).</summary>
+    [JsonPropertyName("attackDecisionValue")]
+    public int AttackDecisionValue { get; set; }
+
+    /// <summary>Legal creature targets for a pending "destroy a creature" attack-decision (both battle zones).</summary>
+    [JsonPropertyName("attackDecisionTargets")]
+    public List<TapTargetState> AttackDecisionTargets { get; set; } = new();
+
     /// <summary>True while an attack is declared and the defender may choose to block or pass.</summary>
     [JsonPropertyName("attackPending")]
     public bool AttackPending { get; set; }
@@ -121,6 +145,12 @@ public sealed class DuelGameState
                 scryCards.Add(CardState.FromCard(game.ScryCards[i], $"Scry:{i}"));
         }
 
+        var attackDecisionActive = game.AttackDecisionWindowActive;
+        var attackOwnerSide = attackDecisionActive
+            ? DuelSide.FromIndex(game.AttackDecisionSource?.Owner == game.Player1 ? 0 : 1)
+            : null;
+        var attackKind = attackDecisionActive ? game.PendingAttackDecision.ToString() : null;
+
         var state = new DuelGameState
         {
             MatchCode = matchCode,
@@ -140,6 +170,11 @@ public sealed class DuelGameState
             ScryCards = scryCards,
             IsGameOver = game.IsGameOver,
             WinnerId = game.Winner is null ? null : DuelSide.FromIndex(game.Winner == game.Player1 ? 0 : 1),
+            AttackDecisionWindowActive = attackDecisionActive,
+            AttackDecisionOwnerSide = attackOwnerSide,
+            AttackDecisionKind = attackKind,
+            AttackDecisionShieldCount = attackDecisionActive ? game.AttackDecisionShieldCount : 0,
+            AttackDecisionValue = attackDecisionActive ? game.AttackDecisionValue : 0,
             Players =
             {
                 PlayerState.From(game.Player1, p1, viewerSide),
@@ -195,6 +230,64 @@ public sealed class DuelGameState
                     && e.Id is EffectId.Tap_ChooseShieldLook or EffectId.Tap_ScryTopCards);
                 if (decision is not null)
                     cardState.TapDecisionKind = decision.Id == EffectId.Tap_ChooseShieldLook ? "shield" : "scry";
+            }
+
+            // Crew annotations: for each crew creature, list the own creatures that can
+            // pay the crew tap right now (the holder itself plus matching-civilization
+            // ready creators). Decision-based abilities cannot resolve through the crew
+            // path, so those creatures are excluded from the payer list.
+            for (var i = 0; i < active.BattleZone.Count && i < viewerState.BattleZone.Count; i++)
+            {
+                var holder = active.BattleZone[i];
+                var holderState = viewerState.BattleZone[i];
+                if (!holder.Card.HasCrew)
+                    continue;
+                if (holder.Card.TapAbilities.Any(e => e.Id is EffectId.Tap_ChooseShieldLook or EffectId.Tap_ScryTopCards))
+                    continue;
+                var payers = new List<int>();
+                for (var payerIndex = 0; payerIndex < active.BattleZone.Count; payerIndex++)
+                    if (game.CanUseCrewAbility(active, i, payerIndex))
+                        payers.Add(payerIndex);
+                if (payers.Count == 0)
+                    continue;
+                holderState.HasCrew = true;
+                holderState.CrewPayerIndices = payers;
+            }
+        }
+
+        // Annotate the source creature of an active attack-decision window so the
+        // viewer's arena can render the prompt at the attacking creature's card.
+        if (attackDecisionActive && attackOwnerSide == viewerSide && viewerState is not null)
+        {
+            var source = game.AttackDecisionSource;
+            if (source?.Owner is not null)
+            {
+                var sourceIndex = source.Owner.BattleZone.IndexOf(source);
+                var sourceBattle = sourceIndex >= 0 && sourceIndex < viewerState.BattleZone.Count
+                    ? viewerState.BattleZone[sourceIndex]
+                    : null;
+                if (sourceBattle is not null)
+                {
+                    sourceBattle.AttackDecisionPending = true;
+                    sourceBattle.AttackDecisionKind = attackKind;
+                    sourceBattle.AttackDecisionShieldCount = game.AttackDecisionShieldCount;
+                    sourceBattle.AttackDecisionValue = game.AttackDecisionValue;
+                }
+            }
+
+            // For destroy-kind decisions, serialize the legal target pool.
+            if (game.PendingAttackDecision is DuelGame.AttackDecisionKind.DestroyCreature
+                or DuelGame.AttackDecisionKind.DestroyPowerAtMost)
+            {
+                foreach (var target in game.AttackDecisionTargets)
+                {
+                    if (Locate(target, game, out var owner, out var index))
+                    {
+                        var side = ReferenceEquals(owner, game.Player1) ? p1 : p2;
+                        var own = ReferenceEquals(owner, game.ActivePlayer);
+                        state.AttackDecisionTargets.Add(new TapTargetState(side, index, TapTargetLabel(own, target.Card)));
+                    }
+                }
             }
         }
 

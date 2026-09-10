@@ -41,6 +41,9 @@ VALID_EFF = {
     "StaticPower_AlwaysBoost", "StaticTurbo_SpeedAttackerAll",
     "AttackTrigger_OpponentDiscardsHand", "AttackTrigger_UntapAllOwnExceptSelf",
     "BlockedTrigger_BreakOneShield",
+    # D3: crew breaker + "may"-gated attack-trigger choices
+    "Breaker_PerOtherRace", "AttackTrigger_MayLookAtShields", "AttackTrigger_MaySearchToHand",
+    "AttackTrigger_UnblockedMayDestroy", "AttackTrigger_MayDestroyPowerAtMost",
     # Activated tap abilities (Tap Ability card family)
     "Tap_Draw", "Tap_ReturnToHand", "Tap_TapOpponentCreature", "Tap_ReturnSpellFromManaToHand",
     "Tap_ReturnCreatureFromManaToHand", "Tap_ReturnManaCardToHand", "Tap_ReturnGraveCreatureToHand",
@@ -148,6 +151,13 @@ def main():
         if mapped_tap:
             card["tapAbilities"] = mapped_tap
             mut_tap += 1
+
+        # ---- crewCivilization from the mapped crew clause (idempotent: a card
+        # whose crew clause disappeared drops the field again).
+        if m.get("crew"):
+            card["crewCivilization"] = m["crew"]
+        elif "crewCivilization" in card:
+            del card["crewCivilization"]
 
         # ---- evolutionOf on EvolutionCreatures only
         evo = m.get("evolutionOf")

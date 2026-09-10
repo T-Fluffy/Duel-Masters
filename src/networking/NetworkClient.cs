@@ -201,6 +201,34 @@ public static class NetworkClient
     public static void SubmitScryOrder(List<string> orderedScryIds) =>
         Invoke(DuelContract.Hub.SubmitScryOrder, orderedScryIds);
 
+    // --------------------------------------------------------- attack-decision
+
+    /// <summary>Attack-decision: accept "may look at N shields" by naming shield indices (0-based in the defender's zone).</summary>
+    public static void AttackDecisionAccept(int[] shieldIndices) =>
+        Invoke(DuelContract.Hub.AttackDecisionAccept, shieldIndices);
+
+    /// <summary>Attack-decision: accept "may destroy a creature" by naming the target's side + battle-zone index.</summary>
+    public static void AttackDecisionAcceptTargeted(string targetSide, int targetIndex) =>
+        Invoke(DuelContract.Hub.AttackDecisionAcceptTargeted, targetSide, targetIndex);
+
+    /// <summary>Attack-decision: decline the pending "you may ..." choice.</summary>
+    public static void AttackDecisionDecline() =>
+        Invoke(DuelContract.Hub.AttackDecisionDecline);
+
+    // -------------------------------------------------------------- crew
+
+    /// <summary>Activate a Crew ability (no target/race), paying with the creature at <paramref name="payerIndex"/>.</summary>
+    public static void ActivateCrewAbility(int abilityIndex, int payerIndex) =>
+        Invoke(DuelContract.Hub.ActivateCrewAbility, abilityIndex, payerIndex);
+
+    /// <summary>Activate a Crew ability targeting a creature, paying with <paramref name="payerIndex"/>.</summary>
+    public static void ActivateCrewAbilityTargeted(int abilityIndex, int payerIndex, string targetSide, int targetIndex) =>
+        Invoke(DuelContract.Hub.ActivateCrewAbilityTargeted, abilityIndex, payerIndex, targetSide, targetIndex);
+
+    /// <summary>Activate a Crew ability naming a race, paying with <paramref name="payerIndex"/>.</summary>
+    public static void ActivateCrewAbilityRace(int abilityIndex, int payerIndex, string race) =>
+        Invoke(DuelContract.Hub.ActivateCrewAbilityRace, abilityIndex, payerIndex, race);
+
     // ------------------------------------------------------------- polling
 
     public static bool TryDequeueState(out DuelGameState state) => StateQueue.TryDequeue(out state!);

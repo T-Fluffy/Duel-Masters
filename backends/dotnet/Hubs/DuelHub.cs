@@ -622,6 +622,159 @@ public sealed class DuelHub : Hub<IDuelClientContract>
         await MaybeAnnounceWinner(room);
     }
 
+    /// <summary>Submit an attack-decision "may look at N shields" answer: shield indices (0-based in the defender's zone).</summary>
+    public async Task AttackDecisionAccept(int[] shieldIndices)
+    {
+        var mySide = ResolveSide(out var room);
+        if (room is null || mySide is null)
+        {
+            await Clients.Caller.ReceiveActionError("You are not in an active match.");
+            return;
+        }
+        if (!await RequireActiveSide(room, mySide))
+            return;
+
+        if (!room.Execute(game =>
+        {
+            var kind = game.PendingAttackDecision;
+            if (kind == DuelGame.AttackDecisionKind.LookAtShields)
+                game.AcceptAttackLookAtShields(shieldIndices);
+            else if (kind == DuelGame.AttackDecisionKind.SearchToHand)
+                game.AcceptAttackSearchToHand();
+            else
+                throw new RuleViolationException("There is no pending attack-decision choice.");
+        }, out var error))
+        {
+            await Clients.Caller.ReceiveActionError(error ?? "That answer is not allowed right now.");
+            return;
+        }
+
+        await BroadcastState(room);
+        await MaybeAnnounceWinner(room);
+    }
+
+    /// <summary>Submit an attack-decision "may destroy a creature" answer, naming the target side + battle-zone index.</summary>
+    public async Task AttackDecisionAcceptTargeted(string targetSide, int targetIndex)
+    {
+        var mySide = ResolveSide(out var room);
+        if (room is null || mySide is null)
+        {
+            await Clients.Caller.ReceiveActionError("You are not in an active match.");
+            return;
+        }
+        if (!await RequireActiveSide(room, mySide))
+            return;
+
+        var player = room.PlayerForSide(targetSide);
+        if (player is null)
+        {
+            await Clients.Caller.ReceiveActionError("That target is not available.");
+            return;
+        }
+
+        if (!room.Execute(game => game.AcceptAttackDestroy(player, targetIndex), out var error))
+        {
+            await Clients.Caller.ReceiveActionError(error ?? "That target is not a legal choice right now.");
+            return;
+        }
+
+        await BroadcastState(room);
+        await MaybeAnnounceWinner(room);
+    }
+
+    /// <summary>Decline a pending attack-decision "you may ..." choice; the attack resumes with no effect.</summary>
+    public async Task AttackDecisionDecline()
+    {
+        var mySide = ResolveSide(out var room);
+        if (room is null || mySide is null)
+        {
+            await Clients.Caller.ReceiveActionError("You are not in an active match.");
+            return;
+        }
+        if (!await RequireActiveSide(room, mySide))
+            return;
+
+        room.Execute(game => game.DeclineAttackDecision(), out _);
+
+        await BroadcastState(room);
+        await MaybeAnnounceWinner(room);
+    }
+
+    // -------------------------------------------------------- crew ability
+
+    /// <summary>Activate a Crew ability (no target/race), paying with the creature at <paramref name="payerIndex"/>.</summary>
+    public async Task ActivateCrewAbility(int abilityIndex, int payerIndex)
+    {
+        var mySide = ResolveSide(out var room);
+        if (room is null || mySide is null)
+        {
+            await Clients.Caller.ReceiveActionError("You are not in an active match.");
+            return;
+        }
+        if (!await RequireActiveSide(room, mySide))
+            return;
+
+        if (!room.Execute(game => game.ActivateCrewAbility(abilityIndex, payerIndex), out var error))
+        {
+            await Clients.Caller.ReceiveActionError(error ?? "That Crew ability cannot be used right now.");
+            return;
+        }
+
+        await BroadcastState(room);
+        await MaybeAnnounceWinner(room);
+    }
+
+    /// <summary>Activate a Crew ability targeting a creature, paying with the creature at <paramref name="payerIndex"/>.</summary>
+    public async Task ActivateCrewAbilityTargeted(int abilityIndex, int payerIndex, string targetSide, int targetIndex)
+    {
+        var mySide = ResolveSide(out var room);
+        if (room is null || mySide is null)
+        {
+            await Clients.Caller.ReceiveActionError("You are not in an active match.");
+            return;
+        }
+        if (!await RequireActiveSide(room, mySide))
+            return;
+
+        var player = room.PlayerForSide(targetSide);
+        if (player is null)
+        {
+            await Clients.Caller.ReceiveActionError("That target is not available.");
+            return;
+        }
+
+        if (!room.Execute(game => game.ActivateCrewAbility(abilityIndex, payerIndex, new[] { new SpellTarget(player, targetIndex) }), out var error))
+        {
+            await Clients.Caller.ReceiveActionError(error ?? "That Crew ability cannot be used right now.");
+            return;
+        }
+
+        await BroadcastState(room);
+        await MaybeAnnounceWinner(room);
+    }
+
+    /// <summary>Activate a Crew ability naming a race, paying with the creature at <paramref name="payerIndex"/>.</summary>
+    public async Task ActivateCrewAbilityRace(int abilityIndex, int payerIndex, string race)
+    {
+        var mySide = ResolveSide(out var room);
+        if (room is null || mySide is null)
+        {
+            await Clients.Caller.ReceiveActionError("You are not in an active match.");
+            return;
+        }
+        if (!await RequireActiveSide(room, mySide))
+            return;
+
+        if (!room.Execute(game => game.ActivateCrewAbility(abilityIndex, payerIndex, null, race), out var error))
+        {
+            await Clients.Caller.ReceiveActionError(error ?? "That Crew ability cannot be used right now.");
+            return;
+        }
+
+        await BroadcastState(room);
+        await MaybeAnnounceWinner(room);
+    }
+
     public async Task EndMainPhase() => await RunGameAction(room => room.EndMainPhase());
 
     public async Task EndTurn() => await RunGameAction(room => room.EndTurn());

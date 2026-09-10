@@ -36,6 +36,12 @@ public static class DuelContract
         public const string ActivateTapAbilityShield = "ActivateTapAbilityShield";
         public const string ActivateTapAbilityScry = "ActivateTapAbilityScry";
         public const string SubmitScryOrder = "SubmitScryOrder";
+        public const string ActivateCrewAbility = "ActivateCrewAbility";
+        public const string ActivateCrewAbilityTargeted = "ActivateCrewAbilityTargeted";
+        public const string ActivateCrewAbilityRace = "ActivateCrewAbilityRace";
+        public const string AttackDecisionAccept = "AttackDecisionAccept";
+        public const string AttackDecisionAcceptTargeted = "AttackDecisionAcceptTargeted";
+        public const string AttackDecisionDecline = "AttackDecisionDecline";
         public const string EndMainPhase = "EndMainPhase";
         public const string EndTurn = "EndTurn";
     }

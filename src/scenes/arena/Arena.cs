@@ -184,6 +184,15 @@ public partial class Arena : Control
     // legal target pool, so this only remembers which creature is paying the tap.
     private int _tapCreatureIndex = -1;
 
+    // Crew ability state: the ability-holder creature index and, when its tap
+    // ability is targeted, the payer creature that pays the extra tap.
+    private int _crewCreatureIndex = -1;
+    private int _crewPayerIndex = -1;
+
+    // Attack-decision ("you may ...") popup state: the defender's shields picked
+    // for a shield-look choice.
+    private readonly List<int> _lookShieldPicks = new();
+
     // Multi-target spell selection ("return up to N creatures"): picked targets and
     // the remaining capacity. _maxTargets 0 = the normal single-target flow.
     private int _maxTargets;
@@ -209,6 +218,13 @@ public partial class Arena : Control
     private PanelContainer _triggerPopup = null!;
     private VBoxContainer _triggerPopupBox = null!;
     private string _triggerFingerprint = "";
+
+    // Attack-decision popup ("you may ..." attack triggers: look at shields, search
+    // to hand, destroy a creature) that pauses the attacker's turn.
+    private PanelContainer _decisionPopup = null!;
+    private VBoxContainer _decisionPopupBox = null!;
+    private string _decisionFingerprint = "";
+    private Button? _decisionConfirm;
 
     // Scry tray (a "look at the top N cards and put them back in any order" tap
     // ability): a popup listing the engine's exposed top-deck cards, each with a
@@ -596,6 +612,7 @@ public partial class Arena : Control
         BuildTapMenu();
         BuildShieldTriggerPopup();
         BuildScryPopup();
+        BuildDecisionPopup();
         BuildGraveyardOverlay();
         BuildInspectOverlay();
 
@@ -915,6 +932,24 @@ public partial class Arena : Control
             _attackMenuBox.AddChild(use);
         }
 
+        // A crew creature may have the tap paid by any eligible own creature; the
+        // payer picker lists them. Decision-based abilities are not modelled, so
+        // filter them out here (the picker also guards).
+        if (_game is not null)
+        {
+            var crewCard = _game.ActivePlayer.BattleZone.Count > _attackerIndex
+                ? _game.ActivePlayer.BattleZone[_attackerIndex].Card
+                : null;
+            if (crewCard is not null && crewCard.HasCrew
+                && !crewCard.TapAbilities.Any(e => e.Id is EffectId.Tap_ChooseShieldLook or EffectId.Tap_ScryTopCards)
+                && EligibleCrewPayers(_attackerIndex).Count > 0)
+            {
+                var crew = new Button { Text = "Use crew ability" };
+                crew.Pressed += () => UseCrewAbility(_attackerIndex);
+                _attackMenuBox.AddChild(crew);
+            }
+        }
+
         var cancel = new Button { Text = "Cancel" };
         cancel.Pressed += () =>
         {
@@ -1017,6 +1052,169 @@ public partial class Arena : Control
             return;
         }
         ShowTapTargetMenu(creatureIndex, targeted);
+    }
+
+    // ----------------------------------------------------------------- crew
+    // Unlike an ordinary tap ability (where the holder pays its own tap), a Crew
+    // ability lets any eligible creature pay the tap instead: the holder itself or
+    // any own creature of the ability's civilization. Pick the payer, then resolve
+    // exactly like the ordinary tap-ability flow.
+    private void UseCrewAbility(int creatureIndex)
+    {
+        HideAttackMenu();
+        if (_game is null || creatureIndex < 0 || creatureIndex >= _game.ActivePlayer.BattleZone.Count)
+            return;
+        var creature = _game.ActivePlayer.BattleZone[creatureIndex];
+        if (creature.Card.TapAbilities.Any(e => e.Id == EffectId.Tap_ChooseShieldLook)
+            || creature.Card.TapAbilities.Any(e => e.Id == EffectId.Tap_ScryTopCards))
+        {
+            Prompt($"{creature.Card.Name}'s crew ability needs a decision that is not modelled yet.");
+            Refresh();
+            return;
+        }
+        var raceEffect = creature.Card.TapAbilities.FirstOrDefault(e => e.Id is
+            EffectId.Tap_ChooseRaceUntapEot or
+            EffectId.Tap_ChooseRaceGrantSlayerEot or
+            EffectId.Tap_ChooseRaceToHandEot or
+            EffectId.Tap_ChooseRaceMustAttackPowerAttackerEot or
+            EffectId.Tap_ChooseRaceUnblockableByPowerEot);
+        if (raceEffect is not null)
+        {
+            ShowCrewPayerMenu(creatureIndex);
+            return;
+        }
+        ShowCrewPayerMenu(creatureIndex);
+    }
+
+    private List<int> EligibleCrewPayers(int abilityIndex)
+    {
+        var payers = new List<int>();
+        if (_game is null || abilityIndex < 0 || abilityIndex >= _game.ActivePlayer.BattleZone.Count)
+            return payers;
+        for (var i = 0; i < _game.ActivePlayer.BattleZone.Count; i++)
+            if (_game.CanUseCrewAbility(_game.ActivePlayer, abilityIndex, i))
+                payers.Add(i);
+        return payers;
+    }
+
+    private void ShowCrewPayerMenu(int abilityIndex)
+    {
+        HideAttackMenu();
+        HideHandPopup();
+        HideLookPopup();
+
+        foreach (var child in _tapMenuBox.GetChildren().OfType<Control>().ToList())
+            child.QueueFree();
+
+        var holder = _game!.ActivePlayer.BattleZone[abilityIndex];
+        var title = new Label
+        {
+            Text = $"{holder.Card.Name}: choose the creature that pays the crew tap",
+            AutowrapMode = TextServer.AutowrapMode.WordSmart,
+        };
+        title.CustomMinimumSize = new Vector2(300, 0);
+        title.AddThemeFontSizeOverride("font_size", 14);
+        title.AddThemeColorOverride("font_color", CivilizationPalette.Color(holder.Card.Civilization).Lightened(0.25f));
+        title.HorizontalAlignment = HorizontalAlignment.Center;
+        _tapMenuBox.AddChild(title);
+
+        for (var payerIndex = 0; payerIndex < _game.ActivePlayer.BattleZone.Count; payerIndex++)
+        {
+            if (!_game.CanUseCrewAbility(_game.ActivePlayer, abilityIndex, payerIndex))
+                continue;
+            var payer = _game.ActivePlayer.BattleZone[payerIndex];
+            var caption = ReferenceEquals(payer, holder)
+                ? $"Pay itself ({payer.Card.Name})"
+                : $"Pay with {payer.Card.Name}";
+            var payerBtn = new Button { Text = caption, TooltipText = DescribeCard(payer.Card) };
+            var captured = payerIndex;
+            payerBtn.Pressed += () => PayCrewWith(abilityIndex, captured);
+            _tapMenuBox.AddChild(payerBtn);
+        }
+
+        var cancel = new Button { Text = "Cancel" };
+        cancel.Pressed += () =>
+        {
+            HideTapTargetMenu();
+            ResetInteraction();
+            Prompt("Crew ability cancelled - pick a creature to attack when ready.");
+            Refresh();
+        };
+        _tapMenuBox.AddChild(cancel);
+
+        _tapMenu.Visible = true;
+        CallDeferred(nameof(PositionTapMenu));
+    }
+
+    private void PayCrewWith(int abilityIndex, int payerIndex)
+    {
+        HideTapTargetMenu();
+        if (_game is null || abilityIndex < 0 || abilityIndex >= _game.ActivePlayer.BattleZone.Count)
+            return;
+        var holder = _game.ActivePlayer.BattleZone[abilityIndex];
+        var targeted = holder.Card.TapAbilities.FirstOrDefault(e => e.Target != EffectTargetScope.None);
+        if (targeted is null)
+        {
+            Safe(() =>
+            {
+                _game.ActivateCrewAbility(abilityIndex, payerIndex);
+                PlayTapFx(holder);
+            });
+            Prompt($"{holder.Card.Name} used its crew ability.");
+            return;
+        }
+
+        foreach (var child in _tapMenuBox.GetChildren().OfType<Control>().ToList())
+            child.QueueFree();
+
+        var payer = _game.ActivePlayer.BattleZone[payerIndex];
+        var title = new Label
+        {
+            Text = $"{holder.Card.Name} (crew: {payer.Card.Name}): choose the target",
+            AutowrapMode = TextServer.AutowrapMode.WordSmart,
+        };
+        title.CustomMinimumSize = new Vector2(300, 0);
+        title.AddThemeFontSizeOverride("font_size", 14);
+        title.AddThemeColorOverride("font_color", CivilizationPalette.Color(holder.Card.Civilization).Lightened(0.25f));
+        title.HorizontalAlignment = HorizontalAlignment.Center;
+        _tapMenuBox.AddChild(title);
+
+        foreach (var item in _game.TapTargetPool(_game.ActivePlayer, targeted))
+        {
+            var location = TapTargetLocation(_game, item);
+            if (location is not (var owner, var zone, var index))
+                continue;
+            var pick = new Button
+            {
+                Text = $"{zone} - {item.Card.Name} ({item.Card.Power} power)...",
+                TooltipText = DescribeCard(item.Card),
+            };
+            var abilityIdx = abilityIndex;
+            var payerIdx = payerIndex;
+            pick.Pressed += () =>
+            {
+                Safe(() =>
+                {
+                    _game.ActivateCrewAbility(abilityIdx, payerIdx, new[] { new SpellTarget(owner, index) });
+                    PlayTapFx(holder);
+                });
+                Prompt($"{holder.Card.Name} used its crew ability.");
+            };
+            _tapMenuBox.AddChild(pick);
+        }
+
+        var cancel = new Button { Text = "Cancel" };
+        cancel.Pressed += () =>
+        {
+            foreach (var child in _tapMenuBox.GetChildren().OfType<Control>().ToList())
+                child.QueueFree();
+            ResetInteraction();
+            ShowCrewPayerMenu(abilityIndex);
+        };
+        _tapMenuBox.AddChild(cancel);
+
+        _tapMenu.Visible = true;
+        CallDeferred(nameof(PositionTapMenu));
     }
 
     private void ShowTapRaceMenu(int creatureIndex, CardEffect eff)
@@ -1464,6 +1662,219 @@ public partial class Arena : Control
         if (_scryPopup is null || !_scryPopup.Visible)
             return;
         PositionPopupAtLeftSide(_scryPopup);
+    }
+
+    // --------------------------------------------------- attack-decision popup
+    // An interrupt popup shown while the engine holds an attack-decision window
+    // open: the attacking creature's optional "you may ..." effect (LookAtShields,
+    // SearchToHand, DestroyCreature / DestroyPowerAtMost) waits for a yes/no or a
+    // target pick before the attack continues. In AI duels the AI owns its own
+    // window; only human-owned windows surface as a popup here.
+
+    private void BuildDecisionPopup()
+    {
+        _decisionPopup = new PanelContainer();
+        _decisionPopup.AddThemeStyleboxOverride("panel", UiStyles.ModalCard());
+        _decisionPopup.Visible = false;
+        AddChild(_decisionPopup);
+
+        _decisionPopupBox = new VBoxContainer();
+        _decisionPopupBox.AddThemeConstantOverride("separation", 6);
+        _decisionPopupBox.CustomMinimumSize = new Vector2(300, 0);
+        _decisionPopup.AddChild(_decisionPopupBox);
+    }
+
+    private void SyncAttackDecisionPopup()
+    {
+        if (_game is null || !_game.AttackDecisionWindowActive || !DecisionPopupNeedsDecision)
+        {
+            HideAttackDecisionPopup();
+            return;
+        }
+
+        // The window interrupts the attacker's turn; while the human resolves it
+        // the AI drive must pause (the engine rejects every action until it closes).
+        _aiDriving = false;
+
+        var kind = _game.PendingAttackDecision;
+        var source = _game.AttackDecisionSource;
+        var fingerprint = kind + "@" + (source is null ? "" : source.Card.Id);
+        if (kind == DuelGame.AttackDecisionKind.LookAtShields && _game.AttackDecisionShieldCount > 0)
+            fingerprint += "#" + _game.AttackDecisionShieldCount;
+        if (kind == DuelGame.AttackDecisionKind.DestroyCreature
+            || kind == DuelGame.AttackDecisionKind.DestroyPowerAtMost)
+            fingerprint += "#" + string.Join("|", _game.AttackDecisionTargets.Select(t => t.Owner.Name + ":" + t.Owner.BattleZone.IndexOf(t)));
+        ShowAttackDecisionPopup(fingerprint);
+    }
+
+    private bool DecisionPopupNeedsDecision =>
+        !_vsAi || !ReferenceEquals(_game.AttackDecisionSource?.Owner, _game.Player2);
+
+    private void ShowAttackDecisionPopup(string fingerprint)
+    {
+        if (fingerprint == _decisionFingerprint && _decisionPopup.Visible)
+            return;
+        _decisionFingerprint = fingerprint;
+
+        HideHandPopup();
+        HideLookPopup();
+
+        foreach (var child in _decisionPopupBox.GetChildren().OfType<Control>().ToList())
+            child.QueueFree();
+
+        if (_game is null || !_game.AttackDecisionWindowActive)
+        {
+            HideAttackDecisionPopup();
+            return;
+        }
+
+        var source = _game.AttackDecisionSource;
+        var sourceName = source is null ? "a creature" : source.Card.Name;
+        var kind = _game.PendingAttackDecision;
+        var kindText = kind switch
+        {
+            DuelGame.AttackDecisionKind.LookAtShields => "look at some shields",
+            DuelGame.AttackDecisionKind.SearchToHand => "search the deck for a card",
+            DuelGame.AttackDecisionKind.DestroyCreature => "destroy a creature",
+            DuelGame.AttackDecisionKind.DestroyPowerAtMost => "destroy a creature",
+            _ => "resolve an effect",
+        };
+        var title = new Label
+        {
+            Text = $"{sourceName}: you may {kindText}",
+            AutowrapMode = TextServer.AutowrapMode.WordSmart,
+            HorizontalAlignment = HorizontalAlignment.Center,
+        };
+        title.CustomMinimumSize = new Vector2(300, 0);
+        title.AddThemeFontSizeOverride("font_size", 14);
+        title.AddThemeColorOverride("font_color", UiStyles.AccentText);
+        _decisionPopupBox.AddChild(title);
+
+        switch (kind)
+        {
+            case DuelGame.AttackDecisionKind.SearchToHand:
+                var take = new Button { Text = $"Take the card (put it into {_game.AttackDecisionSource!.Owner.Name}'s hand)" };
+                take.Pressed += () =>
+                {
+                    Safe(() => _game.AcceptAttackSearchToHand());
+                    HideAttackDecisionPopup();
+                };
+                _decisionPopupBox.AddChild(take);
+                break;
+
+            case DuelGame.AttackDecisionKind.LookAtShields:
+            {
+                var need = _game.AttackDecisionShieldCount;
+                var defender = _game.Opponent;
+                var note = new Label
+                {
+                    Text = $"Choose {need} of {defender.Name}'s shields to look at.",
+                    AutowrapMode = TextServer.AutowrapMode.WordSmart,
+                };
+                note.AddThemeFontSizeOverride("font_size", 11);
+                note.AddThemeColorOverride("font_color", UiStyles.MutedText);
+                _decisionPopupBox.AddChild(note);
+
+                _lookShieldPicks.Clear();
+                var toggleBtns = new List<Button>();
+                for (var i = 0; i < defender.ShieldCount; i++)
+                {
+                    var shieldIndex = i;
+                    var shieldToggle = new Button { Text = $"Shield {i + 1}", ToggleMode = true };
+                    shieldToggle.Toggled += on =>
+                    {
+                        if (on)
+                        {
+                            if (!_lookShieldPicks.Contains(shieldIndex))
+                                _lookShieldPicks.Add(shieldIndex);
+                        }
+                        else
+                            _lookShieldPicks.Remove(shieldIndex);
+                        _decisionConfirm!.Disabled = _lookShieldPicks.Count != need;
+                    };
+                    toggleBtns.Add(shieldToggle);
+                    _decisionPopupBox.AddChild(shieldToggle);
+                }
+
+                var confirm = new Button
+                {
+                    Text = $"Look at the {need} picked",
+                    Disabled = true,
+                };
+                _decisionConfirm = confirm;
+                confirm.Pressed += () =>
+                {
+                    if (_lookShieldPicks.Count != need)
+                        return;
+                    var picks = _lookShieldPicks.ToList();
+                    Safe(() => _game.AcceptAttackLookAtShields(picks));
+                    _lookShieldPicks.Clear();
+                    HideAttackDecisionPopup();
+                    // The engine collects the picked shields into the direct-inspect
+                    // pool; surface them like a shield peek.
+                    Prompt($"{defender.Name}'s shields revealed.");
+                    Refresh();
+                };
+                _decisionPopupBox.AddChild(confirm);
+                break;
+            }
+
+            case DuelGame.AttackDecisionKind.DestroyCreature:
+            case DuelGame.AttackDecisionKind.DestroyPowerAtMost:
+            {
+                var targets = _game.AttackDecisionTargets.ToList();
+                if (targets.Count == 0)
+                {
+                    var none = new Label
+                    {
+                        Text = "There is nothing to destroy.",
+                        AutowrapMode = TextServer.AutowrapMode.WordSmart,
+                        HorizontalAlignment = HorizontalAlignment.Center,
+                    };
+                    none.AddThemeFontSizeOverride("font_size", 11);
+                    none.AddThemeColorOverride("font_color", UiStyles.MutedText);
+                    _decisionPopupBox.AddChild(none);
+                    break;
+                }
+                foreach (var t in targets)
+                {
+                    var targetIndex = t.Owner.BattleZone.IndexOf(t);
+                    var targetBtn = new Button { Text = $"Destroy {t.Card.Name}" };
+                    targetBtn.Pressed += () =>
+                    {
+                        Safe(() => _game.AcceptAttackDestroy(t.Owner, targetIndex));
+                        HideAttackDecisionPopup();
+                    };
+                    _decisionPopupBox.AddChild(targetBtn);
+                }
+                break;
+            }
+        }
+
+        var skip = new Button { Text = "Don't use it" };
+        skip.Pressed += () =>
+        {
+            Safe(() => _game.DeclineAttackDecision());
+            HideAttackDecisionPopup();
+        };
+        _decisionPopupBox.AddChild(skip);
+
+        _decisionPopup.Visible = true;
+        CallDeferred(nameof(PositionAttackDecisionPopup));
+    }
+
+    private void HideAttackDecisionPopup()
+    {
+        _decisionPopup.Visible = false;
+        if (_game is null || !_game.AttackDecisionWindowActive)
+            _decisionFingerprint = "";
+    }
+
+    private void PositionAttackDecisionPopup()
+    {
+        if (_decisionPopup is null || !_decisionPopup.Visible)
+            return;
+        PositionPopupAtLeftSide(_decisionPopup);
     }
 
     private bool AnyLegalTriggerTarget(Card spell)
@@ -3106,6 +3517,7 @@ _mode = Mode.SelectBlock;
         WireInteraction();
         SyncShieldTriggerPopup();
         SyncScryPopup();
+        SyncAttackDecisionPopup();
 
         CapturePrevTapped();
         CallDeferred(nameof(PlayFx));

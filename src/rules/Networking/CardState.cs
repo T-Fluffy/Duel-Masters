@@ -41,6 +41,34 @@ public sealed class CardState
     [JsonPropertyName("keywords")]
     public List<string> Keywords { get; set; } = new();
 
+    /// <summary>The civilization whose creatures may tap to pay this card's Crew ability (empty when it has no Crew clause).</summary>
+    [JsonPropertyName("crewCivilization")]
+    public string CrewCivilization { get; set; } = "";
+
+    /// <summary>True when the server has vetted this creature's Crew ability as usable right now.</summary>
+    [JsonPropertyName("hasCrew")]
+    public bool HasCrew { get; set; }
+
+    /// <summary>Indices of this side's battle-zone creatures that may pay the crew tap (holder included).</summary>
+    [JsonPropertyName("crewPayerIndices")]
+    public List<int> CrewPayerIndices { get; set; } = new();
+
+    /// <summary>True while an attack-decision window is open for this creature's "may" trigger.</summary>
+    [JsonPropertyName("attackDecisionPending")]
+    public bool AttackDecisionPending { get; set; }
+
+    /// <summary>The pending "may" choice kind: "lookAtShields", "searchToHand", "destroyCreature", "destroyPowerAtMost".</summary>
+    [JsonPropertyName("attackDecisionKind")]
+    public string? AttackDecisionKind { get; set; }
+
+    /// <summary>The number of shields a pending shield-look names (0 otherwise).</summary>
+    [JsonPropertyName("attackDecisionShieldCount")]
+    public int AttackDecisionShieldCount { get; set; }
+
+    /// <summary>The power cap of a pending "destroy power N or less" choice (0 otherwise).</summary>
+    [JsonPropertyName("attackDecisionValue")]
+    public int AttackDecisionValue { get; set; }
+
     /// <summary>True when this entry is an Evolution creature.</summary>
     [JsonPropertyName("isEvolution")]
     public bool IsEvolution { get; set; }
@@ -110,6 +138,7 @@ public sealed class CardState
             EvolutionOf = card.EvolutionOf,
             IsTapped = instance.IsTapped,
             IsSummoningSick = instance.IsSummoningSick,
+            CrewCivilization = card.CrewCivilization ?? "",
         };
     }
 

@@ -33,6 +33,21 @@ public sealed class DuelGame
     private readonly List<Card> _scryCards = new();
 
     /// <summary>
+    /// The "you may ..." choice offered by an attacking creature's attack trigger
+    /// (DM-08 Migalo / Vikorakys / Gachack / Slaphappy). While the window is open no
+    /// further action is allowed until the attacker answers or declines; the attack's
+    /// remaining steps are suspended in <see cref="_attackContinuation"/> and resume
+    /// automatically once the choice is made.
+    /// </summary>
+    private AttackDecisionKind _attackDecisionKind;
+    private CardInstance? _attackDecisionSource;
+    private int _attackDecisionValue;
+    private readonly List<CardInstance> _attackDecisionTargets = new();
+
+    /// <summary>Continuation of an attack interrupted by a may-choice, run once the window closes.</summary>
+    private Action? _attackContinuation;
+
+    /// <summary>
     /// Effects granted by a tap ability that persist until the end of the current
     /// turn ("at the end of this turn ...", "whenever ... this turn, ..."). Resolved
     /// during the end step and cleared when the turn ends.
@@ -56,6 +71,16 @@ public sealed class DuelGame
     private readonly HashSet<CardInstance> _pendingDestroyAtEot = new();
 
     private sealed record PendingTurnEffect(EffectId Id, Player Owner, string Race, int Value = 0);
+
+    /// <summary>Which "you may" attack-trigger choice is awaiting an answer.</summary>
+    public enum AttackDecisionKind
+    {
+        None,
+        LookAtShields,
+        SearchToHand,
+        DestroyCreature,
+        DestroyPowerAtMost,
+    }
 
     public DuelGame(Player player1, Player player2, Random? rng = null)
     {
@@ -382,6 +407,133 @@ public sealed class DuelGame
         OpenScryWindow(actor, count);
     }
 
+    // --------------------------------------------------------- Crew abilities
+
+    /// <summary>
+    /// True if the active player may activate the "Crew" ability on the battle-zone
+    /// creature at <paramref name="abilityIndex"/> by tapping the creature at
+    /// <paramref name="payerIndex"/> DC (DM-06). Crew widens the payer set: the
+    /// ability holder itself may always pay, and so may any own creature of the
+    /// ability's civilization - the tapped creature sacrifices its attack. The
+    /// ordinary tap-ability timing rules (Main phase, before any attack, no pending
+    /// decision window, ready payer) apply, and a targeted ability needs a legal
+    /// target to exist. A tapped holder can still be "used" - a crew creature pays.
+    /// </summary>
+    public bool CanUseCrewAbility(int abilityIndex, int payerIndex)
+        => CanUseCrewAbility(ActivePlayer, abilityIndex, payerIndex);
+
+    /// <summary>Player-scoped <see cref="CanUseCrewAbility(int,int)"/> used by the AI and tests.</summary>
+    public bool CanUseCrewAbility(Player player, int abilityIndex, int payerIndex)
+    {
+        if (IsGameOver || Phase != GamePhase.Main || ShieldTriggerWindowActive || IsScryWindowActive)
+            return false;
+        if (!ReferenceEquals(player, ActivePlayer) || _hasAttackedThisTurn)
+            return false;
+        if (abilityIndex < 0 || abilityIndex >= player.BattleZone.Count)
+            return false;
+        var ability = player.BattleZone[abilityIndex];
+        if (!ability.Card.HasCrew)
+            return false;
+        if (payerIndex < 0 || payerIndex >= player.BattleZone.Count)
+            return false;
+        var payer = player.BattleZone[payerIndex];
+        if (payer.IsTapped || payer.IsSummoningSick)
+            return false;
+        if (!ReferenceEquals(payer, ability)
+            && !CivMatches(payer.Card.Civilization, ability.Card.CrewCivilization!))
+            return false;
+        foreach (var eff in ability.Card.TapAbilities)
+        {
+            if (eff.Id == EffectId.Tap_NotModelled)
+                continue;
+            if (eff.Id == EffectId.Tap_ChooseShieldLook && player.ShieldCount == 0)
+                continue;
+            if (eff.Id == EffectId.Tap_ScryTopCards && player.Deck.Count < Math.Max(1, eff.Value))
+                continue;
+            if (eff.Target == EffectTargetScope.None || TapTargetPool(player, eff).Count > 0)
+                return true;
+        }
+        return false;
+    }
+
+    /// <summary>Activate a Crew ability on the active player's creature, paying with <paramref name="payerIndex"/>.</summary>
+    public void ActivateCrewAbility(int abilityIndex, int payerIndex)
+        => ActivateCrewAbility(abilityIndex, payerIndex, null);
+
+    /// <summary>Activate a Crew ability naming the tapped payer's targets and race.</summary>
+    public void ActivateCrewAbility(int abilityIndex, int payerIndex, IReadOnlyList<SpellTarget>? targets, string? race = null)
+        => ActivateCrewAbility(abilityIndex, payerIndex, ActivePlayer, targets, race);
+
+    /// <summary>Activate one of <paramref name="actor"/>'s Crew abilities, paying with <paramref name="payerIndex"/> (used by the AI and tests).</summary>
+    public void ActivateCrewAbility(int abilityIndex, int payerIndex, Player actor, IReadOnlyList<SpellTarget>? targets, string? race = null)
+    {
+        EnsureMain();
+        EnsureTriggerWindowClosed();
+        EnsureScryWindowClosed();
+        if (_hasAttackedThisTurn)
+            throw new RuleViolationException("You cannot use a Crew ability after a creature has attacked.");
+        if (!ReferenceEquals(actor, ActivePlayer))
+            throw new RuleViolationException("You may only use your own creatures' abilities.");
+        var ability = RequireCrewAbility(actor, abilityIndex);
+        var payer = RequireCrewPayer(actor, ability, payerIndex);
+        if (ability.Card.TapAbilities.All(e => e.Id == EffectId.Tap_NotModelled))
+            throw new RuleViolationException($"'{ability.Card.Name}' has a tap ability that is not modelled yet.");
+
+        // Decision-based abilities cannot resolve through this generic path; refuse
+        // before the payer's tap is spent. They have dedicated decision plumbing.
+        foreach (var e in ability.Card.TapAbilities)
+        {
+            if (e.Id == EffectId.Tap_ChooseShieldLook)
+                throw new RuleViolationException($"'{ability.Card.Name}' needs a shield choice for its Crew ability.");
+            if (e.Id == EffectId.Tap_ScryTopCards)
+                throw new RuleViolationException($"'{ability.Card.Name}' needs a deck-order decision for its Crew ability.");
+        }
+
+        // An ability that says "choose a race" needs the caller to name one of the
+        // races currently present in either battle zone.
+        if (ability.Card.TapAbilities.Any(e => IsRaceChoosingEffect(e.Id)))
+        {
+            var choices = LegalRaceChoices(actor);
+            if (string.IsNullOrWhiteSpace(race) || !choices.Contains(race, StringComparer.OrdinalIgnoreCase))
+                throw new RuleViolationException($"'{ability.Card.Name}' needs a race in the battle zone for its Crew ability.");
+        }
+
+        payer.Tap();
+        ResolveTapAbilities(ability, targets, race);
+    }
+
+    /// <summary>Require that the battle-zone creature at <paramref name="abilityIndex"/> carries a Crew clause.</summary>
+    private static CardInstance RequireCrewAbility(Player actor, int abilityIndex)
+    {
+        if (abilityIndex < 0 || abilityIndex >= actor.BattleZone.Count)
+            throw new RuleViolationException("The creature index is out of range of the battle zone.");
+        var ability = actor.BattleZone[abilityIndex];
+        if (!ability.Card.HasCrew)
+            throw new RuleViolationException($"'{ability.Card.Name}' has no Crew ability.");
+        return ability;
+    }
+
+    /// <summary>
+    /// Require that the battle-zone creature at <paramref name="payerIndex"/> may pay
+    /// for <paramref name="ability"/>'s Crew clause: it is untapped, not summoning
+    /// sick, and either the ability holder itself or a creature of the ability's
+    /// civilization (the holder needs no particular civilization of its own).
+    /// </summary>
+    private static CardInstance RequireCrewPayer(Player actor, CardInstance ability, int payerIndex)
+    {
+        if (payerIndex < 0 || payerIndex >= actor.BattleZone.Count)
+            throw new RuleViolationException("The payer index is out of range of the battle zone.");
+        var payer = actor.BattleZone[payerIndex];
+        if (payer.IsTapped)
+            throw new RuleViolationException($"'{payer.Card.Name}' is already tapped.");
+        if (payer.IsSummoningSick)
+            throw new RuleViolationException($"'{payer.Card.Name}' has summoning sickness and cannot tap for a Crew ability.");
+        if (!ReferenceEquals(payer, ability)
+            && !CivMatches(payer.Card.Civilization, ability.Card.CrewCivilization!))
+            throw new RuleViolationException($"'{payer.Card.Name}' is not a {ability.Card.CrewCivilization} creature and cannot tap for '{ability.Card.Name}'.");
+        return payer;
+    }
+
     /// <summary>
     /// Put the looked-at deck cards back in the given order (the top of the deck is
     /// rewritten so the first card is drawn next). The order must be an exact
@@ -413,6 +565,133 @@ public sealed class DuelGame
     {
         _scryOwner = null;
         _scryCards.Clear();
+    }
+
+    // -------------------------------------------------- attack "may" decisions
+
+    /// <summary>True while an attacking creature's "you may ..." trigger awaits an answer.</summary>
+    public bool AttackDecisionWindowActive => _attackDecisionKind != AttackDecisionKind.None;
+
+    /// <summary>The attacking creature whose trigger opened the pending may-choice window.</summary>
+    public CardInstance? AttackDecisionSource => _attackDecisionSource;
+
+    /// <summary>What the pending may-choice wants (shield look count, deck search, destroy pool, power-at-most cap).</summary>
+    public AttackDecisionKind PendingAttackDecision => _attackDecisionKind;
+
+    /// <summary>Number of shields a pending shield-look choice wants examined.</summary>
+    public int AttackDecisionShieldCount => Math.Max(1, _attackDecisionValue);
+
+    /// <summary>The value datum of the pending choice (e.g. a "power {N} or less" destroy cap).</summary>
+    public int AttackDecisionValue => _attackDecisionValue;
+
+    /// <summary>The legal creatures a pending destroy may-choice may pick from (both zones for "destroy a creature").</summary>
+    public IReadOnlyList<CardInstance> AttackDecisionTargets => _attackDecisionTargets;
+
+    /// <summary>Accept "may look at the opponent's shields" - the attacker inspects the named shields and puts them back.</summary>
+    public void AcceptAttackLookAtShields(IReadOnlyList<int> shieldIndices)
+    {
+        EnsureAttackDecisionActive();
+        if (_attackDecisionKind != AttackDecisionKind.LookAtShields)
+            throw new RuleViolationException("The pending 'may' choice is not a shield look.");
+        if (shieldIndices is null || shieldIndices.Distinct().Count() != shieldIndices.Count
+            || shieldIndices.Count != Math.Max(1, _attackDecisionValue))
+            throw new RuleViolationException($"You must name exactly {Math.Max(1, _attackDecisionValue)} distinct shields to look at.");
+        var source = RequireAttackDecisionOwner();
+        var defender = OpponentOf(source.Owner!);
+        foreach (var idx in shieldIndices)
+        {
+            if (idx < 0 || idx >= defender.Shields.Count)
+                throw new RuleViolationException("That shield is not in the defender's shield zone.");
+        }
+        CloseAttackDecisionWindow();
+    }
+
+    /// <summary>Accept "may search your deck" - the strongest card in the deck is taken, then it is shuffled.</summary>
+    public void AcceptAttackSearchToHand()
+    {
+        EnsureAttackDecisionActive();
+        if (_attackDecisionKind != AttackDecisionKind.SearchToHand)
+            throw new RuleViolationException("The pending 'may' choice is not a deck search.");
+        var owner = RequireAttackDecisionOwner().Owner!;
+        CloseAttackDecisionWindow();
+        SearchAndPut(owner, _ => true, summon: false);
+    }
+
+    /// <summary>Accept a pending "may destroy a creature" choice, naming the creature to destroy.</summary>
+    public void AcceptAttackDestroy(Player owner, int index)
+    {
+        EnsureAttackDecisionActive();
+        if (_attackDecisionKind is not (AttackDecisionKind.DestroyCreature or AttackDecisionKind.DestroyPowerAtMost))
+            throw new RuleViolationException("The pending 'may' choice is not a destroy choice.");
+        var target = ResolveAttackDecisionTarget(owner, index);
+        CloseAttackDecisionWindow();
+        DestroyCreature(target);
+    }
+
+    /// <summary>Decline the pending "you may ..." attack choice; the attack resumes with no effect.</summary>
+    public void DeclineAttackDecision()
+    {
+        EnsureAttackDecisionActive();
+        CloseAttackDecisionWindow();
+    }
+
+    private void EnsureAttackDecisionActive()
+    {
+        if (!AttackDecisionWindowActive)
+            throw new RuleViolationException("There is no pending 'may' choice.");
+    }
+
+    private CardInstance RequireAttackDecisionOwner()
+    {
+        var source = _attackDecisionSource;
+        if (source is null || source.Owner is null)
+            throw new RuleViolationException("The attack decision has no owner.");
+        return source;
+    }
+
+    private CardInstance ResolveAttackDecisionTarget(Player owner, int index)
+    {
+        if (owner is null || index < 0 || index >= owner.BattleZone.Count)
+            throw new RuleViolationException("The target is out of range of the battle zone.");
+        var target = owner.BattleZone[index];
+        if (!_attackDecisionTargets.Contains(target))
+            throw new RuleViolationException("That creature is not a legal target for this choice.");
+        return target;
+    }
+
+    private void OpenAttackDecision(AttackDecisionKind kind, CardInstance source, int value = 0)
+    {
+        _attackDecisionKind = kind;
+        _attackDecisionSource = source;
+        _attackDecisionValue = value;
+        _attackDecisionTargets.Clear();
+        switch (kind)
+        {
+            case AttackDecisionKind.DestroyCreature:
+                _attackDecisionTargets.AddRange(Player1.BattleZone);
+                _attackDecisionTargets.AddRange(Player2.BattleZone);
+                break;
+            case AttackDecisionKind.DestroyPowerAtMost:
+                _attackDecisionTargets.AddRange(OpponentOf(source.Owner!).BattleZone
+                    .Where(c => CurrentPower(c) <= value));
+                break;
+        }
+    }
+
+    private void CloseAttackDecisionWindow()
+    {
+        _attackDecisionKind = AttackDecisionKind.None;
+        _attackDecisionSource = null;
+        _attackDecisionValue = 0;
+        _attackDecisionTargets.Clear();
+        ResumePausedAttack();
+    }
+
+    private void ResumePausedAttack()
+    {
+        var continuation = _attackContinuation;
+        _attackContinuation = null;
+        continuation?.Invoke();
     }
 
     /// <summary>Common tap-creature validations shared by the decision-based activations.</summary>
@@ -1070,7 +1349,6 @@ public sealed class DuelGame
     {
         ValidatePlayerAttack(attackerIndex);
         var active = ActivePlayer;
-        var defender = Opponent;
         var attacker = active.BattleZone[attackerIndex];
 
         attacker.IsTapped = true;
@@ -1078,6 +1356,28 @@ public sealed class DuelGame
         _hasAttackedThisTurn = true;
 
         ResolveAttackTriggers(attacker);
+
+        // A "you may ..." attack trigger paused the attack. Remember exactly where
+        // it stopped and let <see cref="CloseAttackDecisionWindow"/> resume it once
+        // the attacker answers or declines.
+        if (AttackDecisionWindowActive)
+        {
+            _attackContinuation = () => ResolvePlayerAttackAgainst(attacker, blockerOwner, blockerIndex);
+            return;
+        }
+
+        ResolvePlayerAttackAgainst(attacker, blockerOwner, blockerIndex);
+    }
+
+    /// <summary>
+    /// The part of a player attack that runs after the attack triggers: deal with a
+    /// blocker, win on an empty shield zone, or break shields (resolving the
+    /// shield-trigger window and any unblocked triggers).
+    /// </summary>
+    private void ResolvePlayerAttackAgainst(CardInstance attacker, Player? blockerOwner, int? blockerIndex)
+    {
+        var active = attacker.Owner!;
+        var defender = OpponentOf(active);
 
         if (blockerOwner is not null && blockerIndex is int bIdx)
         {
@@ -1150,6 +1450,19 @@ public sealed class DuelGame
 
         ResolveAttackTriggers(attacker);
 
+        // A "you may ..." attack trigger paused the attack; the battle resumes once
+        // the attacker answers or declines. The answer may have destroyed the target
+        // (Slaphappy on a small defender), in which case the battle simply fizzles.
+        if (AttackDecisionWindowActive)
+        {
+            _attackContinuation = () =>
+            {
+                if (target.Zone == Zone.BattleZone)
+                    Battle(attacker, target);
+            };
+            return;
+        }
+
         Battle(attacker, target);
     }
 
@@ -1203,6 +1516,21 @@ public sealed class DuelGame
                 case EffectId.AttackTrigger_OpponentDiscardsHand:
                     DiscardEntireHand(Opponent);
                     break;
+                case EffectId.AttackTrigger_MayLookAtShields
+                    when !AttackDecisionWindowActive
+                         && attacker.Owner is not null
+                         && OpponentOf(attacker.Owner).ShieldCount > 0:
+                    OpenAttackDecision(AttackDecisionKind.LookAtShields, attacker, Math.Max(1, e.Value));
+                    break;
+                case EffectId.AttackTrigger_MaySearchToHand when !AttackDecisionWindowActive:
+                    OpenAttackDecision(AttackDecisionKind.SearchToHand, attacker);
+                    break;
+                case EffectId.AttackTrigger_MayDestroyPowerAtMost
+                    when !AttackDecisionWindowActive
+                         && attacker.Owner is not null
+                         && OpponentOf(attacker.Owner).BattleZone.Any(c => CurrentPower(c) <= e.Value):
+                    OpenAttackDecision(AttackDecisionKind.DestroyPowerAtMost, attacker, e.Value);
+                    break;
             }
         }
     }
@@ -1220,6 +1548,12 @@ public sealed class DuelGame
                         if (!ReferenceEquals(c, attacker))
                             c.Untap();
                     }
+                    break;
+                case EffectId.AttackTrigger_UnblockedMayDestroy
+                    when !AttackDecisionWindowActive
+                         && attacker.Owner is not null
+                         && (Player1.BattleZone.Count + Player2.BattleZone.Count) > 0:
+                    OpenAttackDecision(AttackDecisionKind.DestroyCreature, attacker);
                     break;
             }
         }
@@ -1348,10 +1682,46 @@ public int ReadyBlockerChoices(int attackerIndex)
         return broken;
     }
 
-    /// <summary>How many shields one hit from this creature breaks (printed plus temporary keywords).</summary>
-    private static int BreakerCount(CardInstance attacker) =>
-        attacker.HasKeywordNow(Keyword.TripleBreaker) ? 3 :
-        attacker.HasKeywordNow(Keyword.DoubleBreaker) ? 2 : 1;
+    /// <summary>
+    /// How many shields one hit from this creature breaks (printed plus temporary
+    /// keywords). DM-06 Crew Breaker rides on top: an extra shield for every other
+    /// creature the attacker's controller has of the rider's race.
+    /// </summary>
+    private int BreakerCount(CardInstance attacker)
+    {
+        var count = attacker.HasKeywordNow(Keyword.TripleBreaker) ? 3 :
+            attacker.HasKeywordNow(Keyword.DoubleBreaker) ? 2 : 1;
+        foreach (var eff in attacker.Card.Effects)
+        {
+            if (eff.Id == EffectId.Breaker_PerOtherRace)
+                count += CountCrewBreakerOthers(attacker, eff);
+        }
+        return count;
+    }
+
+    /// <summary>Other creatures the attacker's controller has that feed one Crew Breaker rider.</summary>
+    private static int CountCrewBreakerOthers(CardInstance attacker, CardEffect eff)
+    {
+        var owner = attacker.Owner;
+        if (owner is null)
+            return 0;
+        var count = 0;
+        foreach (var other in owner.BattleZone)
+        {
+            if (ReferenceEquals(other, attacker))
+                continue;
+            if (string.IsNullOrWhiteSpace(eff.Data))
+            {
+                if (RaceMatches(other.Card.Race, attacker.Card.Race))
+                    count++;
+            }
+            else if (RaceMatches(other.Card.Race, eff.Data))
+            {
+                count++;
+            }
+        }
+        return count;
+    }
 
     /// <summary>
     /// Every broken shield is added to the defender's hand. Shields carrying the
@@ -2241,6 +2611,8 @@ public int ReadyBlockerChoices(int attackerIndex)
 
     private void EnsureScryWindowClosed()
     {
+        if (AttackDecisionWindowActive)
+            throw new RuleViolationException("Answer the pending 'may' choice before taking another action.");
         if (IsScryWindowActive)
             throw new RuleViolationException("Choose the deck order for the tap ability before taking another action.");
     }

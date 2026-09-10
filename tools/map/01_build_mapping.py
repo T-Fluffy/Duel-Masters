@@ -102,6 +102,10 @@ TEMPLATE_KEYWORDS = {
 POWER_ATTACKER_TPL = re.compile(r"\{\{Power Attacker\|(\d+)\}\}", re.I)
 STEALTH_TPL = re.compile(r"\{\{Stealth\|(\w+)\}\}", re.I)
 NESTED_SURVIVOR = re.compile(r"^\{\{Survivor\|\|(?:\{\{([A-Za-z ]+)\|dotless\}\})\}\}$")
+CREW_BREAKER_TPL = re.compile(r"\{\{Crew Breaker\|([A-Za-z ]+)\}\}", re.I)
+CREW_CLAUSE = re.compile(
+    r"^each of your (light|water|fire|darkness|nature) creatures may tap instead of "
+    r"attacking to use this creature'?s (?:\{\{Tap\}\} )?ability\.?$", re.I)
 
 
 def extract_power_attacker(text: str):
@@ -188,6 +192,20 @@ def _rules():
     rule("BlockedBreaksShield",
          r"^whenever this creature is attacking your opponent and becomes blocked,? it breaks one of your opponent'?s shields?\.?$",
          lambda m, t: ([], [E("BlockedTrigger_BreakOneShield")], None, None))
+
+    # ----- DM-08 "may"-gated attack-trigger choices (crew-family decisions)
+    rule("MayLookAtShields",
+         r"^when(?:ever)? this creature attacks,?(?: you may)? look at (\d+) of your opponent'?s shields?\. then put them back(?: where they were)?\.?$",
+         lambda m, t: ([], [E("AttackTrigger_MayLookAtShields", v=int(m.group(1)))], None, None))
+    rule("MaySearchToHand",
+         r"^when(?:ever)? this creature attacks,? search your deck\. you may take a (?:card|creature)(?: from your deck)?,? and put it into your hand\. then shuffle your deck\.?$",
+         lambda m, t: ([], [E("AttackTrigger_MaySearchToHand")], None, None))
+    rule("MayUnblockedDestroy",
+         r"^whenever this creature is attacking your opponent and isn'?t blocked,?(?: you may)? destroy a creature\.?$",
+         lambda m, t: ([], [E("AttackTrigger_UnblockedMayDestroy")], None, None))
+    rule("MayDestroyPowerAtMost",
+         r"^whenever this creature attacks,?(?: you may)? destroy (?:one of your opponent'?s creatures?|1 of your opponent'?s creatures?|a creature) that has(?: power)? (\d+) or less\.?$",
+         lambda m, t: ([], [E("AttackTrigger_MayDestroyPowerAtMost", v=int(m.group(1)))], None, None))
 
     # ----- evolution
     rule("EvoDragon", r"^evolution[\u2014\-]put on one of your creatures that has ([A-Za-z ]+) in its race\.?$",
@@ -311,6 +329,7 @@ def _tap_rules():
         return fn
 
     tap("DrawN", r"^draw (\d+) cards?\.?$", lambda m, t: E("Tap_Draw", v=int(m.group(1))))
+    tap("DrawA", r"^draw a card\.?$", lambda m, t: E("Tap_Draw", v=1))
     tap("ReturnAny", r"^choose a creature in the battle zone and return it to its owner's hand\.?$",
         lambda m, t: E("Tap_ReturnToHand", t="AnyCreature"))
     tap("TapOpp", r"^choose one of your opponent's creatures in the battle zone and tap it\.?$",
@@ -515,6 +534,7 @@ def main():
         raw = card.get("engtext") or ""
         keywords, effects, tap_abilities, notes = [], [], [], []
         evo = None
+        crew = None
         handled_lines = 0
 
         for line in (norm_line(x) for x in raw.split("\n")):
@@ -556,6 +576,22 @@ def main():
                     add_note(notes, note)
                 continue
 
+            # Crew: "Each of your {civ} creatures may tap instead of attacking to
+            # use this creature's {{Tap}} ability." -> remember the civilization;
+            # the ":{{Tap}} body" line for the same card becomes the tap ability.
+            cm = CREW_CLAUSE.match(line)
+            if cm:
+                crew = cm.group(1).title()
+                handled_lines += 1
+                continue
+
+            # Crew Breaker: {{Crew Breaker|Race}} -> break extra shields for each
+            # other creature of that race (extra unanswered attackers).
+            cb_m = CREW_BREAKER_TPL.search(line)
+            if cb_m:
+                effects.append(E("Breaker_PerOtherRace", d=cb_m.group(1).strip()))
+                line = CREW_BREAKER_TPL.sub(" ", line)
+
             for templ_note in ("{{Tap Ability", "{{Turbo Rush", "{{Crew Breaker", "use this creature's {{Tap}} ability",
                                "use this creature's ability"):
                 if templ_note in line:
@@ -581,6 +617,18 @@ def main():
 
             rest = rest.strip()
             if not rest:
+                handled_lines += 1
+                continue
+
+            # Crew cards: ":{{Tap}} body" lines carry the activated tap ability.
+            if crew and rest.startswith(":"):
+                body = rest.lstrip(":").strip()
+                eff = map_tap_body(body)
+                if eff is None:
+                    add_note(notes, "tap ability not modelled")
+                    tap_abilities.append(E("Tap_NotModelled", d=body[:64]))
+                else:
+                    tap_abilities.append(eff)
                 handled_lines += 1
                 continue
 
@@ -612,7 +660,7 @@ def main():
                 evo = "Dragon"
 
         mapping.append({"id": card["id"], "keywords": keywords, "effects": effects,
-                        "tapAbilities": tap_abilities,
+                        "tapAbilities": tap_abilities, "crew": crew,
                         "evolutionOf": evo, "note": "; ".join(notes) if notes else None,
                         "src": raw})
 

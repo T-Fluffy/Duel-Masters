@@ -117,6 +117,22 @@ internal static class CardFactory
             System.Array.Empty<CardEffect>(), "", ability);
     }
 
+    /// <summary>DM-06 Crew card: a tap ability that any own creature of <paramref name="crewCiv"/> may pay.</summary>
+    public static Card CrewCard(
+        int cost,
+        int power,
+        Civilization civ,
+        string name,
+        string crewCiv,
+        CardEffect? tapAbility = null)
+    {
+        var n = string.IsNullOrWhiteSpace(name) ? $"Crew-{++_serial}" : name;
+        var ability = tapAbility is null ? new[] { new CardEffect(EffectId.Tap_NotModelled, EffectTargetScope.None) }
+                                         : new[] { tapAbility };
+        return new Card($"c{++_serial}", n, civ, CardType.Creature, cost, power, "R", System.Array.Empty<Keyword>(),
+            System.Array.Empty<CardEffect>(), "", ability, crewCiv);
+    }
+
     /// <summary>Shorthand for authoring <see cref="CardEffect"/> in tests.</summary>
     public static CardEffect Eff(EffectId id, EffectTargetScope target = EffectTargetScope.None, int value = 0, string data = "")
         => new(id, target, value, data);

@@ -118,6 +118,24 @@ public enum EffectId
     /// <summary>When this creature attacks the opponent and becomes blocked, it breaks one of the opponent's shields.</summary>
     BlockedTrigger_BreakOneShield = 710,
 
+    /// <summary>
+    /// Combat rider (DM-06 Crew Breaker): this creature breaks an additional shield
+    /// for each other creature you control that has race {Data}. Fires on every hit.
+    /// </summary>
+    Breaker_PerOtherRace = 711,
+
+    /// <summary>When this creature attacks, you may look at {Value} of the opponent's shields. Then put them back where they were.</summary>
+    AttackTrigger_MayLookAtShields = 712,
+
+    /// <summary>When this creature attacks, you may search your deck, take a card into your hand, and shuffle.</summary>
+    AttackTrigger_MaySearchToHand = 713,
+
+    /// <summary>When this creature attacks the opponent and is not blocked, you may destroy a creature.</summary>
+    AttackTrigger_UnblockedMayDestroy = 714,
+
+    /// <summary>When this creature attacks, you may destroy one of the opponent's creatures that has power {Value} or less.</summary>
+    AttackTrigger_MayDestroyPowerAtMost = 715,
+
     // ------------------------------------------------------- cost modifiers
 
     /// <summary>Each {Data} creature costs {Value} more to summon (global).</summary>

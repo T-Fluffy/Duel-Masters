@@ -83,7 +83,7 @@ public partial class NetworkArena : Control
 	private CenterContainer _overlayCenter = null!;
 	private PanelContainer _overlayPanel = null!;
 	private VBoxContainer _overlayBox = null!;
-	private enum OverlayKind { None, Look, Trigger }
+	private enum OverlayKind { None, Look, Trigger, Decision }
 	private OverlayKind _overlayKind = OverlayKind.None;
 
 	// Scry window ("look at the top N cards, then put them back in any order").
@@ -100,6 +100,11 @@ public partial class NetworkArena : Control
 	private bool _winnerShown;
 	private int _prevOppShieldCount = -1;
 	private int _prevMyShieldCount = -1;
+
+	// Attack-decision overlay ("you may ..." attack triggers): picked shields for a
+	// shield-look choice and the confirm button that submits them.
+	private readonly List<int> _decisionShieldPicks = new();
+	private Button? _decisionShieldConfirm;
 
 	public override void _Ready()
 	{
@@ -515,6 +520,84 @@ public partial class NetworkArena : Control
 				}
 			});
 		}
+
+		// A crew creature may have its tap paid by any eligible own creature (the
+		// server lists the payer indices in the battle-zone snapshot).
+		if (attacker.HasCrew && attacker.CrewPayerIndices.Count > 0)
+		{
+			AddAction("Use crew ability", () => SelectCrewPayer(attackerIndex, attacker));
+		}
+	}
+
+	private void SelectCrewPayer(int attackerIndex, CardState attacker)
+	{
+		_mode = Mode.SelectTapTarget;
+		_tapCreatureIndex = attackerIndex;
+		ClearActions();
+		Prompt("Choose the creature that pays the crew tap, or press Esc to cancel.");
+		var me = Me();
+		foreach (var payerIndex in attacker.CrewPayerIndices)
+		{
+			if (payerIndex < 0 || payerIndex >= me.BattleZone.Count)
+				continue;
+			var payer = me.BattleZone[payerIndex];
+			var caption = ReferenceEquals(payer, attacker)
+				? $"Pay itself ({payer.Name})"
+				: $"Pay with {payer.Name}";
+			AddAction(caption, () =>
+			{
+				ResolveCrewWith(attackerIndex, attacker, payerIndex);
+			});
+		}
+		AddAction("Cancel", () =>
+		{
+			ResetInteraction();
+			Prompt("");
+		});
+	}
+
+	private void ResolveCrewWith(int attackerIndex, CardState attacker, int payerIndex)
+	{
+		switch (attacker.TapDecisionKind)
+		{
+			case "shield":
+			case "scry":
+				Notice($"{attacker.Name}'s crew ability needs a decision that is not modelled yet.");
+				return;
+		}
+		if (attacker.TapAbilityRaces is { Count: > 0 } races)
+		{
+			_mode = Mode.SelectTapTarget;
+			_tapCreatureIndex = attackerIndex;
+			ClearActions();
+			Prompt($"Choose a race for {attacker.Name}'s crew ability, or press Esc to cancel.");
+			foreach (var race in races)
+				AddAction(race, () => NetworkClient.ActivateCrewAbilityRace(attackerIndex, payerIndex, race));
+			AddAction("Cancel", () =>
+			{
+				ResetInteraction();
+				Prompt("");
+			});
+			return;
+		}
+		if (attacker.TapAbilityTargets is { Count: > 0 } targets)
+		{
+			_mode = Mode.SelectTapTarget;
+			_tapCreatureIndex = attackerIndex;
+			ClearActions();
+			Prompt($"Choose the target for {attacker.Name}'s crew ability, or press Esc to cancel.");
+			foreach (var target in targets)
+				AddAction(target.Label, () => NetworkClient.ActivateCrewAbilityTargeted(
+					attackerIndex, payerIndex, target.Side, target.Index));
+			AddAction("Cancel", () =>
+			{
+				ResetInteraction();
+				Prompt("");
+			});
+			return;
+		}
+		NetworkClient.ActivateCrewAbility(attackerIndex, payerIndex);
+		ResetInteraction();
 	}
 
 	private void SelectShieldLook(int creatureIndex, CardState attacker)
@@ -913,6 +996,7 @@ public partial class NetworkArena : Control
 		SyncContextualUiScryGate();
 		SyncShieldTriggerPopup();
 		SyncScryPopup();
+		SyncAttackDecisionPopup();
 		RefreshFx();
 	}
 
@@ -1062,6 +1146,129 @@ public partial class NetworkArena : Control
 			Prompt("Shield triggers left in hand.");
 		};
 		_overlayBox.AddChild(leave);
+	}
+
+	private bool DecisionWindowIsMine =>
+		_state is not null
+		&& _state.AttackDecisionWindowActive
+		&& string.Equals(_state.AttackDecisionOwnerSide, _state.YourSide, System.StringComparison.Ordinal);
+
+	private void SyncAttackDecisionPopup()
+	{
+		if (_state is null)
+			return;
+		if (!DecisionWindowIsMine)
+		{
+			if (_overlayKind == OverlayKind.Decision)
+				HideOverlay();
+			return;
+		}
+
+		for (var i = _overlayBox.GetChildCount() - 1; i >= 0; i--)
+			_overlayBox.GetChild(i).QueueFree();
+
+		_overlayKind = OverlayKind.Decision;
+		_overlay.Visible = true;
+		_decisionShieldPicks.Clear();
+		_decisionShieldConfirm = null;
+
+		var attackerCard = CardFor(Me().BattleZone.FirstOrDefault(c => c.AttackDecisionPending)
+			?? Me().BattleZone.FirstOrDefault());
+		var attackerName = attackerCard?.Name ?? "a creature";
+		var kind = _state.AttackDecisionKind;
+
+		switch (kind)
+		{
+			case "searchToHand":
+				SetOverlayBoxTitle($"{attackerName}: you may search your deck");
+				SetOverlayBoxNote("The strongest card is taken, then the deck is shuffled.");
+				var take = new Button { Text = "Take the card (put it into your hand)" };
+				take.Pressed += () =>
+				{
+					NetworkClient.AttackDecisionAccept(Array.Empty<int>());
+					HideOverlay();
+				};
+				_overlayBox.AddChild(take);
+				break;
+
+			case "lookAtShields":
+			{
+				var need = _state.AttackDecisionShieldCount;
+				var defender = Opp();
+				SetOverlayBoxTitle($"{attackerName}: you may look at shields");
+				SetOverlayBoxNote($"Choose {need} of {defender.Name}'s shields to look at.");
+
+				var toggles = new List<Button>();
+				for (var i = 0; i < defender.ShieldCount; i++)
+				{
+					var shieldIndex = i;
+					var shieldToggle = new Button { Text = $"Shield {i + 1}", ToggleMode = true };
+					shieldToggle.Toggled += on =>
+					{
+						if (on)
+						{
+							if (!_decisionShieldPicks.Contains(shieldIndex))
+								_decisionShieldPicks.Add(shieldIndex);
+						}
+						else
+							_decisionShieldPicks.Remove(shieldIndex);
+						if (_decisionShieldConfirm is not null)
+							_decisionShieldConfirm.Disabled = _decisionShieldPicks.Count != need;
+					};
+					toggles.Add(shieldToggle);
+					_overlayBox.AddChild(shieldToggle);
+				}
+
+				var confirm = new Button { Text = $"Look at the {need} picked", Disabled = true };
+				_decisionShieldConfirm = confirm;
+				confirm.Pressed += () =>
+				{
+					if (_decisionShieldPicks.Count != need)
+						return;
+					NetworkClient.AttackDecisionAccept(_decisionShieldPicks.ToArray());
+					_decisionShieldPicks.Clear();
+					HideOverlay();
+					Prompt($"{defender.Name}'s shields revealed.");
+				};
+				_overlayBox.AddChild(confirm);
+				break;
+			}
+
+			case "destroyCreature":
+			case "destroyPowerAtMost":
+				SetOverlayBoxTitle($"{attackerName}: you may destroy a creature");
+				if (_state.AttackDecisionTargets.Count == 0)
+				{
+					SetOverlayBoxNote("There is nothing to destroy.");
+				}
+				else
+				{
+					SetOverlayBoxNote("Choose the creature to destroy.");
+					foreach (var target in _state.AttackDecisionTargets)
+					{
+						var btn = new Button { Text = $"Destroy {target.Label}" };
+						btn.Pressed += () =>
+						{
+							NetworkClient.AttackDecisionAcceptTargeted(target.Side, target.Index);
+							HideOverlay();
+						};
+						_overlayBox.AddChild(btn);
+					}
+				}
+				break;
+
+			default:
+				SetOverlayBoxTitle($"{attackerName}: resolve the pending effect");
+				break;
+		}
+
+		var skip = new Button { Text = "Don't use it" };
+		skip.Pressed += () =>
+		{
+			NetworkClient.AttackDecisionDecline();
+			HideOverlay();
+		};
+		_overlayBox.AddChild(skip);
 	}
 
 	private bool ScryWindowIsMine =>

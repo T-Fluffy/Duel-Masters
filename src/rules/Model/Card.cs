@@ -22,7 +22,8 @@ public sealed class Card
         IEnumerable<Keyword> keywords = null!,
         IEnumerable<CardEffect> effects = null!,
         string evolutionOf = "",
-        IEnumerable<CardEffect> tapAbilities = null!)
+        IEnumerable<CardEffect> tapAbilities = null!,
+        string? crewCivilization = null)
     {
         Id = id ?? throw new ArgumentNullException(nameof(id));
         Name = name ?? throw new ArgumentNullException(nameof(name));
@@ -35,6 +36,7 @@ public sealed class Card
         Effects = effects as IReadOnlyList<CardEffect> ?? (effects ?? Array.Empty<CardEffect>()).ToArray();
         TapAbilities = tapAbilities as IReadOnlyList<CardEffect> ?? (tapAbilities ?? Array.Empty<CardEffect>()).ToArray();
         EvolutionOf = evolutionOf ?? "";
+        CrewCivilization = crewCivilization;
     }
 
     public string Id { get; }
@@ -73,6 +75,17 @@ public sealed class Card
 
     /// <summary>True for an Evolution creature that carries real evolution rules.</summary>
     public bool IsEvolution => CardType == CardType.EvolutionCreature && !string.IsNullOrWhiteSpace(EvolutionOf);
+
+    /// <summary>
+    /// DM-06 "Crew" clause: any creature the player controls that has this
+    /// civilization may tap instead of attacking to activate this card's tap
+    /// ability (the card itself always may too). Null when the card has no crew
+    /// clause.
+    /// </summary>
+    public string? CrewCivilization { get; }
+
+    /// <summary>True when this card carries a Crew clause widening its tap ability's payer set.</summary>
+    public bool HasCrew => !string.IsNullOrWhiteSpace(CrewCivilization);
 
     /// <summary>How many shields one hit from this card breaks (1 normally).</summary>
     public int BreakerCount =>

@@ -17,6 +17,10 @@ public enum AiStepKind
     /// shield-trigger window. The attacker's turn is paused until that side resolves
     /// it; call <see cref="Step"/> again afterwards.</summary>
     WaitingOnShieldTriggers,
+    /// <summary>The AI's attack opened a "you may ..." choice for the DEFENDER (an
+    /// interactive opponent answering a may-choice). The turn pauses until they
+    /// resolve it; call <see cref="Step"/> again afterwards.</summary>
+    WaitingOnAttackDecision,
     /// <summary>The AI has no more actions; the caller should end its turn.</summary>
     TurnEnded,
 }
@@ -58,6 +62,17 @@ public sealed class AiController
             throw new InvalidOperationException("AI step called outside its own turn.");
         if (game.Phase != GamePhase.Main)
             throw new InvalidOperationException($"AI step called during {game.Phase}, expected {GamePhase.Main}.");
+
+        // A "you may ..." attack-trigger choice pauses the attacker's turn mid-attack.
+        // The AI resolves its own windows; the defender's window pauses the turn and
+        // is reported to the caller so the interactive side (or the other AI) decides.
+        if (game.AttackDecisionWindowActive)
+        {
+            if (ReferenceEquals(game.AttackDecisionSource?.Owner, Self))
+                ResolveAttackDecision(game);
+            else
+                return new AiStep(AiStepKind.WaitingOnAttackDecision, -1);
+        }
 
         // A shield-trigger window interrupts the attacker's turn. Resolve the AI's
         // own windows here; otherwise report the pause to the caller.
@@ -104,7 +119,13 @@ public sealed class AiController
 
         // 3) Use tap abilities before attacking: deck keeps flowing (draw/charge),
         //    removal softens the foe, and grants set up the attack wave. The engine
-        //    forbids using them after the first attack this turn.
+        //    forbids using them after the first attack this turn. Crew abilities are
+        //    tried first so the AI can spend a clan creature instead of the holder.
+        if (!game.HasAttackedThisTurn && TryChooseCrewAbility(game, out var crewIdx, out var crewPayer, out var crewTargets, out var crewRace))
+        {
+            game.ActivateCrewAbility(crewIdx, crewPayer, Self, crewTargets, crewRace);
+            return new AiStep(AiStepKind.ActionTaken, -1);
+        }
         if (!game.HasAttackedThisTurn && TryChooseTapAbility(game, out var tapCreatureIndex, out var tapTargets, out var tapRace))
         {
             game.ActivateTapAbility(tapCreatureIndex, Self, tapTargets, tapRace);
@@ -143,6 +164,15 @@ public sealed class AiController
         var steps = 0;
         while (!game.IsGameOver && game.Phase == GamePhase.Main && steps++ < 200)
         {
+            if (game.AttackDecisionWindowActive)
+            {
+                if (ReferenceEquals(game.AttackDecisionSource?.Owner, Self))
+                    ResolveAttackDecision(game);
+                else
+                    break; // the defender must answer before this turn can continue
+                continue;
+            }
+
             if (game.IsScryWindowActive)
             {
                 // The AI never opens a scry window (its owner's "look at top N"
@@ -180,6 +210,44 @@ public sealed class AiController
         {
             game.EndMainPhase();
             game.EndTurn();
+        }
+    }
+
+    /// <summary>
+    /// Resolve the AI's own pending "you may ..." attack-trigger choice
+    /// deterministically: free deck searches and cost-free shield peeks are always
+    /// taken, destroy choices aim at the defender's strongest legal creature (and
+    /// are declined when no enemy creature is a legal target).
+    /// </summary>
+    private void ResolveAttackDecision(DuelGame game)
+    {
+        int IndexOf(CardInstance c) => c.Owner!.BattleZone.IndexOf(c);
+
+        switch (game.PendingAttackDecision)
+        {
+            case DuelGame.AttackDecisionKind.SearchToHand:
+                game.AcceptAttackSearchToHand();
+                break;
+
+            case DuelGame.AttackDecisionKind.LookAtShields:
+                game.AcceptAttackLookAtShields(Enumerable.Range(0, game.AttackDecisionShieldCount).ToList());
+                break;
+
+            case DuelGame.AttackDecisionKind.DestroyCreature:
+            case DuelGame.AttackDecisionKind.DestroyPowerAtMost:
+                var targets = game.PendingAttackDecision == DuelGame.AttackDecisionKind.DestroyCreature
+                    ? game.AttackDecisionTargets.Where(t => ReferenceEquals(t.Owner, game.Opponent)).ToList()
+                    : game.AttackDecisionTargets.ToList();
+                var victim = targets.OrderByDescending(t => t.Card.Power + t.TempPower).FirstOrDefault();
+                if (victim is not null)
+                    game.AcceptAttackDestroy(victim.Owner!, IndexOf(victim));
+                else
+                    game.DeclineAttackDecision();
+                break;
+
+            default:
+                game.DeclineAttackDecision();
+                break;
         }
     }
 
@@ -724,82 +792,11 @@ private bool TryChooseSpellPlay(DuelGame game, int handIndex, out IReadOnlyList<
                 continue;
             foreach (var eff in creature.Card.TapAbilities.Where(e => e.Target == EffectTargetScope.None))
             {
-                switch (eff.Id)
+                if (UseThisUntargetedTapAbility(game, eff, out var chosenRace))
                 {
-                    case EffectId.Tap_Draw:
-                    case EffectId.Tap_ChargeMana:
-                        creatureIndex = i;
-                        return true;
-                    case EffectId.Tap_HandToMana
-                        when eff.Value > 0 && Self.Hand.Count > 0:
-                        creatureIndex = i;
-                        return true;
-                    case EffectId.Tap_GraveToMana
-                        when eff.Value > 0 && Self.Graveyard.Count > 0:
-                        creatureIndex = i;
-                        return true;
-                    case EffectId.Tap_GrantOwnCivPowerDoubleBreakerDestroyEot
-                        when Self.BattleZone.Any(c => CivOf(c.Card, eff.Data)):
-                        creatureIndex = i;
-                        return true;
-                    case EffectId.Tap_DiscardRandom when foe.Hand.Count >= 2:
-                        creatureIndex = i;
-                        return true;
-                    case EffectId.Tap_GrantUnblockableCivEot
-                        when Self.BattleZone.Any(c => CivOf(c.Card, eff.Data)):
-                        creatureIndex = i;
-                        return true;
-                    case EffectId.Tap_GrantCanAttackUntappedCivEot
-                        when Self.BattleZone.Any(c => CivOf(c.Card, eff.Data))
-                             && foe.BattleZone.Any(c => !c.IsTapped):
-                        creatureIndex = i;
-                        return true;
-
-                    // Gandar: worth it when some of our creatures of that civ are
-                    // tapped now (they untap at the end of this turn to block).
-                    case EffectId.Tap_UntapOwnCivEot
-                        when Self.BattleZone.Any(c => CivOf(c.Card, eff.Data) && c.IsTapped):
-                        creatureIndex = i;
-                        return true;
-
-                    // Race-choosing abilities need a race picked out of the battle-zone
-                    // pool; they only fire when a beneficial race exists.
-                    case EffectId.Tap_ChooseRaceUntapEot when TryPickUntapRace(game, out var untapRace):
-                        creatureIndex = i;
-                        race = untapRace;
-                        return true;
-                    case EffectId.Tap_ChooseRaceGrantSlayerEot when TryPickSlayerRace(game, out var slayerRace):
-                        creatureIndex = i;
-                        race = slayerRace;
-                        return true;
-                    case EffectId.Tap_ChooseRaceToHandEot when TryPickProtectRace(game, out var protectRace):
-                        creatureIndex = i;
-                        race = protectRace;
-                        return true;
-                    case EffectId.Tap_ChooseRaceMustAttackPowerAttackerEot when TryPickAttackRace(game, out var attackRace):
-                        creatureIndex = i;
-                        race = attackRace;
-                        return true;
-                    case EffectId.Tap_ChooseRaceUnblockableByPowerEot when TryPickAttackRace(game, out var evasionRace):
-                        creatureIndex = i;
-                        race = evasionRace;
-                        return true;
-                    case EffectId.Tap_OpponentDestroysOwnCreature when foe.BattleZone.Count > 0:
-                        creatureIndex = i;
-                        return true;
-                    case EffectId.Tap_BlockBreaksShieldEot
-                        when Self.BattleZone.Any(c => CivOf(c.Card, eff.Data)):
-                        creatureIndex = i;
-                        return true;
-                    case EffectId.Tap_DeckSearchCreatureToHand
-                        when Self.Deck.Any(c => c.IsCreature):
-                        creatureIndex = i;
-                        return true;
-                    case EffectId.Tap_DeckSearchDragonSummonEotDestroy
-                        when Self.Deck.Any(c => c.IsCreature
-                            && c.Race.Contains(eff.Data, System.StringComparison.OrdinalIgnoreCase)):
-                        creatureIndex = i;
-                        return true;
+                    creatureIndex = i;
+                    race = chosenRace;
+                    return true;
                 }
             }
         }
@@ -821,6 +818,138 @@ private bool TryChooseSpellPlay(DuelGame game, int handIndex, out IReadOnlyList<
             }
         }
 
+        return false;
+    }
+
+    /// <summary>
+    /// Whether the AI would use one untargeted tap ability stood on its own. Shared
+    /// by the ordinary tap path and the Crew path so both evaluate the same guards.
+    /// </summary>
+    private bool UseThisUntargetedTapAbility(DuelGame game, CardEffect eff, out string? race)
+    {
+        race = null;
+        var foe = game.Opponent;
+        switch (eff.Id)
+        {
+            case EffectId.Tap_Draw:
+            case EffectId.Tap_ChargeMana:
+                return true;
+            case EffectId.Tap_HandToMana when eff.Value > 0 && Self.Hand.Count > 0:
+                return true;
+            case EffectId.Tap_GraveToMana when eff.Value > 0 && Self.Graveyard.Count > 0:
+                return true;
+            case EffectId.Tap_GrantOwnCivPowerDoubleBreakerDestroyEot
+                when Self.BattleZone.Any(c => CivOf(c.Card, eff.Data)):
+                return true;
+            case EffectId.Tap_DiscardRandom when foe.Hand.Count >= 2:
+                return true;
+            case EffectId.Tap_GrantUnblockableCivEot
+                when Self.BattleZone.Any(c => CivOf(c.Card, eff.Data)):
+                return true;
+            case EffectId.Tap_GrantCanAttackUntappedCivEot
+                when Self.BattleZone.Any(c => CivOf(c.Card, eff.Data))
+                     && foe.BattleZone.Any(c => !c.IsTapped):
+                return true;
+
+            // Gandar: worth it when some of our creatures of that civ are
+            // tapped now (they untap at the end of this turn to block).
+            case EffectId.Tap_UntapOwnCivEot
+                when Self.BattleZone.Any(c => CivOf(c.Card, eff.Data) && c.IsTapped):
+                return true;
+
+            // Race-choosing abilities need a race picked out of the battle-zone
+            // pool; they only fire when a beneficial race exists.
+            case EffectId.Tap_ChooseRaceUntapEot when TryPickUntapRace(game, out race):
+                return true;
+            case EffectId.Tap_ChooseRaceGrantSlayerEot when TryPickSlayerRace(game, out race):
+                return true;
+            case EffectId.Tap_ChooseRaceToHandEot when TryPickProtectRace(game, out race):
+                return true;
+            case EffectId.Tap_ChooseRaceMustAttackPowerAttackerEot when TryPickAttackRace(game, out race):
+                return true;
+            case EffectId.Tap_ChooseRaceUnblockableByPowerEot when TryPickAttackRace(game, out race):
+                return true;
+            case EffectId.Tap_OpponentDestroysOwnCreature when foe.BattleZone.Count > 0:
+                return true;
+            case EffectId.Tap_BlockBreaksShieldEot
+                when Self.BattleZone.Any(c => CivOf(c.Card, eff.Data)):
+                return true;
+            case EffectId.Tap_DeckSearchCreatureToHand
+                when Self.Deck.Any(c => c.IsCreature):
+                return true;
+            case EffectId.Tap_DeckSearchDragonSummonEotDestroy
+                when Self.Deck.Any(c => c.IsCreature
+                    && c.Race.Contains(eff.Data, System.StringComparison.OrdinalIgnoreCase)):
+                return true;
+            default:
+                return false;
+        }
+    }
+
+    /// <summary>
+    /// The best Crew ability the AI can pay for this turn, if any. Prefers paying
+    /// with a non-holder clan creature (the holder stays ready to attack) over the
+    /// holder itself, exactly mirroring the ordinary tap-ability heuristics.
+    /// </summary>
+    private bool TryChooseCrewAbility(DuelGame game, out int abilityIndex, out int payerIndex, out IReadOnlyList<SpellTarget>? targets, out string? race)
+    {
+        abilityIndex = -1;
+        payerIndex = -1;
+        targets = null;
+        race = null;
+        for (var i = 0; i < Self.BattleZone.Count; i++)
+        {
+            var ability = Self.BattleZone[i];
+            if (!ability.Card.HasCrew)
+                continue;
+            foreach (var eff in ability.Card.TapAbilities)
+            {
+                if (eff.Target == EffectTargetScope.None)
+                {
+                    if (!UseThisUntargetedTapAbility(game, eff, out var chosenRace))
+                        continue;
+                    if (TryPickCrewPayer(game, i, out payerIndex))
+                    {
+                        abilityIndex = i;
+                        race = chosenRace;
+                        return true;
+                    }
+                }
+                else if (TryChooseTapTarget(game, eff, out var owner, out var index)
+                         && TryPickCrewPayer(game, i, out payerIndex))
+                {
+                    abilityIndex = i;
+                    targets = new[] { new SpellTarget(owner, index) };
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    /// <summary>Pick the creature to tap for a Crew ability: any non-holder clan
+    /// creature first (keeping the holder ready), then the holder itself.</summary>
+    private bool TryPickCrewPayer(DuelGame game, int abilityIndex, out int payerIndex)
+    {
+        payerIndex = -1;
+        var ability = Self.BattleZone[abilityIndex];
+        if (!ability.Card.HasCrew)
+            return false;
+        for (var i = 0; i < Self.BattleZone.Count; i++)
+        {
+            if (i == abilityIndex)
+                continue;
+            if (game.CanUseCrewAbility(Self, abilityIndex, i))
+            {
+                payerIndex = i;
+                return true;
+            }
+        }
+        if (game.CanUseCrewAbility(Self, abilityIndex, abilityIndex))
+        {
+            payerIndex = abilityIndex;
+            return true;
+        }
         return false;
     }
 

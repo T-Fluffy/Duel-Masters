@@ -3404,7 +3404,13 @@
     "race": "Human",
     "imagePath": "res://assets/art/cards/DM-03/Cards/DM03_026.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "AttackTrigger_MayDestroyPowerAtMost",
+        "value": 2000
+      }
+    ]
   },
   {
     "id": "dm_03_041",
@@ -5773,7 +5779,14 @@
     "imagePath": "res://assets/art/cards/DM-06/Cards/DM06_090.jpg",
     "keywords": [],
     "scriptEffectId": "VANILLA",
-    "evolutionOf": "Guardian"
+    "evolutionOf": "Guardian",
+    "tapAbilities": [
+      {
+        "id": "Tap_TapOpponentCreature",
+        "target": "OpponentCreature"
+      }
+    ],
+    "crewCivilization": "Light"
   },
   {
     "id": "dm_06_013",
@@ -6089,7 +6102,14 @@
     "imagePath": "res://assets/art/cards/DM-06/Cards/DM06_059.jpg",
     "keywords": [],
     "scriptEffectId": "VANILLA",
-    "evolutionOf": "Cyber Cluster"
+    "evolutionOf": "Cyber Cluster",
+    "tapAbilities": [
+      {
+        "id": "Tap_Draw",
+        "value": 1
+      }
+    ],
+    "crewCivilization": "Water"
   },
   {
     "id": "dm_06_034",
@@ -6945,7 +6965,13 @@
     "imagePath": "res://assets/art/cards/DM-06/Cards/DM06_076.jpg",
     "keywords": [],
     "scriptEffectId": "VANILLA",
-    "evolutionOf": "Survivor"
+    "evolutionOf": "Survivor",
+    "effects": [
+      {
+        "id": "Breaker_PerOtherRace",
+        "data": "Survivor"
+      }
+    ]
   },
   {
     "id": "dm_06_087",
@@ -7243,7 +7269,13 @@
     "imagePath": "res://assets/art/cards/DM-06/Cards/DM06_052.jpg",
     "keywords": [],
     "scriptEffectId": "VANILLA",
-    "evolutionOf": "Colony Beetle"
+    "evolutionOf": "Colony Beetle",
+    "tapAbilities": [
+      {
+        "id": "Tap_ChargeMana"
+      }
+    ],
+    "crewCivilization": "Nature"
   },
   {
     "id": "dm_06_105",
@@ -7445,7 +7477,14 @@
     "imagePath": "res://assets/art/cards/DM-06/Cards/DM06_035.jpg",
     "keywords": [],
     "scriptEffectId": "VANILLA",
-    "evolutionOf": "Chimera"
+    "evolutionOf": "Chimera",
+    "tapAbilities": [
+      {
+        "id": "Tap_NotModelled",
+        "data": "Your opponent discards a card at random from his hand."
+      }
+    ],
+    "crewCivilization": "Darkness"
   },
   {
     "id": "dm_06_s07",
@@ -7474,7 +7513,14 @@
     "imagePath": "res://assets/art/cards/DM-06/Cards/DM06_024.jpg",
     "keywords": [],
     "scriptEffectId": "VANILLA",
-    "evolutionOf": "Dragonoid"
+    "evolutionOf": "Dragonoid",
+    "tapAbilities": [
+      {
+        "id": "Tap_NotModelled",
+        "data": "One of your fire creatures in the battle zone gets +3000 power u"
+      }
+    ],
+    "crewCivilization": "Fire"
   },
   {
     "id": "dm_06_s09",
@@ -8673,7 +8719,13 @@
     "race": "Initiate",
     "imagePath": "res://assets/art/cards/DM-08/Cards/DM08_004.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "AttackTrigger_MayLookAtShields",
+        "value": 2
+      }
+    ]
   },
   {
     "id": "dm_08_010",
@@ -8892,7 +8944,12 @@
     "race": "Sea Hacker",
     "imagePath": "res://assets/art/cards/DM-08/Cards/DM08_050.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "AttackTrigger_MaySearchToHand"
+      }
+    ]
   },
   {
     "id": "dm_08_025",
@@ -8965,7 +9022,12 @@
     "race": "Death Puppet",
     "imagePath": "res://assets/art/cards/DM-08/Cards/DM08_046.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "AttackTrigger_UnblockedMayDestroy"
+      }
+    ]
   },
   {
     "id": "dm_08_030",
@@ -9167,7 +9229,13 @@
     "race": "Dragonoid",
     "imagePath": "res://assets/art/cards/DM-08/Cards/DM08_041.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "AttackTrigger_MayDestroyPowerAtMost",
+        "value": 4000
+      }
+    ]
   },
   {
     "id": "dm_08_043",
