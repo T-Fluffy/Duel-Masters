@@ -3,8 +3,9 @@
 // Drives two real SignalR clients through the full online flow against a
 // running backend + PostgreSQL: registers a user, creates a saved deck via
 // /api/decks, hosts/joins a match with saved decks, then plays a scripted
-// game while asserting hand redaction, saved-deck usage, two-phase blocking
-// and general turn progression.
+// game while asserting hand redaction, saved-deck usage, two-phase blocking,
+// general turn progression, and the two decision tap abilities (Adomis
+// shield-look and Garatyano deck scry/reorder) end-to-end.
 //
 // Usage:
 //   dotnet run --project tests/DuelE2E
@@ -53,6 +54,13 @@ internal sealed class Bot
     public bool TriggerPlayed;
     public bool TriggerDeclined;
     public bool Evolved;
+    public bool HasDecisionTargets;
+    public bool PeekDone;
+    public bool ScryStarted;
+    public bool ScryDone;
+    public bool ScryWindowOwnerSeen;
+    public bool ScryWindowOpponentSeen;
+    public bool ScryClosedOk;
 }
 
 internal sealed class CardRule
@@ -71,10 +79,15 @@ internal static class Program
 {
     private static readonly string BaseUrl = Environment.GetEnvironmentVariable("E2E_BASE_URL") ?? "http://127.0.0.1:8080";
 
+    private const string AdomisId = "dm_06_011";
+    private const string GaratyanoId = "dm_07_021";
+
     private static readonly Dictionary<string, List<string>> HostDeck = BuildDeck(new[]
     {
-        "dm_01_009", "dm_01_003", "dm_01_008", "dm_01_002", "dm_02_005",
-        "dm_01_006", "dm_02_006", "dm_01_007", "dm_01_016", "dm_01_012",
+        // Light + Water mix so the deck can actually summon both decision
+        // creatures: Adomis (Light shield-look) and Garatyano (Water scry).
+        "dm_01_009", "dm_01_003", "dm_01_008", "dm_01_002", "dm_01_006",
+        "dm_01_016", "dm_01_023", "dm_01_025", AdomisId, GaratyanoId,
     });
     private static readonly Dictionary<string, List<string>> JoinerDeck = BuildDeck(new[]
     {
@@ -120,7 +133,7 @@ internal static class Program
             }
 
             // --- connections ---
-            var host = new Bot { Name = "E2E_Host", Conn = NewConnection() };
+            var host = new Bot { Name = "E2E_Host", Conn = NewConnection(), HasDecisionTargets = true };
             var joiner = new Bot { Name = "E2E_Joiner", Conn = NewConnection() };
             Wire(host);
             Wire(joiner);
@@ -208,6 +221,17 @@ internal static class Program
                     }
                 }
 
+                // Scry window: the host opened it with Garatyano; resolve it before
+                // any further actions (the engine gates everything while it is open).
+                if (sA.ScryWindowActive && host.ScryStarted && !host.ScryDone)
+                {
+                    if (await HandleScryAsync(host, joiner))
+                    {
+                        await BumpAsync(host, joiner);
+                        continue;
+                    }
+                }
+
                 // Pending block: the defender (non-active side) must block or pass.
                 var defender = activeSide == host.Side ? joiner : host;
                 var stD = GetLatest(defender);
@@ -275,6 +299,16 @@ internal static class Program
                 Info($"shield trigger windows seen (played={host.TriggerPlayed || joiner.TriggerPlayed}, declined={host.TriggerDeclined || joiner.TriggerDeclined})");
             else
                 Info("shield trigger window never seen (informational)");
+
+            if (host.PeekDone)
+                Info("shield-look (Adomis) exercised: peeked shield card returned face-up to the caller");
+            else
+                Failure("shield-look (Adomis) round-trip never completed");
+
+            if (host.ScryDone)
+                Info($"scry (Garatyano) exercised: owner saw {host.ScryWindowOwnerSeen}, opponent saw {joiner.ScryWindowOpponentSeen}, window closed {host.ScryClosedOk}");
+            else
+                Failure("scry (Garatyano) round-trip never completed");
 
             if (host.StateCount > 0 && joiner.StateCount > 0)
                 Info($"states received: host={host.StateCount} joiner={joiner.StateCount}");
@@ -364,6 +398,80 @@ internal static class Program
         return true;
     }
 
+    private static async Task<bool> HandleScryAsync(Bot owner, Bot foe)
+    {
+        var stO = owner.Latest;
+        if (stO is null || !stO.ScryWindowActive || stO.ScryOwnerSide != owner.Side)
+            return false;
+        var cards = stO.ScryCards;
+        if (cards.Count != 3 || cards.Any(c => c.CountOnly || string.IsNullOrEmpty(c.CardId) || string.IsNullOrEmpty(c.InstanceId)))
+        {
+            Failure($"scry window exposes bad cards to owner (count={cards.Count})");
+            return true;
+        }
+        owner.ScryWindowOwnerSeen = true;
+        Info($"scry (Garatyano) owner sees: {string.Join(", ", cards.Select(c => c.Name))}");
+
+        // The opponent must see the window active but never a single card.
+        var foeObserved = await WaitForScryWindowAsync(foe, 12);
+        var stF = foe.Latest;
+        if (!foeObserved || stF is null || stF.ScryOwnerSide != owner.Side || stF.ScryCards.Count != 0)
+            Failure("scry redaction broken: opponent never saw the active-but-empty window");
+        else
+        {
+            foe.ScryWindowOpponentSeen = true;
+            Info("scry (Garatyano) opponent sees only the active window (zero cards)");
+        }
+
+        // Reorder the deck and close the window using the "Scry:{i}" instance tokens.
+        var tokens = cards.Select(c => c.InstanceId).ToList();
+        tokens.Reverse();
+        try
+        {
+            await owner.Conn.InvokeCoreAsync(DuelContract.Hub.SubmitScryOrder, new object[] { tokens });
+            owner.LastEvent = DateTime.UtcNow;
+        }
+        catch (Exception ex)
+        {
+            Failure($"scry SubmitScryOrder invoke failed: {ex}");
+            return true;
+        }
+        if (await WaitForScryClosedAsync(owner, 12))
+        {
+            owner.ScryClosedOk = true;
+            owner.ScryDone = true;
+            Info("scry (Garatyano) reordered deck and the window closed");
+        }
+        else
+        {
+            Failure("scry window did not close after SubmitScryOrder");
+        }
+        return true;
+    }
+
+    private static async Task<bool> WaitForScryWindowAsync(Bot b, int timeoutSec)
+    {
+        var deadline = DateTime.UtcNow.AddSeconds(timeoutSec);
+        while (DateTime.UtcNow < deadline)
+        {
+            var s = b.Latest;
+            if (s is { ScryWindowActive: true } && !string.IsNullOrEmpty(s.ScryOwnerSide)) return true;
+            await Task.Delay(50);
+        }
+        return b.Latest is { ScryWindowActive: true };
+    }
+
+    private static async Task<bool> WaitForScryClosedAsync(Bot b, int timeoutSec)
+    {
+        var deadline = DateTime.UtcNow.AddSeconds(timeoutSec);
+        while (DateTime.UtcNow < deadline)
+        {
+            if (b.Latest is { ScryWindowActive: false }) return true;
+            await Task.Delay(50);
+        }
+        return false;
+    }
+
     private static async Task<bool> HandleBlockDecision(Bot b, DuelGameState st)
     {
         if (!st.AttackPending || st.YourTurn) return false;
@@ -390,6 +498,53 @@ internal static class Program
 
         if (st.AttackPending)
             return true;
+
+        // Decision tap abilities (host deck only): activate the shield-look and
+        // scry creatures as soon as they are ready, then keep playing normally.
+        bool IsTapTarget(CardState c) =>
+            b.HasDecisionTargets && (c.CardId == AdomisId || c.CardId == GaratyanoId);
+        if (b.HasDecisionTargets)
+        {
+            if (!b.PeekDone)
+            {
+                var aIdx = me.BattleZone.FindIndex(c =>
+                    c.CardId == AdomisId && c.HasTapAbility && c.CanUseTapAbility && c.TapDecisionKind == "shield");
+                if (aIdx >= 0 && me.ShieldCount > 0)
+                {
+                    CardState? peeked;
+                    try
+                    {
+                        peeked = await b.Conn.InvokeAsync<CardState?>(DuelContract.Hub.ActivateTapAbilityShield, aIdx, 0);
+                        b.LastEvent = DateTime.UtcNow;
+                    }
+                    catch (Exception ex)
+                    {
+                        Failure($"shield-look invoke failed: {ex}");
+                        peeked = null;
+                    }
+                    if (peeked is null || peeked.CountOnly || string.IsNullOrEmpty(peeked.Name))
+                        Failure($"shield-look returned nothing usable: null={peeked is null}");
+                    else
+                    {
+                        Info($"shield-look (Adomis) peeked shield[0] = {peeked.Name} ({peeked.CardId})");
+                        b.PeekDone = true;
+                    }
+                    return true;
+                }
+            }
+            if (!b.ScryDone && !b.ScryStarted)
+            {
+                var gIdx = me.BattleZone.FindIndex(c =>
+                    c.CardId == GaratyanoId && c.HasTapAbility && c.CanUseTapAbility && c.TapDecisionKind == "scry");
+                if (gIdx >= 0)
+                {
+                    await TryInvoke(b, DuelContract.Hub.ActivateTapAbilityScry, gIdx);
+                    b.ScryStarted = true;
+                    return true;
+                }
+            }
+        }
+
         var untappedByCiv = me.ManaZone
             .Where(c => !c.CountOnly && !c.IsTapped)
             .GroupBy(c => c.Civilization)
@@ -401,14 +556,31 @@ internal static class Program
 
         if (st.CanPlayMana && me.UntappedMana < 12)
         {
-            var cheapestCiv = me.Hand.Count == 0
-                ? null
-                : me.Hand.Where(c => !c.CountOnly).GroupBy(c => c.Civilization)
-                    .OrderBy(g => untappedByCiv.TryGetValue(g.Key, out var n) ? n : 0)
-                    .ThenByDescending(g => g.Count())
-                    .Select(g => g.Key).FirstOrDefault();
-            var i = me.Hand.FindIndex(c => !c.CountOnly &&
-                (cheapestCiv == null || string.Equals(c.Civilization, cheapestCiv, StringComparison.OrdinalIgnoreCase)));
+            // The host never burns its decision creatures as mana while other
+            // cards suffice, and it keeps both the Water (Garatyano) and the
+            // Light (Adomis) pools able to pay their costs once they are drawn.
+            var wantCiv = "Light";
+            if (b.HasDecisionTargets)
+            {
+                // Water up to 3 for Garatyano, then Light up to 3 for Adomis,
+                // then keep the two sides balanced so either can be summoned.
+                var water = untappedByCiv.TryGetValue("Water", out var w) ? w : 0;
+                var light = untappedByCiv.TryGetValue("Light", out var l) ? l : 0;
+                wantCiv = water < 3 ? "Water" : light < 3 ? "Light" : (water < light ? "Water" : "Light");
+            }
+            else
+            {
+                var cheapestCiv = me.Hand.Count == 0
+                    ? null
+                    : me.Hand.Where(c => !c.CountOnly).GroupBy(c => c.Civilization)
+                        .OrderBy(g => untappedByCiv.TryGetValue(g.Key, out var n) ? n : 0)
+                        .ThenByDescending(g => g.Count())
+                        .Select(g => g.Key).FirstOrDefault();
+                wantCiv = cheapestCiv ?? "Light";
+            }
+            var i = me.Hand.FindIndex(c => !c.CountOnly && !IsTapTarget(c) &&
+                string.Equals(c.Civilization, wantCiv, StringComparison.OrdinalIgnoreCase));
+            if (i < 0) i = me.Hand.FindIndex(c => !c.CountOnly && !IsTapTarget(c));
             if (i < 0) i = me.Hand.FindIndex(c => !c.CountOnly);
             if (i >= 0) { await TryInvoke(b, DuelContract.Hub.PlayMana, i); return true; }
         }
@@ -498,10 +670,10 @@ internal static class Program
 
     private static async Task BumpAsync(Bot a, Bot b2)
     {
-        await Task.WhenAll(
-            WaitForStateAsync(a, 6),
-            WaitForStateAsync(b2, 6));
-        await Task.Delay(120);
+        // Give the freshly invoked action time to arrive as a new broadcast; the
+        // loop re-reads each client's latest snapshot next iteration, so a brief
+        // fixed delay is all that is needed (the probe lived on the same pattern).
+        await Task.Delay(200);
     }
 
     private static async Task<bool> WaitForStateAsync(Bot b, int timeoutSec)
