@@ -132,13 +132,63 @@ public sealed class MatchRoom
     {
         lock (_gate)
         {
-            var rng = new Random();
-            var p1 = new Player(SideNames[DuelSide.Player1], BuildDeck(_hostDeckId, rng));
-            var p2 = new Player(SideNames[DuelSide.Player2], BuildDeck(_joinerDeckId, rng));
-            var game = new DuelGame(p1, p2, rng);
-            game.StartGame(shuffle: true);
-            _game = game;
-            Bot = IsBotSide(DuelSide.Player2) ? new MatchBot(this, p2, DuelSide.Player2) : null;
+            StartGameCore();
+        }
+    }
+
+    private void StartGameCore()
+    {
+        var rng = new Random();
+        var p1 = new Player(SideNames[DuelSide.Player1], BuildDeck(_hostDeckId, rng));
+        var p2 = new Player(SideNames[DuelSide.Player2], BuildDeck(_joinerDeckId, rng));
+        var game = new DuelGame(p1, p2, rng);
+        game.StartGame(shuffle: true);
+        _game = game;
+        _pendingAttackerIndex = null;
+        _pendingBlocksAvailable = 0;
+        _rematchRequested.Clear();
+        Bot = IsBotSide(DuelSide.Player2) ? new MatchBot(this, p2, DuelSide.Player2) : null;
+    }
+
+    private readonly Dictionary<string, bool> _rematchRequested = new();
+
+    /// <summary>
+    /// A seated human asks for a rematch of the finished match. The same two seats
+    /// (and their decks) start a fresh <see cref="DuelGame"/> as soon as both sides
+    /// have asked. A server-side bot always accepts, so a vs-AI rematch restarts on
+    /// the human's single request.
+    /// </summary>
+    public (bool Restarted, string? Error) RequestRematch(string side)
+    {
+        lock (_gate)
+        {
+            if (_game is null)
+                return (false, "The match has not started yet.");
+            if (!_game.IsGameOver)
+                return (false, "The match has not ended yet.");
+            if (!HasSecondPlayer)
+                return (false, "The match never got a second player.");
+            if (IsBotSide(side))
+                return (false, "The AI does not request rematches.");
+
+            _rematchRequested[side] = true;
+
+            var other = side == DuelSide.Player1 ? DuelSide.Player2 : DuelSide.Player1;
+            if (IsBotSide(other) || _rematchRequested.TryGetValue(other, out var ready) && ready)
+            {
+                StartGameCore();
+                return (true, null);
+            }
+            return (false, null); // waiting for the other side
+        }
+    }
+
+    /// <summary>Re-point a seat's SignalR transport after the occupant reconnects.</summary>
+    public void Reseat(string side, string connectionId)
+    {
+        lock (_gate)
+        {
+            SideConnections[side] = connectionId;
         }
     }
 

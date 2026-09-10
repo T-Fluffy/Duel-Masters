@@ -12,6 +12,8 @@ public static class DuelContract
     {
         public const string HostMatch = "HostMatch";
         public const string JoinMatch = "JoinMatch";
+        public const string RejoinMatch = "RejoinMatch";
+        public const string RequestRematch = "RequestRematch";
         public const string StartTurn = "StartTurn";
         public const string Draw = "Draw";
         public const string PlayMana = "PlayMana";

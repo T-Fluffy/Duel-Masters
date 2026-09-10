@@ -31,6 +31,10 @@ public sealed class DuelHub : Hub<IDuelClientContract>
     private const string GroupPrefix = "duel:";
     private static readonly ConcurrentDictionary<string, MatchRoom> ActiveMatches = new();
 
+    /// <summary>SignalR connection ids currently connected, so a seat can tell a
+    /// live opponent from a dropped one when deciding whether a rejoin is legal.</summary>
+    private static readonly ConcurrentDictionary<string, byte> LiveConnections = new();
+
     private const string CodeAlphabet = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
     private const int CodeLength = 6;
 
@@ -40,6 +44,29 @@ public sealed class DuelHub : Hub<IDuelClientContract>
     {
         _scopeFactory = scopeFactory;
     }
+
+    public override async Task OnConnectedAsync()
+    {
+        LiveConnections[Context.ConnectionId] = 0;
+        await base.OnConnectedAsync();
+    }
+
+    public override async Task OnDisconnectedAsync(Exception? exception)
+    {
+        LiveConnections.TryRemove(Context.ConnectionId, out _);
+        // Finished matches never get a second player back once both seats are gone:
+        // sweep them so code-joined lobbies do not pile up. In-progress matches are
+        // kept - a dropped side may reconnect and reclaim its seat via RejoinMatch.
+        foreach (var room in ActiveMatches.Values.ToList())
+        {
+            if (room.IsGameOver && !RoomHasLiveSeat(room))
+                ActiveMatches.TryRemove(room.Code, out _);
+        }
+        await base.OnDisconnectedAsync(exception);
+    }
+
+    private static bool RoomHasLiveSeat(MatchRoom room) =>
+        room.SideConnections.Keys.Any(side => !room.IsBotSide(side) && LiveConnections.ContainsKey(room.SideConnections[side]));
 
     // ------------------------------------------------------------ host / join
 
@@ -98,6 +125,94 @@ public sealed class DuelHub : Hub<IDuelClientContract>
             YourName = room.SideNames[DuelSide.Player2],
             OpponentName = room.SideNames[DuelSide.Player1],
         };
+    }
+
+    /// <summary>
+    /// Return to a match after the transport dropped: a new connection reclaims its
+    /// previous seat (validated against the still-live set) and is pushed a fresh
+    /// state. The opponent's flow is untouched; an in-progress match pauses where the
+    /// dropped side was expected until it rejoins.
+    /// </summary>
+    public async Task<MatchInfo?> RejoinMatch(string matchCode, string yourSide)
+    {
+        var code = matchCode?.Trim().ToUpperInvariant() ?? "";
+        if (!ActiveMatches.TryGetValue(code, out var room))
+        {
+            await Clients.Caller.ReceiveActionError("No match found with that code.");
+            return null;
+        }
+
+        var sideKey = yourSide is not null && string.Equals(yourSide, DuelSide.Player2, StringComparison.OrdinalIgnoreCase)
+            ? DuelSide.Player2
+            : yourSide is not null && string.Equals(yourSide, DuelSide.Player1, StringComparison.OrdinalIgnoreCase)
+                ? DuelSide.Player1
+                : null;
+        if (sideKey is null)
+        {
+            await Clients.Caller.ReceiveActionError("That side is not a valid seat in this match.");
+            return null;
+        }
+
+        if (!room.SideConnections.TryGetValue(sideKey, out var occupiedId) || room.IsBotSide(sideKey))
+        {
+            await Clients.Caller.ReceiveActionError("You have no seat in that match.");
+            return null;
+        }
+        if (string.Equals(occupiedId, Context.ConnectionId, StringComparison.Ordinal))
+        {
+            // Idempotent: already seated on this connection - just re-push the state.
+            await BroadcastState(room);
+            return new MatchInfo
+            {
+                MatchCode = code,
+                YourSide = sideKey,
+                YourName = room.SideNames[sideKey],
+                OpponentName = room.SideNames[sideKey == DuelSide.Player1 ? DuelSide.Player2 : DuelSide.Player1],
+            };
+        }
+        if (LiveConnections.ContainsKey(occupiedId))
+        {
+            await Clients.Caller.ReceiveActionError("Your seat is still occupied by an active connection.");
+            return null;
+        }
+
+        room.Reseat(sideKey, Context.ConnectionId);
+        await Groups.AddToGroupAsync(Context.ConnectionId, Group(code));
+        await BroadcastState(room);
+        return new MatchInfo
+        {
+            MatchCode = code,
+            YourSide = sideKey,
+            YourName = room.SideNames[sideKey],
+            OpponentName = room.SideNames[sideKey == DuelSide.Player1 ? DuelSide.Player2 : DuelSide.Player1],
+        };
+    }
+
+    /// <summary>
+    /// Ask for a rematch of the finished match. Returns true when this request
+    /// actually restarted the game (the second request of a human pair, or any
+    /// request in a vs-AI match); returns false when still waiting on the opponent.
+    /// </summary>
+    public async Task<bool> RequestRematch()
+    {
+        var mySide = ResolveSide(out var room);
+        if (room is null || mySide is null)
+        {
+            await Clients.Caller.ReceiveActionError("You are not in an active match.");
+            return false;
+        }
+        var (restarted, error) = room.RequestRematch(mySide);
+        if (error is not null)
+        {
+            await Clients.Caller.ReceiveActionError(error);
+            return false;
+        }
+        if (restarted)
+        {
+            await BroadcastState(room);
+            await MaybeAnnounceWinner(room);
+        }
+        return restarted;
     }
 
     // -------------------------------------------------------------- actions
@@ -657,7 +772,9 @@ public sealed class DuelHub : Hub<IDuelClientContract>
                 continue;
             await Clients.Client(connectionId).AnnounceWinner(winner);
         }
-        ActiveMatches.TryRemove(room.Code, out _);
+        // Keep the room around after a win: the seated players may ask for a rematch
+        // or a reconnect away and come back. Finished matches are swept once both
+        // human seats disconnect (OnDisconnectedAsync).
     }
 
     private async Task BroadcastMatchJoined(MatchRoom room)

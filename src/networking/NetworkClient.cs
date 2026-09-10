@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 using DuelMasters.Domain.Networking;
 using Microsoft.AspNetCore.SignalR.Client;
@@ -23,6 +24,7 @@ public static class NetworkClient
     private static readonly ConcurrentQueue<string> WinnerQueue = new();
     private static readonly ConcurrentQueue<MatchInfo> JoinedQueue = new();
     private static readonly ConcurrentQueue<CardState> PeekQueue = new();
+    private static int _rejoinGate;
 
     public static bool IsConnected { get; private set; }
 
@@ -54,6 +56,9 @@ public static class NetworkClient
         {
             CurrentState = state;
             StateQueue.Enqueue(state);
+            // A fresh game (rematch restart) clears the previous winner's ending.
+            if (!state.IsGameOver && state.TurnNumber == 1)
+                MatchEnded = false;
         });
         connection.On<string>(DuelContract.Client.ReceiveActionError, error => ErrorQueue.Enqueue(error));
         connection.On<string>(DuelContract.Client.AnnounceWinner, winner =>
@@ -67,6 +72,15 @@ public static class NetworkClient
             YourSide = info.YourSide;
             JoinedQueue.Enqueue(info);
         });
+        connection.Reconnected += _ =>
+        {
+            // SignalR resumes the same logical connection (new transport id). The
+            // server still holds our seat, so reclaim it so pushes resume routing.
+            if (Interlocked.CompareExchange(ref _rejoinGate, 1, 0) == 0
+                && !string.IsNullOrEmpty(MatchCode) && !string.IsNullOrEmpty(YourSide))
+                RejoinMatch(MatchCode, YourSide);
+            return Task.CompletedTask;
+        };
 
         connection.Closed += _ =>
         {
@@ -89,6 +103,7 @@ public static class NetworkClient
         YourSide = null;
         MatchEnded = false;
         CurrentState = null;
+        Interlocked.Exchange(ref _rejoinGate, 0);
     }
 
     // ------------------------------------------------------------- actions
@@ -99,6 +114,7 @@ public static class NetworkClient
             var info = await _connection!.InvokeAsync<MatchInfo>(DuelContract.Hub.HostMatch, name, deckId, vsAi);
             MatchCode = info.MatchCode;
             YourSide = info.YourSide;
+            Interlocked.Exchange(ref _rejoinGate, 0);
             JoinedQueue.Enqueue(info);
         });
 
@@ -108,8 +124,28 @@ public static class NetworkClient
             var info = await _connection!.InvokeAsync<MatchInfo>(DuelContract.Hub.JoinMatch, code, name, deckId);
             MatchCode = info.MatchCode;
             YourSide = info.YourSide;
+            Interlocked.Exchange(ref _rejoinGate, 0);
             JoinedQueue.Enqueue(info);
         });
+
+    /// <summary>Return to a match the transport dropped, reclaiming the old seat.</summary>
+    public static void RejoinMatch(string code, string side) =>
+        FireAndForget(async () =>
+        {
+            var info = await _connection!.InvokeAsync<MatchInfo>(DuelContract.Hub.RejoinMatch, code, side);
+            if (info is null)
+                return;
+            MatchCode = info.MatchCode;
+            YourSide = info.YourSide;
+            Interlocked.Exchange(ref _rejoinGate, 0);
+            JoinedQueue.Enqueue(info);
+        });
+
+    /// <summary>Request a rematch of the finished match. True when this request
+    /// actually restarted (vs-AI, or both human sides asked); false when still
+    /// waiting on the opponent.</summary>
+    public static Task<bool> RequestRematchAsync() =>
+        _connection!.InvokeAsync<bool>(DuelContract.Hub.RequestRematch);
 
     public static void StartTurn() => Invoke(DuelContract.Hub.StartTurn);
     public static void Draw() => Invoke(DuelContract.Hub.Draw);

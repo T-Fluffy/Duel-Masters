@@ -76,6 +76,7 @@ public partial class NetworkArena : Control
 	private Label _prompt = null!;
 	private HBoxContainer _actionBar = null!;
 	private Button _endTurn = null!;
+	private Button _rematch = null!;
 
 	private Control _overlay = null!;
 	private ColorRect _overlayDim = null!;
@@ -126,6 +127,16 @@ public partial class NetworkArena : Control
 		}
 		if (NetworkClient.TryDequeueState(out var state))
 		{
+			// A rematch restart arrives as a fresh turn-1 game: clear the previous
+			// winner's fanfare and shield-tracking so the new game starts clean.
+			if (_state is { IsGameOver: true } && !state.IsGameOver && state.TurnNumber == 1)
+			{
+				_winnerShown = false;
+				_prevOppShieldCount = -1;
+				_prevMyShieldCount = -1;
+				ResetInteraction();
+				HideOverlay();
+			}
 			_state = state;
 			Refresh();
 		}
@@ -248,10 +259,12 @@ public partial class NetworkArena : Control
 		_endTurn = new Button { Text = "End Turn" };
 		_endTurn.Pressed += OnEndTurn;
 		footer.AddChild(_endTurn);
-		footer.AddChild(new Control { SizeFlagsHorizontal = SizeFlags.ExpandFill });
 		var leave = new Button { Text = "Leave" };
 		leave.Pressed += OnLeave;
 		footer.AddChild(leave);
+		_rematch = new Button { Text = "Rematch", Visible = false };
+		_rematch.Pressed += OnRematch;
+		footer.AddChild(_rematch);
 		root.AddChild(footer);
 
 		BuildOverlay();
@@ -364,6 +377,17 @@ public partial class NetworkArena : Control
 	{
 		await NetworkClient.DisconnectAsync();
 		GetTree().ChangeSceneToFile("res://src/scenes/network_lobby/NetworkLobby.tscn");
+	}
+
+	private async void OnRematch()
+	{
+		if (_state is { IsGameOver: false })
+			return;
+		_rematch.Disabled = true;
+		if (await NetworkClient.RequestRematchAsync())
+			return; // rested in place - the fresh state broadcast re-enables the button.
+		_rematch.Disabled = false;
+		Prompt("Rematch requested - waiting for the opponent...");
 	}
 
 	private void OnHandClicked(int index)
@@ -876,6 +900,8 @@ public partial class NetworkArena : Control
 		}
 
 		_endTurn.Disabled = _state.IsGameOver || !_state.YourTurn || !IsPhase("Main") && !IsPhase("End");
+		_rematch.Visible = _state.IsGameOver;
+		_rematch.Disabled = false;
 
 		WireHand(_myHand);
 		WireBattle(_myBattle, mine: true);

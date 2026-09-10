@@ -323,6 +323,12 @@ internal static class Program
 
             // --- vs-AI: one real client against the server-side MatchBot ---
             await RunVsAiScenarioAsync(http);
+
+            // --- reconnect: a dropped seat reclaims its match via RejoinMatch ---
+            await RunReconnectScenarioAsync(http);
+
+            // --- rematch: a finished match restarts in place (vs-AI auto-accepts) ---
+            await RunRematchScenarioAsync(http);
         }
         catch (Exception ex)
         {
@@ -463,6 +469,315 @@ internal static class Program
 
         if (host.StateCount > 0)
             Info($"vs-AI states received by the host client: {host.StateCount}");
+    }
+
+    /// <summary>
+    /// Shared scripted driver used by the reconnect scenario: plays real turns on
+    /// both seats (same policies as the main loop) until the joiner has reached the
+    /// requested number of its own turns, the game ends, or the timeout expires.
+    /// Returns false only when the loop expired without reaching the turn target.
+    /// </summary>
+    private static async Task<bool> DriveScriptedTurnsAsync(Bot host, Bot joiner, int targetJoinerTurns, int timeoutSec)
+    {
+        var deadline = DateTime.UtcNow.AddSeconds(timeoutSec);
+        while (DateTime.UtcNow < deadline)
+        {
+            var sA = host.Latest;
+            var sB = joiner.Latest;
+            if (sA is null || sB is null)
+            {
+                await Task.Delay(80);
+                continue;
+            }
+            Track(host, sA);
+            Track(joiner, sB);
+            if (joiner.MaxTurnSeen >= targetJoinerTurns)
+                return true;
+            if (sA.IsGameOver || sB.IsGameOver)
+            {
+                Info($"scripted play hit game over before the turn target (turn {sA.TurnNumber})");
+                return true;
+            }
+
+            if (sA.ShieldTriggerOwnerSide is { } ownerSide)
+            {
+                var owner = ownerSide == host.Side ? host : joiner;
+                var stO = owner.Latest;
+                if (stO is not null && await HandleOwnerOnly(owner, stO))
+                {
+                    await Task.Delay(200);
+                    continue;
+                }
+            }
+            if (sA.ScryWindowActive && host.ScryStarted && !host.ScryDone)
+            {
+                if (await HandleScryAsync(host, joiner))
+                {
+                    await Task.Delay(200);
+                    continue;
+                }
+            }
+
+            var defender = sA.ActiveSide == host.Side ? joiner : host;
+            var stD = defender.Latest;
+            if (stD is not null && await HandleBlockDecision(defender, stD))
+            {
+                await Task.Delay(200);
+                continue;
+            }
+
+            var active = sA.ActiveSide == host.Side ? host : joiner;
+            var st = active.Latest;
+            if (st is null || !st.YourTurn)
+            {
+                await Task.Delay(80);
+                continue;
+            }
+
+            switch (st.Phase)
+            {
+                case "Untap": await TryInvoke(active, DuelContract.Hub.StartTurn); break;
+                case "Draw": await TryInvoke(active, DuelContract.Hub.Draw); break;
+                case "Main": if (!await DoMain(active, st)) await TryInvoke(active, DuelContract.Hub.EndMainPhase); break;
+                case "End": await TryInvoke(active, DuelContract.Hub.EndTurn); break;
+            }
+            await Task.Delay(200);
+        }
+        return false; // loop expired - treat as a stall
+    }
+
+    /// <summary>
+    /// Mid-match transport recovery: the joiner's connection is stopped hard while
+    /// the game is in progress (the server keeps the room), then a fresh connection
+    /// reclaims the exact same seat via RejoinMatch and the match resumes play.
+    /// </summary>
+    private static async Task RunReconnectScenarioAsync(HttpClient http)
+    {
+        var user = "e2e_rec_" + Guid.NewGuid().ToString("N")[..10];
+        Info($"registering reconnect user {user}");
+        await RegisterAsync(http, user);
+        var token = await LoginAsync(http, user);
+        var auth = new HttpClient { BaseAddress = new Uri(BaseUrl), Timeout = TimeSpan.FromSeconds(20) };
+        auth.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+        var hostDeckId = await CreateDeckAsync(auth, "E2E Rec Host", HostDeck);
+        var joinerDeckId = await CreateDeckAsync(auth, "E2E Rec Joiner", JoinerDeck);
+
+        var host = new Bot { Name = "E2E_RecHost", Conn = NewConnection(), HasDecisionTargets = true, CraftedDeck = HostDeck };
+        var joiner = new Bot { Name = "E2E_RecJoiner", Conn = NewConnection(), CraftedDeck = JoinerDeck };
+        Wire(host);
+        Wire(joiner);
+        await host.Conn.StartAsync();
+        await joiner.Conn.StartAsync();
+
+        var hostInfo = await host.Conn.InvokeAsync<MatchInfo>(DuelContract.Hub.HostMatch, "E2E rec host", hostDeckId, false);
+        host.Side = hostInfo.YourSide;
+        host.MatchCode = hostInfo.MatchCode;
+        var joinInfo = await joiner.Conn.InvokeAsync<MatchInfo>(DuelContract.Hub.JoinMatch, hostInfo.MatchCode, "E2E rec joiner", joinerDeckId);
+        joiner.Side = joinInfo.YourSide;
+        joiner.MatchCode = hostInfo.MatchCode;
+        Info($"reconnect match started: host={host.Side} joiner={joiner.Side} code={hostInfo.MatchCode}");
+
+        if (!await WaitForStateAsync(host, 10) || !await WaitForStateAsync(joiner, 10))
+        {
+            Failure("reconnect setup: both clients never got an initial DuelGameState");
+            return;
+        }
+
+        // Play a couple of scripted turns first so there is real in-progress state.
+        if (!await DriveScriptedTurnsAsync(host, joiner, targetJoinerTurns: 2, timeoutSec: 30))
+        {
+            Failure("reconnect setup: scripted play deadlocked before the drop");
+            return;
+        }
+
+        var turnAtDrop = joiner.MaxTurnSeen;
+        Info($"dropping the joiner mid-match (joiner saw turn {turnAtDrop})...");
+        await joiner.Conn.StopAsync();
+        await Task.Delay(1000);
+
+        // A completely fresh connection (no automatic-reconnect resume) reclaims the seat.
+        joiner.Conn = NewConnection();
+        Wire(joiner);
+        await joiner.Conn.StartAsync();
+        Info("joiner reconnected on a fresh connection; calling RejoinMatch...");
+
+        MatchInfo? rejoinInfo = null;
+        var rejoinDeadline = DateTime.UtcNow.AddSeconds(15);
+        while (DateTime.UtcNow < rejoinDeadline)
+        {
+            try
+            {
+                rejoinInfo = await joiner.Conn.InvokeAsync<MatchInfo>(DuelContract.Hub.RejoinMatch, joiner.MatchCode, joiner.Side);
+                if (rejoinInfo is not null)
+                    break;
+            }
+            catch (Exception)
+            {
+                // Server may still be settling the disconnect; retry.
+            }
+            await Task.Delay(300);
+        }
+
+        if (rejoinInfo is null)
+        {
+            Failure("rejoin failed: RejoinMatch never reclaimed the seat (seat may appear still-active)");
+            return;
+        }
+        if (!string.Equals(rejoinInfo.YourSide, joinInfo.YourSide, StringComparison.Ordinal))
+            Failure($"rejoin changed the side: was {joinInfo.YourSide}, got {rejoinInfo.YourSide}");
+        joiner.Side = rejoinInfo.YourSide;
+        Info($"rejoined as {rejoinInfo.YourSide} (opponent {rejoinInfo.OpponentName})");
+
+        if (!await WaitForStateAsync(joiner, 10))
+        {
+            Failure("rejoin: no state broadcast reached the rejoined client");
+            return;
+        }
+        if (joiner.Latest is null || joiner.Latest.TurnNumber < turnAtDrop)
+            Failure($"rejoin resumed behind the drop point (at turn {joiner.Latest?.TurnNumber}, dropped at {turnAtDrop}) - the match did not resume");
+        else
+            Info($"rejoin state resumed at turn {joiner.Latest.TurnNumber}");
+
+        // Prove the reclaimed seat is live: drive at least one more turn past the drop.
+        var targetAfter = turnAtDrop + 1;
+        if (!await DriveScriptedTurnsAsync(host, joiner, targetJoinerTurns: targetAfter, timeoutSec: 30))
+            Failure($"rejoin: scripted play deadlocked after the rejoin (stuck at turn {joiner.MaxTurnSeen})");
+        else if (joiner.MaxTurnSeen >= targetAfter)
+            Info($"rejoined joiner kept playing (reached turn {joiner.MaxTurnSeen})");
+        else
+            Failure($"rejoined joiner never advanced past turn {turnAtDrop} (at {joiner.MaxTurnSeen})");
+
+        if (host.Errors.Count > 0 || joiner.Errors.Count > 0)
+            Info($"reconnect scenario client errors: host={host.Errors.Count} joiner={joiner.Errors.Count}");
+    }
+
+    /// <summary>
+    /// Rematch restart: a vs-AI match is played to a real game over with the human
+    /// merely passing its turns to let the bot win quickly, then RequestRematch must
+    /// restart in place immediately (the bot auto-accepts) and a second mid-game
+    /// request must be refused.
+    /// </summary>
+    private static async Task RunRematchScenarioAsync(HttpClient http)
+    {
+        var user = "e2e_rem_" + Guid.NewGuid().ToString("N")[..10];
+        Info($"registering rematch user {user}");
+        await RegisterAsync(http, user);
+        var token = await LoginAsync(http, user);
+        var auth = new HttpClient { BaseAddress = new Uri(BaseUrl), Timeout = TimeSpan.FromSeconds(20) };
+        auth.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+        var deckId = await CreateDeckAsync(auth, "E2E Rematch", JoinerDeck);
+
+        var host = new Bot { Name = "E2E_Rematch", Conn = NewConnection(), CraftedDeck = JoinerDeck };
+        Wire(host);
+        await host.Conn.StartAsync();
+
+        var hostInfo = await host.Conn.InvokeAsync<MatchInfo>(DuelContract.Hub.HostMatch, "E2E rematch host", deckId, true);
+        host.Side = hostInfo.YourSide;
+        host.MatchCode = hostInfo.MatchCode;
+        Info($"rematch match started: side {host.Side}, code {hostInfo.MatchCode}, opponent {hostInfo.OpponentName}");
+        if (string.IsNullOrWhiteSpace(hostInfo.OpponentName))
+            Failure("rematch match reported no opponent name (no bot seated)");
+
+        if (!await WaitForStateAsync(host, 10))
+        {
+            Failure("rematch setup: host never got an initial DuelGameState");
+            return;
+        }
+
+        var deadline = DateTime.UtcNow.AddSeconds(GetEnvInt("E2E_DURATION", 150));
+        var idleStart = DateTime.UtcNow;
+        var lastAnyEvent = DateTime.UtcNow;
+        var gameOverReported = false;
+
+        while (DateTime.UtcNow < deadline)
+        {
+            var s = host.Latest;
+            if (s is null)
+            {
+                await Task.Delay(100);
+                continue;
+            }
+            Track(host, s);
+            if (host.LastEvent.ToBinary() > lastAnyEvent.ToBinary())
+            {
+                lastAnyEvent = DateTime.FromBinary(host.LastEvent.ToBinary());
+                idleStart = DateTime.UtcNow;
+            }
+            if ((DateTime.UtcNow - idleStart).TotalSeconds > 45)
+            {
+                Failure($"rematch setup deadlocked (turn {s.TurnNumber}, phase {s.Phase}, gameOver={s.IsGameOver})");
+                break;
+            }
+            if (s.IsGameOver)
+            {
+                gameOverReported = true;
+                Info($"rematch game over reported (winnerId={s.WinnerId}) after turn {s.TurnNumber}");
+                break;
+            }
+            if (s.ShieldTriggerOwnerSide == host.Side && await HandleOwnerOnly(host, s))
+            {
+                await Task.Delay(200);
+                continue;
+            }
+            if (s.AttackPending && !s.YourTurn && await HandleBlockDecision(host, s))
+            {
+                await Task.Delay(200);
+                continue;
+            }
+            if (!s.YourTurn)
+            {
+                await Task.Delay(100);
+                continue;
+            }
+            // The human passes the whole turn so the bot wins quickly.
+            switch (s.Phase)
+            {
+                case "Untap": await TryInvoke(host, DuelContract.Hub.StartTurn); break;
+                case "Draw": await TryInvoke(host, DuelContract.Hub.Draw); break;
+                case "Main": await TryInvoke(host, DuelContract.Hub.EndMainPhase); break;
+                case "End": await TryInvoke(host, DuelContract.Hub.EndTurn); break;
+            }
+            await Task.Delay(200);
+        }
+
+        if (!gameOverReported)
+        {
+            Failure("rematch test: the vs-AI game never ended within the window - cannot exercise a restart");
+            return;
+        }
+
+        var genBeforeRematch = host.LastStateGen;
+        var restarted = await host.Conn.InvokeAsync<bool>(DuelContract.Hub.RequestRematch);
+        if (!restarted)
+        {
+            Failure($"rematch request did not restart: returned false (errors: {string.Join("; ", host.Errors)})");
+            return;
+        }
+        Info("rematch request returned true (the bot auto-accepted)");
+
+        var freshOk = false;
+        var freshDeadline = DateTime.UtcNow.AddSeconds(15);
+        while (DateTime.UtcNow < freshDeadline)
+        {
+            var s = host.Latest;
+            if (s is { IsGameOver: false, TurnNumber: 1 } && host.LastStateGen > genBeforeRematch)
+            {
+                freshOk = true;
+                break;
+            }
+            await Task.Delay(80);
+        }
+        if (!freshOk)
+            Failure("rematch: no fresh turn-1 state arrived after the restart");
+        else
+            Info($"rematch restart observed: fresh turn-1 game, side {host.Latest!.YourSide}");
+
+        // A second request mid-game must be refused (the match has not ended again).
+        var refused = await host.Conn.InvokeAsync<bool>(DuelContract.Hub.RequestRematch);
+        if (refused)
+            Failure("rematch: a mid-game second request unexpectedly restarted the match");
+        else
+            Info("rematch mid-game refusal verified (returned false)");
     }
 
     private static string ResolveCardsJsonPath()
