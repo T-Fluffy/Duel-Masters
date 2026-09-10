@@ -93,10 +93,10 @@ public static class NetworkClient
 
     // ------------------------------------------------------------- actions
 
-    public static void HostMatch(string name, Guid? deckId = null) =>
+    public static void HostMatch(string name, Guid? deckId = null, bool vsAi = false) =>
         FireAndForget(async () =>
         {
-            var info = await _connection!.InvokeAsync<MatchInfo>(DuelContract.Hub.HostMatch, name, deckId);
+            var info = await _connection!.InvokeAsync<MatchInfo>(DuelContract.Hub.HostMatch, name, deckId, vsAi);
             MatchCode = info.MatchCode;
             YourSide = info.YourSide;
             JoinedQueue.Enqueue(info);

@@ -29,6 +29,7 @@ public partial class NetworkLobby : Control
     private Label _status = null!;
     private Button _host = null!;
     private Button _join = null!;
+    private Button _vsAi = null!;
     private bool _connecting;
 
     private HttpRequest _http = null!;
@@ -121,6 +122,10 @@ public partial class NetworkLobby : Control
         _host.Pressed += OnHost;
         center.AddChild(_host);
 
+        _vsAi = new Button { Text = "Practice vs AI" };
+        _vsAi.Pressed += OnHostVsAi;
+        center.AddChild(_vsAi);
+
         var joinRow = new HBoxContainer();
         joinRow.AddThemeConstantOverride("separation", 8);
         _code = new LineEdit { PlaceholderText = "Match code", MaxLength = 6 };
@@ -133,7 +138,7 @@ public partial class NetworkLobby : Control
 
         _status = new Label
         {
-            Text = "Please ensure the backend is running, then host or join.",
+            Text = "Please ensure the backend is running, then host, practice vs AI, or join.",
             HorizontalAlignment = HorizontalAlignment.Center,
             VerticalAlignment = VerticalAlignment.Center,
         };
@@ -152,6 +157,11 @@ public partial class NetworkLobby : Control
     private async void OnHost()
     {
         await ConnectAndRun(() => NetworkClient.HostMatch(PlayerName(), SelectedDeckGuid()));
+    }
+
+    private async void OnHostVsAi()
+    {
+        await ConnectAndRun(() => NetworkClient.HostMatch(PlayerName(), SelectedDeckGuid(), vsAi: true));
     }
 
     private async void OnJoin()
@@ -202,6 +212,7 @@ public partial class NetworkLobby : Control
     {
         _host.Disabled = !enabled;
         _join.Disabled = !enabled;
+        _vsAi.Disabled = !enabled;
     }
 
     // --------------------------------------------------------------- decks

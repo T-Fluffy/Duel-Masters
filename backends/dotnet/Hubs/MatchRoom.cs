@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using DuelMasters.Domain;
+using DuelMasters.Domain.Ai;
 using DuelMasters.Domain.Networking;
 using DuelMasters.Server.Services;
 
@@ -42,6 +43,14 @@ public sealed class MatchRoom
     public bool Started => _game is not null;
     public bool HasSecondPlayer => SideConnections.ContainsKey(DuelSide.Player2);
     public bool IsGameOver => _game is not null && _game.IsGameOver;
+
+    /// <summary>The server-side AI pilot for a vs-AI match, if any.</summary>
+    public MatchBot? Bot { get; private set; }
+
+    /// <summary>True when the given side is seated by a server-side bot, not a real connection.</summary>
+    public bool IsBotSide(string side) =>
+        SideConnections.TryGetValue(side, out var connection) &&
+        connection.StartsWith(MatchBot.ConnectionPrefix, StringComparison.Ordinal);
 
     public string? WinnerSide => _game is null || _game.Winner is null
         ? null
@@ -98,6 +107,24 @@ public sealed class MatchRoom
     }
 
     /// <summary>
+    /// Seat a server-side AI bot as the second player (vs-AI match). The bot gets a
+    /// random deck (its joiner deck is never supplied) and is driven by
+    /// <see cref="MatchBot"/> once the game starts. Returns false if already full.
+    /// </summary>
+    public bool TryAddBot(string name)
+    {
+        lock (_gate)
+        {
+            if (HasSecondPlayer)
+                return false;
+            SideConnections[DuelSide.Player2] = MatchBot.ConnectionPrefix + Code;
+            SideNames[DuelSide.Player2] = string.IsNullOrWhiteSpace(name) ? "AI (Standard)" : name;
+            _joinerDeckId = null;
+            return true;
+        }
+    }
+
+    /// <summary>
     /// Start the authoritative engine. Each side uses its selected saved deck when
     /// one was passed (and still loads/validates), otherwise a random deck is built.
     /// </summary>
@@ -111,6 +138,7 @@ public sealed class MatchRoom
             var game = new DuelGame(p1, p2, rng);
             game.StartGame(shuffle: true);
             _game = game;
+            Bot = IsBotSide(DuelSide.Player2) ? new MatchBot(this, p2, DuelSide.Player2) : null;
         }
     }
 
@@ -159,6 +187,18 @@ public sealed class MatchRoom
             lock (_gate)
             {
                 return _pendingAttackerIndex is not null;
+            }
+        }
+    }
+
+    /// <summary>Index of the attacker awaiting a blocking decision, or null when none.</summary>
+    public int? PendingAttackerIndex
+    {
+        get
+        {
+            lock (_gate)
+            {
+                return _pendingAttackerIndex;
             }
         }
     }

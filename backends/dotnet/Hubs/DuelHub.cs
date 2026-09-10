@@ -43,19 +43,30 @@ public sealed class DuelHub : Hub<IDuelClientContract>
 
     // ------------------------------------------------------------ host / join
 
-    public async Task<MatchInfo> HostMatch(string yourName, Guid? deckId = null)
+    public async Task<MatchInfo> HostMatch(string yourName, Guid? deckId = null, bool vsAi = false)
     {
         var code = GenerateUniqueCode();
         var room = new MatchRoom(code, Context.ConnectionId, string.IsNullOrWhiteSpace(yourName) ? "Player 1" : yourName, deckId, LoadDeckById);
         ActiveMatches[code] = room;
         await Groups.AddToGroupAsync(Context.ConnectionId, Group(code));
 
+        if (vsAi)
+        {
+            // Seat the server-side AI as the second player and start immediately;
+            // the opponent's name (and its whole first turn) arrive through the
+            // match-joined broadcast and the bot drive in BroadcastState.
+            room.TryAddBot("AI (Standard)");
+            room.StartGame();
+            await BroadcastMatchJoined(room);
+            await BroadcastState(room);
+        }
+
         return new MatchInfo
         {
             MatchCode = code,
             YourSide = DuelSide.Player1,
             YourName = room.SideNames[DuelSide.Player1],
-            OpponentName = "",
+            OpponentName = vsAi ? room.SideNames[DuelSide.Player2] : "",
         };
     }
 
@@ -607,9 +618,32 @@ public sealed class DuelHub : Hub<IDuelClientContract>
     {
         foreach (var side in room.SideConnections.Keys)
         {
+            if (room.IsBotSide(side))
+                continue;
             var connectionId = room.SideConnections[side];
             await Clients.Client(connectionId).ReceiveGameState(room.StateFor(side));
         }
+
+        // A bot seat can own the next decision (its whole new turn, a blocker
+        // choice against the human's attack, its own shield triggers). Drive it
+        // until the ball is back with a human; each applied change re-broadcasts.
+        await DriveBotIfNeeded(room);
+    }
+
+    /// <summary>
+    /// Let the room's server-side AI apply everything currently owed to it. When it
+    /// made progress the new board is broadcast again (which re-enters here) until
+    /// the game is waiting on a human seat or a winner is announced.
+    /// </summary>
+    private async Task DriveBotIfNeeded(MatchRoom room)
+    {
+        var bot = room.Bot;
+        if (bot is null)
+            return;
+        if (bot.Drive() <= 0)
+            return;
+        await BroadcastState(room);
+        await MaybeAnnounceWinner(room);
     }
 
     private async Task MaybeAnnounceWinner(MatchRoom room)
@@ -617,8 +651,12 @@ public sealed class DuelHub : Hub<IDuelClientContract>
         var winner = room.WinnerSide;
         if (winner is null)
             return;
-        foreach (var connectionId in room.SideConnections.Values)
+        foreach (var (side, connectionId) in room.SideConnections)
+        {
+            if (room.IsBotSide(side))
+                continue;
             await Clients.Client(connectionId).AnnounceWinner(winner);
+        }
         ActiveMatches.TryRemove(room.Code, out _);
     }
 

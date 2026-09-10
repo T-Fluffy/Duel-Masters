@@ -1,11 +1,15 @@
 // DuelE2E - headless end-to-end harness for the online duel backend.
 //
-// Drives two real SignalR clients through the full online flow against a
+// Drives real SignalR clients through the full online flow against a
 // running backend + PostgreSQL: registers a user, creates a saved deck via
 // /api/decks, hosts/joins a match with saved decks, then plays a scripted
 // game while asserting hand redaction, saved-deck usage, two-phase blocking,
 // general turn progression, and the two decision tap abilities (Adomis
-// shield-look and Garatyano deck scry/reorder) end-to-end.
+// shield-look and Garatyano deck scry/reorder) end-to-end. A second scenario
+// repeats the host side against the SERVER-SIDE MatchBot (vs-AI host): the
+// backend seats its own AiController pilot, driven through the same match
+// gates (block windows, shield triggers, whole turns) as the interactive
+// clients, and the harness verifies the bot actually develops and takes turns.
 //
 // Usage:
 //   dotnet run --project tests/DuelE2E
@@ -41,6 +45,7 @@ internal sealed class Bot
     public required HubConnection Conn;
     public string Side = DuelSide.Player1;
     public string? MatchCode;
+    public string OpponentName = "";
     public ConcurrentQueue<string> Errors { get; } = new();
     public long LastStateGen { get; set; }
     public DateTime LastEvent { get; set; } = DateTime.MinValue;
@@ -61,6 +66,11 @@ internal sealed class Bot
     public bool ScryWindowOwnerSeen;
     public bool ScryWindowOpponentSeen;
     public bool ScryClosedOk;
+
+    /// <summary>Crafted deck used to open a match; observed cards are checked against it.</summary>
+    public Dictionary<string, List<string>>? CraftedDeck;
+    public readonly HashSet<string> SeenIds = new();
+    public bool SawForeignCard;
 }
 
 internal sealed class CardRule
@@ -98,8 +108,6 @@ internal static class Program
     private static readonly List<string> Failures = new();
     private static readonly List<string> Infos = new();
     private static readonly object LogLock = new();
-    private static bool _hostDeckSeenForeignCard;
-    private static readonly HashSet<string> HostDeckSeenIds = new();
     private static bool _handRedactionOk = true;
     private static string _handRedactionDetail = "";
     private static readonly string E2ePassword = ResolveE2ePassword();
@@ -133,8 +141,8 @@ internal static class Program
             }
 
             // --- connections ---
-            var host = new Bot { Name = "E2E_Host", Conn = NewConnection(), HasDecisionTargets = true };
-            var joiner = new Bot { Name = "E2E_Joiner", Conn = NewConnection() };
+            var host = new Bot { Name = "E2E_Host", Conn = NewConnection(), HasDecisionTargets = true, CraftedDeck = HostDeck };
+            var joiner = new Bot { Name = "E2E_Joiner", Conn = NewConnection(), CraftedDeck = JoinerDeck };
             Wire(host);
             Wire(joiner);
 
@@ -145,7 +153,7 @@ internal static class Program
 
             // --- host match with saved deck ---
             Info("hosting match with saved deck...");
-            var hostInfo = await host.Conn.InvokeAsync<MatchInfo>(DuelContract.Hub.HostMatch, "E2E host", hostDeckId);
+            var hostInfo = await host.Conn.InvokeAsync<MatchInfo>(DuelContract.Hub.HostMatch, "E2E host", hostDeckId, false);
             host.Side = hostInfo.YourSide;
             host.MatchCode = hostInfo.MatchCode;
             Info($"host assigned side {host.Side}, code {hostInfo.MatchCode}");
@@ -279,10 +287,10 @@ internal static class Program
             else
                 Failure($"hand redaction broken: {_handRedactionDetail}");
 
-            if (_hostDeckSeenForeignCard)
+            if (host.SawForeignCard)
                 Failure("host drew/used a card NOT in its crafted saved deck -> deck load may have fallen back to random");
             else
-                Info($"host deck verified: only crafted-card ids observed across zones ({HostDeckSeenIds.Count} used)");
+                Info($"host deck verified: only crafted-card ids observed across zones ({host.SeenIds.Count} used)");
 
             var anyBlockDecided = host.BlockUsed || host.PassBlockUsed || joiner.BlockUsed || joiner.PassBlockUsed;
             if (anyBlockDecided)
@@ -312,6 +320,9 @@ internal static class Program
 
             if (host.StateCount > 0 && joiner.StateCount > 0)
                 Info($"states received: host={host.StateCount} joiner={joiner.StateCount}");
+
+            // --- vs-AI: one real client against the server-side MatchBot ---
+            await RunVsAiScenarioAsync(http);
         }
         catch (Exception ex)
         {
@@ -319,6 +330,139 @@ internal static class Program
         }
 
         return Finish();
+    }
+
+    private static async Task RunVsAiScenarioAsync(HttpClient http)
+    {
+        var user = "e2e_ai_" + Guid.NewGuid().ToString("N")[..10];
+        Info($"registering vs-AI user {user}");
+        await RegisterAsync(http, user);
+        var token = await LoginAsync(http, user);
+        var auth = new HttpClient { BaseAddress = new Uri(BaseUrl), Timeout = TimeSpan.FromSeconds(20) };
+        auth.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+        var deckId = await CreateDeckAsync(auth, "E2E VS AI", JoinerDeck);
+        Info($"vs-AI deck created: {deckId}");
+
+        var host = new Bot { Name = "E2E_VsAi", Conn = NewConnection(), CraftedDeck = JoinerDeck };
+        Wire(host);
+        Info("connecting vs-AI host...");
+        await host.Conn.StartAsync();
+
+        var hostInfo = await host.Conn.InvokeAsync<MatchInfo>(DuelContract.Hub.HostMatch, "E2E vs AI host", deckId, true);
+        host.Side = hostInfo.YourSide;
+        Info($"vs-AI host assigned side {host.Side}, code {hostInfo.MatchCode}, opponent {hostInfo.OpponentName}");
+        if (string.IsNullOrWhiteSpace(hostInfo.OpponentName))
+            Failure("vs-AI match reported no opponent name (no bot seated)");
+        else
+            Info($"vs-AI opponent is {hostInfo.OpponentName}");
+
+        if (!await WaitForStateAsync(host, 10))
+        {
+            Failure("vs-AI host never got an initial DuelGameState (bot game did not start)");
+            return;
+        }
+        Info("vs-AI initial state received (server seated the bot and started the engine)");
+        VerifyHandRedaction(host);
+
+        var deadline = DateTime.UtcNow.AddSeconds(GetEnvInt("E2E_DURATION", 150));
+        var idleStart = DateTime.UtcNow;
+        var lastAnyEvent = DateTime.UtcNow;
+        var gameOverReported = false;
+        var aiDevelopment = 0;
+
+        while (DateTime.UtcNow < deadline)
+        {
+            var s = host.Latest;
+            if (s is null)
+            {
+                await Task.Delay(100);
+                continue;
+            }
+            Track(host, s);
+
+            if (host.LastEvent.ToBinary() > lastAnyEvent.ToBinary())
+            {
+                lastAnyEvent = DateTime.FromBinary(host.LastEvent.ToBinary());
+                idleStart = DateTime.UtcNow;
+            }
+            if ((DateTime.UtcNow - idleStart).TotalSeconds > 45)
+            {
+                Failure($"vs-AI deadlock: no state change for ~45s (turn {s.TurnNumber}, phase {s.Phase}, gameOver={s.IsGameOver})");
+                break;
+            }
+
+            // How far the server-side AI developed (mana + battle zone visible to the host).
+            var aiPlayer = s.Players.FirstOrDefault(p => p.Side != host.Side);
+            if (aiPlayer is not null)
+            {
+                var dev = aiPlayer.ManaZone.Count(c => !c.CountOnly) + aiPlayer.BattleZone.Count(c => !c.CountOnly);
+                if (dev > aiDevelopment) aiDevelopment = dev;
+            }
+
+            if (s.IsGameOver)
+            {
+                gameOverReported = true;
+                Info($"vs-AI game over reported (winnerId={s.WinnerId}) after turn {s.TurnNumber}");
+                break;
+            }
+
+            // Shield Trigger window owned by the host (the AI resolves its own windows).
+            if (s.ShieldTriggerOwnerSide == host.Side && await HandleOwnerOnly(host, s))
+            {
+                await BumpAsync(host, host);
+                continue;
+            }
+
+            // Pending block where the host is the defender (the AI resolves its own).
+            if (s.AttackPending && !s.YourTurn && await HandleBlockDecision(host, s))
+            {
+                await BumpAsync(host, host);
+                continue;
+            }
+
+            if (!s.YourTurn)
+            {
+                await Task.Delay(80); // the server-side AI is playing; wait for broadcasts
+                continue;
+            }
+
+            switch (s.Phase)
+            {
+                case "Untap": await TryInvoke(host, DuelContract.Hub.StartTurn); break;
+                case "Draw": await TryInvoke(host, DuelContract.Hub.Draw); break;
+                case "Main": if (!await DoMain(host, s)) await TryInvoke(host, DuelContract.Hub.EndMainPhase); break;
+                case "End": await TryInvoke(host, DuelContract.Hub.EndTurn); break;
+            }
+            await BumpAsync(host, host);
+        }
+
+        Info($"vs-AI loop ended: gameOver={gameOverReported}, host turns={host.MaxTurnSeen}, ai development (mana+battle)={aiDevelopment}");
+        if (!gameOverReported)
+            Info("vs-AI match did not finish within the loop (acceptable if flow was verified)");
+
+        if (host.Errors.Count > 0)
+        {
+            Info($"vs-AI errors sent to the host client: {host.Errors.Count}");
+            foreach (var e in host.Errors.Take(5)) Info($"  vs-AI host err: {e}");
+        }
+
+        if (host.MaxTurnSeen >= 3)
+            Info($"vs-AI turns progressed (host saw turn {host.MaxTurnSeen}); the AI took its turns");
+        else
+            Failure($"vs-AI never progressed past {host.MaxTurnSeen} turns - the server-side bot appears not to have driven its turns");
+
+        if (aiDevelopment <= 0)
+            Failure("vs-AI opponent never developed any mana or creatures -> the bot did not actually play");
+        else
+            Info($"vs-AI opponent developed {aiDevelopment} cards into its mana/battle zones");
+
+        if (host.SawForeignCard)
+            Failure("vs-AI host drew/used a card NOT in its crafted saved deck");
+        else
+            Info($"vs-AI host deck verified: only crafted-card ids observed ({host.SeenIds.Count} used)");
+
+        if (host.StateCount > 0)
+            Info($"vs-AI states received by the host client: {host.StateCount}");
     }
 
     private static string ResolveCardsJsonPath()
@@ -349,23 +493,17 @@ internal static class Program
     {
         if (s.TurnNumber > b.MaxTurnSeen) b.MaxTurnSeen = s.TurnNumber;
         if (s.AttackPending) b.AttackPendingEvents++;
+        if (b.CraftedDeck is null) return;
         foreach (var p in s.Players)
         {
-            if (p.Side == b.Side)
+            if (p.Side != b.Side) continue;
+            foreach (var c in p.Hand.Concat(p.ManaZone).Concat(p.BattleZone).Concat(p.Graveyard))
             {
-                foreach (var c in p.Hand.Concat(p.ManaZone).Concat(p.BattleZone).Concat(p.Graveyard))
+                if (c.CountOnly || string.IsNullOrEmpty(c.CardId)) continue;
+                lock (LogLock)
                 {
-                    if (!c.CountOnly && !string.IsNullOrEmpty(c.CardId))
-                    {
-                        lock (LogLock)
-                        {
-                            if (b.Name == "E2E_Host")
-                            {
-                                HostDeckSeenIds.Add(c.CardId);
-                                if (!HostDeck.ContainsKey(c.CardId)) _hostDeckSeenForeignCard = true;
-                            }
-                        }
-                    }
+                    b.SeenIds.Add(c.CardId);
+                    if (!b.CraftedDeck.ContainsKey(c.CardId)) b.SawForeignCard = true;
                 }
             }
         }
@@ -750,6 +888,7 @@ internal static class Program
         {
             b.Side = mi.YourSide;
             b.MatchCode = mi.MatchCode;
+            b.OpponentName = mi.OpponentName ?? "";
             b.LastEvent = DateTime.UtcNow;
         });
         b.Conn.On<string>(DuelContract.Client.ReceiveActionError, e => b.Errors.Enqueue(e));
