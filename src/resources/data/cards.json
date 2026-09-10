@@ -8593,7 +8593,12 @@
     "keywords": [
       "DoubleBreaker"
     ],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "StaticTurbo_SpeedAttackerAll"
+      }
+    ]
   },
   {
     "id": "dm_08_005",
@@ -8738,7 +8743,12 @@
     "race": "Starlight Tree",
     "imagePath": "res://assets/art/cards/DM-08/Cards/DM08_054.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "AttackTrigger_UntapAllOwnExceptSelf"
+      }
+    ]
   },
   {
     "id": "dm_08_015",
@@ -8825,7 +8835,9 @@
     "power": 3000,
     "race": "Gel Fish",
     "imagePath": "res://assets/art/cards/DM-08/Cards/DM08_017.jpg",
-    "keywords": [],
+    "keywords": [
+      "Unblockable"
+    ],
     "scriptEffectId": "VANILLA"
   },
   {
@@ -8966,7 +8978,12 @@
     "race": "Chimera",
     "imagePath": "res://assets/art/cards/DM-08/Cards/DM08_023.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "AttackTrigger_OpponentDiscardsHand"
+      }
+    ]
   },
   {
     "id": "dm_08_031",
@@ -9104,8 +9121,17 @@
     "power": 2000,
     "race": "Dragonoid",
     "imagePath": "res://assets/art/cards/DM-08/Cards/DM08_043.jpg",
-    "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "keywords": [
+      "CanAttackUntappedCreatures",
+      "PowerAttacker"
+    ],
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "PowerAttacker_AttackBoost",
+        "value": 4000
+      }
+    ]
   },
   {
     "id": "dm_08_041",
@@ -9222,7 +9248,12 @@
     "race": "Giant Insect",
     "imagePath": "res://assets/art/cards/DM-08/Cards/DM08_051.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "BlockedTrigger_BreakOneShield"
+      }
+    ]
   },
   {
     "id": "dm_08_048",
@@ -9303,8 +9334,16 @@
     "power": 3000,
     "race": "Tree Folk",
     "imagePath": "res://assets/art/cards/DM-08/Cards/DM08_015.jpg",
-    "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "keywords": [
+      "DoubleBreaker"
+    ],
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "StaticPower_AlwaysBoost",
+        "value": 5000
+      }
+    ]
   },
   {
     "id": "dm_08_054",

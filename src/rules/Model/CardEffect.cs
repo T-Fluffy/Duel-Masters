@@ -99,6 +99,25 @@ public enum EffectId
     /// <summary>Each other creature that has race {Data} in the battle zone gets +{Value} power.</summary>
     StaticPower_AuraRace = 705,
 
+    /// <summary>Static continuous: this creature always gets +{Value} power.</summary>
+    StaticPower_AlwaysBoost = 706,
+
+    /// <summary>
+    /// Static aura (DM-08 Turbo Rush): every creature the controller controls in
+    /// the battle zone has Speed Attacker - creatures entering while it is active,
+    /// and creatures already there when it enters, lose summoning sickness.
+    /// </summary>
+    StaticTurbo_SpeedAttackerAll = 707,
+
+    /// <summary>When this creature attacks, the opponent discards his entire hand.</summary>
+    AttackTrigger_OpponentDiscardsHand = 708,
+
+    /// <summary>When this creature attacks the opponent and is not blocked, untap all your creatures except itself.</summary>
+    AttackTrigger_UntapAllOwnExceptSelf = 709,
+
+    /// <summary>When this creature attacks the opponent and becomes blocked, it breaks one of the opponent's shields.</summary>
+    BlockedTrigger_BreakOneShield = 710,
+
     // ------------------------------------------------------- cost modifiers
 
     /// <summary>Each {Data} creature costs {Value} more to summon (global).</summary>

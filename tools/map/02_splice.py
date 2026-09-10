@@ -35,6 +35,10 @@ VALID_EFF = {
     "StaticPower_AlwaysPerOtherCreature", "StaticPower_AuraRace", "CostIncrease_Summon_ByCiv",
     "CostIncrease_Cast_ByCiv", "CostDecrease_Summon_All", "CostDecrease_Cast_All",
     "CostDecrease_Summon_ByRace",
+    # DM-08 continuous/triggered abilities (senia, turbo rush, etc.)
+    "StaticPower_AlwaysBoost", "StaticTurbo_SpeedAttackerAll",
+    "AttackTrigger_OpponentDiscardsHand", "AttackTrigger_UntapAllOwnExceptSelf",
+    "BlockedTrigger_BreakOneShield",
     # Activated tap abilities (Tap Ability card family)
     "Tap_Draw", "Tap_ReturnToHand", "Tap_TapOpponentCreature", "Tap_ReturnSpellFromManaToHand",
     "Tap_ReturnCreatureFromManaToHand", "Tap_ReturnManaCardToHand", "Tap_ReturnGraveCreatureToHand",

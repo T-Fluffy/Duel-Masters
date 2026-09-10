@@ -321,4 +321,53 @@ public class CatalogDataTests
         Assert.Equal("ShieldTrigger", FirstKeyword("Holy Awe", "ShieldTrigger"));
         Assert.False(EffectsOf("Holy Awe").Any());
     }
+
+    [Fact]
+    public void Dm08TurboRushSlice_CarriesItsIntendedAbilities()
+    {
+        var byName = LoadCards();
+
+        string? FirstKeyword(string cardName, string keyword)
+        {
+            var card = byName[cardName][0];
+            if (!card.TryGetProperty("keywords", out var kwEl)) return null;
+            var hit = kwEl.EnumerateArray().FirstOrDefault(k => string.Equals(k.GetString(), keyword, StringComparison.Ordinal));
+            return hit.ValueKind == JsonValueKind.Undefined ? null : hit.GetString();
+        }
+
+        IReadOnlyList<JsonElement> EffectsOf(string cardName)
+        {
+            var card = byName[cardName][0];
+            if (!card.TryGetProperty("effects", out var effEl)) return System.Array.Empty<JsonElement>();
+            return effEl.EnumerateArray().ToList();
+        }
+
+        // Magmadragon Jagalzor: the Turbo Rush aura granting Speed Attacker to all own creatures.
+        Assert.Contains(EffectsOf("Magmadragon Jagalzor"),
+            e => e.GetProperty("id").GetString() == "StaticTurbo_SpeedAttackerAll");
+
+        // Solar Grass, Gigaclaws, Carbonite Scarab: attack / unblocked / blocked triggers.
+        Assert.Contains(EffectsOf("Solar Grass"),
+            e => e.GetProperty("id").GetString() == "AttackTrigger_UntapAllOwnExceptSelf");
+        Assert.Contains(EffectsOf("Gigaclaws"),
+            e => e.GetProperty("id").GetString() == "AttackTrigger_OpponentDiscardsHand");
+        Assert.Contains(EffectsOf("Carbonite Scarab"),
+            e => e.GetProperty("id").GetString() == "BlockedTrigger_BreakOneShield");
+
+        // Illusion Fish: keyword-only unblockable.
+        Assert.Equal("Unblockable", FirstKeyword("Illusion Fish", "Unblockable"));
+
+        // Missile Soldier Ultimo: can attack untapped creatures and has Power Attacker +4000.
+        Assert.Equal("CanAttackUntappedCreatures", FirstKeyword("Missile Soldier Ultimo", "CanAttackUntappedCreatures"));
+        Assert.Equal("PowerAttacker", FirstKeyword("Missile Soldier Ultimo", "PowerAttacker"));
+        Assert.Contains(EffectsOf("Missile Soldier Ultimo"), e =>
+            e.GetProperty("id").GetString() == "PowerAttacker_AttackBoost"
+            && e.GetProperty("value").GetInt32() == 4000);
+
+        // Senia, Orchard Avenger: always +5000 power and Double Breaker.
+        Assert.Equal("DoubleBreaker", FirstKeyword("Senia, Orchard Avenger", "DoubleBreaker"));
+        Assert.Contains(EffectsOf("Senia, Orchard Avenger"), e =>
+            e.GetProperty("id").GetString() == "StaticPower_AlwaysBoost"
+            && e.GetProperty("value").GetInt32() == 5000);
+    }
 }

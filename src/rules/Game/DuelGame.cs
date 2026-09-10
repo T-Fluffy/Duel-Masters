@@ -907,7 +907,7 @@ public sealed class DuelGame
         PayManaFor(actor, card.Card);
         var instance = actor.Hand[handIndex];
         instance.Zone = Zone.BattleZone;
-        instance.IsSummoningSick = !card.Card.HasKeyword(Keyword.SpeedAttacker);
+        instance.IsSummoningSick = !EntersUntapped(actor, card.Card);
         actor.Hand.RemoveAt(handIndex);
         actor.BattleZone.Add(instance);
         ResolveBattleZoneEntry(instance, onPlayTarget?.Owner, onPlayTarget?.Index);
@@ -983,7 +983,7 @@ public sealed class DuelGame
             throw new RuleViolationException($"'{card.Card.Name}' cannot target that creature.");
 
         var instance = actor.Hand[handIndex];
-        instance.IsSummoningSick = !card.Card.HasKeyword(Keyword.SpeedAttacker);
+        instance.IsSummoningSick = !EntersUntapped(actor, card.Card);
         actor.Hand.RemoveAt(handIndex);
 
         // The whole stack beneath the base slides under the new top (supports
@@ -1077,6 +1077,8 @@ public sealed class DuelGame
         attacker.AttackedThisTurn = true;
         _hasAttackedThisTurn = true;
 
+        ResolveAttackTriggers(attacker);
+
         if (blockerOwner is not null && blockerIndex is int bIdx)
         {
             if (!ReferenceEquals(blockerOwner, defender))
@@ -1098,6 +1100,8 @@ public sealed class DuelGame
                     break;
                 }
             }
+
+            ResolveBlockedTriggers(attacker, defender);
             return;
         }
 
@@ -1109,6 +1113,7 @@ public sealed class DuelGame
         }
 
         BreakShields(defender, BreakerCount(attacker));
+        ResolveUnblockedTriggers(attacker);
     }
 
     /// <summary>
@@ -1142,6 +1147,8 @@ public sealed class DuelGame
         attacker.IsTapped = true;
         attacker.AttackedThisTurn = true;
         _hasAttackedThisTurn = true;
+
+        ResolveAttackTriggers(attacker);
 
         Battle(attacker, target);
     }
@@ -1185,6 +1192,74 @@ public sealed class DuelGame
         if (_pendingDestroyAfterBattle.Contains(defender) && defender.Zone == Zone.BattleZone)
             DestroyCreature(defender);
     }
+
+    /// <summary>Resolve a creature's "whenever this creature attacks" triggers (fires for player and creature attacks).</summary>
+    private void ResolveAttackTriggers(CardInstance attacker)
+    {
+        foreach (var e in attacker.Card.Effects)
+        {
+            switch (e.Id)
+            {
+                case EffectId.AttackTrigger_OpponentDiscardsHand:
+                    DiscardEntireHand(Opponent);
+                    break;
+            }
+        }
+    }
+
+    /// <summary>Resolve "attacking the opponent and not blocked" triggers (fires after an unblocked direct attack).</summary>
+    private void ResolveUnblockedTriggers(CardInstance attacker)
+    {
+        foreach (var e in attacker.Card.Effects)
+        {
+            switch (e.Id)
+            {
+                case EffectId.AttackTrigger_UntapAllOwnExceptSelf:
+                    foreach (var c in attacker.Owner!.BattleZone)
+                    {
+                        if (!ReferenceEquals(c, attacker))
+                            c.Untap();
+                    }
+                    break;
+            }
+        }
+    }
+
+    /// <summary>Resolve "attacking the opponent and becomes blocked" triggers (fires after the battle).</summary>
+    private void ResolveBlockedTriggers(CardInstance attacker, Player defender)
+    {
+        foreach (var e in attacker.Card.Effects)
+        {
+            switch (e.Id)
+            {
+                case EffectId.BlockedTrigger_BreakOneShield when defender.ShieldCount > 0:
+                    BreakShields(defender, 1);
+                    break;
+            }
+        }
+    }
+
+    /// <summary>Move every card in the player's hand to the graveyard (order-preserving).</summary>
+    private void DiscardEntireHand(Player p)
+    {
+        for (var i = p.Hand.Count - 1; i >= 0; i--)
+        {
+            var card = p.Hand[i];
+            p.Hand.RemoveAt(i);
+            card.Zone = Zone.Graveyard;
+            if (card.Owner is null)
+                card.Owner = p;
+            p.Graveyard.Add(card);
+        }
+    }
+
+    /// <summary>True when the player controls a creature granting every creature they control Speed Attacker.</summary>
+    private bool SpeedAttackerAuraActive(Player owner)
+        => owner.BattleZone.Any(c => c.Card.Effects.Any(e => e.Id == EffectId.StaticTurbo_SpeedAttackerAll));
+
+    /// <summary>True when the summon may enter without summoning sickness (Speed Attacker itself or an active Turbo Rush aura).</summary>
+    private bool EntersUntapped(Player owner, Card card)
+        => card.HasKeyword(Keyword.SpeedAttacker) || SpeedAttackerAuraActive(owner);
 
     /// <summary>True when the opponent may block this attacking creature.</summary>
     public static bool CanBeBlocked(Card attacker)
@@ -1344,7 +1419,7 @@ public int ReadyBlockerChoices(int attackerIndex)
             owner.Hand.Remove(instance);
             instance.Zone = Zone.BattleZone;
             instance.IsTapped = false;
-            instance.IsSummoningSick = !instance.Card.HasKeyword(Keyword.SpeedAttacker);
+            instance.IsSummoningSick = !EntersUntapped(owner, instance.Card);
             owner.BattleZone.Add(instance);
             ResolveBattleZoneEntry(instance, null, null);
             return instance;
@@ -1605,6 +1680,15 @@ public int ReadyBlockerChoices(int attackerIndex)
                     break;
                 }
             }
+        }
+
+        // Turbo Rush aura: every creature the controller controls has Speed
+        // Attacker, which immediately clears summoning sickness for everything
+        // already in the battle zone whenever the aura creature enters.
+        if (SpeedAttackerAuraActive(owner))
+        {
+            foreach (var c in owner.BattleZone)
+                c.IsSummoningSick = false;
         }
     }
 
@@ -1967,6 +2051,9 @@ public int ReadyBlockerChoices(int attackerIndex)
                 case EffectId.StaticPower_AlwaysWhileHaveRace:
                     if (HasOwnCreatureOfRace(c, eff.Data))
                         power += eff.Value;
+                    break;
+                case EffectId.StaticPower_AlwaysBoost:
+                    power += eff.Value;
                     break;
             }
         }

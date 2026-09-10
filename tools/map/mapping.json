@@ -6220,10 +6220,14 @@
   "keywords": [
    "DoubleBreaker"
   ],
-  "effects": [],
+  "effects": [
+   {
+    "id": "StaticTurbo_SpeedAttackerAll"
+   }
+  ],
   "tapAbilities": [],
   "evolutionOf": null,
-  "note": "tap/turbo/crew ability not modelled",
+  "note": null,
   "src": "{{Double Breaker}}\n\n{{Turbo Rush|Each of your creatures in the battle zone has \"speed attacker.\" ''(A creature that has \"speed attacker\" doesn't get summoning sickness.)''}}"
  },
  {
@@ -6277,7 +6281,7 @@
   "effects": [],
   "tapAbilities": [],
   "evolutionOf": null,
-  "note": "tap/turbo/crew ability not modelled",
+  "note": "turbo rush not modelled",
   "src": "{{Turbo Rush|Whenever this creature attacks, you may look at 2 of your opponent's shields. Then put them back where they were.}}"
  },
  {
@@ -6324,10 +6328,14 @@
  {
   "id": "dm_08_014",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "AttackTrigger_UntapAllOwnExceptSelf"
+   }
+  ],
   "tapAbilities": [],
   "evolutionOf": null,
-  "note": "tap/turbo/crew ability not modelled",
+  "note": null,
   "src": "{{Turbo Rush|Whenever this creature is attacking your opponent and isn't blocked, untap all your creatures in the battle zone except '''Solar Grasses'''.}}"
  },
  {
@@ -6386,11 +6394,13 @@
  },
  {
   "id": "dm_08_020",
-  "keywords": [],
+  "keywords": [
+   "Unblockable"
+  ],
   "effects": [],
   "tapAbilities": [],
   "evolutionOf": null,
-  "note": "tap/turbo/crew ability not modelled",
+  "note": null,
   "src": "{{Turbo Rush|This creature can't be blocked.}}"
  },
  {
@@ -6428,7 +6438,7 @@
   "effects": [],
   "tapAbilities": [],
   "evolutionOf": null,
-  "note": "tap/turbo/crew ability not modelled",
+  "note": "turbo rush not modelled",
   "src": "{{Turbo Rush|When this creature attacks, search your deck. You may take a card from your deck and put it into your hand. Then shuffle your deck.}}"
  },
  {
@@ -6480,16 +6490,20 @@
   "effects": [],
   "tapAbilities": [],
   "evolutionOf": null,
-  "note": "tap/turbo/crew ability not modelled",
+  "note": "turbo rush not modelled",
   "src": "{{Turbo Rush|Whenever this creature is attacking your opponent and isn't blocked, you may destroy a creature.}}"
  },
  {
   "id": "dm_08_030",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "AttackTrigger_OpponentDiscardsHand"
+   }
+  ],
   "tapAbilities": [],
   "evolutionOf": null,
-  "note": "tap/turbo/crew ability not modelled",
+  "note": null,
   "src": "{{Turbo Rush|Whenever this creature attacks, your opponent discards his hand.}}"
  },
  {
@@ -6583,11 +6597,19 @@
  },
  {
   "id": "dm_08_040",
-  "keywords": [],
-  "effects": [],
+  "keywords": [
+   "CanAttackUntappedCreatures",
+   "PowerAttacker"
+  ],
+  "effects": [
+   {
+    "id": "PowerAttacker_AttackBoost",
+    "value": 4000
+   }
+  ],
   "tapAbilities": [],
   "evolutionOf": null,
-  "note": "tap/turbo/crew ability not modelled",
+  "note": null,
   "src": "{{Turbo Rush|This creature can attack untapped creatures and has \"Power attacker +4000 ''(While attacking, this creature gets +4000 power)''.\"}}"
  },
  {
@@ -6614,7 +6636,7 @@
   "effects": [],
   "tapAbilities": [],
   "evolutionOf": null,
-  "note": "tap/turbo/crew ability not modelled",
+  "note": "turbo rush not modelled",
   "src": "{{Turbo Rush|Whenever this creature attacks, you may destroy one of your opponent's creatures that has power 4000 or less.}}"
  },
  {
@@ -6670,10 +6692,14 @@
  {
   "id": "dm_08_047",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "BlockedTrigger_BreakOneShield"
+   }
+  ],
   "tapAbilities": [],
   "evolutionOf": null,
-  "note": "tap/turbo/crew ability not modelled",
+  "note": null,
   "src": "{{Turbo Rush|Whenever this creature is attacking your opponent and becomes blocked, it breaks one of your opponent's shields.}}"
  },
  {
@@ -6727,11 +6753,18 @@
  },
  {
   "id": "dm_08_053",
-  "keywords": [],
-  "effects": [],
+  "keywords": [
+   "DoubleBreaker"
+  ],
+  "effects": [
+   {
+    "id": "StaticPower_AlwaysBoost",
+    "value": 5000
+   }
+  ],
   "tapAbilities": [],
   "evolutionOf": null,
-  "note": "tap/turbo/crew ability not modelled",
+  "note": null,
   "src": "{{Turbo Rush|This creature gets +5000 power and has \"double breaker ''(This creature breaks 2 shields)''.\"}}"
  },
  {

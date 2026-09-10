@@ -55,6 +55,10 @@ def flatten_templates(text: str) -> str:
 # Tap Ability lines are the whole {{Tap Ability|<body>}} template on one line.
 TAP_LINE = re.compile(r"^\{\{Tap Ability\|(?P<body>.*)\}\}$")
 
+# DM-08 "Turbo Rush" abilities are the whole {{Turbo Rush|<body>}} template on
+# one line; unwrap the body so it flows through the normal rule table.
+TURBO_RUSH_LINE = re.compile(r"^\{\{Turbo Rush\|(?P<body>.*)\}\}$")
+
 
 def scope_of(text: str, default="AnyCreature"):
     low = text.lower()
@@ -161,6 +165,27 @@ def _rules():
          lambda m, t: (["Slayer"], [], "slayer limited to two argued civs", None))
     rule("BlockerScoped", r"^blocker\|.*$",
          lambda m, t: (["Blocker"], [], "blocker limited to argued civs", None))
+
+    # ----- DM-08 Turbo Rush / continuous + attacked triggers
+    rule("TurboSpeedAttackerAll",
+         r"^each of your creatures in the battle zone has \"?speed attacker\"?[\s\.\"]*$",
+         lambda m, t: ([], [E("StaticTurbo_SpeedAttackerAll")], None, None))
+    rule("FlatPowerPlusBreaker",
+         r"^this creature gets \+(\d+) power and has \"?double breaker\"?[\s\.\"]*$",
+         lambda m, t: (["DoubleBreaker"], [E("StaticPower_AlwaysBoost", v=int(m.group(1)))], None, None))
+    rule("CanAttackUntappedHasPowerAttacker",
+         r"^this creature can attack untapped creatures and has \"?power attacker \+(\d+)\"?[\s\.\"]*$",
+         lambda m, t: (["CanAttackUntappedCreatures", "PowerAttacker"],
+                       [E("PowerAttacker_AttackBoost", v=int(m.group(1)))], None, None))
+    rule("TriggerOppDiscardsHand",
+         r"^whenever this creature attacks,? your opponent discards (?:his|her|their) hand\.?$",
+         lambda m, t: ([], [E("AttackTrigger_OpponentDiscardsHand")], None, None))
+    rule("UnblockedUntapExceptSelf",
+         r"^whenever this creature is attacking your opponent and isn'?t blocked, untap all your creatures in the battle zone except [^.]*\.?$",
+         lambda m, t: ([], [E("AttackTrigger_UntapAllOwnExceptSelf")], None, None))
+    rule("BlockedBreaksShield",
+         r"^whenever this creature is attacking your opponent and becomes blocked,? it breaks one of your opponent'?s shields?\.?$",
+         lambda m, t: ([], [E("BlockedTrigger_BreakOneShield")], None, None))
 
     # ----- evolution
     rule("EvoDragon", r"^evolution[\u2014\-]put on one of your creatures that has ([A-Za-z ]+) in its race\.?$",
@@ -505,6 +530,28 @@ def main():
                     tap_abilities.append(E("Tap_NotModelled", d=body[:64]))
                 else:
                     tap_abilities.append(eff)
+                continue
+
+            # DM-08 Turbo Rush: unwrap the whole-line template so the body flows
+            # through the normal rules (fully modelled) or gets a documented note.
+            m = TURBO_RUSH_LINE.match(line)
+            if m:
+                handled_lines += 1
+                body = flatten_templates(strip_reminders(m.group("body")))
+                name, res = match_line(body)
+                if res is None:
+                    add_note(notes, "turbo rush not modelled")
+                    continue
+                used_rules[name] = used_rules.get(name, 0) + 1
+                kws, effs, note, evo2 = res
+                if evo2 is not None:
+                    evo = evo2
+                for k in kws:
+                    if k not in keywords:
+                        keywords.append(k)
+                effects.extend(effs)
+                if note:
+                    add_note(notes, note)
                 continue
 
             for templ_note in ("{{Tap Ability", "{{Turbo Rush", "{{Crew Breaker", "use this creature's {{Tap}} ability",
