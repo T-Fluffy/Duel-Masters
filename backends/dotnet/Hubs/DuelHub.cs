@@ -477,12 +477,13 @@ public sealed class DuelHub : Hub<IDuelClientContract>
             var order = new List<Card>();
             foreach (var token in orderedScryIds)
             {
-                // Tokens are the "Scry:{i}" instance ids from the state snapshot; the
-                // index names the exact position in the exposed window so duplicate
-                // catalog cards stay distinguishable.
-                if (!int.TryParse(token, out var i) || i < 0 || i >= window.Count)
-                    throw new RuleViolationException("The returned deck order does not match the cards that were looked at.");
-                order.Add(window[i]);
+// Tokens are the "Scry:{i}" instance ids from the state snapshot; the
+            // index names the exact position in the exposed window so duplicate
+            // catalog cards stay distinguishable.
+            var i = ScryTokens.TryGetIndex(token);
+            if (i < 0 || i >= window.Count)
+                throw new RuleViolationException("The returned deck order does not match the cards that were looked at.");
+            order.Add(window[i]);
             }
             game.SubmitScryOrder(order);
         }, out var error))

@@ -421,4 +421,21 @@ public class ShieldLookScryTapAbilityTests
         Assert.Equal(3, state.ScryCards.Count);
         Assert.Equal(new[] { "Scry:0", "Scry:1", "Scry:2" }, state.ScryCards.Select(c => c.InstanceId));
     }
+
+    [Fact]
+    public void ScryTokens_ParseTheInstanceIdFormTheServerHubUses()
+    {
+        // Tokens travel over the wire exactly as the owner's snapshot exposes them
+        // ("Scry:{i}"); the hub maps each one back to its window slot.
+        Assert.Equal(0, ScryTokens.TryGetIndex("Scry:0"));
+        Assert.Equal(2, ScryTokens.TryGetIndex("Scry:2"));
+        Assert.Equal(9, ScryTokens.TryGetIndex("Scry:9"));
+        Assert.Equal(0, ScryTokens.TryGetIndex("0"));
+        Assert.Equal(-1, ScryTokens.TryGetIndex("Scry:abc"));
+        Assert.Equal(-1, ScryTokens.TryGetIndex("Scry:-1"));
+        Assert.Equal(-1, ScryTokens.TryGetIndex(null));
+        Assert.Equal(-1, ScryTokens.TryGetIndex(""));
+        Assert.Equal(-1, ScryTokens.TryGetIndex("Scry"));
+        Assert.Equal(-1, ScryTokens.TryGetIndex("Shield:2"));
+    }
 }
