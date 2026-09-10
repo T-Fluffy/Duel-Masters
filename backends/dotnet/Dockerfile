@@ -26,6 +26,12 @@ RUN dotnet publish DuelMasters.Server.csproj -c Release -o /app/publish
 
 FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS runtime
 WORKDIR /app
+
+# curl powers the container healthcheck against GET /health.
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends curl \
+    && rm -rf /var/lib/apt/lists/*
+
 COPY --from=build /app/publish .
 EXPOSE 8080
 ENTRYPOINT ["dotnet", "DuelMasters.Server.dll"]

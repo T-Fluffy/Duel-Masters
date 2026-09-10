@@ -12,7 +12,9 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-ROOT = Path(r"D:\Godot projects\Projects\duel_masters")
+# Repo root derived from this file (tools/map/...) so the pipeline runs on any
+# checkout path and any OS (CI runners are Linux).
+ROOT = Path(__file__).resolve().parents[2]
 CARDS = ROOT / "src" / "resources" / "data" / "cards.json"
 MAPPING = ROOT / "tools" / "map" / "mapping.json"
 

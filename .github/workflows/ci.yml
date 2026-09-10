@@ -1,0 +1,96 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  domain-tests:
+    name: .NET build + domain tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            10.0.x
+
+      - name: Restore
+        run: dotnet restore
+
+      # Sequential builds: the shared DuelMasters.Domain.dll artifacts are rebuilt
+      # by several projects at once, and parallel MSBuild invocations contend on
+      # the same output file (CS2012). Build one project at a time here too.
+      - name: Build Godot client
+        run: dotnet build Duel-Masters.csproj -c Release --no-restore
+      - name: Build backend server
+        run: dotnet build backends/dotnet/DuelMasters.Server.csproj -c Release --no-restore
+      - name: Build E2E harness
+        run: dotnet build tests/DuelE2E/DuelE2E.csproj -c Release --no-restore
+
+      - name: Domain tests
+        run: dotnet test tests/DuelMasters.Domain.Tests -c Release --no-build
+
+  mapping-drift:
+    name: Card mapping is current
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Regenerate mapping
+        run: python tools/map/01_build_mapping.py
+      - name: Splice onto catalog
+        run: python tools/map/02_splice.py
+
+      - name: Fail when the committed catalog is stale
+        run: |
+          git diff --exit-code -- tools/map/mapping.json src/resources/data/cards.json || {
+            echo "::error::tools/map/mapping.json and/or src/resources/data/cards.json are stale. Re-run tools/map/01_build_mapping.py + 02_splice.py locally and commit the regenerated files."
+            git diff -- tools/map/mapping.json src/resources/data/cards.json
+            exit 1
+          }
+
+  e2e:
+    name: Online end-to-end (dockerized backend)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            10.0.x
+
+      - name: Start backend stack
+        run: docker compose -f backends/docker-compose.yml up -d --build
+
+      - name: Wait for /health
+        run: |
+          for i in $(seq 1 60); do
+            if curl -fsS http://127.0.0.1:8080/health >/dev/null 2>&1; then
+              echo "server healthy after ${i} attempts"
+              exit 0
+            fi
+            sleep 2
+          done
+          docker compose -f backends/docker-compose.yml logs server
+          exit 1
+
+      - name: Run E2E harness
+        env:
+          E2E_BASE_URL: http://127.0.0.1:8080
+          E2E_PASSWORD: ci-e2e-password
+        run: dotnet run --project tests/DuelE2E
+
+      - name: Teardown stack
+        if: always()
+        run: docker compose -f backends/docker-compose.yml down -v

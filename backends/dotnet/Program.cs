@@ -6,6 +6,7 @@ using DuelMasters.Server.Hubs;
 using DuelMasters.Server.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -88,5 +89,10 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 app.MapHub<DuelHub>("/duel");
+
+// Liveness probe for container healthchecks and CI readiness polling. Plain
+// endpoint (no auth, no side effects) so orchestrators can distinguish "the
+// process is up and routing requests" from not-yet-warmed-up.
+app.MapGet("/health", () => Results.Ok(new { status = "ok" }));
 
 app.Run();

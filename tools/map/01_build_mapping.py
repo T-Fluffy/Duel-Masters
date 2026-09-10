@@ -21,7 +21,9 @@ import json
 import re
 from pathlib import Path
 
-ROOT = Path(r"D:\Godot projects\Projects\duel_masters")
+# Repo root derived from this file (tools/map/...) so the pipeline runs on any
+# checkout path and any OS (CI runners are Linux).
+ROOT = Path(__file__).resolve().parents[2]
 REPORT = ROOT / "tools" / "extract" / "_report.json"
 OUT_DIR = ROOT / "tools" / "map"
 OUT = OUT_DIR / "mapping.json"

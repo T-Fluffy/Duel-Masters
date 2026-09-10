@@ -113,6 +113,23 @@ dotnet build -c Debug      # builds client + domain library
 dotnet test                # runs the DuelMasters.Domain rules tests
 ```
 
+CI (GitHub Actions, `.github/workflows/ci.yml`) runs three checks on every push
+to `main` and on pull requests:
+
+- **domain-tests** — sequential Release builds of the Godot client, the backend
+  server, and the E2E harness, then the full xUnit domain suite.
+- **mapping-drift** — re-runs `tools/map/01_build_mapping.py` + `02_splice.py`
+  and fails if the committed `mapping.json` / `cards.json` carried a stale
+  generation (run those two scripts locally and commit the output).
+- **e2e** — boots the dockerized backend (Postgres + server), waits for the
+  server's `GET /health` liveness endpoint, and runs the headless online harness
+  (`dotnet run --project tests/DuelE2E`) covering human-vs-human, vs-AI,
+  reconnect, and rematch flows.
+
+The backend exposes `GET /health` (plain, unauthenticated) for container
+healthchecks and CI readiness polling; the `server` compose service ships a curl
+healthcheck against it.
+
 ## Project structure
 
 Layout follows the [Project-Structure](https://github.com/FatEarthStudios) C#

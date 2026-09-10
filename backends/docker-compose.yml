@@ -31,6 +31,12 @@ services:
       Jwt__Audience: "duel-masters-client"
     ports:
       - "8080:8080"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://localhost:8080/health >/dev/null 2>&1"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 10s
     depends_on:
       db:
         condition: service_healthy
