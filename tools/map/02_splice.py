@@ -1,6 +1,6 @@
 """Phase 4 splice: apply mapping.json onto cards.json.
 
-- CRLF-preserving, idempotent, leaves promo skeletons untouched.
+- LF-normalising, idempotent, leaves promo skeletons untouched.
 - keywords = existing + mapped (union, deduped, mapped wins for overlap).
 - effects = mapped when the text produced any; otherwise the existing
   hand-authored effects survive (documented approximations keep their gameplay).
@@ -198,10 +198,9 @@ def main():
         raise SystemExit(1)
 
     text = json.dumps(cards, indent=2, ensure_ascii=False)
-    text = text.replace("\n", "\r\n")
     if raw.endswith("\n"):
         text += raw[-1]
-    CARDS.write_text(text, encoding="utf-8")
+    CARDS.write_text(text, encoding="utf-8", newline="")
 
     n_kw = sum(1 for c in cards if c.get("keywords"))
     n_eff = sum(1 for c in cards if c.get("effects"))
