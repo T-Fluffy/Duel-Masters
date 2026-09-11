@@ -57,6 +57,39 @@ public enum EffectId
     /// <summary>When this creature enters the battle zone, put the top card of your deck into your mana zone.</summary>
     OnPlay_ChargeMana = 505,
 
+    /// <summary>When this creature enters the battle zone, destroy target opponent creature (any power).</summary>
+    OnPlay_DestroyAny = 506,
+
+    /// <summary>When this creature enters the battle zone, destroy target creature you control (power &lt;= {Value} when set).</summary>
+    OnPlay_DestroyOwnCreature = 507,
+
+    /// <summary>When this creature enters the battle zone, return cards from your graveyard to your hand (up to {Value}, all when 0).</summary>
+    OnPlay_ReturnFromGraveyard = 508,
+
+    /// <summary>When this creature enters the battle zone, return {Value} card(s) from your mana zone to your hand.</summary>
+    OnPlay_ReturnFromMana = 509,
+
+    /// <summary>When this creature enters the battle zone, search your deck, take a card ({Data} card type/race filter) into your hand, then shuffle.</summary>
+    OnPlay_SearchDeck = 510,
+
+    /// <summary>When this creature enters the battle zone, your opponent discards {Value} random card(s) from hand.</summary>
+    OnPlay_DiscardOpponentRandom = 511,
+
+    /// <summary>When this creature enters the battle zone, your opponent chooses one of his creatures and destroys it.</summary>
+    OnPlay_OpponentSacrifice = 512,
+
+    /// <summary>When this creature enters the battle zone, put {Value} creature(s) from your graveyard into your mana zone.</summary>
+    OnPlay_FromGraveyardToMana = 513,
+
+    /// <summary>When this creature enters the battle zone, put {Value} card(s) from your mana zone into your graveyard.</summary>
+    OnPlay_ManaToGrave = 514,
+
+    /// <summary>When this creature enters the battle zone, look at your opponent's hand (informational).</summary>
+    OnPlay_LookAtHand = 515,
+
+    /// <summary>When this creature enters the battle zone, look at your opponent's shields (informational).</summary>
+    OnPlay_LookAtShields = 516,
+
     // --------------------------------------------- destruction substitution rules
 
     /// <summary>If this creature would be destroyed, put it into its owner's hand instead.</summary>
@@ -69,6 +102,21 @@ public enum EffectId
 
     /// <summary>Spell: destroy all creatures in the battle zone.</summary>
     Spell_DestroyAllCreatures = 600,
+
+    /// <summary>Spell: destroy one of your opponent's creatures (any power).</summary>
+    Spell_DestroyAny = 604,
+
+    /// <summary>Spell: your opponent chooses one of his creatures in the battle zone and destroys it.</summary>
+    Spell_OpponentSacrifice = 605,
+
+    /// <summary>Spell: search your deck, take a card ({Data} filter) into your hand, then shuffle.</summary>
+    Spell_SearchToHand = 606,
+
+    /// <summary>Spell: search your deck, take a card ({Data} filter) into your mana zone, then shuffle.</summary>
+    Spell_SearchToMana = 607,
+
+    /// <summary>Spell: return a creature from your graveyard to your hand.</summary>
+    Spell_ReturnFromGraveyard = 608,
 
     /// <summary>Spell: return up to {Value} creatures in the battle zone to their owners' hands.</summary>
     Spell_ReturnUpToToHand = 601,
@@ -135,6 +183,21 @@ public enum EffectId
 
     /// <summary>When this creature attacks, you may destroy one of the opponent's creatures that has power {Value} or less.</summary>
     AttackTrigger_MayDestroyPowerAtMost = 715,
+
+    /// <summary>When this creature attacks, you may draw {Value} card(s).</summary>
+    AttackTrigger_Draw = 716,
+
+    /// <summary>When this creature attacks, your opponent discards {Value} random card(s) from hand.</summary>
+    AttackTrigger_DiscardOpponentRandom = 717,
+
+    /// <summary>When this creature attacks, you may return a {Data} creature from your graveyard to your hand.</summary>
+    AttackTrigger_ReturnFromGraveyard = 718,
+
+    /// <summary>When this creature attacks, you may put the top card of your deck into your mana zone.</summary>
+    AttackTrigger_ChargeMana = 719,
+
+    /// <summary>When this creature attacks, you may tap a {Data} creature in the battle zone.</summary>
+    AttackTrigger_TapCreature = 720,
 
     // ------------------------------------------------------- cost modifiers
 
@@ -270,6 +333,29 @@ public enum EffectId
     /// catalog (data preserved), but the engine refuses to activate it.
     /// </summary>
     Tap_NotModelled = 998,
+
+    // ---------------------------------------------- destroyed / death triggers
+
+    /// <summary>When this creature is destroyed, your opponent discards {Value} random card(s) from hand.</summary>
+    OnDestroyed_OpponentDiscardRandom = 724,
+
+    /// <summary>When this creature is destroyed, each player discards his hand.</summary>
+    OnDestroyed_DiscardHand = 725,
+
+    /// <summary>When this creature is destroyed, each player puts {Value} card(s) from his mana zone into his graveyard.</summary>
+    OnDestroyed_DestroyMana = 726,
+
+    /// <summary>When this creature is destroyed, destroy all creatures that have power {Value} or less.</summary>
+    OnDestroyed_DestroyAllPowerAtMost = 727,
+
+    /// <summary>When this creature is destroyed, return a creature from your graveyard to your hand.</summary>
+    OnDestroyed_ReturnFromGraveyard = 728,
+
+    /// <summary>When this creature is destroyed, choose one of your shields and put it into your hand.</summary>
+    OnDestroyed_ShieldToHand = 729,
+
+    /// <summary>When this creature is destroyed, choose one of your shields and put it into your graveyard.</summary>
+    OnDestroyed_ShieldToGrave = 730,
 }
 
 /// <summary>

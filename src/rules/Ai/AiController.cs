@@ -752,7 +752,10 @@ private bool TryChooseSpellPlay(DuelGame game, int handIndex, out IReadOnlyList<
             {
                 if (card.IsEvolution)
                     continue; // evolution creatures are only played by evolving onto a base
-                game.PlayShieldTrigger(handIndex);
+                if (DuelGame.HasOnPlayTargetChoice(card) && TryChooseOnPlayTarget(game, card, out var cOwner, out var cTarget))
+                    game.PlayShieldTrigger(handIndex, new[] { new SpellTarget(cOwner, cTarget) });
+                else
+                    game.PlayShieldTrigger(handIndex);
                 continue;
             }
             if (TryChooseSpellTargets(game, card, out var targets))

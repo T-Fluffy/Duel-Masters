@@ -65,12 +65,41 @@ public partial class SceneOptionsMenu : Control
 
         AddEntry(box, "Display Settings", OnDisplaySettings);
         AddCheckbox(box, "Show AI Cards", GameSettings.RevealAiHand, GameSettings.SetRevealAiHand);
+        AddCardSizeSlider(box);
         if (ShowBackToMenu)
             AddEntry(box, "Back to Main Menu", OnBackToMenu);
         AddEntry(box, "Exit Game", OnExitGame);
 
         // Pop the menu just below the gear, anchored to the top-right.
         _menu.SetPosition(new Vector2(-170f, 52f));
+    }
+
+    private static void AddCardSizeSlider(VBoxContainer box)
+    {
+        var label = new Label
+        {
+            Text = $"Card Size {Mathf.RoundToInt(GameSettings.CardSizeMultiplier * 100)}%",
+            CustomMinimumSize = new Vector2(160, 0),
+        };
+        label.AddThemeColorOverride("font_color", UiStyles.MutedText);
+        box.AddChild(label);
+
+        var slider = new HSlider
+        {
+            MinValue = GameSettings.CardSizeMin,
+            MaxValue = GameSettings.CardSizeMax,
+            Step = 0.05f,
+            Value = GameSettings.CardSizeMultiplier,
+            CustomMinimumSize = new Vector2(160, 0),
+            SizeFlagsHorizontal = SizeFlags.ExpandFill,
+        };
+        slider.ValueChanged += value =>
+        {
+            var scale = Mathf.Clamp((float)value, GameSettings.CardSizeMin, GameSettings.CardSizeMax);
+            GameSettings.SetCardSizeMultiplier(scale);
+            label.Text = $"Card Size {Mathf.RoundToInt(scale * 100)}%";
+        };
+        box.AddChild(slider);
     }
 
     private static void AddEntry(VBoxContainer box, string text, Action onClick)

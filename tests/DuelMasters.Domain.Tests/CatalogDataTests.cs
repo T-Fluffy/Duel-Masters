@@ -312,7 +312,9 @@ public class CatalogDataTests
         Assert.Equal("Blocker", FirstKeyword("Aqua Guard", "Blocker"));
         Assert.Equal("PowerAttacker", FirstKeyword("Fatal Attacker Horvath", "PowerAttacker"));
 
-        Assert.Contains(EffectsOf("Terror Pit"), e => e.GetProperty("id").GetString() == "Spell_DestroyPowerAtMost");
+        Assert.Contains(EffectsOf("Terror Pit"), e =>
+            e.GetProperty("id").GetString() == "Spell_DestroyAny"
+            && e.GetProperty("target").GetString() == "OpponentCreature");
         Assert.Contains(EffectsOf("Tornado Flame"), e => e.GetProperty("id").GetString() == "Spell_DestroyPowerAtMost"
                                                           && e.GetProperty("value").GetInt32() == 4000);
         Assert.Contains(EffectsOf("Spiral Gate"), e => e.GetProperty("id").GetString() == "Spell_ReturnToHand");

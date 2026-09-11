@@ -228,7 +228,13 @@
     "race": "Berserker",
     "imagePath": "res://assets/art/cards/DM-01/Cards/DM01_058.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "OnPlay_SearchDeck",
+        "data": "Spell"
+      }
+    ]
   },
   {
     "id": "dm_01_016",
@@ -455,7 +461,13 @@
     "keywords": [
       "ShieldTrigger"
     ],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "Spell_SearchToHand",
+        "data": "Card"
+      }
+    ]
   },
   {
     "id": "dm_01_030",
@@ -718,7 +730,13 @@
     "race": "Ghost",
     "imagePath": "res://assets/art/cards/DM-01/Cards/DM01_091.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "OnPlay_DestroyOwnCreature",
+        "target": "OwnCreature"
+      }
+    ]
   },
   {
     "id": "dm_01_046",
@@ -823,7 +841,13 @@
     "keywords": [
       "ShieldTrigger"
     ],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "Spell_ReturnFromGraveyard",
+        "value": 1
+      }
+    ]
   },
   {
     "id": "dm_01_053",
@@ -907,7 +931,14 @@
     "race": "Chimera",
     "imagePath": "res://assets/art/cards/DM-01/Cards/DM01_044.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "OnPlay_ReturnFromGraveyard",
+        "value": 2,
+        "data": "Creatures"
+      }
+    ]
   },
   {
     "id": "dm_01_058",
@@ -920,7 +951,13 @@
     "race": "Ghost",
     "imagePath": "res://assets/art/cards/DM-01/Cards/DM01_109.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "OnPlay_DiscardOpponentRandom",
+        "value": 1
+      }
+    ]
   },
   {
     "id": "dm_01_059",
@@ -961,7 +998,13 @@
     "race": "Parasite Worm",
     "imagePath": "res://assets/art/cards/DM-01/Cards/DM01_072.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "OnPlay_DestroyOwnCreature",
+        "target": "OwnCreature"
+      }
+    ]
   },
   {
     "id": "dm_01_062",
@@ -974,7 +1017,12 @@
     "race": "Parasite Worm",
     "imagePath": "res://assets/art/cards/DM-01/Cards/DM01_114.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "OnPlay_OpponentSacrifice"
+      }
+    ]
   },
   {
     "id": "dm_01_063",
@@ -991,9 +1039,8 @@
     ],
     "effects": [
       {
-        "id": "Spell_DestroyPowerAtMost",
-        "target": "OpponentCreature",
-        "value": 999999
+        "id": "Spell_DestroyAny",
+        "target": "OpponentCreature"
       }
     ],
     "scriptEffectId": "VANILLA"
@@ -1072,7 +1119,13 @@
     "race": "Machine Eater",
     "imagePath": "res://assets/art/cards/DM-01/Cards/DM01_004.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "OnPlay_ManaToGrave",
+        "value": 1
+      }
+    ]
   },
   {
     "id": "dm_01_069",
@@ -1206,7 +1259,13 @@
     "keywords": [
       "DoubleBreaker"
     ],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "OnPlay_ManaToGrave",
+        "value": 2
+      }
+    ]
   },
   {
     "id": "dm_01_077",
@@ -1339,7 +1398,13 @@
     "race": "Dragonoid",
     "imagePath": "res://assets/art/cards/DM-01/Cards/DM01_013.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "OnPlay_ManaToGrave",
+        "value": 1
+      }
+    ]
   },
   {
     "id": "dm_01_085",
@@ -1352,7 +1417,16 @@
     "race": "Armorloid",
     "imagePath": "res://assets/art/cards/DM-01/Cards/DM01_073.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "OnPlay_DestroyOwnCreature",
+        "target": "OwnCreature"
+      },
+      {
+        "id": "OnPlay_OpponentSacrifice"
+      }
+    ]
   },
   {
     "id": "dm_01_086",
@@ -1493,7 +1567,13 @@
     "keywords": [
       "ShieldTrigger"
     ],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "Spell_SearchToHand",
+        "data": "Creature"
+      }
+    ]
   },
   {
     "id": "dm_01_094",
@@ -1707,7 +1787,13 @@
     "race": "Tree Folk",
     "imagePath": "res://assets/art/cards/DM-01/Cards/DM01_080.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "OnPlay_FromGraveyardToMana",
+        "value": 1
+      }
+    ]
   },
   {
     "id": "dm_01_108",
@@ -2012,7 +2098,13 @@
     "keywords": [
       "ShieldTrigger"
     ],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "Spell_SearchToHand",
+        "data": "Spell"
+      }
+    ]
   },
   {
     "id": "dm_02_007",
@@ -2044,7 +2136,14 @@
     "race": "Guardian",
     "imagePath": "res://assets/art/cards/DM-02/Cards/DM02_005.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "OnPlay_ReturnFromGraveyard",
+        "value": 1,
+        "data": "Spell"
+      }
+    ]
   },
   {
     "id": "dm_02_009",
@@ -2164,7 +2263,13 @@
     "race": "Cyber Lord",
     "imagePath": "res://assets/art/cards/DM-02/Cards/DM02_018.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "AttackTrigger_Draw",
+        "value": 1
+      }
+    ]
   },
   {
     "id": "dm_02_017",
@@ -2259,7 +2364,14 @@
     "race": "Brain Jacker",
     "imagePath": "res://assets/art/cards/DM-02/Cards/DM02_029.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "AttackTrigger_ReturnFromGraveyard",
+        "value": 1,
+        "data": "Creature"
+      }
+    ]
   },
   {
     "id": "dm_02_024",
@@ -2275,9 +2387,8 @@
     "scriptEffectId": "VANILLA",
     "effects": [
       {
-        "id": "OnPlay_DestroyPowerAtMost",
-        "target": "OpponentCreature",
-        "value": 999999
+        "id": "OnPlay_DestroyAny",
+        "target": "OpponentCreature"
       }
     ],
     "evolutionOf": "Parasite Worm"
@@ -2308,7 +2419,13 @@
     "race": "Demon Command",
     "imagePath": "res://assets/art/cards/DM-02/Cards/DM02_011.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "AttackTrigger_DiscardOpponentRandom",
+        "value": 1
+      }
+    ]
   },
   {
     "id": "dm_02_027",
@@ -2365,7 +2482,13 @@
     "race": "Parasite Worm",
     "imagePath": "res://assets/art/cards/DM-02/Cards/DM02_026.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "AttackTrigger_DiscardOpponentRandom",
+        "value": 1
+      }
+    ]
   },
   {
     "id": "dm_02_031",
@@ -2406,7 +2529,14 @@
     "race": "Parasite Worm",
     "imagePath": "res://assets/art/cards/DM-02/Cards/DM02_052.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "OnPlay_DestroyOwnCreature",
+        "target": "OwnCreature",
+        "value": 3000
+      }
+    ]
   },
   {
     "id": "dm_02_034",
@@ -2453,7 +2583,13 @@
     "race": "Rock Beast",
     "imagePath": "res://assets/art/cards/DM-02/Cards/DM02_050.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "OnDestroyed_DestroyMana",
+        "value": 2
+      }
+    ]
   },
   {
     "id": "dm_02_037",
@@ -2516,7 +2652,12 @@
     "race": "Machine Eater",
     "imagePath": "res://assets/art/cards/DM-02/Cards/DM02_002.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "OnDestroyed_DestroyMana"
+      }
+    ]
   },
   {
     "id": "dm_02_041",
@@ -2691,7 +2832,12 @@
     "race": "Spell",
     "imagePath": "res://assets/art/cards/DM-02/Cards/DM02_060.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "Spell_SearchToMana"
+      }
+    ]
   },
   {
     "id": "dm_02_052",
@@ -2704,7 +2850,13 @@
     "race": "Horned Beast",
     "imagePath": "res://assets/art/cards/DM-02/Cards/DM02_025.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "OnPlay_SearchDeck",
+        "data": "Creature"
+      }
+    ]
   },
   {
     "id": "dm_02_053",
@@ -2717,7 +2869,12 @@
     "race": "Beast Folk",
     "imagePath": "res://assets/art/cards/DM-02/Cards/DM02_033.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "AttackTrigger_ChargeMana"
+      }
+    ]
   },
   {
     "id": "dm_02_054",
@@ -2904,7 +3061,13 @@
     "race": "Initiate",
     "imagePath": "res://assets/art/cards/DM-03/Cards/DM03_021.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "OnPlay_ReturnFromMana",
+        "value": 1
+      }
+    ]
   },
   {
     "id": "dm_03_005",
@@ -2932,7 +3095,14 @@
     "race": "Mecha Thunder",
     "imagePath": "res://assets/art/cards/DM-03/Cards/DM03_034.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "AttackTrigger_ReturnFromGraveyard",
+        "value": 1,
+        "data": "Light Spell"
+      }
+    ]
   },
   {
     "id": "dm_03_007",
@@ -3030,7 +3200,13 @@
     "race": "Liquid People",
     "imagePath": "res://assets/art/cards/DM-03/Cards/DM03_010.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "OnPlay_ReturnFromMana",
+        "value": 2
+      }
+    ]
   },
   {
     "id": "dm_03_014",
@@ -3141,7 +3317,13 @@
     "race": "Cyber Lord",
     "imagePath": "res://assets/art/cards/DM-03/Cards/DM03_004.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "OnPlay_ReturnFromMana",
+        "value": 1
+      }
+    ]
   },
   {
     "id": "dm_03_022",
@@ -3208,7 +3390,14 @@
     "race": "Demon Command",
     "imagePath": "res://assets/art/cards/DM-03/Cards/DM03_036.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "AttackTrigger_ReturnFromGraveyard",
+        "value": 1,
+        "data": "Darkness Creature"
+      }
+    ]
   },
   {
     "id": "dm_03_027",
@@ -4222,7 +4411,13 @@
     "keywords": [
       "ShieldTrigger"
     ],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "OnPlay_DiscardOpponentRandom",
+        "value": 1
+      }
+    ]
   },
   {
     "id": "dm_04_033",
@@ -4296,7 +4491,14 @@
     "race": "Living Dead",
     "imagePath": "res://assets/art/cards/DM-04/Cards/DM04_008.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "OnPlay_ReturnFromGraveyard",
+        "value": 1,
+        "data": "Living Dead"
+      }
+    ]
   },
   {
     "id": "dm_04_038",
@@ -4665,7 +4867,13 @@
       "DoubleBreaker"
     ],
     "scriptEffectId": "VANILLA",
-    "evolutionOf": "Horned Beast"
+    "evolutionOf": "Horned Beast",
+    "effects": [
+      {
+        "id": "OnPlay_SearchDeck",
+        "data": "Nature Creature"
+      }
+    ]
   },
   {
     "id": "dm_05_001",
@@ -4714,7 +4922,13 @@
     "race": "Dark Lord",
     "imagePath": "res://assets/art/cards/DM-05/Cards/DM05_057.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "OnDestroyed_DestroyAllPowerAtMost",
+        "value": 3000
+      }
+    ]
   },
   {
     "id": "dm_05_004",
@@ -4849,7 +5063,13 @@
     "race": "Light Bringer",
     "imagePath": "res://assets/art/cards/DM-05/Cards/DM05_024.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "AttackTrigger_TapCreature",
+        "data": "darkness or fire"
+      }
+    ]
   },
   {
     "id": "dm_05_013",
@@ -4881,7 +5101,13 @@
       "Blocker",
       "DoubleBreaker"
     ],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "OnPlay_ReturnFromMana",
+        "value": 1
+      }
+    ]
   },
   {
     "id": "dm_05_015",
@@ -4998,7 +5224,13 @@
     "race": "Fish",
     "imagePath": "res://assets/art/cards/DM-05/Cards/DM05_035.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "OnPlay_ReturnFromMana",
+        "value": 1
+      }
+    ]
   },
   {
     "id": "dm_05_023",
@@ -5026,7 +5258,13 @@
     "race": "Survivor",
     "imagePath": "res://assets/art/cards/DM-05/Cards/DM05_012.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "AttackTrigger_Draw",
+        "value": 1
+      }
+    ]
   },
   {
     "id": "dm_05_025",
@@ -5121,7 +5359,12 @@
     "race": "Brain Jacker",
     "imagePath": "res://assets/art/cards/DM-05/Cards/DM05_050.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "OnDestroyed_ShieldToHand"
+      }
+    ]
   },
   {
     "id": "dm_05_031",
@@ -5495,7 +5738,13 @@
     "race": "Giant Insect",
     "imagePath": "res://assets/art/cards/DM-05/Cards/DM05_014.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "OnPlay_SearchDeck",
+        "data": "Giant Insect"
+      }
+    ]
   },
   {
     "id": "dm_05_055",
@@ -5895,7 +6144,13 @@
     "race": "Survivor",
     "imagePath": "res://assets/art/cards/DM-06/Cards/DM06_119.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "OnPlay_SearchDeck",
+        "data": "Spell"
+      }
+    ]
   },
   {
     "id": "dm_06_020",
@@ -6361,7 +6616,13 @@
       "CannotAttackPlayers",
       "CannotAttackCreatures"
     ],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "OnPlay_ReturnFromMana",
+        "value": 1
+      }
+    ]
   },
   {
     "id": "dm_06_050",
@@ -6504,7 +6765,14 @@
     "race": "Survivor",
     "imagePath": "res://assets/art/cards/DM-06/Cards/DM06_041.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "OnPlay_ReturnFromGraveyard",
+        "value": 1,
+        "data": "Survivor"
+      }
+    ]
   },
   {
     "id": "dm_06_059",
@@ -6614,7 +6882,12 @@
     "keywords": [
       "ShieldTrigger"
     ],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "Spell_OpponentSacrifice"
+      }
+    ]
   },
   {
     "id": "dm_06_066",
@@ -6627,7 +6900,12 @@
     "race": "Dark Lord",
     "imagePath": "res://assets/art/cards/DM-06/Cards/DM06_031.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "OnDestroyed_DiscardHand"
+      }
+    ]
   },
   {
     "id": "dm_06_067",
@@ -7149,7 +7427,13 @@
     "keywords": [
       "ShieldTrigger"
     ],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "Spell_SearchToHand",
+        "data": "Creature"
+      }
+    ]
   },
   {
     "id": "dm_06_097",
@@ -7162,7 +7446,13 @@
     "race": "Survivor",
     "imagePath": "res://assets/art/cards/DM-06/Cards/DM06_007.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "OnPlay_SearchDeck",
+        "data": "Survivor"
+      }
+    ]
   },
   {
     "id": "dm_06_098",
@@ -7308,7 +7598,12 @@
     "race": "Spell",
     "imagePath": "res://assets/art/cards/DM-06/Cards/DM06_091.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "Spell_SearchToMana"
+      }
+    ]
   },
   {
     "id": "dm_06_107",
@@ -7677,7 +7972,13 @@
     "race": "Rainbow Phantom",
     "imagePath": "res://assets/art/cards/DM-07/Cards/DM07_056.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "AttackTrigger_TapCreature",
+        "data": "darkness or fire"
+      }
+    ]
   },
   {
     "id": "dm_07_008",
@@ -7955,7 +8256,13 @@
     "keywords": [
       "Unblockable"
     ],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "OnPlay_ReturnFromMana",
+        "value": 1
+      }
+    ]
   },
   {
     "id": "dm_07_024",
@@ -8052,9 +8359,8 @@
     "scriptEffectId": "VANILLA",
     "effects": [
       {
-        "id": "Spell_DestroyPowerAtMost",
-        "target": "OpponentCreature",
-        "value": 999999
+        "id": "Spell_DestroyAny",
+        "target": "OpponentCreature"
       }
     ]
   },
@@ -8086,7 +8392,13 @@
     "race": "Hedrian",
     "imagePath": "res://assets/art/cards/DM-07/Cards/DM07_014.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "OnDestroyed_OpponentDiscardRandom",
+        "value": 1
+      }
+    ]
   },
   {
     "id": "dm_07_032",
@@ -8875,7 +9187,12 @@
     "race": "Cyber Virus",
     "imagePath": "res://assets/art/cards/DM-08/Cards/DM08_045.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "OnPlay_LookAtHand"
+      }
+    ]
   },
   {
     "id": "dm_08_020",
@@ -9131,7 +9448,12 @@
     "race": "Armored Dragon",
     "imagePath": "res://assets/art/cards/DM-08/Cards/DM08_020.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "OnDestroyed_ShieldToGrave"
+      }
+    ]
   },
   {
     "id": "dm_08_037",
@@ -9873,7 +10195,12 @@
     "race": "Sea Hacker",
     "imagePath": "res://assets/art/cards/DM-09/Cards/DM09_053.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "OnPlay_LookAtShields"
+      }
+    ]
   },
   {
     "id": "dm_09_024",
@@ -9934,7 +10261,13 @@
     "race": "Ghost",
     "imagePath": "res://assets/art/cards/DM-09/Cards/DM09_050.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "OnDestroyed_ReturnFromGraveyard",
+        "value": 1
+      }
+    ]
   },
   {
     "id": "dm_09_028",
@@ -10361,7 +10694,13 @@
     "race": "Mystery Totem",
     "imagePath": "res://assets/art/cards/DM-09/Cards/DM09_032.jpg",
     "keywords": [],
-    "scriptEffectId": "VANILLA"
+    "scriptEffectId": "VANILLA",
+    "effects": [
+      {
+        "id": "OnPlay_SearchDeck",
+        "data": "Whispering Totem"
+      }
+    ]
   },
   {
     "id": "dm_09_s01",

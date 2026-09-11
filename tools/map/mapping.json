@@ -174,11 +174,16 @@
  {
   "id": "dm_01_015",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "OnPlay_SearchDeck",
+    "data": "Spell"
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "on-play effect",
+  "note": null,
   "src": "■ When you put this creature into the battle zone, search your deck. You may take a spell from your deck, show that spell to your opponent, and put it into your hand. Then shuffle your deck."
  },
  {
@@ -354,11 +359,16 @@
   "keywords": [
    "ShieldTrigger"
   ],
-  "effects": [],
+  "effects": [
+   {
+    "id": "Spell_SearchToHand",
+    "data": "Card"
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "search effect",
+  "note": null,
   "src": "{{Shield Trigger|spell}} \n\n■ Search your deck. You may take a card from your deck and put it into your hand. Then shuffle your deck."
  },
  {
@@ -564,11 +574,16 @@
  {
   "id": "dm_01_045",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "OnPlay_DestroyOwnCreature",
+    "target": "OwnCreature"
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "on-play effect",
+  "note": "may-flag ignored",
   "src": "■ When you put this creature into the battle zone, destroy one of your creatures."
  },
  {
@@ -648,11 +663,16 @@
   "keywords": [
    "ShieldTrigger"
   ],
-  "effects": [],
+  "effects": [
+   {
+    "id": "Spell_ReturnFromGraveyard",
+    "value": 1
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "return effect",
+  "note": null,
   "src": "{{Shield Trigger|spell}} \n\n■ Return a creature from your graveyard to your hand."
  },
  {
@@ -709,21 +729,32 @@
  {
   "id": "dm_01_057",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "OnPlay_ReturnFromGraveyard",
+    "value": 2,
+    "data": "Creatures"
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "on-play effect",
+  "note": "recent-first approximation",
   "src": "■ When you put this creature into the battle zone, return up to 2 creatures from your graveyard to your hand."
  },
  {
   "id": "dm_01_058",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "OnPlay_DiscardOpponentRandom",
+    "value": 1
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "on-play effect",
+  "note": null,
   "src": "■ When you put this creature into the battle zone, your opponent discards a card at random from his hand."
  },
  {
@@ -751,21 +782,30 @@
  {
   "id": "dm_01_061",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "OnPlay_DestroyOwnCreature",
+    "target": "OwnCreature"
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "on-play effect",
+  "note": "may-flag ignored",
   "src": "■ When you put this creature into the battle zone, destroy one of your creatures."
  },
  {
   "id": "dm_01_062",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "OnPlay_OpponentSacrifice"
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "on-play effect",
+  "note": null,
   "src": "■ When you put this creature into the battle zone, your opponent chooses one of his creatures and destroys it."
  },
  {
@@ -775,15 +815,14 @@
   ],
   "effects": [
    {
-    "id": "Spell_DestroyPowerAtMost",
-    "target": "OpponentCreature",
-    "value": 999999
+    "id": "Spell_DestroyAny",
+    "target": "OpponentCreature"
    }
   ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "no power cap",
+  "note": null,
   "src": "{{Shield Trigger|spell}} \n\n■ Destroy one of your opponent's creatures."
  },
  {
@@ -839,11 +878,16 @@
  {
   "id": "dm_01_068",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "OnPlay_ManaToGrave",
+    "value": 1
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "on-play effect",
+  "note": null,
   "src": "■ When you put this creature into the battle zone, put 1 card from your mana zone into your graveyard."
  },
  {
@@ -946,11 +990,16 @@
   "keywords": [
    "DoubleBreaker"
   ],
-  "effects": [],
+  "effects": [
+   {
+    "id": "OnPlay_ManaToGrave",
+    "value": 2
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "on-play effect",
+  "note": null,
   "src": "■ When you put this creature into the battle zone, put 2 cards from your mana zone into your graveyard.\n\n{{Double Breaker}}"
  },
  {
@@ -1050,21 +1099,34 @@
  {
   "id": "dm_01_084",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "OnPlay_ManaToGrave",
+    "value": 1
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "on-play effect",
+  "note": null,
   "src": "■ When you put this creature into the battle zone, put 1 card from your mana zone into your graveyard."
  },
  {
   "id": "dm_01_085",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "OnPlay_DestroyOwnCreature",
+    "target": "OwnCreature"
+   },
+   {
+    "id": "OnPlay_OpponentSacrifice"
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "on-play effect",
+  "note": null,
   "src": "■ When you put this creature into the battle zone, destroy one of your creatures. Then your opponent chooses one of his creatures and destroys it."
  },
  {
@@ -1172,11 +1234,16 @@
   "keywords": [
    "ShieldTrigger"
   ],
-  "effects": [],
+  "effects": [
+   {
+    "id": "Spell_SearchToHand",
+    "data": "Creature"
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "search effect",
+  "note": null,
   "src": "{{Shield Trigger|spell}} \n\n■ Search your deck. You may take a creature from your deck, show that creature to your opponent, and put it into your hand. Then shuffle your deck."
  },
  {
@@ -1340,11 +1407,16 @@
  {
   "id": "dm_01_107",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "OnPlay_FromGraveyardToMana",
+    "value": 1
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "on-play effect",
+  "note": null,
   "src": "■ When you put this creature into the battle zone, you may put 1 creature from your graveyard into your mana zone."
  },
  {
@@ -1581,11 +1653,16 @@
   "keywords": [
    "ShieldTrigger"
   ],
-  "effects": [],
+  "effects": [
+   {
+    "id": "Spell_SearchToHand",
+    "data": "Spell"
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "search effect",
+  "note": null,
   "src": "{{Shield Trigger|spell}}\n\n■ Search your deck. You may take a spell from your deck, show that spell to your opponent, and put it into your hand. Then shuffle your deck."
  },
  {
@@ -1606,11 +1683,17 @@
  {
   "id": "dm_02_008",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "OnPlay_ReturnFromGraveyard",
+    "value": 1,
+    "data": "Spell"
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "on-play effect",
+  "note": "recent-first approximation",
   "src": "■ When you put this creature into the battle zone, you may return a spell from your graveyard to your hand."
  },
  {
@@ -1700,11 +1783,16 @@
  {
   "id": "dm_02_016",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "AttackTrigger_Draw",
+    "value": 1
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "attack trigger",
+  "note": null,
   "src": "■ Whenever this creature attacks, you may draw a card."
  },
  {
@@ -1774,11 +1862,17 @@
  {
   "id": "dm_02_023",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "AttackTrigger_ReturnFromGraveyard",
+    "value": 1,
+    "data": "Creature"
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "attack trigger",
+  "note": null,
   "src": "■ Whenever this creature attacks, you may return a creature from your graveyard to your hand."
  },
  {
@@ -1786,15 +1880,14 @@
   "keywords": [],
   "effects": [
    {
-    "id": "OnPlay_DestroyPowerAtMost",
-    "target": "OpponentCreature",
-    "value": 999999
+    "id": "OnPlay_DestroyAny",
+    "target": "OpponentCreature"
    }
   ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": "Parasite Worm",
-  "note": "no power cap",
+  "note": null,
   "src": "■ Evolution—Put on one of your Parasite Worms.\n\n■ When you put this creature into the battle zone, you may destroy one of your opponent's creatures."
  },
  {
@@ -1812,11 +1905,16 @@
  {
   "id": "dm_02_026",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "AttackTrigger_DiscardOpponentRandom",
+    "value": 1
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "attack trigger",
+  "note": null,
   "src": "■ Whenever this creature attacks, your opponent discards a card at random from his hand."
  },
  {
@@ -1857,11 +1955,16 @@
  {
   "id": "dm_02_030",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "AttackTrigger_DiscardOpponentRandom",
+    "value": 1
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "attack trigger",
+  "note": null,
   "src": "■ Whenever this creature attacks, your opponent discards a card at random from his hand."
  },
  {
@@ -1889,11 +1992,17 @@
  {
   "id": "dm_02_033",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "OnPlay_DestroyOwnCreature",
+    "target": "OwnCreature",
+    "value": 3000
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "on-play effect",
+  "note": "may-flag ignored",
   "src": "■ When you put this creature into the battle zone, destroy one of your creatures that has power 3000 or less."
  },
  {
@@ -1925,11 +2034,16 @@
  {
   "id": "dm_02_036",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "OnDestroyed_DestroyMana",
+    "value": 2
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "destruction/battle event",
+  "note": null,
   "src": "■ When this creature is destroyed, each player chooses 2 cards in his mana zone and puts them into his graveyard."
  },
  {
@@ -1975,11 +2089,15 @@
  {
   "id": "dm_02_040",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "OnDestroyed_DestroyMana"
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "destruction/battle event",
+  "note": null,
   "src": "■ When this creature is destroyed, each player chooses a card in his mana zone and puts it into his graveyard."
  },
  {
@@ -2112,31 +2230,44 @@
  {
   "id": "dm_02_051",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "Spell_SearchToMana"
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "search effect",
+  "note": null,
   "src": "■ Search your deck. You may take a card from your deck and put it into your mana zone. Then shuffle your deck."
  },
  {
   "id": "dm_02_052",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "OnPlay_SearchDeck",
+    "data": "Creature"
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "on-play effect",
+  "note": null,
   "src": "■ When you put this creature into the battle zone, search your deck. You may take a creature from your deck, show that creature to your opponent, and put it into your hand. Then shuffle your deck."
  },
  {
   "id": "dm_02_053",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "AttackTrigger_ChargeMana"
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "attack trigger",
+  "note": "may-flag ignored",
   "src": "■ Whenever this creature attacks, you may put the top card of your deck into your mana zone."
  },
  {
@@ -2278,11 +2409,16 @@
  {
   "id": "dm_03_004",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "OnPlay_ReturnFromMana",
+    "value": 1
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "on-play effect",
+  "note": null,
   "src": "■ When you put this creature into the battle zone, you may return a spell from your mana zone to your hand."
  },
  {
@@ -2300,11 +2436,17 @@
  {
   "id": "dm_03_006",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "AttackTrigger_ReturnFromGraveyard",
+    "value": 1,
+    "data": "Light Spell"
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "attack trigger",
+  "note": null,
   "src": "■ Whenever this creature attacks, you may return a light spell from your graveyard to your hand."
  },
  {
@@ -2376,11 +2518,16 @@
  {
   "id": "dm_03_013",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "OnPlay_ReturnFromMana",
+    "value": 2
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "on-play effect",
+  "note": null,
   "src": "■ When you put this creature into the battle zone, return 2 cards from your mana zone to your hand. Then your opponent chooses 2 cards in his mana zone and returns them to his hand."
  },
  {
@@ -2462,11 +2609,16 @@
  {
   "id": "dm_03_021",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "OnPlay_ReturnFromMana",
+    "value": 1
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "on-play effect",
+  "note": null,
   "src": "■ When you put this creature into the battle zone, return a card from your mana zone to your hand. Then your opponent chooses a card in his mana zone and returns it to his hand."
  },
  {
@@ -2514,11 +2666,17 @@
  {
   "id": "dm_03_026",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "AttackTrigger_ReturnFromGraveyard",
+    "value": 1,
+    "data": "Darkness Creature"
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "attack trigger",
+  "note": null,
   "src": "■ Whenever this creature attacks, you may return a darkness creature from your graveyard to your hand."
  },
  {
@@ -3311,11 +3469,16 @@
   "keywords": [
    "ShieldTrigger"
   ],
-  "effects": [],
+  "effects": [
+   {
+    "id": "OnPlay_DiscardOpponentRandom",
+    "value": 1
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "on-play effect",
+  "note": null,
   "src": "{{Shield Trigger|creature}}\n\n■ When you put this creature into the battle zone, your opponent discards a card at random from his hand."
  },
  {
@@ -3369,11 +3532,17 @@
  {
   "id": "dm_04_037",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "OnPlay_ReturnFromGraveyard",
+    "value": 1,
+    "data": "Living Dead"
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "on-play effect",
+  "note": "recent-first approximation",
   "src": "■ When you put this creature into the battle zone, you may return a Living Dead from your graveyard to your hand. "
  },
  {
@@ -3662,11 +3831,16 @@
   "keywords": [
    "DoubleBreaker"
   ],
-  "effects": [],
+  "effects": [
+   {
+    "id": "OnPlay_SearchDeck",
+    "data": "Nature Creature"
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": "Horned Beast",
-  "note": "on-play effect",
+  "note": null,
   "src": "■ Evolution—Put on one of your Horned Beasts.\n\n■ When you put this creature into the battle zone, search your deck. You may take a nature creature from your deck, show that creature to your opponent, and put it into your hand. Then shuffle your deck.\n\n{{Double Breaker}}"
  },
  {
@@ -3701,11 +3875,16 @@
  {
   "id": "dm_05_003",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "OnDestroyed_DestroyAllPowerAtMost",
+    "value": 3000
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "destruction/battle event",
+  "note": null,
   "src": "■ When this creature is destroyed, destroy all creatures that have power 3000 or less."
  },
  {
@@ -3808,11 +3987,16 @@
  {
   "id": "dm_05_012",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "AttackTrigger_TapCreature",
+    "data": "darkness or fire"
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "attack trigger",
+  "note": null,
   "src": "■ Whenever this creature attacks, you may choose a darkness or fire creature in the battle zone and tap it. ''(First choose what this creature is attacking. Then choose a creature to tap.)''"
  },
  {
@@ -3834,11 +4018,16 @@
    "Blocker",
    "DoubleBreaker"
   ],
-  "effects": [],
+  "effects": [
+   {
+    "id": "OnPlay_ReturnFromMana",
+    "value": 1
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "on-play effect",
+  "note": null,
   "src": "{{Blocker|s}} \n\n■ When you put this creature into the battle zone, you may return a spell from your mana zone to your hand.\n\n{{Double Breaker}}"
  },
  {
@@ -3926,11 +4115,16 @@
  {
   "id": "dm_05_022",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "OnPlay_ReturnFromMana",
+    "value": 1
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "on-play effect",
+  "note": null,
   "src": "■ When you put this creature into the battle zone, return a card from your mana zone to your hand."
  },
  {
@@ -3948,11 +4142,16 @@
  {
   "id": "dm_05_024",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "AttackTrigger_Draw",
+    "value": 1
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "attack trigger",
+  "note": null,
   "src": "{{Survivor}} Whenever this creature attacks, you may draw a card."
  },
  {
@@ -4024,11 +4223,15 @@
  {
   "id": "dm_05_030",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "OnDestroyed_ShieldToHand"
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "destruction/battle event",
+  "note": "no shield-trigger ban",
   "src": "■ When this creature is destroyed, you may choose one of your shields and put it into your hand. You can't use the \"shield trigger\" ability of that shield."
  },
  {
@@ -4321,11 +4524,16 @@
  {
   "id": "dm_05_054",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "OnPlay_SearchDeck",
+    "data": "Giant Insect"
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "on-play effect",
+  "note": null,
   "src": "■ When you put this creature into the battle zone, search your deck. You may take a Giant Insect from your deck, show that Giant Insect to your opponent, and put it into your hand. Then shuffle your deck."
  },
  {
@@ -4636,11 +4844,16 @@
  {
   "id": "dm_06_019",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "OnPlay_SearchDeck",
+    "data": "Spell"
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "on-play effect",
+  "note": null,
   "src": "{{Survivor}} When you put this creature into the battle zone, search your deck. You may take a spell from your deck, show that spell to your opponent, and put it into your hand. Then shuffle your deck."
  },
  {
@@ -5004,11 +5217,16 @@
    "CannotAttackPlayers",
    "CannotAttackCreatures"
   ],
-  "effects": [],
+  "effects": [
+   {
+    "id": "OnPlay_ReturnFromMana",
+    "value": 1
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "on-play effect",
+  "note": null,
   "src": "{{Blocker|s}}\n\n■ When you put this creature into the battle zone, return a card from your mana zone to your hand.\n\n■ This creature can't attack."
  },
  {
@@ -5112,11 +5330,17 @@
  {
   "id": "dm_06_058",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "OnPlay_ReturnFromGraveyard",
+    "value": 1,
+    "data": "Survivor"
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "on-play effect",
+  "note": "recent-first approximation",
   "src": "{{Survivor}} When you put this creature into the battle zone, you may return a Survivor from your graveyard to your hand."
  },
  {
@@ -5199,21 +5423,29 @@
   "keywords": [
    "ShieldTrigger"
   ],
-  "effects": [],
+  "effects": [
+   {
+    "id": "Spell_OpponentSacrifice"
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "opponent choice",
+  "note": null,
   "src": "{{Shield Trigger|spell}}\n\n■ Your opponent chooses one of his creatures in the battle zone and destroys it."
  },
  {
   "id": "dm_06_066",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "OnDestroyed_DiscardHand"
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "destruction/battle event",
+  "note": null,
   "src": "■ When this creature is destroyed, each player discards his hand."
  },
  {
@@ -5625,21 +5857,31 @@
   "keywords": [
    "ShieldTrigger"
   ],
-  "effects": [],
+  "effects": [
+   {
+    "id": "Spell_SearchToHand",
+    "data": "Creature"
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "search effect",
+  "note": null,
   "src": "{{Shield Trigger|spell}} \n\n■ Search your deck. You may take a creature from your deck, show that creature to your opponent, and put it into your hand. Then shuffle your deck."
  },
  {
   "id": "dm_06_097",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "OnPlay_SearchDeck",
+    "data": "Survivor"
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "on-play effect",
+  "note": null,
   "src": "{{Survivor}} When you put this creature into the battle zone, search your deck. You may take a Survivor from your deck, show that Survivor to your opponent, and put it into your hand. Then shuffle your deck."
  },
  {
@@ -5748,11 +5990,15 @@
  {
   "id": "dm_06_106",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "Spell_SearchToMana"
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "search effect",
+  "note": null,
   "src": "■ Search your deck. You may take a non-nature card from your deck and put it into your mana zone. Then shuffle your deck."
  },
  {
@@ -6036,11 +6282,16 @@
  {
   "id": "dm_07_007",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "AttackTrigger_TapCreature",
+    "data": "darkness or fire"
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "attack trigger",
+  "note": null,
   "src": "■ Whenever this creature attacks, you may choose a darkness or fire creature in the battle zone and tap it. ''(First choose what this creature is attacking. Then choose a creature to tap.)''"
  },
  {
@@ -6256,11 +6507,16 @@
   "keywords": [
    "Unblockable"
   ],
-  "effects": [],
+  "effects": [
+   {
+    "id": "OnPlay_ReturnFromMana",
+    "value": 1
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "on-play effect",
+  "note": null,
   "src": "■ When you put this creature into the battle zone, return a card from your mana zone to your hand.\n\n■ This creature can't be blocked."
  },
  {
@@ -6333,15 +6589,14 @@
   "keywords": [],
   "effects": [
    {
-    "id": "Spell_DestroyPowerAtMost",
-    "target": "OpponentCreature",
-    "value": 999999
+    "id": "Spell_DestroyAny",
+    "target": "OpponentCreature"
    }
   ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "no power cap",
+  "note": null,
   "src": "■ Destroy one of your opponent's creatures."
  },
  {
@@ -6360,11 +6615,16 @@
  {
   "id": "dm_07_031",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "OnDestroyed_OpponentDiscardRandom",
+    "value": 1
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "destruction/battle event",
+  "note": null,
   "src": "■ When this creature is destroyed, your opponent discards a card at random from his hand."
  },
  {
@@ -6983,11 +7243,15 @@
  {
   "id": "dm_08_019",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "OnPlay_LookAtHand"
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "on-play effect",
+  "note": "informational",
   "src": "■ When you put this creature into the battle zone, look at your opponent's hand."
  },
  {
@@ -7184,11 +7448,15 @@
  {
   "id": "dm_08_036",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "OnDestroyed_ShieldToGrave"
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "destruction/battle event",
+  "note": null,
   "src": "■ When this creature is destroyed, choose one of your shields and put it into your graveyard. "
  },
  {
@@ -7765,11 +8033,15 @@
  {
   "id": "dm_09_023",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "OnPlay_LookAtShields"
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "on-play effect",
+  "note": "informational",
   "src": "■ When you put this creature into the battle zone, look at your opponent's shields. Then put them back where they were."
  },
  {
@@ -7814,11 +8086,16 @@
  {
   "id": "dm_09_027",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "OnDestroyed_ReturnFromGraveyard",
+    "value": 1
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "destruction/battle event",
+  "note": null,
   "src": "■ When this creature is destroyed, you may return another creature from your graveyard to your hand."
  },
  {
@@ -8148,11 +8425,16 @@
  {
   "id": "dm_09_055",
   "keywords": [],
-  "effects": [],
+  "effects": [
+   {
+    "id": "OnPlay_SearchDeck",
+    "data": "Whispering Totem"
+   }
+  ],
   "tapAbilities": [],
   "crew": null,
   "evolutionOf": null,
-  "note": "on-play effect",
+  "note": null,
   "src": "■ When you put this creature into the battle zone, search your deck. You may take a '''Whispering Totem''' from your deck, show that creature to your opponent, and put it into your hand. Then shuffle your deck."
  },
  {

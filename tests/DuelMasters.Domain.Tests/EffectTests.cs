@@ -366,4 +366,34 @@ public class EffectTests
         h.Game.DeclineShieldTriggers();
         h.Game.PlayManaToManaZone(0); // no longer blocked
     }
+
+    [Fact]
+    public void CreatureShieldTrigger_TargetedOnPlay_ResolvesAndReturnsCreature()
+    {
+        var h = GameHarness.AtMainPhase();
+        h.ResetBoard();
+
+        // P1 has a creature on the board that can be bounced.
+        var victim = h.PutCreature(h.P1, CardFactory.Creature(1, 5000, Civilization.Fire, "Raider"));
+        var victimIndex = h.P1.BattleZone.IndexOf(victim);
+
+        // P2's shield contains a creature with ShieldTrigger + OnPlay_ReturnToHand.
+        var trigger = CardFactory.Creature(
+            5, 3000, Civilization.Water, "Aqua Bouncer",
+            CardFactory.Eff(EffectId.OnPlay_ReturnToHand, EffectTargetScope.OpponentCreature),
+            Keyword.ShieldTrigger);
+        h.SetShields(h.P2, trigger);
+
+        h.Game.AttackPlayer(0); // breaks shield, opens trigger window
+
+        Assert.True(h.Game.ShieldTriggerWindowActive);
+
+        // P2 plays the creature ST targeting P1's creature.
+        h.Game.PlayShieldTrigger(0, h.P1, victimIndex);
+
+        Assert.False(h.Game.ShieldTriggerWindowActive);
+        Assert.DoesNotContain(victim, h.P1.BattleZone);
+        Assert.Contains(victim, h.P1.Hand);
+        Assert.Contains(trigger.Id, h.P2.BattleZone.Select(c => c.Card.Id));
+    }
 }

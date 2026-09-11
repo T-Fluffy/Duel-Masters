@@ -58,6 +58,18 @@ VALID_EFF = {
     "Tap_DeckSearchCreatureToHand", "Tap_DeckSearchDragonSummonEotDestroy",
     "Tap_ChooseShieldLook", "Tap_ScryTopCards",
     "Tap_NotModelled",
+    # D4: on-play / attack / destroyed / spell families with real card coverage
+    "OnPlay_DestroyAny", "OnPlay_DestroyOwnCreature", "OnPlay_ReturnFromGraveyard",
+    "OnPlay_ReturnFromMana", "OnPlay_SearchDeck", "OnPlay_DiscardOpponentRandom",
+    "OnPlay_OpponentSacrifice", "OnPlay_FromGraveyardToMana", "OnPlay_ManaToGrave",
+    "OnPlay_LookAtHand", "OnPlay_LookAtShields",
+    "AttackTrigger_Draw", "AttackTrigger_DiscardOpponentRandom",
+    "AttackTrigger_ReturnFromGraveyard", "AttackTrigger_ChargeMana", "AttackTrigger_TapCreature",
+    "OnDestroyed_OpponentDiscardRandom", "OnDestroyed_DiscardHand", "OnDestroyed_DestroyMana",
+    "OnDestroyed_DestroyAllPowerAtMost", "OnDestroyed_ReturnFromGraveyard",
+    "OnDestroyed_ShieldToHand", "OnDestroyed_ShieldToGrave",
+    "Spell_DestroyAny", "Spell_OpponentSacrifice", "Spell_SearchToHand", "Spell_SearchToMana",
+    "Spell_ReturnFromGraveyard",
 }
 
 EFFECT_FIELD_ORDER = ("id", "target", "value", "data")

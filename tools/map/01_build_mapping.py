@@ -44,7 +44,8 @@ def norm_line(raw: str) -> str:
 
 
 def strip_reminders(text: str) -> str:
-    """Remove italic reminder flourishes: the ''(...)'' spans."""
+    """Remove italic reminder flourishes (''...'') but keep bold entity spans ('''...''')."""
+    text = re.sub(r"'''(.+?)'''", r" \1 ", text)
     return re.sub(r"\s+", " ", re.sub(r"''.*?''", " ", text)).strip()
 
 
@@ -206,6 +207,16 @@ def _rules():
     rule("MayDestroyPowerAtMost",
          r"^whenever this creature attacks,?(?: you may)? destroy (?:one of your opponent'?s creatures?|1 of your opponent'?s creatures?|a creature) that has(?: power)? (\d+) or less\.?$",
          lambda m, t: ([], [E("AttackTrigger_MayDestroyPowerAtMost", v=int(m.group(1)))], None, None))
+    rule("AtkDraw", r"^whenever this creature attacks,?(?: you may)? draw a card\.?$",
+         lambda m, t: ([], [E("AttackTrigger_Draw", v=1)], None, None))
+    rule("AtkOppDiscard", r"^whenever this creature attacks,? your opponent discards a card at random from (?:his|her) hand\.?$",
+         lambda m, t: ([], [E("AttackTrigger_DiscardOpponentRandom", v=1)], None, None))
+    rule("AtkReturnGrave", r"^whenever this creature attacks,?(?: you may)? return a ((?:[a-z]+ )?(?:spell|creature)) from your graveyard to your hand\.?$",
+         lambda m, t: ([], [E("AttackTrigger_ReturnFromGraveyard", v=1, d=m.group(1).title())], None, None))
+    rule("AtkCharge", r"^whenever this creature attacks,?(?: you may)? put the top card of your deck into your mana zone\.?$",
+         lambda m, t: ([], [E("AttackTrigger_ChargeMana")], "may-flag ignored", None))
+    rule("AtkTap", r"^whenever this creature attacks,?(?: you may)? choose a (darkness or fire) creature(?: in the battle zone)? and tap it\.?$",
+         lambda m, t: ([], [E("AttackTrigger_TapCreature", d=m.group(1))], None, None))
 
     # ----- evolution
     rule("EvoDragon", r"^evolution[\u2014\-]put on one of your creatures that has ([A-Za-z ]+) in its race\.?$",
@@ -233,7 +244,30 @@ def _rules():
     rule("EtbDestroyN", r"^when you put this creature into the battle zone,?(?: you may)? destroy one of your opponent's creatures that has power (\d+)[ ,]*or less\.?$",
          lambda m, t: ([], [E("OnPlay_DestroyPowerAtMost", t="OpponentCreature", v=int(m.group(1)))], None, None))
     rule("EtbDestroyAny", r"^when you put this creature into the battle zone,?(?: you may)? destroy one of your opponent's creatures\.?$",
-         lambda m, t: ([], [E("OnPlay_DestroyPowerAtMost", t="OpponentCreature", v=999999)], "no power cap", None))
+         lambda m, t: ([], [E("OnPlay_DestroyAny", t="OpponentCreature")], None, None))
+    rule("EtbDestroyOwnThenOppSacrifice",
+         r"^when you put this creature into the battle zone,? destroy one of your creatures\. then your opponent chooses one of (?:his|her) creatures(?: in the battle zone)? and destroys it\.?$",
+         lambda m, t: ([], [E("OnPlay_DestroyOwnCreature", t="OwnCreature"), E("OnPlay_OpponentSacrifice")], None, None))
+    rule("EtbDestroyOwn", r"^when you put this creature into the battle zone,?(?: you may)? destroy one of your creatures(?: that has power (\d+)[ ,]*or less)?\.?$",
+         lambda m, t: ([], [E("OnPlay_DestroyOwnCreature", t="OwnCreature", v=int(m.group(1) or 0))], "may-flag ignored", None))
+    rule("EtbOppSacrifice", r"^when you put this creature into the battle zone,?(?: you may)? your opponent chooses one of (?:his|her) creatures(?: in the battle zone)? and destroys it\.?$",
+         lambda m, t: ([], [E("OnPlay_OpponentSacrifice")], None, None))
+    rule("EtbManaToGrave", r"^when you put this creature into the battle zone,?(?: you may)? put (\d+) (?:card|cards) from your mana zone into your graveyard\.?$",
+         lambda m, t: ([], [E("OnPlay_ManaToGrave", v=int(m.group(1)))], None, None))
+    rule("EtbReturnGrave", r"^when you put this creature into the battle zone,?(?: you may)? return (?!.*mana zone)(?:up to )?(?:a|an|one|(\d+)) (.*?)(?: from your graveyard)? ?to your hand\.?$",
+         lambda m, t: ([], [E("OnPlay_ReturnFromGraveyard", v=int(m.group(1) or 1), d=m.group(2).strip().title())], "recent-first approximation", None))
+    rule("EtbReturnMana", r"^when you put this creature into the battle zone,?(?: you may)? return (?:a|an|one|(\d+)) (?:card|cards|spell|spells) from your mana zone to your hand\.?(?: then your opponent[^.]*\.?)?$",
+         lambda m, t: ([], [E("OnPlay_ReturnFromMana", v=int(m.group(1) or 1))], None, None))
+    rule("EtbSearchDeck", r"^when you put this creature into the battle zone,? search your deck\. you may take a ([a-z ]+?) from your deck,?(?: show [a-z ]+? to your opponent,?)? and put it into your hand\.? then shuffle your deck\.?$",
+         lambda m, t: ([], [E("OnPlay_SearchDeck", d=m.group(1).strip().title())], None, None))
+    rule("EtbOppDiscard", r"^when you put this creature into the battle zone,? your opponent discards a card at random from (?:his|her) hand\.?$",
+         lambda m, t: ([], [E("OnPlay_DiscardOpponentRandom", v=1)], None, None))
+    rule("EtbGraveToMana", r"^when you put this creature into the battle zone,?(?: you may)? put (?:a|an|one|(\d+)) (?:card|cards|creature|creatures) from your graveyard into your mana zone\.?$",
+         lambda m, t: ([], [E("OnPlay_FromGraveyardToMana", v=int(m.group(1) or 1))], None, None))
+    rule("EtbLookHand", r"^when you put this creature into the battle zone,? look at your opponent'?s hand\.?$",
+         lambda m, t: ([], [E("OnPlay_LookAtHand")], "informational", None))
+    rule("EtbLookShields", r"^when you put this creature into the battle zone,? look at your opponent'?s shields\.? then put them back(?: where they were)?\.?$",
+         lambda m, t: ([], [E("OnPlay_LookAtShields")], "informational", None))
 
     # ----- destroyed substitution / triggers
     rule("DieToMana", r"^when this creature would be destroyed, put it into your mana zone instead\.?$",
@@ -244,12 +278,34 @@ def _rules():
          lambda m, t: ([], [E("OnDestroyed_ToHand")], "may-flag ignored", None))
     rule("DieDraw", r"^when this creature is destroyed,?(?: you may)? draw (?:a card|(\d+) cards?)\.?$",
          lambda m, t: ([], [E("OnDestroyed_Draw", v=int(m.group(1) or 1))], None, None))
+    rule("DieOppDiscard", r"^when this creature is destroyed, your opponent discards a card at random from (?:his|her) hand\.?$",
+         lambda m, t: ([], [E("OnDestroyed_OpponentDiscardRandom", v=1)], None, None))
+    rule("DieDiscardHand", r"^when this creature is destroyed, each player discards (?:his|her|their) hand\.?$",
+         lambda m, t: ([], [E("OnDestroyed_DiscardHand")], None, None))
+    rule("DieManaToGrave", r"^when this creature is destroyed, each player chooses? (?:a|(\d+)) (?:card|cards) in (?:his|her|their) mana zone and puts? (?:it|them) into (?:his|her|their) graveyard\.?$",
+         lambda m, t: ([], [E("OnDestroyed_DestroyMana", v=int(m.group(1) or 0))], None, None))
+    rule("DieDestroyAllPower", r"^when this creature is destroyed, destroy all creatures that have power (\d+)[ ,]*or less\.?$",
+         lambda m, t: ([], [E("OnDestroyed_DestroyAllPowerAtMost", v=int(m.group(1)))], None, None))
+    rule("DieReturnGrave", r"^when this creature is destroyed,?(?: you may)? return another? creature from your graveyard to your hand\.?$",
+         lambda m, t: ([], [E("OnDestroyed_ReturnFromGraveyard", v=1)], None, None))
+    rule("DieShieldToHand", r"^when this creature is destroyed, you may choose one of your shields and put it into your hand\. (?:you can'?t use the \"?shield trigger\"? ability of that shield\.?)?$",
+         lambda m, t: ([], [E("OnDestroyed_ShieldToHand")], "no shield-trigger ban", None))
+    rule("DieShieldToGrave", r"^when this creature is destroyed, choose one of your shields and put it into your graveyard\.?$",
+         lambda m, t: ([], [E("OnDestroyed_ShieldToGrave")], None, None))
 
     # ----- spells
     rule("SpDestroyN", r"^(?:destroy|choose) (?:one of your opponent's creatures|1 of your opponent's creatures|a creature) that has power (\d+)[ ,]*or less\.?$",
          lambda m, t: ([], [E("Spell_DestroyPowerAtMost", t=scope_of(t), v=int(m.group(1)))], None, None))
     rule("SpDestroyAny", r"^destroy one of your opponent's creatures\.?$",
-         lambda m, t: ([], [E("Spell_DestroyPowerAtMost", t="OpponentCreature", v=999999)], "no power cap", None))
+         lambda m, t: ([], [E("Spell_DestroyAny", t="OpponentCreature")], None, None))
+    rule("SpOppSacrifice", r"^your opponent chooses one of (?:his|her) creatures in the battle zone and destroys it\.?$",
+         lambda m, t: ([], [E("Spell_OpponentSacrifice")], None, None))
+    rule("SpSearchToHand", r"^search your deck\. you may take a ([a-z ]+?) from your deck,?(?: show [a-z ]+? to your opponent,?)? and? put it into your hand\. then shuffle your deck\.?$",
+         lambda m, t: ([], [E("Spell_SearchToHand", d=m.group(1).strip().title())], None, None))
+    rule("SpSearchToMana", r"^search your deck\. you may take a (?:[\w -]+ )?card from your deck and put it into your mana zone\. then shuffle your deck\.?$",
+         lambda m, t: ([], [E("Spell_SearchToMana")], None, None))
+    rule("SpReturnGrave", r"^return a creature from your graveyard to your hand\.?$",
+         lambda m, t: ([], [E("Spell_ReturnFromGraveyard", v=1)], None, None))
     rule("SpReturn", r"^choose (?:a creature(?: in the battle zone)?|one of your opponent's creatures(?: in the battle zone)?) and return it to its owner's hand\.?(?: if it has dragon in its race, you may draw a card\.?)?$",
          lambda m, t: ([], [E("Spell_ReturnToHand", t=scope_of(t))], None, None))
     rule("SpReturnUp", r"^return up to (\d+) creatures? in the battle zone to their owners' hands?\.?$|^choose up to (\d+) creatures? in the battle zone and return them to their owners' hands?\.?$",

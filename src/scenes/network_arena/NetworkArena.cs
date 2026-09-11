@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using DuelMasters.Core;
 using DuelMasters.Domain;
 using DuelMasters.Domain.Networking;
 using DuelMasters.Gameplay.Audio;
@@ -118,7 +119,19 @@ public partial class NetworkArena : Control
 		AddChild(_fxManager);
 		if (NetworkClient.CurrentState is { } st)
 			_state = st;
+		GameSettings.CardSizeMultiplierChanged += Refresh;
 		Refresh();
+	}
+
+	public override void _ExitTree()
+	{
+		GameSettings.CardSizeMultiplierChanged -= Refresh;
+	}
+
+	private (float W, float H) ScaledCardSize()
+	{
+		var m = GameSettings.CardSizeMultiplier;
+		return (140f * m, 195f * m);
 	}
 
 	public override void _Process(double delta)
@@ -1413,12 +1426,14 @@ public partial class NetworkArena : Control
 	{
 		var flow = GetFlow(box);
 		Clear(flow);
+		var (sw, sh) = ScaledCardSize();
 		for (var i = 0; i < zone.Count; i++)
 		{
 			var c = zone[i];
 			var view = c.CountOnly
 				? new CardView(null, faceDown: true)
 				: new CardView(CardFor(c), ArtFor(c.CardId));
+			view.SetCardSize(sw, sh);
 			var wasTapped = prevTappedFlags is not null && i < prevTappedFlags.Count && prevTappedFlags[i];
 			if (c.IsTapped != wasTapped)
 			{
@@ -1445,12 +1460,14 @@ public partial class NetworkArena : Control
 	{
 		var flow = GetFlow(box);
 		Clear(flow);
+		var (sw, sh) = ScaledCardSize();
 		for (var i = 0; i < hand.Count; i++)
 		{
 			var c = hand[i];
 			var view = faceDown || c.CountOnly
 				? new CardView(null, faceDown: true)
 				: new CardView(CardFor(c), ArtFor(c.CardId));
+			view.SetCardSize(sw, sh);
 			flow.AddChild(view);
 		}
 		UpdateTitle(box, hand.Count);
@@ -1460,9 +1477,11 @@ public partial class NetworkArena : Control
 	{
 		var flow = GetFlow(box);
 		Clear(flow);
+		var (sw, sh) = ScaledCardSize();
 		for (var i = 0; i < count; i++)
 		{
 			var view = new CardView(null, faceDown: true);
+			view.SetCardSize(sw, sh);
 			flow.AddChild(view);
 		}
 		UpdateTitle(box, count);

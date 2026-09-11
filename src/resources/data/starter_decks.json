@@ -5,21 +5,66 @@
     "archetype": "Fire Rush",
     "tagline": "Swarm the board with cheap Fire attackers and burn spells. Crack shields before the opponent can set up.",
     "cards": [
-      { "name": "Artisan Picora", "count": 4 },
-      { "name": "Deadly Fighter Braid Claw", "count": 4 },
-      { "name": "Blazosaur Q", "count": 3 },
-      { "name": "Brawler Zyler", "count": 3 },
-      { "name": "Snip Striker Bullraizer", "count": 3 },
-      { "name": "Cratersaur", "count": 3 },
-      { "name": "Explosive Dude Joe", "count": 3 },
-      { "name": "Fatal Attacker Horvath", "count": 2 },
-      { "name": "Magmadragon Melgars", "count": 3 },
-      { "name": "Rocketdive Skyterror", "count": 2 },
-      { "name": "Explosive Fighter Ucarn", "count": 2 },
-      { "name": "Bolshack Dragon", "count": 2 },
-      { "name": "Volcanic Arrows", "count": 2 },
-      { "name": "Furious Onslaught", "count": 2 },
-      { "name": "Tornado Flame", "count": 2 }
+      {
+        "name": "Artisan Picora",
+        "count": 4
+      },
+      {
+        "name": "Deadly Fighter Braid Claw",
+        "count": 4
+      },
+      {
+        "name": "Blazosaur Q",
+        "count": 3
+      },
+      {
+        "name": "Brawler Zyler",
+        "count": 3
+      },
+      {
+        "name": "Snip Striker Bullraizer",
+        "count": 3
+      },
+      {
+        "name": "Cratersaur",
+        "count": 3
+      },
+      {
+        "name": "Explosive Dude Joe",
+        "count": 3
+      },
+      {
+        "name": "Fatal Attacker Horvath",
+        "count": 2
+      },
+      {
+        "name": "Magmadragon Melgars",
+        "count": 3
+      },
+      {
+        "name": "Rocketdive Skyterror",
+        "count": 2
+      },
+      {
+        "name": "Explosive Fighter Ucarn",
+        "count": 2
+      },
+      {
+        "name": "Bolshack Dragon",
+        "count": 2
+      },
+      {
+        "name": "Volcanic Arrows",
+        "count": 2
+      },
+      {
+        "name": "Furious Onslaught",
+        "count": 2
+      },
+      {
+        "name": "Tornado Flame",
+        "count": 2
+      }
     ]
   },
   {
@@ -28,22 +73,70 @@
     "archetype": "Nature Ramp",
     "tagline": "Ramp mana early with Nature charge cards, then drop enormous 8000+ finishers the opponent cannot answer.",
     "cards": [
-      { "name": "Sniper Mosquito", "count": 3 },
-      { "name": "Essence Elf", "count": 4 },
-      { "name": "Faerie Life", "count": 3 },
-      { "name": "Burning Mane", "count": 3 },
-      { "name": "Bronze-Arm Tribe", "count": 4 },
-      { "name": "Mighty Bandit, Ace of Thieves", "count": 3 },
-      { "name": "Trench Scarab", "count": 3 },
-      { "name": "Mana Nexus", "count": 3 },
-      { "name": "Mana Crisis", "count": 2 },
-      { "name": "Earthstomp Giant", "count": 2 },
-      { "name": "Raging Dash-Horn", "count": 2 },
-      { "name": "Super Terradragon Bailas Gale", "count": 2 },
-      { "name": "Avalanche Giant", "count": 2 },
-      { "name": "World Tree, Root of Life", "count": 2 },
-      { "name": "Roaring Great-Horn", "count": 1 },
-      { "name": "Stratosphere Giant", "count": 1 }
+      {
+        "name": "Sniper Mosquito",
+        "count": 3
+      },
+      {
+        "name": "Essence Elf",
+        "count": 4
+      },
+      {
+        "name": "Faerie Life",
+        "count": 3
+      },
+      {
+        "name": "Burning Mane",
+        "count": 3
+      },
+      {
+        "name": "Bronze-Arm Tribe",
+        "count": 4
+      },
+      {
+        "name": "Mighty Bandit, Ace of Thieves",
+        "count": 3
+      },
+      {
+        "name": "Trench Scarab",
+        "count": 3
+      },
+      {
+        "name": "Mana Nexus",
+        "count": 3
+      },
+      {
+        "name": "Mana Crisis",
+        "count": 2
+      },
+      {
+        "name": "Earthstomp Giant",
+        "count": 2
+      },
+      {
+        "name": "Raging Dash-Horn",
+        "count": 2
+      },
+      {
+        "name": "Super Terradragon Bailas Gale",
+        "count": 2
+      },
+      {
+        "name": "Avalanche Giant",
+        "count": 2
+      },
+      {
+        "name": "World Tree, Root of Life",
+        "count": 2
+      },
+      {
+        "name": "Roaring Great-Horn",
+        "count": 1
+      },
+      {
+        "name": "Stratosphere Giant",
+        "count": 1
+      }
     ]
   },
   {
@@ -52,23 +145,74 @@
     "archetype": "Water Control",
     "tagline": "Hold the board with sturdy Water bodies while draw spells keep your hand full of answers and finishers.",
     "cards": [
-      { "name": "Aqua Guard", "count": 4 },
-      { "name": "Zepimeteus", "count": 3 },
-      { "name": "Marine Flower", "count": 3 },
-      { "name": "Hunter Fish", "count": 3 },
-      { "name": "Madrillon Fish", "count": 3 },
-      { "name": "Energy Stream", "count": 3 },
-      { "name": "Aqua Hulcus", "count": 2 },
-      { "name": "Phantom Fish", "count": 3 },
-      { "name": "Spiral Gate", "count": 2 },
-      { "name": "Aqua Shooter", "count": 2 },
-      { "name": "Eureka Charger", "count": 2 },
-      { "name": "Revolver Fish", "count": 2 },
-      { "name": "Illusionary Merfolk", "count": 2 },
-      { "name": "Aqua Surfer", "count": 2 },
-      { "name": "Hydro Hurricane", "count": 2 },
-      { "name": "Aqua Deformer", "count": 1 },
-      { "name": "King Mazelan", "count": 1 }
+      {
+        "name": "Aqua Guard",
+        "count": 4
+      },
+      {
+        "name": "Zepimeteus",
+        "count": 3
+      },
+      {
+        "name": "Marine Flower",
+        "count": 3
+      },
+      {
+        "name": "Hunter Fish",
+        "count": 3
+      },
+      {
+        "name": "Madrillon Fish",
+        "count": 3
+      },
+      {
+        "name": "Energy Stream",
+        "count": 3
+      },
+      {
+        "name": "Aqua Hulcus",
+        "count": 2
+      },
+      {
+        "name": "Phantom Fish",
+        "count": 3
+      },
+      {
+        "name": "Spiral Gate",
+        "count": 2
+      },
+      {
+        "name": "Aqua Shooter",
+        "count": 2
+      },
+      {
+        "name": "Eureka Charger",
+        "count": 2
+      },
+      {
+        "name": "Revolver Fish",
+        "count": 2
+      },
+      {
+        "name": "Illusionary Merfolk",
+        "count": 2
+      },
+      {
+        "name": "Aqua Surfer",
+        "count": 2
+      },
+      {
+        "name": "Hydro Hurricane",
+        "count": 2
+      },
+      {
+        "name": "Aqua Deformer",
+        "count": 1
+      },
+      {
+        "name": "King Mazelan",
+        "count": 1
+      }
     ]
   },
   {
@@ -77,23 +221,74 @@
     "archetype": "Light Defenders",
     "tagline": "Wall the opponent out with high-power Light guardians, then end the game with Holy Awe and flying elementals.",
     "cards": [
-      { "name": "La Ura Giga, Sky Guardian", "count": 4 },
-      { "name": "Vess, the Oracle", "count": 3 },
-      { "name": "Emerald Grass", "count": 3 },
-      { "name": "Ballas, Vizier of Electrons", "count": 3 },
-      { "name": "Moontear, Spectral Knight", "count": 2 },
-      { "name": "Miele, Vizier of Lightning", "count": 3 },
-      { "name": "Reso Pacos, Clear Sky Guardian", "count": 3 },
-      { "name": "Kanesill, the Explorer", "count": 2 },
-      { "name": "Logic Cube", "count": 2 },
-      { "name": "Dia Nork, Moonlight Guardian", "count": 2 },
-      { "name": "Gariel, Elemental of Sunbeams", "count": 1 },
-      { "name": "Aeris, Flight Elemental", "count": 1 },
-      { "name": "Gran Gure, Space Guardian", "count": 1 },
-      { "name": "Urth, Purifying Elemental", "count": 2 },
-      { "name": "Siri, Glory Elemental", "count": 2 },
-      { "name": "Diamond Cutter", "count": 2 },
-      { "name": "Holy Awe", "count": 4 }
+      {
+        "name": "La Ura Giga, Sky Guardian",
+        "count": 4
+      },
+      {
+        "name": "Vess, the Oracle",
+        "count": 3
+      },
+      {
+        "name": "Emerald Grass",
+        "count": 3
+      },
+      {
+        "name": "Ballas, Vizier of Electrons",
+        "count": 3
+      },
+      {
+        "name": "Moontear, Spectral Knight",
+        "count": 2
+      },
+      {
+        "name": "Miele, Vizier of Lightning",
+        "count": 3
+      },
+      {
+        "name": "Reso Pacos, Clear Sky Guardian",
+        "count": 3
+      },
+      {
+        "name": "Kanesill, the Explorer",
+        "count": 2
+      },
+      {
+        "name": "Logic Cube",
+        "count": 2
+      },
+      {
+        "name": "Dia Nork, Moonlight Guardian",
+        "count": 2
+      },
+      {
+        "name": "Gariel, Elemental of Sunbeams",
+        "count": 1
+      },
+      {
+        "name": "Aeris, Flight Elemental",
+        "count": 1
+      },
+      {
+        "name": "Gran Gure, Space Guardian",
+        "count": 1
+      },
+      {
+        "name": "Urth, Purifying Elemental",
+        "count": 2
+      },
+      {
+        "name": "Siri, Glory Elemental",
+        "count": 2
+      },
+      {
+        "name": "Diamond Cutter",
+        "count": 2
+      },
+      {
+        "name": "Holy Awe",
+        "count": 4
+      }
     ]
   },
   {
@@ -102,25 +297,82 @@
     "archetype": "Darkness Control",
     "tagline": "Two-civilization control: remove every threat with Darkness, hold the line with Light guardians, finish big.",
     "cards": [
-      { "name": "Tyrant Worm", "count": 2 },
-      { "name": "Bloody Squito", "count": 2 },
-      { "name": "Dark Reversal", "count": 2 },
-      { "name": "Ghost Touch", "count": 2 },
-      { "name": "Bone Spider", "count": 3 },
-      { "name": "Stinger Worm", "count": 3 },
-      { "name": "Gigazoul", "count": 2 },
-      { "name": "Death Smoke", "count": 2 },
-      { "name": "Necrodragon Giland", "count": 2 },
-      { "name": "Vile Mulder, Wing of the Void", "count": 2 },
-      { "name": "Photocide, Lord of the Wastes", "count": 1 },
-      { "name": "Vashuna, Sword Dancer", "count": 2 },
-      { "name": "Dark Titan Maginn", "count": 2 },
-      { "name": "Terror Pit", "count": 4 },
-      { "name": "La Ura Giga, Sky Guardian", "count": 3 },
-      { "name": "Miele, Vizier of Lightning", "count": 2 },
-      { "name": "Gran Gure, Space Guardian", "count": 1 },
-      { "name": "Urth, Purifying Elemental", "count": 1 },
-      { "name": "Holy Awe", "count": 2 }
+      {
+        "name": "Tyrant Worm",
+        "count": 2
+      },
+      {
+        "name": "Bloody Squito",
+        "count": 2
+      },
+      {
+        "name": "Dark Reversal",
+        "count": 2
+      },
+      {
+        "name": "Ghost Touch",
+        "count": 2
+      },
+      {
+        "name": "Bone Spider",
+        "count": 3
+      },
+      {
+        "name": "Stinger Worm",
+        "count": 3
+      },
+      {
+        "name": "Gigazoul",
+        "count": 2
+      },
+      {
+        "name": "Death Smoke",
+        "count": 2
+      },
+      {
+        "name": "Necrodragon Giland",
+        "count": 2
+      },
+      {
+        "name": "Vile Mulder, Wing of the Void",
+        "count": 2
+      },
+      {
+        "name": "Photocide, Lord of the Wastes",
+        "count": 1
+      },
+      {
+        "name": "Vashuna, Sword Dancer",
+        "count": 2
+      },
+      {
+        "name": "Dark Titan Maginn",
+        "count": 2
+      },
+      {
+        "name": "Terror Pit",
+        "count": 4
+      },
+      {
+        "name": "La Ura Giga, Sky Guardian",
+        "count": 3
+      },
+      {
+        "name": "Miele, Vizier of Lightning",
+        "count": 2
+      },
+      {
+        "name": "Gran Gure, Space Guardian",
+        "count": 1
+      },
+      {
+        "name": "Urth, Purifying Elemental",
+        "count": 1
+      },
+      {
+        "name": "Holy Awe",
+        "count": 2
+      }
     ]
   },
   {
@@ -129,25 +381,774 @@
     "archetype": "Fire / Nature Aggro",
     "tagline": "Two-color beatdown: cheap Fire pressure backed by Nature's bigger, growing bodies.",
     "cards": [
-      { "name": "Artisan Picora", "count": 3 },
-      { "name": "Deadly Fighter Braid Claw", "count": 2 },
-      { "name": "Essence Elf", "count": 4 },
-      { "name": "Snip Striker Bullraizer", "count": 2 },
-      { "name": "Torcon", "count": 3 },
-      { "name": "Steel Smasher", "count": 2 },
-      { "name": "Bronze-Arm Tribe", "count": 4 },
-      { "name": "Cratersaur", "count": 3 },
-      { "name": "Explosive Dude Joe", "count": 2 },
-      { "name": "Trench Scarab", "count": 2 },
-      { "name": "Gigamantis", "count": 2 },
-      { "name": "Magmadragon Melgars", "count": 2 },
-      { "name": "Rumbling Terahorn", "count": 2 },
-      { "name": "Earthstomp Giant", "count": 1 },
-      { "name": "Super Terradragon Bailas Gale", "count": 1 },
-      { "name": "Furious Onslaught", "count": 1 },
-      { "name": "Tornado Flame", "count": 2 },
-      { "name": "Bolshack Dragon", "count": 1 },
-      { "name": "Avalanche Giant", "count": 1 }
+      {
+        "name": "Artisan Picora",
+        "count": 3
+      },
+      {
+        "name": "Deadly Fighter Braid Claw",
+        "count": 2
+      },
+      {
+        "name": "Essence Elf",
+        "count": 4
+      },
+      {
+        "name": "Snip Striker Bullraizer",
+        "count": 2
+      },
+      {
+        "name": "Torcon",
+        "count": 3
+      },
+      {
+        "name": "Steel Smasher",
+        "count": 2
+      },
+      {
+        "name": "Bronze-Arm Tribe",
+        "count": 4
+      },
+      {
+        "name": "Cratersaur",
+        "count": 3
+      },
+      {
+        "name": "Explosive Dude Joe",
+        "count": 2
+      },
+      {
+        "name": "Trench Scarab",
+        "count": 2
+      },
+      {
+        "name": "Gigamantis",
+        "count": 2
+      },
+      {
+        "name": "Magmadragon Melgars",
+        "count": 2
+      },
+      {
+        "name": "Rumbling Terahorn",
+        "count": 2
+      },
+      {
+        "name": "Earthstomp Giant",
+        "count": 1
+      },
+      {
+        "name": "Super Terradragon Bailas Gale",
+        "count": 1
+      },
+      {
+        "name": "Furious Onslaught",
+        "count": 1
+      },
+      {
+        "name": "Tornado Flame",
+        "count": 2
+      },
+      {
+        "name": "Bolshack Dragon",
+        "count": 1
+      },
+      {
+        "name": "Avalanche Giant",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "aqua_control",
+    "name": "Aqua Control",
+    "archetype": "Water Control",
+    "tagline": "Cycle through your deck with draw engines while bouncing threats and chipping shields. Classic Water control feel.",
+    "cards": [
+      {
+        "name": "Aqua Guard",
+        "count": 4
+      },
+      {
+        "name": "Marine Flower",
+        "count": 4
+      },
+      {
+        "name": "Zepimeteus",
+        "count": 2
+      },
+      {
+        "name": "Hunter Fish",
+        "count": 3
+      },
+      {
+        "name": "Madrillon Fish",
+        "count": 2
+      },
+      {
+        "name": "Aqua Hulcus",
+        "count": 4
+      },
+      {
+        "name": "Phantom Fish",
+        "count": 3
+      },
+      {
+        "name": "Aqua Shooter",
+        "count": 2
+      },
+      {
+        "name": "Revolver Fish",
+        "count": 2
+      },
+      {
+        "name": "Unicorn Fish",
+        "count": 2
+      },
+      {
+        "name": "Energy Stream",
+        "count": 2
+      },
+      {
+        "name": "Brain Serum",
+        "count": 2
+      },
+      {
+        "name": "Eureka Charger",
+        "count": 2
+      },
+      {
+        "name": "Spiral Gate",
+        "count": 2
+      },
+      {
+        "name": "Teleportation",
+        "count": 2
+      },
+      {
+        "name": "Aqua Surfer",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "id": "aqua_rush",
+    "name": "Aqua Rush",
+    "archetype": "Water Aggro",
+    "tagline": "Cheap Water beaters pile onto the board fast and chip shields every turn before the opponent can stabilize.",
+    "cards": [
+      {
+        "name": "Aqua Guard",
+        "count": 4
+      },
+      {
+        "name": "Marine Flower",
+        "count": 3
+      },
+      {
+        "name": "Zepimeteus",
+        "count": 4
+      },
+      {
+        "name": "Hunter Fish",
+        "count": 4
+      },
+      {
+        "name": "Madrillon Fish",
+        "count": 3
+      },
+      {
+        "name": "Aqua Vehicle",
+        "count": 4
+      },
+      {
+        "name": "Grape Globbo",
+        "count": 4
+      },
+      {
+        "name": "Aqua Soldier",
+        "count": 4
+      },
+      {
+        "name": "Aqua Hulcus",
+        "count": 3
+      },
+      {
+        "name": "Aqua Knight",
+        "count": 3
+      },
+      {
+        "name": "Aqua Shooter",
+        "count": 2
+      },
+      {
+        "name": "Aqua Rider",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "id": "boltail_aggro",
+    "name": "Boltail Aggro",
+    "archetype": "Fire Dragons",
+    "tagline": "A tight Fire curve ends with Boltail Dragon crushing what is left of your opponent's shields.",
+    "cards": [
+      {
+        "name": "Artisan Picora",
+        "count": 4
+      },
+      {
+        "name": "Deadly Fighter Braid Claw",
+        "count": 4
+      },
+      {
+        "name": "Blazosaur Q",
+        "count": 3
+      },
+      {
+        "name": "Brawler Zyler",
+        "count": 3
+      },
+      {
+        "name": "Snip Striker Bullraizer",
+        "count": 3
+      },
+      {
+        "name": "Cratersaur",
+        "count": 3
+      },
+      {
+        "name": "Explosive Dude Joe",
+        "count": 3
+      },
+      {
+        "name": "Fatal Attacker Horvath",
+        "count": 2
+      },
+      {
+        "name": "Cutthroat Skyterror",
+        "count": 3
+      },
+      {
+        "name": "Rocketdive Skyterror",
+        "count": 2
+      },
+      {
+        "name": "Magmadragon Melgars",
+        "count": 3
+      },
+      {
+        "name": "Explosive Fighter Ucarn",
+        "count": 2
+      },
+      {
+        "name": "Bolshack Dragon",
+        "count": 2
+      },
+      {
+        "name": "Boltail Dragon",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "id": "burning_mania",
+    "name": "Burning Mania",
+    "archetype": "Fire / Darkness Burn",
+    "tagline": "An arsenal of board-wiping burn spells backed by aggressive Fire bodies. Nothing stays on the opponent's field.",
+    "cards": [
+      {
+        "name": "Artisan Picora",
+        "count": 3
+      },
+      {
+        "name": "Deadly Fighter Braid Claw",
+        "count": 3
+      },
+      {
+        "name": "Blazosaur Q",
+        "count": 3
+      },
+      {
+        "name": "Snip Striker Bullraizer",
+        "count": 3
+      },
+      {
+        "name": "Explosive Dude Joe",
+        "count": 3
+      },
+      {
+        "name": "Magmadragon Melgars",
+        "count": 3
+      },
+      {
+        "name": "Explosive Fighter Ucarn",
+        "count": 2
+      },
+      {
+        "name": "Rocketdive Skyterror",
+        "count": 2
+      },
+      {
+        "name": "Bolshack Dragon",
+        "count": 2
+      },
+      {
+        "name": "Volcanic Arrows",
+        "count": 3
+      },
+      {
+        "name": "Crimson Hammer",
+        "count": 3
+      },
+      {
+        "name": "Tornado Flame",
+        "count": 3
+      },
+      {
+        "name": "Death Smoke",
+        "count": 3
+      },
+      {
+        "name": "Terror Pit",
+        "count": 3
+      },
+      {
+        "name": "Ghost Touch",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "death_puppet",
+    "name": "Death Puppet",
+    "archetype": "Darkness Midrange",
+    "tagline": "Big Darkness bodies and cheap removal trade up until Necrodragons and sorcerers end the game.",
+    "cards": [
+      {
+        "name": "Tyrant Worm",
+        "count": 4
+      },
+      {
+        "name": "Bloody Squito",
+        "count": 3
+      },
+      {
+        "name": "Bone Piercer",
+        "count": 3
+      },
+      {
+        "name": "Junkatz, Rabid Doll",
+        "count": 3
+      },
+      {
+        "name": "Gigazoul",
+        "count": 3
+      },
+      {
+        "name": "Bone Spider",
+        "count": 3
+      },
+      {
+        "name": "Stinger Worm",
+        "count": 3
+      },
+      {
+        "name": "Gray Balloon, Shadow of Greed",
+        "count": 2
+      },
+      {
+        "name": "Gigabolver",
+        "count": 3
+      },
+      {
+        "name": "Necrodragon Giland",
+        "count": 3
+      },
+      {
+        "name": "Vashuna, Sword Dancer",
+        "count": 2
+      },
+      {
+        "name": "Dark Titan Maginn",
+        "count": 2
+      },
+      {
+        "name": "Terror Pit",
+        "count": 3
+      },
+      {
+        "name": "Death Smoke",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "id": "phantom_machine",
+    "name": "Phantom Machine",
+    "archetype": "Darkness Machines",
+    "tagline": "A swarm of dark machines grinds out card and board advantage while huge vehicles close the match.",
+    "cards": [
+      {
+        "name": "Propeller Mutant",
+        "count": 4
+      },
+      {
+        "name": "Wandering Braineater",
+        "count": 4
+      },
+      {
+        "name": "Junkatz, Rabid Doll",
+        "count": 3
+      },
+      {
+        "name": "Gigazoul",
+        "count": 3
+      },
+      {
+        "name": "Grinning Axe, the Monstrosity",
+        "count": 3
+      },
+      {
+        "name": "Dimension Splitter",
+        "count": 3
+      },
+      {
+        "name": "Locomotiver",
+        "count": 3
+      },
+      {
+        "name": "Gigabolver",
+        "count": 3
+      },
+      {
+        "name": "Motorcycle Mutant",
+        "count": 3
+      },
+      {
+        "name": "Bazooka Mutant",
+        "count": 2
+      },
+      {
+        "name": "Battleship Mutant",
+        "count": 2
+      },
+      {
+        "name": "Tank Mutant",
+        "count": 2
+      },
+      {
+        "name": "Gigargon",
+        "count": 2
+      },
+      {
+        "name": "Gigastand",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "id": "rainbow_green",
+    "name": "Rainbow Green",
+    "archetype": "Nature Ramp",
+    "tagline": "Ramp hard, then close with the biggest Terradragons, giants and utility creatures Nature has to offer.",
+    "cards": [
+      {
+        "name": "Sniper Mosquito",
+        "count": 4
+      },
+      {
+        "name": "Essence Elf",
+        "count": 4
+      },
+      {
+        "name": "Burning Mane",
+        "count": 2
+      },
+      {
+        "name": "Bronze-Arm Tribe",
+        "count": 4
+      },
+      {
+        "name": "Mighty Bandit, Ace of Thieves",
+        "count": 3
+      },
+      {
+        "name": "Trench Scarab",
+        "count": 3
+      },
+      {
+        "name": "Faerie Life",
+        "count": 3
+      },
+      {
+        "name": "Mana Nexus",
+        "count": 2
+      },
+      {
+        "name": "Mana Crisis",
+        "count": 2
+      },
+      {
+        "name": "Earthstomp Giant",
+        "count": 2
+      },
+      {
+        "name": "Raging Dash-Horn",
+        "count": 2
+      },
+      {
+        "name": "Terradragon Regarion",
+        "count": 2
+      },
+      {
+        "name": "Super Terradragon Bailas Gale",
+        "count": 2
+      },
+      {
+        "name": "World Tree, Root of Life",
+        "count": 2
+      },
+      {
+        "name": "Avalanche Giant",
+        "count": 2
+      },
+      {
+        "name": "Stratosphere Giant",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "dragon_cycles",
+    "name": "Dragon Cycles",
+    "archetype": "Multicolor Dragons",
+    "tagline": "Every dragon in the binder: Fire beaters, Necrodragons, Terradragons and Überdragons cycle into overwhelming finishers.",
+    "cards": [
+      {
+        "name": "Magmadragon Melgars",
+        "count": 4
+      },
+      {
+        "name": "Magmadragon Jagalzor",
+        "count": 2
+      },
+      {
+        "name": "Bolshack Dragon",
+        "count": 3
+      },
+      {
+        "name": "Bolzard Dragon",
+        "count": 2
+      },
+      {
+        "name": "Boltail Dragon",
+        "count": 2
+      },
+      {
+        "name": "Astrocomet Dragon",
+        "count": 2
+      },
+      {
+        "name": "Bazagazeal Dragon",
+        "count": 3
+      },
+      {
+        "name": "Bolgash Dragon",
+        "count": 3
+      },
+      {
+        "name": "Billion-Degree Dragon",
+        "count": 1
+      },
+      {
+        "name": "Bolmeteus Steel Dragon",
+        "count": 3
+      },
+      {
+        "name": "Magmadragon Ogrist Vhal",
+        "count": 1
+      },
+      {
+        "name": "Überdragon Bajula",
+        "count": 1
+      },
+      {
+        "name": "Balesk Baj, the Timeburner",
+        "count": 1
+      },
+      {
+        "name": "Necrodragon Giland",
+        "count": 3
+      },
+      {
+        "name": "Necrodragon Galbazeek",
+        "count": 2
+      },
+      {
+        "name": "Super Necrodragon Abzo Dolba",
+        "count": 1
+      },
+      {
+        "name": "Super Terradragon Bailas Gale",
+        "count": 2
+      },
+      {
+        "name": "Terradragon Regarion",
+        "count": 2
+      },
+      {
+        "name": "Terradragon Gamiratar",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "id": "turbo_rush",
+    "name": "Turbo Rush",
+    "archetype": "Nature / Fire Aggro",
+    "tagline": "Promote cheap Nature bodies into blazing attacks; mana charge keeps the beatdown roaring all game.",
+    "cards": [
+      {
+        "name": "Artisan Picora",
+        "count": 3
+      },
+      {
+        "name": "Deadly Fighter Braid Claw",
+        "count": 3
+      },
+      {
+        "name": "Essence Elf",
+        "count": 4
+      },
+      {
+        "name": "Snip Striker Bullraizer",
+        "count": 2
+      },
+      {
+        "name": "Blazosaur Q",
+        "count": 2
+      },
+      {
+        "name": "Cratersaur",
+        "count": 3
+      },
+      {
+        "name": "Bronze-Arm Tribe",
+        "count": 4
+      },
+      {
+        "name": "Explosive Dude Joe",
+        "count": 2
+      },
+      {
+        "name": "Trench Scarab",
+        "count": 2
+      },
+      {
+        "name": "Torcon",
+        "count": 2
+      },
+      {
+        "name": "Gigamantis",
+        "count": 2
+      },
+      {
+        "name": "Magmadragon Melgars",
+        "count": 2
+      },
+      {
+        "name": "Rumbling Terahorn",
+        "count": 2
+      },
+      {
+        "name": "Faerie Life",
+        "count": 3
+      },
+      {
+        "name": "Furious Onslaught",
+        "count": 2
+      },
+      {
+        "name": "Tornado Flame",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "id": "solar_legion",
+    "name": "Solar Legion",
+    "archetype": "Light Midrange",
+    "tagline": "Orb-like bodies stall the board while tap effects and Light champions push through shielded defenses.",
+    "cards": [
+      {
+        "name": "La Ura Giga, Sky Guardian",
+        "count": 4
+      },
+      {
+        "name": "Vess, the Oracle",
+        "count": 3
+      },
+      {
+        "name": "Yuluk, the Oracle",
+        "count": 3
+      },
+      {
+        "name": "Ballas, Vizier of Electrons",
+        "count": 3
+      },
+      {
+        "name": "Emerald Grass",
+        "count": 3
+      },
+      {
+        "name": "Moontear, Spectral Knight",
+        "count": 2
+      },
+      {
+        "name": "Migalo, Vizier of Spycraft",
+        "count": 2
+      },
+      {
+        "name": "Miele, Vizier of Lightning",
+        "count": 3
+      },
+      {
+        "name": "Reso Pacos, Clear Sky Guardian",
+        "count": 3
+      },
+      {
+        "name": "Senatine Jade Tree",
+        "count": 2
+      },
+      {
+        "name": "Kanesill, the Explorer",
+        "count": 2
+      },
+      {
+        "name": "Urth, Purifying Elemental",
+        "count": 2
+      },
+      {
+        "name": "Gran Gure, Space Guardian",
+        "count": 2
+      },
+      {
+        "name": "Gariel, Elemental of Sunbeams",
+        "count": 1
+      },
+      {
+        "name": "Aeris, Flight Elemental",
+        "count": 1
+      },
+      {
+        "name": "Holy Awe",
+        "count": 2
+      },
+      {
+        "name": "Diamond Cutter",
+        "count": 2
+      }
     ]
   }
 ]

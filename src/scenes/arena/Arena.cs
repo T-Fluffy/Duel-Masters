@@ -243,6 +243,7 @@ public partial class Arena : Control
     public override void _Ready()
     {
         GameSettings.RevealAiHandChanged += HandleRevealChanged;
+        GameSettings.CardSizeMultiplierChanged += HandleCardSizeChanged;
         BuildLayout();
         ShowDeckSelection();
     }
@@ -250,6 +251,14 @@ public partial class Arena : Control
     public override void _ExitTree()
     {
         GameSettings.RevealAiHandChanged -= HandleRevealChanged;
+        GameSettings.CardSizeMultiplierChanged -= HandleCardSizeChanged;
+    }
+
+    private void HandleCardSizeChanged()
+    {
+        RecomputeCardSize();
+        if (_game is not null)
+            Refresh();
     }
 
     private void HandleRevealChanged()
@@ -298,7 +307,8 @@ public partial class Arena : Control
         // (flex, stretch ratio 1.55) claim the remaining room. A divisor of 8.5 keeps the
         // minimum of every row plus its title inside the window; the flex battle rows then
         // stretch to absorb all leftover height so the table always fills the board.
-        var byHeight = Mathf.Clamp(avail / 8.5f, MinCardH, MaxCardH);
+        var byHeight = Mathf.Clamp(avail / 8.5f, MinCardH, MaxCardH)
+            * GameSettings.CardSizeMultiplier;
 
         _cardH = byHeight;
         _cardW = _cardH / CardAspect;

@@ -1531,6 +1531,26 @@ public sealed class DuelGame
                          && OpponentOf(attacker.Owner).BattleZone.Any(c => CurrentPower(c) <= e.Value):
                     OpenAttackDecision(AttackDecisionKind.DestroyPowerAtMost, attacker, e.Value);
                     break;
+
+                case EffectId.AttackTrigger_Draw when attacker.Owner is not null:
+                    DrawToHand(attacker.Owner, Math.Max(1, e.Value));
+                    break;
+
+                case EffectId.AttackTrigger_DiscardOpponentRandom when attacker.Owner is not null:
+                    DiscardRandom(OpponentOf(attacker.Owner), Math.Max(1, e.Value));
+                    break;
+
+                case EffectId.AttackTrigger_ReturnFromGraveyard when attacker.Owner is not null:
+                    MoveGraveToHand(attacker.Owner, Math.Max(1, e.Value), e.Data);
+                    break;
+
+                case EffectId.AttackTrigger_ChargeMana when attacker.Owner is not null:
+                    ChargeTopOfDeck(attacker.Owner);
+                    break;
+
+                case EffectId.AttackTrigger_TapCreature when attacker.Owner is not null:
+                    TapOpponentCreatureByCiv(attacker.Owner, e.Data);
+                    break;
             }
         }
     }
@@ -1791,7 +1811,8 @@ public int ReadyBlockerChoices(int attackerIndex)
             instance.IsTapped = false;
             instance.IsSummoningSick = !EntersUntapped(owner, instance.Card);
             owner.BattleZone.Add(instance);
-            ResolveBattleZoneEntry(instance, null, null);
+            var t = targets?.FirstOrDefault();
+            ResolveBattleZoneEntry(instance, t?.Owner, t?.Index);
             return instance;
         }
 
@@ -2014,8 +2035,187 @@ public int ReadyBlockerChoices(int attackerIndex)
 
     private void ResolveDestroyedTriggers(CardInstance c)
     {
-        if (c.Card.EffectOf(EffectId.OnDestroyed_Draw) is { } e)
-            DrawToHand(c.Owner!, e.Value);
+        var owner = c.Owner;
+        if (owner is null)
+            return;
+
+        foreach (var effect in c.Card.Effects)
+        {
+            switch (effect.Id)
+            {
+                case EffectId.OnDestroyed_Draw:
+                    DrawToHand(owner, effect.Value);
+                    break;
+
+                case EffectId.OnDestroyed_OpponentDiscardRandom:
+                    DiscardRandom(OpponentOf(owner), Math.Max(1, effect.Value));
+                    break;
+
+                case EffectId.OnDestroyed_DiscardHand:
+                    DiscardEntireHand(owner);
+                    DiscardEntireHand(OpponentOf(owner));
+                    break;
+
+                case EffectId.OnDestroyed_DestroyMana:
+                    for (var i = 0; i < Math.Max(1, effect.Value); i++)
+                    {
+                        MoveManaToGrave(owner);
+                        MoveManaToGrave(OpponentOf(owner));
+                    }
+                    break;
+
+                case EffectId.OnDestroyed_DestroyAllPowerAtMost:
+                    DestroyAllCreaturesPowerAtMost(effect.Value);
+                    break;
+
+                case EffectId.OnDestroyed_ReturnFromGraveyard:
+                    MoveGraveToHand(owner, Math.Max(1, effect.Value), effect.Data);
+                    break;
+
+                case EffectId.OnDestroyed_ShieldToHand:
+                    TakeShieldToHand(owner);
+                    break;
+
+                case EffectId.OnDestroyed_ShieldToGrave:
+                    TakeShieldToGrave(owner);
+                    break;
+            }
+        }
+    }
+
+    /// <summary>Destroy every creature in the battle zone whose current power is {Value} or less.</summary>
+    private void DestroyAllCreaturesPowerAtMost(int power)
+    {
+        var victims = Player1.BattleZone.Where(c => CurrentPower(c) <= power)
+            .Concat(Player2.BattleZone.Where(c => CurrentPower(c) <= power))
+            .ToList();
+        foreach (var c in victims)
+            DestroyCreature(c);
+    }
+
+    /// <summary>Your opponent picks a creature and destroys it (deterministic weakest pick).</summary>
+    private void OpponentSacrificesCreature(Player p)
+    {
+        if (p.BattleZone.Count == 0)
+            return;
+        var victim = p.BattleZone.OrderBy(c => CurrentPower(c)).First();
+        DestroyCreature(victim);
+    }
+
+    /// <summary>Tap the opponent's weakest creature matching the {Data} civilization list (e.g. "darkness or fire").</summary>
+    private void TapOpponentCreatureByCiv(Player attackerOwner, string data)
+    {
+        var opp = OpponentOf(attackerOwner);
+        if (opp.BattleZone.Count == 0)
+            return;
+        CardInstance? best = null;
+        foreach (var c in opp.BattleZone)
+        {
+            if (!string.IsNullOrWhiteSpace(data) && !CivListMatches(data, c.Card.Civilization))
+                continue;
+            if (best is null || CurrentPower(c) < CurrentPower(best))
+                best = c;
+        }
+        best?.Tap();
+    }
+
+    private static bool CivListMatches(string data, Civilization civ)
+    {
+        if (string.IsNullOrWhiteSpace(data))
+            return true;
+        foreach (var token in data.Split(new[] { " or ", "," }, StringSplitOptions.RemoveEmptyEntries))
+        {
+            if (Enum.TryParse<Civilization>(token.Trim(), true, out var parsed) && parsed == civ)
+                return true;
+        }
+        return false;
+    }
+
+    /// <summary>Move up to <paramref name="count"/> ({Data}-filtered) cards from the player's
+    /// graveyard into their hand, taking the most recently added cards; count 0 moves them all.</summary>
+    private void MoveGraveToHand(Player p, int count, string? data = null)
+    {
+        var taken = 0;
+        var target = count > 0 ? count : int.MaxValue;
+        for (var i = p.Graveyard.Count - 1; i >= 0 && taken < target; i--)
+        {
+            var card = p.Graveyard[i];
+            if (!IsMatch(card.Card, data))
+                continue;
+            p.Graveyard.RemoveAt(i);
+            card.Zone = Zone.Hand;
+            card.IsTapped = false;
+            p.Hand.Add(card);
+            taken++;
+        }
+    }
+
+    /// <summary>Move the top {Value} cards from the player's mana zone into their hand.</summary>
+    private void MoveManaToHand(Player p, int count)
+    {
+        for (var i = 0; i < count && p.ManaZone.Count > 0; i++)
+        {
+            var card = p.ManaZone[0];
+            p.ManaZone.RemoveAt(0);
+            card.Zone = Zone.Hand;
+            p.Hand.Add(card);
+        }
+    }
+
+    /// <summary>Take the oldest face-down shield into the owner's hand.</summary>
+    private void TakeShieldToHand(Player p)
+    {
+        if (p.Shields.Count == 0)
+            return;
+        var shield = p.Shields[0];
+        p.Shields.RemoveAt(0);
+        p.Hand.Add(new CardInstance(shield, p) { Zone = Zone.Hand });
+    }
+
+    /// <summary>Take the oldest face-down shield into the owner's graveyard.</summary>
+    private void TakeShieldToGrave(Player p)
+    {
+        if (p.Shields.Count == 0)
+            return;
+        var shield = p.Shields[0];
+        p.Shields.RemoveAt(0);
+        p.Graveyard.Add(new CardInstance(shield, p) { Zone = Zone.Graveyard });
+    }
+
+    /// <summary>Search the deck: take the first ({Data}-filtered) card into hand or mana, then shuffle.</summary>
+    private void SearchDeckTo(Player p, string? data, bool toMana)
+    {
+        var card = p.Deck.FirstOrDefault(c => IsMatch(c, data));
+        if (card is not null)
+        {
+            p.Deck.Remove(card);
+            if (toMana)
+                p.ManaZone.Add(new CardInstance(card, p) { Zone = Zone.ManaZone });
+            else
+                p.Hand.Add(new CardInstance(card, p) { Zone = Zone.Hand });
+        }
+        ShuffleDeck(p);
+    }
+
+    /// <summary>True when <paramref name="card"/> matches a {Data} filter: empty matches
+    /// everything; otherwise the card type, race or name must contain the filter text.</summary>
+    private static bool IsMatch(Card card, string? data)
+    {
+        if (string.IsNullOrWhiteSpace(data))
+            return true;
+        var d = data.Trim();
+        if (d.EndsWith(" creature", StringComparison.OrdinalIgnoreCase)
+            && Enum.TryParse<Civilization>(d[..^" creature".Length], true, out var civ))
+            return card.IsCreature && card.Civilization == civ;
+        var typeName = card.CardType.ToString();
+        if (typeName.Contains(d, StringComparison.OrdinalIgnoreCase)
+            || d.Contains(typeName, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (card.Name.Contains(d, StringComparison.OrdinalIgnoreCase))
+            return true;
+        return !string.IsNullOrWhiteSpace(card.Race)
+            && (card.Race.Contains(d, StringComparison.OrdinalIgnoreCase)
+                || d.Contains(card.Race, StringComparison.OrdinalIgnoreCase));
     }
 
     private void ResolveBattleZoneEntry(CardInstance instance, Player? targetOwner, int? targetIndex)
@@ -2042,6 +2242,8 @@ public int ReadyBlockerChoices(int attackerIndex)
                 case EffectId.OnPlay_ReturnToHand:
                 case EffectId.OnPlay_DestroyPowerAtMost:
                 case EffectId.OnPlay_UntapOwnCreature:
+                case EffectId.OnPlay_DestroyOwnCreature:
+                case EffectId.OnPlay_DestroyAny:
                 {
                     var target = ResolveCreatureTriggerTarget(effect, owner, targetOwner, targetIndex);
                     if (target is null)
@@ -2049,6 +2251,39 @@ public int ReadyBlockerChoices(int attackerIndex)
                     ApplyTargetedEffect(effect, target);
                     break;
                 }
+
+                case EffectId.OnPlay_ReturnFromGraveyard:
+                    MoveGraveToHand(owner, Math.Max(1, effect.Value), effect.Data);
+                    break;
+
+                case EffectId.OnPlay_ReturnFromMana:
+                    MoveManaToHand(owner, Math.Max(1, effect.Value));
+                    break;
+
+                case EffectId.OnPlay_SearchDeck:
+                    SearchDeckTo(owner, effect.Data, toMana: false);
+                    break;
+
+                case EffectId.OnPlay_DiscardOpponentRandom:
+                    DiscardRandom(OpponentOf(owner), Math.Max(1, effect.Value));
+                    break;
+
+                case EffectId.OnPlay_OpponentSacrifice:
+                    OpponentSacrificesCreature(OpponentOf(owner));
+                    break;
+
+                case EffectId.OnPlay_FromGraveyardToMana:
+                    MoveGraveToMana(owner, Math.Max(1, effect.Value), effect.Data);
+                    break;
+
+                case EffectId.OnPlay_ManaToGrave:
+                    MoveManaToGrave(owner);
+                    break;
+
+                case EffectId.OnPlay_LookAtHand:
+                case EffectId.OnPlay_LookAtShields:
+                    // Informational; no game-state effect.
+                    break;
             }
         }
 
@@ -2069,7 +2304,9 @@ public int ReadyBlockerChoices(int attackerIndex)
         EffectId.OnPlay_TapCreature or
         EffectId.OnPlay_ReturnToHand or
         EffectId.OnPlay_DestroyPowerAtMost or
-        EffectId.OnPlay_UntapOwnCreature;
+        EffectId.OnPlay_UntapOwnCreature or
+        EffectId.OnPlay_DestroyOwnCreature or
+        EffectId.OnPlay_DestroyAny;
 
     /// <summary>
     /// True when the battle-zone creature at <paramref name="targetIndex"/> is a
@@ -2087,6 +2324,8 @@ public int ReadyBlockerChoices(int attackerIndex)
         if (!target.Card.IsCreature)
             return false;
         if (effect.Id == EffectId.OnPlay_DestroyPowerAtMost && CurrentPower(target) > effect.Value)
+            return false;
+        if (effect.Id == EffectId.OnPlay_DestroyOwnCreature && effect.Value > 0 && CurrentPower(target) > effect.Value)
             return false;
         return effect.Target switch
         {
@@ -2117,6 +2356,9 @@ public int ReadyBlockerChoices(int attackerIndex)
                 break;
         }
         if (effect.Id == EffectId.OnPlay_DestroyPowerAtMost && CurrentPower(target) > effect.Value)
+            throw new RuleViolationException(
+                $"'{target.Card.Name}' has power greater than {effect.Value} and cannot be destroyed.");
+        if (effect.Id == EffectId.OnPlay_DestroyOwnCreature && effect.Value > 0 && CurrentPower(target) > effect.Value)
             throw new RuleViolationException(
                 $"'{target.Card.Name}' has power greater than {effect.Value} and cannot be destroyed.");
         return target;
@@ -2178,6 +2420,7 @@ public int ReadyBlockerChoices(int attackerIndex)
                 case EffectId.Spell_TapCreature:
                 case EffectId.Spell_UntapOwnCreature:
                 case EffectId.Spell_BoostPower:
+                case EffectId.Spell_DestroyAny:
                 {
                     var t = Next();
                     if (t is null)
@@ -2188,6 +2431,22 @@ public int ReadyBlockerChoices(int attackerIndex)
                     ApplyTargetedEffect(effect, target);
                     break;
                 }
+
+                case EffectId.Spell_OpponentSacrifice:
+                    OpponentSacrificesCreature(OpponentOf(actor));
+                    break;
+
+                case EffectId.Spell_SearchToHand:
+                    SearchDeckTo(actor, effect.Data, toMana: false);
+                    break;
+
+                case EffectId.Spell_SearchToMana:
+                    SearchDeckTo(actor, effect.Data, toMana: true);
+                    break;
+
+                case EffectId.Spell_ReturnFromGraveyard:
+                    MoveGraveToHand(actor, Math.Max(1, effect.Value), effect.Data);
+                    break;
             }
         }
     }
@@ -2238,7 +2497,7 @@ public int ReadyBlockerChoices(int attackerIndex)
         var target = targetOwner.BattleZone[targetIndex];
         if (!target.Card.IsCreature)
             return false;
-        if (effect.Id == EffectId.Spell_DestroyPowerAtMost && CurrentPower(target) > effect.Value)
+        if (effect.Id is EffectId.Spell_DestroyPowerAtMost or EffectId.OnPlay_DestroyPowerAtMost && CurrentPower(target) > effect.Value)
             return false;
         return effect.Target switch
         {
@@ -2266,7 +2525,10 @@ public int ReadyBlockerChoices(int attackerIndex)
         switch (effect.Id)
         {
             case EffectId.Spell_DestroyPowerAtMost:
+            case EffectId.Spell_DestroyAny:
             case EffectId.OnPlay_DestroyPowerAtMost:
+            case EffectId.OnPlay_DestroyAny:
+            case EffectId.OnPlay_DestroyOwnCreature:
                 DestroyCreature(target);
                 break;
 
@@ -2342,14 +2604,18 @@ public int ReadyBlockerChoices(int attackerIndex)
 
     /// <summary>Move up to <paramref name="count"/> cards from the player's graveyard
     /// into their mana zone (Bliss Totem), taking the most recently added cards.</summary>
-    private void MoveGraveToMana(Player p, int count)
+    private void MoveGraveToMana(Player p, int count, string? data = null)
     {
-        for (var i = 0; i < count && p.Graveyard.Count > 0; i++)
+        var taken = 0;
+        for (var i = p.Graveyard.Count - 1; i >= 0 && taken < count; i--)
         {
-            var card = p.Graveyard[^1];
-            p.Graveyard.RemoveAt(p.Graveyard.Count - 1);
+            var card = p.Graveyard[i];
+            if (!IsMatch(card.Card, data))
+                continue;
+            p.Graveyard.RemoveAt(i);
             card.Zone = Zone.ManaZone;
             p.ManaZone.Add(card);
+            taken++;
         }
     }
 
