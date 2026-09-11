@@ -20,7 +20,7 @@ jobs:
             10.0.x
 
       - name: Restore
-        run: dotnet restore
+        run: dotnet restore Duel-Masters.csproj backends/dotnet/DuelMasters.Server.csproj tests/DuelE2E/DuelE2E.csproj
 
       # Sequential builds: the shared DuelMasters.Domain.dll artifacts are rebuilt
       # by several projects at once, and parallel MSBuild invocations contend on
