@@ -92,5 +92,14 @@ public sealed class Card
         HasKeyword(Keyword.TripleBreaker) ? 3 :
         HasKeyword(Keyword.DoubleBreaker) ? 2 : 1;
 
+    /// <summary>
+    /// A deep copy with the same identity and rules. Decks must hold one instance
+    /// per physical copy so duplicate names remain distinguishable by reference
+    /// (scry permutations and zone membership rely on instance identity).
+    /// </summary>
+    public Card Clone() => new(
+        Id, Name, Civilization, CardType, ManaCost, Power, Race,
+        Keywords, Effects, EvolutionOf, TapAbilities, CrewCivilization);
+
     public override string ToString() => Name;
 }

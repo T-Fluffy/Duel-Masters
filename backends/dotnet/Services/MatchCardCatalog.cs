@@ -109,7 +109,7 @@ public static class MatchCardCatalog
                 continue;
             }
             counts[card.Id] = counts.TryGetValue(card.Id, out var c) ? c + 1 : 1;
-            deck.Add(card);
+            deck.Add(card.Clone());
         }
 
         return deck;
@@ -142,7 +142,7 @@ public static class MatchCardCatalog
         var deck = new List<Card>(40);
         foreach (var (id, count) in merged)
             for (var i = 0; i < count; i++)
-                deck.Add(byId[id]);
+                deck.Add(byId[id].Clone());
 
         return (true, null, deck);
     }
