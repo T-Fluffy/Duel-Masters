@@ -8,6 +8,7 @@ using DuelMasters.Domain.Networking;
 using DuelMasters.Server.Data;
 using DuelMasters.Server.Services;
 using DuelResult = DuelMasters.Server.Models.DuelResult;
+using PlayerProfile = DuelMasters.Server.Models.PlayerProfile;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -944,6 +945,7 @@ public sealed class DuelHub : Hub<IDuelClientContract>
         var playedAt = DateTime.UtcNow;
         using var scope = _scopeFactory.CreateScope();
         var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+        var owners = new Dictionary<string, Guid>();
         foreach (var side in new[] { DuelSide.Player1, DuelSide.Player2 })
         {
             if (room.IsBotSide(side))
@@ -957,6 +959,7 @@ public sealed class DuelHub : Hub<IDuelClientContract>
                 .SingleOrDefaultAsync();
             if (ownerId == Guid.Empty)
                 continue;
+            owners[side] = ownerId;
             db.DuelResults.Add(new DuelResult
             {
                 UserId = ownerId,
@@ -965,6 +968,41 @@ public sealed class DuelHub : Hub<IDuelClientContract>
                 DeckId = id,
                 PlayedAtUtc = playedAt,
             });
+        }
+        // Ranked movement happens only for human-vs-human games where both
+        // sides resolved to a saved-deck owner. Vs-AI and deck-less sides keep
+        // their DuelResult history rows but no rating change.
+        if (owners.TryGetValue(DuelSide.Player1, out var p1Id)
+            && owners.TryGetValue(DuelSide.Player2, out var p2Id))
+        {
+            var profiles = await db.PlayerProfiles
+                .Where(p => p.UserId == p1Id || p.UserId == p2Id)
+                .ToDictionaryAsync(p => p.UserId);
+            foreach (var id in new[] { p1Id, p2Id })
+            {
+                if (!profiles.ContainsKey(id))
+                {
+                    var created = new PlayerProfile
+                    {
+                        UserId = id,
+                        Nickname = "Player-" + id.ToString("N"),
+                    };
+                    db.PlayerProfiles.Add(created);
+                    profiles[id] = created;
+                }
+            }
+            var p1 = profiles[p1Id];
+            var p2 = profiles[p2Id];
+            var p1Won = string.Equals(DuelSide.Player1, winnerSide, StringComparison.Ordinal);
+            if (p1Won) { p1.OnlineWins++; p2.OnlineLosses++; }
+            else { p2.OnlineWins++; p1.OnlineLosses++; }
+            var (winnerRating, loserRating) = p1Won
+                ? EloRating.Apply(p1.Rating, p2.Rating)
+                : EloRating.Apply(p2.Rating, p1.Rating);
+            if (p1Won) { p1.Rating = winnerRating; p2.Rating = loserRating; }
+            else { p2.Rating = winnerRating; p1.Rating = loserRating; }
+            p1.UpdatedAtUtc = playedAt;
+            p2.UpdatedAtUtc = playedAt;
         }
         await db.SaveChangesAsync();
     }

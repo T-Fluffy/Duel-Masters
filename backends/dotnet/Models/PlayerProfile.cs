@@ -30,6 +30,10 @@ public class PlayerProfile
     /// <summary>Free-form self-description shown on the public profile. Max 500 chars.</summary>
     public string Bio { get; set; } = "";
 
+    /// <summary>ELO rating, starting at 1000. Moves only on human-vs-human
+    /// ranked matches at winner resolution; vs-AI results never touch it.</summary>
+    public int Rating { get; set; } = 1000;
+
     public int OnlineWins { get; set; }
     public int OnlineLosses { get; set; }
 
