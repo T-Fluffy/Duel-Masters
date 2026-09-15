@@ -1255,7 +1255,7 @@ internal static class Program
 
     private static async Task RegisterAsync(HttpClient http, string user)
     {
-        var body = Json(new { username = user, email = user + "@e2e.local", password = E2ePassword });
+        var body = Json(new { username = user, email = user + "@e2e.local", password = E2ePassword, nickname = user });
         var resp = await http.PostAsync("/api/auth/register", body);
         if (!resp.IsSuccessStatusCode) throw new InvalidOperationException($"register {resp.StatusCode}: {await resp.Content.ReadAsStringAsync()}");
     }
