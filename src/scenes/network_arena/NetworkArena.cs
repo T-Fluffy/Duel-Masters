@@ -130,8 +130,18 @@ public partial class NetworkArena : Control
 
 	private (float W, float H) ScaledCardSize()
 	{
-		var m = GameSettings.CardSizeMultiplier;
-		return (140f * m, 195f * m);
+		var wantH = 195f * GameSettings.CardSizeMultiplier;
+		// Two zone rows share the window height: reserve chrome (margins,
+		// status, grave buttons, prompt, footer, separations) and split the
+		// rest. Cap the height so the footer buttons can never be pushed
+		// off-screen, no matter the slider; width follows the card aspect.
+		var h = Size.Y;
+		if (h > 0f)
+		{
+			var fitH = Mathf.Max(90f, (h - 300f) / 2f);
+			wantH = Mathf.Min(wantH, Mathf.Max(fitH, 195f * 0.4f));
+		}
+		return (wantH * 140f / 195f, wantH);
 	}
 
 	public override void _Process(double delta)

@@ -307,8 +307,15 @@ public partial class Arena : Control
         // (flex, stretch ratio 1.55) claim the remaining room. A divisor of 8.5 keeps the
         // minimum of every row plus its title inside the window; the flex battle rows then
         // stretch to absorb all leftover height so the table always fills the board.
-        var byHeight = Mathf.Clamp(avail / 8.5f, MinCardH, MaxCardH)
-            * GameSettings.CardSizeMultiplier;
+        var baseUnit = Mathf.Clamp(avail / 8.5f, MinCardH, MaxCardH);
+        // Fold the user multiplier into the fit budget: fixed rows consume
+        // ~5.04 card-units, so cap the effective multiplier to leave ~2.6 units
+        // for the two flex battle rows (a card plus title each). Fit always wins:
+        // at large slider values on short windows the cards stop growing instead
+        // of pushing the mana zone and footer buttons off-screen.
+        var maxM = (avail / baseUnit - 2.6f) / 5.04f;
+        var m = Mathf.Min(GameSettings.CardSizeMultiplier, Mathf.Max(maxM, 0.4f));
+        var byHeight = baseUnit * m;
 
         _cardH = byHeight;
         _cardW = _cardH / CardAspect;
