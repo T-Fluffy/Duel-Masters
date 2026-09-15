@@ -94,7 +94,12 @@ public class ProfileController : ControllerBase
         profile.Country = (req.Country ?? "").Trim();
         profile.AvatarBase64 = req.AvatarBase64 ?? "";
         profile.FavouriteDeckId = req.FavouriteDeckId;
-        profile.DateOfBirth = req.DateOfBirth;
+        DateTime? dob = req.DateOfBirth;
+        if (dob.HasValue && dob.Value.Kind != DateTimeKind.Utc)
+            dob = dob.Value.Kind == DateTimeKind.Local
+                ? dob.Value.ToUniversalTime()
+                : DateTime.SpecifyKind(dob.Value, DateTimeKind.Utc);
+        profile.DateOfBirth = dob;
         profile.Bio = bio;
         profile.UpdatedAtUtc = DateTime.UtcNow;
         await _db.SaveChangesAsync();
@@ -110,6 +115,7 @@ public class ProfileController : ControllerBase
         profile = new PlayerProfile { UserId = userId, Nickname = "Player-" + userId.ToString("N") };
         _db.PlayerProfiles.Add(profile);
         await _db.SaveChangesAsync();
+        await _db.Entry(profile).Reference(p => p.User).LoadAsync();
         return profile;
     }
 
