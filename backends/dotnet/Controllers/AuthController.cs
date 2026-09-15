@@ -43,6 +43,12 @@ public class AuthController : ControllerBase
         var exists = await _db.Users.AnyAsync(u => u.Username == req.Username);
         if (exists)
             return Conflict(new { error = "Username already taken." });
+        if (!string.IsNullOrWhiteSpace(req.Email))
+        {
+            var emailTaken = await _db.Users.AnyAsync(u => u.Email == req.Email);
+            if (emailTaken)
+                return Conflict(new { error = "That email is already registered." });
+        }
         var nickTaken = await _db.PlayerProfiles.AnyAsync(p => p.Nickname == nickname);
         if (nickTaken)
             return Conflict(new { error = "That nickname is already taken." });

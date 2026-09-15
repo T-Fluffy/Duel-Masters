@@ -14,12 +14,12 @@ namespace DuelMasters.Server.Controllers;
 public record ProfileStatsResponse(int Wins, int Losses, int Total, List<RecentDuelResponse> RecentDuelResponse);
 public record RecentDuelResponse(bool Won, string MatchCode, DateTime PlayedAtUtc);
 public record ProfileUpdateRequest(string? Nickname, string? Country, string? AvatarBase64, Guid? FavouriteDeckId,
-    DateTime? DateOfBirth, string? Bio);
+    DateTime? DateOfBirth, string? Bio, string? BackgroundBase64);
 public record ProfileResponse(Guid UserId, string Email, string Nickname, string Country, string AvatarBase64,
-    Guid? FavouriteDeckId, DateTime? DateOfBirth, string Bio,
+    Guid? FavouriteDeckId, DateTime? DateOfBirth, string Bio, string BackgroundBase64,
     int OnlineWins, int OnlineLosses, DateTime UpdatedAtUtc);
 public record PublicProfileResponse(Guid UserId, string Nickname, string Country, string AvatarBase64,
-    string Bio, int OnlineWins, int OnlineLosses);
+    string Bio, string BackgroundBase64, int OnlineWins, int OnlineLosses);
 
 [ApiController]
 [Route("api/[controller]")]
@@ -93,6 +93,7 @@ public class ProfileController : ControllerBase
         profile.Nickname = nickname;
         profile.Country = (req.Country ?? "").Trim();
         profile.AvatarBase64 = req.AvatarBase64 ?? "";
+        profile.BackgroundBase64 = req.BackgroundBase64 ?? "";
         profile.FavouriteDeckId = req.FavouriteDeckId;
         DateTime? dob = req.DateOfBirth;
         if (dob.HasValue && dob.Value.Kind != DateTimeKind.Utc)
@@ -121,10 +122,10 @@ public class ProfileController : ControllerBase
 
     private static ProfileResponse ToResponse(PlayerProfile p) =>
         new(p.UserId, p.User?.Email ?? "", p.Nickname, p.Country, p.AvatarBase64,
-            p.FavouriteDeckId, p.DateOfBirth, p.Bio,
+            p.FavouriteDeckId, p.DateOfBirth, p.Bio, p.BackgroundBase64,
             p.OnlineWins, p.OnlineLosses, p.UpdatedAtUtc);
 
     private static PublicProfileResponse ToPublicResponse(PlayerProfile p) =>
         new(p.UserId, p.Nickname, p.Country, p.AvatarBase64,
-            p.Bio, p.OnlineWins, p.OnlineLosses);
+            p.Bio, p.BackgroundBase64, p.OnlineWins, p.OnlineLosses);
 }

@@ -18,6 +18,10 @@ public class PlayerProfile
     /// <summary>Avatar image bytes encoded as base64, stored in the DB cell.</summary>
     public string AvatarBase64 { get; set; } = "";
 
+    /// <summary>Player-chosen profile background image, base64-encoded like the
+    /// avatar. Shown behind the identity card; empty means the default theme.</summary>
+    public string BackgroundBase64 { get; set; } = "";
+
     /// <summary>Optional favourite/focused deck for match history attribution.</summary>
     public Guid? FavouriteDeckId { get; set; }
 
