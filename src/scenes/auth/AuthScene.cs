@@ -48,9 +48,11 @@ public partial class AuthScene : Control
         }
 
         // If already authenticated (e.g. returning to this scene), skip ahead.
+        // Deferred: the tree is still adding nodes inside _Ready, so a direct
+        // ChangeSceneToFile faults with "parent node is busy".
         if (Global.Instance.IsAuthenticated)
         {
-            GetTree().ChangeSceneToFile(MainMenuPath);
+            CallDeferred(nameof(GoToMenu));
             return;
         }
 
@@ -144,6 +146,8 @@ public partial class AuthScene : Control
         // Top-right options gear (Display Settings / Exit Game; no menu yet to go back to).
         root.AddChild(new SceneOptionsMenu { ShowBackToMenu = false });
     }
+
+    private void GoToMenu() => GetTree().ChangeSceneToFile(MainMenuPath);
 
     private void OnLogin()
     {

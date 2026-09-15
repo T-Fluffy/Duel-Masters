@@ -19,6 +19,7 @@ public partial class MainMenu : Control
     private const string DeckBuilderPath = "res://src/scenes/deck_builder/DeckBuilder.tscn";
     private const string NetworkLobbyPath = "res://src/scenes/network_lobby/NetworkLobby.tscn";
     private const string ProfilePath = "res://src/scenes/profile/ProfileScene.tscn";
+    private const string LeaderboardPath = "res://src/scenes/leaderboard/LeaderboardScene.tscn";
     private const string AuthPath = "res://src/scenes/auth/AuthScene.tscn";
 
     public override void _Ready()
@@ -76,6 +77,10 @@ public partial class MainMenu : Control
         var profileBtn = new Button { Text = "Profile" };
         profileBtn.Pressed += () => GetTree().ChangeSceneToFile(ProfilePath);
         center.AddChild(profileBtn);
+
+        var rankBtn = new Button { Text = "Leaderboard" };
+        rankBtn.Pressed += () => GetTree().ChangeSceneToFile(LeaderboardPath);
+        center.AddChild(rankBtn);
 
         var settingsBtn = new Button { Text = "Settings" };
         settingsBtn.Pressed += OpenSettings;

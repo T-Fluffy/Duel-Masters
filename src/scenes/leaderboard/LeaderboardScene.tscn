@@ -1,0 +1,76 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/scenes/leaderboard/LeaderboardScene.cs" id="1_rank"]
+
+[node name="LeaderboardScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rank")
+
+[node name="Scroll" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Center" type="CenterContainer" parent="Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Column" type="VBoxContainer" parent="Scroll/Center"]
+custom_minimum_size = Vector2(520, 0)
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Title" type="Label" parent="Scroll/Center/Column"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "LEADERBOARD"
+horizontal_alignment = 1
+
+[node name="MeRank" type="Label" parent="Scroll/Center/Column"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(1, 0.82, 0.35, 1)
+text = "..."
+horizontal_alignment = 1
+
+[node name="Sep1" type="HSeparator" parent="Scroll/Center/Column"]
+layout_mode = 2
+
+[node name="BoardList" type="ItemList" parent="Scroll/Center/Column"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 380)
+layout_mode = 2
+
+[node name="BackBtn" type="Button" parent="Scroll/Center/Column"]
+layout_mode = 2
+text = "Back to Menu"
+
+[node name="StatusLabel" type="Label" parent="Scroll/Center/Column"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.92, 1, 1)
+text = ""
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="PublicCard" type="AcceptDialog" parent="."]
+unique_name_in_owner = true
+title = "Player"
+
+[node name="Http" type="HTTPRequest" parent="."]
+unique_name_in_owner = true
+timeout = 15
+
+[connection signal="request_completed" from="Http" to="." method="OnRequestCompleted"]
+[connection signal="pressed" from="Scroll/Center/Column/BackBtn" to="." method="OnBackPressed"]
