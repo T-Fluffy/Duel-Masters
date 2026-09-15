@@ -27,6 +27,7 @@ public partial class AuthScene : Control
     private LineEdit _passEdit = null!;
     private Button _loginBtn = null!;
     private Button _registerBtn = null!;
+    private CheckBox _rememberBox = null!;
     private Label _status = null!;
     private HttpRequest _http = null!;
 
@@ -36,6 +37,16 @@ public partial class AuthScene : Control
         AddChild(_http);
         _http.RequestCompleted += OnRequestCompleted;
 
+        var saved = SessionStore.Load();
+        var global = Global.Instance;
+        if (!global.IsAuthenticated && saved.Token.Length > 0)
+        {
+            // Remembered session: restore without asking for the password again.
+            // If the token has expired the next 401 clears it and lands back here.
+            global.Token = saved.Token;
+            global.Username = saved.Username;
+        }
+
         // If already authenticated (e.g. returning to this scene), skip ahead.
         if (Global.Instance.IsAuthenticated)
         {
@@ -44,6 +55,10 @@ public partial class AuthScene : Control
         }
 
         BuildUi();
+        _userEdit.Text = saved.Username;
+        _emailEdit.Text = saved.Email;
+        _nickEdit.Text = saved.Nickname;
+        _rememberBox.ButtonPressed = true;
     }
 
     private void BuildUi()
@@ -106,6 +121,10 @@ public partial class AuthScene : Control
         _registerBtn = new Button { Text = "Register" };
         _registerBtn.Pressed += OnRegister;
         buttons.AddChild(_registerBtn);
+
+        _rememberBox = new CheckBox { Text = "Remember me", ButtonPressed = true };
+        _rememberBox.TooltipText = "Keep me signed in on this device (password is never stored).";
+        center.AddChild(_rememberBox);
 
         center.AddChild(new Control { CustomMinimumSize = new Vector2(0, 6) });
 
@@ -196,6 +215,20 @@ public partial class AuthScene : Control
             var global = Global.Instance;
             global.Token = token;
             global.Username = username;
+            if (_rememberBox.ButtonPressed)
+            {
+                var prev = SessionStore.Load();
+                var email = _emailEdit.Text.Trim();
+                var nickname = _nickEdit.Text.Trim();
+                SessionStore.Save(username,
+                    email.Length > 0 ? email : prev.Email,
+                    nickname.Length > 0 ? nickname : prev.Nickname,
+                    token);
+            }
+            else
+            {
+                SessionStore.Clear();
+            }
 
             SetStatus($"Welcome, {username}! Entering the main menu...", false);
             GetTree().CreateTimer(0.6).Timeout += () => GetTree().ChangeSceneToFile(MainMenuPath);

@@ -1,6 +1,18 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://src/scenes/profile/ProfileScene.cs" id="1_prof"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_card"]
+bg_color = Color(0.04, 0.05, 0.08, 0.72)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 0.12)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
 
 [node name="ProfileScene" type="Control"]
 layout_mode = 3
@@ -10,3 +22,191 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_prof")
+
+[node name="FallbackColor" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.04, 0.05, 0.08, 1)
+
+[node name="Background" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Scroll" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Center" type="CenterContainer" parent="Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CardPanel" type="PanelContainer" parent="Scroll/Center"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_card")
+
+[node name="CardMargin" type="MarginContainer" parent="Scroll/Center/CardPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 20
+
+[node name="Column" type="VBoxContainer" parent="Scroll/Center/CardPanel/CardMargin"]
+custom_minimum_size = Vector2(520, 0)
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Title" type="Label" parent="Scroll/Center/CardPanel/CardMargin/Column"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "PLAYER PROFILE"
+horizontal_alignment = 1
+
+[node name="AvatarRow" type="HBoxContainer" parent="Scroll/Center/CardPanel/CardMargin/Column"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Avatar" type="TextureRect" parent="Scroll/Center/CardPanel/CardMargin/Column/AvatarRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="IdBox" type="VBoxContainer" parent="Scroll/Center/CardPanel/CardMargin/Column/AvatarRow"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Headline" type="Label" parent="Scroll/Center/CardPanel/CardMargin/Column/AvatarRow/IdBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "..."
+
+[node name="Meta" type="Label" parent="Scroll/Center/CardPanel/CardMargin/Column/AvatarRow/IdBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.75, 0.85, 1)
+text = ""
+autowrap_mode = 3
+
+[node name="BioView" type="Label" parent="Scroll/Center/CardPanel/CardMargin/Column"]
+unique_name_in_owner = true
+layout_mode = 2
+text = ""
+autowrap_mode = 3
+
+[node name="Sep1" type="HSeparator" parent="Scroll/Center/CardPanel/CardMargin/Column"]
+layout_mode = 2
+
+[node name="EditTitle" type="Label" parent="Scroll/Center/CardPanel/CardMargin/Column"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Edit profile"
+horizontal_alignment = 1
+
+[node name="NicknameEdit" type="LineEdit" parent="Scroll/Center/CardPanel/CardMargin/Column"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+placeholder_text = "nickname (unique, max 64)"
+
+[node name="CountryEdit" type="LineEdit" parent="Scroll/Center/CardPanel/CardMargin/Column"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+placeholder_text = "country"
+
+[node name="DobEdit" type="LineEdit" parent="Scroll/Center/CardPanel/CardMargin/Column"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+placeholder_text = "date of birth (YYYY-MM-DD, private)"
+
+[node name="BioEdit" type="TextEdit" parent="Scroll/Center/CardPanel/CardMargin/Column"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+placeholder_text = "say something about yourself (max 500)"
+
+[node name="BtnRow" type="HBoxContainer" parent="Scroll/Center/CardPanel/CardMargin/Column"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="AvatarBtn" type="Button" parent="Scroll/Center/CardPanel/CardMargin/Column/BtnRow"]
+layout_mode = 2
+text = "Choose Avatar..."
+
+[node name="BgBtn" type="Button" parent="Scroll/Center/CardPanel/CardMargin/Column/BtnRow"]
+layout_mode = 2
+text = "Choose Background..."
+
+[node name="SaveBtn" type="Button" parent="Scroll/Center/CardPanel/CardMargin/Column/BtnRow"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Save"
+
+[node name="Sep2" type="HSeparator" parent="Scroll/Center/CardPanel/CardMargin/Column"]
+layout_mode = 2
+
+[node name="StatsTitle" type="Label" parent="Scroll/Center/CardPanel/CardMargin/Column"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Online record"
+horizontal_alignment = 1
+
+[node name="RecentList" type="ItemList" parent="Scroll/Center/CardPanel/CardMargin/Column"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 140)
+layout_mode = 2
+
+[node name="BackBtn" type="Button" parent="Scroll/Center/CardPanel/CardMargin/Column"]
+layout_mode = 2
+text = "Back to Menu"
+
+[node name="StatusLabel" type="Label" parent="Scroll/Center/CardPanel/CardMargin/Column"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.92, 1, 1)
+text = ""
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Http" type="HTTPRequest" parent="."]
+unique_name_in_owner = true
+timeout = 15
+
+[node name="ImagePicker" type="FileDialog" parent="."]
+unique_name_in_owner = true
+access = 2
+file_mode = 0
+filters = PackedStringArray("*.png ; PNG images", "*.jpg, *.jpeg ; JPEG images")
+
+[connection signal="request_completed" from="Http" to="." method="OnRequestCompleted"]
+[connection signal="file_selected" from="ImagePicker" to="." method="OnImageFile"]
+[connection signal="pressed" from="Scroll/Center/CardPanel/CardMargin/Column/BtnRow/AvatarBtn" to="." method="OnAvatarPressed"]
+[connection signal="pressed" from="Scroll/Center/CardPanel/CardMargin/Column/BtnRow/BgBtn" to="." method="OnBackgroundPressed"]
+[connection signal="pressed" from="Scroll/Center/CardPanel/CardMargin/Column/BtnRow/SaveBtn" to="." method="OnSavePressed"]
+[connection signal="pressed" from="Scroll/Center/CardPanel/CardMargin/Column/BackBtn" to="." method="OnBackPressed"]

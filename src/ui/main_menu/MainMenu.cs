@@ -1,3 +1,4 @@
+using DuelMasters.Core.Autoload;
 using DuelMasters.UI.Settings;
 using Godot;
 
@@ -18,6 +19,7 @@ public partial class MainMenu : Control
     private const string DeckBuilderPath = "res://src/scenes/deck_builder/DeckBuilder.tscn";
     private const string NetworkLobbyPath = "res://src/scenes/network_lobby/NetworkLobby.tscn";
     private const string ProfilePath = "res://src/scenes/profile/ProfileScene.tscn";
+    private const string AuthPath = "res://src/scenes/auth/AuthScene.tscn";
 
     public override void _Ready()
     {
@@ -91,6 +93,10 @@ public partial class MainMenu : Control
         hint.AddThemeColorOverride("font_color", new Color(0.55f, 0.6f, 0.68f));
         center.AddChild(hint);
 
+        var logoutBtn = new Button { Text = "Logout" };
+        logoutBtn.Pressed += OnLogout;
+        center.AddChild(logoutBtn);
+
         var quitBtn = new Button { Text = "Quit" };
         quitBtn.Pressed += QuitGame;
         center.AddChild(quitBtn);
@@ -103,6 +109,16 @@ public partial class MainMenu : Control
     {
         var panel = new DisplaySettingsPanel();
         AddChild(panel);
+    }
+
+    private void OnLogout()
+    {
+        // Drop the in-memory session and the remembered one, otherwise the
+        // login gate would restore it and bounce straight back here.
+        Global.Instance.Token = "";
+        Global.Instance.Username = "";
+        SessionStore.Clear();
+        GetTree().ChangeSceneToFile(AuthPath);
     }
 
     private static void QuitGame()
