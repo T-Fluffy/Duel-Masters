@@ -10,7 +10,7 @@ using DuelMasters.Server.Services;
 
 namespace DuelMasters.Server.Controllers;
 
-public record RegisterRequest(string Username, string Email, string Password);
+public record RegisterRequest(string Username, string Email, string Password, string? Nickname);
 public record LoginRequest(string Username, string Password);
 public record AuthResponse(Guid Id, string Username, string Token);
 
@@ -34,10 +34,18 @@ public class AuthController : ControllerBase
     {
         if (string.IsNullOrWhiteSpace(req.Username) || string.IsNullOrWhiteSpace(req.Password))
             return BadRequest(new { error = "Username and password are required." });
+        var nickname = (req.Nickname ?? "").Trim();
+        if (nickname.Length == 0)
+            return BadRequest(new { error = "Nickname is required." });
+        if (nickname.Length > 64)
+            return BadRequest(new { error = "Nickname must be at most 64 characters." });
 
         var exists = await _db.Users.AnyAsync(u => u.Username == req.Username);
         if (exists)
             return Conflict(new { error = "Username already taken." });
+        var nickTaken = await _db.PlayerProfiles.AnyAsync(p => p.Nickname == nickname);
+        if (nickTaken)
+            return Conflict(new { error = "That nickname is already taken." });
 
         var user = new User
         {
@@ -46,6 +54,7 @@ public class AuthController : ControllerBase
             PasswordHash = HashPassword(req.Password),
         };
         _db.Users.Add(user);
+        _db.PlayerProfiles.Add(new PlayerProfile { UserId = user.Id, Nickname = nickname });
         await _db.SaveChangesAsync();
 
         _logger.LogInformation("Registered user {Username}", user.Username);

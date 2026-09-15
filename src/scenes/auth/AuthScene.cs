@@ -23,6 +23,7 @@ public partial class AuthScene : Control
 
     private LineEdit _userEdit = null!;
     private LineEdit _emailEdit = null!;
+    private LineEdit _nickEdit = null!;
     private LineEdit _passEdit = null!;
     private Button _loginBtn = null!;
     private Button _registerBtn = null!;
@@ -85,6 +86,9 @@ public partial class AuthScene : Control
         _emailEdit = new LineEdit { PlaceholderText = "email (required to register)", CustomMinimumSize = new Vector2(0, 40) };
         center.AddChild(_emailEdit);
 
+        _nickEdit = new LineEdit { PlaceholderText = "nickname (unique, shown to all players)", CustomMinimumSize = new Vector2(0, 40) };
+        center.AddChild(_nickEdit);
+
         _passEdit = new LineEdit { PlaceholderText = "password", Secret = true, CustomMinimumSize = new Vector2(0, 40) };
         center.AddChild(_passEdit);
 
@@ -138,13 +142,14 @@ public partial class AuthScene : Control
     {
         var username = _userEdit.Text.Trim();
         var email = _emailEdit.Text.Trim();
+        var nickname = _nickEdit.Text.Trim();
         var password = _passEdit.Text;
-        if (username.Length == 0 || email.Length == 0 || password.Length == 0)
+        if (username.Length == 0 || email.Length == 0 || nickname.Length == 0 || password.Length == 0)
         {
-            SetStatus("Fill in username, email, and password to register.", true);
+            SetStatus("Fill in username, email, nickname, and password to register.", true);
             return;
         }
-        Fire("/api/auth/register", "POST", JsonSerializer.Serialize(new { username, email, password }));
+        Fire("/api/auth/register", "POST", JsonSerializer.Serialize(new { username, email, password, nickname }));
     }
 
     private void Fire(string path, string method, string body)
