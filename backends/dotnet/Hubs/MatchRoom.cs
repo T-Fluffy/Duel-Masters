@@ -44,6 +44,27 @@ public sealed class MatchRoom
     public bool HasSecondPlayer => SideConnections.ContainsKey(DuelSide.Player2);
     public bool IsGameOver => _game is not null && _game.IsGameOver;
 
+    /// <summary>Server-origin write guard: each finished round records its two
+    /// <see cref="DuelResult" /> rows exactly once, then is re-armed at rematch.</summary>
+    public bool DuelResultsRecordedForRound { get; private set; }
+
+    public Guid? HostDeckId => _hostDeckId;
+
+    public Guid? JoinerDeckId => _joinerDeckId;
+
+    /// <summary>Atomically claim the per-round result write. Returns false when
+    /// another call already claimed it, keeping the write exactly-once.</summary>
+    public bool TryMarkDuelResultsRecorded()
+    {
+        lock (_gate)
+        {
+            if (DuelResultsRecordedForRound)
+                return false;
+            DuelResultsRecordedForRound = true;
+            return true;
+        }
+    }
+
     /// <summary>The server-side AI pilot for a vs-AI match, if any.</summary>
     public MatchBot? Bot { get; private set; }
 
@@ -147,6 +168,7 @@ public sealed class MatchRoom
         _pendingAttackerIndex = null;
         _pendingBlocksAvailable = 0;
         _rematchRequested.Clear();
+        DuelResultsRecordedForRound = false;
         Bot = IsBotSide(DuelSide.Player2) ? new MatchBot(this, p2, DuelSide.Player2) : null;
     }
 

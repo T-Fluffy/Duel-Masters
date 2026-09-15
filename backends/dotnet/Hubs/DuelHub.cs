@@ -7,6 +7,7 @@ using DuelMasters.Domain;
 using DuelMasters.Domain.Networking;
 using DuelMasters.Server.Data;
 using DuelMasters.Server.Services;
+using DuelResult = DuelMasters.Server.Models.DuelResult;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -925,9 +926,47 @@ public sealed class DuelHub : Hub<IDuelClientContract>
                 continue;
             await Clients.Client(connectionId).AnnounceWinner(winner);
         }
+        await RecordDuelResultsOnceAsync(room, winner);
         // Keep the room around after a win: the seated players may ask for a rematch
         // or a reconnect away and come back. Finished matches are swept once both
         // human seats disconnect (OnDisconnectedAsync).
+    }
+
+    /// <summary>
+    /// Persist one <see cref="DuelResult"/> row per deck-owning side, exactly once
+    /// per round. Sides are attributed through their saved deck's owner; bot seats
+    /// and sides without a saved deck are skipped.
+    /// </summary>
+    private async Task RecordDuelResultsOnceAsync(MatchRoom room, string winnerSide)
+    {
+        if (!room.TryMarkDuelResultsRecorded())
+            return;
+        var playedAt = DateTime.UtcNow;
+        using var scope = _scopeFactory.CreateScope();
+        var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+        foreach (var side in new[] { DuelSide.Player1, DuelSide.Player2 })
+        {
+            if (room.IsBotSide(side))
+                continue;
+            var deckId = side == DuelSide.Player1 ? room.HostDeckId : room.JoinerDeckId;
+            if (deckId is not { } id)
+                continue;
+            var ownerId = await db.Decks
+                .Where(d => d.Id == id)
+                .Select(d => d.UserId)
+                .SingleOrDefaultAsync();
+            if (ownerId == Guid.Empty)
+                continue;
+            db.DuelResults.Add(new DuelResult
+            {
+                UserId = ownerId,
+                MatchCode = room.Code,
+                Won = string.Equals(side, winnerSide, StringComparison.Ordinal),
+                DeckId = id,
+                PlayedAtUtc = playedAt,
+            });
+        }
+        await db.SaveChangesAsync();
     }
 
     private async Task BroadcastMatchJoined(MatchRoom room)

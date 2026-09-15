@@ -14,6 +14,9 @@ public class AppDbContext : DbContext
     public DbSet<Deck> Decks => Set<Deck>();
     public DbSet<DeckCard> DeckCards => Set<DeckCard>();
 
+    public DbSet<PlayerProfile> PlayerProfiles => Set<PlayerProfile>();
+    public DbSet<DuelResult> DuelResults => Set<DuelResult>();
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Card>(e =>
@@ -50,6 +53,32 @@ public class AppDbContext : DbContext
                 .WithMany(c => c.DeckCards)
                 .HasForeignKey(dc => dc.CardId)
                 .OnDelete(DeleteBehavior.Restrict);
+        });
+
+        modelBuilder.Entity<PlayerProfile>(e =>
+        {
+            e.HasKey(p => p.UserId);
+            e.HasOne(p => p.User)
+                .WithOne()
+                .HasForeignKey<PlayerProfile>(p => p.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+            e.Property(p => p.Nickname).HasMaxLength(64).IsRequired();
+            e.Property(p => p.Bio).HasMaxLength(500);
+            e.HasIndex(p => p.Nickname).IsUnique();
+        });
+
+        modelBuilder.Entity<DuelResult>(e =>
+        {
+            e.HasKey(d => d.Id);
+            e.HasOne(d => d.User)
+                .WithMany()
+                .HasForeignKey(d => d.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+            e.HasOne(d => d.Deck)
+                .WithMany()
+                .HasForeignKey(d => d.DeckId)
+                .OnDelete(DeleteBehavior.SetNull);
+            e.HasIndex(d => new { d.UserId, d.PlayedAtUtc });
         });
     }
 }
