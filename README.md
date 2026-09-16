@@ -34,6 +34,8 @@ game, built with:
 | 4 | Authoritative .NET / SignalR backend + client transport | ✅ Done |
 | 5 | AI opponent | ✅ Done |
 | 6 | Shaders, VFX, sound polish | ✅ Done |
+| 7 | Online identity: player profiles (nickname, avatar, bio, DOB), ELO ranking + leaderboard scenes, persistent match registry, surrender | ✅ Done |
+| 8 | Backend hardening & scale foundations: EF migrations, hub seat binding + SignalR JWT, auth rate limiting, API integration tests, opt-in Redis backplane | ✅ Done |
 
 ## Implemented features
 
@@ -59,6 +61,25 @@ game, built with:
 - **100% tap-ability coverage** — the last two modelled tap abilities, shield-look
   (Adomis) and deck scry/reorder (Garatyano), work in the engine, AI, hotseat and
   online matches; `Tap_NotModelled` no longer appears in the shipped catalog.
+- **Player profiles** — unique nicknames collected at registration; identity card
+  with avatar, country, bio, date of birth and online record; self, public and
+  stats views with email/DOB kept self-only; designer-editable Godot scene with
+  customizable background, darkened card panel and fit-clamped layout.
+- **Ranked ladder (ELO)** — server-authoritative, exactly-once result recording at
+  winner resolution (PvP only; vs-AI never moves rating); leaderboard + personal
+  rank endpoints and Godot scenes; persistent match registry (open/fill/close)
+  that survives restarts without ever inventing results.
+- **Surrender** — gear-menu option in both arenas (hotseat resigns the side at the
+  controls, vs-AI the human, online via a hub call) flowing through the normal
+  winner path: banner, DuelResult rows, ELO and rematch.
+- **Session UX** — remember-me (token restore, password never stored), logout,
+  guest mode, and guided re-login on expired sessions.
+- **Arena display safety** — card-size slider can never push the mana zone or
+  footer buttons off-screen; sizes clamp to the window fit in both arenas.
+- **Backend hardening** — EF Core migrations (no more `EnsureCreated`), JWT
+  authentication on the SignalR hub with seat-to-user binding, per-IP rate
+  limiting on auth endpoints, and an opt-in Redis backplane for multi-instance
+  SignalR fan-out (see `docs/backend-migrations.md`, `docs/backend-scaleout.md`).
 
 Game rules and architecture are specified in the design documents bundled in the
 repo root (`Duel_Masters_TCG_Engine_GDD.md`, `Duel_Masters_Strategy_and_Codebase.md`).
@@ -78,7 +99,7 @@ repo root (`Duel_Masters_TCG_Engine_GDD.md`, `Duel_Masters_Strategy_and_Codebase
 2. Open `project.godot` in the **.NET edition** of Godot.
 3. Build the C# solution (`.godot/mono` auto-builds in the editor, or run
    `dotnet build -c Debug`).
-4. Run the project. Optionally start the backend stack (Postgres + the ASP.NET server,
+4. Run the project. Optionally start the backend stack (Postgres + Redis + the ASP.NET server,
    which hosts the Phase 1.5 REST API **and** the Phase 4 SignalR `DuelHub` at
    `http://127.0.0.1:8080/duel`) from the repo root:
 
@@ -109,22 +130,28 @@ repo root (`Duel_Masters_TCG_Engine_GDD.md`, `Duel_Masters_Strategy_and_Codebase
 ## Building & testing
 
 ```bash
-dotnet build -c Debug      # builds client + domain library
-dotnet test                # runs the DuelMasters.Domain rules tests
+dotnet build -c Debug      # builds client + domain library + backend
+dotnet test                # runs the xUnit suites (domain rules + API integration)
 ```
 
-CI (GitHub Actions, `.github/workflows/ci.yml`) runs three checks on every push
+CI (GitHub Actions, `.github/workflows/ci.yml`) runs four checks on every push
 to `main` and on pull requests:
 
 - **domain-tests** — sequential Release builds of the Godot client, the backend
-  server, and the E2E harness, then the full xUnit domain suite.
+  server, and the E2E harness, then the full xUnit domain suite (300 tests:
+  rules engine + ELO math + surrender semantics).
 - **mapping-drift** — re-runs `tools/map/01_build_mapping.py` + `02_splice.py`
   and fails if the committed `mapping.json` / `cards.json` carried a stale
   generation (run those two scripts locally and commit the output).
-- **e2e** — boots the dockerized backend (Postgres + server), waits for the
-  server's `GET /health` liveness endpoint, and runs the headless online harness
-  (`dotnet run --project tests/DuelE2E`) covering human-vs-human, vs-AI,
-  reconnect, and rematch flows.
+- **api-tests** — boots a throwaway Postgres service and runs the API
+  integration suite (`tests/DuelMasters.Server.Tests`, 11 facts over a
+  per-class hermetic database): auth contract incl. nickname/email uniqueness,
+  profile CRUD + privacy shape, stats, ranking endpoints, and rate-limit
+  behavior.
+- **e2e** — boots the dockerized backend (Postgres + Redis + server), waits for
+  the server's `GET /health` liveness endpoint, and runs the headless online
+  harness (`dotnet run --project tests/DuelE2E`) covering human-vs-human,
+  vs-AI, reconnect, rematch, and surrender flows.
 
 The backend exposes `GET /health` (plain, unauthenticated) for container
 healthchecks and CI readiness polling; the `server` compose service ships a curl

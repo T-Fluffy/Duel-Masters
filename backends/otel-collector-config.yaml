@@ -1,0 +1,22 @@
+# Local OpenTelemetry collector: receives OTLP/gRPC from the server and logs
+# spans + metrics to its own stdout (docker compose logs otel). No vendor, no
+# credentials. To forward to a real backend later, add an exporter here
+# (otlphttp/prometheus) without touching the app.
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: 0.0.0.0:4317
+
+exporters:
+  debug:
+    verbosity: detailed
+
+service:
+  pipelines:
+    traces:
+      receivers: [otlp]
+      exporters: [debug]
+    metrics:
+      receivers: [otlp]
+      exporters: [debug]

@@ -15,6 +15,10 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using OpenTelemetry;
+using OpenTelemetry.Metrics;
+using OpenTelemetry.Resources;
+using OpenTelemetry.Trace;
 using StackExchange.Redis;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -111,6 +115,24 @@ builder.Services.AddCors(o => o.AddDefaultPolicy(p => p
     .AllowAnyOrigin()
     .AllowAnyHeader()
     .AllowAnyMethod()));
+
+// Telemetry is opt-in like the Redis backplane: without an OTLP endpoint the
+// app emits nothing extra, so local runs and tests stay quiet. Compose sets
+// Otlp__Endpoint for the dockerized stack (and CI's E2E through it).
+var otelEndpoint = config["Otlp:Endpoint"];
+if (!string.IsNullOrEmpty(otelEndpoint))
+{
+    builder.Services.AddOpenTelemetry()
+        .ConfigureResource(r => r.AddService("DuelMasters.Server"))
+        .WithTracing(t => t
+            .AddAspNetCoreInstrumentation()
+            .AddOtlpExporter(o => o.Endpoint = new Uri(otelEndpoint)))
+        .WithMetrics(m => m
+            .AddAspNetCoreInstrumentation()
+            .AddRuntimeInstrumentation()
+            .AddMeter(DuelMasters.Server.Services.DuelMetrics.Name)
+            .AddOtlpExporter(o => o.Endpoint = new Uri(otelEndpoint)));
+}
 
 var app = builder.Build();
 

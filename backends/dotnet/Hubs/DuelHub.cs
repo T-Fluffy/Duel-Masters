@@ -968,6 +968,8 @@ public sealed class DuelHub : Hub<IDuelClientContract>
                 continue;
             await Clients.Client(connectionId).AnnounceWinner(winner);
         }
+        DuelMetrics.MatchesFinished.Add(1,
+            new KeyValuePair<string, object?>("winner_side", winner));
         await RecordDuelResultsOnceAsync(room, winner);
         await CloseMatchRecordAsync(room.Code, winner);
         // Keep the room around after a win: the seated players may ask for a rematch
@@ -1046,6 +1048,8 @@ public sealed class DuelHub : Hub<IDuelClientContract>
             var (winnerRating, loserRating) = p1Won
                 ? EloRating.Apply(p1.Rating, p2.Rating)
                 : EloRating.Apply(p2.Rating, p1.Rating);
+            DuelMetrics.EloDelta.Record(Math.Abs(winnerRating - (p1Won ? p1.Rating : p2.Rating)));
+            DuelMetrics.EloDelta.Record(Math.Abs(loserRating - (p1Won ? p2.Rating : p1.Rating)));
             if (p1Won) { p1.Rating = winnerRating; p2.Rating = loserRating; }
             else { p2.Rating = winnerRating; p1.Rating = loserRating; }
             p1.UpdatedAtUtc = playedAt;

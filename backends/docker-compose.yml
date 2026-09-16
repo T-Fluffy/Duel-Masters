@@ -28,6 +28,15 @@ services:
       timeout: 3s
       retries: 10
 
+  otel:
+    image: otel/opentelemetry-collector:0.160.0
+    container_name: duel-masters-otel
+    command: ["--config=/etc/otelcol-config.yaml"]
+    volumes:
+      - ./otel-collector-config.yaml:/etc/otelcol-config.yaml:ro
+    ports:
+      - "4317:4317"
+
   server:
     image: duel-masters-dotnet
     build:
@@ -41,6 +50,7 @@ services:
       Jwt__Issuer: "duel-masters"
       Jwt__Audience: "duel-masters-client"
       ConnectionStrings__Redis: "redis:6379"
+      Otlp__Endpoint: "http://otel:4317"
     ports:
       - "8080:8080"
     healthcheck:

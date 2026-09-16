@@ -42,3 +42,19 @@ match's traffic to one instance for the match lifetime:
   currently record nothing, which is safe but unsatisfying).
 - The `DuelResultsRecordedForRound` guard likewise lives in memory; snapshot
   persistence must carry it to keep exactly-once across restarts.
+
+## Observability (logs → traces/metrics)
+
+The server emits OpenTelemetry **only** when `Otlp:Endpoint` is configured
+(`Otlp__Endpoint` env; compose sets it to the local collector). Otherwise it
+runs silent, so unit/API tests and minimal deploys see no change.
+
+- Automatic: ASP.NET Core request spans + runtime metrics (GC, threads, CPU).
+- Game instruments (`DuelMasters.Server.Services.DuelMetrics`, stable names):
+  `duelmasters.matches_finished` (counter, tag `winner_side`) and
+  `duelmasters.elo_delta` (histogram of absolute rating movement per ranked
+  side). Dashboards and alerts may rely on these names.
+- Local sink: `backends/otel-collector-config.yaml` + the `otel` compose
+  service (pinned image, debug exporter). Inspect with
+  `docker compose -f backends/docker-compose.yml logs otel`. To forward to a
+  real backend later, add an exporter to the collector config - no app change.
