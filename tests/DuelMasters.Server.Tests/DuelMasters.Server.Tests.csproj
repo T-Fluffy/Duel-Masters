@@ -1,0 +1,31 @@
+<!--
+  DuelMasters.Server.Tests - API integration tests for the .NET backend.
+  WebApplicationFactory (in-process) + throwaway PostgreSQL database per
+  test class. Needs PostgreSQL on localhost:5432 (duel/duel), overridable
+  via TEST_PGHOST / TEST_PGPORT / TEST_PGUSER / TEST_PGPASSWORD.
+  Run with: dotnet test
+-->
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <IsPackable>false</IsPackable>
+    <RootNamespace>DuelMasters.Server.Tests</RootNamespace>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="10.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="10.0.11" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
+    <PackageReference Include="Npgsql" Version="10.0.3" />
+    <PackageReference Include="xunit" Version="2.9.2" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\backends\dotnet\DuelMasters.Server.csproj" />
+  </ItemGroup>
+</Project>

@@ -97,3 +97,33 @@ jobs:
       - name: Teardown stack
         if: always()
         run: docker compose -f backends/docker-compose.yml down -v
+
+  api-tests:
+    name: API integration tests
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: duel
+          POSTGRES_PASSWORD: duel
+          POSTGRES_DB: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd="pg_isready -U duel"
+          --health-interval=5s
+          --health-timeout=5s
+          --health-retries=10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            10.0.x
+
+      - name: API integration tests
+        run: dotnet test tests/DuelMasters.Server.Tests -c Release
