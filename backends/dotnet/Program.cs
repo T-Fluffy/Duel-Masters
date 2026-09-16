@@ -79,7 +79,11 @@ using (var scope = app.Services.CreateScope())
         .CreateLogger("Startup");
     if (db.Database.IsRelational())
     {
-        await db.Database.EnsureCreatedAsync();
+        // Versioned schema: migrations are the only writer. Fresh databases
+        // build the full current model; existing ones apply pending deltas.
+        // (Databases created by the old EnsureCreated path must first be
+        // baselined, see docs/backend-migrations.md.)
+        await db.Database.MigrateAsync();
         CardSeeder.Seed(db, logger);
     }
 }
