@@ -45,6 +45,20 @@ public class ProfileController : ControllerBase
         return Ok(ToResponse(profile));
     }
 
+    /// <summary>Public profile lookup by exact nickname. The literal segment
+    /// wins routing over "{id:guid}", and exact (case-sensitive) match mirrors
+    /// the unique index, so the result is unambiguous.</summary>
+    [HttpGet("by-nickname/{nickname}")]
+    public async Task<IActionResult> GetByNickname(string nickname)
+    {
+        var profile = await _db.PlayerProfiles
+            .AsNoTracking()
+            .SingleOrDefaultAsync(p => p.Nickname == nickname);
+        return profile is null
+            ? NotFound(new { error = "Profile not found." })
+            : Ok(ToPublicResponse(profile));
+    }
+
     [HttpGet("{id:guid}")]
     public async Task<IActionResult> GetPublic(Guid id)
     {

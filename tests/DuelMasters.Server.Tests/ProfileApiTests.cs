@@ -231,9 +231,7 @@ public sealed class ProfileApiTests : IClassFixture<ApiFactory>
     [Fact]
     public async Task PutProfile_BlankNickname_BadRequest()
     {
-        var u = U("t7");
-        var (_, token) = await Register(_fx.Client, u, u + "@t.local", "BlankNick" + u[..6]);
-        var r = await Put(_fx.Client, "/api/profile", new { nickname = "   " }, token);
+        var r = await Put(_fx.Client, "/api/profile", new { nickname = "   " }, _fx.FxToken);
         Assert.Equal(HttpStatusCode.BadRequest, r.StatusCode);
     }
 
@@ -251,6 +249,27 @@ public sealed class ProfileApiTests : IClassFixture<ApiFactory>
 
         var missing = await Get(_fx.Client, "/api/profile/00000000-0000-0000-0000-000000000000", token);
         Assert.Equal(HttpStatusCode.NotFound, missing.StatusCode);
+    }
+
+    [Fact]
+    public async Task GetByNickname_ReturnsPublicCard()
+    {
+        var u = U("t11");
+        var nick = "ByNick" + u[..6];
+        var (_, token) = await Register(_fx.Client, u, u + "@t.local", nick);
+        var r = await Get(_fx.Client, "/api/profile/by-nickname/" + nick, token);
+        Assert.Equal(HttpStatusCode.OK, r.StatusCode);
+        using var doc = await AsJson(r);
+        Assert.Equal(nick, Str(doc.RootElement, "nickname"));
+        Assert.False(doc.RootElement.TryGetProperty("email", out _));
+        Assert.False(doc.RootElement.TryGetProperty("dateOfBirth", out _));
+    }
+
+    [Fact]
+    public async Task GetByNickname_Unknown_ReturnsNotFound()
+    {
+        var r = await Get(_fx.Client, "/api/profile/by-nickname/NoSuchNick_xyz", _fx.FxToken);
+        Assert.Equal(HttpStatusCode.NotFound, r.StatusCode);
     }
 
     [Fact]
