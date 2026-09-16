@@ -21,6 +21,12 @@ public partial class SceneOptionsMenu : Control
     /// <summary>Whether the "Back to Main Menu" entry is shown.</summary>
     public bool ShowBackToMenu { get; set; } = true;
 
+    /// <summary>Whether the "Surrender" entry is shown. Only game scenes opt in.</summary>
+    public bool ShowSurrender { get; set; }
+
+    /// <summary>Raised when the player picks Surrender; the host scene owns the rules.</summary>
+    public event Action? SurrenderRequested;
+
     private Button _gear = null!;
     private PanelContainer _menu = null!;
 
@@ -68,6 +74,8 @@ public partial class SceneOptionsMenu : Control
         AddCardSizeSlider(box);
         if (ShowBackToMenu)
             AddEntry(box, "Back to Main Menu", OnBackToMenu);
+        if (ShowSurrender)
+            AddEntry(box, "Surrender", OnSurrenderRequested);
         AddEntry(box, "Exit Game", OnExitGame);
 
         // Pop the menu just below the gear, anchored to the top-right.
@@ -135,6 +143,12 @@ public partial class SceneOptionsMenu : Control
     {
         CloseMenu();
         GetTree().ChangeSceneToFile(MainMenuPath);
+    }
+
+    private void OnSurrenderRequested()
+    {
+        CloseMenu();
+        SurrenderRequested?.Invoke();
     }
 
     private void OnExitGame()

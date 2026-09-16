@@ -44,6 +44,7 @@ public static class DuelContract
         public const string AttackDecisionDecline = "AttackDecisionDecline";
         public const string EndMainPhase = "EndMainPhase";
         public const string EndTurn = "EndTurn";
+        public const string Surrender = "Surrender";
     }
 
     /// <summary>Events the server pushes to clients via <c>IDuelClientContract</c>.</summary>

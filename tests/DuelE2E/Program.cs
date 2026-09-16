@@ -170,6 +170,9 @@ internal static class Program
 
             // --- rematch: a finished match restarts in place (vs-AI auto-accepts) ---
             await RunRematchScenarioAsync(http);
+
+            // --- surrender: Player2 resigns, Player1 must be crowned ---
+            await RunSurrenderScenarioAsync(http);
         }
         catch (Exception ex)
         {
@@ -368,6 +371,57 @@ internal static class Program
 
         if (host.StateCount > 0 && joiner.StateCount > 0)
             Info($"states received: host={host.StateCount} joiner={joiner.StateCount}");
+    }
+
+    /// <summary>
+    /// Surrender path: a finished handshake, then Player2 resigns. Player1
+    /// must be announced winner through the normal announcement flow.
+    /// </summary>
+    private static async Task RunSurrenderScenarioAsync(HttpClient http)
+    {
+        var user = "e2e_sur_" + Guid.NewGuid().ToString("N")[..10];
+        Info($"registering surrender user {user}");
+        await RegisterAsync(http, user);
+        var token = await LoginAsync(http, user);
+        var auth = new HttpClient { BaseAddress = new Uri(BaseUrl), Timeout = TimeSpan.FromSeconds(20) };
+        auth.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+        var deckId = await CreateDeckAsync(auth, "E2E Surrender", JoinerDeck);
+
+        var host = new Bot { Name = "E2E_SurHost", Conn = NewConnection(token), CraftedDeck = JoinerDeck };
+        var joiner = new Bot { Name = "E2E_SurJoiner", Conn = NewConnection(token), CraftedDeck = JoinerDeck };
+        Wire(host);
+        Wire(joiner);
+        await host.Conn.StartAsync();
+        await joiner.Conn.StartAsync();
+
+        var hostInfo = await host.Conn.InvokeAsync<MatchInfo>(DuelContract.Hub.HostMatch, "E2E sur host", deckId, false);
+        host.Side = hostInfo.YourSide;
+        var joinInfo = await joiner.Conn.InvokeAsync<MatchInfo>(DuelContract.Hub.JoinMatch, hostInfo.MatchCode, "E2E sur joiner", deckId);
+        joiner.Side = joinInfo.YourSide;
+        if (!await WaitForStateAsync(host, 10) || !await WaitForStateAsync(joiner, 10))
+        {
+            Failure("surrender match never started");
+            return;
+        }
+        Info("surrender match started; Player2 resigns...");
+        await joiner.Conn.InvokeAsync(DuelContract.Hub.Surrender);
+
+        string? winner = null;
+        var deadline = DateTime.UtcNow.AddSeconds(30);
+        while (DateTime.UtcNow < deadline)
+        {
+            var s = host.Latest;
+            if (s is { IsGameOver: true })
+            {
+                winner = s.WinnerId;
+                break;
+            }
+            await Task.Delay(200);
+        }
+        if (winner != "Player1")
+            Failure($"surrender by Player2 did not crown Player1 (got '{winner}')");
+        else
+            Info("surrender recorded: Player2 resigned, Player1 announced winner");
     }
 
     private static async Task RunVsAiScenarioAsync(HttpClient http)

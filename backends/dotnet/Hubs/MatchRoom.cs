@@ -270,6 +270,22 @@ public sealed class MatchRoom
     }
 
     /// <summary>
+    /// The given side resigns: the engine records the opponent as winner.
+    /// Returns false when there is no live game or it already ended.
+    /// </summary>
+    public bool SurrenderSide(string side)
+    {
+        lock (_gate)
+        {
+            if (_game is null || _game.IsGameOver)
+                return false;
+            var player = side == DuelSide.Player1 ? _game.Player1 : _game.Player2;
+            _game.Surrender(player);
+            return true;
+        }
+    }
+
+    /// <summary>
     /// True while an attack is declared on a player and the defender may choose a
     /// Blocker creature or pass. The attack itself is not resolved until then.
     /// </summary>

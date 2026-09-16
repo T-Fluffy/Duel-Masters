@@ -114,6 +114,22 @@ public sealed class DuelGame
     public bool IsGameOver => Winner is not null;
 
     /// <summary>
+    /// The given player resigns: the game ends immediately with the opponent
+    /// as winner. Pending windows no longer matter - every action and state
+    /// query short-circuits on <see cref="IsGameOver"/>. A stranger (neither
+    /// seat) or an already-finished game changes nothing.
+    /// </summary>
+    public void Surrender(Player player)
+    {
+        if (IsGameOver)
+            return;
+        if (ReferenceEquals(player, Player1))
+            Winner = Player2;
+        else if (ReferenceEquals(player, Player2))
+            Winner = Player1;
+    }
+
+    /// <summary>
     /// True while a broken shield with the Shield Trigger keyword waits to be played
     /// for free (or declined) by <see cref="ShieldTriggerOwner"/>. No other action may
     /// take place until the window is resolved.

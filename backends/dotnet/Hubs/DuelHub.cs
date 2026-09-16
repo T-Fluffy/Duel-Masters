@@ -9,6 +9,7 @@ using DuelMasters.Domain.Networking;
 using DuelMasters.Server.Data;
 using DuelMasters.Server.Services;
 using DuelResult = DuelMasters.Server.Models.DuelResult;
+using MatchRecord = DuelMasters.Server.Models.MatchRecord;
 using PlayerProfile = DuelMasters.Server.Models.PlayerProfile;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
@@ -78,6 +79,7 @@ public sealed class DuelHub : Hub<IDuelClientContract>
         var code = GenerateUniqueCode();
         var room = new MatchRoom(code, Context.ConnectionId, string.IsNullOrWhiteSpace(yourName) ? "Player 1" : yourName, deckId, LoadDeckById);
         room.SetSideUser(DuelSide.Player1, CurrentUserIdOrNull());
+        await OpenMatchRecordAsync(code, room.SideUser(DuelSide.Player1), room.SideNames[DuelSide.Player1], deckId);
         ActiveMatches[code] = room;
         await Groups.AddToGroupAsync(Context.ConnectionId, Group(code));
 
@@ -117,6 +119,7 @@ public sealed class DuelHub : Hub<IDuelClientContract>
             return null;
         }
         room.SetSideUser(DuelSide.Player2, CurrentUserIdOrNull());
+        await FillJoinerAsync(code, room.SideUser(DuelSide.Player2), room.SideNames[DuelSide.Player2], deckId);
 
         room.StartGame();
 
@@ -144,7 +147,7 @@ public sealed class DuelHub : Hub<IDuelClientContract>
         var code = matchCode?.Trim().ToUpperInvariant() ?? "";
         if (!ActiveMatches.TryGetValue(code, out var room))
         {
-            await Clients.Caller.ReceiveActionError("No match found with that code.");
+            await Clients.Caller.ReceiveActionError("No match found with that code. It may have ended or the server may have restarted.");
             return null;
         }
 
@@ -323,6 +326,31 @@ public sealed class DuelHub : Hub<IDuelClientContract>
         if (!ok)
         {
             await Clients.Caller.ReceiveActionError(error ?? "You cannot pass on this attack.");
+            return;
+        }
+
+        await BroadcastState(room);
+        await MaybeAnnounceWinner(room);
+    }
+
+    /// <summary>
+    /// The caller resigns the current match: their opponent is recorded as
+    /// winner through the normal announcement path (broadcast, DuelResult
+    /// rows, ELO), exactly like a battlefield defeat.
+    /// </summary>
+    public async Task Surrender()
+    {
+        var mySide = ResolveSide(out var room);
+        if (room is null || mySide is null)
+        {
+            await Clients.Caller.ReceiveActionError("You are not in an active match.");
+            return;
+        }
+        if (room.IsBotSide(mySide))
+            return;
+        if (!room.SurrenderSide(mySide))
+        {
+            await Clients.Caller.ReceiveActionError("The match has already ended.");
             return;
         }
 
@@ -941,6 +969,7 @@ public sealed class DuelHub : Hub<IDuelClientContract>
             await Clients.Client(connectionId).AnnounceWinner(winner);
         }
         await RecordDuelResultsOnceAsync(room, winner);
+        await CloseMatchRecordAsync(room.Code, winner);
         // Keep the room around after a win: the seated players may ask for a rematch
         // or a reconnect away and come back. Finished matches are swept once both
         // human seats disconnect (OnDisconnectedAsync).
@@ -1022,6 +1051,54 @@ public sealed class DuelHub : Hub<IDuelClientContract>
             p1.UpdatedAtUtc = playedAt;
             p2.UpdatedAtUtc = playedAt;
         }
+        await db.SaveChangesAsync();
+    }
+
+    /// <summary>
+    /// Open the persistent registry row when a match is hosted. The row
+    /// survives process restarts, unlike the in-memory room.
+    /// </summary>
+    private async Task OpenMatchRecordAsync(string code, Guid? hostUserId, string hostName, Guid? hostDeckId)
+    {
+        using var scope = _scopeFactory.CreateScope();
+        var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+        db.MatchRecords.Add(new MatchRecord
+        {
+            Code = code,
+            HostUserId = hostUserId,
+            HostName = hostName,
+            HostDeckId = hostDeckId,
+            CreatedAtUtc = DateTime.UtcNow,
+        });
+        await db.SaveChangesAsync();
+    }
+
+    /// <summary>Fill in the joiner side once the second seat is taken.</summary>
+    private async Task FillJoinerAsync(string code, Guid? joinerUserId, string joinerName, Guid? joinerDeckId)
+    {
+        using var scope = _scopeFactory.CreateScope();
+        var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+        var record = await db.MatchRecords.SingleOrDefaultAsync(m => m.Code == code);
+        if (record is null)
+            return;
+        record.JoinerUserId = joinerUserId;
+        record.JoinerName = joinerName;
+        record.JoinerDeckId = joinerDeckId;
+        record.IsRanked = record.HostUserId.HasValue && joinerUserId.HasValue;
+        await db.SaveChangesAsync();
+    }
+
+    /// <summary>Close the registry row at winner announcement. Idempotent:
+    /// only the first close stamps the finish.</summary>
+    private async Task CloseMatchRecordAsync(string code, string winnerSide)
+    {
+        using var scope = _scopeFactory.CreateScope();
+        var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+        var record = await db.MatchRecords.SingleOrDefaultAsync(m => m.Code == code);
+        if (record is null || record.FinishedAtUtc is not null)
+            return;
+        record.FinishedAtUtc = DateTime.UtcNow;
+        record.WinnerSide = winnerSide;
         await db.SaveChangesAsync();
     }
 

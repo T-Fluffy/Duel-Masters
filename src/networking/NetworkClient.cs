@@ -185,6 +185,8 @@ public static class NetworkClient
     public static void EndMainPhase() => Invoke(DuelContract.Hub.EndMainPhase);
     public static void EndTurn() => Invoke(DuelContract.Hub.EndTurn);
 
+    public static void Surrender() => Invoke(DuelContract.Hub.Surrender);
+
     /// <summary>
     /// Tap ability "choose a shield and look at it": the server taps the creature,
     /// validates the shield, and returns the inspected card to the caller only.

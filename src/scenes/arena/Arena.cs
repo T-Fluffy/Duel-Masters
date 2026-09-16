@@ -621,7 +621,9 @@ public partial class Arena : Control
         footer.AddChild(hint);
 
         // Top-right options gear.
-        AddChild(new SceneOptionsMenu { ShowBackToMenu = true });
+        var options = new SceneOptionsMenu { ShowBackToMenu = true, ShowSurrender = true };
+        options.SurrenderRequested += OnSurrender;
+        AddChild(options);
 
         BuildHandPopup();
         BuildLookPopup();
@@ -2663,6 +2665,17 @@ public partial class Arena : Control
     private bool SideIsActive(bool isBottomSide) =>
         (isBottomSide && ReferenceEquals(_game!.ActivePlayer, _game.Player1))
      || (!isBottomSide && ReferenceEquals(_game.ActivePlayer, _game.Player2));
+
+    private void OnSurrender()
+    {
+        if (_game is null || _game.IsGameOver)
+            return;
+        // Hotseat: the player at the controls (active side) resigns. Vs-AI:
+        // the human (Player 1) resigns - the AI never surrenders on its own.
+        // The normal refresh path then announces the winner and offers rematch.
+        _game.Surrender(_vsAi ? _game.Player1 : _game.ActivePlayer);
+        Refresh();
+    }
 
     private void OnEndTurn()
     {

@@ -297,7 +297,9 @@ public partial class NetworkArena : Control
 
 		BuildOverlay();
 		BuildScryPopup();
-		AddChild(new SceneOptionsMenu { ShowBackToMenu = true });
+		var options = new SceneOptionsMenu { ShowBackToMenu = true, ShowSurrender = true };
+		options.SurrenderRequested += () => NetworkClient.Surrender();
+		AddChild(options);
 	}
 
 	private void BuildScryPopup()

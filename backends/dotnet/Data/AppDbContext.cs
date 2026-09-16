@@ -16,6 +16,7 @@ public class AppDbContext : DbContext
 
     public DbSet<PlayerProfile> PlayerProfiles => Set<PlayerProfile>();
     public DbSet<DuelResult> DuelResults => Set<DuelResult>();
+    public DbSet<MatchRecord> MatchRecords => Set<MatchRecord>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -79,6 +80,13 @@ public class AppDbContext : DbContext
                 .HasForeignKey(d => d.DeckId)
                 .OnDelete(DeleteBehavior.SetNull);
             e.HasIndex(d => new { d.UserId, d.PlayedAtUtc });
+        });
+
+        modelBuilder.Entity<MatchRecord>(e =>
+        {
+            e.HasKey(m => m.Code);
+            e.Property(m => m.Code).HasMaxLength(16);
+            e.HasIndex(m => m.CreatedAtUtc);
         });
     }
 }
