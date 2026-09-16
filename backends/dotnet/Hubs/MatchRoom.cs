@@ -65,6 +65,27 @@ public sealed class MatchRoom
         }
     }
 
+    private readonly Dictionary<string, Guid?> _sideUserIds = new();
+
+    /// <summary>Bind a seat to the authenticated user that claimed it, if any.
+    /// Guest seats stay null and keep the connection-based rules.</summary>
+    public void SetSideUser(string side, Guid? userId)
+    {
+        lock (_gate)
+        {
+            _sideUserIds[side] = userId;
+        }
+    }
+
+    /// <summary>The authenticated owner of a seat, or null for guests and bots.</summary>
+    public Guid? SideUser(string side)
+    {
+        lock (_gate)
+        {
+            return _sideUserIds.TryGetValue(side, out var id) ? id : null;
+        }
+    }
+
     /// <summary>The server-side AI pilot for a vs-AI match, if any.</summary>
     public MatchBot? Bot { get; private set; }
 

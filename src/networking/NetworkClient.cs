@@ -42,13 +42,19 @@ public static class NetworkClient
 
     // ------------------------------------------------------------- lifecycle
 
-    public static async Task ConnectAsync(string url)
+    public static async Task ConnectAsync(string url, string token = "")
     {
         if (_connection is { State: HubConnectionState.Connected })
             return;
 
         var connection = new HubConnectionBuilder()
-            .WithUrl(string.IsNullOrWhiteSpace(url) ? DefaultServerUrl : url)
+            .WithUrl(string.IsNullOrWhiteSpace(url) ? DefaultServerUrl : url, options =>
+            {
+                // Authenticated seats bind to the JWT owner server-side (ranked
+                // writes); guests simply connect without a token as before.
+                if (!string.IsNullOrEmpty(token))
+                    options.AccessTokenProvider = () => Task.FromResult<string?>(token);
+            })
             .WithAutomaticReconnect()
             .Build();
 

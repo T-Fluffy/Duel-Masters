@@ -151,7 +151,7 @@ internal static class Program
                 var attemptStart = Failures.Count;
                 if (attempt > 1)
                     Info($"two-player scenario retry #{attempt}: fresh random match to exercise both decision abilities...");
-                await RunTwoPlayerScenarioAsync(http, hostDeckId, joinerDeckId);
+                await RunTwoPlayerScenarioAsync(http, hostDeckId, joinerDeckId, token);
                 if (Failures.Count == attemptStart)
                 {
                     scenarioOk = true;
@@ -186,11 +186,11 @@ internal static class Program
     /// Any passed-flag, redaction, foreign-card, turn-progression, or decision
     /// round-trip defect is recorded via <see cref="Failure"/>.
     /// </summary>
-    private static async Task RunTwoPlayerScenarioAsync(HttpClient http, Guid hostDeckId, Guid joinerDeckId)
+    private static async Task RunTwoPlayerScenarioAsync(HttpClient http, Guid hostDeckId, Guid joinerDeckId, string token)
     {
         // --- connections ---
-        var host = new Bot { Name = "E2E_Host", Conn = NewConnection(), HasDecisionTargets = true, CraftedDeck = HostDeck };
-        var joiner = new Bot { Name = "E2E_Joiner", Conn = NewConnection(), CraftedDeck = JoinerDeck };
+        var host = new Bot { Name = "E2E_Host", Conn = NewConnection(token), HasDecisionTargets = true, CraftedDeck = HostDeck };
+        var joiner = new Bot { Name = "E2E_Joiner", Conn = NewConnection(token), CraftedDeck = JoinerDeck };
         Wire(host);
         Wire(joiner);
 
@@ -381,7 +381,7 @@ internal static class Program
         var deckId = await CreateDeckAsync(auth, "E2E VS AI", JoinerDeck);
         Info($"vs-AI deck created: {deckId}");
 
-        var host = new Bot { Name = "E2E_VsAi", Conn = NewConnection(), CraftedDeck = JoinerDeck };
+        var host = new Bot { Name = "E2E_VsAi", Conn = NewConnection(token), CraftedDeck = JoinerDeck };
         Wire(host);
         Info("connecting vs-AI host...");
         await host.Conn.StartAsync();
@@ -594,8 +594,8 @@ internal static class Program
         var hostDeckId = await CreateDeckAsync(auth, "E2E Rec Host", HostDeck);
         var joinerDeckId = await CreateDeckAsync(auth, "E2E Rec Joiner", JoinerDeck);
 
-        var host = new Bot { Name = "E2E_RecHost", Conn = NewConnection(), HasDecisionTargets = true, CraftedDeck = HostDeck };
-        var joiner = new Bot { Name = "E2E_RecJoiner", Conn = NewConnection(), CraftedDeck = JoinerDeck };
+        var host = new Bot { Name = "E2E_RecHost", Conn = NewConnection(token), HasDecisionTargets = true, CraftedDeck = HostDeck };
+        var joiner = new Bot { Name = "E2E_RecJoiner", Conn = NewConnection(token), CraftedDeck = JoinerDeck };
         Wire(host);
         Wire(joiner);
         await host.Conn.StartAsync();
@@ -628,7 +628,7 @@ internal static class Program
         await Task.Delay(1000);
 
         // A completely fresh connection (no automatic-reconnect resume) reclaims the seat.
-        joiner.Conn = NewConnection();
+        joiner.Conn = NewConnection(token);
         Wire(joiner);
         await joiner.Conn.StartAsync();
         Info("joiner reconnected on a fresh connection; calling RejoinMatch...");
@@ -699,7 +699,7 @@ internal static class Program
         auth.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
         var deckId = await CreateDeckAsync(auth, "E2E Rematch", JoinerDeck);
 
-        var host = new Bot { Name = "E2E_Rematch", Conn = NewConnection(), CraftedDeck = JoinerDeck };
+        var host = new Bot { Name = "E2E_Rematch", Conn = NewConnection(token), CraftedDeck = JoinerDeck };
         Wire(host);
         await host.Conn.StartAsync();
 
@@ -1215,9 +1215,13 @@ internal static class Program
         }
     }
 
-    private static HubConnection NewConnection() =>
+    private static HubConnection NewConnection(string? token = null) =>
         new HubConnectionBuilder()
-            .WithUrl(BaseUrl + "/duel")
+            .WithUrl(BaseUrl + "/duel", options =>
+            {
+                if (!string.IsNullOrEmpty(token))
+                    options.AccessTokenProvider = () => Task.FromResult<string?>(token);
+            })
             .WithAutomaticReconnect()
             .Build();
 

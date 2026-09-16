@@ -61,7 +61,21 @@ builder.Services
             ValidateLifetime = true,
             ClockSkew = TimeSpan.FromMinutes(1),
         };
-    });
+            o.Events = new JwtBearerEvents
+            {
+                // Browsers cannot set Authorization headers on WebSockets, so
+                // SignalR clients send the JWT as ?access_token instead. Accept
+                // it, but only on the hub endpoint.
+                OnMessageReceived = context =>
+                {
+                    var accessToken = context.Request.Query["access_token"];
+                    var path = context.HttpContext.Request.Path;
+                    if (!string.IsNullOrEmpty(accessToken) && path.StartsWithSegments("/duel"))
+                        context.Token = accessToken;
+                    return Task.CompletedTask;
+                }
+            };
+        });
 builder.Services.AddAuthorization();
 
 builder.Services.AddCors(o => o.AddDefaultPolicy(p => p

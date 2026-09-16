@@ -183,7 +183,7 @@ public partial class NetworkLobby : Control
 
         try
         {
-            await NetworkClient.ConnectAsync(_serverUrl.Text.Trim());
+            await NetworkClient.ConnectAsync(_serverUrl.Text.Trim(), _token);
             afterConnect();
         }
         catch (System.Exception ex)

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using DuelMasters.Domain;
 using DuelMasters.Domain.Networking;
@@ -76,6 +77,7 @@ public sealed class DuelHub : Hub<IDuelClientContract>
     {
         var code = GenerateUniqueCode();
         var room = new MatchRoom(code, Context.ConnectionId, string.IsNullOrWhiteSpace(yourName) ? "Player 1" : yourName, deckId, LoadDeckById);
+        room.SetSideUser(DuelSide.Player1, CurrentUserIdOrNull());
         ActiveMatches[code] = room;
         await Groups.AddToGroupAsync(Context.ConnectionId, Group(code));
 
@@ -85,6 +87,7 @@ public sealed class DuelHub : Hub<IDuelClientContract>
             // the opponent's name (and its whole first turn) arrive through the
             // match-joined broadcast and the bot drive in BroadcastState.
             room.TryAddBot("AI (Standard)");
+            room.SetSideUser(DuelSide.Player2, null);
             room.StartGame();
             await BroadcastMatchJoined(room);
             await BroadcastState(room);
@@ -113,6 +116,7 @@ public sealed class DuelHub : Hub<IDuelClientContract>
             await Clients.Caller.ReceiveActionError("That match is already full.");
             return null;
         }
+        room.SetSideUser(DuelSide.Player2, CurrentUserIdOrNull());
 
         room.StartGame();
 
@@ -158,6 +162,12 @@ public sealed class DuelHub : Hub<IDuelClientContract>
         if (!room.SideConnections.TryGetValue(sideKey, out var occupiedId) || room.IsBotSide(sideKey))
         {
             await Clients.Caller.ReceiveActionError("You have no seat in that match.");
+            return null;
+        }
+        var seatUser = room.SideUser(sideKey);
+        if (seatUser.HasValue && seatUser != CurrentUserIdOrNull())
+        {
+            await Clients.Caller.ReceiveActionError("That seat belongs to another player.");
             return null;
         }
         if (string.Equals(occupiedId, Context.ConnectionId, StringComparison.Ordinal))
@@ -875,6 +885,9 @@ public sealed class DuelHub : Hub<IDuelClientContract>
         await MaybeAnnounceWinner(room);
     }
 
+    private Guid? CurrentUserIdOrNull() =>
+        Guid.TryParse(Context.User?.FindFirst(ClaimTypes.NameIdentifier)?.Value, out var id) ? id : null;
+
     private MatchRoom? ResolveRoom() =>
         ActiveMatches.Values.FirstOrDefault(r => r.ConnectionSide(Context.ConnectionId) is not null);
 
@@ -958,6 +971,11 @@ public sealed class DuelHub : Hub<IDuelClientContract>
                 .Select(d => d.UserId)
                 .SingleOrDefaultAsync();
             if (ownerId == Guid.Empty)
+                continue;
+            // A side is ranked only for its own deck: a seat piloting someone
+            // else's saved deck (or no authenticated seat at all) keeps the
+            // game result but earns no history row and no rating movement.
+            if (room.SideUser(side) is not { } seatUser || seatUser != ownerId)
                 continue;
             owners[side] = ownerId;
             db.DuelResults.Add(new DuelResult
