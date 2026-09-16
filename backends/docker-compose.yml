@@ -17,6 +17,17 @@ services:
       timeout: 5s
       retries: 10
 
+  redis:
+    image: redis:7-alpine
+    container_name: duel-masters-redis
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli ping | grep PONG"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
   server:
     image: duel-masters-dotnet
     build:
@@ -29,6 +40,7 @@ services:
       Jwt__Key: ${JWT_KEY:-dev-only-change-me-in-production-012345678901234567890123}
       Jwt__Issuer: "duel-masters"
       Jwt__Audience: "duel-masters-client"
+      ConnectionStrings__Redis: "redis:6379"
     ports:
       - "8080:8080"
     healthcheck:

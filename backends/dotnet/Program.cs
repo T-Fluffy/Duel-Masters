@@ -15,13 +15,23 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using StackExchange.Redis;
 
 var builder = WebApplication.CreateBuilder(args);
 var config = builder.Configuration;
 
 builder.Services.AddControllers();
 
-builder.Services.AddSignalR();
+var signalR = builder.Services.AddSignalR();
+
+// Multi-instance fan-out is opt-in: without a Redis connection string the hub
+// keeps today's in-memory behavior, so local runs, tests, and minimal deploys
+// are unaffected. Compose (and CI's E2E) set ConnectionStrings__Redis.
+var redisConn = config.GetConnectionString("Redis");
+if (!string.IsNullOrEmpty(redisConn))
+{
+    signalR.AddStackExchangeRedis(redisConn, o => o.Configuration.ChannelPrefix = RedisChannel.Literal("DuelMasters"));
+}
 
 // PostgreSQL + EF Core. The connection string may come from configuration
 // (e.g. ConnectionStrings__Default); otherwise it is composed from DB_* env
