@@ -1,11 +1,13 @@
 using System;
 using System.Text;
+using System.Threading.RateLimiting;
 using System.Threading.Tasks;
 using DuelMasters.Server.Data;
 using DuelMasters.Server.Hubs;
 using DuelMasters.Server.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -78,6 +80,23 @@ builder.Services
         });
 builder.Services.AddAuthorization();
 
+// Login/register are the only unauthenticated writes: cap them per client
+// IP so credential stuffing and mass account creation stay expensive.
+builder.Services.AddRateLimiter(o =>
+{
+    o.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
+    o.AddPolicy("auth", context =>
+        RateLimitPartition.GetFixedWindowLimiter(
+            partitionKey: context.Connection.RemoteIpAddress?.ToString() ?? "unknown",
+            factory: _ => new FixedWindowRateLimiterOptions
+            {
+                PermitLimit = 10,
+                Window = TimeSpan.FromMinutes(1),
+                QueueLimit = 0,
+                QueueProcessingOrder = QueueProcessingOrder.OldestFirst,
+            }));
+});
+
 builder.Services.AddCors(o => o.AddDefaultPolicy(p => p
     .AllowAnyOrigin()
     .AllowAnyHeader()
@@ -103,6 +122,7 @@ using (var scope = app.Services.CreateScope())
 }
 
 app.UseCors();
+app.UseRateLimiter();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
@@ -114,3 +134,8 @@ app.MapHub<DuelHub>("/duel");
 app.MapGet("/health", () => Results.Ok(new { status = "ok" }));
 
 app.Run();
+
+// Visible to WebApplicationFactory integration tests (same assembly).
+public partial class Program
+{
+}
